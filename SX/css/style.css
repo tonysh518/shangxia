@@ -65,7 +65,7 @@ a{text-decoration:none;outline: none;color:#444;}
 .footer{background: #eee;}
 /*location*/
 .location{padding:66px 0 0 ;margin: 100px 0 0}
-.range{background: url('../images/range.png') no-repeat top center;padding:60px 0;}
+.range{background: url('../images/range.png') no-repeat top center;padding:60px 0 100px;}
 .rangetxt{text-align: center;color:#333;font-family: arial}
 .rangebtn{font-family: Garamond;font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 20px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px}
 
@@ -166,10 +166,20 @@ a{text-decoration:none;outline: none;color:#444;}
 .pressitem{width: 24.4%;margin-right: 0.8%;}
 .pressitem p{background: #fff;color:#000;}
 
+/*introparis*/
+.introparis{width: 65%;margin: 0 auto}
+.introparis h2{font-size: 30px;text-align: center;text-transform: uppercase;line-height: 85px;}
+.introparis p{font-family: Garamond;font-size: 18px;font-style: italic;margin-bottom: 25px;text-align: center;}
 
+/*parislist*/
+.parislist{margin-bottom: 20px;}
+.parisitem{float: left;width: 32.8%;margin-right: 0.8%;}
 
-
-
+/*findus*/
+.findus .productstit h2{width: 200px;margin-left: -100px;}
+.findus .storechoose{width: 35%;padding-top: 100px;}
+.findus .storechoose p{font-style: normal;}
+.findus .storemap{width: 65%;}
 
 
 
