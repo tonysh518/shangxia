@@ -103,6 +103,9 @@ a{text-decoration:none;outline: none;color:#444;}
 .detail .arrows{height:180px;float: left;width: 16%;cursor: pointer;}
 .detail .arrows2{height: 44px;}
 .detail .arrows3{height: 80px;}
+.detail .arrows4{height: 300px;}
+.detail .arrows4.detailprev{background-position: left 60%}
+.detail .arrows4.detailnext{background-position: right 60%}
 .detailprev{background: url('../images/detailprev.png') no-repeat left center;}
 .detailnext{background: url('../images/detailnext.png') no-repeat right center;}
 .detailW6{width: 68%;margin: 0 auto}
@@ -215,9 +218,12 @@ a{text-decoration:none;outline: none;color:#444;}
 .collarrowsnext{background: url('../images/detailnext.png') no-repeat center;}
 .collcon{float: left;}
 
-
-
-
+/*colllisticon*/
+.detail .colllisticon{background: url('../images/collicon.png') no-repeat top center;padding:70px 0 30px}
+.colllistbox p{height: 60px;}
+.colllistbox a{text-transform:none;font-family: Garamond;font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 250px;height: 60px;line-height: 60px}
+.colllistbox .piclistitem{margin-bottom: 90px;}
+.colllistbox .piclist{padding: 0}
 
 
 
