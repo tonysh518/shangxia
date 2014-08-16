@@ -225,6 +225,11 @@ a{text-decoration:none;outline: none;color:#444;}
 .colllistbox .piclistitem{margin-bottom: 90px;}
 .colllistbox .piclist{padding: 0}
 
+/*menu*/
+.menupicitem{float: left;width: 24.4%;margin-right: 0.8%;}
+
+
+
 
 
 /* Clear Used
