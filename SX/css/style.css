@@ -139,7 +139,7 @@ a{text-decoration:none;outline: none;color:#444;}
 .prolistitem{text-transform : uppercase;float: left;width: 32.8%;margin-right: 0.8%;}
 .prolistitem img{display: block;margin: 0 0 10px;}
 .prolistitem p{background: #000;color:#fff;padding:12px;font-size: 18px;text-align: center ;}
-.newsitem p{background: #fff;color:#000	;}
+.newsitem p{background: #fff;color:#000	;height: 80px;}
 
 /*othercraf*/
 .othercraf{padding-bottom:50px;}
@@ -241,9 +241,30 @@ a{text-decoration:none;outline: none;color:#444;}
 .hd_searchclose{background: url('../images/hd_searchclose.png') no-repeat center;}
 
 /*searchform*/
-.searchform{background: #eee;height: 115px;width: 100%;}
+.searchform{background: #eee;height: 115px;width: 100%;margin-top:-20px;}
 .searchform input{height: 115px;line-height: 115px;float: left;width: 68%;padding:0 1%;margin:0 3%;border: 0;background: none;font-size: 18px;}
 .searchform button{height: 115px;line-height: 115px;cursor:pointer;float: right;width: 20%;border: 0;background: none;font-size: 18px;}
+
+/*newscrumbs*/
+.newscrumbs{width: 80%;margin: 0 auto;}
+.newscrumbs p{padding: 0 50px 30px}
+
+/*news 2 arrow*/
+.newsarrowsprev{background: url('../images/newsprev.png') no-repeat center;}
+.newsarrowsnext{background: url('../images/newsnext.png') no-repeat center;}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Clear Used
 ================================================================================================= */
