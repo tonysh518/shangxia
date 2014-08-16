@@ -100,6 +100,7 @@ a{text-decoration:none;outline: none;color:#444;}
 .detail h2{font-size:30px;padding:0 0 20px;text-transform : uppercase;line-height: 40px}
 .detail p{font-family: Garamond;font-size: 18px;font-style: italic;}
 .detail .arrows{height:180px;float: left;width: 16%;cursor: pointer;}
+.detail .arrows2{height: 44px;}
 .detailprev{background: url('../images/detailprev.png') no-repeat left center;}
 .detailnext{background: url('../images/detailnext.png') no-repeat right center;}
 .detailW6{width: 68%;margin: 0 auto}
@@ -133,11 +134,46 @@ a{text-decoration:none;outline: none;color:#444;}
 .prolistitem{text-transform : uppercase;float: left;width: 32.8%;margin-right: 0.8%;}
 .prolistitem img{display: block;margin: 0 0 10px;}
 .prolistitem p{background: #000;color:#fff;padding:12px;font-size: 18px;text-align: center ;}
+.newsitem p{background: #fff;color:#000	;}
 
 /*othercraf*/
 .othercraf{padding-bottom:50px;}
 .othercraftit h2{width: 320px;margin-left: -160px;}
 .othercrafcom p{padding: 20px 0}
+
+/*picinfor*/
+.picinfor{}
+.picinfortxt{float: left;width: 32.8%;font-size: 18px;}
+.picinfortxt h2{padding-right: 50px;height: 50px;font-size: 30px;}
+.picinfortxt p{font-family: Garamond;font-style: italic;padding-top: 20px;padding-right: 50px;}
+.picinforpic{float: right;width: 66.4%;overflow: hidden;}
+
+/*newsolder*/
+.newsoldertime{height: 44px;background: #EFEFEF;line-height: 46px;text-align: center;}
+.newsoldertime a{padding: 0 40px;font-size: 14px;}
+.newsoldertime .on{text-decoration: underline;}
+.newsolderbtn a{font-family: Garamond;font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px}
+
+/*newsnvents*/
+.newsnvents{text-align: center;font-size: 18px;}
+.newsnvents h3{font-size: 30px;text-transform: uppercase;padding: 30px 0;}
+.newsnvents p{font-family: Garamond;font-style: italic;padding: 20px 0 30px;}
+.newsnvents a{font-family: Garamond;font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px}
+
+/*press*/
+.press{padding-bottom: 80px;}
+.press .productstit h2{width: 180px;margin-left: -90px;}
+.pressitem{width: 24.4%;margin-right: 0.8%;}
+.pressitem p{background: #fff;color:#000;}
+
+
+
+
+
+
+
+
+
 
 /* Clear Used
 ================================================================================================= */
