@@ -130,30 +130,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 cb && cb();
             },
             'contact-page': function( cb ){
-                var _LP = window.LP;
-                LP.use('http://api0.map.bdimg.com/getscript?v=2.0&ak=AwxxvHue9bTdFietVWM4PLtk&services=&t=20140725172530' , function(){
-                    window.LP = _LP;
-                });
-                var interval = setInterval(function(){
-                    if( window.BMap ){
-                        clearInterval( interval );
-                        var oMap = new BMap.Map("map");
-                        oMap.addControl(new BMap.NavigationControl());
-                        var point = new BMap.Point(121.478988,31.227919);
-                        oMap.centerAndZoom(point, 15);
-                        //oMap.setMapStyle({style: 'grayscale'});
-                        oMap.setMapStyle({
-                          styleJson:[{
-                            "featureType": "all",
-                            "elementType": "all",
-                            "stylers": {
-                                      "lightness": 13,
-                                      "saturation": -100
-                            }
-                          }]
-                        });
-                    }
-                } , 100 );
+                
 
                 cb && cb();
                 
@@ -259,7 +236,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 // for  banpho-img
                 var $footer = $('.footer');
                 $(window).scroll(function(){
-                    var stTop = $(window).scrollTop() + headerHeight;
+                    var stTop = $(window).scrollTop();
                     var winHeight = $(window).height();
 
                     // fix up-fadein
@@ -270,10 +247,12 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                             var offTop = $dom.offset().top;
                             if( !$dom.data('init') && offTop < stTop + winHeight && offTop > stTop ){
                                 $dom.data('init' , 1);
-                                effects[ $dom.data('effect') ] && effects[ $dom.data('effect') ]( $dom , index , function(){
-                                    $dom.removeClass('intoview-effect');
-                                } );
-                                
+
+                                if( effects[ $dom.data('effect') ] ){
+                                    effects[ $dom.data('effect') ]( $dom , index++ , function(){
+                                        $dom.removeClass('intoview-effect');
+                                    } );
+                                }
                             }
                         });
                     }
@@ -281,7 +260,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 .trigger('scroll');
 
                 // init select
-                initSelect( $('select') );
+                // initSelect( $('select') );
 
                 return false;
             },
@@ -292,7 +271,106 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         }
     })();
 
-    
+    var loadingMgr = (function(){
+        var $loading = $('.loading-wrap');
+        if( !$loading.length )
+            $loading = $('<div class="loading-wrap"><div class="loading"></div></div>')
+                .appendTo(document.body);
+        var positions = [-44,-142,-240,-338,-436,-534];
+        var interval = null;
+
+        var colors = {
+            'black': 'rgba(0,0,0,.85)'
+        }
+        
+        return {
+            showLoading: function( $wrap ){
+                $('<div class="loading-wrap" style="position: absolute;"><div class="loading" style="position:absolute;"></div></div>').appendTo( $wrap )
+                    .fadeIn();
+                var $loading = $wrap.find('.loading');
+                clearInterval( $wrap.data('interval') );
+                var index = 0;
+                $wrap.data('interval' , setInterval(function(){
+                    $loading.css('background-position' , 'right ' +  positions[ ( index++ % positions.length ) ] + 'px' );
+                } , 1000 / 6 ) );
+            },
+            hideLoading: function( $wrap ){
+                clearInterval( $wrap.data('interval') );
+                $wrap.find('.loading-wrap').fadeOut();
+            },
+            show: function( bgcolor ){
+                var index = 0;
+                bgcolor = colors[bgcolor] || bgcolor || 'white';
+                var $inner = $loading.fadeIn().find('.loading');
+                $loading.css({
+                    'background-color':  bgcolor
+                });
+                clearInterval( interval );
+                interval = setInterval(function(){
+                    $inner.css('background-position' , 'right ' +  positions[ ( index++ % positions.length ) ] + 'px' );
+                } , 1000 / 6 );
+            },
+            hide: function(){
+                clearInterval( interval );
+                $loading.fadeOut();
+            }
+        }
+    })();
+
+    function initSlider( $wrap , config ){
+        var $slidebox = $wrap.find('.slidebox');
+        var $slidetabs = $wrap.find('.slidetab li');
+        var currentIndex = 0;
+        var length = $slidebox.children().length;
+
+        $slidebox.css( 'width' , length * 100 + '%' )
+            .children()
+            .css('width' , 1 / length * 100 + '%' );
+
+
+        $slidetabs.hover(function(){
+            $(this).addClass('on')
+                .siblings()
+                .removeClass('on');
+
+            var index = $(this).index();
+            $slidebox.stop(true).animate({
+                marginLeft: - index * 100 + '%'
+            } , 400 );
+        });
+    }
+
+    // page init here
+    // ==============================================================================
+    initSlider( $('.slide') );
+
+    // init map
+    var _LP = window.LP;
+    LP.use('http://api0.map.bdimg.com/getscript?v=2.0&ak=AwxxvHue9bTdFietVWM4PLtk&services=&t=20140725172530' , function(){
+        window.LP = _LP;
+    });
+    var interval = setInterval(function(){
+        if( window.BMap ){
+            clearInterval( interval );
+            var oMap = new BMap.Map("map");
+            oMap.addControl(new BMap.NavigationControl());
+            var point = new BMap.Point(121.478988,31.227919);
+            oMap.centerAndZoom(point, 15);
+            //oMap.setMapStyle({style: 'grayscale'});
+            oMap.setMapStyle({
+              styleJson:[{
+                "featureType": "all",
+                "elementType": "all",
+                "stylers": {
+                          "lightness": 13,
+                          "saturation": -100
+                }
+              }]
+            });
+        }
+    } , 100 );
+
+                
     // change history
     LP.use('../plugin/history.js' , function(){
         History.replaceState( { prev: '' } , undefined , location.href  );

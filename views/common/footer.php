@@ -1,24 +1,23 @@
 		<!-- footer -->
 		<div class="footer">		
 			<!-- location -->
-			<div class="location">
+			<div class="location intoview-effect" data-effect="fadeup">
 				<div class="range">
 					<p class="rangetxt">In addition to the range of homeware and accessories</p>
-					<a class="rangebtn" href="#">Leare more</a>
+					<a href="#" title="" class="rangebtn transition-wrap"><span class="transition">Leare more<br/><br/>Leare more</span></a>
 				</div>			
 			</div>
 			<!-- store -->
-			<div class="section store cs-clear">
+			<div class="section store cs-clear intoview-effect" data-effect="fadeup">
 				<div class="storechoose">
 					<h2>shanghai  store</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. Consectetur adipisicing elit, sed do eiusmod tempor incididunt, consectetur adipisicing elit, sed do eiusmod tempor incididunt, sed do eiusmod tempor incididunt, sed do eiusmod tempor incididunt ...</p>
 					<ul class="storechooselist cs-clear">
-						<li><a href="#">Paris store</a></li>
-						<li><a href="#">Beijing store</a></li>
+						<li><a href="#" title="" class="transition-wrap"><span class="transition">Paris store<br/>Paris store</span></a></li>
+						<li><a href="#" title="" class="transition-wrap"><span class="transition">Beijing store<br/>Beijing store</span></a></li>
 					</ul>
 				</div>
-				<div class="storemap">
-					<img src="../SX/images/footmap.jpg" width="100%" />
+				<div class="storemap" id="map" style="height:400px;">
 				</div>
 			</div>
 			<!-- sitelinks -->
