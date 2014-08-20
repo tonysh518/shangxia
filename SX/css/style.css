@@ -130,6 +130,7 @@ a{text-decoration:none;outline: none;color:#444;}
 .products{}
 .productstit{height: 100px;border-bottom: #000 solid 1px;position: relative;margin:0 0 110px;}
 .productstit h2{font-size: 30px;width: 420px;background: #fff;text-align: center;position: absolute;bottom:-14px;left:50%;margin-left:-210px;text-transform : uppercase;}
+.products-wrap{position: relative;}
 .proinfortxt{float: left;width: 32.8%;background: #F6EEEE}
 .proinfortxt h2{font-size: 18px;text-align: center;padding: 70px 50px 40px}
 .proinfortxt p{font-family: Garamond;font-size: 18px;font-style: italic;padding: 0 50px 40px}
@@ -194,13 +195,13 @@ a{text-decoration:none;outline: none;color:#444;}
 /*contactfrom*/
 .contactform .productstit{margin: 0 0 120px;height: 150px}
 .contactform .productstit h2{width: 500px;margin-left: -250px;line-height: 40px;bottom: -35px}
-.conformbox{width: 54%;margin: 0 auto;text-align: center;}
+.conformbox{width: 62%;margin: 0 auto;text-align: center;min-width: 620px;}
 .conformbox input{height: 42px;line-height: 42px;}
 .conformbox input,
 .conformbox textarea{display: block;width: 100%;border: #000 solid 1px}
 .conformtit{font-size: 18px;line-height: 40px;}
 .conformcheck input{float: left;width: 28px;}
-.conformcheck span{float: left;line-height: 48px;}
+.conformcheck span{float: left;line-height: 48px;font-style: italic;}
 .conformcheck a{text-decoration: underline;}
 .conformbtn{font-size: 18px;cursor:pointer;color:#fff;background: #000;text-align: center;border: 0;width: 290px;height: 66px;margin: 40px 0;}
 
@@ -213,9 +214,9 @@ a{text-decoration:none;outline: none;color:#444;}
 .collpictit h2{width: 230px;margin-left: -115px;}
 .collpictit2 h2{width: 300px;margin-left: -150px;}
 
-.collarrows{float: left;width: 10%;height: 100px}
-.collarrowsprev{background: url('../images/detailprev.png') no-repeat center;}
-.collarrowsnext{background: url('../images/detailnext.png') no-repeat center;}
+.collarrows{position: absolute;left: -10%;height: 100%;width: 10%;top: 0; cursor: pointer;}
+.collarrowsprev{background: url('../images/detailprev.png') no-repeat center 30%;}
+.collarrowsnext{background: url('../images/detailnext.png') no-repeat center 30%;left: 100%;}
 .collcon{float: left;}
 
 /*colllisticon*/

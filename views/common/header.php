@@ -19,11 +19,11 @@
 				<li><a href="#" title="">CRAFTS</a></li>
 				<li><a href="#" title="">BOUTIQUES</a></li>
 			</ul>
-			<h1 class="logo"><a href="#"></a></h1>
+			<h1 class="logo"><a href="./index.php"></a></h1>
 			<ul class="nav nav2">
-				<li><a href="#" title="">NEWS</a></li>
+				<li><a href="./news.php" title="">NEWS</a></li>
 				<li><a href="#" title="">ABOUT</a></li>
-				<li><a href="#" title="">CONTACT</a></li>
+				<li><a href="./contact.php" title="">CONTACT</a></li>
 			</ul>
 			<!--  -->
 			<div class="hd_oter cs-clear">

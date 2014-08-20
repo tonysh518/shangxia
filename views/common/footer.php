@@ -82,19 +82,5 @@
     document.execCommand("BackgroundImageCache", false, true);
 </script>
 <![endif]-->
-
-<script type="text/javascript" src="http://sz.duowan.com/s/jquery/jquery.js"></script>
-<script type="text/javascript">
-	$(function(){
-		$('.knowhowintro').each(function(){
-			var h = $(this).parent('.knowhowitem').children('.knowhowpic').height()
-			$(this).css('padding-top' , h/3)
-		})
-		$('.collpiclist').each(function(){
-			var h = $(this).children('.collcon').height() + 140
-			$(this).children('.collarrows').height(h)
-		})
-	})
-</script>
 </body>
 </html>
