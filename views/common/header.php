@@ -15,15 +15,15 @@
 		<!-- head -->
 		<div class="head cs-clear">
 			<ul class="nav nav1">
-				<li><a href="#" title="">COLLECTIONS</a></li>
-				<li><a href="#" title="">CRAFTS</a></li>
-				<li><a href="#" title="">BOUTIQUES</a></li>
+				<li><a data-a="nav-link" href="#" title="">COLLECTIONS</a></li>
+				<li><a data-a="nav-link" href="#" title="">CRAFTS</a></li>
+				<li><a data-a="nav-link" href="#" title="">BOUTIQUES</a></li>
 			</ul>
-			<h1 class="logo"><a href="./index.php"></a></h1>
+			<h1 class="logo"><a data-a="nav-link" href="./index.php"></a></h1>
 			<ul class="nav nav2">
-				<li><a href="./news.php" title="">NEWS</a></li>
-				<li><a href="#" title="">ABOUT</a></li>
-				<li><a href="./contact.php" title="">CONTACT</a></li>
+				<li><a data-a="nav-link" href="./news.php" title="">NEWS</a></li>
+				<li><a data-a="nav-link" href="#" title="">ABOUT</a></li>
+				<li><a data-a="nav-link" href="./contact.php" title="">CONTACT</a></li>
 			</ul>
 			<!--  -->
 			<div class="hd_oter cs-clear">

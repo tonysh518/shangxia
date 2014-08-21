@@ -122,8 +122,49 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
     
     var pageManager = (function(){
+        var $header = $('.head');
         var pageInits = {
             'home-page' : function( cb ){
+                var $slider = $('#home-slider');
+                var slideHeight = $slider.children().height();
+                $(window).scroll(function(){
+                    var stTop = $(window).scrollTop();
+                    var winHeight = $(window).height();
+
+                    // fix home slider
+                    var mtop = Math.min( stTop , slideHeight / 2 );
+                    $slider
+                        .css({
+                            height: slideHeight - 2 * mtop,
+                            overflow: 'hidden'
+                        })
+                        .find('img')
+                        .css({marginTop: - mtop , marginBottom: - mtop * 2 / 3});
+
+                    // // header fixed effect
+                    if( stTop >= $header.offset().top ){
+                        $header.addClass('header-fixed');
+                    } else {
+                        $header.removeClass('header-fixed');
+                    }
+
+                    // homeCampaign animate
+
+                    // if($('.cam_item').eq(0).offset().top < stTop + $(window).height() ){
+                    //     $homeCampaign.data('animate' , 1);
+                    //     $homeCampaign.find('.cam_item')
+                    //         .each(function( i ){
+                    //             $(this).delay( i * 200 )
+                    //                 .animate({
+                    //                     marginTop: 0
+                    //                 } , 400 , 'easeLightOutBack');
+                    //         });
+                    //     $('.home_cambtn').delay( 4 * 200 )
+                    //         .animate({
+                    //             bottom: 90
+                    //         } , 400 , 'easeLightOutBack' );
+                    // }
+                });
                 cb && cb();
             },
             'awards-page': function( cb ){
@@ -220,8 +261,8 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             },
             init: function(){
                 loadingMgr.show();
-                var $page = $('.page');
-                var fn = pageInits[ $page.data('page') ];
+                var page = $('input[name="page-indentity"]').val();
+                var fn = pageInits[ page ];
 
                 if( fn ){
                     fn( function(){
@@ -259,9 +300,24 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 })
                 .trigger('scroll');
 
-                // init select
-                // initSelect( $('select') );
+                // init slide
+                $('.slide').each(function(){
+                    initSlider( $(this) );
+                });
 
+
+                // init horizontal slide
+                $('.js-horizontal-slide').each(function(){
+                    var $dom = $(this);
+                    var wrapWidth = $dom.width();
+                    var num = $dom.data('num') || 3;
+                    var $items = $dom.find('.slide-con-inner').children();
+
+                    $dom.find('.slide-con-inner').width( $items.length / 3 * 100 + '%' );
+                    var marginRight = parseInt( $items.css('margin-right') );
+                    console.log( marginRight );
+                    $items.width( 1 / $items.length * 100 - marginRight + '%' );
+                });
                 return false;
             },
             destroy: function(){
@@ -322,7 +378,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         var $slidetabs = $wrap.find('.slidetab li');
         var currentIndex = 0;
         var length = $slidebox.children().length;
-
+        console.log( $slidebox.children() );
         $slidebox.css( 'width' , length * 100 + '%' )
             .children()
             .css('width' , 1 / length * 100 + '%' );
@@ -340,9 +396,114 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         });
     }
 
+
+    function disposeVideo(){
+        $(document.body).find('.video-wrap').parent()
+            .each(function(){
+                var video = $(this).data('video-object');
+                try{video && video.dispose();}catch(e){}
+                $(this).removeData('video-object').find('.video-wrap').remove();
+            });
+    }
+
+    function renderVideo ( $wrap , movie , poster , config , cb ){
+        var id = 'video-js-' + ( $.guid++ );
+        $wrap.append( LP.format( '<div class="video-wrap" style="display:none;"><video id="#[id]" style="width: 100%;height: 100%;" class="video-js vjs-default-skin"\
+            preload="auto"\
+              poster="#[poster]">\
+             <source src="#[videoFile].mp4" type="video/mp4" />\
+             <source src="#[videoFile].webm" type="video/webm" />\
+             <source src="#[videoFile].ogv" type="video/ogg" />\
+        </video></div>' , {id: id  , videoFile: movie , poster: poster}));
+
+        config = $.extend( { "controls": false, "muted": false, "autoplay": false, "preload": "auto","loop": true, "children": {"loadingSpinner": false} } , config || {} );
+        var ratio = config.ratio || 9/16;
+
+        LP.use('video-js' , function(){
+            var is_playing = false;
+            videojs.options.flash.swf = "/js/video-js/video-js.swf";
+            var myVideo = videojs( id , config , function(){
+                var v = this;
+                if( config.resize !== false ){
+                    var resizeFn = function(){
+                        var w = $wrap.width()  ;
+                        var h = $wrap.height() ;
+                        var vh = 0 ;
+                        var vw = 0 ;
+                        if( h / w > ratio ){
+                            vh = h + 40;
+                            vw = vh / ratio;
+                        } else {
+                            vw = w + 40;
+                            vh = vw * ratio;
+                        }
+
+                        try{v.dimensions( vw , vh );}catch(e){}
+
+                        $('#' + v.Q).css({
+                            "margin-top": ( h - vh ) / 2,
+                            "margin-left": ( w - vw ) / 2
+                        });
+                        return false;
+                    }
+                    $(window).bind( 'resize.video-' + id , resizeFn )
+                        .trigger('resize.video-' + id);
+
+                    $wrap.bind('resize.video-' + id , resizeFn);
+                }
+                setTimeout(function(){
+                    $wrap.find('.video-wrap').fadeIn();
+                    if( config.autoplay ){
+                        try{myVideo.play();}catch(e){}
+                    } else if( config.pause_button ){
+                        $wrap.find('.vjs-big-play-button').fadeIn();
+                    }
+                } , 20);
+
+                // if need to add pause button
+                if( config.pause_button ){
+                    if( !config.controls ){
+                        $wrap.off('click.video-operation').on('click.video-operation' , function(){
+                            if( is_playing ){
+                                v.pause();
+                            } else {
+                                v.play();
+                            }
+                        });    
+                    }
+                    // add big pause btn
+                    v.on('play' , function(){
+                        is_playing = true;
+                        $wrap.find('.vjs-big-play-button').hide();
+                        var $pauseBtn = $wrap.find('.vjs-big-pause-button');
+                        if( !$pauseBtn.length ){
+                            $pauseBtn = $('<div class="vjs-big-pause-button"></div>').insertAfter( $wrap.find('.vjs-big-play-button') )
+                                .click(function(){
+                                    v.pause();
+                                });
+                        }
+                        $pauseBtn.show()
+                            .delay( 4000 )
+                            .fadeOut();
+                    });
+
+                    v.on('pause' , function(){
+                        is_playing = false;
+                        $wrap.find('.vjs-big-pause-button').hide();
+                        $wrap.find('.vjs-big-play-button').fadeIn();
+                    });
+                }
+
+
+                $wrap.data('video-object' , v);
+
+                cb && cb(v);
+            } );
+        });
+    }
+
     // page init here
     // ==============================================================================
-    initSlider( $('.slide') );
 
     // init map
     var _LP = window.LP;
@@ -362,15 +523,15 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 "featureType": "all",
                 "elementType": "all",
                 "stylers": {
-                          "lightness": 13,
-                          "saturation": -100
+                  "lightness": 13,
+                  "saturation": -100
                 }
               }]
             });
         }
     } , 100 );
 
-                
+
     // change history
     LP.use('../plugin/history.js' , function(){
         History.replaceState( { prev: '' } , undefined , location.href  );
@@ -395,13 +556,13 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             switch( type ){
                 default: 
                     $.get( location.href , '' , function( html ){
-                        html = $('<div>' + html + '</div>').find('.container')
+                        html = $('<div>' + html + '</div>').find('.wrap')
                             .html();
-                        $( '.container' ).children(':not(.header)').animate({
+                        $( '.wrap' ).children().animate({
                             opacity: 0
                         } , 500);
                         setTimeout(function(){
-                            $( '.container' ).html( html ).children('.page')
+                            $( '.wrap' ).html( html )
                                 .fadeIn();
                             //pagetitarrbottom
 
@@ -420,5 +581,27 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
     // page actions here
     // ============================================================================
-    
+    LP.action('nav-link' , function(){
+        disposeVideo();
+        // load next page
+        var href = $(this).attr('href');
+        pageManager.go( href );
+
+        return false;
+    });
+
+
+    LP.action('collarrowsprev' , function(){
+        var $com = $(this).siblings('slide-con');
+
+        return false;
+    });
+
+    LP.action('homepage-watch-video' , function(){
+        disposeVideo();
+        var $dom = $(this);
+        var video = $dom.data('video');
+        renderVideo( $dom.closest('li') , video , $dom.find('img').attr('src') , {autoplay: true} );
+        return false;
+    });
 });

@@ -1,5 +1,6 @@
 <?php  $homepage = 1; ?>
 <?php include_once 'common/header.php';?>
+	<input name="page-indentity" type="hidden" value="home-page"/>
 	<!-- intro -->
 	<div class="section intoview-effect" data-effect="fadeup">
 		<div class="intro">
@@ -28,10 +29,38 @@
 	<!-- slide -->
 	<div class="slide intoview-effect" data-effect="fadeup">
 		<div class="slidebox cs-clear">
-			<a href="#" class="slideitem"><img src="../SX/images/homepage_demo2.jpg" width="100%" /></a>
-			<a href="#" class="slideitem"><img src="../SX/images/homepage_demo2.jpg" width="100%" /></a>
-			<a href="#" class="slideitem"><img src="../SX/images/homepage_demo2.jpg" width="100%" /></a>
-			<a href="#" class="slideitem"><img src="../SX/images/homepage_demo2.jpg" width="100%" /></a>
+			<li href="#" class="slideitem">
+				<img src="../SX/images/homepage_demo2.jpg" width="100%" />
+				<div class="slidetip">
+					<span class="slidetip2-tit">chinese craftmanship</span> <br>
+					<span class="slidetip2-index">1/4</span> <br>
+					<a href="#" title="" data-video="../SX/video/small" data-a="homepage-watch-video" class="btn btn-white transition-wrap"><i class="transition">Watch video<br/><br/>Watch video</i></a>
+				</div>
+			</li>
+			<li href="#" class="slideitem">
+				<img src="../SX/images/homepage_demo2.jpg" width="100%" />
+				<div class="slidetip">
+					<span class="slidetip2-tit">chinese craftmanship</span> <br>
+					<span class="slidetip2-index">2/4</span> <br>
+					<a href="#" title="" data-video="../SX/video/small" data-a="homepage-watch-video" class="btn btn-white transition-wrap"><i class="transition">Watch video<br/><br/>Watch video</i></a>
+				</div>
+			</li>
+			<li href="#" class="slideitem">
+				<img src="../SX/images/homepage_demo2.jpg" width="100%" />
+				<div class="slidetip">
+					<span class="slidetip2-tit">chinese craftmanship</span> <br>
+					<span class="slidetip2-index">3/4</span> <br>
+					<a href="#" title="" data-video="../SX/video/small" data-a="homepage-watch-video" class="btn btn-white transition-wrap"><i class="transition">Watch video<br/><br/>Watch video</i></a>
+				</div>
+			</li>
+			<li href="#" class="slideitem">
+				<img src="../SX/images/homepage_demo2.jpg" width="100%" />
+				<div class="slidetip">
+					<span class="slidetip2-tit">chinese craftmanship</span> <br>
+					<span class="slidetip2-index">4/4</span> <br>
+					<a href="#" title="" data-video="../SX/video/small" data-a="homepage-watch-video" class="btn btn-white transition-wrap"><i class="transition">Watch video<br/><br/>Watch video</i></a>
+				</div>
+			</li>
 		</div>
 		<ul class="slidetab cs-clear">
 			<li class="on"></li>

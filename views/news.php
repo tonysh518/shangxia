@@ -47,33 +47,77 @@
 				<div class="productstit othercraftit intoview-effect" data-effect="fadeup">
 					<h2>older news</h2>
 				</div>
-				<div class="productscom intoview-effect" data-effect="fadeup">
-					<div class="newsoldertime">
-						<a href="#">2010</a>
-						<a href="#">2011</a>
-						<a href="#">2012</a>
-						<a class="on" href="#">2013</a>
-						<a href="#">2014</a>
-					</div>
+				<div class="productscom intoview-effect slide" data-effect="fadeup">
+					<ul class="newsoldertime slidetab">
+						<li class="on"><a href="#">2010</a></li>
+						<li><a href="#">2011</a></li>
+						<li><a href="#">2012</a></li>
+						<li><a href="#">2013</a></li>
+						<li><a href="#">2014</a></li>
+					</ul>
 					<!--  -->
-					<div class="productslist cs-clear">
-						<div class="prolistitem newsitem">
-							<img src="../SX/images/newsdemo2.jpg" width="100%" />
-							<p>PARIS STORE OPENING<br />2013 OCT 25</p>
-						</div>
-						<div class="prolistitem newsitem">
-							<img src="../SX/images/newsdemo2.jpg" width="100%" />
-							<p>PARIS STORE OPENING<br />2013 OCT 25</p>
-						</div>
-						<div class="prolistitem newsitem marginR0">
-							<img src="../SX/images/newsdemo2.jpg" width="100%" />
-							<p>PARIS STORE OPENING<br />2013 OCT 25</p>
-						</div>
-					</div>
-					<!--  -->
-					<div class="newsolderbtn intoview-effect" data-effect="fadeup">
-						<a href="#" title="" class="transition-wrap"><span class="transition">View all news<br/><br/>View all news</span></a>
-					</div>
+					<ul class="slidebox">
+						<li class="productslist cs-clear slideitem">
+							<div class="prolistitem newsitem">
+								<img src="../SX/images/newsdemo2.jpg" width="100%" />
+								<p>PARIS STORE OPENING<br />2013 OCT 25</p>
+							</div>
+							<div class="prolistitem newsitem">
+								<img src="../SX/images/newsdemo2.jpg" width="100%" />
+								<p>PARIS STORE OPENING<br />2013 OCT 25</p>
+							</div>
+							<div class="prolistitem newsitem marginR0">
+								<img src="../SX/images/newsdemo2.jpg" width="100%" />
+								<p>PARIS STORE OPENING<br />2013 OCT 25</p>
+							</div>
+						</li>
+						<li class="productslist cs-clear slideitem">
+							<div class="prolistitem newsitem">
+								<img src="../SX/images/newsdemo2.jpg" width="100%" />
+								<p>PARIS STORE OPENING<br />2013 OCT 25</p>
+							</div>
+							<div class="prolistitem newsitem">
+								<img src="../SX/images/newsdemo2.jpg" width="100%" />
+								<p>PARIS STORE OPENING<br />2013 OCT 25</p>
+							</div>
+							<div class="prolistitem newsitem marginR0">
+								<img src="../SX/images/newsdemo2.jpg" width="100%" />
+								<p>PARIS STORE OPENING<br />2013 OCT 25</p>
+							</div>
+						</li>
+						<li class="productslist cs-clear slideitem">
+							<div class="prolistitem newsitem">
+								<img src="../SX/images/newsdemo2.jpg" width="100%" />
+								<p>PARIS STORE OPENING<br />2013 OCT 25</p>
+							</div>
+							<div class="prolistitem newsitem">
+								<img src="../SX/images/newsdemo2.jpg" width="100%" />
+								<p>PARIS STORE OPENING<br />2013 OCT 25</p>
+							</div>
+							<div class="prolistitem newsitem marginR0">
+								<img src="../SX/images/newsdemo2.jpg" width="100%" />
+								<p>PARIS STORE OPENING<br />2013 OCT 25</p>
+							</div>
+						</li>
+						<li class="productslist cs-clear slideitem">
+							<div class="prolistitem newsitem">
+								<img src="../SX/images/newsdemo2.jpg" width="100%" />
+								<p>PARIS STORE OPENING<br />2013 OCT 25</p>
+							</div>
+							<div class="prolistitem newsitem">
+								<img src="../SX/images/newsdemo2.jpg" width="100%" />
+								<p>PARIS STORE OPENING<br />2013 OCT 25</p>
+							</div>
+							<div class="prolistitem newsitem marginR0">
+								<img src="../SX/images/newsdemo2.jpg" width="100%" />
+								<p>PARIS STORE OPENING<br />2013 OCT 25</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!--  -->
+				<div class="newsolderbtn intoview-effect" data-effect="fadeup">
+					<a href="#" title="" class="transition-wrap"><span class="transition">View all news<br/><br/>View all news</span></a>
 				</div>
 			</div>
 		</div>
@@ -88,8 +132,8 @@
 					<img src="../SX/images/newsdemo3.jpg" class="intoview-effect" data-effect="fadeup" width="100%" alt="">
 					<h3 class="intoview-effect" data-effect="fadeup">shang xia maison opening </h3>
 					<h4  class="intoview-effect" data-effect="fadeup">2014 SEP 09</h4>
-					<p  class="intoview-effect" data-effect="fadeup">This aurum, the SHANG XIA, maision will be opened on Hua Hai Road, Shanghai.<br />A new journey ....     Read more   </p>
-					<a href="#" title="" class="transition-wrap"><span class="transition">View all events<br/><br/>View all events</span></a>
+					<p  class="intoview-effect" data-effect="fadeup">This aurum, the SHANG XIA, maision will be opened on Hua Hai Road, Shanghai.<br />A new journey ....     <a class="more" href="#">Read more</a> </p>
+					<a href="#" title="" class="btn transition-wrap"><span class="transition">View all events<br/><br/>View all events</span></a>
 				</div>
 			</div>
 		</div>
@@ -99,26 +143,46 @@
 				<div class="productstit intoview-effect" data-effect="fadeup">
 					<h2>press</h2>
 				</div>
-				<div class="productscom">
+				<div class="productscom js-horizontal-slide" data-num="3">
+					<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
 					<!--  -->
-					<div class="productslist cs-clear">
-						<div class="prolistitem pressitem intoview-effect" data-effect="fadeup">
-							<img src="../SX/images/newsdemo4.jpg" width="100%" />
-							<p>life week<br />jan  2014</p>
-						</div>
-						<div class="prolistitem pressitem intoview-effect" data-effect="fadeup">
-							<img src="../SX/images/newsdemo4.jpg" width="100%" />
-							<p>life week<br />jan  2014</p>
-						</div>
-						<div class="prolistitem pressitem intoview-effect" data-effect="fadeup">
-							<img src="../SX/images/newsdemo4.jpg" width="100%" />
-							<p>life week<br />jan  2014</p>
-						</div>
-						<div class="prolistitem pressitem marginR0 intoview-effect" data-effect="fadeup">
-							<img src="../SX/images/newsdemo4.jpg" width="100%" />
-							<p>life week<br />jan  2014</p>
+					<div class="slide-con">
+						<div class="productslist cs-clear slide-con-inner">
+							<div class="prolistitem pressitem intoview-effect" data-effect="fadeup">
+								<img src="../SX/images/newsdemo4.jpg" width="100%" />
+								<p>life week<br />jan  2014</p>
+							</div>
+							<div class="prolistitem pressitem intoview-effect" data-effect="fadeup">
+								<img src="../SX/images/newsdemo4.jpg" width="100%" />
+								<p>life week<br />jan  2014</p>
+							</div>
+							<div class="prolistitem pressitem intoview-effect" data-effect="fadeup">
+								<img src="../SX/images/newsdemo4.jpg" width="100%" />
+								<p>life week<br />jan  2014</p>
+							</div>
+							<div class="prolistitem pressitem marginR0 intoview-effect" data-effect="fadeup">
+								<img src="../SX/images/newsdemo4.jpg" width="100%" />
+								<p>life week<br />jan  2014</p>
+							</div>
+							<div class="prolistitem pressitem intoview-effect" data-effect="fadeup">
+								<img src="../SX/images/newsdemo4.jpg" width="100%" />
+								<p>life week<br />jan  2014</p>
+							</div>
+							<div class="prolistitem pressitem intoview-effect" data-effect="fadeup">
+								<img src="../SX/images/newsdemo4.jpg" width="100%" />
+								<p>life week<br />jan  2014</p>
+							</div>
+							<div class="prolistitem pressitem intoview-effect" data-effect="fadeup">
+								<img src="../SX/images/newsdemo4.jpg" width="100%" />
+								<p>life week<br />jan  2014</p>
+							</div>
+							<div class="prolistitem pressitem marginR0 intoview-effect" data-effect="fadeup">
+								<img src="../SX/images/newsdemo4.jpg" width="100%" />
+								<p>life week<br />jan  2014</p>
+							</div>
 						</div>
 					</div>
+					<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
 					<!--  -->
 					<div class="newsolderbtn">
 						<a href="#" title="" class="transition-wrap"><span class="transition">View all  press articles<br/><br/>View all  press articles</span></a>
