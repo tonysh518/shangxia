@@ -4,51 +4,51 @@
 			<div class="detail cs-clear">
 				<div class="arrows detailprev"></div>
 				<div class=" detailcon">
-					<h2>SHANG XIA CASHMERE FELT</h2>
-					<p>Created by expertly skilled master craftsmen, using similar techniques to those used when hand-felting fabric for Mongolian yurts, these sculpted garments are made in felt. Inspired by traditional Han dynasty clothing, this collection reflects the traditional elegance of Chinese style. Each garment is unique and sculpted into a seamless shape to create a 3-dimensional garment in felt of Mongolian cashmere. Wrapped in style, one will surely remain warm in winter. </p>
+					<h2 class="intoview-effect" data-effect="fadeup">SHANG XIA CASHMERE FELT</h2>
+					<p class="intoview-effect" data-effect="fadeup">Created by expertly skilled master craftsmen, using similar techniques to those used when hand-felting fabric for Mongolian yurts, these sculpted garments are made in felt. Inspired by traditional Han dynasty clothing, this collection reflects the traditional elegance of Chinese style. Each garment is unique and sculpted into a seamless shape to create a 3-dimensional garment in felt of Mongolian cashmere. Wrapped in style, one will surely remain warm in winter. </p>
 				</div>
 				<div class="arrows detailnext"></div>
 			</div>
 		</div>
 		<!-- video -->
-		<div class="video"><img src="../SX/images/videodemo.jpg" width="100%" /></div>
+		<div class="video intoview-effect" data-effect="fadeup"><img src="../SX/images/videodemo.jpg" width="100%" /></div>
 		<!-- barbg -->
-		<div class="barbg"></div>
+		<div class="barbg intoview-effect" data-effect="fadeup"></div>
 		<!-- detail -->
 		<div class="section ">
 			<div class="detail detailW6 cs-clear">
-					<h2>Body and Soul Together<br />Seamless Clothing</h2>
-					<p>Felt making is an ancient technique invented by herdsman to make non-woven cloth. Herdsmen use felt to make their rugs, yurts, clothing and cooking utensils. As nomadic peoples used these skills used to make yurts, the same skills, combined with original innovative designs, are used to create seamless felted cashmere one-off and unique garments with no stitching.</p>
+					<h2 class="intoview-effect" data-effect="fadeup">Body and Soul Together<br />Seamless Clothing</h2>
+					<p class="intoview-effect" data-effect="fadeup">Felt making is an ancient technique invented by herdsman to make non-woven cloth. Herdsmen use felt to make their rugs, yurts, clothing and cooking utensils. As nomadic peoples used these skills used to make yurts, the same skills, combined with original innovative designs, are used to create seamless felted cashmere one-off and unique garments with no stitching.</p>
 			</div>
 		</div>
 		<!-- know how -->
 		<div class="section">
 			<div class="knowhow">
-				<div class="knowhowtit">
+				<div class="knowhowtit intoview-effect" data-effect="fadeup">
 					<h2>KNOW - HOW</h2>
 				</div>
 				<div class="knowhowcom ">
-					<div class="knowhowitem cs-clear">
+					<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 						<div class="knowhowintro  knowhowL">GATHERING</div>
 						<div class="knowhowpic  knowhowR"><img src="../SX/images/knowhowpic.jpg" width="100%" /></div>
 					</div>
-					<div class="knowhowitem cs-clear">
+					<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 						<div class="knowhowintro  knowhowR">SELECTING<br />THE CASHMERE</div>
 						<div class="knowhowpic  knowhowL"><img src="../SX/images/knowhowpic.jpg" width="100%" /></div>
 					</div>
-					<div class="knowhowitem cs-clear">
+					<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 						<div class="knowhowintro2  knowhowL"><p>COMBING <a href="#">read</a> </p></div>
 						<div class="knowhowpic  knowhowR"><img src="../SX/images/knowhowpic.jpg" width="100%" /></div>
 					</div>
-					<div class="knowhowitem cs-clear">
+					<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 						<div class="knowhowintro  knowhowR">ROLLING THE FELT</div>
 						<div class="knowhowpic  knowhowL"><img src="../SX/images/knowhowpic.jpg" width="100%" /></div>
 					</div>
-					<div class="knowhowitem cs-clear">
+					<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 						<div class="knowhowintro  knowhowL">CREATING<br />CLOTHING</div>
 						<div class="knowhowpic  knowhowR"><img src="../SX/images/knowhowpic.jpg" width="100%" /></div>
 					</div>
-					<div class="knowhowitem cs-clear">
+					<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 						<div class="knowhowintro  knowhowR">SHRINKING<br />THE CLOTHING</div>
 						<div class="knowhowpic  knowhowL"><img src="../SX/images/knowhowpic.jpg" width="100%" /></div>
 					</div>
@@ -58,17 +58,17 @@
 		<!-- related products -->
 		<div class="section">
 			<div class="products">
-				<div class="productstit">
+				<div class="productstit intoview-effect" data-effect="fadeup">
 					<h2>related products</h2>
 				</div>
 				<div class="productscom">
 					<div class="productsinfor cs-clear">
-						<div class="proinfortxt">
+						<div class="proinfortxt intoview-effect" data-effect="fadeup">
 							<h2>Hand Sculpture Clothing</h2>
 							<p>Felt making is an ancient technique invented by herdsman to make non-woven cloth. Herdsmen use felt to make their rugs, yurts, clothing and cooking utensils. As nomadic peoples used these skills used to make yurts, the same skills, combined with original innovative designs, are used to create seamless felted cashmere one-off and unique garments with no stitchingFelt making is an ancient technique invented by herdsman to make non-woven cloth. Herdsmen use felt to make their rugs, yurts, clothing and cooking utensils. As nomadic peoples used these skills used to make yurts, the same skills, combined with original innovative designs, are used to create seamless felted cashmere one-off and unique garments with no stitching</p>
 							<a href="#">Read more</a>
 						</div>
-						<div class="proinforpic">
+						<div class="proinforpic intoview-effect" data-effect="fadeup">
 							<div class="slide">
 								<div class="slidebox cs-clear">
 									<img class="slideitem" src="../SX/images/proinfopic.jpg" width="100%" />
@@ -88,15 +88,15 @@
 					</div>
 					<!--  -->
 					<div class="productslist cs-clear">
-						<div class="prolistitem">
+						<div class="prolistitem intoview-effect" data-effect="fadeup">
 							<img src="../SX/images/proinfopic.jpg" width="100%" />
 							<p>sculpture<br />In & out</p>
 						</div>
-						<div class="prolistitem">
+						<div class="prolistitem intoview-effect" data-effect="fadeup">
 							<img src="../SX/images/proinfopic.jpg" width="100%" />
 							<p>sculpture<br />In & out</p>
 						</div>
-						<div class="prolistitem marginR0">
+						<div class="prolistitem marginR0 intoview-effect" data-effect="fadeup">
 							<img src="../SX/images/proinfopic.jpg" width="100%" />
 							<p>sculpture<br />In & out</p>
 						</div>
@@ -107,21 +107,21 @@
 		<!--  other crafts -->
 		<div class="section">
 			<div class="products othercraf">
-				<div class="productstit othercraftit">
+				<div class="productstit othercraftit intoview-effect" data-effect="fadeup">
 					<h2>other crafts</h2>
 				</div>
 				<div class="productscom othercrafcom">
 					<!--  -->
 					<div class="productslist cs-clear">
-						<div class="prolistitem">
+						<div class="prolistitem intoview-effect" data-effect="fadeup">
 							<img src="../SX/images/craftdemo.jpg" width="100%" />
 							<p>zitan wood</p>
 						</div>
-						<div class="prolistitem">
+						<div class="prolistitem intoview-effect" data-effect="fadeup">
 							<img src="../SX/images/craftdemo.jpg" width="100%" />
 							<p>zitan wood</p>
 						</div>
-						<div class="prolistitem marginR0">
+						<div class="prolistitem marginR0 intoview-effect" data-effect="fadeup">
 							<img src="../SX/images/craftdemo.jpg" width="100%" />
 							<p>zitan wood</p>
 						</div>

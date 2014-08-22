@@ -143,9 +143,9 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
                     // // header fixed effect
                     if( stTop >= $header.offset().top ){
-                        $header.addClass('header-fixed');
+                        $header.find('.head-fixed').css('position' , 'fixed');
                     } else {
-                        $header.removeClass('header-fixed');
+                        $header.find('.head-fixed').css('position' , 'static');
                     }
 
                     // homeCampaign animate
@@ -314,7 +314,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     var $items = $dom.find('.slide-con-inner').children();
 
                     $dom.find('.slide-con-inner').width( $items.length / 3 * 100 + '%' );
-                    var marginRight = parseInt( $items.css('margin-right') );
+                    var marginRight = 0.8;//parseInt( $items.css('margin-right') );
                     console.log( marginRight );
                     $items.width( 1 / $items.length * 100 - marginRight + '%' );
                 });
@@ -581,12 +581,47 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
     // page actions here
     // ============================================================================
+    LP.action('nav-pop' , function(){
+        $(this).closest('li').addClass('active').siblings().removeClass('active');
+        var text = $.trim( $(this).text() ).toLowerCase();
+        var $inner = $(this).closest('.head-inner');
+        $inner.attr('class' , 'head-inner cs-clear active-' + text );
+        
+        $('.nav-bg').fadeIn();
+        $('.nav-pop').fadeOut();
+        $('.nav-pop-' + text ).stop(true , true).fadeIn();
+        $('.nav-mask').fadeIn();
+        return false;
+    });
+
+    LP.action('nav-mask' , function(){
+        var $inner = $('.head-inner').attr('class' , 'head-inner cs-clear');
+
+        $('.nav-bg').fadeOut();
+        $('.nav-pop').fadeOut();
+        $('.nav-mask').fadeOut();
+
+        return false;
+    });
+
     LP.action('nav-link' , function(){
         disposeVideo();
         // load next page
         var href = $(this).attr('href');
         pageManager.go( href );
 
+        return false;
+    });
+
+    LP.action('show-search-form' , function(){
+        if( $('.searchform').is(':hidden') ){
+            $('.searchform').fadeIn()
+                .find('input')
+                .focus();
+        } else {
+            $('.searchform').fadeOut();
+        }
+        
         return false;
     });
 
