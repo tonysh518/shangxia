@@ -1156,3 +1156,532 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/favicon.ico
 ---
+2014/08/23 12:03:43 [error] [php] array_push() expects parameter 1 to be array, null given (/Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php:47)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionTest()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): PageController->runAction()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): PageController->runActionWithFilters()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): PageController->run()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php/page/test
+2014/08/23 12:03:57 [error] [exception.CException] exception 'CException' with message 'ContentAR and its behaviors do not have a method or closure named "reload".' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:266
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(227): CComponent->__call('reload', Array)
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(128): CActiveRecord->__call('reload', Array)
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(128): ContentAR->reload()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionTest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('test')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/test')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/page/test
+---
+2014/08/23 12:04:06 [error] [exception.CException] exception 'CException' with message 'ContentAR and its behaviors do not have a method or closure named "reload".' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:266
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(227): CComponent->__call('reload', Array)
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(128): CActiveRecord->__call('reload', Array)
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(128): ContentAR->reload()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionTest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('test')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/test')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/page/test
+---
+2014/08/23 12:04:06 [error] [exception.CException] exception 'CException' with message 'ContentAR and its behaviors do not have a method or closure named "reload".' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:266
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(227): CComponent->__call('reload', Array)
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(128): CActiveRecord->__call('reload', Array)
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(128): ContentAR->reload()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionTest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('test')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/test')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/page/test
+---
+2014/08/23 12:04:07 [error] [exception.CException] exception 'CException' with message 'ContentAR and its behaviors do not have a method or closure named "reload".' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:266
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(227): CComponent->__call('reload', Array)
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(128): CActiveRecord->__call('reload', Array)
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(128): ContentAR->reload()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionTest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('test')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/test')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/page/test
+---
+2014/08/23 12:08:10 [error] [exception.CException] exception 'CException' with message '属性 "ContentAR.collection_name" 未被定义.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:173
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(161): CComponent->__set('collection_name', 'hello world')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(132): CActiveRecord->__set('collection_name', 'hello world')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionTest()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('test')
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/test')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php/page/test
+---
+2014/08/23 12:10:50 [error] [exception.CException] exception 'CException' with message '属性 "ContentAR.collection_name" 未被定义.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:173
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(161): CComponent->__set('collection_name', 'hello world')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(128): CActiveRecord->__set('collection_name', 'hello world')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(132): ContentAR->__set('collection_name', 'hello world')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionTest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('test')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/test')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/page/test
+---
+2014/08/23 12:11:02 [error] [exception.CException] exception 'CException' with message '属性 "ContentAR.collection_name" 未被定义.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:173
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(161): CComponent->__set('collection_name', 'hello world')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(128): CActiveRecord->__set('collection_name', 'hello world')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(132): ContentAR->__set('collection_name', 'hello world')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionTest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('test')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/test')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/page/test
+---
+2014/08/23 12:11:02 [error] [exception.CException] exception 'CException' with message '属性 "ContentAR.collection_name" 未被定义.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:173
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(161): CComponent->__set('collection_name', 'hello world')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(128): CActiveRecord->__set('collection_name', 'hello world')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(132): ContentAR->__set('collection_name', 'hello world')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionTest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('test')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/test')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/page/test
+---
+2014/08/23 12:11:08 [error] [exception.CException] exception 'CException' with message '属性 "ContentAR.collection_name" 未被定义.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:173
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(161): CComponent->__set('collection_name', 'hello world')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(128): CActiveRecord->__set('collection_name', 'hello world')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(132): ContentAR->__set('collection_name', 'hello world')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionTest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('test')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/test')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/page/test
+---
+2014/08/23 12:11:08 [error] [exception.CException] exception 'CException' with message '属性 "ContentAR.collection_name" 未被定义.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:173
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(161): CComponent->__set('collection_name', 'hello world')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(128): CActiveRecord->__set('collection_name', 'hello world')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(132): ContentAR->__set('collection_name', 'hello world')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionTest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('test')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/test')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/page/test
+---
+2014/08/23 12:11:08 [error] [exception.CException] exception 'CException' with message '属性 "ContentAR.collection_name" 未被定义.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:173
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(161): CComponent->__set('collection_name', 'hello world')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(128): CActiveRecord->__set('collection_name', 'hello world')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(132): ContentAR->__set('collection_name', 'hello world')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionTest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('test')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/test')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/page/test
+---
+2014/08/23 12:25:07 [error] [exception.CException] exception 'CException' with message '属性 "ContentAR.image" 未被定义.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:173
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(161): CComponent->__set('image', '/uploads/xxsdl1...')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(139): CActiveRecord->__set('image', '/uploads/xxsdl1...')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(146): ContentAR->__set('image', '/uploads/xxsdl1...')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionTest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('test')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/test')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/page/test
+---
+2014/08/23 12:25:52 [error] [exception.CException] exception 'CException' with message '属性 "ContentAR.image" 未被定义.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:173
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(161): CComponent->__set('image', '/uploads/xxsdl1...')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(142): CActiveRecord->__set('image', '/uploads/xxsdl1...')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(146): ContentAR->__set('image', '/uploads/xxsdl1...')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionTest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('test')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/test')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/page/test
+---
+2014/08/23 12:25:53 [error] [exception.CException] exception 'CException' with message '属性 "ContentAR.image" 未被定义.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:173
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(161): CComponent->__set('image', '/uploads/xxsdl1...')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(142): CActiveRecord->__set('image', '/uploads/xxsdl1...')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(146): ContentAR->__set('image', '/uploads/xxsdl1...')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionTest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('test')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/test')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/page/test
+---
+2014/08/23 12:25:54 [error] [exception.CException] exception 'CException' with message '属性 "ContentAR.image" 未被定义.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:173
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(161): CComponent->__set('image', '/uploads/xxsdl1...')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(142): CActiveRecord->__set('image', '/uploads/xxsdl1...')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(146): ContentAR->__set('image', '/uploads/xxsdl1...')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionTest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('test')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/test')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/page/test
+---
+2014/08/23 12:25:54 [error] [exception.CException] exception 'CException' with message '属性 "ContentAR.image" 未被定义.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:173
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(161): CComponent->__set('image', '/uploads/xxsdl1...')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(142): CActiveRecord->__set('image', '/uploads/xxsdl1...')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(146): ContentAR->__set('image', '/uploads/xxsdl1...')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionTest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('test')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/test')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/page/test
+---
+2014/08/23 12:26:24 [error] [exception.CException] exception 'CException' with message '属性 "ContentAR.image" 未被定义.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:173
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(161): CComponent->__set('image', '/uploads/xxsdl1...')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(143): CActiveRecord->__set('image', '/uploads/xxsdl1...')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(146): ContentAR->__set('image', '/uploads/xxsdl1...')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionTest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('test')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/test')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/page/test
+---
+2014/08/23 12:26:25 [error] [exception.CException] exception 'CException' with message '属性 "ContentAR.image" 未被定义.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:173
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(161): CComponent->__set('image', '/uploads/xxsdl1...')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(143): CActiveRecord->__set('image', '/uploads/xxsdl1...')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(146): ContentAR->__set('image', '/uploads/xxsdl1...')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionTest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('test')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/test')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/page/test
+---
+2014/08/23 12:26:25 [error] [exception.CException] exception 'CException' with message '属性 "ContentAR.image" 未被定义.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:173
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(161): CComponent->__set('image', '/uploads/xxsdl1...')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(143): CActiveRecord->__set('image', '/uploads/xxsdl1...')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(146): ContentAR->__set('image', '/uploads/xxsdl1...')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionTest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('test')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/test')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/page/test
+---
+2014/08/23 12:26:25 [error] [exception.CException] exception 'CException' with message '属性 "ContentAR.image" 未被定义.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:173
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(161): CComponent->__set('image', '/uploads/xxsdl1...')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(143): CActiveRecord->__set('image', '/uploads/xxsdl1...')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(146): ContentAR->__set('image', '/uploads/xxsdl1...')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionTest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('test')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/test')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/page/test
+---
+2014/08/23 12:26:26 [error] [exception.CException] exception 'CException' with message '属性 "ContentAR.image" 未被定义.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:173
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(161): CComponent->__set('image', '/uploads/xxsdl1...')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(143): CActiveRecord->__set('image', '/uploads/xxsdl1...')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(146): ContentAR->__set('image', '/uploads/xxsdl1...')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionTest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('test')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/test')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/page/test
+---
+2014/08/23 13:18:14 [error] [php] Trying to get property of non-object (/Users/jackeychen/Workspace/shangxia/html/admin/protected/models/MediaAR.php:137)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php(111): ContentAR->getAttributes()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(145): ContentAR->__get()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(130): ContentAR->__get()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(148): ContentAR->__get()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionTest()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): PageController->runAction()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): PageController->runActionWithFilters()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): PageController->run()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php/page/test
+2014/08/23 13:20:53 [error] [php] Trying to get property of non-object (/Users/jackeychen/Workspace/shangxia/html/admin/protected/models/MediaAR.php:137)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php(111): ContentAR->getAttributes()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(145): ContentAR->__get()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(130): ContentAR->__get()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(148): ContentAR->__get()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionTest()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): PageController->runAction()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): PageController->runActionWithFilters()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): PageController->run()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php/page/test
+2014/08/23 13:20:54 [error] [php] Trying to get property of non-object (/Users/jackeychen/Workspace/shangxia/html/admin/protected/models/MediaAR.php:137)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php(111): ContentAR->getAttributes()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(145): ContentAR->__get()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(130): ContentAR->__get()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(148): ContentAR->__get()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionTest()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): PageController->runAction()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): PageController->runActionWithFilters()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): PageController->run()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php/page/test
+2014/08/23 13:20:55 [error] [php] Trying to get property of non-object (/Users/jackeychen/Workspace/shangxia/html/admin/protected/models/MediaAR.php:137)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php(111): ContentAR->getAttributes()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(145): ContentAR->__get()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(130): ContentAR->__get()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(148): ContentAR->__get()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionTest()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): PageController->runAction()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): PageController->runActionWithFilters()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): PageController->run()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php/page/test
+2014/08/23 13:20:55 [error] [php] Trying to get property of non-object (/Users/jackeychen/Workspace/shangxia/html/admin/protected/models/MediaAR.php:137)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php(111): ContentAR->getAttributes()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(145): ContentAR->__get()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(130): ContentAR->__get()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(148): ContentAR->__get()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionTest()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): PageController->runAction()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): PageController->runActionWithFilters()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): PageController->run()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php/page/test
+2014/08/23 13:20:55 [error] [php] Trying to get property of non-object (/Users/jackeychen/Workspace/shangxia/html/admin/protected/models/MediaAR.php:137)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php(111): ContentAR->getAttributes()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(145): ContentAR->__get()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(130): ContentAR->__get()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(148): ContentAR->__get()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionTest()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): PageController->runAction()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): PageController->runActionWithFilters()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): PageController->run()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php/page/test
+2014/08/23 13:35:30 [error] [php] Array to string conversion (/Users/jackeychen/Workspace/shangxia/html/admin/yii/db/schema/CDbColumnSchema.php:146)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(806): MediaAR->insert()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/MediaAR.php(120): MediaAR->save()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(99): MediaAR->saveMediaToObject()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(1126): ContentAR->afterSave()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(806): ContentAR->update()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(146): ContentAR->save()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionTest()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): PageController->runAction()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): PageController->runActionWithFilters()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): PageController->run()
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php/page/test
+2014/08/23 13:51:07 [error] [php] Trying to get property of non-object (/Users/jackeychen/Workspace/shangxia/html/views/common/inc.php:37)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/views/common/inc.php(37): CWebApplication->handleError()
+#1 /Users/jackeychen/Workspace/shangxia/html/views/index.php(6): editme()
+REQUEST_URI=/views/
+2014/08/23 13:59:55 [error] [php] require_once(/Users/jackeychen/Workspace/shangxia/html/widget/editme.pthml): failed to open stream: No such file or directory (/Users/jackeychen/Workspace/shangxia/html/views/common/inc.php:36)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/views/common/inc.php(36): CWebApplication->handleError()
+#1 /Users/jackeychen/Workspace/shangxia/html/views/common/inc.php(36): editme()
+#2 /Users/jackeychen/Workspace/shangxia/html/views/index.php(6): editme()
+REQUEST_URI=/views/
+2014/08/23 14:03:54 [error] [php] require_once(/Users/jackeychen/Workspace/shangxia/html/widget/editme.pthml): failed to open stream: No such file or directory (/Users/jackeychen/Workspace/shangxia/html/views/common/inc.php:36)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/views/common/inc.php(36): CWebApplication->handleError()
+#1 /Users/jackeychen/Workspace/shangxia/html/views/common/inc.php(36): editme()
+#2 /Users/jackeychen/Workspace/shangxia/html/views/index.php(6): editme()
+REQUEST_URI=/index.php
+2014/08/23 14:04:01 [error] [php] require_once(/Users/jackeychen/Workspace/shangxia/html/widget/editme.pthml): failed to open stream: No such file or directory (/Users/jackeychen/Workspace/shangxia/html/views/common/inc.php:36)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/views/common/inc.php(36): CWebApplication->handleError()
+#1 /Users/jackeychen/Workspace/shangxia/html/views/common/inc.php(36): editme()
+#2 /Users/jackeychen/Workspace/shangxia/html/views/index.php(6): editme()
+REQUEST_URI=/index.php
+2014/08/23 14:06:10 [error] [php] require_once(/Users/jackeychen/Workspace/shangxia/html/widget/editme.pthml): failed to open stream: No such file or directory (/Users/jackeychen/Workspace/shangxia/html/views/common/inc.php:36)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/views/common/inc.php(36): CWebApplication->handleError()
+#1 /Users/jackeychen/Workspace/shangxia/html/views/common/inc.php(36): editme()
+#2 /Users/jackeychen/Workspace/shangxia/html/views/index.php(6): editme()
+REQUEST_URI=/views/
+2014/08/23 14:06:11 [error] [php] require_once(/Users/jackeychen/Workspace/shangxia/html/widget/editme.pthml): failed to open stream: No such file or directory (/Users/jackeychen/Workspace/shangxia/html/views/common/inc.php:36)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/views/common/inc.php(36): CWebApplication->handleError()
+#1 /Users/jackeychen/Workspace/shangxia/html/views/common/inc.php(36): editme()
+#2 /Users/jackeychen/Workspace/shangxia/html/views/index.php(6): editme()
+REQUEST_URI=/views/
+2014/08/23 14:07:00 [error] [php] require_once(/Users/jackeychen/Workspace/shangxia/html/views/widget/editme.pthml): failed to open stream: No such file or directory (/Users/jackeychen/Workspace/shangxia/html/views/common/inc.php:37)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/views/common/inc.php(37): CWebApplication->handleError()
+#1 /Users/jackeychen/Workspace/shangxia/html/views/common/inc.php(37): editme()
+#2 /Users/jackeychen/Workspace/shangxia/html/views/index.php(6): editme()
+REQUEST_URI=/views/
+2014/08/23 14:11:51 [error] [php] Undefined index: body (/Users/jackeychen/Workspace/shangxia/html/views/widget/editme.phtml:6)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/views/widget/editme.phtml(6): CWebApplication->handleError()
+#1 /Users/jackeychen/Workspace/shangxia/html/views/common/inc.php(38): require_once()
+#2 /Users/jackeychen/Workspace/shangxia/html/views/index.php(6): editme()
+REQUEST_URI=/views/
+2014/08/23 14:13:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "update" 动作.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php:483
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(270): CController->missingAction('update')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('update')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/update')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php/page/update
+HTTP_REFERER=http://sxhtml.local/views/
+---
+2014/08/23 15:53:57 [error] [php] Undefined index: field (/Users/jackeychen/Workspace/shangxia/html/views/widget/editme.phtml:6)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/views/widget/editme.phtml(6): CWebApplication->handleError()
+#1 /Users/jackeychen/Workspace/shangxia/html/views/common/inc.php(37): require()
+#2 /Users/jackeychen/Workspace/shangxia/html/views/index.php(16): editme()
+REQUEST_URI=/views/
+2014/08/23 15:54:45 [error] [php] Undefined index: field (/Users/jackeychen/Workspace/shangxia/html/views/widget/editme.phtml:6)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/views/widget/editme.phtml(6): CWebApplication->handleError()
+#1 /Users/jackeychen/Workspace/shangxia/html/views/common/inc.php(38): require()
+#2 /Users/jackeychen/Workspace/shangxia/html/views/index.php(16): editme()
+REQUEST_URI=/views/
+2014/08/23 15:55:21 [error] [php] Undefined index: field (/Users/jackeychen/Workspace/shangxia/html/views/widget/editme.phtml:6)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/views/widget/editme.phtml(6): CWebApplication->handleError()
+#1 /Users/jackeychen/Workspace/shangxia/html/views/common/inc.php(39): require()
+#2 /Users/jackeychen/Workspace/shangxia/html/views/index.php(16): editme()
+REQUEST_URI=/views/

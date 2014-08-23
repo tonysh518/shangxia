@@ -1,0 +1,23 @@
+  .hideme {
+    display: none;
+  }
+  .section {
+    position: relative;
+  }
+  .editme-link {
+    float: right;
+    margin-right: 1em;
+    color: #f00;
+    cursor: pointer;
+    font-size: 0.8em;
+  }
+  .editme-container {
+    position: absolute;
+    width: 95%;
+    left: 50%;
+    margin-left: -47.5%;
+  }
+  
+  .editme-container textarea {
+    width: 100%;
+  }

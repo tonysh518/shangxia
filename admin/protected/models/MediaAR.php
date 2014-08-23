@@ -64,17 +64,18 @@ class MediaAR extends CActiveRecord {
   
   /**
    * 给一个对象追加图片
-   * @param CActiveRecord $obj 需要有图片的对象
+   * @param ContentAR $obj 需要有图片的对象
    */
   public function saveMediaToObject($obj, $field_name) {
     $request = Yii::app()->getRequest();
-    if (!$request->isPostRequest) {
+    if (!$_POST) {
       return;
     }
     $uri = $request->getPost($field_name);
     if (!$uri) {
       return ;
     }
+    
     if (is_string($uri)) {
       if (strpos($uri, "http://") !== FALSE) {
         $uri = str_replace(Yii::app()->getBaseUrl(TRUE), "", $uri);
@@ -93,27 +94,61 @@ class MediaAR extends CActiveRecord {
       $name = pathinfo($filePath, PATHINFO_FILENAME);
       $ext = pathinfo($filePath, PATHINFO_EXTENSION);
     }
-    $attr = array(
-        "name" => $name,
-        "uri" => serialize($uri),
-        "cid" => $obj->getPrimaryKey(),
-        "type" => $obj->type, 
-        "field_name" => $field_name,
-    );
     
-    // 先查询是否已经存在一份
-    $row = $this->loadMediaWithObject($obj, $field_name);
-    if ($row) {
-      $row->setAttributes($attr);
-      return $row->update();
+    $fieldOption = $obj->getImageFieldOption($field_name);
+    
+    // 多个图片这样处理：
+    // 删掉之前的图片，然后新增
+    if ($fieldOption["multi"]) {
+      // 删除
+      $rows = $this->loadMediaWithObject($obj, $field_name);
+      foreach ($rows as $row) {
+        $row->delete();
+      }
+      
+      // 添加
+      foreach ($uri as $i) {
+        $attr = array(
+            "name" => $name,
+            "uri" => $i,
+            "cid" => $obj->getPrimaryKey(),
+            "type" => $obj->type, 
+            "field_name" => $field_name,
+        );
+        $mediaAr = new MediaAR();
+        $mediaAr->setAttributes($attr);
+        $mediaAr->save();
+      }
     }
     else {
-      $mediaAr = new MediaAR();
-      $mediaAr->setAttributes($attr);
-      return $mediaAr->save();
+      $attr = array(
+          "name" => $name,
+          "uri" => ($uri),
+          "cid" => $obj->getPrimaryKey(),
+          "type" => $obj->type, 
+          "field_name" => $field_name,
+      );
+
+      // 先查询是否已经存在一份
+      $row = $this->loadMediaWithObject($obj, $field_name);
+      if ($row) {
+        $row->setAttributes($attr);
+        $row->update();
+      }
+      else {
+        $mediaAr = new MediaAR();
+        $mediaAr->setAttributes($attr);
+        $mediaAr->save();
+      }
     }
   }
   
+  /**
+   * 获取媒体对象
+   * @param ContentAR  $obj
+   * @param type $field_name
+   * @return type
+   */
   public function loadMediaWithObject($obj, $field_name) {
     $cid = $obj->getPrimaryKey();
     $type = $obj->type;
@@ -122,32 +157,44 @@ class MediaAR extends CActiveRecord {
       ->addCondition("field_name=:field_name")
       ->addCondition("cid=:cid");
     
+    $query->order = "weight DESC";
+    
     $query->params[":type"] = $type;
     $query->params[":field_name"] = $field_name;
     $query->params[":cid"] = $cid;
     
-    $row = $this->find($query);
-    
-    return $row;
+    $fieldOption = $obj->getImageFieldOption($field_name);
+    if ($fieldOption['multi']) {
+      return $this->findAll($query);
+    }
+    return $this->find($query);
   }
   
   /**
    * 给一个对象附件图片数据
-   * @param CActiveRecord $obj 需要有图片的对象
+   * @param ContentAR $obj 需要有图片的对象
    */
   public function attachMediaToObject(&$obj, $field_name) {
     $row = $this->loadMediaWithObject($obj, $field_name);
+    $fieldOption = $obj->getImageFieldOption($field_name);
+    
     if ($row) {
-      unserialize($row->uri);
-      $uri = @unserialize($row->uri);
+      // 是一组图片
+      if ($fieldOption["multi"]) {
+        $uri = array();
+        foreach ($row as $item) {
+          $uri[] = $item->uri;
+        }
+      }
+      else {
+        $uri = $row->uri;
+      }
       
+      // 组合数据
       if (is_string($uri) && $uri != "" ) {
         $obj->{$field_name} = Yii::app()->getBaseUrl(TRUE) .$uri;
       }
       elseif (is_array($uri)) {
-        foreach ($uri as &$i) {
-          $i = Yii::app()->getBaseUrl(TRUE) .$i;
-        }
         $obj->{$field_name} = $uri;
       }
       else {

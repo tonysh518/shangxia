@@ -1,11 +1,15 @@
+<?php require_once "inc.php"?>
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>SX</title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<link rel="stylesheet" type="text/css" href="../SX/css/style.css" />
+  <meta charset="utf-8">
+  <title>SX</title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" type="text/css" href="../SX/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="./css/editme.css" />
+  <script type="text/javascript" src="./js/jquery.js"></script>
+  <script type="text/javascript" src="./js/jquery.form.js"></script>
 </head>
 <body>
 	<div class="wrap">

@@ -1,0 +1,94 @@
+
+<script type="text/javascript">
+// Editme
+(function ($) {
+   $(function () {
+     var container = $(".editme-container-<?php echo $key?>");
+     var eidtlink = $(".editme-link", container);
+     var wrapper = $(".wrapper", container);
+     var section = $("*[data-editme-key='<?php echo $key?>']");
+     section.css({position: "relative"});
+
+     // 事件处理
+     eidtlink.click(function () {
+       wrapper.toggleClass("hideme");
+     });
+     section.hover(function () {
+       eidtlink.show();
+       console.log("HELLO");
+     }, function () {
+       eidtlink.hide();
+       wrapper.addClass("hideme");
+     });
+
+     // 初始化控件内容
+     (function () {
+       // 1. body
+       $("textarea[name='body']").val($("*[data-editme-body]", section).html());
+     })();
+
+     // 处理上传功能
+     (function () {
+       $("#submit", container).click(function () {
+         $("form", container).ajaxSubmit({
+           beforeSubmit: function () {
+             // TODO:: 需要加一个动画处理
+           },
+           success: function (status) {
+             // TODO:: 取消动画
+             setTimeout(function () {
+               //window.location.reload();
+             }, 500)
+           }
+         });
+       });
+     })();
+   });
+})(jQuery);
+</script>
+
+<div class="editme-container editme-container-<?php echo $key?>">
+  <div class='hideme editme-link'><?php echo Yii::t("strings", "Edit")?></div>
+  <div class="wrapper hideme clearfix">
+    <form action="/admin/api/content/update" method="POST" enctype="multipart/form-data">
+      
+      <?php if (array_search("title", $field) !== FALSE): ?>
+        <div class="field-item">
+            <input type="text" name="title" class="title"/>
+        </div>
+      <?php endif;?>
+      
+      <?php if (array_search("body", $field) !== FALSE): ?>
+      <div class="field-item">
+          <textarea name="body" id="" cols="30" rows="10"></textarea>
+      </div>
+      <?php endif;?>
+      
+      <?php if (array_search("summary", $field) !== FALSE): ?>
+        <div class="field-item">
+            <textarea name="summary" id="" cols="30" rows="10"></textarea>
+        </div>
+      <?php endif;?>
+      
+      <?php foreach ($field as $fieldName): ?>
+        <?php if (array_search($fieldName ,array("body", "summary", "title")) === FALSE): ?>
+          <div class="field-item">
+              <input type="text" name="<?php echo $fieldName?>"/>
+          </div>
+        <?php endif;?>
+      <?php endforeach;?>
+      
+      <!-- Image -->
+      <?php foreach ($media as $mediaName): ?>
+      <div class="field-item">
+        <input type="file" name="file_<?php echo $mediaName?>"  accept="image/*"/>
+        <input type="hidden" name="<?php echo $mediaName?>" />
+      </div>
+      <?php endforeach;?>
+      
+      <input type="hidden" value="<?php echo implode(",", $field)?>" name="field" />
+      <input type="hidden" value="<?php echo $key?>" name="key_id" />
+      <button type="button" id="submit" class="form-btn"><?php echo Yii::t("strings", "Save")?></button>
+    </form>
+  </div>
+</div>

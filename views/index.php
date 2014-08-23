@@ -2,25 +2,28 @@
 <?php include_once 'common/header.php';?>
 	<input name="page-indentity" type="hidden" value="home-page"/>
 	<!-- intro -->
-	<div class="section intoview-effect" data-effect="fadeup">
-		<div class="intro">
-			<p class="introtxt">Shang xia is a brand for art of living<br />
-			that promises a unique encounter with the heritage of Chinese design and craftsmanship.</p>
-			<a href="#" title="" class="introbtn transition-wrap"><span class="transition">Brand story<br/><br/>Brand story</span></a>
+	<div class="section intoview-effect" data-effect="fadeup" data-editme-key="home_brand_story_summary">
+    <?php editme("home_brand_story_summary")?>
+		<div class="intro" >
+			<p class="introtxt" data-editme-body=".introtxt"><?php echo renderContentField("home_brand_story_summary", "body")?></p>
+			<a href="#" title="" class="introbtn transition-wrap"><span class="transition"><?php echo Yii::t("strings" ,"Brand story")?><br/><br/><?php echo Yii::t("strings", "Brand story")?></span></a>
 		</div>
 	</div>
 	<!-- piclist -->
 	<div class="section">
 		<ul class="piclist cs-clear">
-			<li class="piclistitem intoview-effect" data-effect="fadeup">
+			<li class="piclistitem intoview-effect" data-effect="fadeup" data-editme-key="home_middle_slide_one">
+        <?php editme("home_middle_slide_one", array("title", "link_to") ,array("image"))?>
 				<img src="../SX/images/homepage01.jpg" width="100%" />
 				<p>shang xia is now opening its maison in shanghai</p>
 			</li>
-			<li class="piclistitem intoview-effect" data-effect="fadeup">
+			<li class="piclistitem intoview-effect" data-effect="fadeup" data-editme-key="home_middle_slide_two">
+        <?php editme("home_middle_slide_two" ,array("title", "link_to"), array("image"))?>
 				<img src="../SX/images/homepage01.jpg" width="100%" />
 				<p>shang xia is now opening </p>
 			</li>
-			<li class="piclistitem intoview-effect marginR0" data-effect="fadeup">
+			<li class="piclistitem intoview-effect marginR0" data-effect="fadeup" data-editme-key="home_middle_slide_third">
+        <?php editme("home_middle_slide_third" ,array("title", "link_to"), array("image"))?>
 				<img src="../SX/images/homepage01.jpg" width="100%" />
 				<p>shang xia is now opening </p>
 			</li>
