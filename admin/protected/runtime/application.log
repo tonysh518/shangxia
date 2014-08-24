@@ -1685,3 +1685,164 @@ Stack trace:
 #1 /Users/jackeychen/Workspace/shangxia/html/views/common/inc.php(39): require()
 #2 /Users/jackeychen/Workspace/shangxia/html/views/index.php(16): editme()
 REQUEST_URI=/views/
+2014/08/24 17:26:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "addslideshow".' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php:483
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(270): CController->missingAction('addslideshow')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('addslideshow')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/addslidesh...')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php/page/addslideshow.html
+HTTP_REFERER=http://sxhtml.local/admin/index.php/index.html
+---
+2014/08/24 17:26:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "addslideshow".' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php:483
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(270): CController->missingAction('addslideshow')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('addslideshow')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/addslidesh...')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php/page/addslideshow.html
+HTTP_REFERER=http://sxhtml.local/admin/index.php/
+---
+2014/08/24 17:32:07 [error] [exception.CException] exception 'CException' with message 'PageController cannot find the requested view "content".' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php:878
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(782): CController->renderPartial('content', NULL, true)
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(57): CController->render('content')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionAddcontent()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('addcontent')
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/addcontent')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#10 {main}
+REQUEST_URI=/admin/index.php/page/addcontent.html?type=slideshow
+HTTP_REFERER=http://sxhtml.local/admin/index.php/
+---
+2014/08/24 17:37:33 [error] [exception.CException] exception 'CException' with message 'SlideShowContentAR and its behaviors do not have a method or closure named "getField".' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:266
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(227): CComponent->__call('getField', Array)
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/views/page/addcontent.php(52): CActiveRecord->__call('getField', Array)
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/views/page/addcontent.php(52): SlideShowContentAR->getField()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CBaseController.php(126): require('/Users/jackeych...')
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CBaseController.php(95): CBaseController->renderInternal('/Users/jackeych...', Array, true)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(869): CBaseController->renderFile('/Users/jackeych...', Array, true)
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(782): CController->renderPartial('addcontent', Array, true)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(57): CController->render('addcontent', Array)
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionAddcontent()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('addcontent')
+#13 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/addcontent')
+#14 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#16 {main}
+REQUEST_URI=/admin/index.php/page/addcontent.html?type=slideshow
+HTTP_REFERER=http://sxhtml.local/admin/index.php/
+---
+2014/08/24 17:38:46 [error] [php] Undefined variable: field (/Users/jackeychen/Workspace/shangxia/html/admin/protected/views/page/addcontent.php:54)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(869): PageController->renderFile()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(782): PageController->renderPartial()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(57): PageController->render()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionAddcontent()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): PageController->runAction()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): PageController->runActionWithFilters()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): PageController->run()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/admin/index.php/page/addcontent.html?type=slideshow
+2014/08/24 17:51:40 [error] [php] str_replace() expects at least 3 parameters, 1 given (/Users/jackeychen/Workspace/shangxia/html/admin/protected/views/page/addcontent.php:65)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CBaseController.php(95): PageController->renderInternal()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(869): PageController->renderFile()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(782): PageController->renderPartial()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(57): PageController->render()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionAddcontent()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): PageController->runAction()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): PageController->runActionWithFilters()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): PageController->run()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/admin/index.php/page/addcontent.html?type=slideshow
+2014/08/24 19:01:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "content".' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php:483
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(270): CController->missingAction('content')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('content')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/content')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php/page/content.html?type=slideshow
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/addcontent.html?type=slideshow
+---
+2014/08/24 19:04:35 [error] [php] Undefined variable: career (/Users/jackeychen/Workspace/shangxia/html/admin/protected/views/page/content.php:21)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(869): PageController->renderFile()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(782): PageController->renderPartial()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(72): PageController->render()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionContent()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): PageController->runAction()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): PageController->runActionWithFilters()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): PageController->run()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/admin/index.php/page/content.html?type=slideshow
+2014/08/24 19:19:47 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '20042' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `content` (`language`, `weight`, `title`, `body`, `cid`, `cdate`, `mdate`, `status`, `type`, `summary`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9).
+2014/08/24 19:19:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '20042' for key 'PRIMARY'' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbCommand.php:358
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(1077): CDbCommand->execute()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/modules/api/controllers/ContentController.php(29): CActiveRecord->save()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): ContentController->actionUpdate()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('update')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('api/content/upd...')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/api/content/update
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/addcontent/20042.html?type=slideshow
+---
+2014/08/24 19:21:38 [error] [php] Object of class CHttpRequest could not be converted to int (/Users/jackeychen/Workspace/shangxia/html/admin/yii/db/schema/CDbColumnSchema.php:147)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(1485): CMysqlCommandBuilder->createPkCriteria()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/modules/api/controllers/ContentController.php(31): SlideShowContentAR->findByPk()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): ContentController->actionUpdate()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): ContentController->runAction()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): ContentController->runActionWithFilters()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): ContentController->run()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/admin/api/content/update
+2014/08/24 19:22:04 [error] [exception.CException] exception 'CException' with message 'CWebApplication and its behaviors do not have a method or closure named "getPost".' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:266
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/protected/modules/api/controllers/ContentController.php(30): CComponent->__call('getPost', Array)
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/modules/api/controllers/ContentController.php(30): CWebApplication->getPost('cid')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): ContentController->actionUpdate()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('update')
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('api/content/upd...')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#10 {main}
+REQUEST_URI=/admin/api/content/update
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/addcontent/20042.html?type=slideshow
+---

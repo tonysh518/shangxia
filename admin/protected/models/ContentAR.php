@@ -2,6 +2,9 @@
 
 class ContentAR extends CActiveRecord {
   
+  const STATUS_ENABLE = 1;
+  const STATUS_DISABLE = 0;
+  
   public $meta;
   private $fields = array();
   private $imageFields = array();
@@ -75,6 +78,7 @@ class ContentAR extends CActiveRecord {
     global $language;
     if ($this->isNewRecord) {
       $this->language = $language;
+      $this->status = self::STATUS_ENABLE;
     }
     
     return TRUE;

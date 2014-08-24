@@ -7,43 +7,44 @@ class ContentController extends Controller {
    */
   public function actionUpdate() {
     $request = Yii::app()->getRequest();
+    
     if (!$request->isPostRequest) {
       return $this->responseError("http verb error", ErrorAR::ERROR_HTTP_VERB_ERROR);
     }
     
-    $key_id = $request->getPost("key_id");
-    $content = ContentAR::model()->loadByKey($key_id);
-    
-    if (!$content) {
-      return $this->responseError("unknow error", ErrorAR::ERROR_UNKNOWN);
+    // Step1, 加载对应的Model
+    $type = $request->getPost("type");
+    if (!$type) {
+      return $this->responseError("unkonw", ErrorAR::ERROR_UNKNOWN);
+    }
+    $class = ucfirst($type)."ContentAR";
+    if (!class_exists($class)) {
+      return $this->responseError("unkonw", ErrorAR::ERROR_UNKNOWN);
     }
     
-    //1. Field
-    $field = $request->getPost("field", FALSE);
-    if ($field) {
-      // 传入的字段用 ',' 分隔
-      $fields = explode(",", $field);
-    }
-    $attributes = $content->attributes;
-    $content->attributes = $_POST;
-    foreach ($fields as $field) {
-      // 确保Field 不是默认的属性
-      if (array_search($field, $attributes) !== FALSE) {
-        continue;
+    // Step2, 然后保存数据
+    $model = new $class();
+    $model->attributes = $_POST;
+    
+    // 是编辑还是添加?
+    if (($id = $request->getPost("cid")) !== FALSE) {
+      $instance = $model->findByPk($id);
+      $instance->attributes = $_POST;
+      if ($instance->update()) {
+        $this->responseJSON($model->attributes, "success");
       }
-      $value = $request->getPost($field);
-      $content->hasContentField($field);
-      $content->reload();
-      
-      $content->{$field} = $value;
+      else {
+        $this->responseError("save error", ErrorAR::ERROR_INVITE, $instance->getErrors());
+      }
     }
-    
-    //2. Image
-    //TODO::
-    
-    $content->save();
-    
-    $this->responseJSON($content->attributes, "success");
+    else {
+      if ($model->save()) {
+        $this->responseJSON($model->attributes, "success");
+      }
+      else {
+        $this->responseError("save error", ErrorAR::ERROR_INVITE, $model->getErrors());
+      }
+    }
   }
   
 }

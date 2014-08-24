@@ -9,108 +9,7 @@ class PageController extends Controller {
     return parent::beforeAction($action);
   }
   
-  public function actionLookbook() {
-    $request = Yii::app()->getRequest();
-    $brand = strtolower($request->getParam("brand"));
-    if (!$brand) {
-      return $this->redirect("/index/index");
-    }
-    $lookbookes = LookbookAR::model()->loadLookbookWithBrand($brand);
-    $this->render("lookbook", array("lookbookes" => $lookbookes));
-  }
-  
-  public function actionArrival() {
-    $request = Yii::app()->getRequest();
-    $brand = strtolower($request->getParam("brand"));
-    if (!$brand) {
-      return $this->redirect("/index/index");
-    }
-    $lookbookes = LookbookAR::model()->loadLookbookWithBrand($brand);
-    $this->render("arrival", array("lookbookes" => $lookbookes));
-  }
-  
-  public function actionNews() {
-    $category = Yii::app()->getRequest()->getParam("category", FALSE);
-    $list = NewsAR::model()->getNewsInCategory($category);
-    $this->render("news", array("news_list" => $list));
-  }
-  
-  public function actionAddnews() {
-    $request = Yii::app()->getRequest();
-    $id = $request->getParam("id", FALSE);
-    $news = NewsAR::model()->findByPk($id);
-    if ($id && !$news) {
-      $this->redirect(array("news"));
-    }
-    $this->render("addnews", array("news" => $news));
-  }
-  
-  public function actionNavigation() {
-    $request = Yii::app()->getRequest();
-    
-    // 添加/修改数据
-    if ($request->isPostRequest) {
-      $post = $request->getPort();
-      $this->responseJSON($post, "success");
-    }
-    else {
-      return $this->render("navigation");
-    }
-  }
-  
-  // corporate information
-  public function actionCorporate() {
-    $this->render("corporate");
-  }
-  
-  public function actionBrand() {
-    $this->render("brand");
-  }
-  
-  public function actionVideo() {
-    $videcontentAr = new VideoContentAR();
-    $this->render("video", array("videocontentes" => $videcontentAr->getList()));
-  }
-  
-  public function actionAddVideo() {
-    $request = Yii::app()->getRequest();
-    $id = $request->getParam("id");
-    $contentvideo = VideoContentAR::model()->findByPk($id);
-    
-    $this->render("addvideo", array("contentvideo" => $contentvideo));
-  }
-  
-  public function actionQrcode() {
-    $qrcodes = QacodeAR::model()->getList();
-    $this->render("qrcode", array("qrcodes" => $qrcodes));
-  }
-  
-  public function actionAddqacode() {
-    $this->render("addqrcode");
-  }
-  
-  public function actionContact() {
-    $this->render("contact");
-  }
-  
-  public function actionCareers() {
-    $jobes = JobAR::model()->getList();
-    $this->render("careers", array("careeres" => $jobes));
-  }
-  
-  public function actionAddcareer() {
-    $cid = Yii::app()->getRequest()->getParam("id", false);
-    $career = FALSE;
-    if ($cid) {
-      $career = JobAR::model()->findByPk($cid);
-    }
-    $this->render("addcareer", array("career" => $career));
-  }
-  
-  public function actionBrandInfo() {
-    $this->render("brandinfo");
-  }
-  
+
   public function actionLogout () {
     UserAR::logout();
     
@@ -146,6 +45,39 @@ class PageController extends Controller {
     //$content->save();
     
     print_r($content->attributes);
+  }
+  
+  public function actionAddcontent() {
+    $request = Yii::app()->getRequest();
+    $type = $request->getParam("type");
+    
+    $class = ucfirst($type).'ContentAR';
+    $model = new $class();
+    
+    // Edit
+    $id = $request->getParam("id", FALSE);
+    if ($id) {
+      $instance = $model->findByPk($id);
+      return $this->render("editcontent", array("model" => $model, "type" => $type, "instance" => $instance));
+    }
+    else {
+      return $this->render("addcontent", array("model" => $model, "type" => $type));
+    }
+  }
+  
+  public function actionContent() {
+    $request = Yii::app()->getRequest();
+    $type = $request->getParam("type");
+    
+    $class = ucfirst($type).'ContentAR';
+    if (!class_exists($class)) {
+      return $this->redirect(Yii::app()->getBaseUrl()."/page/index");
+    }
+    $model = new $class();
+    
+    $list = $model->getList();
+    
+    $this->render("content", array("model" => $model, "type" => $type, "list" => $list));
   }
 }
 
