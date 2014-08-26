@@ -10,6 +10,7 @@
 				<div class="arrows detailnext"></div>
 			</div>
 		</div>
+		
 		<!-- video -->
 		<div class="video intoview-effect" data-effect="fadeup"><img src="../SX/images/videodemo.jpg" width="100%" /></div>
 		<!-- barbg -->
