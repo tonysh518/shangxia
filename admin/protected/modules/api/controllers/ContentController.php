@@ -27,7 +27,7 @@ class ContentController extends Controller {
     $model->attributes = $_POST;
     
     // 是编辑还是添加?
-    if (($id = $request->getPost("cid")) !== FALSE) {
+    if (($id = $request->getPost("cid"))) {
       $instance = $model->findByPk($id);
       $instance->attributes = $_POST;
       if ($instance->update()) {

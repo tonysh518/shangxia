@@ -3,17 +3,18 @@
 /**
  * Slideshow Content
  */
-class SlideShowContentAR extends ContentAR {
+class NewsContentAR extends ContentAR {
   
-  public $type = "slideshow";
+  public $type = "news";
   
   public function getImageFields() {
-    $this->hasImageField("image");
+    //$this->hasImageField("image");
     
     return parent::getImageFields();
   }
   
   public function getFields() {
+    $this->hasContentField("summary");
     return parent::getFields();
   }
   

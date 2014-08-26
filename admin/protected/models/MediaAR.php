@@ -67,6 +67,9 @@ class MediaAR extends CActiveRecord {
    * @param ContentAR $obj 需要有图片的对象
    */
   public function saveMediaToObject($obj, $field_name) {
+    if (!$obj->cid) {
+      return;
+    }
     $request = Yii::app()->getRequest();
     if (!$_POST) {
       return;
@@ -111,7 +114,7 @@ class MediaAR extends CActiveRecord {
         $attr = array(
             "name" => $name,
             "uri" => $i,
-            "cid" => $obj->getPrimaryKey(),
+            "cid" => $obj->cid,
             "type" => $obj->type, 
             "field_name" => $field_name,
         );
@@ -124,7 +127,7 @@ class MediaAR extends CActiveRecord {
       $attr = array(
           "name" => $name,
           "uri" => ($uri),
-          "cid" => $obj->getPrimaryKey(),
+          "cid" => $obj->cid,
           "type" => $obj->type, 
           "field_name" => $field_name,
       );

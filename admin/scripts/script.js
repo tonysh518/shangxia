@@ -26,6 +26,37 @@
     };
   });
   
+  // Ajax Scroll Up 动画
+  AdminModule.directive("ngAjaxScrollUp", [function () {
+    function startAnimate(scope, element, attrs) {
+      scope.note = attrs["start"];
+      element.find(".animate").animate({
+        "margin-top": "-2.5em",
+      }, 1000, function () {
+        
+      });
+    }
+    
+    function finishAnimate(scope, element, attrs) {
+      scope.note = attrs["finish"];
+    }
+    
+    return {
+      restrict: "E",
+      scope: false,
+      template: "<div class='animate'>{{note}}</animate>",
+      link: function (scope, element, attrs) {
+        $(document).ajaxComplete(function (){
+          finishAnimate(scope, element, attrs);
+        });
+        
+        $(document).ajaxStart(function () {
+          startAnimate(scope, element, attrs);
+        });
+      }
+    };
+  }]);
+  
   // 初始化Model
   AdminModule.directive("ngInitial", function () {
     return {
@@ -90,13 +121,29 @@
         };
   }]);
 
-  AdminModule.directive("ngPreviewmedia", function () {
+  AdminModule.directive("ngUploadimage", ["UploadMediaService" ,function (UploadMediaService) {
+    
     return {
-      restrict: "A",
+      restrict: "E",
+      scope: {},
       require: ["ngModel"],
-      
+      link: function (scope, element, attr, ctrl) {
+        element.find("input[type='file']").change(function () {
+          UploadMediaService.upload(angular.element(this)[0]).success(function (res) {
+            ctrl[0].$setViewValue(res["data"]["uri"]);
+            scope.src = window.baseurl + res["data"]["uri"];
+            scope.$digest();
+          });
+        });
+        
+        scope.src = attr["value"];
+      },
+      template: '<div class="preview">'+ 
+          '<img ng-src="{{src}}" alt="" />'+
+        '</div>' + 
+        '<input type="file"  accept="image/*" upload="Upload Image"/>',
     };
-  });
+  }]);
 
   AdminModule.controller("ContentForm",  function ($scope, UploadMediaService, ContentService) {
     $scope.submitContent = function () {
@@ -106,7 +153,9 @@
             alert(res["message"]);
           }
           else {
-            
+            setTimeout(function () {
+              window.location.href = angular.element("form[name='"+$scope.contentform["$name"]+"']").attr("redirect");
+            }, 500);
           }
         });
       }

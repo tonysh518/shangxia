@@ -1,5 +1,5 @@
 <div class="form-con slideshow-form" ng-controller="ContentForm" ng-init="init()">
-  <form name="contentform" class="form-horizontal"  method="post">
+  <form name="contentform" class="form-horizontal"  method="post" redirect="<?php echo Yii::app()->createUrl("page/content", array("type" => $type))?>">
     <div class="header clearfix">
       <div class="icons">
         <i class="fa fa-edit"></i>
@@ -43,7 +43,7 @@
       <div class="controls">
         <select ng-model="content.weight">
           <?php foreach (range(0, 10) as $weight): ?>
-          <option value="<?php echo ($weight)?>"><?php echo ($weight)?></option>
+          <option value="<?php echo ($weight)?>" ><?php echo ($weight)?></option>
           <?php endforeach;?>
         </select>
       </div>
@@ -64,11 +64,14 @@
     <div class="control-group imagepreview">
       <div class="control-label"><label for="<?php echo $field?>"><?php echo Yii::t("fields", ucfirst(str_replace("_", " " ,$field)))?></label></div>
       <div class="controls clearfix">
-        <div class="preview">
+<!--        <div class="preview">
           <img ng-src="{{content.<?php echo $field?>}}" alt="" />
         </div>
         <input type="file" onchange="angular.element(this).scope().filechange(this)" upload="<?php echo Yii::t("strings", "Upload Image")?>" name="<?php echo $field?>" accept="image/*"/>
-        <input type="hidden" value="{{content.<?php echo $field?>}}" ng-model="content.<?php echo $field?>"/>
+        <input type="hidden" value="{{content.<?php echo $field?>}}" ng-model="content.<?php echo $field?>"/>-->
+        <ng-uploadimage  ng-model="content.<?php echo $field?>">
+          
+        </ng-uploadimage>
       </div>
     </div>
     <?php endforeach;?>
@@ -79,6 +82,7 @@
     <div class="form-actions">
       <div class="controls">
         <input type="button" ng-click="submitContent($event)" class="btn-primary btn" value="<?php echo Yii::t("strings", "Save")?>"/>
+        <ng-ajax-scroll-up start="<?php echo Yii::t("strings", "uploading")?>" finish="<?php echo Yii::t("strings", "finsihed")?>"></ng-ajax-scroll-up>
       </div>
    </div>
   </form>

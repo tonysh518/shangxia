@@ -738,7 +738,21 @@ cursor: pointer;
 
 }
 
+.form-horizontal .controls {
+  position: relative;
+  overflow: hidden;
+}
 
+.form-horizontal .controls .animate {
+  position: absolute;
+  right: 10em;
+  top: 50%;
+  height: 1em;
+  margin-top: -0.5em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #202020;
+}
 
 
 

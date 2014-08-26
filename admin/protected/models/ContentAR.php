@@ -54,7 +54,7 @@ class ContentAR extends CActiveRecord {
     array_push($this->fields, $field_name);
   }
   
-  public function hasImageField($field_name, $options = array()) {
+  public function hasImageField($field_name, $options = array("multi" => FALSE)) {
     $this->imageFields[$field_name] = $options;
   }
   
@@ -67,9 +67,6 @@ class ContentAR extends CActiveRecord {
   }
   
   public function beforeSave() {
-    if ($this->cid <= 0) {
-      $cid = NULL;
-    }
     if ($this->isNewRecord) {
       $this->cdate = date("Y-m-d H:i:s");
     }
@@ -89,7 +86,16 @@ class ContentAR extends CActiveRecord {
    * @return type
    */
   public function afterSave() {
-    $cid = $this->cid;
+    if (!$this->cid) {
+      $sql = "SELECT MAX(cid) as cid FROM ". $this->tableName(). " ORDER BY cdate LIMIT 0, 1";
+      $res = Yii::app()->db->createCommand($sql);
+      $query = $res->query();
+      $row = $query->read();
+      
+      $this->cid = $row["cid"];
+    }
+    
+    parent::afterSave();
     
     // 添加 Field 数据
     foreach ($this->getFields() as $field) {
@@ -104,12 +110,12 @@ class ContentAR extends CActiveRecord {
     }
 
     // TODO:: 添加视频
-    
-    return parent::afterSave();
+    return TRUE;
   }
   
 
   public function __get($name) {
+    // 文本字段
     $fields = $this->getFields();
     if ($fields && array_search($name, $fields) !== FALSE) {
       if ($this->cid) {
@@ -124,6 +130,16 @@ class ContentAR extends CActiveRecord {
       }
       else {
         return "";
+      }
+    }
+    // 图片字段
+    $imageFields = $this->getImageFields();
+    if ($imageFields && array_search($name, $imageFields) !== FALSE) {
+      if ($this->cid) {
+        $mediaAr = new MediaAR();
+        $mediaAr->attachMediaToObject($this, $name);
+        
+        return $this->{$name};
       }
     }
     

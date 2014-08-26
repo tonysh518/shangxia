@@ -1846,3 +1846,315 @@ Stack trace:
 REQUEST_URI=/admin/api/content/update
 HTTP_REFERER=http://sxhtml.local/admin/index.php/page/addcontent/20042.html?type=slideshow
 ---
+2014/08/24 19:28:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "addnews".' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php:483
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(270): CController->missingAction('addnews')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('addnews')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/addnews')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php/page/addnews.html
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/content.html?type=slideshow
+---
+2014/08/24 19:29:51 [error] [php] Creating default object from empty value (/Users/jackeychen/Workspace/shangxia/html/admin/protected/modules/api/controllers/ContentController.php:32)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): ContentController->runAction()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): ContentController->runActionWithFilters()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): ContentController->run()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/admin/api/content/update
+2014/08/24 19:30:21 [error] [php] Creating default object from empty value (/Users/jackeychen/Workspace/shangxia/html/admin/protected/modules/api/controllers/ContentController.php:32)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): ContentController->runAction()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): ContentController->runActionWithFilters()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): ContentController->run()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/admin/api/content/update
+2014/08/26 21:30:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/media/temp".' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('api/media/temp')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/api/media/temp
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/addcontent.html?type=slideshow
+---
+2014/08/26 21:31:35 [error] [php] move_uploaded_file(/Users/jackeychen/Workspace/shangxia/html/admin/upload/0ee4ac4390bc2f8a2ee1c0f21866cf05.png): failed to open stream: No such file or directory (/Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CUploadedFile.php:198)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/protected/modules/api/controllers/MediaController.php(15): saveTo()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): MediaController->actionTemp()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): MediaController->runAction()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): MediaController->runActionWithFilters()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): MediaController->run()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/admin/api/media/temp
+2014/08/26 21:51:04 [error] [php] Undefined index: multi (/Users/jackeychen/Workspace/shangxia/html/admin/protected/models/MediaAR.php:167)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(1076): SlideShowContentAR->getAttributes()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(806): SlideShowContentAR->insert()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/modules/api/controllers/ContentController.php(41): SlideShowContentAR->save()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): ContentController->actionUpdate()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): ContentController->runAction()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): ContentController->runActionWithFilters()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): ContentController->run()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/admin/api/content/update
+2014/08/26 21:52:29 [error] [php] Undefined index: multi (/Users/jackeychen/Workspace/shangxia/html/admin/protected/models/MediaAR.php:167)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(1076): SlideShowContentAR->getAttributes()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(806): SlideShowContentAR->insert()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/modules/api/controllers/ContentController.php(41): SlideShowContentAR->save()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): ContentController->actionUpdate()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): ContentController->runAction()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): ContentController->runActionWithFilters()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): ContentController->run()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/admin/api/content/update
+2014/08/26 22:26:27 [error] [exception.CException] exception 'CException' with message '属性 "SlideShowContentAR.image" 未被定义.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:130
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(145): CComponent->__get('image')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(130): CActiveRecord->__get('image')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/views/page/editcontent.php(72): ContentAR->__get('image')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CBaseController.php(126): require('/Users/jackeych...')
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CBaseController.php(95): CBaseController->renderInternal('/Users/jackeych...', Array, true)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(869): CBaseController->renderFile('/Users/jackeych...', Array, true)
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(782): CController->renderPartial('editcontent', Array, true)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(61): CController->render('editcontent', Array)
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionAddcontent()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('addcontent')
+#13 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/addcontent')
+#14 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#16 {main}
+REQUEST_URI=/admin/index.php/page/addcontent/20044.html?type=slideshow
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/content.html?type=slideshow
+---
+2014/08/26 22:27:57 [error] [exception.CException] exception 'CException' with message '属性 "SlideShowContentAR.image" 未被定义.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:130
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(145): CComponent->__get('image')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(130): CActiveRecord->__get('image')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(61): ContentAR->__get('image')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionAddcontent()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('addcontent')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/addcontent')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php/page/addcontent/20044.html?type=slideshow
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/content.html?type=slideshow
+---
+2014/08/26 22:27:58 [error] [exception.CException] exception 'CException' with message '属性 "SlideShowContentAR.image" 未被定义.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:130
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(145): CComponent->__get('image')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(130): CActiveRecord->__get('image')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(61): ContentAR->__get('image')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionAddcontent()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('addcontent')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/addcontent')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php/page/addcontent/20044.html?type=slideshow
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/content.html?type=slideshow
+---
+2014/08/26 22:29:29 [error] [exception.CException] exception 'CException' with message '属性 "SlideShowContentAR.image" 未被定义.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:130
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(145): CComponent->__get('image')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(139): CActiveRecord->__get('image')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(61): ContentAR->__get('image')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionAddcontent()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('addcontent')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/addcontent')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php/page/addcontent/20044.html?type=slideshow
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/content.html?type=slideshow
+---
+2014/08/26 22:29:30 [error] [exception.CException] exception 'CException' with message '属性 "SlideShowContentAR.image" 未被定义.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:130
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(145): CComponent->__get('image')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(139): CActiveRecord->__get('image')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(61): ContentAR->__get('image')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionAddcontent()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('addcontent')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/addcontent')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php/page/addcontent/20044.html?type=slideshow
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/content.html?type=slideshow
+---
+2014/08/26 22:29:49 [error] [exception.CException] exception 'CException' with message '属性 "MediaAR.image" 未被定义.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:130
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(145): CComponent->__get('image')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(137): CActiveRecord->__get('image')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(61): ContentAR->__get('image')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionAddcontent()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('addcontent')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/addcontent')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php/page/addcontent/20044.html?type=slideshow
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/content.html?type=slideshow
+---
+2014/08/26 22:29:50 [error] [exception.CException] exception 'CException' with message '属性 "MediaAR.image" 未被定义.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:130
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(145): CComponent->__get('image')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(137): CActiveRecord->__get('image')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(61): ContentAR->__get('image')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionAddcontent()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('addcontent')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/addcontent')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php/page/addcontent/20044.html?type=slideshow
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/content.html?type=slideshow
+---
+2014/08/26 22:29:51 [error] [exception.CException] exception 'CException' with message '属性 "MediaAR.image" 未被定义.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:130
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(145): CComponent->__get('image')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(137): CActiveRecord->__get('image')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(61): ContentAR->__get('image')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionAddcontent()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('addcontent')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/addcontent')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php/page/addcontent/20044.html?type=slideshow
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/content.html?type=slideshow
+---
+2014/08/26 22:29:51 [error] [exception.CException] exception 'CException' with message '属性 "MediaAR.image" 未被定义.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:130
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(145): CComponent->__get('image')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(137): CActiveRecord->__get('image')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(61): ContentAR->__get('image')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionAddcontent()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('addcontent')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/addcontent')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php/page/addcontent/20044.html?type=slideshow
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/content.html?type=slideshow
+---
+2014/08/26 22:29:51 [error] [exception.CException] exception 'CException' with message '属性 "MediaAR.image" 未被定义.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:130
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(145): CComponent->__get('image')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(137): CActiveRecord->__get('image')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(61): ContentAR->__get('image')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionAddcontent()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('addcontent')
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/addcontent')
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php/page/addcontent/20044.html?type=slideshow
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/content.html?type=slideshow
+---
+2014/08/26 22:34:04 [error] [php] Undefined variable: instance (/Users/jackeychen/Workspace/shangxia/html/admin/protected/views/page/addcontent.php:72)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(869): PageController->renderFile()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(782): PageController->renderPartial()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(64): PageController->render()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionAddcontent()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): PageController->runAction()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): PageController->runActionWithFilters()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): PageController->run()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/admin/index.php/page/addcontent.html?type=slideshow
+2014/08/26 23:00:53 [error] [php] Object of class CMysqlTableSchema could not be converted to string (/Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php:90)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/protected/modules/api/controllers/ContentController.php(41): SlideShowContentAR->save()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): ContentController->actionUpdate()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): ContentController->runAction()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): ContentController->runActionWithFilters()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): ContentController->run()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/admin/api/content/update
+2014/08/26 23:02:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "deletecontent" 动作.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php:483
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(270): CController->missingAction('deletecontent')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('deletecontent')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/deletecont...')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php/page/deletecontent/20045.html?type=slideshow
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/content.html?type=slideshow
+---
+2014/08/26 23:03:30 [error] [exception.CException] exception 'CException' with message '属性 "SlideShowContentAR.image" 未被定义.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:130
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(145): CComponent->__get('image')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(146): CActiveRecord->__get('image')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/views/page/editcontent.php(72): ContentAR->__get('image')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CBaseController.php(126): require('/Users/jackeych...')
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CBaseController.php(95): CBaseController->renderInternal('/Users/jackeych...', Array, true)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(869): CBaseController->renderFile('/Users/jackeych...', Array, true)
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(782): CController->renderPartial('editcontent', Array, true)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(61): CController->render('editcontent', Array)
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionAddcontent()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('addcontent')
+#13 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/addcontent')
+#14 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#16 {main}
+REQUEST_URI=/admin/index.php/page/addcontent/20065.html?type=slideshow
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/content.html?type=slideshow
+---
