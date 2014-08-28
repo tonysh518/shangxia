@@ -14,37 +14,46 @@ class ContentController extends Controller {
     
     // Step1, 加载对应的Model
     $type = $request->getPost("type");
-    if (!$type) {
-      return $this->responseError("unkonw", ErrorAR::ERROR_UNKNOWN);
-    }
-    $class = ucfirst($type)."ContentAR";
-    if (!class_exists($class)) {
+    $key_id = $request->getPost("key_id");
+    if (!$type && !$key_id) {
       return $this->responseError("unkonw", ErrorAR::ERROR_UNKNOWN);
     }
     
-    // Step2, 然后保存数据
-    $model = new $class();
-    $model->attributes = $_POST;
-    
-    // 是编辑还是添加?
-    if (($id = $request->getPost("cid"))) {
-      $instance = $model->findByPk($id);
-      $instance->attributes = $_POST;
-      if ($instance->update()) {
-        $this->responseJSON($model->attributes, "success");
+    if ($type) {
+      $class = ucfirst($type)."ContentAR";
+      if (!class_exists($class)) {
+        return $this->responseError("unkonw", ErrorAR::ERROR_UNKNOWN);
+      }
+
+      // Step2, 然后保存数据
+      $model = new $class();
+      $model->attributes = $_POST;
+
+      // 是编辑还是添加?
+      if (($id = $request->getPost("cid"))) {
+        $instance = $model->findByPk($id);
+        $instance->attributes = $_POST;
+        if ($instance->update()) {
+          $this->responseJSON($model->attributes, "success");
+        }
+        else {
+          $this->responseError("save error", ErrorAR::ERROR_INVITE, $instance->getErrors());
+        }
       }
       else {
-        $this->responseError("save error", ErrorAR::ERROR_INVITE, $instance->getErrors());
+        if ($model->save()) {
+          $this->responseJSON($model->attributes, "success");
+        }
+        else {
+          $this->responseError("save error", ErrorAR::ERROR_INVITE, $model->getErrors());
+        }
       }
     }
-    else {
-      if ($model->save()) {
-        $this->responseJSON($model->attributes, "success");
-      }
-      else {
-        $this->responseError("save error", ErrorAR::ERROR_INVITE, $model->getErrors());
-      }
+    elseif ($key_id) {
+      $content = ContentAR::model()->loadByKey($key_id);
+      
     }
+
   }
   
 }

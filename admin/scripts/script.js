@@ -63,10 +63,12 @@
       restrict: "A",
       require: ["ngModel"],
       scope: false,
-      link: function (scope, element, attrs, ctrls) {
-        var ngModel = ctrls[0];
-        ngModel.$setViewValue(element.val()); 
-      }
+      link: function (scope, element, attrs, ctrl) {
+            if (attrs.ngModel) {
+                var value = attrs.value || element.val();
+                ctrl[0].$setViewValue(value);
+            }
+        }
     };
   });
   
@@ -122,7 +124,6 @@
   }]);
 
   AdminModule.directive("ngUploadimage", ["UploadMediaService" ,function (UploadMediaService) {
-    
     return {
       restrict: "E",
       scope: {},
@@ -145,6 +146,31 @@
     };
   }]);
 
+  AdminModule.directive("ngUploadvideo", ["UploadMediaService", function (UploadMediaService) {
+    return {
+      restrict: "E",
+      scope: {},
+      require: ["ngModel"],
+      link: function (scope, element, attr, ctrl) {
+        element.find("input[type='file']").change(function () {
+          UploadMediaService.uploadVideo(angular.element(this)[0]).success(function (res) {
+            if (res["status"] != 0) {
+              alert(res["message"]);
+              return;
+            }
+            ctrl[0].$setViewValue(res["data"]["uri"]);
+            scope.uri = res["data"]["uri"];
+            scope.$digest();
+          });
+        });
+        
+        ctrl[0].$setViewValue(attr["value"]);
+        scope.uri = attr["value"];
+      },
+      template: '<input type="file"  accept="video/*" upload="Upload Video"/><span class="info">{{uri}}</span>'
+    };
+  }]);
+
   AdminModule.controller("ContentForm",  function ($scope, UploadMediaService, ContentService) {
     $scope.submitContent = function () {
       if ($scope.contentform.$valid) {
@@ -154,7 +180,7 @@
           }
           else {
             setTimeout(function () {
-              window.location.href = angular.element("form[name='"+$scope.contentform["$name"]+"']").attr("redirect");
+              //window.location.href = angular.element("form[name='"+$scope.contentform["$name"]+"']").attr("redirect");
             }, 500);
           }
         });

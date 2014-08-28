@@ -8,6 +8,7 @@ class ContentAR extends CActiveRecord {
   public $meta;
   private $fields = array();
   private $imageFields = array();
+  private $videoFields = array();
   public function tableName() {
     return "content";
   }
@@ -47,7 +48,11 @@ class ContentAR extends CActiveRecord {
   }
   
   public function getVideoFields() {
-    return array();
+    return array_keys($this->videoFields);
+  }
+  
+  public function getVideoFormat($field_name) {
+    return $this->videoFields[$field_name];
   }
   
   public function hasContentField($field_name, $options = array()) {
@@ -56,6 +61,10 @@ class ContentAR extends CActiveRecord {
   
   public function hasImageField($field_name, $options = array("multi" => FALSE)) {
     $this->imageFields[$field_name] = $options;
+  }
+  
+  public function hasVideoField($field_name, $options = array("format" => "mp4")) {
+    $this->videoFields[$field_name] = $options;
   }
   
   /**
@@ -110,6 +119,10 @@ class ContentAR extends CActiveRecord {
     }
 
     // TODO:: 添加视频
+    foreach ($this->getVideoFields() as $fieldName) {
+      $videoAr = new VideoAR();
+      $videoAr->saveVideoToObject($this, $fieldName);
+    }
     return TRUE;
   }
   
@@ -142,6 +155,15 @@ class ContentAR extends CActiveRecord {
         return $this->{$name};
       }
     }
+    $videoFields = $this->getVideoFields();
+    if ($videoFields && array_search($name, $videoFields) !== FALSE) {
+      if ($this->cid) {
+        $videoAr = new VideoAR();
+        $videoAr->attachVideoToObject($this, $name);
+        
+        return $this->{$name};
+      }
+    }
     
     return parent::__get($name);
   }
@@ -157,6 +179,9 @@ class ContentAR extends CActiveRecord {
     else if (array_search($name, $this->getImageFields()) !== FALSE) {
       $this->{$name} = $value;
     }
+    else if (array_search($name, $this->getVideoFields()) !== FALSE) {
+      $this->{$name} = $value;
+    }
     else {
       parent::__set($name, $value);
     }
@@ -164,8 +189,6 @@ class ContentAR extends CActiveRecord {
   
   /**
    * 在加载Content 之后 把对应的Field 实例加载进来
-   * @author jackey
-   * 
    */
   public function afterFind() {
     // 1. field
@@ -181,6 +204,16 @@ class ContentAR extends CActiveRecord {
     }
     
     // 2. image
+    foreach ($this->getImageFields() as $fieldName) {
+      $mediaAr = new MediaAR();
+      $mediaAr->attachMediaToObject($this, $fieldName);
+    }
+    
+    // 3. Video
+    foreach ($this->getVideoFields() as $fieldName) {
+      $videoAr = new VideoAR();
+      $videoAr->attachVideoToObject($this, $fieldName);
+    }
     
     return parent::afterFind();
   }
@@ -243,6 +276,13 @@ class ContentAR extends CActiveRecord {
         $media->attachMediaToObject($this, $fieldName);
         $attributes[$fieldName] = $this->{$fieldName};
       }
+    }
+    
+    // 视频
+    foreach ($this->getVideoFields() as $fieldName) {
+        $videoAr = new VideoAR();
+        $videoAr->attachVideoToObject($this, $fieldName);
+        $attributes[$fieldName] = $this->{$fieldName};
     }
     return $attributes;
   }

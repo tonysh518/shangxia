@@ -41,9 +41,9 @@
         <label for=""><?php echo Yii::t("strings", "Weight")?></label>
       </div>
       <div class="controls">
-        <select ng-model="content.weight" ng-options="label in option">
+        <select ng-model="content.weight"  ng-initial>
           <?php foreach (range(0, 10) as $weight): ?>
-          <option value="<?php echo ($weight)?>" <?php if ($weight == $instance->weight) echo "selected='selected'";?> ><?php echo ($weight)?></option>
+          <option value="<?php echo ($weight)?>" <?php if ($instance->weight == $weight) echo "selected"?>><?php echo ($weight)?></option>
           <?php endforeach;?>
         </select>
       </div>
@@ -54,7 +54,7 @@
       <div class="controle-group">
         <div class="control-label"><label for="<?php echo $field?>"><?php echo Yii::t("fields", ucfirst(str_replace("_", " " ,$field)))?></label></div>
         <div class="controls">
-          <input type="text" name="<?php echo $field?>" ng-model="content.<?php echo $field?>"/>
+          <input type="text" value="<?php echo $instance->{$field}?>" name="<?php echo $field?>" ng-model="content.<?php echo $field?>" ng-initial/>
         </div>
       </div>
     <?php endforeach;?>
@@ -74,8 +74,20 @@
     </div>
     <?php endforeach;?>
     
+    <!-- 视频 Field / 视频扩展字段 -->
+    <?php foreach ($model->getVideoFields()  as $field): ?>
+    <div class="control-group imagepreview">
+      <div class="control-label"><label for="<?php echo $field?>"><?php echo Yii::t("fields", ucfirst(str_replace("_", " " ,$field)))?></label></div>
+      <div class="controls clearfix">
+        <ng-uploadvideo  ng-model="content.<?php echo $field?>" value="<?php echo $instance->{$field}?>">
+          
+        </ng-uploadvideo>
+      </div>
+    </div>
+    <?php endforeach;?>
+    
     <input type="hidden" name="type" value="<?php echo $type?>" ng-model="content.type" ng-initial/>
-    <input type="hidden"  name="cid" value="<?php echo Yii::app()->getRequest()->getParam("id", 0)?>" ng-model="content.cid" ng-initial/>
+    <input type="hidden" name="cid" value="<?php echo Yii::app()->getRequest()->getParam("id", 0)?>" ng-model="content.cid" ng-initial/>
     
     <div class="form-actions">
       <div class="controls">

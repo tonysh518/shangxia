@@ -2158,3 +2158,164 @@ Stack trace:
 REQUEST_URI=/admin/index.php/page/addcontent/20065.html?type=slideshow
 HTTP_REFERER=http://sxhtml.local/admin/index.php/page/content.html?type=slideshow
 ---
+2014/08/26 23:46:29 [error] [php] Undefined variable: homepage (/Users/jackeychen/Workspace/shangxia/html/views/common/header.php:16)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/views/common/header.php(16): CWebApplication->handleError()
+#1 /Users/jackeychen/Workspace/shangxia/html/views/collections.php(1): include_once()
+REQUEST_URI=/views/collections.php
+2014/08/26 23:46:31 [error] [php] Undefined variable: homepage (/Users/jackeychen/Workspace/shangxia/html/views/common/header.php:16)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/views/common/header.php(16): CWebApplication->handleError()
+#1 /Users/jackeychen/Workspace/shangxia/html/views/collections.php(1): include_once()
+REQUEST_URI=/views/collections.php
+2014/08/26 23:46:46 [error] [php] Undefined variable: homepage (/Users/jackeychen/Workspace/shangxia/html/views/common/header.php:16)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/views/common/header.php(16): CWebApplication->handleError()
+#1 /Users/jackeychen/Workspace/shangxia/html/views/collections.php(1): include_once()
+REQUEST_URI=/views/collections.php
+2014/08/27 00:00:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "index" 动作.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php:483
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(270): CController->missingAction('index')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('index')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/index')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/page/index
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/content.html?type=slideshow
+---
+2014/08/27 00:00:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "index" 动作.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php:483
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(270): CController->missingAction('index')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('index')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/index')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/page/index
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/content.html?type=slideshow
+---
+2014/08/27 00:01:05 [error] [exception.CException] exception 'CException' with message 'VideoAR and its behaviors do not have a method or closure named "attachMediaToObject".' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:266
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(227): CComponent->__call('attachMediaToOb...', Array)
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(215): CActiveRecord->__call('attachMediaToOb...', Array)
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(215): VideoAR->attachMediaToObject(Object(VideoContentAR), 'video_mp4')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(1866): ContentAR->afterFind()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(1887): CActiveRecord->populateRecord(Array, true)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(1351): CActiveRecord->populateRecords(Array, true, NULL)
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(247): CActiveRecord->findAll(Object(CDbCriteria))
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(78): ContentAR->getList()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionContent()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#12 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('content')
+#14 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/content')
+#15 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#17 {main}
+REQUEST_URI=/admin/index.php/page/content.html?type=video
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/content.html?type=slideshow
+---
+2014/08/27 00:02:46 [error] [php] Undefined variable: field_name (/Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php:124)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/protected/modules/api/controllers/ContentController.php(41): VideoContentAR->save()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): ContentController->actionUpdate()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): ContentController->runAction()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): ContentController->runActionWithFilters()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): ContentController->run()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/admin/api/content/update
+2014/08/27 00:02:56 [error] [php] Undefined variable: field_name (/Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php:124)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/protected/modules/api/controllers/ContentController.php(41): VideoContentAR->save()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): ContentController->actionUpdate()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): ContentController->runAction()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): ContentController->runActionWithFilters()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): ContentController->run()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/admin/api/content/update
+2014/08/27 22:33:07 [error] [php] Undefined variable: homepage (/Users/jackeychen/Workspace/shangxia/html/views/common/header.php:16)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/views/common/header.php(16): CWebApplication->handleError()
+#1 /Users/jackeychen/Workspace/shangxia/html/views/parisboutique.php(1): include_once()
+REQUEST_URI=/views/parisboutique.php
+2014/08/27 22:33:30 [error] [php] Undefined variable: homepage (/Users/jackeychen/Workspace/shangxia/html/views/common/header.php:16)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/views/common/header.php(16): CWebApplication->handleError()
+#1 /Users/jackeychen/Workspace/shangxia/html/views/parisboutique.php(1): include_once()
+REQUEST_URI=/views/parisboutique.php
+2014/08/27 22:33:34 [error] [php] Undefined variable: homepage (/Users/jackeychen/Workspace/shangxia/html/views/common/header.php:16)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/views/common/header.php(16): CWebApplication->handleError()
+#1 /Users/jackeychen/Workspace/shangxia/html/views/news.php(1): include_once()
+REQUEST_URI=/views/news.php
+2014/08/27 22:33:35 [error] [php] Undefined variable: homepage (/Users/jackeychen/Workspace/shangxia/html/views/common/header.php:16)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/views/common/header.php(16): CWebApplication->handleError()
+#1 /Users/jackeychen/Workspace/shangxia/html/views/news.php(1): include_once()
+REQUEST_URI=/views/news.php
+2014/08/27 22:33:39 [error] [php] Undefined variable: homepage (/Users/jackeychen/Workspace/shangxia/html/views/common/header.php:16)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/views/common/header.php(16): CWebApplication->handleError()
+#1 /Users/jackeychen/Workspace/shangxia/html/views/contact.php(1): include_once()
+REQUEST_URI=/views/contact.php
+2014/08/27 22:33:44 [error] [php] Undefined variable: homepage (/Users/jackeychen/Workspace/shangxia/html/views/common/header.php:16)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/views/common/header.php(16): CWebApplication->handleError()
+#1 /Users/jackeychen/Workspace/shangxia/html/views/contact.php(1): include_once()
+REQUEST_URI=/views/contact.php
+2014/08/27 22:33:45 [error] [php] Undefined variable: homepage (/Users/jackeychen/Workspace/shangxia/html/views/common/header.php:16)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/views/common/header.php(16): CWebApplication->handleError()
+#1 /Users/jackeychen/Workspace/shangxia/html/views/contact.php(1): include_once()
+REQUEST_URI=/views/contact.php
+2014/08/27 22:33:46 [error] [php] Undefined variable: homepage (/Users/jackeychen/Workspace/shangxia/html/views/common/header.php:16)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/views/common/header.php(16): CWebApplication->handleError()
+#1 /Users/jackeychen/Workspace/shangxia/html/views/contact.php(1): include_once()
+REQUEST_URI=/views/contact.php
+2014/08/27 22:59:16 [error] [php] Undefined variable: homepage (/Users/jackeychen/Workspace/shangxia/html/views/common/header.php:16)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/views/common/header.php(16): CWebApplication->handleError()
+#1 /Users/jackeychen/Workspace/shangxia/html/views/collections.php(1): include_once()
+REQUEST_URI=/views/collections.php
+2014/08/27 22:59:56 [error] [php] Undefined variable: homepage (/Users/jackeychen/Workspace/shangxia/html/views/common/header.php:16)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/views/common/header.php(16): CWebApplication->handleError()
+#1 /Users/jackeychen/Workspace/shangxia/html/views/collections.php(1): include_once()
+REQUEST_URI=/views/collections.php
+2014/08/27 23:00:00 [error] [php] Undefined variable: homepage (/Users/jackeychen/Workspace/shangxia/html/views/common/header.php:16)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/views/common/header.php(16): CWebApplication->handleError()
+#1 /Users/jackeychen/Workspace/shangxia/html/views/collections.php(1): include_once()
+REQUEST_URI=/views/collections.php
+2014/08/28 00:45:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "index" 动作.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php:483
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(270): CController->missingAction('index')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('index')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/index')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/page/index
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/content.html?type=collection
+---
+2014/08/28 00:45:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "index" 动作.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php:483
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(270): CController->missingAction('index')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('index')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/index')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/page/index
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/content.html?type=collection
+---

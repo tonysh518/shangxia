@@ -2,7 +2,7 @@
     <i class="fa fa-plus-square"></i><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => $type))?>"><?php echo Yii::t("strings", ucfirst($type)." Add New")?></a>
   </div>
 
-<div class="table-content" ng-controller="ContentTable" ng-init="init()">
+<div class="table-content" >
   <header>
     <div class="icons">
       <i class="fa fa-table"></i>

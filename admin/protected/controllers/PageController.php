@@ -71,7 +71,7 @@ class PageController extends Controller {
     
     $class = ucfirst($type).'ContentAR';
     if (!class_exists($class)) {
-      return $this->redirect(Yii::app()->getBaseUrl()."/page/index");
+      return $this->redirect(Yii::app()->getBaseUrl()."/index");
     }
     $model = new $class();
     

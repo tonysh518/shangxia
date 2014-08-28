@@ -76,6 +76,18 @@
     </div>
     <?php endforeach;?>
     
+    <!-- 视频 Field / 视频扩展字段 -->
+    <?php foreach ($model->getVideoFields()  as $field): ?>
+    <div class="control-group imagepreview">
+      <div class="control-label"><label for="<?php echo $field?>"><?php echo Yii::t("fields", ucfirst(str_replace("_", " " ,$field)))?></label></div>
+      <div class="controls clearfix">
+        <ng-uploadvideo  ng-model="content.<?php echo $field?>">
+          
+        </ng-uploadvideo>
+      </div>
+    </div>
+    <?php endforeach;?>
+    
     <input type="hidden" name="type" value="<?php echo $type?>" ng-model="content.type" ng-initial/>
     <input type="hidden"  name="cid" value="<?php echo Yii::app()->getRequest()->getParam("id", 0)?>" ng-model="content.cid" ng-initial/>
     

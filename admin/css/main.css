@@ -740,7 +740,6 @@ cursor: pointer;
 
 .form-horizontal .controls {
   position: relative;
-  overflow: hidden;
 }
 
 .form-horizontal .controls .animate {

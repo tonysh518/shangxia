@@ -65,17 +65,42 @@
       
       <!-- News End -->  
       
+      <!--  Slideshow -->
       <li class="nav-header">
         <?php echo Yii::t("strings", "Slideshow")?>
       </li>
       <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "slideshow"))?>"><?php echo Yii::t("strings", "Add Slideshow")?></a></li>
       <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "slideshow"))?>"><?php echo Yii::t("strings", "Slideshow")?></a></li>
+      <!-- End Slideshow-->
+      
+      <!-- Video -->
+      <li class="nav-header">
+        <?php echo Yii::t("strings", "Home Video")?>
+      </li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "home_video"))?>"><?php echo Yii::t("strings", "Add Home Video")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "home_video"))?>"><?php echo Yii::t("strings", "Home Video")?></a></li>
+      <!-- End Video-->
+      
+      <!-- Collection  -->
+      <li class="nav-header">
+        <?php echo Yii::t("strings", "Collection")?>
+      </li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "collection"))?>"><?php echo Yii::t("strings", "Add Collection")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "collection"))?>"><?php echo Yii::t("strings", "Collection")?></a></li>
+      <!-- End Collection-->
+      
+      <!-- Product  -->
+      <li class="nav-header">
+        <?php echo Yii::t("strings", "Product")?>
+      </li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "product"))?>"><?php echo Yii::t("strings", "Add product")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "product"))?>"><?php echo Yii::t("strings", "product")?></a></li>
+      <!-- End Product-->
       
       <li class="nav-header">
         <?php echo Yii::t("strings", "System")?>
       </li>
       <li><a href="<?php echo Yii::app()->createUrl("page/logout")?>"><?php echo Yii::t("strings", "Logout")?></a></li>
-      
     </ul>
   </div>
   
