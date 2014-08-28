@@ -1,4 +1,4 @@
-<?php require_once "inc.php"?>
+<?php require_once "inc.php";?>
 <!doctype html>
 <html>
 <head>
@@ -13,12 +13,12 @@
 </head>
 <body>
 	<div class="wrap">
-		<?php if ( $homepage == 1 ) { ?>
+		<?php if ( isset($homepage) ) { ?>
 		<?php include_once 'widget/home-slider.php';?>
 		<?php } ?>
 		<!-- head -->
 		<div class="head">
-			<div class="head-fixed" <?php if( $homepage == 1 ){?> style="position:static" <?php } ?>>
+			<div class="head-fixed" <?php if( isset($homepage) ){?> style="position:static" <?php } ?>>
 				<div class="head-inner cs-clear">
 					<img class="nav-bg" src="../SX/images/nav-bg.jpg"/>
 					<ul class="nav nav1">
