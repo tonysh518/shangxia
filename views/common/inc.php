@@ -32,6 +32,8 @@ else {
  * 生成一个编辑我的区块
  */
 function editme($key, $field = array("body"), $media = array(), $video = array()) {
+  // 先禁用掉 Editme 功能
+  return;
   $content = ContentAR::model()->loadByKey($key);
   ob_start();
   // 要修改的
