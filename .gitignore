@@ -4,4 +4,6 @@ nbproject
 
 admin/upload
 
+admin/protected/config/main.php
+
 .DS_Store
