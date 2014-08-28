@@ -11,4 +11,8 @@ class Home_videoContentAR extends ContentAR {
     $this->hasVideoField("video_webm", array("webm"));
     return parent::getVideoFields();
   }
+  
+  public static function model($class = __CLASS__) {
+    return parent::model($class);
+  }
 }

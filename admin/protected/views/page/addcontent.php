@@ -41,7 +41,7 @@
         <label for=""><?php echo Yii::t("strings", "Weight")?></label>
       </div>
       <div class="controls">
-        <select ng-model="content.weight">
+        <select name="weight" ng-model="content.weight">
           <?php foreach (range(0, 10) as $weight): ?>
           <option value="<?php echo ($weight)?>" ><?php echo ($weight)?></option>
           <?php endforeach;?>
@@ -54,7 +54,18 @@
       <div class="controle-group">
         <div class="control-label"><label for="<?php echo $field?>"><?php echo Yii::t("fields", ucfirst(str_replace("_", " " ,$field)))?></label></div>
         <div class="controls">
-          <input type="text" name="<?php echo $field?>" ng-model="content.<?php echo $field?>"/>
+          <?php $option = $model->getContentFieldOption($field);?>
+          <?php if (isset($option["type"]) && $option["type"] == "textarea"): ?>
+            <textarea  name="<?php echo $field?>" ng-ckeditor ng-model="content.<?php echo $field?>"  cols="80" rows="10"></textarea>
+          <?php elseif (isset($option["type"]) && $option["type"] == "select"): ?>
+            <select name="<?php echo $field?>" ng-model="content.<?php echo $field?>" <?php if (isset($option["select_multi"]) && $option["select_multi"] == TRUE) echo "multiple='multiple'"?>>
+              <?php foreach ($option["options"] as $key => $op): ?>
+              <option value="<?php echo $key?>"><?php echo $op;?></option>
+              <?php endforeach;?>
+            </select>
+          <?php else: ?>
+            <input type="text" name="<?php echo $field?>" ng-model="content.<?php echo $field?>"/>
+          <?php endif;?>
         </div>
       </div>
     <?php endforeach;?>

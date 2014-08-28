@@ -73,7 +73,13 @@ class PageController extends Controller {
     if (!class_exists($class)) {
       return $this->redirect(Yii::app()->getBaseUrl()."/index");
     }
-    $model = new $class();
+    
+    if (class_exists($class)){
+      $model = new $class();
+    }
+    else {
+      return $this->redirect("/index/index");
+    }
     
     $list = $model->getList();
     
