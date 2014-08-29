@@ -129,18 +129,37 @@
       scope: {},
       require: ["ngModel"],
       link: function (scope, element, attr, ctrl) {
-        element.find("input[type='file']").change(function () {
-          UploadMediaService.upload(angular.element(this)[0]).success(function (res) {
-            ctrl[0].$setViewValue(res["data"]["uri"]);
-            scope.src = window.baseurl + res["data"]["uri"];
-            scope.$digest();
+        if (typeof attr["multi"] != "undefined") {
+          element.find("input[type='file']").change(function () {
+            UploadMediaService.upload(angular.element(this)[0]).success(function (res) {
+              scope.src.push(window.baseurl + res["data"]["uri"]);
+              scope.$digest();
+              ctrl[0].$setViewValue(scope.src);
+            });
           });
-        });
-        
-        scope.src = attr["value"];
+          if (typeof attr["value"] != "undefined") {
+            scope.src = JSON.parse(attr["value"]);
+            ctrl[0].$setViewValue(JSON.parse(attr["value"]));
+          }
+          else {
+            scope.src = [];
+          }
+        }
+        else {
+          element.find("input[type='file']").change(function () {
+            UploadMediaService.upload(angular.element(this)[0]).success(function (res) {
+              ctrl[0].$setViewValue(res["data"]["uri"]);
+              scope.src = [window.baseurl + res["data"]["uri"]];
+              scope.$digest();
+            });
+          });
+
+          ctrl[0].$setViewValue(attr["value"]);
+          scope.src = [attr["value"]];
+        }
       },
-      template: '<div class="preview">'+ 
-          '<img ng-src="{{src}}" alt="" />'+
+      template: '<div class="preview multi">' + 
+          '<div class="multi-item" ng-repeat="s in src"><img ng-src="{{s}}" alt="" /></div>' +
         '</div>' + 
         '<input type="file"  accept="image/*" upload="Upload Image"/>',
     };

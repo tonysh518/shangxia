@@ -72,15 +72,13 @@
     
     <!-- 图片 Field / 图片扩展字段 -->
     <?php foreach ($model->getImageFields()  as $field): ?>
-    <div class="control-group imagepreview">
+    <?php $option = $model->getImageFieldOption($field);?>
+    <div class="control-group imagepreview <?php if ($option["multi"]) echo "multi";?>">
       <div class="control-label"><label for="<?php echo $field?>"><?php echo Yii::t("fields", ucfirst(str_replace("_", " " ,$field)))?></label></div>
       <div class="controls clearfix">
-<!--        <div class="preview">
-          <img ng-src="{{content.<?php echo $field?>}}" alt="" />
-        </div>
-        <input type="file" onchange="angular.element(this).scope().filechange(this)" upload="<?php echo Yii::t("strings", "Upload Image")?>" name="<?php echo $field?>" accept="image/*"/>
-        <input type="hidden" value="{{content.<?php echo $field?>}}" ng-model="content.<?php echo $field?>"/>-->
-        <ng-uploadimage value="<?php echo $instance->{$field}?>" ng-model="content.<?php echo $field?>">
+        <ng-uploadimage value='<?php if ($option["multi"]) {echo json_encode($instance->{$field}); } else { echo $instance->{$field} ;}?>' ng-model="content.<?php echo $field?>" <?php if ($option["multi"]) echo "multi";?>>
+          
+        </ng-uploadimage>
       </div>
     </div>
     <?php endforeach;?>

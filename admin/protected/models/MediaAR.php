@@ -104,6 +104,9 @@ class MediaAR extends CActiveRecord {
       foreach ($rows as $row) {
         $row->delete();
       }
+      if (!is_array($uri)) {
+        $uri = array($uri);
+      }
       
       // 添加
       foreach ($uri as $i) {
@@ -166,6 +169,7 @@ class MediaAR extends CActiveRecord {
     if ($fieldOption['multi']) {
       return $this->findAll($query);
     }
+    
     return $this->find($query);
   }
   
@@ -194,7 +198,11 @@ class MediaAR extends CActiveRecord {
         $obj->{$field_name} = Yii::app()->getBaseUrl(TRUE) .$uri;
       }
       elseif (is_array($uri)) {
-        $obj->{$field_name} = $uri;
+        $new_uri = array();
+        foreach ($uri as $u) {
+          $new_uri[] = Yii::app()->getBaseUrl(TRUE) .$u;
+        }
+        $obj->{$field_name} = $new_uri;
       }
       else {
         $obj->{$field_name} = "";

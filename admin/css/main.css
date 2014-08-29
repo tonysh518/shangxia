@@ -753,11 +753,27 @@ cursor: pointer;
   color: #202020;
 }
 
+.multi .controls {
+  width: auto;
+}
 
+.multi .controls .multi {
+  width: auto;
+  border: none;
+  height: 11em;
+}
 
+.multi .controls .multi .multi-item {
+  float: left;
+  width: 10em;
+  margin-right: 1em;
+  border: 5px dashed #888;
+  height: 10em;
+}
 
-
-
+.multi .controls input[type="file"] {
+  float:left;
+}
 
 
 
