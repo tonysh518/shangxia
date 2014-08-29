@@ -1,4 +1,39 @@
 @charset "utf-8";
+
+@font-face {
+	font-family: 'Garamond';
+	src: url('../fonts/garamond.ttf');
+	src: local('☺'), url('../fonts/garamond.woff') format('woff'), url('../fonts/garamond.ttf') format('truetype'), url('../fonts/garamond.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Gotham Book';
+	src: url('../fonts/Gotham-Book.otf');
+	src: local('☺'), url('../fonts/Gotham-Book.woff') format('woff'), url('../fonts/Gotham-Book.ttf') format('truetype'), url('../fonts/Gotham-Book.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Gotham Light';
+	src: url('../fonts/Gotham-Light.otf');
+	src: local('☺'), url('../fonts/Gotham-Light.woff') format('woff'), url('../fonts/Gotham-Light.ttf') format('truetype'), url('../fonts/Gotham-Light.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Gotham Medium';
+	src: url('../fonts/Gotham-Medium.otf');
+	src: local('☺'), url('../fonts/Gotham-Medium.woff') format('woff'), url('../fonts/Gotham-Medium.ttf') format('truetype'), url('../fonts/Gotham-Medium.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+
 /*
  * SX.css
  * zx 2014 08
@@ -8,7 +43,7 @@
 ================================================================================================= */
 html{background: #fff}
 body{color:#000;font-size:12px;line-height:2em;}
-body{font-family:Gotham,"Microsoft Yahei",simsun,arial,sans-serif;}
+body{font-family:"Gotham Book","Microsoft Yahei",simsun,arial,sans-serif;}
 h1,h2,h3,h4,h5{font-size:100%;font-weight: normal;}
 body,h1,h2,h3,h4,ul,li,p,img,div{margin:0;padding:0;border:0;}
 img{margin:0;line-height:normal;display: block;}
@@ -25,7 +60,7 @@ a{text-decoration:none;outline: none;color:#444;}
 .cs-clear{+zoom:1;}
 .cs-clear:before,
 .cs-clear:after{clear:both;content:".";font-size:0;display:block;height:0;overflow:hidden;visibility:hidden;}
-.btn{font-family: Garamond;font-size: 18px;font-style: italic;border: #000 solid 1px;display: block;margin: 20px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px;}
+.btn{font-family: 'Garamond';font-size: 18px;font-style: italic;border: #000 solid 1px;display: block;margin: 20px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px;}
 .btn-white{border-color: white;color: white;}
 
 /* Commonly Used
@@ -37,7 +72,7 @@ a{text-decoration:none;outline: none;color:#444;}
 .head-inner{width: 80%;margin: 0 auto;padding: 40px 0;position: relative;}
 .nav{float: left;width: 42%;}
 .nav2{width: 30%}
-.nav li{float: left;line-height: 70px;width: 33%;text-align: center;font-size: 14px;position: relative;}
+.nav li{float: left;line-height: 70px;width: 33%;text-align: center;font-size: 14px;position: relative;font-family: 'Gotham Light';}
 .nav li.active{background: white;}
 .logo{float: left;width: 16%;position: relative;}
 .logo a{width: 50px;height: 50px;display: block;background: url('../images/logo.png') no-repeat;margin: 0 auto}
@@ -58,20 +93,20 @@ a{text-decoration:none;outline: none;color:#444;}
 .slidetab li{width: 20px;height: 3px;border-bottom: #fff solid 3px;float: left;display: inline;margin: 0 3px}
 .slidetab .on{opacity: 0.5;filter:alpha(opacity=50);-moz-opacity:0.5;}
 
-.slidetip {position: absolute;text-align: center;width: 100%;bottom: 120px;z-index: 2;color: white;line-height: 2em; font-size: 18px;}
+.slidetip {position: absolute;text-align: center;width: 100%;bottom: 120px;z-index: 2;color: white;line-height: 2em; font-size: 18px;font-family: 'Gotham Book';}
 .slidetip h4{font-size: 36px;}
-.slidetip i{font-size: 18px;}
+.slidetip i{font-size: 18px;font-family: 'Garamond';}
 
 .slidetip2-tit{font-size: 30px;}
 
 /*intro*/
-.intro{padding:20px 0 100px;}
+.intro{padding:20px 0 100px;font-family: 'Gotham Book';}
 .introtxt{font-size: 30px;text-align: center;text-transform : uppercase;line-height: 38px}
 .introbtn{font-family: Garamond;font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 50px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px}
 
 /*piclist*/
 .piclist{padding: 0 0 130px;}
-.piclistitem{float: left;width: 32.8%;margin-right:0.8%;font-size: 18px;text-transform : uppercase;text-align: center;}
+.piclistitem{float: left;width: 32.8%;margin-right:0.8%;font-size: 18px;text-transform : uppercase;text-align: center;font-family: 'Gotham Medium';}
 .piclistitem img{display: block;margin: 0 0 20px}
 
 /*footer*/
@@ -98,7 +133,7 @@ a{text-decoration:none;outline: none;color:#444;}
 .sitelinkitemS{width: 15%}
 .sitelinkitemXS{width: 10%}
 .sitelinkitem h2{font-size: 18px;padding:0 0 10px;}
-.sitelinkitem a{display: block;line-height: 32px}
+.sitelinkitem a{display: block;line-height: 32px;font-family: 'Gotham Light';}
 .sitelinkitemXS a{float: left;width: 27px;height: 22px;margin-right: 10px;overflow: hidden;line-height: 500em}
 .ft_wx{background: url('../images/footer_wx.png') no-repeat;}
 .ft_wb{background: url('../images/footer_wb.png') no-repeat;}
@@ -109,7 +144,7 @@ a{text-decoration:none;outline: none;color:#444;}
 
 /*introdetail*/
 .detail{padding:50px 0 0;text-align: center;}
-.detailcon{float: left;width: 68%;padding:0 0 35px;font-size: 18px;}
+.detailcon{float: left;width: 68%;padding:0 0 35px;font-size: 18px;font-family: "Gotham Book";}
 .detail h2{font-size:30px;padding:0 0 20px;text-transform : uppercase;line-height: 40px}
 .detail p{font-family: Garamond;font-size: 18px;font-style: italic;}
 .detail .arrows{height:180px;float: left;width: 16%;cursor: pointer;}
@@ -130,7 +165,7 @@ a{text-decoration:none;outline: none;color:#444;}
 .knowhow{}
 .knowhowtit{height: 100px;border-bottom: #000 solid 1px;position: relative;margin:0 0 110px;}
 .knowhowtit h2{font-size: 30px;width: 290px;background: #fff;text-align: center;position: absolute;bottom:-14px;left:50%;margin-left:-145px;}
-.knowhowitem{margin: 0 0 10px}
+.knowhowitem{margin: 0 0 10px;font-family: "Gotham Book";}
 .knowhowL{float: left}
 .knowhowR{float: right}
 .knowhowintro{width: 28%;font-size:18px;text-align: center;padding-top:150px;}
@@ -140,7 +175,7 @@ a{text-decoration:none;outline: none;color:#444;}
 
 /*products*/
 .products{}
-.productstit{height: 100px;border-bottom: #000 solid 1px;position: relative;margin:0 0 110px;}
+.productstit{height: 100px;border-bottom: #000 solid 1px;position: relative;margin:0 0 110px;font-family: "Gotham Book";}
 .productstit h2{font-size: 30px;width: 420px;background: #fff;text-align: center;position: absolute;bottom:-14px;left:50%;margin-left:-210px;text-transform : uppercase;}
 .products-wrap{position: relative;}
 .proinfortxt{float: left;width: 32.8%;background: #F6EEEE}
@@ -148,7 +183,7 @@ a{text-decoration:none;outline: none;color:#444;}
 .proinfortxt p{font-family: Garamond;font-size: 18px;font-style: italic;padding: 0 50px 40px}
 .proinfortxt a{font-family: Garamond;font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px}
 .proinforpic{float: right;width: 66.4%;overflow: hidden;}
-.productscom{position: relative;}
+.productscom{position: relative;font-family: "Gotham Book";}
 .productslist{padding:10px 0;}
 .prolistitem{text-transform : uppercase;float: left;width: 32.8%;margin-right: 0.8%;}
 .prolistitem img{display: block;margin: 0 0 10px;}
@@ -163,7 +198,7 @@ a{text-decoration:none;outline: none;color:#444;}
 /*picinfor*/
 .picinfor{}
 .picinfortxt{float: left;width: 32.8%;font-size: 18px;}
-.picinfortxt h2{padding-right: 50px;height: 50px;font-size: 30px;}
+.picinfortxt h2{padding-right: 50px;height: 50px;font-size: 26px;font-family: "Gotham Book";}
 .picinfortxt p{font-family: Garamond;font-style: italic;padding-top: 20px;padding-right: 50px;}
 .picinforpic{float: right;width: 66.4%;overflow: hidden;}
 
@@ -336,6 +371,6 @@ a{text-decoration:none;outline: none;color:#444;}
 .nav-mask {position: fixed;width: 100%;height: 100%;background: rgba(0,0,0,.2);top: 0;z-index: 10;display: none;}
 .nav-pop{position: absolute;width: 2000px;padding: 40px 20px;background: white;z-index: 11;top: 110px;display: none;}
 .nav-pop-item {float: left;margin: 0 10px;position: relative;}
-.nav-pop-item span {position: absolute;color: white;font-size: 18px;height: 100%;width: 100%;text-align: center;left: 0;top: 0;line-height: 220px;background-color: rgba(0,0,0,.2);}
+.nav-pop-item span {position: absolute;color: white;font-size: 18px;height: 100%;width: 100%;text-align: center;left: 0;top: 0;line-height: 220px;background-color: rgba(0,0,0,.2);font-family: 'Gotham Medium';}
 
 

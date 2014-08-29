@@ -582,11 +582,21 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     // page actions here
     // ============================================================================
     LP.action('nav-pop' , function(){
-        $(this).closest('li').addClass('active').siblings().removeClass('active');
+        
         var text = $.trim( $(this).text() ).toLowerCase();
         var $inner = $(this).closest('.head-inner');
         $inner.attr('class' , 'head-inner cs-clear active-' + text );
         
+        if( $('.nav-pop-' + text ).is(':visible') ){
+            $('.nav-pop-' + text ).fadeOut();
+            $inner.attr('class' , 'head-inner cs-clear');
+            $(this).closest('li').removeClass('active');
+            $('.nav-bg').fadeOut();
+            return false;
+        }
+
+        $(this).closest('li').addClass('active').siblings().removeClass('active');
+
         $('.nav-bg').fadeIn();
         $('.nav-pop').fadeOut();
         $('.nav-pop-' + text ).stop(true , true).fadeIn();
