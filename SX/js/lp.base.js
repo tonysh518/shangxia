@@ -313,10 +313,30 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     var num = $dom.data('num') || 3;
                     var $items = $dom.find('.slide-con-inner').children();
 
-                    $dom.find('.slide-con-inner').width( $items.length / 3 * 100 + '%' );
+                    var $inner = $dom.find('.slide-con-inner').width( $items.length / num * 100 + '%' );
                     var marginRight = 0.8;//parseInt( $items.css('margin-right') );
-                    console.log( marginRight );
                     $items.width( 1 / $items.length * 100 - marginRight + '%' );
+
+                    var index = $dom.data('index') || 0;
+                    var total = $items.length;
+                    $dom.find('.collarrowsprev').click(function(){
+                        if( index == 0 ) return false;
+                        index -= num;
+                        $inner.animate({
+                            marginLeft: - index / num * 100 + '%'
+                        } , 500);
+                        $(window).trigger('scroll');
+                    })
+                    .end()
+                    .find('.collarrowsnext')
+                    .click(function(){
+                        if( index + num >= total ) return false;
+                        index += num;
+                        $inner.animate({
+                            marginLeft: - index / num * 100 + '%'
+                        } , 500);
+                        $(window).trigger('scroll');
+                    });
                 });
                 return false;
             },
@@ -582,11 +602,18 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     // page actions here
     // ============================================================================
     LP.action('nav-pop' , function(){
-        $(this).closest('li').addClass('active').siblings().removeClass('active');
+        
         var text = $.trim( $(this).text() ).toLowerCase();
         var $inner = $(this).closest('.head-inner');
         $inner.attr('class' , 'head-inner cs-clear active-' + text );
         
+        if( $('.nav-pop-' + text ).is(':visible') ){
+            LP.triggerAction('nav-mask');
+            return false;
+        }
+
+        $(this).closest('li').addClass('active').siblings().removeClass('active');
+
         $('.nav-bg').fadeIn();
         $('.nav-pop').fadeOut();
         $('.nav-pop-' + text ).stop(true , true).fadeIn();
@@ -626,17 +653,56 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     });
 
 
-    LP.action('collarrowsprev' , function(){
-        var $com = $(this).siblings('slide-con');
+    
 
+    LP.action('homepage-watch-video' , function(){
+        var $dom = $(this);
+        var $li = $dom.closest('li');
+        var stopHtml = 'Watch video<br><br>Watch video';
+        var playHtml = 'Pause video<br><br>Pause video';
+
+        if( $li.find('.video-wrap').length ){
+            var obj = $dom.closest('li').data('video-object');
+            var isPaused = obj.paused();
+            obj[ isPaused ? 'play' : 'pause' ]();
+
+            $dom.find('i').html( isPaused ? playHtml : stopHtml );
+        } else {
+            $li.siblings().find('[data-a="homepage-watch-video"] i').html( stopHtml );
+            disposeVideo();
+            var video = $dom.data('video');
+            renderVideo( $li , video , $li.find('img').attr('src') , {autoplay: true} );
+            $dom.find('i').html( playHtml );
+        }
         return false;
     });
 
-    LP.action('homepage-watch-video' , function(){
-        disposeVideo();
-        var $dom = $(this);
-        var video = $dom.data('video');
-        renderVideo( $dom.closest('li') , video , $dom.find('img').attr('src') , {autoplay: true} );
-        return false;
+
+    LP.action('page-prev' , function(){
+        var href = location.href;
+        var $links = $('.sitelinkitem a');
+        $links.each(function( i ){
+            var h = $(this).attr('href');
+            h = h.replace(/.\/|..\//g , '');
+            if( href.indexOf( h ) >= 0 ){
+                var $link = $links.eq( i - 1 );
+                $link[0] && $link[0].click();
+                return false;
+            }
+        });
+    });
+
+    LP.action('page-next' , function(){
+        var href = location.href;
+        var $links = $('.sitelinkitem a');
+        $links.each(function( i ){
+            var h = $(this).attr('href');
+            h = h.replace(/.\/|..\//g , '');
+            if( href.indexOf( h ) >= 0 ){
+                var $link = $links.eq( i + 1 );
+                $link[0] && $link[0].click();
+                return false;
+            }
+        });
     });
 });

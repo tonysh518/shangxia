@@ -2,12 +2,12 @@
 <!-- detail -->
 		<div class="section ">
 			<div class="detail cs-clear">
-				<div class="arrows detailprev"></div>
+				<div class="arrows detailprev" data-a="page-prev"></div>
 				<div class=" detailcon">
 					<h2 class="intoview-effect" data-effect="fadeup">SHANG XIA CASHMERE FELT</h2>
 					<p class="intoview-effect" data-effect="fadeup">Created by expertly skilled master craftsmen, using similar techniques to those used when hand-felting fabric for Mongolian yurts, these sculpted garments are made in felt. Inspired by traditional Han dynasty clothing, this collection reflects the traditional elegance of Chinese style. Each garment is unique and sculpted into a seamless shape to create a 3-dimensional garment in felt of Mongolian cashmere. Wrapped in style, one will surely remain warm in winter. </p>
 				</div>
-				<div class="arrows detailnext"></div>
+				<div class="arrows detailnext" data-a="page-next"></div>
 			</div>
 		</div>
 		
