@@ -54,7 +54,18 @@
       <div class="controle-group">
         <div class="control-label"><label for="<?php echo $field?>"><?php echo Yii::t("fields", ucfirst(str_replace("_", " " ,$field)))?></label></div>
         <div class="controls">
+          <?php $option = $model->getContentFieldOption($field);?>
+          <?php if (isset($option["type"]) && $option["type"] == "textarea"): ?>
+            <textarea  name="<?php echo $field?>" ng-ckeditor ng-model="content.<?php echo $field?>"  cols="80" rows="10" value="<?php echo $instance->{$field}?>" ng-initial></textarea>
+          <?php elseif (isset($option["type"]) && $option["type"] == "select"): ?>
+            <select name="<?php echo $field?>" ng-model="content.<?php echo $field?>" value="<?php echo $instance->{$field}?>" ng-initial>
+              <?php foreach ($option["options"] as $key => $op): ?>
+              <option value="<?php echo $key?>"><?php echo $op;?></option>
+              <?php endforeach;?>
+            </select>
+          <?php else: ?>
           <input type="text" value="<?php echo $instance->{$field}?>" name="<?php echo $field?>" ng-model="content.<?php echo $field?>" ng-initial/>
+          <?php endif;?>
         </div>
       </div>
     <?php endforeach;?>

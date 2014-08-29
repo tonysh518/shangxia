@@ -47,21 +47,21 @@
 					</form>
 				</div>
 				<div class="nav-pop nav-pop-collections">
-					<a class="nav-pop-item" data-a="nav-link" href="./collections.php"><img src="../SX/images/nav_top.jpg"/> <span>IN &amp; OUT</span></a>
-					<a class="nav-pop-item" data-a="nav-link" href="./collections.php"><img src="../SX/images/nav_top.jpg"/> <span>HUMAN &amp; NATURE</span></a>
-					<a class="nav-pop-item" data-a="nav-link" href="./collections.php"><img src="../SX/images/nav_top.jpg"/> <span>HERITAGE &amp; EMOTION</span></a>
-					<a class="nav-pop-item" data-a="nav-link" href="./collections.php"><img src="../SX/images/nav_top.jpg"/> <span>GIFTS</span></a>
+					<a class="nav-pop-item" data-a="nav-link" href="./collections.php"><img src="../SX/images/nav_top.jpg"/> <span><i> IN &amp; OUT</i></span></a>
+					<a class="nav-pop-item" data-a="nav-link" href="./collections.php"><img src="../SX/images/nav_top.jpg"/> <span><i>HUMAN &amp; NATURE</i></span></a>
+					<a class="nav-pop-item" data-a="nav-link" href="./collections.php"><img src="../SX/images/nav_top.jpg"/> <span><i>HERITAGE &amp; EMOTION</i></span></a>
+					<a class="nav-pop-item" data-a="nav-link" href="./collections.php"><img src="../SX/images/nav_top.jpg"/> <span><i>GIFTS</i></span></a>
 				</div>
 				<div class="nav-pop nav-pop-crafts">
-					<a class="nav-pop-item" data-a="nav-link" href="./craft.php"><img src="../SX/images/nav_top.jpg"/> <span>BAMBOO WEAVING</span></a>
-					<a class="nav-pop-item" data-a="nav-link" href="./craft.php"><img src="../SX/images/nav_top.jpg"/> <span>CASHMERE FELT</span></a>
-					<a class="nav-pop-item" data-a="nav-link" href="./craft.php"><img src="../SX/images/nav_top.jpg"/> <span>EGGSHELL PORCELAIN</span></a>
-					<a class="nav-pop-item" data-a="nav-link" href="./craft.php"><img src="../SX/images/nav_top.jpg"/> <span>ZITAN WOOD</span></a>
+					<a class="nav-pop-item" data-a="nav-link" href="./craft.php"><img src="../SX/images/nav_top.jpg"/> <span><i>BAMBOO WEAVING</i></span></a>
+					<a class="nav-pop-item" data-a="nav-link" href="./craft.php"><img src="../SX/images/nav_top.jpg"/> <span><i>CASHMERE FELT</i></span></a>
+					<a class="nav-pop-item" data-a="nav-link" href="./craft.php"><img src="../SX/images/nav_top.jpg"/> <span><i>EGGSHELL PORCELAIN</i></span></a>
+					<a class="nav-pop-item" data-a="nav-link" href="./craft.php"><img src="../SX/images/nav_top.jpg"/> <span><i>ZITAN WOOD</i></span></a>
 				</div>
 				<div class="nav-pop nav-pop-boutiques">
-					<a class="nav-pop-item" data-a="nav-link" href="./parisboutique.php"><img src="../SX/images/nav_top.jpg"/> <span>SHANGHAI</span></a>
-					<a class="nav-pop-item" data-a="nav-link" href="./parisboutique.php"><img src="../SX/images/nav_top.jpg"/> <span>BEIJING</span></a>
-					<a class="nav-pop-item" data-a="nav-link" href="./parisboutique.php"><img src="../SX/images/nav_top.jpg"/> <span>PARIS</span></a>
+					<a class="nav-pop-item" data-a="nav-link" href="./boutique.php"><img src="../SX/images/nav_top.jpg"/> <span><i>SHANGHAI</i></span></a>
+					<a class="nav-pop-item" data-a="nav-link" href="./boutique.php"><img src="../SX/images/nav_top.jpg"/> <span><i>BEIJING</i></span></a>
+					<a class="nav-pop-item" data-a="nav-link" href="./boutique.php"><img src="../SX/images/nav_top.jpg"/> <span><i>PARIS</i></span></a>
 				</div>
 			</div>
 		</div>

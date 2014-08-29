@@ -2,11 +2,11 @@
 		<!-- detail -->
 		<div class="section intoview-effect" data-effect="fadeup">
 			<div class="detail cs-clear">
-				<div class="arrows arrows2 detailprev"></div>
+				<div class="arrows arrows2 detailprev" data-a="page-prev"></div>
 				<div class=" detailcon">
 					<h2>contact</h2>
 				</div>
-				<div class="arrows arrows2 detailnext"></div>
+				<div class="arrows arrows2 detailnext" data-a="page-next"></div>
 			</div>
 		</div>
 		<!-- contactpic  -->

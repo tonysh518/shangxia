@@ -2,12 +2,12 @@
 		<!-- detail -->
 		<div class="section ">
 			<div class="detail cs-clear">
-				<div class="arrows arrows4 detailprev"></div>
+				<div class="arrows arrows4 detailprev" data-a="page-prev"></div>
 				<div class=" detailcon ">
 					<h2 class="colllisticon">shang xia gift corner</h2>
 					<p>The products below are available in out boutiques. They are great gifts for your beloved ones. <br />Please select the products you would be interested in, and give us your contact information. You will then receive a personal call from someone at Shang Xia who will help you bare your gift delivered</p>
 				</div>
-				<div class="arrows arrows4 detailnext"></div>
+				<div class="arrows arrows4 detailnext" data-a="page-next"></div>
 			</div>
 		</div>
 		

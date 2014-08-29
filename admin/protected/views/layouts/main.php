@@ -97,6 +97,14 @@
       <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "product"))?>"><?php echo Yii::t("strings", "product")?></a></li>
       <!-- End Product-->
       
+      <!-- Craft  -->
+      <li class="nav-header">
+        <?php echo Yii::t("strings", "Product")?>
+      </li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "craft"))?>"><?php echo Yii::t("strings", "Add craft")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "craft"))?>"><?php echo Yii::t("strings", "craft")?></a></li>
+      <!-- End Craft-->
+      
       <li class="nav-header">
         <?php echo Yii::t("strings", "System")?>
       </li>

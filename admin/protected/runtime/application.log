@@ -2319,3 +2319,110 @@ Stack trace:
 REQUEST_URI=/admin/page/index
 HTTP_REFERER=http://sxhtml.local/admin/index.php/page/content.html?type=collection
 ---
+2014/08/28 21:50:47 [error] [exception.CDbException] SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+2014/08/28 21:50:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php:388
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(387): CDbConnection->init()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CDbHttpSession.php(175): CModule->getComponent('db')
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CDbHttpSession.php(199): CDbHttpSession->getDbConnection()
+#5 [internal function]: CDbHttpSession->openSession('', 'LUCSID')
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CHttpSession.php(114): session_start()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CHttpSession.php(88): CHttpSession->open()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(387): CHttpSession->init()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(103): CModule->getComponent('session')
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/UserAR.php(13): CModule->__get('session')
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(6): UserAR::isLogin()
+#12 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(306): PageController->beforeAction(Object(CInlineAction))
+#13 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#14 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('addcontent')
+#16 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/addcontent')
+#17 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#18 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#19 {main}
+REQUEST_URI=/admin/index.php/page/addcontent.html?type=product
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/content.html?type=product
+---
+2014/08/28 23:01:14 [error] [php] Undefined variable: rows (/Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php:254)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): PageController->runAction()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): PageController->runActionWithFilters()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): PageController->run()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/admin/index.php/page/content.html?type=collection
+2014/08/28 23:06:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "info.php".' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('info.php')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/info.php
+---
+2014/08/28 23:08:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "page" 动作.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php:483
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(270): CController->missingAction('page')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('page')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('index/page')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php/page/
+---
+2014/08/28 23:10:48 [error] [php] Undefined variable: model (/Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php:77)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): PageController->runAction()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): PageController->runActionWithFilters()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): PageController->run()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/admin/index.php/page/content.html?type=home_video
+2014/08/28 23:27:14 [error] [php] Invalid argument supplied for foreach() (/Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php:211)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(1351): CollectionContentAR->populateRecords()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(1470): CollectionContentAR->query()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(252): CollectionContentAR->findAll()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(84): CollectionContentAR->getList()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionContent()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): PageController->runAction()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): PageController->runActionWithFilters()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): PageController->run()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/admin/index.php/page/content.html?type=collection
+2014/08/29 00:25:13 [error] [php] Undefined variable: products (/Users/jackeychen/Workspace/shangxia/html/admin/protected/models/CraftContentAR.php:21)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CBaseController.php(95): PageController->renderInternal()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(869): PageController->renderFile()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(782): PageController->renderPartial()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(64): PageController->render()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionAddcontent()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): PageController->runAction()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): PageController->runActionWithFilters()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): PageController->run()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/admin/index.php/page/addcontent.html?type=craft
+2014/08/29 06:32:28 [error] [php] Undefined index: multi (/Users/jackeychen/Workspace/shangxia/html/admin/protected/views/page/addcontent.php:61)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(869): PageController->renderFile()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(782): PageController->renderPartial()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(64): PageController->render()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionAddcontent()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): PageController->runAction()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): PageController->runActionWithFilters()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): PageController->run()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/admin/index.php/page/addcontent.html?type=craft

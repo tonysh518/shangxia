@@ -13,7 +13,7 @@
 					<h2>shanghai  store</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. Consectetur adipisicing elit, sed do eiusmod tempor incididunt, consectetur adipisicing elit, sed do eiusmod tempor incididunt, sed do eiusmod tempor incididunt, sed do eiusmod tempor incididunt ...</p>
 					<ul class="storechooselist cs-clear">
-						<li><a href="#" title="" class="transition-wrap"><span class="transition">Paris store<br/>Paris store</span></a></li>
+						<li data-a="render-foot-map"><a href="#" title="" class="transition-wrap"><span class="transition">Paris store<br/>Paris store</span></a></li>
 						<li><a href="#" title="" class="transition-wrap"><span class="transition">Beijing store<br/>Beijing store</span></a></li>
 					</ul>
 				</div>
@@ -24,36 +24,36 @@
 			<div class="section sitelinks cs-clear">
 				<div class="sitelinkitem">
 					<h2>COLLECTIONS</h2>
-					<a href="#">heritage & emotion</a>
-					<a href="#">human & nature</a>
-					<a href="#">in & out</a>
-					<a href="#">gifts</a>
+					<a data-a="nav-link" href="./collections.php?a=0">heritage & emotion</a>
+					<a data-a="nav-link" href="./collections.php?a=1">human & nature</a>
+					<a data-a="nav-link" href="./collections.php?a=2">in & out</a>
+					<a data-a="nav-link" href="./collections.php?a=3">gifts</a>
 				</div>
 				<div class="sitelinkitem">
 					<h2>CRAFTS</h2>
-					<a href="#">bamboo weaving</a>
-					<a href="#">cashmere felt</a>
-					<a href="#">eggshe rorcelain</a>
-					<a href="#">zitan wood</a>
+					<a data-a="nav-link" href="./craft.php?a=1">bamboo weaving</a>
+					<a data-a="nav-link" href="./craft.php?a=2">cashmere felt</a>
+					<a data-a="nav-link" href="./craft.php?a=3">eggshe rorcelain</a>
+					<a data-a="nav-link" href="./craft.php?a=4">zitan wood</a>
 				</div>
 				<div class="sitelinkitem sitelinkitemS">
 					<h2>BOUTIQUES</h2>
-					<a href="#">beijing</a>
-					<a href="#">shanghai</a>
-					<a href="#">paris</a>
+					<a data-a="nav-link" href="./boutique.php">beijing</a>
+					<a data-a="nav-link" href="./boutique.php">shanghai</a>
+					<a data-a="nav-link" href="./boutique.php">paris</a>
 				</div>
 				<div class="sitelinkitem sitelinkitemS">
 					<h2>NEWS</h2>
-					<a href="#">news</a>
-					<a href="#">events</a>
-					<a href="#">press</a>
+					<a data-a="nav-link" href="./news-detail.php">news</a>
+					<a data-a="nav-link" href="./news-detail.php">events</a>
+					<a data-a="nav-link" href="./news-detail.php">press</a>
 				</div>
 				<div class="sitelinkitem">
 					<h2>ABOUT</h2>
-					<a href="#">brand story</a>
-					<a href="#">artstic director</a>
-					<a href="#">hertage & encounter</a>
-					<a href="#">jobs</a>
+					<a data-a="nav-link" href="#">brand story</a>
+					<a data-a="nav-link" href="#">artstic director</a>
+					<a data-a="nav-link" href="#">hertage & encounter</a>
+					<a data-a="nav-link" href="#">jobs</a>
 				</div>
 				<div class="sitelinkitem sitelinkitemXS">
 					<h2>CONTACT</h2>

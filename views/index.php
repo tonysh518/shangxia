@@ -15,18 +15,24 @@ THAT PROMISES A UNIQUE ENCOUNTER WITH THE HERITAGE OF CHINESE DESIGN AND CRAFTSM
 		<ul class="piclist cs-clear">
 			<li class="piclistitem intoview-effect" data-effect="fadeup" data-editme-key="home_middle_slide_one">
         <?php editme("home_middle_slide_one", array("title", "link_to") ,array("image"))?>
-				<img src="../SX/images/homepage01.jpg" width="100%" />
-				<p>shang xia is now opening its maison in shanghai</p>
+        		<a href="">
+					<img src="../SX/images/homepage01.jpg" width="100%" />
+					<p>shang xia is now opening its maison in shanghai</p>
+				</a>
 			</li>
 			<li class="piclistitem intoview-effect" data-effect="fadeup" data-editme-key="home_middle_slide_two">
         <?php editme("home_middle_slide_two" ,array("title", "link_to"), array("image"))?>
-				<img src="../SX/images/homepage01.jpg" width="100%" />
-				<p>shang xia is now opening </p>
+        		<a href="">
+					<img src="../SX/images/homepage01.jpg" width="100%" />
+					<p>shang xia is now opening </p>
+				</a>
 			</li>
 			<li class="piclistitem intoview-effect marginR0" data-effect="fadeup" data-editme-key="home_middle_slide_third">
         <?php editme("home_middle_slide_third" ,array("title", "link_to"), array("image"))?>
-				<img src="../SX/images/homepage01.jpg" width="100%" />
-				<p>shang xia is now opening </p>
+        		<a href="">
+					<img src="../SX/images/homepage01.jpg" width="100%" />
+					<p>shang xia is now opening </p>
+				</a>
 			</li>
 		</ul>
 	</div>

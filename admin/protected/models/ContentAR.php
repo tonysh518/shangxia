@@ -36,7 +36,7 @@ class ContentAR extends CActiveRecord {
    * @return type
    */
   public function getFields() {
-    return $this->fields;
+    return array_keys($this->fields);
   }
   
   public function getImageFields() {
@@ -56,7 +56,11 @@ class ContentAR extends CActiveRecord {
   }
   
   public function hasContentField($field_name, $options = array()) {
-    array_push($this->fields, $field_name);
+    $this->fields[$field_name] = $options;
+  }
+  
+  public function getContentFieldOption($filedName) {
+    return $this->fields[$filedName];
   }
   
   public function hasImageField($field_name, $options = array("multi" => FALSE)) {
@@ -238,6 +242,7 @@ class ContentAR extends CActiveRecord {
     global $language;
     $query->addCondition("language=:language");
     $query->params[":language"] = $language;
+
     
     $query->order = "weight DESC, cdate DESC";
     

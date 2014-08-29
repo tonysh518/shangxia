@@ -2,12 +2,12 @@
 		<!-- detail -->
 		<div class="section intoview-effect" data-effect="fadeup">
 			<div class="detail cs-clear">
-				<div class="arrows arrows3 detailprev"></div>
+				<div class="arrows arrows3 detailprev" data-a="page-prev"></div>
 				<div class=" detailcon">
 					<h2>heritage & emotion collection</h2>
 					<div>2012 - 2013</div>
 				</div>
-				<div class="arrows arrows3 detailnext"></div>
+				<div class="arrows arrows3 detailnext" data-a="page-next"></div>
 			</div>
 		</div>
 		<!-- slide -->
@@ -38,23 +38,37 @@
 						<h2>apparel</h2>
 					</div>	
 					<!--  -->
-					<div class="products-wrap intoview-effect" data-effect="fadeup">
-						<div class="collarrows collarrowsprev"></div>
-						<ul class="piclist cs-clear">
-							<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-								<img src="../SX/images/colldemo2.jpg" width="100%" />
-								<p><span class="collicon">architecture</span></p>
-							</li>
-							<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-								<img src="../SX/images/colldemo2.jpg" width="100%" />
-								<p><span>architecture</span></p>
-							</li>
-							<li class="piclistitem collpicitem marginR0 intoview-effect" data-effect="fadeup">
-								<img src="../SX/images/colldemo2.jpg" width="100%" />
-								<p><span>architecture</span></p>
-							</li>
-						</ul>
-						<div class="collarrows collarrowsnext"></div>
+					<div class="products-wrap js-horizontal-slide intoview-effect" data-effect="fadeup" data-num="3">
+						<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
+						<div class="slide-con">
+							<ul class="slide-con-inner piclist cs-clear">
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<img src="../SX/images/colldemo2.jpg" width="100%" />
+									<p><span class="collicon">architecture</span></p>
+								</li>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<img src="../SX/images/colldemo2.jpg" width="100%" />
+									<p><span>architecture</span></p>
+								</li>
+								<li class="piclistitem collpicitem marginR0 intoview-effect" data-effect="fadeup">
+									<img src="../SX/images/colldemo2.jpg" width="100%" />
+									<p><span>architecture</span></p>
+								</li>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<img src="../SX/images/colldemo2.jpg" width="100%" />
+									<p><span class="collicon">architecture</span></p>
+								</li>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<img src="../SX/images/colldemo2.jpg" width="100%" />
+									<p><span>architecture</span></p>
+								</li>
+								<li class="piclistitem collpicitem marginR0 intoview-effect" data-effect="fadeup">
+									<img src="../SX/images/colldemo2.jpg" width="100%" />
+									<p><span>architecture</span></p>
+								</li>
+							</ul>
+						</div>
+						<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
 					</div>
 				</div>
 			</div>

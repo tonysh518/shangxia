@@ -4,10 +4,6 @@
 class MediaAR extends CActiveRecord {
   public static $allowTypes = array("png", "jpg", "jpeg", "bmp", "gif");
   
-  public static function model($class= __CLASS__) {
-    return parent::model($class);
-  }
-  
   public function tableName() {
     return "media";
   }
@@ -283,5 +279,9 @@ class MediaAR extends CActiveRecord {
 			}
 		}
 	}
+  
+  public static function model($class = __CLASS__) {
+    return parent::model($class);
+  }
 }
 
