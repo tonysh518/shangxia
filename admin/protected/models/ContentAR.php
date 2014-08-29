@@ -122,7 +122,6 @@ class ContentAR extends CActiveRecord {
       $media->saveMediaToObject($this, $fieldName);
     }
 
-    // TODO:: 添加视频
     foreach ($this->getVideoFields() as $fieldName) {
       $videoAr = new VideoAR();
       $videoAr->saveVideoToObject($this, $fieldName);

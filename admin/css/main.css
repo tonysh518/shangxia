@@ -775,6 +775,9 @@ cursor: pointer;
   float:left;
 }
 
+.modal-open .modal {
+  color: #000;
+}
 
 
 

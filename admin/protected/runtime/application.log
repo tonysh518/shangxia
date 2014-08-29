@@ -2817,3 +2817,93 @@ Stack trace:
 REQUEST_URI=/admin/index.php/page/addcontent/20085.html?type=collection
 HTTP_REFERER=http://sxhtml.local/admin/index.php/page/content.html?type=collection
 ---
+2014/08/29 23:59:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/upload/82ec497d9e66b8db6a3a1bb355852f05.png".' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('admin/upload/82...')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/admin/upload/82ec497d9e66b8db6a3a1bb355852f05.png
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/addcontent/20085.html?type=collection
+---
+2014/08/30 00:01:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/upload/82ec497d9e66b8db6a3a1bb355852f05.png".' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('admin/upload/82...')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/admin/upload/82ec497d9e66b8db6a3a1bb355852f05.png
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/addcontent/20085.html?type=collection
+---
+2014/08/30 00:24:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "deletecontent" 动作.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php:483
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(270): CController->missingAction('deletecontent')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('deletecontent')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/deletecont...')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php/page/deletecontent/20084.html?type=collection
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/content.html?type=collection
+---
+2014/08/30 00:46:39 [error] [php] PDOStatement::execute(): MySQL server has gone away (/Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbCommand.php:508)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(1351): CDbCommand->queryAll()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(1470): MediaAR->query()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/MediaAR.php(174): MediaAR->findAll()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/MediaAR.php(185): MediaAR->loadMediaWithObject()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(212): MediaAR->attachMediaToObject()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(1866): CollectionContentAR->afterFind()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(1887): CollectionContentAR->populateRecord()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(1351): CollectionContentAR->populateRecords()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(1470): CollectionContentAR->query()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(251): CollectionContentAR->findAll()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(84): CollectionContentAR->getList()
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionContent()
+#12 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#13 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): PageController->runAction()
+#14 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): PageController->runActionWithFilters()
+#15 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): PageController->run()
+#16 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#17 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#18 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/admin/index.php/page/content.html?type=collection
+2014/08/30 00:46:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "deletecontent" 动作.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php:483
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(270): CController->missingAction('deletecontent')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('deletecontent')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/deletecont...')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php/page/deletecontent/20085.html?type=collection
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/content.html?type=collection
+---
+2014/08/30 00:51:13 [error] [php] Missing argument 2 for YiiBase::t(), called in /Users/jackeychen/Workspace/shangxia/html/admin/protected/views/layouts/main.php on line 143 and defined (/Users/jackeychen/Workspace/shangxia/html/admin/yii/YiiBase.php:577)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CBaseController.php(95): PageController->renderInternal()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(784): PageController->renderFile()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(86): PageController->render()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionContent()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): PageController->runAction()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): PageController->runActionWithFilters()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): PageController->run()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/admin/index.php/page/content.html?type=collection
+2014/08/30 00:51:32 [error] [php] Missing argument 2 for YiiBase::t(), called in /Users/jackeychen/Workspace/shangxia/html/admin/protected/views/layouts/main.php on line 143 and defined (/Users/jackeychen/Workspace/shangxia/html/admin/yii/YiiBase.php:577)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CBaseController.php(95): PageController->renderInternal()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(784): PageController->renderFile()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(86): PageController->render()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionContent()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): PageController->runAction()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): PageController->runActionWithFilters()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): PageController->run()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/admin/index.php/page/content.html?type=collection

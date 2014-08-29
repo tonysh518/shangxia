@@ -136,6 +136,19 @@
 <script type="text/javascript" src="<?php echo Yii::app()->baseUrl?>/scripts/config.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->baseUrl?>/scripts/ckeditor/adapters/jquery.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->baseUrl?>/scripts/angular.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->baseUrl?>/scripts/ui-bootstrap-tpls.min.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->baseUrl?>/scripts/script.js"></script>
+  <script type="text/ng-template" id="myModalContent.html">
+      <div class="modal-header">
+          <h3 class="modal-title"><?php echo Yii::t("strings","Confirm Box")?></h3>
+      </div>
+      <div class="modal-body">
+          <?php echo Yii::t("strings" ,"Are you sure to delete it?")?>
+      </div>
+      <div class="modal-footer">
+          <button class="btn btn-primary" ng-click="ok()"><?php echo Yii::t("strings" ,"Delete")?></button>
+          <button class="btn btn-warning" ng-click="cancel()"><?php echo Yii::t("strings" ,"Cancel")?></button>
+      </div>
+  </script>
 </body>
 </html>

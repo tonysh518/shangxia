@@ -85,9 +85,12 @@ class MediaAR extends CActiveRecord {
       $ext = pathinfo($filePath, PATHINFO_EXTENSION);
     }
     else {
-      foreach ($uri as &$i) {
+      $newUri = array();
+      foreach ($uri as $i) {
         $i = str_replace(Yii::app()->getBaseUrl(TRUE), "", $i);
+        $newUri[] = $i;
       }
+      $uri = $newUri;
 
       $filePath = dirname(Yii::app()->basePath)."/". $i;
       $name = pathinfo($filePath, PATHINFO_FILENAME);
@@ -104,6 +107,7 @@ class MediaAR extends CActiveRecord {
       foreach ($rows as $row) {
         $row->delete();
       }
+      
       if (!is_array($uri)) {
         $uri = array($uri);
       }

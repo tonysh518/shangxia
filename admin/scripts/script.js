@@ -1,5 +1,5 @@
 (function ($) {
-  var AdminModule = angular.module("adminModule", []);
+  var AdminModule = angular.module("adminModule", ["ui.bootstrap"]);
   
   AdminModule.directive("ngCkeditor", function () {
     return {
@@ -72,6 +72,13 @@
     };
   });
   
+  // 弹出框
+  AdminModule.factory("ui.Dialog", [function () {
+      return {
+        
+      };
+  }]);
+  
   // 文件上传Service
   AdminModule.factory("UploadMediaService", ["$http" ,function ($http) {
     function upload(file, index) {
@@ -134,7 +141,9 @@
             UploadMediaService.upload(angular.element(this)[0]).success(function (res) {
               scope.src.push(window.baseurl + res["data"]["uri"]);
               scope.$digest();
-              ctrl[0].$setViewValue(scope.src);
+              var sourceValue = ctrl[0].$viewValue;
+              sourceValue.push(res["data"]["uri"]);
+              ctrl[0].$setViewValue(sourceValue);
             });
           });
           if (typeof attr["value"] != "undefined") {
@@ -159,7 +168,7 @@
         }
       },
       template: '<div class="preview multi">' + 
-          '<div class="multi-item" ng-repeat="s in src"><img ng-src="{{s}}" alt="" /></div>' +
+          '<div class="multi-item" ng-repeat="s in src track by $index"><img ng-src="{{s}}" alt="" /></div>' +
         '</div>' + 
         '<input type="file"  accept="image/*" upload="Upload Image"/>',
     };
@@ -210,6 +219,14 @@
         var firstInvalid = form.find(".ng-invalid:first");
         firstInvalid.focus();
       }
+    };
+  });
+  
+  AdminModule.controller("ContentTable", function ($scope, $modal) {
+    $scope.deleteConfirm = function () {
+      var modal = $modal.open({
+        templateUrl: "myModalContent.html"
+      });
     };
   });
   
