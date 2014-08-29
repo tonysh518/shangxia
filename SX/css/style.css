@@ -4,11 +4,13 @@
  * zx 2014 08
  */
 
+@font-face { font-family : 'Garamond' ; src : url('../Font/Gotham_Nights.ttf') ;  } 
+
 /* Reset
 ================================================================================================= */
 html{background: #fff}
 body{color:#000;font-size:12px;line-height:2em;}
-body{font-family:Gotham,"Microsoft Yahei",simsun,arial,sans-serif;}
+body{font-family:Garamond,"Microsoft Yahei",simsun,arial,sans-serif;}
 h1,h2,h3,h4,h5{font-size:100%;font-weight: normal;}
 body,h1,h2,h3,h4,ul,li,p,img,div{margin:0;padding:0;border:0;}
 img{margin:0;line-height:normal;display: block;}
@@ -25,7 +27,7 @@ a{text-decoration:none;outline: none;color:#444;}
 .cs-clear{+zoom:1;}
 .cs-clear:before,
 .cs-clear:after{clear:both;content:".";font-size:0;display:block;height:0;overflow:hidden;visibility:hidden;}
-.btn{font-family: Garamond;font-size: 18px;font-style: italic;border: #000 solid 1px;display: block;margin: 20px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px;}
+.btn{font-size: 18px;font-style: italic;border: #000 solid 1px;display: block;margin: 20px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px;}
 .btn-white{border-color: white;color: white;}
 
 /* Commonly Used
@@ -67,7 +69,7 @@ a{text-decoration:none;outline: none;color:#444;}
 /*intro*/
 .intro{padding:20px 0 100px;}
 .introtxt{font-size: 30px;text-align: center;text-transform : uppercase;line-height: 38px}
-.introbtn{font-family: Garamond;font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 50px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px}
+.introbtn{font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 50px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px}
 
 /*piclist*/
 .piclist{padding: 0 0 130px;}
@@ -79,17 +81,17 @@ a{text-decoration:none;outline: none;color:#444;}
 /*location*/
 .location{padding:66px 0 0 ;margin: 100px 0 0}
 .range{background: url('../images/range.png') no-repeat top center;padding:60px 0 100px;}
-.rangetxt{text-align: center;color:#333;font-family: arial}
-.rangebtn{font-family: Garamond;font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 20px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px}
+.rangetxt{text-align: center;color:#333;}
+.rangebtn{font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 20px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px}
 
 /*store*/
 .store{padding:0 0 110px;}
 .storechoose{float: left;width: 50%;text-align: center;}
 .storechoose h2{font-size: 30px; text-transform : uppercase;padding: 60px 0 20px;}
-.storechoose p{font-family: Garamond;font-size: 18px;font-style: italic;width: 78%;margin: 0 auto}
+.storechoose p{font-size: 18px;font-style: italic;width: 78%;margin: 0 auto}
 .storechooselist{width:60%;margin: 40px auto 0}
 .storechooselist li{float: left;width: 50%;}
-.storechooselist a{font-family: Garamond;font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 0 auto;text-align: center;height: 62px;line-height: 62px;width: 90%}
+.storechooselist a{font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 0 auto;text-align: center;height: 62px;line-height: 62px;width: 90%}
 .storemap{float: left;width: 50%}
 
 /*sitelinks*/
@@ -111,7 +113,7 @@ a{text-decoration:none;outline: none;color:#444;}
 .detail{padding:50px 0 0;text-align: center;}
 .detailcon{float: left;width: 68%;padding:0 0 35px;font-size: 18px;}
 .detail h2{font-size:30px;padding:0 0 20px;text-transform : uppercase;line-height: 40px}
-.detail p{font-family: Garamond;font-size: 18px;font-style: italic;}
+.detail p{font-size: 18px;font-style: italic;}
 .detail .arrows{height:180px;float: left;width: 16%;cursor: pointer;}
 .detail .arrows2{height: 44px;}
 .detail .arrows3{height: 80px;}
@@ -135,7 +137,7 @@ a{text-decoration:none;outline: none;color:#444;}
 .knowhowR{float: right}
 .knowhowintro{width: 28%;font-size:18px;text-align: center;padding-top:150px;}
 .knowhowintro2{width: 28%;font-size:18px;text-align: center;background: #f9f4f4}
-.knowhowintro2 a{font-family: Garamond;font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 100px;height: 42px;line-height: 42px}
+.knowhowintro2 a{font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 100px;height: 42px;line-height: 42px}
 .knowhowpic{width: 70%;}
 
 /*products*/
@@ -145,8 +147,8 @@ a{text-decoration:none;outline: none;color:#444;}
 .products-wrap{position: relative;}
 .proinfortxt{float: left;width: 32.8%;background: #F6EEEE}
 .proinfortxt h2{font-size: 18px;text-align: center;padding: 70px 50px 40px}
-.proinfortxt p{font-family: Garamond;font-size: 18px;font-style: italic;padding: 0 50px 40px}
-.proinfortxt a{font-family: Garamond;font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px}
+.proinfortxt p{font-size: 18px;font-style: italic;padding: 0 50px 40px}
+.proinfortxt a{font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px}
 .proinforpic{float: right;width: 66.4%;overflow: hidden;}
 .productscom{position: relative;}
 .productslist{padding:10px 0;}
@@ -164,7 +166,7 @@ a{text-decoration:none;outline: none;color:#444;}
 .picinfor{}
 .picinfortxt{float: left;width: 32.8%;font-size: 18px;}
 .picinfortxt h2{padding-right: 50px;height: 50px;font-size: 30px;}
-.picinfortxt p{font-family: Garamond;font-style: italic;padding-top: 20px;padding-right: 50px;}
+.picinfortxt p{font-style: italic;padding-top: 20px;padding-right: 50px;}
 .picinforpic{float: right;width: 66.4%;overflow: hidden;}
 
 /*newsolder*/
@@ -172,13 +174,13 @@ a{text-decoration:none;outline: none;color:#444;}
 .newsoldertime li{width: auto;height: auto;border-bottom: none;display: inline;float:none;}
 .newsoldertime a{padding: 0 40px;font-size: 14px;}
 .newsoldertime .on{text-decoration: underline;}
-.newsolderbtn a{font-family: Garamond;font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px}
+.newsolderbtn a{font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px}
 
 /*newsnvents*/
 .newsnvents{text-align: center;font-size: 18px;}
 .newsnvents h3{font-size: 30px;text-transform: uppercase;padding: 30px 0;}
-.newsnvents p{font-family: Garamond;font-style: italic;padding: 20px 0 30px;}
-/*.newsnvents a{font-family: Garamond;font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px}*/
+.newsnvents p{font-style: italic;padding: 20px 0 30px;}
+/*.newsnvents a{font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px}*/
 .newsnvents a.more{text-decoration: underline;}
 
 /*press*/
@@ -190,7 +192,7 @@ a{text-decoration:none;outline: none;color:#444;}
 /*introparis*/
 .introparis{width: 65%;margin: 0 auto}
 .introparis h2{font-size: 30px;text-align: center;text-transform: uppercase;line-height: 85px;}
-.introparis p{font-family: Garamond;font-size: 18px;font-style: italic;margin-bottom: 25px;text-align: center;}
+.introparis p{font-size: 18px;font-style: italic;margin-bottom: 25px;text-align: center;}
 
 /*parislist*/
 .parislist{margin-bottom: 20px;}
@@ -237,7 +239,7 @@ a{text-decoration:none;outline: none;color:#444;}
 /*colllisticon*/
 .detail .colllisticon{background: url('../images/collicon.png') no-repeat top center;padding:70px 0 30px}
 .colllistbox p{height: 60px;}
-.colllistbox a{text-transform:none;font-family: Garamond;font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 250px;height: 60px;line-height: 60px}
+.colllistbox a{text-transform:none;font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 250px;height: 60px;line-height: 60px}
 .colllistbox .piclistitem{margin-bottom: 90px;}
 .colllistbox .piclist{padding: 0}
 
@@ -278,7 +280,7 @@ a{text-decoration:none;outline: none;color:#444;}
 .popclose{cursor: pointer;background: url('../images/popclose.png') no-repeat;width: 49px;height: 49px;position: absolute;top: 28px;right: 28px;}
 .popcon{width: 68%;margin: 0 auto;padding: 80px 0;}
 .popcon h2{text-transform: uppercase;font-size: 30px;text-align: center;padding:10px 0;}
-.popcontxt{font-family: Garamond;font-size: 18px;font-style: italic;text-align: center;}
+.popcontxt{font-size: 18px;font-style: italic;text-align: center;}
 .popcontxt p{padding: 10px 0}
 .poppiccon{text-align: center;overflow-y: auto;height: 100%;}
 .poppiccon img{display: block;margin: 0 auto;}
@@ -291,7 +293,7 @@ a{text-decoration:none;outline: none;color:#444;}
 .popconabout h2{text-align: left;padding-bottom: 20px;}
 .popconabout .popcontxt{text-align: left;}
 .popconabout h3{padding-top: 20px;}
-.popaboutbtn{font-family: Garamond;font-size: 18px;font-style: italic;text-align: center;display: block;height: 62px;width: 250px;line-height: 62px;border: #000 solid 1px;margin: 30px 0;}
+.popaboutbtn{font-size: 18px;font-style: italic;text-align: center;display: block;height: 62px;width: 250px;line-height: 62px;border: #000 solid 1px;margin: 30px 0;}
 .popshare{}
 .popshare a{float: left;width: 32px;height: 32px;margin:0 10px;background: url('../images/shareicon.png') no-repeat;}
 .popshare .popsharet{background-position: -46px 0}
