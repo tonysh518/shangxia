@@ -19,77 +19,77 @@
 						<li class="piclistitem ">
 							<img src="../SX/images/colllistpic.jpg" width="100%" />
 							<p><span class="">wish <br />name card holder</span></p>
-							<a href="#">I Want To Buy</a>
+							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
 						</li>
 						<li class="piclistitem ">
 							<img src="../SX/images/colllistpic.jpg" width="100%" />
 							<p><span>architecture</span></p>
-							<a href="#">I Want To Buy</a>
+							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
 						</li>
 						<li class="piclistitem  marginR0">
 							<img src="../SX/images/colllistpic.jpg" width="100%" />
 							<p><span>architecture</span></p>
-							<a href="#">I Want To Buy</a>
+							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
 						</li>
 						<li class="piclistitem ">
 							<img src="../SX/images/colllistpic.jpg" width="100%" />
 							<p><span class="">wish <br />name card holder</span></p>
-							<a href="#">I Want To Buy</a>
+							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
 						</li>
 						<li class="piclistitem ">
 							<img src="../SX/images/colllistpic.jpg" width="100%" />
 							<p><span>architecture</span></p>
-							<a href="#">I Want To Buy</a>
+							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
 						</li>
 						<li class="piclistitem  marginR0">
 							<img src="../SX/images/colllistpic.jpg" width="100%" />
 							<p><span>architecture</span></p>
-							<a href="#">I Want To Buy</a>
+							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
 						</li>
 						<li class="piclistitem ">
 							<img src="../SX/images/colllistpic.jpg" width="100%" />
 							<p><span class="">wish <br />name card holder</span></p>
-							<a href="#">I Want To Buy</a>
+							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
 						</li>
 						<li class="piclistitem ">
 							<img src="../SX/images/colllistpic.jpg" width="100%" />
 							<p><span>architecture</span></p>
-							<a href="#">I Want To Buy</a>
+							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
 						</li>
 						<li class="piclistitem  marginR0">
 							<img src="../SX/images/colllistpic.jpg" width="100%" />
 							<p><span>architecture</span></p>
-							<a href="#">I Want To Buy</a>
+							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
 						</li>
 						<li class="piclistitem ">
 							<img src="../SX/images/colllistpic.jpg" width="100%" />
 							<p><span class="">wish <br />name card holder</span></p>
-							<a href="#">I Want To Buy</a>
+							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
 						</li>
 						<li class="piclistitem ">
 							<img src="../SX/images/colllistpic.jpg" width="100%" />
 							<p><span>architecture</span></p>
-							<a href="#">I Want To Buy</a>
+							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
 						</li>
 						<li class="piclistitem  marginR0">
 							<img src="../SX/images/colllistpic.jpg" width="100%" />
 							<p><span>architecture</span></p>
-							<a href="#">I Want To Buy</a>
+							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
 						</li>
 						<li class="piclistitem ">
 							<img src="../SX/images/colllistpic.jpg" width="100%" />
 							<p><span class="">wish <br />name card holder</span></p>
-							<a href="#">I Want To Buy</a>
+							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
 						</li>
 						<li class="piclistitem ">
 							<img src="../SX/images/colllistpic.jpg" width="100%" />
 							<p><span>architecture</span></p>
-							<a href="#">I Want To Buy</a>
+							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
 						</li>
 						<li class="piclistitem  marginR0">
 							<img src="../SX/images/colllistpic.jpg" width="100%" />
 							<p><span>architecture</span></p>
-							<a href="#">I Want To Buy</a>
+							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
 						</li>
 					</ul>
 			</div>

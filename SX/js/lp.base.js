@@ -325,6 +325,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                         $inner.animate({
                             marginLeft: - index / num * 100 + '%'
                         } , 500);
+                        $(window).trigger('scroll');
                     })
                     .end()
                     .find('.collarrowsnext')
@@ -334,6 +335,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                         $inner.animate({
                             marginLeft: - index / num * 100 + '%'
                         } , 500);
+                        $(window).trigger('scroll');
                     });
                 });
                 return false;

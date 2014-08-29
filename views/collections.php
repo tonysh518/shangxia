@@ -43,28 +43,46 @@
 						<div class="slide-con">
 							<ul class="slide-con-inner piclist cs-clear">
 								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-									<img src="../SX/images/colldemo2.jpg" width="100%" />
-									<p><span class="collicon">architecture</span></p>
+									<a href="">
+										<img src="../SX/images/colldemo2.jpg" width="100%" />
+										<p><span class="collicon">architecture</span></p>
+									</a>
 								</li>
 								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-									<img src="../SX/images/colldemo2.jpg" width="100%" />
-									<p><span>architecture</span></p>
-								</li>
-								<li class="piclistitem collpicitem marginR0 intoview-effect" data-effect="fadeup">
-									<img src="../SX/images/colldemo2.jpg" width="100%" />
-									<p><span>architecture</span></p>
+									<a href="">
+										<img src="../SX/images/colldemo2.jpg" width="100%" />
+										<p><span class="collicon">architecture</span></p>
+									</a>
 								</li>
 								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-									<img src="../SX/images/colldemo2.jpg" width="100%" />
-									<p><span class="collicon">architecture</span></p>
+									<a href="">
+										<img src="../SX/images/colldemo2.jpg" width="100%" />
+										<p><span class="collicon">architecture</span></p>
+									</a>
 								</li>
 								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-									<img src="../SX/images/colldemo2.jpg" width="100%" />
-									<p><span>architecture</span></p>
+									<a href="">
+										<img src="../SX/images/colldemo2.jpg" width="100%" />
+										<p><span class="collicon">architecture</span></p>
+									</a>
 								</li>
-								<li class="piclistitem collpicitem marginR0 intoview-effect" data-effect="fadeup">
-									<img src="../SX/images/colldemo2.jpg" width="100%" />
-									<p><span>architecture</span></p>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo2.jpg" width="100%" />
+										<p><span class="collicon">architecture</span></p>
+									</a>
+								</li>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo2.jpg" width="100%" />
+										<p><span class="collicon">architecture</span></p>
+									</a>
+								</li>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo2.jpg" width="100%" />
+										<p><span class="collicon">architecture</span></p>
+									</a>
 								</li>
 							</ul>
 						</div>
@@ -81,21 +99,55 @@
 						<h2>jewelry</h2>
 					</div>	
 					<!--  -->
-					<div class="">
-						<ul class="piclist cs-clear">
-							<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-								<img src="../SX/images/colldemo3.jpg" width="100%" />
-								<p><span>view</span></p>
-							</li>
-							<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-								<img src="../SX/images/colldemo3.jpg" width="100%" />
-								<p><span>view</span></p>
-							</li>
-							<li class="piclistitem collpicitem marginR0 intoview-effect" data-effect="fadeup">
-								<img src="../SX/images/colldemo3.jpg" width="100%" />
-								<p><span>view</span></p>
-							</li>
-						</ul>
+					<div class="products-wrap js-horizontal-slide">
+						<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
+						<div class="slide-con">
+							<ul class="slide-con-inner piclist cs-clear">
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo3.jpg" width="100%" />
+										<p><span>view</span></p>
+									</a>
+								</li>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo3.jpg" width="100%" />
+										<p><span>view</span></p>
+									</a>
+								</li>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo3.jpg" width="100%" />
+										<p><span>view</span></p>
+									</a>
+								</li>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo3.jpg" width="100%" />
+										<p><span>view</span></p>
+									</a>
+								</li>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo3.jpg" width="100%" />
+										<p><span>view</span></p>
+									</a>
+								</li>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo3.jpg" width="100%" />
+										<p><span>view</span></p>
+									</a>
+								</li>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo3.jpg" width="100%" />
+										<p><span>view</span></p>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
 					</div>
 				</div>
 			</div>
@@ -108,21 +160,55 @@
 						<h2>furniture</h2>
 					</div>	
 					<!--  -->
-					<div class="">
-						<ul class="piclist cs-clear">
-							<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-								<img src="../SX/images/colldemo4.jpg" width="100%" />
-								<p><span>da tian di - lacquer</span></p>
-							</li>
-							<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-								<img src="../SX/images/colldemo4.jpg" width="100%" />
-								<p><span>da tian di - lacquer</span></p>
-							</li>
-							<li class="piclistitem collpicitem marginR0 intoview-effect" data-effect="fadeup">
-								<img src="../SX/images/colldemo4.jpg" width="100%" />
-								<p><span>da tian di - lacquer</span></p>
-							</li>
-						</ul>
+					<div class="products-wrap js-horizontal-slide">
+						<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
+						<div class="slide-con">
+							<ul class="slide-con-inner piclist cs-clear">
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo4.jpg" width="100%" />
+										<p><span>da tian di - lacquer</span></p>
+									</a>
+								</li>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo4.jpg" width="100%" />
+										<p><span>da tian di - lacquer</span></p>
+									</a>
+								</li>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo4.jpg" width="100%" />
+										<p><span>da tian di - lacquer</span></p>
+									</a>
+								</li>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo4.jpg" width="100%" />
+										<p><span>da tian di - lacquer</span></p>
+									</a>
+								</li>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo4.jpg" width="100%" />
+										<p><span>da tian di - lacquer</span></p>
+									</a>
+								</li>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo4.jpg" width="100%" />
+										<p><span>da tian di - lacquer</span></p>
+									</a>
+								</li>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo4.jpg" width="100%" />
+										<p><span>da tian di - lacquer</span></p>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
 					</div>
 				</div>
 			</div>
@@ -135,21 +221,55 @@
 						<h2>homeware</h2>
 					</div>	
 					<!--  -->
-					<div class="">
-						<ul class="piclist cs-clear">
-							<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-								<img src="../SX/images/colldemo5.jpg" width="100%" />
-								<p><span>echo</span></p>
-							</li>
-							<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-								<img src="../SX/images/colldemo5.jpg" width="100%" />
-								<p><span>echo</span></p>
-							</li>
-							<li class="piclistitem collpicitem marginR0 intoview-effect" data-effect="fadeup">
-								<img src="../SX/images/colldemo5.jpg" width="100%" />
-								<p><span>echo</span></p>
-							</li>
-						</ul>
+					<div class="products-wrap js-horizontal-slide">
+						<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
+						<div class="slide-con">
+							<ul class="slide-con-inner piclist cs-clear">
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo5.jpg" width="100%" />
+										<p><span>da tian di - lacquer</span></p>
+									</a>
+								</li>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo5.jpg" width="100%" />
+										<p><span>da tian di - lacquer</span></p>
+									</a>
+								</li>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo5.jpg" width="100%" />
+										<p><span>da tian di - lacquer</span></p>
+									</a>
+								</li>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo5.jpg" width="100%" />
+										<p><span>da tian di - lacquer</span></p>
+									</a>
+								</li>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo5.jpg" width="100%" />
+										<p><span>da tian di - lacquer</span></p>
+									</a>
+								</li>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo5.jpg" width="100%" />
+										<p><span>da tian di - lacquer</span></p>
+									</a>
+								</li>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo5.jpg" width="100%" />
+										<p><span>da tian di - lacquer</span></p>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
 					</div>
 				</div>
 			</div>
@@ -162,22 +282,56 @@
 						<h2>teaware</h2>
 					</div>	
 					<!--  -->
-					<div class="">
-						<ul class="piclist cs-clear">
-							<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-								<img src="../SX/images/colldemo6.jpg" width="100%" />
-								<p><span>bridge</span></p>
-							</li>
-							<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-								<img src="../SX/images/colldemo6.jpg" width="100%" />
-								<p><span>bridge</span></p>
-							</li>
-							<li class="piclistitem collpicitem marginR0 intoview-effect" data-effect="fadeup">
-								<img src="../SX/images/colldemo6.jpg" width="100%" />
-								<p><span>bridge</span></p>
-							</li>
-						</ul>
-					</div>
+					<div class="products-wrap js-horizontal-slide">
+						<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
+						<div class="slide-con">
+							<ul class="slide-con-inner piclist cs-clear">
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo6.jpg" width="100%" />
+										<p><span>da tian di - lacquer</span></p>
+									</a>
+								</li>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo6.jpg" width="100%" />
+										<p><span>da tian di - lacquer</span></p>
+									</a>
+								</li>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo6.jpg" width="100%" />
+										<p><span>da tian di - lacquer</span></p>
+									</a>
+								</li>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo6.jpg" width="100%" />
+										<p><span>da tian di - lacquer</span></p>
+									</a>
+								</li>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo6.jpg" width="100%" />
+										<p><span>da tian di - lacquer</span></p>
+									</a>
+								</li>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo6.jpg" width="100%" />
+										<p><span>da tian di - lacquer</span></p>
+									</a>
+								</li>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a href="">
+										<img src="../SX/images/colldemo6.jpg" width="100%" />
+										<p><span>da tian di - lacquer</span></p>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
+					</div>					
 				</div>
 			</div>
 		</div>
