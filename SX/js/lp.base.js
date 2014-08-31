@@ -570,7 +570,6 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     var mapHelper = (function(){
         return {
             render: function( $dom ){
-                $dom.css('position','relative');
                 var point = $dom.data('map').split(',');
                 console.log( point );
                 if( point[0] > 100 && point[0] < 140 ){ // use baidu
