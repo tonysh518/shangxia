@@ -1,4 +1,7 @@
-<?php include_once 'common/header.php';?>
+
+<?php 
+$pagename="craft-page";
+include_once 'common/header.php';?>
 <!-- detail -->
 		<div class="section ">
 			<div class="detail cs-clear">
@@ -12,7 +15,7 @@
 		</div>
 		
 		<!-- video -->
-		<div class="video intoview-effect" data-effect="fadeup"><img src="../SX/images/videodemo.jpg" width="100%" /></div>
+		<div class="video intoview-effect" data-video="../SX/video/small" style="position:relative;overflow:hidden;"  data-effect="fadeup"><img src="../SX/images/videodemo.jpg" width="100%" /></div>
 		<!-- barbg -->
 		<div class="barbg intoview-effect" data-effect="fadeup"></div>
 		<!-- detail -->
@@ -65,8 +68,10 @@
 				<div class="productscom">
 					<div class="productsinfor cs-clear">
 						<div class="proinfortxt intoview-effect" data-effect="fadeup">
-							<h2>Hand Sculpture Clothing</h2>
-							<p>Felt making is an ancient technique invented by herdsman to make non-woven cloth. Herdsmen use felt to make their rugs, yurts, clothing and cooking utensils. As nomadic peoples used these skills used to make yurts, the same skills, combined with original innovative designs, are used to create seamless felted cashmere one-off and unique garments with no stitchingFelt making is an ancient technique invented by herdsman to make non-woven cloth. Herdsmen use felt to make their rugs, yurts, clothing and cooking utensils. As nomadic peoples used these skills used to make yurts, the same skills, combined with original innovative designs, are used to create seamless felted cashmere one-off and unique garments with no stitching</p>
+							<div class="proinfortxt-inner">
+								<h2>Hand Sculpture Clothing</h2>
+								<p>Felt making is an ancient technique invented by herdsman to make non-woven cloth. Herdsmen use felt to make their rugs, yurts, clothing and cooking utensils. As nomadic peoples used these skills used to make yurts, the same skills, combined with original innovative designs, are used to create seamless felted cashmere one-off and unique garments with no stitchingFelt making is an ancient technique invented by herdsman to make non-woven cloth. Herdsmen use felt to make their rugs, yurts, clothing and cooking utensils. As nomadic peoples used these skills used to make yurts, the same skills, combined with original innovative designs, are used to create seamless felted cashmere one-off and unique garments with no stitching</p>
+							</div>
 							<a href="#">Read more</a>
 						</div>
 						<div class="proinforpic intoview-effect" data-effect="fadeup">
@@ -89,18 +94,18 @@
 					</div>
 					<!--  -->
 					<div class="productslist cs-clear">
-						<div class="prolistitem intoview-effect" data-effect="fadeup">
+						<a href="#" class="prolistitem intoview-effect" data-effect="fadeup">
 							<img src="../SX/images/proinfopic.jpg" width="100%" />
 							<p>sculpture<br />In & out</p>
-						</div>
-						<div class="prolistitem intoview-effect" data-effect="fadeup">
+						</a>
+						<a href="#" class="prolistitem intoview-effect" data-effect="fadeup">
 							<img src="../SX/images/proinfopic.jpg" width="100%" />
 							<p>sculpture<br />In & out</p>
-						</div>
-						<div class="prolistitem marginR0 intoview-effect" data-effect="fadeup">
+						</a>
+						<a href="#" class="prolistitem marginR0 intoview-effect" data-effect="fadeup">
 							<img src="../SX/images/proinfopic.jpg" width="100%" />
 							<p>sculpture<br />In & out</p>
-						</div>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -114,18 +119,18 @@
 				<div class="productscom othercrafcom">
 					<!--  -->
 					<div class="productslist cs-clear">
-						<div class="prolistitem intoview-effect" data-effect="fadeup">
+						<a href="#" class="prolistitem intoview-effect" data-effect="fadeup">
 							<img src="../SX/images/craftdemo.jpg" width="100%" />
 							<p>zitan wood</p>
-						</div>
-						<div class="prolistitem intoview-effect" data-effect="fadeup">
+						</a>
+						<a href="#" class="prolistitem intoview-effect" data-effect="fadeup">
 							<img src="../SX/images/craftdemo.jpg" width="100%" />
 							<p>zitan wood</p>
-						</div>
-						<div class="prolistitem marginR0 intoview-effect" data-effect="fadeup">
+						</a>
+						<a href="#" class="prolistitem marginR0 intoview-effect" data-effect="fadeup">
 							<img src="../SX/images/craftdemo.jpg" width="100%" />
 							<p>zitan wood</p>
-						</div>
+						</a>
 					</div>
 				</div>
 			</div>

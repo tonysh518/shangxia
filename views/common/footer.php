@@ -13,12 +13,17 @@
 					<h2>shanghai  store</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. Consectetur adipisicing elit, sed do eiusmod tempor incididunt, consectetur adipisicing elit, sed do eiusmod tempor incididunt, sed do eiusmod tempor incididunt, sed do eiusmod tempor incididunt ...</p>
 					<ul class="storechooselist cs-clear">
-						<li data-a="render-foot-map"><a href="#" title="" class="transition-wrap"><span class="transition">Paris store<br/>Paris store</span></a></li>
-						<li><a href="#" title="" class="transition-wrap"><span class="transition">Beijing store<br/>Beijing store</span></a></li>
+						<li data-a="render-foot-map" data-d="type=paris"><a href="#" title="" class="transition-wrap"><span class="transition">Paris store<br/>Paris store</span></a></li>
+						<li data-a="render-foot-map" data-d="type=beijing"><a href="#" title="" class="transition-wrap"><span class="transition">Beijing store<br/>Beijing store</span></a></li>
 					</ul>
 				</div>
-				<div class="storemap" id="map" style="height:400px;">
+				<div class="storemap" style="height:400px;position:relative;">
+					<div class="storemap-wrap" id="map" data-map="121.478988,31.227919" >
+					</div>
+					<div class="storemap-wrap" id="google-map" data-map="51.508742,-0.120850">
+					</div>	
 				</div>
+				
 			</div>
 			<!-- sitelinks -->
 			<div class="section sitelinks cs-clear">
@@ -69,11 +74,13 @@
 		<!--  -->
 	</div>
 <!--  -->
+<!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script> -->
 <script type="text/javascript" src="../SX/js/plugin/modernizr-2.5.3.min.js"></script>
 <script type="text/javascript" src="../SX/js/sea/sea-debug.js" data-config="../config.js"></script>
 <script type="text/javascript" src="../SX/js/sea/plugin-shim.js"></script>
 <script type="text/javascript" src="../SX/js/lp.core.js"></script>
 <script type="text/javascript" src="../SX/js/lp.base.js"></script>
+
 <!--IE6透明判断-->
 <!--[if IE 6]>
 <script src="../SX/js/DD_belatedPNG.js"></script>

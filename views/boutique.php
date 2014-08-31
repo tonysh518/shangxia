@@ -1,4 +1,6 @@
-<?php include_once 'common/header.php';?>
+<?php 
+$pagename="boutique-page";
+include_once 'common/header.php';?>
 		<!-- detail -->
 		<div class="section intoview-effect" data-effect="fadeup">
 			<div class="detail cs-clear">
@@ -30,7 +32,7 @@
 		<!-- intro -->
 		<div class="section ">
 			<div class="intro introparis">
-				<h2 class="intoview-effect" data-effect="fadeup">PARIS:THE 1st european shang xia boutique</h2>
+				<h2 class="intoview-effect" data-effect="fadeup">PARIS:THE 1<sup>st</sup> european shang xia boutique</h2>
 				<p class="intoview-effect" data-effect="fadeup">The arcbitecture of thsSHANG XIA Paris boutique is designed as a cloud-like space made of thin ceramic panels. Historically,ceramic has been a crucial element that forms Chinese culture. Chinese ceramic bad also long been an object of admination in Europe.</p>
 				<p class="intoview-effect" data-effect="fadeup">Six thousand thin ceramic panels are suspended from the ceiling to cover the entire space.The glossy white face,unique to ceramic,created a lighting state you might find in the pointillism paintings of the impressionistic art age.</p>
 			</div>
@@ -38,15 +40,15 @@
 		<!-- parislist -->
 		<div class="section">
 			<div class="parislist cs-clear">
-				<div class="parisitem intoview-effect" data-effect="fadeup">
+				<a href="#" class="parisitem intoview-effect" data-effect="fadeup">
 					<img src="../SX/images/parisdemo1.jpg" width="100%" alt="">
-				</div>
-				<div class="parisitem intoview-effect" data-effect="fadeup">
+				</a>
+				<a href="#" class="parisitem intoview-effect" data-effect="fadeup">
 					<img src="../SX/images/parisdemo1.jpg" width="100%" alt="">
-				</div>
-				<div class="parisitem marginR0 intoview-effect" data-effect="fadeup">
+				</a>
+				<a href="#" class="parisitem marginR0 intoview-effect" data-effect="fadeup">
 					<img src="../SX/images/parisdemo1.jpg" width="100%" alt="">
-				</div>
+				</a>
 			</div>
 		</div>
 		<!-- find us -->
@@ -58,13 +60,13 @@
 
 				<!-- store -->
 				<div class="section store cs-clear">
-					<div class="storechoose intoview-effect" data-effect="fadeup">
+					<div class="storechoose storechoose2 intoview-effect" data-effect="fadeup">
 						<p>8 Serves Road , 75006 Paris,France</p>
 						<p>Tel: +33-1-42-22-53-62</p>
 						<p>Fax: +33-1-42-22-58-03</p>
 						<p>sevres.paris@shang-xia.com</p>
 					</div>
-					<div class="storemap intoview-effect" data-effect="fadeup">
+					<div class="storemap intoview-effect" data-map="121.478988,31.227919" data-effect="fadeup">
 						<img src="../SX/images/findus.jpg" width="100%" />
 					</div>
 				</div>

@@ -160,10 +160,6 @@
 								<img src="../SX/images/newsdemo4.jpg" width="100%" />
 								<p>life week<br />jan  2014</p>
 							</div>
-							<div class="prolistitem pressitem marginR0 intoview-effect" data-effect="fadeup">
-								<img src="../SX/images/newsdemo4.jpg" width="100%" />
-								<p>life week<br />jan  2014</p>
-							</div>
 							<div class="prolistitem pressitem intoview-effect" data-effect="fadeup">
 								<img src="../SX/images/newsdemo4.jpg" width="100%" />
 								<p>life week<br />jan  2014</p>
@@ -176,7 +172,11 @@
 								<img src="../SX/images/newsdemo4.jpg" width="100%" />
 								<p>life week<br />jan  2014</p>
 							</div>
-							<div class="prolistitem pressitem marginR0 intoview-effect" data-effect="fadeup">
+							<div class="prolistitem pressitem intoview-effect" data-effect="fadeup">
+								<img src="../SX/images/newsdemo4.jpg" width="100%" />
+								<p>life week<br />jan  2014</p>
+							</div>
+							<div class="prolistitem pressitem intoview-effect" data-effect="fadeup">
 								<img src="../SX/images/newsdemo4.jpg" width="100%" />
 								<p>life week<br />jan  2014</p>
 							</div>

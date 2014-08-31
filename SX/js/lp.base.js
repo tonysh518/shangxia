@@ -167,15 +167,33 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 });
                 cb && cb();
             },
-            'awards-page': function( cb ){
+            'craft-page': function( cb ){
+                $('[data-video]').each(function(){
+                    var $dom = $(this) ;
+                    var video = $dom.data('video');
+                    var poster = $dom.find('img').attr('src');
+                    renderVideo( $dom , video , poster , {pause_button: true} );
+                });
                 cb && cb();
             },
-            'contact-page': function( cb ){
-                
+            "boutique-page":function( cb ){
 
+                $('[data-map]').each(function(){
+                    // need to judge if use baidu or goole map to render the map
+                    var val = $(this).data('map');
+                    var first = val.split(',')[0];
+                    if( first > 100 ){ // use baidu
+
+                    } else { // use google
+
+                    }
+                });
+
+                $('.footer .store').hide();
+                console.log( $('.footer .store') );
                 cb && cb();
-                
             }
+            
         }
 
 
@@ -190,65 +208,65 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     .then(function(){
                         cb && cb();
                     });
-            },
-            'number-rock': function( $dom , index , cb , du ){
-                // init humbers
-                var num = $dom.text();
-                var $span = $('<span>' + num + '</span>').appendTo( $dom.html('').data('num' , num) );
-                var width = $span.width();
-                var height = $span.height();
-                $span.css({
-                    height: height,
-                    width: width,
-                    display: 'inline-block',
-                    lineHeight: height + 'px',
-                    position: 'relative',
-                    margin: '0 auto',
-                    overflow: 'hidden',
-                    verticalAlign: 'middle'
-                }).html('');
-                $.each( num.split('') , function( i ){
-                    $('<div>' + "1234567890".split('').join('<br/>') + '</div>').appendTo( $span )
-                        .css({
-                            position: 'absolute',
-                            left: i * width / num.length,
-                            top: -~~( Math.random() * 10 ) * height
-                        });
-                });
-
-                // run the animate
-                var spanHeight = height;//$dom.find('span').height();
-
-                var st = new Date();
-                var duration = du || 1200;
-                var $divs = $span.find('div');
-                var interval = setInterval(function(){
-
-                    if( new Date - st >= duration ){
-                        var num = $dom.data('num');
-                        var nums = num.split('');
-                        $divs.each(function( i ){
-                            var top = - ( nums[i] - 1 ) * spanHeight ;
-                            if( nums[i] == 0 ){
-                                top = - 9 * spanHeight
-                            }
-                            $(this).animate({
-                                'top': top 
-                            } , 800 , 'easeOutQuart' , function(){
-                                if( i == nums.length - 1 ){
-                                    //$dom.html( num );
-                                    cb && cb();
-                                }
-                            });
-                        });
-                        clearInterval( interval );
-                        return false;
-                    }
-                    $divs.each(function(){
-                        $(this).css('top' , -( Math.random() * 10 ) * spanHeight );
-                    });
-                } , 1000 / 15);
             }
+            // 'number-rock': function( $dom , index , cb , du ){
+            //     // init humbers
+            //     var num = $dom.text();
+            //     var $span = $('<span>' + num + '</span>').appendTo( $dom.html('').data('num' , num) );
+            //     var width = $span.width();
+            //     var height = $span.height();
+            //     $span.css({
+            //         height: height,
+            //         width: width,
+            //         display: 'inline-block',
+            //         lineHeight: height + 'px',
+            //         position: 'relative',
+            //         margin: '0 auto',
+            //         overflow: 'hidden',
+            //         verticalAlign: 'middle'
+            //     }).html('');
+            //     $.each( num.split('') , function( i ){
+            //         $('<div>' + "1234567890".split('').join('<br/>') + '</div>').appendTo( $span )
+            //             .css({
+            //                 position: 'absolute',
+            //                 left: i * width / num.length,
+            //                 top: -~~( Math.random() * 10 ) * height
+            //             });
+            //     });
+
+            //     // run the animate
+            //     var spanHeight = height;//$dom.find('span').height();
+
+            //     var st = new Date();
+            //     var duration = du || 1200;
+            //     var $divs = $span.find('div');
+            //     var interval = setInterval(function(){
+
+            //         if( new Date - st >= duration ){
+            //             var num = $dom.data('num');
+            //             var nums = num.split('');
+            //             $divs.each(function( i ){
+            //                 var top = - ( nums[i] - 1 ) * spanHeight ;
+            //                 if( nums[i] == 0 ){
+            //                     top = - 9 * spanHeight
+            //                 }
+            //                 $(this).animate({
+            //                     'top': top 
+            //                 } , 800 , 'easeOutQuart' , function(){
+            //                     if( i == nums.length - 1 ){
+            //                         //$dom.html( num );
+            //                         cb && cb();
+            //                     }
+            //                 });
+            //             });
+            //             clearInterval( interval );
+            //             return false;
+            //         }
+            //         $divs.each(function(){
+            //             $(this).css('top' , -( Math.random() * 10 ) * spanHeight );
+            //         });
+            //     } , 1000 / 15);
+            // }
         }
 
 
@@ -261,7 +279,8 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             },
             init: function(){
                 loadingMgr.show();
-                var page = $('input[name="page-indentity"]').val();
+                $('.footer .store').show();
+                var page = $('.head').data('page');
                 var fn = pageInits[ page ];
 
                 if( fn ){
@@ -338,14 +357,40 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                         $(window).trigger('scroll');
                     });
                 });
+
+                // render map
+                $('[data-map]').each(function(){
+                    mapHelper.render( $(this) );
+                });
+
+                $(window).trigger('resize');
                 return false;
             },
             destroy: function(){
                 $(window).unbind('scroll');
-                $(document.body).unbind('mousemove').css('overflow' , 'auto');
+                $(document.body).unbind('mousemove');
             }
         }
     })();
+
+    $(window).resize(function(){
+        // fix height
+        $('.knowhowintro').each(function(){
+            var h = $(this).parent('.knowhowitem').children('.knowhowpic').height()
+            $(this).css('padding-top' , (h - $(this).height())/2)
+        })
+        $('.knowhowintro2').each(function(){
+            var h = $(this).parent('.knowhowitem').children('.knowhowpic').height()
+            $(this).css('height' , h)
+            $(this).children('p').css('margin-top' , h/2-50)
+        })
+        $('.proinfortxt').each(function(){
+            var h = $(this).next('.proinforpic').height();
+            $(this).height( h );
+            $(this).find('.proinfortxt-inner').height( h - 100 )
+                .css('overflow' , 'hidden');
+        })
+    });
 
     var loadingMgr = (function(){
         var $loading = $('.loading-wrap');
@@ -398,7 +443,6 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         var $slidetabs = $wrap.find('.slidetab li');
         var currentIndex = 0;
         var length = $slidebox.children().length;
-        console.log( $slidebox.children() );
         $slidebox.css( 'width' , length * 100 + '%' )
             .children()
             .css('width' , 1 / length * 100 + '%' );
@@ -522,34 +566,100 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         });
     }
 
+
+    var mapHelper = (function(){
+        return {
+            render: function( $dom ){
+                $dom.css('position','relative');
+                var point = $dom.data('map').split(',');
+                console.log( point );
+                if( point[0] > 100 && point[0] < 140 ){ // use baidu
+                    this.renderBaidu( $dom , point );
+                } else {
+                    this.renderGoogle( $dom , point );
+                }
+                $dom.removeAttr('data-map');
+            },
+            renderBaidu: function( $dom , point ){
+                var html = '<img class="map-marker" src="#[markerPath]" />\
+                    <img src="http://api.map.baidu.com/staticimage?center=#[pointer]&width=#[width]&height=#[height]&zoom=11" />';
+                $dom.html( LP.format( html , {
+                    markerPath: SOURCE_PATH + '/images/map-marker.png',
+                    pointer: point.join(','),
+                    width: $dom.width(),
+                    height: $dom.height()
+                } ) );
+
+                // var id = $dom.attr('id') || 'baidu-map-' + ( + new Date() );
+                // $dom.attr( 'id' , id ) ;
+                // if( !window.BMap ){
+                //     var _LP = window.LP;
+                //     LP.use('http://api0.map.bdimg.com/getscript?v=2.0&ak=AwxxvHue9bTdFietVWM4PLtk&services=&t=20140725172530' , function(){
+                //         window.LP = _LP;
+                //     });
+                // }
+                // var interval = setInterval(function(){
+                //     if( window.BMap ){
+                //         clearInterval( interval );
+                //         var oMap = new BMap.Map( id );
+                //         oMap.addControl(new BMap.NavigationControl());
+                //         point = new BMap.Point( point[0] , point[1] );
+                //         oMap.centerAndZoom(point, 15);
+                //     }
+                // } , 100 );
+            },
+            renderGoogle: function( $dom , point ){
+                var html = '<img class="map-marker" src="#[markerPath]" />\
+                    <img src="http://maps.google.com/maps/api/staticmap?center=#[pointer]&zoom=11&size=#[width]x#[height]&format=jpg&maptype=roadmap&markers=size:mid|color:red|label:S|%E8%A5%BF%E5%AE%89,%E9%92%9F%E6%A5%BC&sensor=false" />';
+                $dom.html( LP.format( html , {
+                    markerPath: SOURCE_PATH + '/images/map-marker.png',
+                    pointer: point.join(','),
+                    width: $dom.width(),
+                    height: $dom.height()
+                } ) );
+                // var map=new google.maps.Map($dom[0],{
+                //     center:new google.maps.LatLng(point[0],point[1]),
+                //     zoom:5,
+                //     mapTypeId:google.maps.MapTypeId.ROADMAP
+                // });
+            }
+        }
+    })();
+
     // page init here
     // ==============================================================================
 
     // init map
-    var _LP = window.LP;
-    LP.use('http://api0.map.bdimg.com/getscript?v=2.0&ak=AwxxvHue9bTdFietVWM4PLtk&services=&t=20140725172530' , function(){
-        window.LP = _LP;
-    });
-    var interval = setInterval(function(){
-        if( window.BMap ){
-            clearInterval( interval );
-            var oMap = new BMap.Map("map");
-            oMap.addControl(new BMap.NavigationControl());
-            var point = new BMap.Point(121.478988,31.227919);
-            oMap.centerAndZoom(point, 15);
-            //oMap.setMapStyle({style: 'grayscale'});
-            oMap.setMapStyle({
-              styleJson:[{
-                "featureType": "all",
-                "elementType": "all",
-                "stylers": {
-                  "lightness": 13,
-                  "saturation": -100
-                }
-              }]
-            });
-        }
-    } , 100 );
+    // var _LP = window.LP;
+    // LP.use('http://api0.map.bdimg.com/getscript?v=2.0&ak=AwxxvHue9bTdFietVWM4PLtk&services=&t=20140725172530' , function(){
+    //     window.LP = _LP;
+    // });
+    // var interval = setInterval(function(){
+    //     if( window.BMap ){
+    //         clearInterval( interval );
+    //         var oMap = new BMap.Map("map");
+    //         oMap.addControl(new BMap.NavigationControl());
+    //         var point = new BMap.Point(121.478988,31.227919);
+    //         oMap.centerAndZoom(point, 15);
+    //         //oMap.setMapStyle({style: 'grayscale'});
+    //         // oMap.setMapStyle({
+    //         //   styleJson:[{
+    //         //     "featureType": "all",
+    //         //     "elementType": "all",
+    //         //     "stylers": {
+    //         //       "lightness": 13,
+    //         //       "saturation": -100
+    //         //     }
+    //         //   }]
+    //         // });
+    //     }
+    // } , 100 );
+
+    // var map=new google.maps.Map(document.getElementById( 'google-map' ),{
+    //     center:new google.maps.LatLng(51.508742,-0.120850),
+    //     zoom:5,
+    //     mapTypeId:google.maps.MapTypeId.ROADMAP
+    // });
 
 
     // change history
@@ -576,13 +686,22 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             switch( type ){
                 default: 
                     $.get( location.href , '' , function( html ){
-                        html = $('<div>' + html + '</div>').find('.wrap')
+                        var $newPage = $('<div>' + html + '</div>');
+                        html = $newPage.find('.wrap')
+                            .find('.footer')
+                            .remove()
+                            .end()
                             .html();
-                        $( '.wrap' ).children().animate({
+                        $( '.wrap' ).children(':not(.footer)').animate({
                             opacity: 0
                         } , 500);
+
                         setTimeout(function(){
-                            $( '.wrap' ).html( html )
+                            $( '.wrap' ).children(':not(.footer)')
+                                .remove()
+                                .end()
+                                .prepend( html )
+                                .children(':not(.nav-mask)')
                                 .fadeIn();
                             //pagetitarrbottom
 
@@ -611,10 +730,9 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             LP.triggerAction('nav-mask');
             return false;
         }
+        $('.head .nav li').removeClass('active');
+        $(this).closest('li').addClass('active');
 
-        $(this).closest('li').addClass('active').siblings().removeClass('active');
-
-        $('.nav-bg').fadeIn();
         $('.nav-pop').fadeOut();
         $('.nav-pop-' + text ).stop(true , true).fadeIn();
         $('.nav-mask').fadeIn();
@@ -623,8 +741,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
     LP.action('nav-mask' , function(){
         var $inner = $('.head-inner').attr('class' , 'head-inner cs-clear');
-
-        $('.nav-bg').fadeOut();
+        $('.head-inner').find('li.active').removeClass('active');
         $('.nav-pop').fadeOut();
         $('.nav-mask').fadeOut();
 
@@ -653,6 +770,20 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     });
 
 
+    LP.action('render-foot-map' , function( data ){
+        switch( data.type ){
+            case 'beijing':
+                $('#map').css('z-index' , 2);
+                $('#google-map').css('z-index' , 1);
+                break;
+            case 'paris':
+                $('#map').css('z-index' , 1);
+                $('#google-map').css('z-index' , 2);
+                break;
+        }
+
+        return false;
+    });
     
 
     LP.action('homepage-watch-video' , function(){

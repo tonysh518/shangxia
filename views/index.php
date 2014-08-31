@@ -1,6 +1,5 @@
-<?php  $homepage = 1; ?>
+<?php  $homepage = 1; $pagename = 'home-page';?>
 <?php include_once 'common/header.php';?>
-	<input name="page-indentity" type="hidden" value="home-page"/>
 	<!-- intro -->
 	<div class="section intoview-effect" data-effect="fadeup" data-editme-key="home_brand_story_summary">
     <?php editme("home_brand_story_summary")?>
