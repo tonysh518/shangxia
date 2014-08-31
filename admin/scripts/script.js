@@ -1,5 +1,5 @@
 (function ($) {
-  var AdminModule = angular.module("adminModule", []);
+  var AdminModule = angular.module("adminModule", ["ui.bootstrap"]);
   
   AdminModule.directive("ngCkeditor", function () {
     return {
@@ -72,6 +72,13 @@
     };
   });
   
+  // 弹出框
+  AdminModule.factory("ui.Dialog", [function () {
+      return {
+        
+      };
+  }]);
+  
   // 文件上传Service
   AdminModule.factory("UploadMediaService", ["$http" ,function ($http) {
     function upload(file, index) {
@@ -129,18 +136,39 @@
       scope: {},
       require: ["ngModel"],
       link: function (scope, element, attr, ctrl) {
-        element.find("input[type='file']").change(function () {
-          UploadMediaService.upload(angular.element(this)[0]).success(function (res) {
-            ctrl[0].$setViewValue(res["data"]["uri"]);
-            scope.src = window.baseurl + res["data"]["uri"];
-            scope.$digest();
+        if (typeof attr["multi"] != "undefined") {
+          element.find("input[type='file']").change(function () {
+            UploadMediaService.upload(angular.element(this)[0]).success(function (res) {
+              scope.src.push(window.baseurl + res["data"]["uri"]);
+              scope.$digest();
+              var sourceValue = ctrl[0].$viewValue;
+              sourceValue.push(res["data"]["uri"]);
+              ctrl[0].$setViewValue(sourceValue);
+            });
           });
-        });
-        
-        scope.src = attr["value"];
+          if (typeof attr["value"] != "undefined") {
+            scope.src = JSON.parse(attr["value"]);
+            ctrl[0].$setViewValue(JSON.parse(attr["value"]));
+          }
+          else {
+            scope.src = [];
+          }
+        }
+        else {
+          element.find("input[type='file']").change(function () {
+            UploadMediaService.upload(angular.element(this)[0]).success(function (res) {
+              ctrl[0].$setViewValue(res["data"]["uri"]);
+              scope.src = [window.baseurl + res["data"]["uri"]];
+              scope.$digest();
+            });
+          });
+
+          ctrl[0].$setViewValue(attr["value"]);
+          scope.src = [attr["value"]];
+        }
       },
-      template: '<div class="preview">'+ 
-          '<img ng-src="{{src}}" alt="" />'+
+      template: '<div class="preview multi">' + 
+          '<div class="multi-item" ng-repeat="s in src track by $index"><img ng-src="{{s}}" alt="" /></div>' +
         '</div>' + 
         '<input type="file"  accept="image/*" upload="Upload Image"/>',
     };
@@ -191,6 +219,14 @@
         var firstInvalid = form.find(".ng-invalid:first");
         firstInvalid.focus();
       }
+    };
+  });
+  
+  AdminModule.controller("ContentTable", function ($scope, $modal) {
+    $scope.deleteConfirm = function () {
+      var modal = $modal.open({
+        templateUrl: "myModalContent.html"
+      });
     };
   });
   

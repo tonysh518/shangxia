@@ -2426,3 +2426,484 @@ Stack trace:
 #9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
 #10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
 REQUEST_URI=/admin/index.php/page/addcontent.html?type=craft
+2014/08/29 08:28:10 [error] [exception.CException] exception 'CException' with message 'CollectionContentAR and its behaviors do not have a method or closure named "getImageOption".' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:266
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(227): CComponent->__call('getImageOption', Array)
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/views/page/addcontent.php(75): CActiveRecord->__call('getImageOption', Array)
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/views/page/addcontent.php(75): CollectionContentAR->getImageOption('master_image')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CBaseController.php(126): require('/Users/jackeych...')
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CBaseController.php(95): CBaseController->renderInternal('/Users/jackeych...', Array, true)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(869): CBaseController->renderFile('/Users/jackeych...', Array, true)
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(782): CController->renderPartial('addcontent', Array, true)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(64): CController->render('addcontent', Array)
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionAddcontent()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('addcontent')
+#13 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/addcontent')
+#14 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#16 {main}
+REQUEST_URI=/admin/index.php/page/addcontent.html?type=collection
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/addcontent.html?type=product
+---
+2014/08/29 08:48:20 [error] [exception.CDbException] SQLSTATE[HY000] [2002] Operation timed out
+2014/08/29 08:48:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php:388
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(387): CDbConnection->init()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CDbHttpSession.php(175): CModule->getComponent('db')
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CDbHttpSession.php(199): CDbHttpSession->getDbConnection()
+#5 [internal function]: CDbHttpSession->openSession('', 'LUCSID')
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CHttpSession.php(114): session_start()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CHttpSession.php(88): CHttpSession->open()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(387): CHttpSession->init()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(103): CModule->getComponent('session')
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/UserAR.php(13): CModule->__get('session')
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(6): UserAR::isLogin()
+#12 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(306): PageController->beforeAction(Object(CInlineAction))
+#13 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#14 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('addcontent')
+#16 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/addcontent')
+#17 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#18 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#19 {main}
+REQUEST_URI=/admin/index.php/page/addcontent.html?type=collection
+---
+2014/08/29 08:48:21 [error] [exception.CDbException] SQLSTATE[HY000] [2002] Operation timed out
+2014/08/29 08:48:21 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php:388
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(387): CDbConnection->init()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CDbHttpSession.php(175): CModule->getComponent('db')
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CDbHttpSession.php(199): CDbHttpSession->getDbConnection()
+#5 [internal function]: CDbHttpSession->openSession('', 'LUCSID')
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CHttpSession.php(114): session_start()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CHttpSession.php(88): CHttpSession->open()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(387): CHttpSession->init()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(103): CModule->getComponent('session')
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/UserAR.php(13): CModule->__get('session')
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(6): UserAR::isLogin()
+#12 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(306): PageController->beforeAction(Object(CInlineAction))
+#13 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#14 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('addcontent')
+#16 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/addcontent')
+#17 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#18 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#19 {main}
+REQUEST_URI=/admin/index.php/page/addcontent.html?type=collection
+---
+2014/08/29 08:48:27 [error] [exception.CDbException] SQLSTATE[HY000] [2002] Operation timed out
+2014/08/29 08:48:27 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php:388
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(387): CDbConnection->init()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CDbHttpSession.php(175): CModule->getComponent('db')
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CDbHttpSession.php(199): CDbHttpSession->getDbConnection()
+#5 [internal function]: CDbHttpSession->openSession('', 'LUCSID')
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CHttpSession.php(114): session_start()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CHttpSession.php(88): CHttpSession->open()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(387): CHttpSession->init()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(103): CModule->getComponent('session')
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/UserAR.php(13): CModule->__get('session')
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(6): UserAR::isLogin()
+#12 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(306): PageController->beforeAction(Object(CInlineAction))
+#13 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#14 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('addcontent')
+#16 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/addcontent')
+#17 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#18 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#19 {main}
+REQUEST_URI=/admin/index.php/page/addcontent.html?type=collection
+---
+2014/08/29 08:48:27 [error] [exception.CDbException] SQLSTATE[HY000] [2002] Operation timed out
+2014/08/29 08:48:27 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php:388
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(387): CDbConnection->init()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CDbHttpSession.php(175): CModule->getComponent('db')
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CDbHttpSession.php(199): CDbHttpSession->getDbConnection()
+#5 [internal function]: CDbHttpSession->openSession('', 'LUCSID')
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CHttpSession.php(114): session_start()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CHttpSession.php(88): CHttpSession->open()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(387): CHttpSession->init()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(103): CModule->getComponent('session')
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/UserAR.php(13): CModule->__get('session')
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(6): UserAR::isLogin()
+#12 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(306): PageController->beforeAction(Object(CInlineAction))
+#13 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#14 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('addcontent')
+#16 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/addcontent')
+#17 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#18 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#19 {main}
+REQUEST_URI=/admin/index.php/page/addcontent.html?type=collection
+---
+2014/08/29 08:48:30 [error] [exception.CDbException] SQLSTATE[HY000] [2002] Operation timed out
+2014/08/29 08:48:30 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php:388
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(387): CDbConnection->init()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CDbHttpSession.php(175): CModule->getComponent('db')
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CDbHttpSession.php(199): CDbHttpSession->getDbConnection()
+#5 [internal function]: CDbHttpSession->openSession('', 'LUCSID')
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CHttpSession.php(114): session_start()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CHttpSession.php(88): CHttpSession->open()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(387): CHttpSession->init()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(103): CModule->getComponent('session')
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/UserAR.php(13): CModule->__get('session')
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(6): UserAR::isLogin()
+#12 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(306): PageController->beforeAction(Object(CInlineAction))
+#13 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#14 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('addcontent')
+#16 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/addcontent')
+#17 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#18 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#19 {main}
+REQUEST_URI=/admin/index.php/page/addcontent.html?type=collection
+---
+2014/08/29 08:48:31 [error] [exception.CDbException] SQLSTATE[HY000] [2002] Operation timed out
+2014/08/29 08:48:31 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php:388
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(387): CDbConnection->init()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CDbHttpSession.php(175): CModule->getComponent('db')
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CDbHttpSession.php(199): CDbHttpSession->getDbConnection()
+#5 [internal function]: CDbHttpSession->openSession('', 'LUCSID')
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CHttpSession.php(114): session_start()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CHttpSession.php(88): CHttpSession->open()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(387): CHttpSession->init()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(103): CModule->getComponent('session')
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/UserAR.php(13): CModule->__get('session')
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(6): UserAR::isLogin()
+#12 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(306): PageController->beforeAction(Object(CInlineAction))
+#13 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#14 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('addcontent')
+#16 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/addcontent')
+#17 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#18 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#19 {main}
+REQUEST_URI=/admin/index.php/page/addcontent.html?type=collection
+---
+2014/08/29 08:48:37 [error] [exception.CDbException] SQLSTATE[HY000] [2002] Operation timed out
+2014/08/29 08:48:37 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php:388
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(387): CDbConnection->init()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CDbHttpSession.php(175): CModule->getComponent('db')
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CDbHttpSession.php(199): CDbHttpSession->getDbConnection()
+#5 [internal function]: CDbHttpSession->openSession('', 'LUCSID')
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CHttpSession.php(114): session_start()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CHttpSession.php(88): CHttpSession->open()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(387): CHttpSession->init()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(103): CModule->getComponent('session')
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/UserAR.php(13): CModule->__get('session')
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(6): UserAR::isLogin()
+#12 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(306): PageController->beforeAction(Object(CInlineAction))
+#13 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#14 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('addcontent')
+#16 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/addcontent')
+#17 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#18 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#19 {main}
+REQUEST_URI=/admin/index.php/page/addcontent.html?type=collection
+---
+2014/08/29 08:48:37 [error] [exception.CDbException] SQLSTATE[HY000] [2002] Operation timed out
+2014/08/29 08:48:37 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php:388
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(387): CDbConnection->init()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CDbHttpSession.php(175): CModule->getComponent('db')
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CDbHttpSession.php(199): CDbHttpSession->getDbConnection()
+#5 [internal function]: CDbHttpSession->openSession('', 'LUCSID')
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CHttpSession.php(114): session_start()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CHttpSession.php(88): CHttpSession->open()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(387): CHttpSession->init()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(103): CModule->getComponent('session')
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/UserAR.php(13): CModule->__get('session')
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(6): UserAR::isLogin()
+#12 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(306): PageController->beforeAction(Object(CInlineAction))
+#13 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#14 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('addcontent')
+#16 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/addcontent')
+#17 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#18 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#19 {main}
+REQUEST_URI=/admin/index.php/page/addcontent.html?type=collection
+---
+2014/08/29 08:48:38 [error] [exception.CDbException] SQLSTATE[HY000] [2002] Operation timed out
+2014/08/29 08:48:38 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php:388
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(387): CDbConnection->init()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CDbHttpSession.php(175): CModule->getComponent('db')
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CDbHttpSession.php(199): CDbHttpSession->getDbConnection()
+#5 [internal function]: CDbHttpSession->openSession('', 'LUCSID')
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CHttpSession.php(114): session_start()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CHttpSession.php(88): CHttpSession->open()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(387): CHttpSession->init()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CModule.php(103): CModule->getComponent('session')
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/UserAR.php(13): CModule->__get('session')
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(6): UserAR::isLogin()
+#12 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(306): PageController->beforeAction(Object(CInlineAction))
+#13 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#14 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('addcontent')
+#16 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/addcontent')
+#17 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#18 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#19 {main}
+REQUEST_URI=/admin/index.php/page/addcontent.html?type=collection
+---
+2014/08/29 22:11:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/08/29 22:11:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/08/29 22:11:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/08/29 22:29:19 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'weight' in 'order clause'. The SQL statement executed was: SELECT * FROM `media` `t` WHERE ((type=:type) AND (field_name=:field_name)) AND (cid=:cid) ORDER BY weight DESC.
+2014/08/29 22:29:19 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'weight' in 'order clause'' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbCommand.php:543
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/MediaAR.php(167): CActiveRecord->findAll(Object(CDbCriteria))
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/MediaAR.php(177): MediaAR->loadMediaWithObject(Object(CollectionContentAR), 'slide_image')
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(281): MediaAR->attachMediaToObject(Object(CollectionContentAR), 'slide_image')
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(1076): ContentAR->getAttributes(NULL)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/protected/modules/api/controllers/ContentController.php(45): CActiveRecord->save()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): ContentController->actionUpdate()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#12 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('update')
+#14 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('api/content/upd...')
+#15 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#17 {main}
+REQUEST_URI=/admin/api/content/update
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/addcontent.html?type=collection
+---
+2014/08/29 22:33:01 [error] [php] Invalid argument supplied for foreach() (/Users/jackeychen/Workspace/shangxia/html/admin/protected/models/MediaAR.php:109)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(806): CollectionContentAR->insert()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/modules/api/controllers/ContentController.php(45): CollectionContentAR->save()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): ContentController->actionUpdate()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): ContentController->runAction()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): ContentController->runActionWithFilters()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): ContentController->run()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/admin/api/content/update
+2014/08/29 22:37:11 [error] [php] Invalid argument supplied for foreach() (/Users/jackeychen/Workspace/shangxia/html/admin/protected/models/MediaAR.php:109)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(806): CollectionContentAR->insert()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/modules/api/controllers/ContentController.php(45): CollectionContentAR->save()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): ContentController->actionUpdate()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): ContentController->runAction()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): ContentController->runActionWithFilters()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): ContentController->run()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/admin/api/content/update
+2014/08/29 22:40:07 [error] [php] Array to string conversion (/Users/jackeychen/Workspace/shangxia/html/admin/protected/views/page/editcontent.php:83)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(869): PageController->renderFile()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(782): PageController->renderPartial()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(61): PageController->render()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionAddcontent()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): PageController->runAction()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): PageController->runActionWithFilters()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): PageController->run()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/admin/index.php/page/addcontent/20085.html?type=collection
+2014/08/29 22:42:55 [error] [php] Undefined index: multi (/Users/jackeychen/Workspace/shangxia/html/admin/protected/views/page/editcontent.php:78)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(869): PageController->renderFile()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(782): PageController->renderPartial()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(61): PageController->render()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionAddcontent()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): PageController->runAction()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): PageController->runActionWithFilters()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): PageController->run()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/admin/index.php/page/addcontent/20085.html?type=collection
+2014/08/29 22:43:23 [error] [exception.CException] exception 'CException' with message 'CollectionContentAR and its behaviors do not have a method or closure named "getImageOption".' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:266
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(227): CComponent->__call('getImageOption', Array)
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/protected/views/page/editcontent.php(75): CActiveRecord->__call('getImageOption', Array)
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/views/page/editcontent.php(75): CollectionContentAR->getImageOption('slide_image')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CBaseController.php(126): require('/Users/jackeych...')
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CBaseController.php(95): CBaseController->renderInternal('/Users/jackeych...', Array, true)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(869): CBaseController->renderFile('/Users/jackeych...', Array, true)
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(782): CController->renderPartial('editcontent', Array, true)
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(61): CController->render('editcontent', Array)
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionAddcontent()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('addcontent')
+#13 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/addcontent')
+#14 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#16 {main}
+REQUEST_URI=/admin/index.php/page/addcontent/20085.html?type=collection
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/content.html?type=collection
+---
+2014/08/29 22:43:31 [error] [exception.CException] exception 'CException' with message '属性 "PageController.slide_image" 未被定义.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CComponent.php:130
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/protected/views/page/editcontent.php(79): CComponent->__get('slide_image')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CBaseController.php(126): require('/Users/jackeych...')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CBaseController.php(95): CBaseController->renderInternal('/Users/jackeych...', Array, true)
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(869): CBaseController->renderFile('/Users/jackeych...', Array, true)
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(782): CController->renderPartial('editcontent', Array, true)
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(61): CController->render('editcontent', Array)
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionAddcontent()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('addcontent')
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/addcontent')
+#12 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#14 {main}
+REQUEST_URI=/admin/index.php/page/addcontent/20085.html?type=collection
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/content.html?type=collection
+---
+2014/08/29 23:59:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/upload/82ec497d9e66b8db6a3a1bb355852f05.png".' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('admin/upload/82...')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/admin/upload/82ec497d9e66b8db6a3a1bb355852f05.png
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/addcontent/20085.html?type=collection
+---
+2014/08/30 00:01:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/upload/82ec497d9e66b8db6a3a1bb355852f05.png".' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('admin/upload/82...')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/admin/upload/82ec497d9e66b8db6a3a1bb355852f05.png
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/addcontent/20085.html?type=collection
+---
+2014/08/30 00:24:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "deletecontent" 动作.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php:483
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(270): CController->missingAction('deletecontent')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('deletecontent')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/deletecont...')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php/page/deletecontent/20084.html?type=collection
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/content.html?type=collection
+---
+2014/08/30 00:46:39 [error] [php] PDOStatement::execute(): MySQL server has gone away (/Users/jackeychen/Workspace/shangxia/html/admin/yii/db/CDbCommand.php:508)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(1351): CDbCommand->queryAll()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(1470): MediaAR->query()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/MediaAR.php(174): MediaAR->findAll()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/MediaAR.php(185): MediaAR->loadMediaWithObject()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(212): MediaAR->attachMediaToObject()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(1866): CollectionContentAR->afterFind()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(1887): CollectionContentAR->populateRecord()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(1351): CollectionContentAR->populateRecords()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/db/ar/CActiveRecord.php(1470): CollectionContentAR->query()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/protected/models/ContentAR.php(251): CollectionContentAR->findAll()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(84): CollectionContentAR->getList()
+#11 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionContent()
+#12 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#13 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): PageController->runAction()
+#14 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): PageController->runActionWithFilters()
+#15 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): PageController->run()
+#16 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#17 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#18 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/admin/index.php/page/content.html?type=collection
+2014/08/30 00:46:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "deletecontent" 动作.' in /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php:483
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(270): CController->missingAction('deletecontent')
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): CController->run('deletecontent')
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController('page/deletecont...')
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php/page/deletecontent/20085.html?type=collection
+HTTP_REFERER=http://sxhtml.local/admin/index.php/page/content.html?type=collection
+---
+2014/08/30 00:51:13 [error] [php] Missing argument 2 for YiiBase::t(), called in /Users/jackeychen/Workspace/shangxia/html/admin/protected/views/layouts/main.php on line 143 and defined (/Users/jackeychen/Workspace/shangxia/html/admin/yii/YiiBase.php:577)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CBaseController.php(95): PageController->renderInternal()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(784): PageController->renderFile()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(86): PageController->render()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionContent()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): PageController->runAction()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): PageController->runActionWithFilters()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): PageController->run()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/admin/index.php/page/content.html?type=collection
+2014/08/30 00:51:32 [error] [php] Missing argument 2 for YiiBase::t(), called in /Users/jackeychen/Workspace/shangxia/html/admin/protected/views/layouts/main.php on line 143 and defined (/Users/jackeychen/Workspace/shangxia/html/admin/yii/YiiBase.php:577)
+Stack trace:
+#0 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CBaseController.php(95): PageController->renderInternal()
+#1 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(784): PageController->renderFile()
+#2 /Users/jackeychen/Workspace/shangxia/html/admin/protected/controllers/PageController.php(86): PageController->render()
+#3 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/actions/CInlineAction.php(49): PageController->actionContent()
+#4 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(286): PageController->runAction()
+#6 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CController.php(265): PageController->runActionWithFilters()
+#7 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(282): PageController->run()
+#8 /Users/jackeychen/Workspace/shangxia/html/admin/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Users/jackeychen/Workspace/shangxia/html/admin/yii/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/jackeychen/Workspace/shangxia/html/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/admin/index.php/page/content.html?type=collection

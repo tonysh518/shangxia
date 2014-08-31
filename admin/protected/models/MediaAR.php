@@ -85,9 +85,12 @@ class MediaAR extends CActiveRecord {
       $ext = pathinfo($filePath, PATHINFO_EXTENSION);
     }
     else {
-      foreach ($uri as &$i) {
+      $newUri = array();
+      foreach ($uri as $i) {
         $i = str_replace(Yii::app()->getBaseUrl(TRUE), "", $i);
+        $newUri[] = $i;
       }
+      $uri = $newUri;
 
       $filePath = dirname(Yii::app()->basePath)."/". $i;
       $name = pathinfo($filePath, PATHINFO_FILENAME);
@@ -103,6 +106,10 @@ class MediaAR extends CActiveRecord {
       $rows = $this->loadMediaWithObject($obj, $field_name);
       foreach ($rows as $row) {
         $row->delete();
+      }
+      
+      if (!is_array($uri)) {
+        $uri = array($uri);
       }
       
       // 添加
@@ -166,6 +173,7 @@ class MediaAR extends CActiveRecord {
     if ($fieldOption['multi']) {
       return $this->findAll($query);
     }
+    
     return $this->find($query);
   }
   
@@ -194,7 +202,11 @@ class MediaAR extends CActiveRecord {
         $obj->{$field_name} = Yii::app()->getBaseUrl(TRUE) .$uri;
       }
       elseif (is_array($uri)) {
-        $obj->{$field_name} = $uri;
+        $new_uri = array();
+        foreach ($uri as $u) {
+          $new_uri[] = Yii::app()->getBaseUrl(TRUE) .$u;
+        }
+        $obj->{$field_name} = $new_uri;
       }
       else {
         $obj->{$field_name} = "";

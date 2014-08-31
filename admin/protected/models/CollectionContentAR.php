@@ -7,7 +7,7 @@ class CollectionContentAR extends ContentAR {
   public $type = "collection";
   
   public function getImageFields() {
-    $this->hasImageField("master_image");
+    $this->hasImageField("slide_image", array("multi" => TRUE));
     $this->hasImageField("thumbnail_image");
     return parent::getImageFields();
   }

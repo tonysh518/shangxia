@@ -37,9 +37,8 @@ class FieldAR extends CActiveRecord {
         "mdate" =>  date("Y-m-d H:i:s"),
         "field_name" => $field_name,
         "cid" => $content->cid,
-        "field_content" => $content->{$field_name},
+        "field_content" => $_REQUEST[$field_name],
     );
-    
         
     $fieldInstance = $this->getFieldInstance($content, $field_name);
     if ($fieldInstance) {
