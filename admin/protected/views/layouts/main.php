@@ -146,6 +146,7 @@
       </div>
       <div class="modal-body">
           <?php echo Yii::t("strings" ,"Are you sure to delete it?")?>
+           <p>{{message}}</p>
       </div>
       <div class="modal-footer">
           <button class="btn btn-primary" ng-click="ok()"><?php echo Yii::t("strings" ,"Delete")?></button>

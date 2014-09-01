@@ -2,6 +2,30 @@
 
 class ContentController extends Controller {
   
+  
+  public function actionDelete() {
+    $request = Yii::app()->getRequest();
+    
+    if (!$request->isPostRequest) {
+      return $this->responseError("http verb error", ErrorAR::ERROR_HTTP_VERB_ERROR);
+    }
+    
+    $cid = $request->getPost("cid", FALSE);
+    
+    if ($cid === FALSE) {
+      return $this->responseError("miss arguments", ErrorAR::ERROR_MISSED_REQUIRED_PARAMS);
+    }
+    
+    $content = ContentAR::model()->findByPk($cid);
+    if (!$content) {
+      return $this->responseError("miss arguments", ErrorAR::ERROR_MISSED_REQUIRED_PARAMS);
+    }
+    $content->delete();
+    
+    return $this->responseJSON(array(), "success");
+  }
+  
+  
   /*
    * 更新内容接口
    */

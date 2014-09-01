@@ -233,9 +233,38 @@
   });
   
   AdminModule.controller("ContentTable", function ($scope, $modal) {
-    $scope.deleteConfirm = function () {
+    var ModalInstanceCtrl = function ($scope, $modalInstance, cid) {
+      
+      $scope.ok = function () {
+        $.ajax({
+         url: window.baseurl + "/api/content/delete",
+         data: {cid: cid},
+         type: "POST"
+       })
+       .done(function () {
+         $scope.message = "Delete success";
+       })
+       .always(function () {
+         $modalInstance.dismiss('cancel');
+         window.location.reload();
+       });
+      };
+
+      $scope.cancel = function () {
+        $modalInstance.dismiss('cancel');
+      };
+    };
+    
+    
+    $scope.deleteConfirm = function (cid) {
       var modal = $modal.open({
-        templateUrl: "myModalContent.html"
+        templateUrl: "myModalContent.html",
+        controller: ModalInstanceCtrl,
+        resolve: {
+          cid: function () {
+            return cid;
+          }
+        }
       });
     };
   });
