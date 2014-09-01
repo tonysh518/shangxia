@@ -69,8 +69,10 @@
       <li class="nav-header">
         <?php echo Yii::t("strings", "Slideshow")?>
       </li>
-      <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "slideshow"))?>"><?php echo Yii::t("strings", "Add Slideshow")?></a></li>
-      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "slideshow"))?>"><?php echo Yii::t("strings", "Slideshow")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "slideshow"))?>"><?php echo Yii::t("strings", "Add Slideshow (Home)")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "slideshow"))?>"><?php echo Yii::t("strings", "Slideshow(Home)")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "collection_slideshow"))?>"><?php echo Yii::t("strings", "Add Slideshow (Collection)")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "collection_slideshow"))?>"><?php echo Yii::t("strings", "Slideshow(Collection)")?></a></li>
       <!-- End Slideshow-->
       
       <!-- Video -->

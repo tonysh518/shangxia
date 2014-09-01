@@ -6,4 +6,6 @@ admin/upload
 
 admin/protected/config/main.php
 
+admin/protected/runtime
+
 .DS_Store

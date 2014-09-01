@@ -208,7 +208,7 @@
           }
           else {
             setTimeout(function () {
-              //window.location.href = angular.element("form[name='"+$scope.contentform["$name"]+"']").attr("redirect");
+              window.location.href = angular.element("form[name='"+$scope.contentform["$name"]+"']").attr("redirect");
             }, 500);
           }
         });

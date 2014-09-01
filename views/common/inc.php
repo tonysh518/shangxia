@@ -17,7 +17,7 @@ $app = Yii::createWebApplication($config);
 $scriptUrl = Yii::app()->getRequest()->getScriptUrl();
 
 $ret = Yii::app()->getRequest()->getBaseUrl();
-Yii::app()->getRequest()->setBaseUrl($ret . "/backendoffice");
+Yii::app()->getRequest()->setBaseUrl("/admin");
 
 Yii::app()->language = "zh_cn";
 
@@ -56,4 +56,23 @@ function renderContentField($key, $fieldName) {
   $content->reload();
   
   return $content->{$fieldName};
+}
+
+
+function loadContentList($type) {
+  $class = ucfirst($type).'ContentAR';
+  if (!class_exists($class)) {
+    throw Exception("Class with name ". $type . " is not exist");
+  }
+  else {
+    $model = new $class();
+    return $model->getList();
+  }
+}
+
+function makeThumbnail($uri, $size = array()) {
+  if (!$size) {
+    return $uri;
+  }
+  return MediaAR::thumbnail($uri, $size);
 }
