@@ -353,8 +353,13 @@ a{text-decoration:none;outline: none;color:#444;}
 .presscom .pressitem{margin:40px 0}
 .pressbtn{font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin:0 auto 50px;text-align: center;width: 250px;height: 62px;line-height: 62px;max-width: 80%;font-family: Garamond;}
 
-
-
+/*coll_product*/
+.coll_product .arrows{height: 280px}
+.coll_iconbg{background: url('../images/collicon.png') no-repeat top center;height: 50px;margin-bottom: 50px}
+.coll_video{margin-bottom: 50px}
+.coll_video h2{width: 540px;margin-left: -270px}
+.coll_videocom{font-size: 18px;font-style: italic;text-align: center;}
+.coll_videobox{margin: 50px auto}
 
 
 
