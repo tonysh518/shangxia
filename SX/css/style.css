@@ -338,6 +338,20 @@ a{text-decoration:none;outline: none;color:#444;}
 .popshare .popsharewx{background-position: -146px 0}
 
 
+/*about*/
+.introparis h2.aboutintrotit{line-height:40px ;padding-bottom: 40px}
+.aboutinfortxt{background: #f1f4f4;padding-top: 80px}
+.abouttit h2{width: 840px;margin-left: -420px}
+.about2tit h2{width: 480px;margin-left: -240px}
+.jobstit h2{width: 180px;margin-left: -90px}
+.jobsitem{float: left;width: 32.8%;margin-right: 0.8%;font-size:18px;height: 300px}
+.jobsitem h3{font-size:18px;font-weight: bold;height:60px }
+.jobsitem p{font-family: 'Garamond';font-style: italic;height: 80px}
+.jobsitem a{font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 12px 0;text-align: center;width: 250px;height: 62px;line-height: 62px;max-width: 80%;font-family: Garamond;}
+
+
+
+
 
 
 
@@ -419,11 +433,4 @@ body .vjs-default-skin .vjs-big-play-button:focus{box-shadow: none;}
 .nav-pop-nav{float: left;width: 16%;}
 .nav-pop-nav p {margin-left: 40%;font-size: 16px;font-family: 'Gotham Book';}
 .map-marker{position: absolute;left: 50%;top: 50%;margin-left: -25px;margin-top: -25px;}
-
-
-
-
-
-
-
 
