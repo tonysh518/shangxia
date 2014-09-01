@@ -5,6 +5,7 @@ class CraftContentAR extends ContentAR {
   
   public function getImageFields() {
     $this->hasImageField("thumbnail_image");
+    $this->hasImageField("video_poster");
     return parent::getImageFields();
   }
   

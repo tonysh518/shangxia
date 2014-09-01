@@ -91,14 +91,14 @@ function getProductInTypeWithCollection($type = "", $collection = NULL) {
     $query->params[":field_name"] = "product_type";
     $query->params[":field_content"] = $type;
     
-    $res1 = ProductContentAR::model()->findAll($query);
+    $res1 = FieldAR::model()->findAll($query);
   }
   if ($collection) {
     $query->addCondition("field_name=:field_name")
           ->addCondition("field_content=:field_content");
     $query->params[":field_name"] = "product_type";
     $query->params[":field_content"] = $type;
-    $res2 = ProductContentAR::model()->findAll($query);
+    $res2 = FieldAR::model()->findAll($query);
   }
   $res = array();
   // 如果同时查找2个条件，则取并集
@@ -118,5 +118,36 @@ function getProductInTypeWithCollection($type = "", $collection = NULL) {
     $res = $res2;
   }
   
-  return $res;
+  $cids = array();
+  foreach ($res as $item) {
+    $cids[] = $item->cid;
+  }
+ 
+  $query = new CDbCriteria();
+  $query->addInCondition("cid", $cids);
+  return ProductContentAR::model()->findAll($query);
+}
+
+/**
+ * 加载Craft 相关联的产品
+ * @param type $craft
+ */
+function loadCraftRelatedProducts($craft) {
+  $product_ids = json_decode($craft->product, TRUE);
+  $query = new CDbCriteria();
+  $query->addInCondition("cid", $product_ids);
+  
+  $products = ProductContentAR::model()->findAll($query);
+  return $products;
+}
+
+/**
+ * 加载其他的Craft. 排除参数所指示的Craft
+ * @param int $craft_id
+ */
+function loadOtherCraft($craft_id = 0) {
+  $query = new CDbCriteria();
+  $query->addNotInCondition("cid", array($craft_id));
+  
+  return CraftContentAR::model()->findAll($query);
 }

@@ -58,7 +58,7 @@
           <?php if (isset($option["type"]) && $option["type"] == "textarea"): ?>
             <textarea  name="<?php echo $field?>" ng-ckeditor ng-model="content.<?php echo $field?>"  cols="80" rows="10" value="<?php echo $instance->{$field}?>" ng-initial></textarea>
           <?php elseif (isset($option["type"]) && $option["type"] == "select"): ?>
-            <select name="<?php echo $field?>" ng-model="content.<?php echo $field?>" value="<?php echo $instance->{$field}?>" ng-initial>
+            <select name="<?php echo $field?>" ng-model="content.<?php echo $field?>" value="<?php echo $instance->{$field}?>" ng-initial <?php if (isset($option["select_multi"]) && $option["select_multi"] == TRUE) echo "multiple='multiple'"?>>
               <?php foreach ($option["options"] as $key => $op): ?>
               <option value="<?php echo $key?>"><?php echo $op;?></option>
               <?php endforeach;?>

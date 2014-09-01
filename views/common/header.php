@@ -66,7 +66,7 @@
 					<div class="nav-pop-inner">
             <?php $crafts = CraftContentAR::model()->getList();?>
             <?php foreach($crafts as $craft): ?>
-            <a class="nav-pop-item" data-a="nav-link" href="./craft.php?id=<?php echo $craft->cid?>"><img src="<?php //makeThumbnail($craft->image)?>"/> <span><i><?php echo $craft->title?></i></span></a>
+            <a class="nav-pop-item" data-a="nav-link" href="./craft.php?id=<?php echo $craft->cid?>"><img src="<?php echo makeThumbnail($craft->thumbnail_image)?>"/> <span><i><?php echo $craft->title?></i></span></a>
             <?php endforeach;?>
 					</div>
 				</div>

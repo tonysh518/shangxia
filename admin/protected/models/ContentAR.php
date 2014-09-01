@@ -323,5 +323,13 @@ class ContentAR extends CActiveRecord {
     
     return $row;
   }
+  
+  public function findAll($condition = '', $params = array()) {
+    if ($condition instanceof CDbCriteria) {
+      $condition->addCondition("type=:type");
+      $condition->params[":type"] = $this->type;
+    }
+    return parent::findAll($condition, $params);
+  }
 }
 

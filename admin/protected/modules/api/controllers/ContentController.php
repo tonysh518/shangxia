@@ -19,7 +19,6 @@ class ContentController extends Controller {
       return $this->responseError("unkonw", ErrorAR::ERROR_UNKNOWN);
     }
     
-    
     if ($type) {
       $class = ucfirst($type)."ContentAR";
       if (!class_exists($class)) {

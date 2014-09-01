@@ -41,7 +41,7 @@ else {
 		<div class="barbg"></div>
     <?php $types = ProductContentAR::getType(); ?>
     
-    <?php foreach($types as $type): ?>
+    <?php foreach($types as $type_id => $type): ?>
 		<!-- <?php echo $type?> -->
 		<div class="collpiclist cs-clear">
 			<!--  -->
@@ -54,49 +54,16 @@ else {
 					<div class="products-wrap js-horizontal-slide intoview-effect" data-effect="fadeup" data-num="3">
 						<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
 						<div class="slide-con">
+              <?php $products = getProductInTypeWithCollection($type_id, $collection->cid)?>
 							<ul class="slide-con-inner piclist cs-clear">
-								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-									<a href="">
-										<img src="../SX/images/colldemo2.jpg" width="100%" />
-										<p><span class="collicon">architecture</span></p>
-									</a>
-								</li>
-								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-									<a href="">
-										<img src="../SX/images/colldemo2.jpg" width="100%" />
-										<p><span class="collicon">architecture</span></p>
-									</a>
-								</li>
-								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-									<a href="">
-										<img src="../SX/images/colldemo2.jpg" width="100%" />
-										<p><span class="collicon">architecture</span></p>
-									</a>
-								</li>
-								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-									<a href="">
-										<img src="../SX/images/colldemo2.jpg" width="100%" />
-										<p><span class="collicon">architecture</span></p>
-									</a>
-								</li>
-								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-									<a href="">
-										<img src="../SX/images/colldemo2.jpg" width="100%" />
-										<p><span class="collicon">architecture</span></p>
-									</a>
-								</li>
-								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-									<a href="">
-										<img src="../SX/images/colldemo2.jpg" width="100%" />
-										<p><span class="collicon">architecture</span></p>
-									</a>
-								</li>
-								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-									<a href="">
-										<img src="../SX/images/colldemo2.jpg" width="100%" />
-										<p><span class="collicon">architecture</span></p>
-									</a>
-								</li>
+                <?php foreach ($products as $product): ?>
+                  <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+                    <a href="">
+                      <img src="../SX/images/colldemo2.jpg" width="100%" />
+                      <p><span class="collicon">architecture</span></p>
+                    </a>
+                  </li>
+                <?php endforeach;?>
 							</ul>
 						</div>
 						<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
