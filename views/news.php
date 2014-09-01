@@ -117,7 +117,7 @@
 				</div>
 				<!--  -->
 				<div class="newsolderbtn intoview-effect" data-effect="fadeup">
-					<a href="#" title="" class="transition-wrap"><span class="transition">View all news<br/><br/>View all news</span></a>
+					<a href="./news-detail.php" title="" class="transition-wrap"><span class="transition">View all news<br/><br/>View all news</span></a>
 				</div>
 			</div>
 		</div>
@@ -133,7 +133,7 @@
 					<h3 class="intoview-effect" data-effect="fadeup">shang xia maison opening </h3>
 					<h4  class="intoview-effect" data-effect="fadeup">2014 SEP 09</h4>
 					<p  class="intoview-effect" data-effect="fadeup">This aurum, the SHANG XIA, maision will be opened on Hua Hai Road, Shanghai.<br />A new journey ....     <a class="more" href="#">Read more</a> </p>
-					<a href="#" title="" class="btn transition-wrap"><span class="transition">View all events<br/><br/>View all events</span></a>
+					<a href="./news-detail.php" title="" class="btn transition-wrap"><span class="transition">View all events<br/><br/>View all events</span></a>
 				</div>
 			</div>
 		</div>
@@ -185,7 +185,7 @@
 					<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
 					<!--  -->
 					<div class="newsolderbtn">
-						<a href="#" title="" class="transition-wrap"><span class="transition">View all  press articles<br/><br/>View all  press articles</span></a>
+						<a href="./news-detail.php" title="" class="transition-wrap"><span class="transition">View all  press articles<br/><br/>View all  press articles</span></a>
 					</div>
 				</div>
 			</div>
