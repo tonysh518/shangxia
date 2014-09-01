@@ -30,8 +30,8 @@
 					</ul>
 					<h1 class="logo"><a data-a="nav-link" href="./index.php"></a></h1>
 					<ul class="nav nav2">
-						<li><a data-a="nav-pop" href="#" title="">NEWS</a><img class="nav-bg" src="../SX/images/nav-bg.jpg"/></li>
-						<li><a data-a="nav-pop" href="#" title="">ABOUT</a><img class="nav-bg" src="../SX/images/nav-bg.jpg"/></li>
+						<li><a data-a="nav-link" href="./news.php" title="">NEWS</a><img class="nav-bg" src="../SX/images/nav-bg.jpg"/></li>
+						<li><a data-a="nav-link" href="./about.php" title="">ABOUT</a><img class="nav-bg" src="../SX/images/nav-bg.jpg"/></li>
 						<li><a data-a="nav-link" href="./contact.php" title="">CONTACT</a></li>
 					</ul>
 					<!--  -->
@@ -78,7 +78,7 @@
 						<a class="nav-pop-item" data-a="nav-link" href="./boutique.php"><img src="../SX/images/nav_top.jpg"/> <span><i>PARIS</i></span></a>
 					</div>
 				</div>
-				<div class="nav-pop nav-pop-news">
+				<!-- <div class="nav-pop nav-pop-news">
 					<div class="nav-pop-inner">
 						<a class="nav-pop-item" data-a="nav-link" href="./collections.php"><img src="../SX/images/nav_top.jpg"/> <span><i>PAOLO REVERSI</i></span></a>
 						<a class="nav-pop-item" data-a="nav-link" href="./collections.php"><img src="../SX/images/nav_top.jpg"/> <span><i>LATEST NEWS</i></span></a>
@@ -93,7 +93,7 @@
 						<a class="nav-pop-item" data-a="nav-link" href="./collections.php"><img src="../SX/images/nav_top.jpg"/> <span><i>HERITAGE &amp; ENCOUNTER </i></span></a>
 						<a class="nav-pop-item" data-a="nav-link" href="./collections.php"><img src="../SX/images/nav_top.jpg"/> <span><i>JOBS</i></span></a>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<div class="nav-mask" data-a="nav-mask"></div>
