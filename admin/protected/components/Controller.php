@@ -92,6 +92,9 @@ class Controller extends CController
     if (Yii::app()->language == "zh_cn") {
       $language = "cn";
     }
+    else if (Yii::app()->language == "fr") {
+      $language = "fr";
+    }
     else {
       $language = "en";
     }

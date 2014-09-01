@@ -50,6 +50,7 @@
     <div class="lang-bar">
         <a class="<?php if (Yii::app()->language == "zh_cn") echo "active"; ?>" href="javascript:void(0)" lang="zh_cn" class="lang_cn">中文</a>
         <a class="<?php if (Yii::app()->language == "en_us") echo "active";?>" href="javascript:void(0)" lang="en_us" class="lang_en">English</a>
+        <a class="<?php if (Yii::app()->language == "fr") echo "active";?>" href="javascript:void(0)" lang="fr" class="lang_en">French</a>
     </div>
 	</div>
   
