@@ -13,15 +13,13 @@
 					<h2>shanghai  store</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. Consectetur adipisicing elit, sed do eiusmod tempor incididunt, consectetur adipisicing elit, sed do eiusmod tempor incididunt, sed do eiusmod tempor incididunt, sed do eiusmod tempor incididunt ...</p>
 					<ul class="storechooselist cs-clear">
-						<li data-a="render-foot-map" data-d="type=paris"><a href="#" title="" class="transition-wrap"><span class="transition">Paris store<br/>Paris store</span></a></li>
-						<li data-a="render-foot-map" data-d="type=beijing"><a href="#" title="" class="transition-wrap"><span class="transition">Beijing store<br/>Beijing store</span></a></li>
+						<li><a href="./boutique.php?type=paris" title="" class="transition-wrap"><span class="transition">Paris store<br/>Paris store</span></a></li>
+						<li><a href="./boutique.php?type=beijing" title="" class="transition-wrap"><span class="transition">Beijing store<br/>Beijing store</span></a></li>
 					</ul>
 				</div>
 				<div class="storemap" style="height:400px;position:relative;">
 					<div class="storemap-wrap" id="map" data-map="121.478988,31.227919" >
 					</div>
-					<div class="storemap-wrap" id="google-map" data-map="51.508742,-0.120850">
-					</div>	
 				</div>
 				
 			</div>

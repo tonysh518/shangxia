@@ -176,6 +176,9 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 });
                 cb && cb();
             },
+            "about-page": function( cb ){
+                cb && cb();
+            },
             "boutique-page":function( cb ){
 
                 $('[data-map]').each(function(){
@@ -389,7 +392,13 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             $(this).height( h );
             $(this).find('.proinfortxt-inner').height( h - 100 )
                 .css('overflow' , 'hidden');
-        })
+        });
+
+        $('.aboutinfortxt').each(function(){
+            var h = $(this).next('.proinforpic').height();
+            $(this).height( h - 80 )
+                .find('p').height( h - 240 );
+        });
     });
 
     var loadingMgr = (function(){
@@ -397,12 +406,12 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         if( !$loading.length )
             $loading = $('<div class="loading-wrap"><div class="loading"></div></div>')
                 .appendTo(document.body);
-        var positions = [-44,-142,-240,-338,-436,-534];
-        var interval = null;
+        // var positions = [-44,-142,-240,-338,-436,-534];
+        // var interval = null;
 
-        var colors = {
-            'black': 'rgba(0,0,0,.85)'
-        }
+        // var colors = {
+        //     'black': 'rgba(0,0,0,.85)'
+        // }
         
         return {
             showLoading: function( $wrap ){
@@ -420,19 +429,20 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 $wrap.find('.loading-wrap').fadeOut();
             },
             show: function( bgcolor ){
-                var index = 0;
-                bgcolor = colors[bgcolor] || bgcolor || 'white';
-                var $inner = $loading.fadeIn().find('.loading');
-                $loading.css({
-                    'background-color':  bgcolor
-                });
-                clearInterval( interval );
-                interval = setInterval(function(){
-                    $inner.css('background-position' , 'right ' +  positions[ ( index++ % positions.length ) ] + 'px' );
-                } , 1000 / 6 );
+                $loading.fadeIn();
+                // var index = 0;
+                // bgcolor = colors[bgcolor] || bgcolor || 'white';
+                // var $inner = $loading.fadeIn().find('.loading');
+                // $loading.css({
+                //     'background-color':  bgcolor
+                // });
+                // clearInterval( interval );
+                // interval = setInterval(function(){
+                //     $inner.css('background-position' , 'right ' +  positions[ ( index++ % positions.length ) ] + 'px' );
+                // } , 1000 / 6 );
             },
             hide: function(){
-                clearInterval( interval );
+                // clearInterval( interval );
                 $loading.fadeOut();
             }
         }
@@ -622,6 +632,14 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 //     mapTypeId:google.maps.MapTypeId.ROADMAP
                 // });
             }
+        }
+    })();
+
+
+    var popHelper = (function(){
+
+        return {
+
         }
     })();
 
@@ -834,5 +852,21 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 return false;
             }
         });
+    });
+
+
+    LP.action('pop-jobs' , function(){
+        var html = $(this).next().val();
+        $(html).appendTo( document.body )
+            .hide()
+            .fadeIn();
+
+        return false;
+    });
+
+    LP.action('popclose' , function(){
+        var $pop = $(this).closest('.pop').fadeOut();
+        $pop.prev('.popshade').fadeOut();
+        return false;
     });
 });

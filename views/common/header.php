@@ -43,8 +43,8 @@
 					</div>
 				</div>
 				<div class="searchform">
-					<form action="" class="section cs-clear">
-						<input type="text" value="SEARCH DEMO">
+					<form action="./search.php" class="section cs-clear">
+						<input type="text" placeholder="SEARCH DEMO" name="s" value="">
 						<button>SEARCH</button>
 					</form>
 				</div>

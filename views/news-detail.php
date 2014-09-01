@@ -7,7 +7,7 @@
 	<div class="collpiclist cs-clear">
 		<div class="collarrows newsarrowsprev" data-a="page-prev"></div>
 		<!--  -->
-		<div class="section collcon">
+		<div class="section">
 			<div class="picinfor cs-clear">
 					<div class="picinfortxt">
 							<h2>PARIS STORE OPENING</h2>
