@@ -9,18 +9,14 @@ class ProductContentAR extends ContentAR {
   const TYPE_JEWELRY = 2;
   const TYPE_FURNITURE = 3;
   const TYPE_HOMEWARE = 4;
+  const TYPE_TEAWARE = 5;
   
   public $type = "product";
   public function getFields() {
     $this->hasContentField("video_title");
     $this->hasContentField("video_description", array("type" => "textarea"));
     
-    $this->hasContentField("product_type", array("type" => "select", "options" => array(
-        self::TYPE_APPAREL => Yii::t("strings", "aprarel"),
-        self::TYPE_JEWELRY => Yii::t("strings", "jewelry"),
-        self::TYPE_FURNITURE => Yii::t("strings", "furniture"),
-        self::TYPE_HOMEWARE => Yii::t("strings", "homeware"),
-        )));
+    $this->hasContentField("product_type", array("type" => "select", "options" => self::getType()));
     
     $collection = CollectionContentAR::model()->getList();
     $options = array();
@@ -32,8 +28,18 @@ class ProductContentAR extends ContentAR {
     return parent::getFields();
   }
   
+  public static function getType() {
+    return array(
+        self::TYPE_APPAREL => Yii::t("strings", "aprarel"),
+        self::TYPE_JEWELRY => Yii::t("strings", "jewelry"),
+        self::TYPE_FURNITURE => Yii::t("strings", "furniture"),
+        self::TYPE_HOMEWARE => Yii::t("strings", "homeware"),
+        self::TYPE_TEAWARE => Yii::t("strings", "teaware"),
+        );
+  }
+  
   public function getImageFields() {
-    $this->hasImageField("product_slide_image");
+    $this->hasImageField("product_slide_image", array("multi" => TRUE));
     return parent::getImageFields();
   }
   

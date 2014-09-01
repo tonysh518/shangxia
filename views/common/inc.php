@@ -1,5 +1,4 @@
 <?php
-
 // 载入 Yii / 后台系统
 $root = dirname(dirname(dirname(__FILE__)));
 
@@ -75,4 +74,49 @@ function makeThumbnail($uri, $size = array()) {
     return $uri;
   }
   return MediaAR::thumbnail($uri, $size);
+}
+
+/**
+ * 返回在某个系列下的某个类型的产品
+ * @param string $type
+ * @param CollectionContentAR $collection
+ * @return 
+ */
+function getProductInTypeWithCollection($type = "", $collection = NULL) {
+  $query = new CDbCriteria();
+  
+  if ($type) {
+    $query->addCondition("field_name=:field_name")
+          ->addCondition("field_content=:field_content");
+    $query->params[":field_name"] = "product_type";
+    $query->params[":field_content"] = $type;
+    
+    $res1 = ProductContentAR::model()->findAll($query);
+  }
+  if ($collection) {
+    $query->addCondition("field_name=:field_name")
+          ->addCondition("field_content=:field_content");
+    $query->params[":field_name"] = "product_type";
+    $query->params[":field_content"] = $type;
+    $res2 = ProductContentAR::model()->findAll($query);
+  }
+  $res = array();
+  // 如果同时查找2个条件，则取并集
+  if (isset($res1) && isset($res2)) {
+    foreach ($res1 as $item) {
+      foreach ($res2 as $item2) {
+        if ($item->cid == $item2->cid) {
+          $res[] = $item;
+        }
+      }
+    }
+  }
+  else if (isset($res1)) {
+    $res = $res1;
+  }
+  else if (isset($res2)) {
+    $res = $res2;
+  }
+  
+  return $res;
 }

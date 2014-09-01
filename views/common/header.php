@@ -51,24 +51,23 @@
 				<div class="nav-pop nav-pop-collections">
 					<div class="nav-pop-inner">
 						<div class="nav-pop-nav">
-							<p><a href="#">Furniture &gt;</a></p>
-							<p><a href="#">Teaware &gt;</a></p>
-							<p><a href="#">Homeware &gt;</a></p>
-							<p><a href="#">Apparel &gt;</a></p>
-							<p><a href="#">Jewelly &gt;</a></p>
+              <?php foreach (ProductContentAR::getType() as $id => $name):  ?>
+              <p><a href="./type.php?id=<?php echo $id?>"><?php echo ucfirst($name)?> &gt;</a></p>
+              <?php endforeach;?>
 						</div>
-						<a class="nav-pop-item" data-a="nav-link" href="./collections.php"><img src="../SX/images/nav_top.jpg"/> <span><i> IN &amp; OUT</i></span></a>
-						<a class="nav-pop-item" data-a="nav-link" href="./collections.php"><img src="../SX/images/nav_top.jpg"/> <span><i>HUMAN &amp; NATURE</i></span></a>
-						<a class="nav-pop-item" data-a="nav-link" href="./collections.php"><img src="../SX/images/nav_top.jpg"/> <span><i>HERITAGE &amp; EMOTION</i></span></a>
-						<a class="nav-pop-item" data-a="nav-link" href="./collections.php"><img src="../SX/images/nav_top.jpg"/> <span><i>GIFTS</i></span></a>
+            <?php $collectiones = CollectionContentAR::model()->getList();?>
+            <?php foreach($collectiones as $item):?>
+              <a class="nav-pop-item" data-a="nav-link" href="./collections.php?id=<?php echo $item->cid?>"><img src="../SX/images/nav_top.jpg"/> <span><i> <?php echo $item->title?></i></span></a>
+            <?php endforeach;?>
+						<a class="nav-pop-item" data-a="nav-link" href="./collectionlist.php"><img src="../SX/images/nav_top.jpg"/> <span><i>GIFTS</i></span></a>
 					</div>
 				</div>
 				<div class="nav-pop nav-pop-crafts">
 					<div class="nav-pop-inner">
-						<a class="nav-pop-item" data-a="nav-link" href="./craft.php"><img src="../SX/images/nav_top.jpg"/> <span><i>BAMBOO WEAVING</i></span></a>
-						<a class="nav-pop-item" data-a="nav-link" href="./craft.php"><img src="../SX/images/nav_top.jpg"/> <span><i>CASHMERE FELT</i></span></a>
-						<a class="nav-pop-item" data-a="nav-link" href="./craft.php"><img src="../SX/images/nav_top.jpg"/> <span><i>EGGSHELL PORCELAIN</i></span></a>
-						<a class="nav-pop-item" data-a="nav-link" href="./craft.php"><img src="../SX/images/nav_top.jpg"/> <span><i>ZITAN WOOD</i></span></a>
+            <?php $crafts = CraftContentAR::model()->getList();?>
+            <?php foreach($crafts as $craft): ?>
+            <a class="nav-pop-item" data-a="nav-link" href="./craft.php?id=<?php echo $craft->cid?>"><img src="<?php //makeThumbnail($craft->image)?>"/> <span><i><?php echo $craft->title?></i></span></a>
+            <?php endforeach;?>
 					</div>
 				</div>
 				<div class="nav-pop nav-pop-boutiques">

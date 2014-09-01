@@ -136,19 +136,26 @@
       scope: {},
       require: ["ngModel"],
       link: function (scope, element, attr, ctrl) {
+        scope.src = [];
+        scope.source = [];
         if (typeof attr["multi"] != "undefined") {
           element.find("input[type='file']").change(function () {
             UploadMediaService.upload(angular.element(this)[0]).success(function (res) {
-              scope.src.push(window.baseurl + res["data"]["uri"]);
-              scope.$digest();
-              var sourceValue = ctrl[0].$viewValue;
-              sourceValue.push(res["data"]["uri"]);
-              ctrl[0].$setViewValue(sourceValue);
+              if (typeof res["status"] && res["status"]  == 0) {
+                var uri = res["data"]["uri"];
+                scope.src.push(window.baseurl + uri);
+                scope.source.push(uri);
+                scope.$digest();
+                ctrl[0].$setViewValue(scope.source);
+              }
             });
           });
           if (typeof attr["value"] != "undefined") {
-            scope.src = JSON.parse(attr["value"]);
-            ctrl[0].$setViewValue(JSON.parse(attr["value"]));
+            var src = JSON.parse(attr["value"]);
+            if (src) {
+              ctrl[0].$setViewValue(src);
+              scope.src = src;
+            }
           }
           else {
             scope.src = [];
@@ -157,6 +164,9 @@
         else {
           element.find("input[type='file']").change(function () {
             UploadMediaService.upload(angular.element(this)[0]).success(function (res) {
+              if (typeof res["data"] == "undefined" || res["status"] != 0) {
+                return;
+              }
               ctrl[0].$setViewValue(res["data"]["uri"]);
               scope.src = [window.baseurl + res["data"]["uri"]];
               scope.$digest();
