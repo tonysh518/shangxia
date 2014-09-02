@@ -59,7 +59,6 @@
             <?php foreach($collectiones as $item):?>
               <a class="nav-pop-item" data-a="nav-link" href="./collections.php?id=<?php echo $item->cid?>"><img src="../SX/images/nav_top.jpg"/> <span><i> <?php echo $item->title?></i></span></a>
             <?php endforeach;?>
-						<a class="nav-pop-item" data-a="nav-link" href="./collectionlist.php"><img src="../SX/images/nav_top.jpg"/> <span><i>GIFTS</i></span></a>
 					</div>
 				</div>
 				<div class="nav-pop nav-pop-crafts">
@@ -72,10 +71,12 @@
 				</div>
 				<div class="nav-pop nav-pop-boutiques">
 					<div class="nav-pop-inner">
-						<a class="nav-pop-item" style="margin-left: 12%;" data-a="nav-link" href="./boutique.php"><img src="../SX/images/nav_top.jpg"/> <span><i>SHANGHAI</i></span></a>
-						<a class="nav-pop-item" data-a="nav-link" href="./boutique.php"><img src="../SX/images/nav_top.jpg"/> <span><i>BEIJING</i></span></a>
-						<a class="nav-pop-item" data-a="nav-link" href="./boutique.php"><img src="../SX/images/nav_top.jpg"/> <span><i>PARIS</i></span></a>
-					</div>
+            <?php $first = TRUE;?>
+            <?php foreach (BoutiqueContentAR::getLocation() as $key => $name): ?>
+              <a class="nav-pop-item" <?php if ($first) echo 'style="margin-left: 12%;"'?>data-a="nav-link" href="./boutique.php?key=<?php echo urlencode($key)?>"><img src="../SX/images/nav_top.jpg"/> <span><i><?php echo $name?></i></span></a>
+            <?php $first = FALSE;?>
+            <?php endforeach;?>
+						</div>
 				</div>
 				<!-- <div class="nav-pop nav-pop-news">
 					<div class="nav-pop-inner">

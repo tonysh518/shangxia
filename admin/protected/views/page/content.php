@@ -23,7 +23,7 @@
         <tr>
           <td><?php echo $item->title?></td>
           <td><?php echo ucfirst($type)?></td>
-          <td><?php echo strip_tags($item->body)?></td>
+          <td class="body"><?php echo strip_tags($item->body)?></td>
           <td><?php echo $item->weight?></td>
           <td><?php echo $item->cdate?></td>
           <td>

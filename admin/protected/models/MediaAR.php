@@ -2,7 +2,22 @@
 
 
 class MediaAR extends CActiveRecord {
+  public static $caches = array();
   public static $allowTypes = array("png", "jpg", "jpeg", "bmp", "gif");
+  
+  public static function getCache($key) {
+    // 把所有的media 载入
+    // 然后放入缓存中，后面直接查缓存
+    if (!self::$caches) {
+      $res = Yii::app()->db->createCommand("SELECT * FROM media")->queryAll();
+      foreach ($res as $row) {
+        $key = "{$row["cid"]}_{$row["field_name"]}";
+        self::$caches[$key] = MediaAR::model()->findByPk($row["mid"]);
+      }
+    }
+    
+    return isset(self::$caches[$key]) ? self::$caches[$key] : FALSE;
+  }
   
   public function tableName() {
     return "media";
@@ -156,6 +171,10 @@ class MediaAR extends CActiveRecord {
    * @return type
    */
   public function loadMediaWithObject($obj, $field_name) {
+    self::getCache("");
+    $cache_key = "{$obj->cid}_$field_name";
+    
+    // 先判断是不是多值的Media.
     $cid = $obj->getPrimaryKey();
     $type = $obj->type;
     $query = new CDbCriteria();
@@ -164,17 +183,30 @@ class MediaAR extends CActiveRecord {
       ->addCondition("cid=:cid");
     
     $query->order = "weight DESC";
-    
     $query->params[":type"] = $type;
     $query->params[":field_name"] = $field_name;
     $query->params[":cid"] = $cid;
     
     $fieldOption = $obj->getImageFieldOption($field_name);
     if ($fieldOption['multi']) {
-      return $this->findAll($query);
+      $cache_key .= "_multi";
+      if (self::getCache($cache_key)) {
+        $ret = self::getCache($cache_key);
+        return $ret;
+      }
+      $ret = $this->findAll($query);
+      self::$caches[$cache_key] = $ret;
+      return $ret;
     }
     
-    return $this->find($query);
+    if (self::getCache($cache_key)) {
+      return self::getCache($cache_key);
+    }
+    
+    $ret = $this->find($query);
+    self::$caches[$cache_key] = $ret;
+    
+    return $ret;
   }
   
   /**

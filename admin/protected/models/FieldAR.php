@@ -1,6 +1,9 @@
 <?php
 
 class FieldAR extends CActiveRecord {
+  
+  public static $caches = array();
+  
   public function tableName() {
     return "field";
   }
@@ -11,6 +14,18 @@ class FieldAR extends CActiveRecord {
   
   public static function model($className = __CLASS__) {
     return parent::model($className);
+  }
+  
+  public static function getCache($key) {
+    if (!self::$caches) {
+      $res = Yii::app()->db->createCommand("SELECT * FROM field")->queryAll();
+      foreach ($res as $row) {
+        $key = "{$row["cid"]}_{$row["field_name"]}";
+        self::$caches[$key] = FieldAR::model()->findByPk($row["fid"]);
+      }
+    }
+    
+    return isset(self::$caches[$key]) ? self::$caches[$key] : FALSE;
   }
   
   public function rules() {
@@ -76,6 +91,11 @@ class FieldAR extends CActiveRecord {
    * @param type $field
    */
   public function getFieldInstance($content, $field) {
+    self::getCache("");
+    $key = "{$content->cid}_{$field}";
+    if (self::getCache($key)) {
+      return self::getCache($key);
+    }
     $query = new CDbCriteria();
     $query->addCondition("field_name=:field_name");
     $query->params[":field_name"] = $field;

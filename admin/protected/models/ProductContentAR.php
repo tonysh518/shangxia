@@ -30,11 +30,11 @@ class ProductContentAR extends ContentAR {
   
   public static function getType() {
     return array(
-        self::TYPE_APPAREL => Yii::t("strings", "aprarel"),
-        self::TYPE_JEWELRY => Yii::t("strings", "jewelry"),
-        self::TYPE_FURNITURE => Yii::t("strings", "furniture"),
-        self::TYPE_HOMEWARE => Yii::t("strings", "homeware"),
-        self::TYPE_TEAWARE => Yii::t("strings", "teaware"),
+        self::TYPE_APPAREL =>  "apparel",
+        self::TYPE_JEWELRY => "jewelry",
+        self::TYPE_FURNITURE => "furniture",
+        self::TYPE_HOMEWARE => "homeware",
+        self::TYPE_TEAWARE => "teaware",
         );
   }
   

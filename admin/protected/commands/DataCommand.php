@@ -2,46 +2,54 @@
 
 class DataCommand extends CConsoleCommand {
   public function actionImportShop() {
-    $file = "lily_store_en.cvs.csv";
-    $content = file_get_contents($file);
+    $collectionCids = array(
+        "人与自然" => "20093",
+        "传承与情感" => "20092",
+        "里·外" => "20079",
+        "Human & Nature" => "20091",
+        "Heritage & Emotion" => "20090",
+        "In & Out" => "20089",
+    );
+    $types = array();
+    $tmp_types = ProductContentAR::getType();
+    foreach ($tmp_types as $key => $value) {
+      $types[$value] = $key;
+    }
     
-    $rows = explode("\r\n", $content);
-    foreach ($rows as $index => $row) {
-      $coles = str_getcsv($row, ",", "");
-      if (!count($coles)) {
-        continue;
-      }
-      if (!$coles[0]) {
-        //print_r($coles);
-        continue;
-      }
-      $shop = new ShopAR();
-      $latlng = isset($coles[7]) ? $coles[7]: "";
-      $lat = "";
-      $lng = "";
-      if ($latlng) {
-        $parts = explode(",", $latlng);
-        if (count($parts) > 1) {
-          list($lat, $lng) = $parts;
+    $productGroupes = require("/Users/jackeychen/Workspace/shangxia/docs/product.csv/convert.php");
+    
+    // 把collection 转换到ID
+    foreach ($productGroupes as $products) {
+      foreach ($products as $index => $product) {
+        if ($index > 10) break;
+        $collection = trim($product["collection_name"]);
+        if ($product["language"] == "fr") {
+          continue;
+        }
+        
+        $collectionId = $collectionCids[$collection];
+        $product["collection"] = $collectionId;
+        $product["product_type"] = $types[trim($product["category"])];
+        $product["product_slide_image"] = ["/upload/videodemo.jpg"];
+        $product["thumbnail"] = "/upload/". $product["thumbnail"];
+        $product["video_title"] = $product["title"];
+        $product["video_description"] = $product["title"];
+        $_REQUEST += $product;
+        $_POST += $product;
+        $productModel = new ProductContentAR();
+        $product["type"] = $productModel->type;
+        $productModel->attributes = $product;
+        $_SERVER["SERVER_NAME"] = "http://sxhtml.local/";
+        global $language;
+        $language = $product["language"];
+        
+        if ($cid = $productModel->save()) {
+          print "Content: [$productModel->cid] is inserted\r\n";
+        }
+        else {
+          print_r($productModel->getErrors());
         }
       }
-      $attr = array(
-          "country" => $coles[1],
-          "city" => $coles[2],
-          "distinct" => $coles[3],
-          "title" => trim($coles[4]),
-          "address" => trim($coles[5]),
-          "phone" => trim($coles[6]),
-          "lat" => str_replace('"', "", $lat),
-          "lng" => str_replace('"', "", $lng),
-          "star" => isset($coles[8]) ? $coles[8] : 0,
-          "language" => "en",
-      );
-      $shop->setAttributes($attr, FALSE);
-      
-      $ret = $shop->save();
-      
-      print ".";
     }
   }
 }

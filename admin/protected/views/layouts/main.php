@@ -70,8 +70,8 @@
       <li class="nav-header">
         <?php echo Yii::t("strings", "Slideshow")?>
       </li>
-      <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "slideshow"))?>"><?php echo Yii::t("strings", "Add Slideshow (Home)")?></a></li>
-      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "slideshow"))?>"><?php echo Yii::t("strings", "Slideshow(Home)")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "slideShow"))?>"><?php echo Yii::t("strings", "Add Slideshow (Home)")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "slideShow"))?>"><?php echo Yii::t("strings", "Slideshow(Home)")?></a></li>
       <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "collection_slideshow"))?>"><?php echo Yii::t("strings", "Add Slideshow (Collection)")?></a></li>
       <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "collection_slideshow"))?>"><?php echo Yii::t("strings", "Slideshow(Collection)")?></a></li>
       <!-- End Slideshow-->
@@ -102,11 +102,19 @@
       
       <!-- Craft  -->
       <li class="nav-header">
-        <?php echo Yii::t("strings", "Product")?>
+        <?php echo Yii::t("strings", "Craft")?>
       </li>
       <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "craft"))?>"><?php echo Yii::t("strings", "Add craft")?></a></li>
       <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "craft"))?>"><?php echo Yii::t("strings", "craft")?></a></li>
       <!-- End Craft-->
+      
+      <!-- boutique  -->
+      <li class="nav-header">
+        <?php echo Yii::t("strings", "Boutique")?>
+      </li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "boutique"))?>"><?php echo Yii::t("strings", "Add boutique")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "boutique"))?>"><?php echo Yii::t("strings", "boutique")?></a></li>
+      <!-- End boutique-->
       
       <li class="nav-header">
         <?php echo Yii::t("strings", "System")?>

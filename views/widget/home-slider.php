@@ -1,7 +1,7 @@
 <!-- slide -->
 <div id="home-slider">
 	<div class="slide">
-    <?php $slideshow = loadContentList("slideshow"); ?>
+    <?php $slideshow = loadContentList("slideShow"); ?>
 		<ul class="slidebox cs-clear">
       <?php foreach ($slideshow as $show): ?>
         <li class="slideitem"><img src="<?php echo makeThumbnail($show->image)?>" width="100%" />

@@ -61,7 +61,7 @@ function renderContentField($key, $fieldName) {
 function loadContentList($type) {
   $class = ucfirst($type).'ContentAR';
   if (!class_exists($class)) {
-    throw Exception("Class with name ". $type . " is not exist");
+    throw new Exception("Class with name ". $type . " is not exist");
   }
   else {
     $model = new $class();
@@ -93,6 +93,7 @@ function getProductInTypeWithCollection($type = "", $collection = NULL) {
     
     $res1 = FieldAR::model()->findAll($query);
   }
+  
   if ($collection) {
     $query->addCondition("field_name=:field_name")
           ->addCondition("field_content=:field_content");
@@ -146,8 +147,11 @@ function loadCraftRelatedProducts($craft) {
  * @param int $craft_id
  */
 function loadOtherCraft($craft_id = 0) {
+  global $language;
   $query = new CDbCriteria();
   $query->addNotInCondition("cid", array($craft_id));
+  $query->addCondition("language=:language");
+  $query->params[":language"] = $language;
   
   return CraftContentAR::model()->findAll($query);
 }

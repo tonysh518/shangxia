@@ -1,4 +1,15 @@
 <?php 
+if (isset($_GET["key"])) {
+  require_once 'common/inc.php';
+  $boutique = BoutiqueContentAR::model()->loadByAddressKey($_GET["key"]);
+  if (!$boutique || $boutique->type != BoutiqueContentAR::model()->type) {
+    exit(header("Location: ./index.php"));
+  }
+}
+else {
+  exit(header("Location: ./index.php"));
+}
+
 $pagename="boutique-page";
 include_once 'common/header.php';?>
 		<!-- detail -->
@@ -6,7 +17,7 @@ include_once 'common/header.php';?>
 			<div class="detail cs-clear">
 				<div class="arrows arrows2 detailprev" data-a="page-prev"></div>
 				<div class=" detailcon">
-					<h2>shang xia paris boutique</h2>
+					<h2><?php echo $boutique->title?></h2>
 				</div>
 				<div class="arrows arrows2 detailnext" data-a="page-next"></div>
 			</div>
@@ -14,16 +25,14 @@ include_once 'common/header.php';?>
 		<!-- slide -->
 		<div class="slide intoview-effect" data-effect="fadeup">
 			<div class="slidebox cs-clear">
-				<a href="#" class="slideitem"><img src="../SX/images/parisdemo.jpg" width="100%" /></a>
-				<a href="#" class="slideitem"><img src="../SX/images/parisdemo.jpg" width="100%" /></a>
-				<a href="#" class="slideitem"><img src="../SX/images/parisdemo.jpg" width="100%" /></a>
-				<a href="#" class="slideitem"><img src="../SX/images/parisdemo.jpg" width="100%" /></a>
+        <?php foreach ($boutique->boutique_slide as $image): ?>
+          <a href="#" class="slideitem"><img src="<?php echo $image?>" width="100%" /></a>
+        <?php endforeach;?>
 			</div>
 			<ul class="slidetab cs-clear">
-				<li class="on"></li>
-				<li></li>
-				<li></li>
-				<li></li>
+        <?php foreach ($boutique->boutique_slide as $index => $image): ?>
+          <li class="<?php if ($index == 0) echo "on";?>"></li>
+        <?php endforeach;?>
 			</ul>
 			<!-- 数量改变需要改变css，或者用js来调整slidebox的宽度和slidetab的位置 -->
 		</div>
@@ -33,9 +42,8 @@ include_once 'common/header.php';?>
 		<div class="section ">
 			<div class="intro introparis">
 				<h2 class="intoview-effect" data-effect="fadeup">PARIS:THE 1<sup>st</sup> european shang xia boutique</h2>
-				<p class="intoview-effect" data-effect="fadeup">The arcbitecture of thsSHANG XIA Paris boutique is designed as a cloud-like space made of thin ceramic panels. Historically,ceramic has been a crucial element that forms Chinese culture. Chinese ceramic bad also long been an object of admination in Europe.</p>
-				<p class="intoview-effect" data-effect="fadeup">Six thousand thin ceramic panels are suspended from the ceiling to cover the entire space.The glossy white face,unique to ceramic,created a lighting state you might find in the pointillism paintings of the impressionistic art age.</p>
-			</div>
+        <p class="intoview-effect" data-effect="fadeup"><?php echo $boutique->body?></p>
+      </div>
 		</div>
 		<!-- parislist -->
 		<div class="section">
@@ -55,16 +63,13 @@ include_once 'common/header.php';?>
 		<div class="section">
 			<div class="products findus">
 				<div class="productstit intoview-effect" data-effect="fadeup">
-					<h2>find us</h2>
+					<h2><?php echo Yii::t("strings", "find us")?></h2>
 				</div>
 
 				<!-- store -->
 				<div class="section store cs-clear">
 					<div class="storechoose storechoose2 intoview-effect" data-effect="fadeup">
-						<p>8 Serves Road , 75006 Paris,France</p>
-						<p>Tel: +33-1-42-22-53-62</p>
-						<p>Fax: +33-1-42-22-58-03</p>
-						<p>sevres.paris@shang-xia.com</p>
+						<?php echo $boutique->address?>
 					</div>
 					<div class="storemap intoview-effect" data-map="121.478988,31.227919" data-effect="fadeup">
 						<img src="../SX/images/findus.jpg" width="100%" />

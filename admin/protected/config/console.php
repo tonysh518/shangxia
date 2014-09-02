@@ -18,7 +18,7 @@ return array(
 	'components'=>array(
 		// uncomment the following to use a MySQL database
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=lily_office',
+			'connectionString' => 'mysql:host=localhost;dbname=shangxia',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => 'admin',
