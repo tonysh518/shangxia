@@ -412,6 +412,8 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         // var colors = {
         //     'black': 'rgba(0,0,0,.85)'
         // }
+
+        var startTime = null;
         
         return {
             showLoading: function( $wrap ){
@@ -429,6 +431,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 $wrap.find('.loading-wrap').fadeOut();
             },
             show: function( bgcolor ){
+                startTime = new Date();
                 $loading.fadeIn();
                 // var index = 0;
                 // bgcolor = colors[bgcolor] || bgcolor || 'white';
@@ -442,8 +445,11 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 // } , 1000 / 6 );
             },
             hide: function(){
+                console.log( 1500 - ( new Date() - startTime ) );
                 // clearInterval( interval );
-                $loading.fadeOut();
+                setTimeout(function(){
+                    $loading.fadeOut();
+                } , 1200 - ( new Date() - startTime ) );
             }
         }
     })();
@@ -590,32 +596,36 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 $dom.removeAttr('data-map');
             },
             renderBaidu: function( $dom , point ){
-                var html = '<img class="map-marker" src="#[markerPath]" />\
-                    <img src="http://api.map.baidu.com/staticimage?center=#[pointer]&width=#[width]&height=#[height]&zoom=11" />';
-                $dom.html( LP.format( html , {
-                    markerPath: SOURCE_PATH + '/images/map-marker.png',
-                    pointer: point.join(','),
-                    width: $dom.width(),
-                    height: $dom.height()
-                } ) );
+                // var html = '<img class="map-marker" src="#[markerPath]" />\
+                //     <img src="http://api.map.baidu.com/staticimage?center=#[pointer]&width=#[width]&height=#[height]&zoom=11" />';
+                // $dom.html( LP.format( html , {
+                //     markerPath: SOURCE_PATH + '/images/map-marker.png',
+                //     pointer: point.join(','),
+                //     width: $dom.width(),
+                //     height: $dom.height()
+                // } ) );
 
-                // var id = $dom.attr('id') || 'baidu-map-' + ( + new Date() );
-                // $dom.attr( 'id' , id ) ;
-                // if( !window.BMap ){
-                //     var _LP = window.LP;
-                //     LP.use('http://api0.map.bdimg.com/getscript?v=2.0&ak=AwxxvHue9bTdFietVWM4PLtk&services=&t=20140725172530' , function(){
-                //         window.LP = _LP;
-                //     });
-                // }
-                // var interval = setInterval(function(){
-                //     if( window.BMap ){
-                //         clearInterval( interval );
-                //         var oMap = new BMap.Map( id );
-                //         oMap.addControl(new BMap.NavigationControl());
-                //         point = new BMap.Point( point[0] , point[1] );
-                //         oMap.centerAndZoom(point, 15);
-                //     }
-                // } , 100 );
+                var id = $dom.attr('id') || 'baidu-map-' + ( + new Date() );
+                $dom.attr( 'id' , id ) ;
+                if( !window.BMap ){
+                    var _LP = window.LP;
+                    LP.use('http://api0.map.bdimg.com/getscript?v=2.0&ak=AwxxvHue9bTdFietVWM4PLtk&services=&t=20140725172530' , function(){
+                        window.LP = _LP;
+                    });
+                }
+                var interval = setInterval(function(){
+                    if( window.BMap ){
+                        clearInterval( interval );
+                        var oMap = new BMap.Map( id );
+                        oMap.addControl(new BMap.NavigationControl());
+                        point = new BMap.Point( point[0] , point[1] );
+                        oMap.centerAndZoom(point, 15);
+
+                        var myIcon = new BMap.Icon("../SX/images/marker.png", new BMap.Size(34,40));
+                        var marker2 = new BMap.Marker(point,{icon:myIcon});  // 创建标注
+                        oMap.addOverlay(marker2);              // 将标注添加到地图中
+                    }
+                } , 100 );
             },
             renderGoogle: function( $dom , point ){
                 var html = '<img class="map-marker" src="#[markerPath]" />\

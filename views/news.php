@@ -48,13 +48,13 @@
 					<h2>older news</h2>
 				</div>
 				<div class="productscom intoview-effect slide" data-effect="fadeup">
-					<ul class="newsoldertime slidetab">
+					<!-- <ul class="newsoldertime slidetab">
 						<li class="on"><a href="#">2010</a></li>
 						<li><a href="#">2011</a></li>
 						<li><a href="#">2012</a></li>
 						<li><a href="#">2013</a></li>
 						<li><a href="#">2014</a></li>
-					</ul>
+					</ul> -->
 					<!--  -->
 					<ul class="slidebox">
 						<li class="productslist cs-clear slideitem">

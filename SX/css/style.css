@@ -42,7 +42,7 @@
 /* Reset
 ================================================================================================= */
 html{background: #fff}
-body{color:#000;font-size:12px;line-height:2em;}
+body{color:#9e927a;font-size:12px;line-height:2em;}
 body{font-family:Garamond,"Microsoft Yahei",simsun,arial,sans-serif;}
 h1,h2,h3,h4,h5{font-size:100%;font-weight: normal;}
 body,h1,h2,h3,h4,ul,li,p,img,div{margin:0;padding:0;border:0;}
@@ -54,7 +54,7 @@ form{margin: 0;padding: 0;}
 sup{font-size: 0.5em;}
 /* Base Used
 ================================================================================================= */
-a{text-decoration:none;outline: none;color:#444;}
+a{text-decoration:none;outline: none;color:inherit;}
 .fl{float: left;_display: inline}
 .fr{float: right;_display: inline}
 .cs-clear{+zoom:1;}
@@ -76,9 +76,9 @@ a{text-decoration:none;outline: none;color:#444;}
 .nav li{float: left;line-height: 70px;width: 33%;text-align: center;font-size: 14px;position: relative;font-family: 'Gotham Light';}
 .nav li.active{background: white;}
 .logo{float: left;width: 16%;position: relative;}
-.logo a{width: 50px;height: 50px;display: block;background: url('../images/logo.png') no-repeat;margin: 0 auto}
+.logo a{width: 50px;height: 65px;display: block;background: url('../images/logo.png') no-repeat;margin: 0 auto}
 .hd_oter{position: absolute;top:63px;right: -8%;width: 140px;}
-.hd_language{float: left;}
+.hd_language{float: left;font-family: "gotham light"}
 .hd_language a{padding:0 7px;}
 .hd_language .on{font-weight: bold;}
 .hd_search{float: left;width: 24px;height: 24px;background: url('../images/hd_search.png') no-repeat center;}
@@ -102,7 +102,7 @@ a{text-decoration:none;outline: none;color:#444;}
 
 /*intro*/
 .intro{padding:20px 0 100px;font-family: 'Gotham Book';}
-.introtxt{font-size: 30px;text-align: center;text-transform : uppercase;line-height: 38px}
+.introtxt{font-size: 30px;text-align: center;text-transform : uppercase;line-height: 38px;color:#4b3700;}
 .introbtn{font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 50px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px}
 
 /*piclist*/
@@ -112,22 +112,22 @@ a{text-decoration:none;outline: none;color:#444;}
 .piclistitem img:hover{opacity: 0.9;}
 
 /*footer*/
-.footer{background: #eee;}
+.footer{background: #eee;padding-top: 50px;}
 /*location*/
-.location{padding:66px 0 0 ;margin: 100px 0 0}
-.range{background: url('../images/range.png') no-repeat top center;padding:60px 0 100px;}
-.rangetxt{text-align: center;color:#333;}
-.rangebtn{font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 20px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px}
+.location{padding:66px 0 0 ;margin: 50px; background: white;}
+.range{background: url('../images/range.png') no-repeat top center;padding:40px 0 30px;}
+.rangetxt{text-align: center;color: #910000;font-family: 'Gotham Light';margin-top: 15px;}
+.rangebtn{font-size: 18px;border:#6c0e0e solid 1px;display: block;margin: 20px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px;color:#910000 !important;}
 
 /*store*/
 .store{padding:0 0 110px;}
 .storechoose{float: left;width: 50%;text-align: center;}
-.storechoose h2{font-size: 30px; text-transform : uppercase;padding: 60px 0 20px;font-family: "Gotham Book";}
-.storechoose p{font-size: 18px;font-style: italic;width: 78%;margin: 0 auto;font-family: Garamond;}
+.storechoose h2{font-size: 30px; text-transform : uppercase;padding: 60px 0 20px;font-family: "Gotham Book";color:#4b3700;}
+.storechoose p{font-size: 18px;width: 78%;margin: 0 auto;font-family: Garamond;}
 .storechoose2 p{font-family: "Gotham Book";}
 .storechooselist{width:60%;margin: 40px auto 0}
 .storechooselist li{float: left;width: 50%;font-family: Garamond;}
-.storechooselist a{font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 0 auto;text-align: center;height: 62px;line-height: 62px;width: 90%}
+.storechooselist a{font-size: 18px;border:#423608 solid 1px;display: block;margin: 0 auto;text-align: center;height: 62px;line-height: 62px;width: 90%}
 .storemap{float: left;width: 50%;height: 400px;position: relative;}
 .storemap-wrap{position: absolute;top:0;left:0 ;width: 100%;height: 100%;}
 
@@ -136,20 +136,20 @@ a{text-decoration:none;outline: none;color:#444;}
 .sitelinkitem{float: left;width:20%;}
 .sitelinkitemS{width: 15%}
 .sitelinkitemXS{width: 10%}
-.sitelinkitem h2{font-size: 18px;padding:0 0 10px;font-family: "Gotham Book";}
+.sitelinkitem h2{font-size: 18px;padding:0 0 10px;font-family: "Gotham Book";font-weight: bold;}
 .sitelinkitem a{display: block;line-height: 32px;font-family: 'Gotham Light';}
 .sitelinkitemXS a{float: left;width: 27px;height: 22px;margin-right: 10px;overflow: hidden;line-height: 500em}
 .ft_wx{background: url('../images/footer_wx.png') no-repeat;}
 .ft_wb{background: url('../images/footer_wb.png') no-repeat;}
 
 /*copyright*/
-.copyright{background: url('../images/footer_logo.png') no-repeat top center;}
-.copyright p{text-align: center;padding:115px 0 60px;}
+.copyright{background: url('../images/logo.png') no-repeat top center;}
+.copyright p{text-align: center;padding:115px 0 60px;font-family: 'Gotham Light';}
 
 /*introdetail*/
 .detail{padding:50px 0 0;text-align: center;}
 .detailcon{float: left;width: 68%;padding:0 0 35px;font-size: 18px;font-family: "Gotham Book";}
-.detail h2{font-size:30px;padding:0 0 20px;text-transform : uppercase;line-height: 40px;font-family: "Gotham Book";}
+.detail h2{font-size:30px;padding:0 0 20px;text-transform : uppercase;line-height: 40px;font-family: "Gotham Book";color:#4b3700;}
 .detail p{font-size: 18px;font-style: italic;font-family: Garamond;}
 .detail .arrows{height:180px;float: left;width: 16%;cursor: pointer;}
 .detail .arrows2{height: 44px;}
@@ -172,7 +172,7 @@ a{text-decoration:none;outline: none;color:#444;}
 .knowhowitem{margin: 0 0 10px;font-family: "Gotham Book";}
 .knowhowL{float: left}
 .knowhowR{float: right}
-.knowhowintro{width: 28%;font-size:18px;text-align: center;padding-top:150px;}
+.knowhowintro{width: 28%;font-size:18px;text-align: center;padding-top:150px;font-family: Garamond;}
 .knowhowintro2{width: 28%;font-size:18px;text-align: center;background: #f9f4f4}
 .knowhowintro2 a{font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 100px;height: 42px;line-height: 42px;font-family: Garamond;}
 .knowhowpic{width: 70%;}
@@ -180,19 +180,19 @@ a{text-decoration:none;outline: none;color:#444;}
 /*products*/
 .products{}
 .productstit{height: 100px;border-bottom: #000 solid 1px;position: relative;margin:0 0 110px;font-family: "Gotham Book";}
-.productstit h2{font-size: 30px;width: 420px;background: #fff;text-align: center;position: absolute;bottom:-14px;left:50%;margin-left:-210px;text-transform : uppercase;}
+.productstit h2{font-size: 30px;width: 420px;background: #fff;text-align: center;position: absolute;bottom:-14px;left:50%;margin-left:-210px;text-transform : uppercase;color:#4b3700;}
 .products-wrap{position: relative;}
 .proinfortxt{float: left;width: 32.8%;background: #F6EEEE}
 .proinfortxt h2{font-size: 18px;text-align: center;padding: 70px 50px 40px}
-.proinfortxt p{font-size: 18px;font-style: italic;padding: 0 50px 40px;font-family: Garamond;}
-.proinfortxt a{font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px;max-width: 80%;font-family: Garamond;}
+.proinfortxt p{font-size: 18px;padding: 0 50px 40px;font-family: Garamond;}
+.proinfortxt a{font-size: 18px;border:#000 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px;max-width: 80%;font-family: Garamond;}
 .proinforpic{float: right;width: 66.4%;overflow: hidden;}
 .productscom{position: relative;font-family: "Gotham Book";}
 .productslist{padding:10px 0;}
 .prolistitem{text-transform : uppercase;float: left;width: 32.8%;margin-right: 0.8%;}
 .prolistitem img{display: block;margin: 0 0 10px;}
 .prolistitem p{background: #000;color:#fff;padding:12px;font-size: 18px;text-align: center ;}
-.newsitem p{background: #fff;color:#000	;height: 80px;}
+.newsitem p{background: #fff;color:#4b3700	;height: 80px;}
 
 /*othercraf*/
 .othercraf{padding-bottom:50px;}
@@ -202,8 +202,8 @@ a{text-decoration:none;outline: none;color:#444;}
 /*picinfor*/
 .picinfor{}
 .picinfortxt{float: left;width: 32.8%;font-size: 18px;}
-.picinfortxt h2{padding-right: 50px;height: 50px;font-size: 26px;font-family: "Gotham Book";}
-.picinfortxt p{font-family: Garamond;font-style: italic;padding-top: 20px;padding-right: 50px;}
+.picinfortxt h2{padding-right: 50px;height: 50px;font-size: 26px;font-family: "Gotham Book";color:#4b3700;}
+.picinfortxt p{font-family: Garamond;padding-top: 20px;padding-right: 50px;}
 .picinforpic{float: right;width: 66.4%;overflow: hidden;}
 
 /*newsolder*/
@@ -211,11 +211,11 @@ a{text-decoration:none;outline: none;color:#444;}
 .newsoldertime li{width: auto;height: auto;border-bottom: none;display: inline;float:none;}
 .newsoldertime a{padding: 0 40px;font-size: 14px;}
 .newsoldertime .on{text-decoration: underline;}
-.newsolderbtn a{font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px}
+.newsolderbtn a{font-size: 18px;border:#423608 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px}
 
 /*newsnvents*/
 .newsnvents{text-align: center;font-size: 18px;}
-.newsnvents h3{font-size: 30px;text-transform: uppercase;padding: 30px 0;}
+.newsnvents h3{font-size: 30px;text-transform: uppercase;padding: 30px 0;color:#423608;}
 .newsnvents p{font-style: italic;padding: 20px 0 30px;}
 /*.newsnvents a{font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px}*/
 .newsnvents a.more{text-decoration: underline;}
@@ -224,12 +224,12 @@ a{text-decoration:none;outline: none;color:#444;}
 .press{padding-bottom: 80px;}
 .press .productstit h2{width: 180px;margin-left: -90px;}
 .pressitem{width: 24.4%;margin-right: 0.8%;}
-.pressitem p{background: #fff;color:#000;}
+.pressitem p{background: #fff;color:#4b3700;}
 
 /*introparis*/
 .introparis{width: 65%;margin: 0 auto}
-.introparis h2{font-size: 30px;text-align: center;text-transform: uppercase;line-height: 85px;}
-.introparis p{font-family: Garamond; font-size: 18px;font-style: italic;margin-bottom: 25px;text-align: center;}
+.introparis h2{font-size: 30px;text-align: center;text-transform: uppercase;line-height: 85px;color:#4b3700;}
+.introparis p{font-family: Garamond; font-size: 18px;margin-bottom: 25px;text-align: center;}
 
 /*parislist*/
 .parislist{margin-bottom: 20px;}
@@ -243,7 +243,7 @@ a{text-decoration:none;outline: none;color:#444;}
 
 /*contactpic*/
 .contactpic{padding: 40px 0}
-.contactintro h3{font-weight: bold;text-transform: uppercase;padding:0 0 18px}
+.contactintro h3{font-weight: bold;text-transform: uppercase;padding:0 0 18px;font-family: "Gotham Book";color:#4b3700;}
 .contactintro p{padding-bottom: 10px;}
 
 /*contactfrom*/
@@ -252,12 +252,12 @@ a{text-decoration:none;outline: none;color:#444;}
 .conformbox{width: 62%;margin: 0 auto;text-align: center;min-width: 620px;}
 .conformbox input{height: 42px;line-height: 42px;}
 .conformbox input,
-.conformbox textarea{display: block;width: 100%;border: #000 solid 1px}
-.conformtit{font-size: 18px;line-height: 40px;}
+.conformbox textarea{display: block;width: 100%;border: #4b3700 solid 1px}
+.conformtit{font-size: 18px;line-height: 40px;font-family:"gotham medium";color: #4b3700;}
 .conformcheck input{float: left;width: 28px;}
-.conformcheck span{float: left;line-height: 48px;font-style: italic;}
+.conformcheck span{float: left;line-height: 48px;}
 .conformcheck a{text-decoration: underline;}
-.conformbtn{font-size: 18px;cursor:pointer;color:#fff;background: #000;text-align: center;border: 0;width: 290px;height: 66px;margin: 40px 0;}
+.conformbtn{font-size: 18px;cursor:pointer;color:#fff;background: #4b3700;text-align: center;border: 0;width: 290px;height: 66px;margin: 40px 0;}
 
 /*collpicitem*/
 .collpicitem p{padding: 10px 0 20px;}
@@ -316,8 +316,8 @@ a{text-decoration:none;outline: none;color:#444;}
 .pop2{top: 100px;bottom: 100px;}
 .popclose{cursor: pointer;background: url('../images/popclose.png') no-repeat;width: 49px;height: 49px;position: absolute;top: 28px;right: 28px;}
 .popcon{width: 68%;margin: 0 auto;padding: 80px 0;}
-.popcon h2{text-transform: uppercase;font-size: 30px;text-align: center;padding:10px 0;}
-.popcontxt{font-size: 18px;font-style: italic;text-align: center;}
+.popcon h2{text-transform: uppercase;font-size: 30px;text-align: center;padding:10px 0;font-family: "Gotham Book"; color: #4b3700;}
+.popcontxt{font-size: 18px;text-align: center;color:#9e927a;}
 .popcontxt p{padding: 10px 0}
 .poppiccon{text-align: center;overflow-y: auto;height: 100%;}
 .poppiccon img{display: block;margin: 0 auto;}
@@ -329,13 +329,14 @@ a{text-decoration:none;outline: none;color:#444;}
 .popconabout{font-size: 18px}
 .popconabout h2{text-align: left;padding-bottom: 20px;}
 .popconabout .popcontxt{text-align: left;}
-.popconabout h3{padding-top: 20px;}
-.popaboutbtn{font-size: 18px;font-style: italic;text-align: center;display: block;height: 62px;width: 250px;line-height: 62px;border: #000 solid 1px;margin: 30px 0;}
+.popconabout h3{padding-top: 20px;color:#4b3700;}
+.popaboutbtn{color:#4b3700; font-size: 18px;text-align: center;display: block;height: 62px;width: 250px;line-height: 62px;border: #000 solid 1px;margin: 30px 0;}
 .popshare{}
-.popshare a{float: left;width: 32px;height: 32px;margin:0 10px;background: url('../images/shareicon.png') no-repeat;}
-.popshare .popsharet{background-position: -46px 0}
-.popshare .popsharewb{background-position: -96px 0}
-.popshare .popsharewx{background-position: -146px 0}
+.popshare a{float: left;width: 32px;height: 32px;margin:0 10px;background: url('../images/shareicon.png') no-repeat 9px 3px;}
+.popshare .popsharet{background-position: -41px 3px;}
+.popshare .popsharein{background-position: -91px 3px;}
+.popshare .popsharewb{background-position: -142px 3px;}
+.popshare .popsharewx{background-position: -192px 3px;}
 
 
 /*about*/
@@ -346,9 +347,9 @@ a{text-decoration:none;outline: none;color:#444;}
 .about2tit h2{width: 480px;margin-left: -240px}
 .jobstit h2{width: 180px;margin-left: -90px}
 .jobsitem{float: left;width: 32.8%;margin-right: 0.8%;font-size:18px;height: 300px}
-.jobsitem h3{font-size:18px;font-weight: bold;height:60px }
+.jobsitem h3{font-size: 18px;font-weight: bold;height: 60px;text-transform: uppercase;font-family: 'Gotham Light';}
 .jobsitem p{font-family: 'Garamond';font-style: italic;height: 80px}
-.jobsitem a{font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 12px 0;text-align: center;width: 250px;height: 62px;line-height: 62px;max-width: 80%;font-family: Garamond;}
+.jobsitem a{font-size: 18px;border:#000 solid 1px;display: block;margin: 12px 0;text-align: center;width: 250px;height: 62px;line-height: 62px;max-width: 80%;font-family: Garamond;}
 
 /*press*/
 .presscom .pressitem{margin:40px 0}
@@ -375,7 +376,7 @@ a{text-decoration:none;outline: none;color:#444;}
 .intoview-effect[data-effect="fadeup"]{margin-top: 100px;opacity: 0; filter:alpha(opacity=0);}
 
 .transition{-webkit-transition: all 0.4s linear;-moz-transition: all 0.4s linear;-o-transition: all 0.4s linear;-ms-transition: all 0.4s linear;transition: all 0.4s linear;}
-.transition-wrap{overflow: hidden;font-family: Garamond;}
+.transition-wrap{overflow: hidden;font-family: Garamond;color:#4b3700;}
 .transition-wrap .transition{display: block;}
 .transition-wrap:hover .transition{margin-top: -50%;}
 
