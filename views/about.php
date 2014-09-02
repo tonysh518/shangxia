@@ -115,30 +115,209 @@ include_once 'common/header.php';?>
 									<div class="popclose" data-a="popclose"></div>
 									<!--  -->
 									<div class="popcon popconabout">
-										<h2>JEWELRY AND ACCESSORY DESIGNER</h2>
+										<h2>Jewelry and Accessory Designer</h2>
 										<div class="popcontxt">
-											<p>Reports To: Design Director<br />Responsible for:Jewelry and Accessory design</p>
+											<p>Reports To: Design Director<br />Responsible for: Jewelry and Accessory design</p>
 										</div>
 										<h3>Key Responsibilities:</h3>
 										<div class="popcontxt">
-											<p>-Under artistic direction,independently undertake design pracess,from research,conception,development to realization.<br />
-											-Under artistic direction,independently undertake design pracess,from research,conception,development to realization.<br />
-											-Under artistic direction,independently undertake design pracess,from research,conception,development to realization.<br />
-											-Under artistic direction,independently undertake design pracess,from research,conception,development to realization.</p>
+											<p>
+												-Under artistic direction, independently undertake design process, from research, conception, development to realization. <br />
+												-Scope of work: jewelry and fashion accessory( bag and leather goods)<br />
+												-Co-operate with supplier for prototyping, advice for color, material, know-how and project follow up<br />
+												-Closely collaborate with production department for product development<br />
+											</p>
 										</div>
 										<h3>Requirements & Capabilities</h3>
 										<div class="popcontxt">
-											<p>-Under artistic direction,independently undertake design pracess,from research,conception,development to realization.<br />
-											-Under artistic direction,independently undertake design pracess,from research,conception,development to realization.<br />
-											-Under artistic direction,independently undertake design pracess,from research,conception,development to realization.<br />
-											-Under artistic direction,independently undertake design pracess,from research,conception,development to realization.<br />-Under artistic direction,independently undertake design pracess,from research,conception,development to realization.<br />
-											-Under artistic direction,independently undertake design pracess,from research,conception,development to realization.<br />
-											-Under artistic direction,independently undertake design pracess,from research,conception,development to realization.</p>
+											<p> 
+												-Understand and respect Chinese culture, lifestyle and philosophy <br/>
+												-Passionate about craftsmanship and innovation <br/>
+												-At least 3 years of experience of accessory design in fields of jewelry, and accessory, etc <br/>
+												-Talented in design conception and solution <br/>
+												-Excellent aesthetic sense in terms of form, color and material on international level <br/>
+												-Plenty of skill of realizing design and effectively proposing on-site solution <br/>
+												-Plenty of knowledge of material, technique and know-how <br/>
+												-Extremely sensitive about quality <br/>
+												-Professional computer skill of drawing and presentation <br/>
+												- (Preferable if the candidate has accumulated know-how of crafts) <br/>
+												-Excellent skill of communication and expression <br/>
+												-Highly self-motivated and enthusiastic about design and project realization <br/>
+												-Extremely responsible for the committed task <br/>
+												-Professional time management and process control in time frame <br/>
+												-Pleased to assist team member and positive at teamwork <br/>
+												-Fast self-learning <br/>
+												-Professional in spoken and written Chinese and English
+												</p>
 										</div>
 										<a href="mailto:xxx@aaa.com" class="popaboutbtn">Apply</a>
 										<div class="popshare cs-clear">
 											<a href="#" class="popsharef"></a>
 											<a href="#" class="popsharet"></a>
+											<a href="#" class="popsharein"></a>
+											<a href="#" class="popsharewb"></a>
+											<a href="#" class="popsharewx"></a>
+										</div>
+									</div>
+								</div>
+							</textarea>
+						</div>
+						<div class="jobsitem">
+							<h3>Sales Ambassador</h3>
+							<a href="#" data-a="pop-jobs">Read more</a>
+							<textarea style="display:none;">
+								<div class="popshade"></div>
+								<div class="pop pop1">
+									<div class="popclose" data-a="popclose"></div>
+									<!--  -->
+									<div class="popcon popconabout">
+										<h2>Sales Ambassador</h2>
+										<div class="popcontxt">
+											<p>Reports To: Boutique Manager<br />Location: Shanghai (HK Plaza / Maison Project)</p>
+										</div>
+										<h3>General Role:</h3>
+										<div class="popcontxt">
+											<p>Responsible for all sales activities in store. Deliver quality and consistency of service including identifying customers’ needs, developing client relationships, sale, and delivering post-sale services.
+											</p>
+										</div>
+										<h3>Key Responsibilities:</h3>
+										<div class="popcontxt">
+											<p> 
+												- Responsible for the daily store operations <br/>
+												- Provides excellent customer service and maintains a pleasant shopping environment consistent with our brand image <br/>
+												- Calls on current and potential customers to establish and maintain client relationship <br/>
+												- Keep customers informed on new products or services, changes, etc. <br/>
+												- Identifies and handles client enquiries and concerns <br/>
+												- Executes sales plans and participates in marketing events and promotion programs <br/>
+												- Communicates feedback gathered through in-store activities to store management <br/>
+												- Keeps records and reports on sales activities <br/>
+												- Other duties as assigned <br/>
+											</p>
+										</div>
+										<h3>Requirements & Capabilities:</h3>
+										<div class="popcontxt">
+											<p> 
+												- At least 2 years of relevant experience in high-end fashion, luxury industry or in similar capacity <br/>
+												- Passion in retail industry with good selling skills <br/>
+												- Likes fashion and appreciates quality products <br/>
+												- Fluent in English and Chinese. French or Japanese is a plus <br/>
+												- Must be a good team player, pleasant, service oriented with good communication skills <br/>
+												- Basic computer skills <br/>
+											</p>
+										</div>
+										<a href="mailto:xxx@aaa.com" class="popaboutbtn">Apply</a>
+										<div class="popshare cs-clear">
+											<a href="#" class="popsharef"></a>
+											<a href="#" class="popsharet"></a>
+											<a href="#" class="popsharein"></a>
+											<a href="#" class="popsharewb"></a>
+											<a href="#" class="popsharewx"></a>
+										</div>
+									</div>
+								</div>
+							</textarea>
+						</div>
+						<div class="jobsitem marginR0">
+							<h3>Sales Ambassador – Intern</h3>
+							<a href="#" data-a="pop-jobs">Read more</a>
+							<textarea style="display:none;">
+								<div class="popshade"></div>
+								<div class="pop pop1">
+									<div class="popclose" data-a="popclose"></div>
+									<!--  -->
+									<div class="popcon popconabout">
+										<h2>Sales Ambassador – Intern</h2>
+										<div class="popcontxt">
+											<p>Reports To: Boutique Manager</p>
+										</div>
+										<h3>General Role:</h3>
+										<div class="popcontxt">
+											<p>Assist all sales activities in store. Deliver quality and consistency of service including identifying customers’ needs, developing client relationships, sales, and delivering post-sale services.
+											</p>
+										</div>
+										<h3>Key Responsibilities:</h3>
+										<div class="popcontxt">
+											<p> 
+												- To response to daily store operations <br />
+												- To assist in providing excellent customer service and maintain a pleasant shopping environment consistent with our brand  image <br />
+												- To identify and handle clients’ enquiries and concerns <br />
+												- To communicate feedback gathered through in-store activities to store management  <br />
+												- Other duties as assigned <br />
+											</p>
+										</div>
+										<h3>Requirements & Capabilities:</h3>
+										<div class="popcontxt">
+											<p> 
+												- University students (grade 4 is must) with similar internship experience is prefer (The qualified candidate might be offered )<br/>
+												- Passionate in retail industry with good selling skills  <br/>
+												- Like fashion and appreciate quality products <br/>
+												- Fluent in English and Chinese. French or Japanese is a plus <br/>
+												- Must be a good team player, pleasant, service oriented with good communication skills  <br/>
+												- Basic computer skills <br/>
+											</p>
+										</div>
+										<a href="mailto:xxx@aaa.com" class="popaboutbtn">Apply</a>
+										<div class="popshare cs-clear">
+											<a href="#" class="popsharef"></a>
+											<a href="#" class="popsharet"></a>
+											<a href="#" class="popsharein"></a>
+											<a href="#" class="popsharewb"></a>
+											<a href="#" class="popsharewx"></a>
+										</div>
+									</div>
+								</div>
+							</textarea>
+						</div>
+						<div class="jobsitem">
+							<h3>Home and Furniture Designer</h3>
+							<a href="#" data-a="pop-jobs">Read more</a>
+							<textarea style="display:none;">
+								<div class="popshade"></div>
+								<div class="pop pop1">
+									<div class="popclose" data-a="popclose"></div>
+									<!--  -->
+									<div class="popcon popconabout">
+										<h2>Home and Furniture Designer</h2>
+										<div class="popcontxt">
+											<p>Reports To: Design Director <br/> Responsible for: Home and furniture designing</p>
+										</div>
+										<h3>Key Responsibilities:</h3>
+										<div class="popcontxt">
+											<p> 
+												- Under artistic direction, independently undertake design process, from research, conception, development to realization.  <br/>
+												- Scope of work: Home object and furniture <br/>
+												- Co-operate with supplier for prototyping, advice for color, material, know-how and project follow up <br/>
+												- Closely collaborate with production department for product development <br/>
+											</p>
+										</div>
+										<h3>Requirements & Capabilities:</h3>
+										<div class="popcontxt">
+											<p> 
+												- Understand and respect Chinese culture, lifestyle and philosophy <br/>
+												- Passionate about craftsmanship and innovation <br/>
+												- At least 3 years of experience of home object, ornament, gift and furniture designs  <br/>
+												- Talented in design conception and solution <br/>
+												- Excellent aesthetic sense in terms of form, color and material on international level  <br/>
+												- Plenty of skill of realizing design and effectively proposing on-site solution <br/>
+												- Plenty of knowledge of material, technique, structure and know-how（wood, bamboo, porcelain, metal, glass, etc.） <br/>
+												- Extremely sensitive about quality <br/>
+												- Plenty of resource knowledge in terms of sub-supplier database, material sourcing <br/>
+												- Professional computer skill of drawing and presentation (Preferable if the candidate has accumulated know-how of crafts) <br/>
+												- Excellent skill of communication and expression <br/>
+												- Enthusiastic for crafts and respect collaborators, such as craftspeople  <br/>
+												- Highly self-motivated and enthusiastic about design and project realization  <br/>
+												- Extremely responsible for the committed task <br/>
+												- Professional time management and process control in time frame  <br/>
+												- Pleased to assist team member and positive at teamwork <br/>
+												- Fast self-learning  <br/>
+												- Professional in spoken and written Chinese and English <br/>
+											</p>
+										</div>
+										<a href="mailto:xxx@aaa.com" class="popaboutbtn">Apply</a>
+										<div class="popshare cs-clear">
+											<a href="#" class="popsharef"></a>
+											<a href="#" class="popsharet"></a>
+											<a href="#" class="popsharein"></a>
 											<a href="#" class="popsharewb"></a>
 											<a href="#" class="popsharewx"></a>
 										</div>
@@ -149,18 +328,48 @@ include_once 'common/header.php';?>
 						<div class="jobsitem">
 							<h3>Jewelry and Accessory Designer</h3>
 							<a href="#" data-a="pop-jobs">Read more</a>
-						</div>
-						<div class="jobsitem marginR0">
-							<h3>Jewelry and Accessory Designer</h3>
-							<a href="#" data-a="pop-jobs">Read more</a>
-						</div>
-						<div class="jobsitem">
-							<h3>Jewelry and Accessory Designer</h3>
-							<a href="#" data-a="pop-jobs">Read more</a>
-						</div>
-						<div class="jobsitem">
-							<h3>Jewelry and Accessory Designer</h3>
-							<a href="#" data-a="pop-jobs">Read more</a>
+							<textarea style="display:none;">
+								<div class="popshade"></div>
+								<div class="pop pop1">
+									<div class="popclose" data-a="popclose"></div>
+									<!--  -->
+									<div class="popcon popconabout">
+										<h2>Home Designer Assistant – Intern</h2>
+										<div class="popcontxt">
+											<p>Reports To: Design Director<br/> Responsible for: Home designing assist</p>
+										</div>
+										<h3>Key Responsibilities:</h3>
+										<div class="popcontxt">
+											<p> 
+												- Under direction of design director, assist designers to accomplish design project by engaging in conception, engineering drawing, documentation or presentation.<br/>
+												- Assist design team to undertake research, model making, and project follow up. <br/>
+												- Closely liaise with communication and production team for various projects <br/>
+											</p>
+										</div>
+										<h3>Requirements & Capabilities:</h3>
+										<div class="popcontxt">
+											<p> 
+												- Professional skill of design presentation and model making <br>
+												- Professional skill of design software: PS, AI, rhinoceros, CAD or others.  <br>
+												- Basic knowledge of material and production technique <br>
+												- Good sense of form  <br>
+												- Good Chinese and English communication skill  <br>
+												- Good time management skill <br>
+												- 3 day’s working per week is required, at least 6 months’ internship is also required <br>
+												- University – grade 3 or Master studying – grade 2 is prefer <br>
+											</p>
+										</div>
+										<a href="mailto:xxx@aaa.com" class="popaboutbtn">Apply</a>
+										<div class="popshare cs-clear">
+											<a href="#" class="popsharef"></a>
+											<a href="#" class="popsharet"></a>
+											<a href="#" class="popsharein"></a>
+											<a href="#" class="popsharewb"></a>
+											<a href="#" class="popsharewx"></a>
+										</div>
+									</div>
+								</div>
+							</textarea>
 						</div>
 					</div>
 				</div>
