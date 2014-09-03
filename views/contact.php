@@ -49,12 +49,18 @@
 				<!-- store -->
 				<div class="conformbox intoview-effect" data-effect="fadeup">
 					<form action="">
+
 						<div class="conformtit">NAME</div>
 						<input type="text" />
 						<div class="conformtit">EMAIL</div>
 						<input type="text" />
 						<div class="conformtit">MESSAGE</div>
-						<textarea name="" id="" cols="30" rows="15"></textarea>
+						<div style="position:relative;">
+							<textarea name="" id="" cols="30" rows="15"></textarea>
+							<div class="upload">
+								<input type="file" name="appendix" />
+							</div>
+						</div>
 						<div class="conformcheck cs-clear">
 							<label>
 								<input type="checkbox" />

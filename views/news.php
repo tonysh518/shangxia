@@ -185,7 +185,7 @@
 					<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
 					<!--  -->
 					<div class="newsolderbtn">
-						<a href="./news-detail.php" title="" class="transition-wrap"><span class="transition">View all  press articles<br/><br/>View all  press articles</span></a>
+						<a href="./news-press.php" title="" class="transition-wrap"><span class="transition">View all  press articles<br/><br/>View all  press articles</span></a>
 					</div>
 				</div>
 			</div>

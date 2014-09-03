@@ -52,6 +52,14 @@ ul{list-style:none;}
 table{border-collapse:collapse;border-spacing:0;}
 form{margin: 0;padding: 0;}
 sup{font-size: 0.5em;}
+* {
+    outline: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 /* Base Used
 ================================================================================================= */
 a{text-decoration:none;outline: none;color:inherit;}
@@ -62,7 +70,7 @@ a{text-decoration:none;outline: none;color:inherit;}
 .cs-clear:after{clear:both;content:".";font-size:0;display:block;height:0;overflow:hidden;visibility:hidden;}
 .btn{font-family: 'Garamond';font-size: 18px;font-style: italic;border: #000 solid 1px;display: block;margin: 20px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px;}
 .btn{font-size: 18px;font-style: italic;border: #000 solid 1px;display: block;margin: 20px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px;}
-.btn-white{border-color: white;color: white;}
+.btn-white{border-color: white;color: white!important;}
 
 /* Commonly Used
 ================================================================================================= */
@@ -91,8 +99,8 @@ a{text-decoration:none;outline: none;color:inherit;}
 .slidebox{width: 400%}
 .slideitem{float: left;width:25%; position: relative;}
 .slidetab{position: absolute;left:50%;bottom:10%;margin-left:-52px;}
-.slidetab li{width: 20px;height: 3px;border-bottom: #fff solid 3px;float: left;display: inline;margin: 0 3px}
-.slidetab .on{opacity: 0.5;filter:alpha(opacity=50);-moz-opacity:0.5;}
+.slidetab li{width: 20px;height: 20px;border-bottom: #fff solid 3px;float: left;display: inline;margin: 0 3px;cursor: pointer;}
+.slidetab .on{opacity: 0.5;filter:alpha(opacity=50);-moz-opacity:0.5;cursor: default;}
 
 .slidetip {position: absolute;text-align: center;width: 100%;bottom: 120px;z-index: 2;color: white;line-height: 2em; font-size: 18px;font-family: 'Gotham Book';}
 .slidetip h4{font-size: 36px;}
@@ -192,6 +200,7 @@ a{text-decoration:none;outline: none;color:inherit;}
 .prolistitem{text-transform : uppercase;float: left;width: 32.8%;margin-right: 0.8%;}
 .prolistitem img{display: block;margin: 0 0 10px;}
 .prolistitem p{background: #000;color:#fff;padding:12px;font-size: 18px;text-align: center ;}
+.prolistitem p.date{font-family: garamond;}
 .newsitem p{background: #fff;color:#4b3700	;height: 80px;}
 
 /*othercraf*/
@@ -207,10 +216,12 @@ a{text-decoration:none;outline: none;color:inherit;}
 .picinforpic{float: right;width: 66.4%;overflow: hidden;}
 
 /*newsolder*/
-.newsoldertime{height: 44px;background: #EFEFEF;line-height: 46px;text-align: center;position: static;margin-left: 0;}
+.newsoldertime{height: 90px;line-height: 90px;text-align: center;position: static;margin-left: 0;}
 .newsoldertime li{width: auto;height: auto;border-bottom: none;display: inline;float:none;}
 .newsoldertime a{padding: 0 40px;font-size: 14px;}
-.newsoldertime .on{text-decoration: underline;}
+.newsoldertime .on{text-decoration: underline;
+font-weight: bold;
+color: #4b3700;}
 .newsolderbtn a{font-size: 18px;border:#423608 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px}
 
 /*newsnvents*/
@@ -253,6 +264,8 @@ a{text-decoration:none;outline: none;color:inherit;}
 .conformbox input{height: 42px;line-height: 42px;}
 .conformbox input,
 .conformbox textarea{display: block;width: 100%;border: #4b3700 solid 1px}
+.conformbox .upload{width: 30px;height: 30px;background: url(../images/upload.png) no-repeat;position: absolute;bottom: 1px;right: -5px;cursor: pointer;overflow: hidden;}
+.conformbox .upload input{opacity: 0;filter:alpha(opacity=0);height: 100%;width: 100%;}
 .conformtit{font-size: 18px;line-height: 40px;font-family:"gotham medium";color: #4b3700;}
 .conformcheck input{float: left;width: 28px;}
 .conformcheck span{float: left;line-height: 48px;}
@@ -311,7 +324,7 @@ a{text-decoration:none;outline: none;color:inherit;}
 /*popshade*/
 .popshade{position: fixed;z-index: 99;top: 0;left: 0;bottom: 0;right: 0;background: #000;opacity: 0.6;filter:alpha(opacity=60);}
 /*pop*/
-.pop{position: fixed;z-index: 99;background: #fff;width: 100%;height: 100%;overflow: auto;}
+.pop{position: fixed;z-index: 99;background: #fff;width: 100%;height: 100%;overflow: auto;top:0;left:0;}
 .pop1{top: 0;}
 .pop2{top: 100px;bottom: 100px;}
 .popclose{cursor: pointer;background: url('../images/popclose.png') no-repeat;width: 49px;height: 49px;position: absolute;top: 28px;right: 28px;}
@@ -320,7 +333,7 @@ a{text-decoration:none;outline: none;color:inherit;}
 .popcontxt{font-size: 18px;text-align: center;color:#9e927a;}
 .popcontxt p{padding: 10px 0}
 .poppiccon{text-align: center;overflow-y: auto;height: 100%;}
-.poppiccon img{display: block;margin: 0 auto;}
+.poppiccon img{display: block;margin: 0 auto;max-width: 100%;}
 .picoperate{height: 100px;padding:28px 150px;}
 .picoperate a{margin:0 15px;background: url('../images/picoperateicon.png') no-repeat;width: 49px;height: 49px;float:right;}
 .picoperate .picopsizeup{background-position:-82px 0;}
@@ -363,8 +376,11 @@ a{text-decoration:none;outline: none;color:inherit;}
 .coll_videocom{font-size: 18px;font-style: italic;text-align: center;}
 .coll_videobox{margin: 50px auto}
 
+/* press */
+.press-lock{width: 250px;height: 60px;line-height: 60px;background: #4b3700 url(../images/press-lock.png) no-repeat 35px center;color: white;margin: 0 auto;margin-bottom: -35px;}
 
 
+.home-collarrowsprev,.home-collarrowsnext{background-position: center;}
 /* Clear Used
 ================================================================================================= */
 .marginR0{margin-right:0 ;}
@@ -408,7 +424,7 @@ a{text-decoration:none;outline: none;color:inherit;}
 }*/
 body .vjs-default-skin .vjs-big-play-button,
 body .vjs-default-skin .vjs-big-pause-button{position: absolute; top: 50%;left: 50%;width: 90px;height: 90px;background: url(../images/video-btn) no-repeat left bottom !important;border: none;box-shadow: none;margin-top: -45px;margin-left: -45px;}
-body .vjs-default-skin .vjs-big-pause-button{background-position: left top !important;}
+body .vjs-default-skin .vjs-big-pause-button{background-position: left top !important;cursor: pointer;}
 body .vjs-default-skin .vjs-big-play-button:before{display: none;box-shadow: none;}
 body .vjs-default-skin .vjs-big-play-button:hover,
 body .vjs-default-skin:hover .vjs-big-play-button,

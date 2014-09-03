@@ -18,7 +18,7 @@
 		<!--  -->
 		<div class="coll_iconbg"></div>
 		<!-- video -->
-		<div class="video"><img src="../SX/images/videodemo.jpg" width="100%" /></div>
+		<div class="video" data-video-render="../SX/video/small"><img src="../SX/images/videodemo.jpg" width="100%" /></div>
 		<!-- barbg -->
 		<div class="barbg"></div>
 		
@@ -30,7 +30,7 @@
 				</div>
 				<div class="coll_videocom ">
 					<p>The Da Tian Di collection is based on traditional Ming furniture construction principles, <br />where each piece is deftly hand crafted by a master craftman</p>
-					<div class="coll_videobox"><img src="../SX/images/coll_videodemo.jpg" width="100%" /></div>
+					<div class="coll_videobox" data-video-render="../SX/video/small"><img src="../SX/images/coll_videodemo.jpg" width="100%" /></div>
 				</div>
 			</div>
 		</div>
@@ -38,7 +38,7 @@
 	<div class="collpiclist cs-clear" style="position:relative">
 		<div class="collarrows collarrowsprev"></div>
 		<!--  -->
-		<div class="section collcon">
+		<div class="section">
 			<div class="products ">
 				<div class="productstit ">
 					<h2>similar products</h2>

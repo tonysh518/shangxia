@@ -148,32 +148,33 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                         $header.find('.head-fixed').css('position' , 'static');
                     }
 
-                    // homeCampaign animate
+                    // init home page slider mouse move event
+                    var isMoving = false;
+                    var moveTimer = null;
+                    $('#homepage-video-slide .slideitem').mousemove(function(){
+                        // judge is ithe video is playing
+                        var videoObject = $(this).data('video-object');
+                        clearTimeout( moveTimer );
+                        if( !videoObject || videoObject.paused() )  {
+                            return false;
+                        }
 
-                    // if($('.cam_item').eq(0).offset().top < stTop + $(window).height() ){
-                    //     $homeCampaign.data('animate' , 1);
-                    //     $homeCampaign.find('.cam_item')
-                    //         .each(function( i ){
-                    //             $(this).delay( i * 200 )
-                    //                 .animate({
-                    //                     marginTop: 0
-                    //                 } , 400 , 'easeLightOutBack');
-                    //         });
-                    //     $('.home_cambtn').delay( 4 * 200 )
-                    //         .animate({
-                    //             bottom: 90
-                    //         } , 400 , 'easeLightOutBack' );
-                    // }
+                        var $tip = $(this).find('.slidetip');
+
+                        console.log( isMoving );
+                        if( isMoving == false ){
+                            $tip.fadeIn();
+                            isMoving = true;
+                        }
+                        moveTimer = setTimeout(function(){
+                            isMoving = false;
+                            $tip.stop(true).fadeOut();
+                        } , 2000);
+                    });
                 });
                 cb && cb();
             },
             'craft-page': function( cb ){
-                $('[data-video]').each(function(){
-                    var $dom = $(this) ;
-                    var video = $dom.data('video');
-                    var poster = $dom.find('img').attr('src');
-                    renderVideo( $dom , video , poster , {pause_button: true} );
-                });
                 cb && cb();
             },
             "about-page": function( cb ){
@@ -289,10 +290,10 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 if( fn ){
                     fn( function(){
                         $(window).trigger('scroll');
-                        loadingMgr.hide();
+                        loadImages( $('img') , loadingMgr.hide );
                     });
                 } else {
-                    loadingMgr.hide();
+                    loadImages( $('img') , loadingMgr.hide );
                 }
 
                 // fix common page init
@@ -366,6 +367,17 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     mapHelper.render( $(this) );
                 });
 
+                // render video
+                $('[data-video-render]').each(function(){
+                    var $dom = $(this).css({
+                        position: 'relative',
+                        overflow: 'hidden'
+                    }) ;
+                    var video = $dom.data('video-render');
+                    var poster = $dom.find('img').attr('src');
+                    renderVideo( $dom , video , poster , {pause_button: true} );
+                });
+
                 $(window).trigger('resize');
                 return false;
             },
@@ -376,30 +388,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         }
     })();
 
-    $(window).resize(function(){
-        // fix height
-        $('.knowhowintro').each(function(){
-            var h = $(this).parent('.knowhowitem').children('.knowhowpic').height()
-            $(this).css('padding-top' , (h - $(this).height())/2)
-        })
-        $('.knowhowintro2').each(function(){
-            var h = $(this).parent('.knowhowitem').children('.knowhowpic').height()
-            $(this).css('height' , h)
-            $(this).children('p').css('margin-top' , h/2-50)
-        })
-        $('.proinfortxt').each(function(){
-            var h = $(this).next('.proinforpic').height();
-            $(this).height( h );
-            $(this).find('.proinfortxt-inner').height( h - 100 )
-                .css('overflow' , 'hidden');
-        });
-
-        $('.aboutinfortxt').each(function(){
-            var h = $(this).next('.proinforpic').height();
-            $(this).height( h - 80 )
-                .find('p').height( h - 240 );
-        });
-    });
+    
 
     var loadingMgr = (function(){
         var $loading = $('.loading-wrap');
@@ -449,7 +438,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 // clearInterval( interval );
                 setTimeout(function(){
                     $loading.fadeOut();
-                } , 1200 - ( new Date() - startTime ) );
+                } , 1700 - ( new Date() - startTime ) );
             }
         }
     })();
@@ -464,7 +453,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             .css('width' , 1 / length * 100 + '%' );
 
 
-        $slidetabs.hover(function(){
+        $slidetabs.click(function(){
             $(this).addClass('on')
                 .siblings()
                 .removeClass('on');
@@ -473,7 +462,20 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             $slidebox.stop(true).animate({
                 marginLeft: - index * 100 + '%'
             } , 400 );
+
+            return false;
         });
+
+        if( $wrap.data('auto') !== false ){
+            setInterval(function(){
+                var $next = $slidetabs.filter('.on').next();
+                if( $next.length ){
+                    $next.trigger('click');
+                } else {
+                    $slidetabs.eq(0).trigger('click');
+                }
+            } , 5000);
+        }
     }
 
 
@@ -484,6 +486,29 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 try{video && video.dispose();}catch(e){}
                 $(this).removeData('video-object').find('.video-wrap').remove();
             });
+    }
+
+    function loadImages( $img , cb ){
+        var index = 0 ;
+        var length = $img.length;
+        if( length == 0 ){
+            cb && cb();
+        }
+        $img.each(function(){
+            $('<img/>').load(function(){
+                index ++;
+                if( index == length ){
+                    cb && cb();
+                }
+            })
+            .error(function(){
+                index ++;
+                if( index == length ){
+                    cb && cb();
+                }
+            })
+            .attr('src' , this.getAttribute('src'));
+        });
     }
 
     function renderVideo ( $wrap , movie , poster , config , cb ){
@@ -620,6 +645,61 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                         oMap.addControl(new BMap.NavigationControl());
                         point = new BMap.Point( point[0] , point[1] );
                         oMap.centerAndZoom(point, 15);
+                        oMap.setMapStyle({
+                          styleJson:[
+          {
+                    "featureType": "all",
+                    "elementType": "geometry.fill",
+                    "stylers": {
+                              "lightness": 13,
+                              "saturation": -100
+                    }
+          },
+          {
+                    "featureType": "road",
+                    "elementType": "geometry.stroke",
+                    "stylers": {
+                              "color": "#cac4b5"
+                    }
+          },
+          {
+                    "featureType": "building",
+                    "elementType": "all",
+                    "stylers": {
+                              "color": "#8c8678"
+                    }
+          },
+          {
+                    "featureType": "administrative",
+                    "elementType": "labels.text.fill",
+                    "stylers": {
+                              "color": "#8c8678"
+                    }
+          },
+          {
+                    "featureType": "administrative",
+                    "elementType": "labels.text.stroke",
+                    "stylers": {
+                              "color": "#ffffff",
+                              "saturation": 100
+                    }
+          },
+          {
+                    "featureType": "road",
+                    "elementType": "labels.text.fill",
+                    "stylers": {
+                              "color": "#9d988b"
+                    }
+          },
+          {
+                    "featureType": "road",
+                    "elementType": "labels.text.stroke",
+                    "stylers": {
+                              "color": "#ffffff"
+                    }
+          }
+]
+                        });
 
                         var myIcon = new BMap.Icon("../SX/images/marker.png", new BMap.Size(34,40));
                         var marker2 = new BMap.Marker(point,{icon:myIcon});  // 创建标注
@@ -688,7 +768,37 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     //     mapTypeId:google.maps.MapTypeId.ROADMAP
     // });
 
+    $(window).resize(function(){
+        // fix height
+        $('.knowhowintro').each(function(){
+            var h = $(this).parent('.knowhowitem').children('.knowhowpic').height()
+            $(this).css('padding-top' , (h - $(this).height())/2)
+        })
+        $('.knowhowintro2').each(function(){
+            var h = $(this).parent('.knowhowitem').children('.knowhowpic').height()
+            $(this).css('height' , h)
+            $(this).children('p').css('margin-top' , h/2-50)
+        })
+        $('.proinfortxt').each(function(){
+            var h = $(this).next('.proinforpic').height();
+            $(this).height( h );
+            $(this).find('.proinfortxt-inner').height( h - 100 )
+                .css('overflow' , 'hidden');
+        });
 
+        $('.aboutinfortxt').each(function(){
+            var h = $(this).next('.proinforpic').height();
+            $(this).height( h - 80 )
+                .find('p').height( h - 240 );
+        });
+    })
+    .keyup(function( ev ){
+        switch( ev.which ){
+            case 27:
+                $('.pop .popclose').get(0).click();
+                break;
+        }
+    });
     // change history
     LP.use('../plugin/history.js' , function(){
         History.replaceState( { prev: '' } , undefined , location.href  );
@@ -875,8 +985,43 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     });
 
     LP.action('popclose' , function(){
-        var $pop = $(this).closest('.pop').fadeOut();
-        $pop.prev('.popshade').fadeOut();
+        var $pop = $(this).closest('.pop').fadeOut( function(){
+            $(this).remove();
+        } );
+        $pop.prev('.popshade').fadeOut( function(){
+            $(this).remove();
+        } );
+        return false;
+    });
+
+    LP.action('home-collarrowsprev' , function(){
+        var $prev = $(this).parent().find('.slidetab li.on').prev();
+        $prev.length ? $prev.trigger('click') : $(this).parent().find('.slidetab li').lase().trigger('click');
+        return false;
+    });
+
+    LP.action('home-collarrowsnext' , function(){
+        var $next = $(this).parent().find('.slidetab li.on').next();
+        $next.length ? $next.trigger('click') : $(this).parent().find('.slidetab li').first().trigger('click');
+        return false;
+    });
+
+    LP.action('pop-press-item' , function(){
+        var tpl = '<div class="popshade"></div>\
+                <div class="pop">\
+                    <div class="popclose" data-a="popclose"></div>\
+                    <div class="poppiccon">\
+                        <div class="picoperate cs-clear">\
+                            <a href="#" class="picopsized"></a>\
+                            <a href="#" class="picopsizeup"></a>\
+                            <a href="#" class="picopdown"></a>\
+                        </div>\
+                        <img src="#[img]" alt="">\
+                    </div>\
+                </div>';
+        var html = LP.format( tpl , {img: $(this).data('press')} );
+        $(html).appendTo( document.body ).hide().fadeIn();
+
         return false;
     });
 });

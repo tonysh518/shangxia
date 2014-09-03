@@ -15,6 +15,7 @@
   </script>
 </head>
 <body>
+	<div class="loading-wrap" style="display:block;"><div class="loading"></div></div>
 	<div class="wrap">
 		<?php if ( isset($homepage) ) { ?>
 		<?php include_once 'widget/home-slider.php';?>
