@@ -16,7 +16,7 @@ $app = Yii::createWebApplication($config);
 $scriptUrl = Yii::app()->getRequest()->getScriptUrl();
 
 $ret = Yii::app()->getRequest()->getBaseUrl();
-Yii::app()->getRequest()->setBaseUrl("/admin");
+Yii::app()->getRequest()->setBaseUrl("/shangxia/admin");
 
 Yii::app()->language = "zh_cn";
 
@@ -65,7 +65,8 @@ function loadContentList($type) {
   }
   else {
     $model = new $class();
-    return $model->getList();
+    // 加一个Limit 10
+    return $model->getList(10);
   }
 }
 
@@ -84,14 +85,17 @@ function makeThumbnail($uri, $size = array()) {
  */
 function getProductInTypeWithCollection($type = "", $collection = NULL) {
   $query = new CDbCriteria();
-  
-  if ($type) {
+  if ($type !== "") {
     $query->addCondition("field_name=:field_name")
           ->addCondition("field_content=:field_content");
     $query->params[":field_name"] = "product_type";
     $query->params[":field_content"] = $type;
     
-    $res1 = FieldAR::model()->findAll($query);
+    $tmp = FieldAR::model()->findAll($query);
+    $res1 = array();
+    foreach ($tmp as $item) {
+      $res1[] = $item->cid;
+    }
   }
   
   if ($collection) {
@@ -99,33 +103,26 @@ function getProductInTypeWithCollection($type = "", $collection = NULL) {
           ->addCondition("field_content=:field_content");
     $query->params[":field_name"] = "product_type";
     $query->params[":field_content"] = $type;
-    $res2 = FieldAR::model()->findAll($query);
-  }
-  $res = array();
-  // 如果同时查找2个条件，则取并集
-  if (isset($res1) && isset($res2)) {
-    foreach ($res1 as $item) {
-      foreach ($res2 as $item2) {
-        if ($item->cid == $item2->cid) {
-          $res[] = $item;
-        }
-      }
+    $tmp = FieldAR::model()->findAll($query);
+    foreach ($tmp as $item) {
+      $res2[] = $item->cid;
     }
   }
+  $cids = array();
+  // 如果同时查找2个条件，则取并集
+  if (isset($res1) && isset($res2)) {
+    $cids = array_intersect($res1, $res2);
+  }
   else if (isset($res1)) {
-    $res = $res1;
+    $cids = $res1;
   }
   else if (isset($res2)) {
-    $res = $res2;
-  }
-  
-  $cids = array();
-  foreach ($res as $item) {
-    $cids[] = $item->cid;
+    $cids = $res2;
   }
  
   $query = new CDbCriteria();
   $query->addInCondition("cid", $cids);
+  $query->limit = "10";
   return ProductContentAR::model()->findAll($query);
 }
 
@@ -135,6 +132,9 @@ function getProductInTypeWithCollection($type = "", $collection = NULL) {
  */
 function loadCraftRelatedProducts($craft) {
   $product_ids = json_decode($craft->product, TRUE);
+  if (!$product_ids || !is_array($product_ids)) {
+    return array();
+  }
   $query = new CDbCriteria();
   $query->addInCondition("cid", $product_ids);
   
@@ -154,4 +154,86 @@ function loadOtherCraft($craft_id = 0) {
   $query->params[":language"] = $language;
   
   return CraftContentAR::model()->findAll($query);
+}
+
+// 加载新闻
+function loadFirstNews() {
+  $news = NewsContentAR::model()->getList(1);
+  if (count($news)) {
+    return $news[0];
+  }
+  return FALSE;
+}
+
+// 加载新闻列表，用年份来分组
+function loadNewsWithYearGroup($teaser = FALSE) {
+  $newsItems = NewsContentAR::model()->getList();
+  $firstNews = loadFirstNews();
+  $newsGroup = array();
+  foreach ($newsItems as $newsItem) {
+    if ($newsItem->cid == $firstNews->cid) {
+      continue;
+    }
+    if ($teaser) {
+      if (isset($newsGroup[date("Y", strtotime($newsItem->date))]) &&  count($newsGroup[date("Y", strtotime($newsItem->date))])< 3) {
+        continue;
+      }
+    }
+    $newsGroup[date("Y", strtotime($newsItem->date))][] = $newsItem;
+  }
+  
+  return $newsGroup;
+}
+
+// 从产品中加载对应的系列
+function loadCollectionFromProduct($product) {
+  return CollectionContentAR::model()->findByPk($product->collection);
+}
+
+// 加载相似的产品
+// 同一个类型下／同一个分类下的所有产品
+function loadSimilarProducts($product) {
+   $collectionId = $product->collection;
+   $product_type = $product->product_type;
+   
+   $query = new CDbCriteria();
+   $query->addCondition("field_name=:field_name");
+   $query->params[":field_name"] = "collection";
+   $query->addCondition("field_content=:value");
+   $query->params[":value"] = $collectionId;
+   $res = FieldAR::model()->findAll($query);
+   $cids1 = array();
+   foreach ($res as $item) {
+     $cids1[$item->cid] = $item->cid;
+   }
+   
+   $query = new CDbCriteria();
+   $query->addCondition("field_name=:field_name");
+   $query->params[":field_name"] = "product_type";
+   $query->addCondition("field_content=:value");
+   $query->params[":value"] = $product_type;
+   $res = FieldAR::model()->findAll($query);
+   $cids2 = array();
+   foreach ($res as $item) {
+     $cids2[$item->cid] = $item->cid;
+   }
+   
+   // 取交集
+   global $language;
+   $cids = array_intersect($cids1, $cids2);
+   $query = new CDbCriteria();
+   $query->addCondition('language=:language')
+           ->addCondition("type=:type")
+           ->addCondition("status=:status")
+           ->addInCondition("cid", $cids);
+   $query->params[":language"] = $language;
+   $query->params[":type"] = "product";
+   $query->params[":status"] = ContentAR::STATUS_ENABLE;
+   $query->limit = "10";
+   return ProductContentAR::model()->findAll($query);
+}
+
+//加载Job 
+function loadJob() {
+  return JobContentAR::model()->getList();
 }
