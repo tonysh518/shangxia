@@ -95,6 +95,9 @@ class MediaAR extends CActiveRecord {
       if (strpos($uri, "http://") !== FALSE) {
         $uri = str_replace(Yii::app()->getBaseUrl(TRUE), "", $uri);
       }
+        else if (strpos($uri, Yii::app()->getBaseUrl()) === 0) {
+          $uri = str_replace(Yii::app()->getBaseUrl(), "", $uri);
+        }
 
       $filePath = dirname(Yii::app()->basePath)."/". $uri;
       $name = pathinfo($filePath, PATHINFO_FILENAME);
@@ -103,7 +106,12 @@ class MediaAR extends CActiveRecord {
     else {
       $newUri = array();
       foreach ($uri as $i) {
-        $i = str_replace(Yii::app()->getBaseUrl(TRUE), "", $i);
+        if (strpos($i, "http://") !== FALSE) {
+          $i = str_replace(Yii::app()->getBaseUrl(TRUE), "", $i);
+        }
+        else if (strpos($i, Yii::app()->getBaseUrl()) === 0) {
+          $i = str_replace(Yii::app()->getBaseUrl(), "", $i);
+        }
         $newUri[] = $i;
       }
       $uri = $newUri;

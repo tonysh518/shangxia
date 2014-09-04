@@ -56,10 +56,10 @@ else {
 						<div class="slide-con">
               <?php $products = getProductInTypeWithCollection($type_id, $collection->cid);?>
 							<ul class="slide-con-inner piclist cs-clear">
-                <?php foreach ($products as $product): ?>
+                <?php foreach (array_values($products) as $index => $product): ?>
                   <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
                     <a href="./product-detail.php?id=<?php echo $product->cid?>">
-                      <img src="<?php echo makeThumbnail($product->thumbnail, array(600, 570))?>" width="100%" />
+                      <img <?php if ($index > 3) echo "data-nopreload"?> src="<?php echo makeThumbnail($product->thumbnail, array(600, 570))?>" width="100%" />
                       <p><span class="collicon"><?php echo $product->title?></span></p>
                     </a>
                   </li>
