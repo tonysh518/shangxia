@@ -26,7 +26,7 @@ include_once 'common/header.php';?>
 		<div class="slide intoview-effect" data-effect="fadeup">
 			<div class="slidebox cs-clear">
         <?php foreach ($boutique->boutique_slide as $image): ?>
-          <a href="#" class="slideitem"><img src="<?php echo $image?>" width="100%" /></a>
+          <a href="javascript:void(0)" class="slideitem"><img src="<?php echo $image?>" width="100%" /></a>
         <?php endforeach;?>
 			</div>
 			<ul class="slidetab cs-clear">

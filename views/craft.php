@@ -113,8 +113,8 @@ include_once 'common/header.php';?>
 						<div class="proinforpic intoview-effect" data-effect="fadeup">
 							<div class="slide">
 								<div class="slidebox cs-clear">
-                  <?php foreach ($product->product_slide_image as $slide_image): ?>
-                  <img class="slideitem" src="../SX/images/product_related.jpg" width="100%" />
+                  <?php foreach ($product->product_slide_image as $index => $slide_image): ?>
+                  <img <?php if ($index > 3) echo "data-nopreload"?> class="slideitem" src="../SX/images/product_related.jpg" width="100%" />
                   <?php endforeach;?>
 								</div>
 								<ul class="slidetab">

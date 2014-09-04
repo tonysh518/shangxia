@@ -48,12 +48,6 @@ else {
 			<!-- 数量改变需要改变css，或者用js来调整slidebox的宽度和slidetab的位置 -->
 		</div>
 		
-	<!-- 	<div class="video">      
-      <img src="<?php echo makeThumbnail(array_shift($product->product_slide_image), array(1596,558))?>" width="100%" />
-      <?php foreach ($product->product_slide_image as $image): ?>
-        
-      <?php endforeach;?>
-    </div> -->
 			<!-- barbg -->
 		<div class="barbg"></div>
 		
@@ -81,9 +75,9 @@ else {
 				<!--  -->
 				<div class="">
 					<ul class="piclist cs-clear">
-            <?php foreach (loadSimilarProducts($product) as $p): ?>
+            <?php foreach (loadSimilarProducts($product) as $index => $p): ?>
               <li class="piclistitem collpicitem">
-                <a href="./product-detail.php?id=<?php echo $p->cid?>"><img src="<?php echo makeThumbnail($p->thumbnail, array(600, 570))?>" width="100%" />
+                <a href="./product-detail.php?id=<?php echo $p->cid?>"><img <?php if ($index > 3) echo "data-nopreload"?> src="<?php echo makeThumbnail($p->thumbnail, array(600, 570))?>" width="100%" />
                 <p><span class="collicon"><?php echo $p->title?></span></p></a>
               </li>
             <?php endforeach;?>
