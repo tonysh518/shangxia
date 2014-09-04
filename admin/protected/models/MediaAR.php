@@ -16,7 +16,8 @@ class MediaAR extends CActiveRecord {
       }
     }
     
-    return isset(self::$caches[$key]) ? self::$caches[$key] : FALSE;
+    $ret = isset(self::$caches[$key]) ? self::$caches[$key] : FALSE;
+    return $ret;
   }
   
   public function tableName() {
@@ -171,7 +172,9 @@ class MediaAR extends CActiveRecord {
    * @return type
    */
   public function loadMediaWithObject($obj, $field_name) {
-    self::getCache("");
+    if (!self::$caches) {
+      self::getCache("");
+    }
     $cache_key = "{$obj->cid}_$field_name";
     
     // 先判断是不是多值的Media.

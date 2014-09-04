@@ -194,6 +194,7 @@ class ContentAR extends CActiveRecord {
    * 在加载Content 之后 把对应的Field 实例加载进来
    */
   public function afterFind() {
+    return;
     // 1. field
     $fields = $this->getFields();
     if ($fields) {

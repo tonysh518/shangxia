@@ -6,6 +6,8 @@ class CraftContentAR extends ContentAR {
   public function getImageFields() {
     $this->hasImageField("thumbnail_image");
     $this->hasImageField("video_poster");
+    $this->hasImageField("nav_image");
+    
     return parent::getImageFields();
   }
   
@@ -25,6 +27,17 @@ class CraftContentAR extends ContentAR {
   
   public static function model($class = __CLASS__) {
     return parent::model($class);
+  }
+  
+  public function loadCraftOption() {
+    global $language;
+    $query = Yii::app()->db->createCommand("SELECT * FROM content where type='craft' and status=1 and language='".$language."'")->queryAll();
+    $crafts = array();
+    foreach ($query as $item) {
+      $crafts[$item["cid"]] = $item["title"];
+    }
+    
+    return $crafts;
   }
 }
 

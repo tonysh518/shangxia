@@ -1,0 +1,267 @@
+-- MySQL dump 10.13  Distrib 5.6.16, for osx10.8 (x86_64)
+--
+-- Host: 114.215.173.191    Database: shangxia
+-- ------------------------------------------------------
+-- Server version	5.6.15-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `content`
+--
+
+DROP TABLE IF EXISTS `content`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `content` (
+  `cid` int(10) NOT NULL AUTO_INCREMENT,
+  `title` text,
+  `body` text,
+  `summary` text,
+  `language` varchar(45) DEFAULT 'zh',
+  `cdate` datetime DEFAULT NULL,
+  `mdate` datetime DEFAULT NULL,
+  `uid` varchar(20) DEFAULT NULL,
+  `status` tinyint(4) DEFAULT NULL,
+  `type` varchar(50) DEFAULT NULL,
+  `weight` int(11) DEFAULT '0',
+  `key_id` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`cid`)
+) ENGINE=InnoDB AUTO_INCREMENT=20101 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `content`
+--
+
+LOCK TABLES `content` WRITE;
+/*!40000 ALTER TABLE `content` DISABLE KEYS */;
+INSERT INTO `content` VALUES (20074,'视频','<p>\n	视频</p>\n',NULL,'cn','2014-08-27 21:49:34','2014-08-27 22:32:32',NULL,1,'video',0,NULL),(20075,'title','body','summary','cn','2014-08-27 22:34:48','2014-08-27 22:34:48','0',1,'content',0,'home_brand_story_summary'),(20076,'title','body','summary','cn','2014-08-27 22:34:48','2014-08-27 22:34:48','0',1,'content',0,'home_middle_slide_one'),(20077,'title','body','summary','cn','2014-08-27 22:34:48','2014-08-27 22:34:48','0',1,'content',0,'home_middle_slide_two'),(20078,'title','body','summary','cn','2014-08-27 22:34:48','2014-08-27 22:34:48','0',1,'content',0,'home_middle_slide_third'),(20079,'In & Out','<p class=\"p1\">\n	The SHANG XIA Da Tian Di collection is a reinvention of tea furniture, combining the tea tray and table in a single item. Made from Zitan wood, in a spare and classic form, providing elegance and utility. Reversing the traditional Ming furniture concept, of a rounded exterior and square center, the Da Tian Di collection presents a square exterior and round interior in a modern take on a classic aesthetic. Opening the table top reveals the tray and electric kettle. The process of construction requires at least 2,000 labor hours for each item, including hand crafted joints and polishing to provide a sliken glossy luster. The tray itself is make of Duan inkstone, one of the four most precious types of inkstone prized since antiquity and increasingly harder to find. The custom-made Da Tian Di collection of tea furniture casts a mantle of meditation across the reception space. It is for those who understand tea, who take the time to sit and savor their tea, and who receive guests with their finest tea.</p>\n',NULL,'cn','2014-08-28 00:45:14','2014-09-03 15:37:12',NULL,1,'collection',0,NULL),(20080,'DA TIAN DI - ARMCHAIR (ZITAN)','<p class=\"p1\">\n	<span class=\"s1\">Tian Di encompasses the heavens and the earth. This collection of furniture is made up of clean lines and soft arcs, generous and open in spirit, ready to contain the heavens and the earth. The Da Tian Di armchair is a light evolution of the traditional Ming \"official\'s hat chair\". It reverses the traditional Ming furniture concept of a rounded exterior and square centre and presents a square exterior and round interior. The result is a more modern line, revealing the deep craft that goes into its construction. SHANG XIA has ingeniously combined the simplicity and elegance of Ming furniture with the Western lounge concept, giving this new official\'s hat chair a soft seat and back, making it a more user-friendly experience. The Zitan is paired with high quality braided leather cushions. Tanners expertly slice whole cowhides into long strips, just 3.8mm wide. They are woven in a style similar to k\'o-ssu silk tapestry, strip over strip, each piece entirely handmade, for a textured, living, breathing finish. The construction of each chair takes six to nine months with each step in the process being performed with needlepoint precision. The result is a finely crafted modern heirloom with a timeless appeal.</span></p>\n',NULL,'cn','2014-08-29 06:27:18','2014-09-03 13:55:47',NULL,1,'product',0,NULL),(20081,'DA TIAN DI - ROCKING CHAIR (WALNUT)','<p class=\"p1\">\n	<span class=\"s1\">Tian Di encompasses heaven and earth. This collection of furniture is made of clean lines and soft arcs, generous and open in spirit, ready to contain both the heavens and the earth. The Da Tian Di rocking chair applies this clean design concept to traditional Ming furniture, bringing it up to date with modern living. Walnut has a smooth, bright grain, like a tracery of inlaid gold, gleaming in the rich, dark wood. The SHANG XIA craftsmen spent over a year discovering the best way to join braided leather to the walnut frame. Special craft techniques make the wood stronger and longer-lasting, providing gentle support to the whole body, and revealing the deep craft that goes into the making of the chair. The process of construction, from the handling of the walnut timber through to the joinery, polishing and the selection and braiding of the leather requires nearly five months for each chair.  Every step in the construction of a Da Tian Di rocking chair must be performed with the highest precision. The result is a perfectly balanced chair: the lightest of breezes will start a gentle rocking. Take a moment to gently rock your cares away leaving a person, you, living a moment of peace in your own free space between heaven and earth.</span></p>\n',NULL,'cn','2014-08-29 06:35:32','2014-09-02 17:24:56',NULL,1,'product',0,NULL),(20084,'Craft French','<p>\n	Craft French</p>\n',NULL,'fr','2014-09-02 05:56:06','2014-09-02 05:56:06',NULL,1,'craft',0,NULL),(20085,'Craft French','<p>\n	Craft French</p>\n',NULL,'fr','2014-09-02 05:56:20','2014-09-02 05:56:20',NULL,1,'craft',0,NULL),(20086,'Shangxia','<p>\n	Lan Yue</p>\n',NULL,'cn','2014-09-02 14:04:17','2014-09-02 17:01:09',NULL,1,'slideShow',0,NULL),(20087,'SHANG XIA CASHMERE FELT','<p>\n	<span style=\"color: rgb(158, 146, 122); font-family: Garamond; font-size: 18px; font-style: italic; line-height: 24px; text-align: center;\">Created by expertly skilled master craftsmen, using similar techniques to those used when hand-felting fabric for Mongolian yurts, these sculpted garments are made in felt. Inspired by traditional Han dynasty clothing, this collection reflects the traditional elegance of Chinese style. Each garment is unique and sculpted into a seamless shape to create a 3-dimensional garment in felt of Mongolian cashmere. Wrapped in style, one will surely remain warm in winter.</span></p>\n',NULL,'cn','2014-09-02 14:09:36','2014-09-03 15:38:02',NULL,1,'craft',0,NULL),(20088,'DRAGON CLOUD - GILDED BAMBOO WOVEN PORCELAIN TEA','<p class=\"p1\">\n	<span class=\"s1\">The dragon represents the traditional spirit of China. Its imperial splendor finds a modern expression in the SHANG XIA Dragon Cloud series: the pattern is inspired by the traditional dragon-scale motif, and its form and design animated by those soaring mythical beasts. Writhing over one another, their fierce majesty promises good fortune. The bamboo covered porcelain tea set consists of four cups with saucers and one teapot on a Zitan wood tray. It is a limited edition, with only 8 sets in existence. Evolving from the classic dragon-handled teacup, the two dragon handles on each cup have been stylized into a vivid modern arc form. Every piece in the Dragon Cloud set is created using the finest handcraft techniques. The bamboo fibers are less than half a millimeter in width, and are gilded in five layers of 18k gold dust with minute accuracy, then tightly woven over white porcelain that has been fired at an extremely high temperature. The gilt covers every inch of the bamboo in a gleaming finish, so smooth and even that it seems an organic part of the material. With its pure gold crescent handle, the design is timeless. The Dragon Cloud set represents over 1,000 hours of painstaking work by master craftsman. It is a collector\'s item, but its elegance and textures may also be appreciated in the daily ritual of tea drinking. </span></p>\n',NULL,'cn','2014-09-02 17:48:18','2014-09-03 13:33:13',NULL,1,'product',0,NULL),(20089,'Human & Nature','<p>\n	<span style=\"color: rgb(68, 68, 68); font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif; line-height: 20px;\">Human & Nature</span></p>\n',NULL,'cn','2014-09-03 12:50:02','2014-09-03 15:37:03',NULL,1,'collection',0,NULL),(20090,'Heritage & Emotion','<p>\n	<span style=\"color: rgb(68, 68, 68); font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif; line-height: 20px;\">Heritage & Emotion</span></p>\n',NULL,'cn','2014-09-03 12:50:26','2014-09-03 15:36:45',NULL,1,'collection',0,NULL),(20091,'Slideshow Two','<p>\n	Lan Yue Two</p>\n',NULL,'cn','2014-09-03 12:54:40','2014-09-03 12:54:40',NULL,1,'slideShow',0,NULL),(20092,'SHANGHAI STORE OPENING','<p style=\"margin: 0px; padding: 20px 50px 0px 0px; border: 0px; font-family: Garamond; color: rgb(158, 146, 122); font-size: 18px; line-height: 24px;\">\n	In September 2013, SHANG XIA came to Paris, city of art and culture. The first overseas SHANG XIA space was unveiled at 8 rue de Sèvres, on the left bank of the Seine, and simultaneously launched a two-week exhibition of Chinese contemporary crafts. SHANG XIA presented and shared with the world the pleasures and sensibility of Chinese craftsmanship and oriental elegance. The exhibition finished on September 26.</p>\n<p style=\"margin: 0px; padding: 20px 50px 0px 0px; border: 0px; font-family: Garamond; color: rgb(158, 146, 122); font-size: 18px; line-height: 24px;\">\n	The exhibition was held in an old building with high ceilings in Saint Germain. The entire space was designed by architect Kengo Kuma and SHANG XIA artistic director Jiang Qiong Er around the theme of bamboo. Engaging all five senses, SHANG XIA used shape, sound, color, aroma and texture to create an airy but satisfying interplay of light and shade. Bamboo screens guided visitors through a sinuous tea space, incense space and craft demonstration. Bamboo trees constructed of bamboo slips loomed like living sculptures, suspending the space between daylight and the shade of the bamboo grove. Here visitors could experience a lifestyle that balances heaven and earth, inside and outside, man and nature and the lavish and the plain.</p>\n<p style=\"margin: 0px; padding: 20px 50px 0px 0px; border: 0px; font-family: Garamond; color: rgb(158, 146, 122); font-size: 18px; line-height: 24px;\">\n	SHANG XIA Paris boutique is located at 8 Rue de Sèvres, Paris, designed by celebrated architect Kengo Kuma, who utilized a combination of rhythms and principals of art inspired by historic Paris.</p>\n<p style=\"margin: 0px; padding: 20px 50px 0px 0px; border: 0px; font-family: Garamond; color: rgb(158, 146, 122); font-size: 18px; line-height: 24px;\">\n	The architecture of the SHANG XIA Paris boutique is designed as a cloud-like space made of thin ceramic panels. Historically, ceramic has been a crucial element that forms Chinese culture. Chinese ceramic had also long been an object of admiration in Europe. Six thousand thin ceramic panels are suspended from the ceiling to cover the entire space. The glossy white face, unique to ceramic, created a lighting state you might find in the pointillism paintings of the impressionistic art age.</p>\n<p style=\"margin: 0px; padding: 20px 50px 0px 0px; border: 0px; font-family: Garamond; color: rgb(158, 146, 122); font-size: 18px; line-height: 24px;\">\n	The SHANG XIA Paris boutique is now open to visitors. SHANG XIA welcomes all friends, new and old, to share tea with us, and to begin a journey into eastern thought and life</p>\n',NULL,'cn','2014-09-03 13:06:38','2014-09-03 13:07:50',NULL,1,'news',0,NULL),(20093,'PARIS STORE OPENING','<p style=\"margin: 0px; padding: 20px 50px 0px 0px; border: 0px; font-family: Garamond; color: rgb(158, 146, 122); font-size: 18px; line-height: 24px;\">\n	In September 2013, SHANG XIA came to Paris, city of art and culture. The first overseas SHANG XIA space was unveiled at 8 rue de S&egrave;vres, on the left bank of the Seine, and simultaneously launched a two-week exhibition of Chinese contemporary crafts. SHANG XIA presented and shared with the world the pleasures and sensibility of Chinese craftsmanship and oriental elegance. The exhibition finished on September 26.</p>\n<p style=\"margin: 0px; padding: 20px 50px 0px 0px; border: 0px; font-family: Garamond; color: rgb(158, 146, 122); font-size: 18px; line-height: 24px;\">\n	The exhibition was held in an old building with high ceilings in Saint Germain. The entire space was designed by architect Kengo Kuma and SHANG XIA artistic director Jiang Qiong Er around the theme of bamboo. Engaging all five senses, SHANG XIA used shape, sound, color, aroma and texture to create an airy but satisfying interplay of light and shade. Bamboo screens guided visitors through a sinuous tea space, incense space and craft demonstration. Bamboo trees constructed of bamboo slips loomed like living sculptures, suspending the space between daylight and the shade of the bamboo grove. Here visitors could experience a lifestyle that balances heaven and earth, inside and outside, man and nature and the lavish and the plain.</p>\n<p style=\"margin: 0px; padding: 20px 50px 0px 0px; border: 0px; font-family: Garamond; color: rgb(158, 146, 122); font-size: 18px; line-height: 24px;\">\n	SHANG XIA Paris boutique is located at 8 Rue de S&egrave;vres, Paris, designed by celebrated architect Kengo Kuma, who utilized a combination of rhythms and principals of art inspired by historic Paris.</p>\n<p style=\"margin: 0px; padding: 20px 50px 0px 0px; border: 0px; font-family: Garamond; color: rgb(158, 146, 122); font-size: 18px; line-height: 24px;\">\n	The architecture of the SHANG XIA Paris boutique is designed as a cloud-like space made of thin ceramic panels. Historically, ceramic has been a crucial element that forms Chinese culture. Chinese ceramic had also long been an object of admiration in Europe. Six thousand thin ceramic panels are suspended from the ceiling to cover the entire space. The glossy white face, unique to ceramic, created a lighting state you might find in the pointillism paintings of the impressionistic art age.</p>\n<p style=\"margin: 0px; padding: 20px 50px 0px 0px; border: 0px; font-family: Garamond; color: rgb(158, 146, 122); font-size: 18px; line-height: 24px;\">\n	The SHANG XIA Paris boutique is now open to visitors. SHANG XIA welcomes all friends, new and old, to share tea with us, and to begin a journey into eastern thought and life</p>\n',NULL,'cn','2014-09-03 13:07:25','2014-09-03 13:07:25',NULL,1,'news',0,NULL),(20094,'JEWELRY AND ACCESSORY DESIGNER','',NULL,'cn','2014-09-03 13:43:55','2014-09-03 13:43:55',NULL,1,'Job',0,NULL),(20095,'SHANG XIA SHANGHAI BOUTIQUE','<p data-effect=\"fadeup\" style=\"margin: 0px 0px 25px; padding: 0px; border: 0px; font-family: Garamond; font-size: 18px; text-align: center; color: rgb(158, 146, 122); line-height: 24px; opacity: 1;\">\n	The arcbitecture of thsSHANG XIA Paris boutique is designed as a cloud-like space made of thin ceramic panels. Historically,ceramic has been a crucial element that forms Chinese culture. Chinese ceramic bad also long been an object of admination in Europe.</p>\n<p data-effect=\"fadeup\" style=\"margin: 0px 0px 25px; padding: 0px; border: 0px; font-family: Garamond; font-size: 18px; text-align: center; color: rgb(158, 146, 122); line-height: 24px; opacity: 1;\">\n	Six thousand thin ceramic panels are suspended from the ceiling to cover the entire space.The glossy white face,unique to ceramic,created a lighting state you might find in the pointillism paintings of the impressionistic art age.</p>\n',NULL,'cn','2014-09-03 14:44:19','2014-09-03 14:46:18',NULL,1,'boutique',0,NULL),(20096,'SHANG XIA PARIS BOUTIQUE','<p style=\"margin: 0px 0px 25px; padding: 0px; border: 0px; font-family: Garamond; font-size: 18px; text-align: center; color: rgb(158, 146, 122); line-height: 24px;\">\n	The arcbitecture of thsSHANG XIA Paris boutique is designed as a cloud-like space made of thin ceramic panels. Historically,ceramic has been a crucial element that forms Chinese culture. Chinese ceramic bad also long been an object of admination in Europe.</p>\n<p style=\"margin: 0px 0px 25px; padding: 0px; border: 0px; font-family: Garamond; font-size: 18px; text-align: center; color: rgb(158, 146, 122); line-height: 24px;\">\n	Six thousand thin ceramic panels are suspended from the ceiling to cover the entire space.The glossy white face,unique to ceramic,created a lighting state you might find in the pointillism paintings of the impressionistic art age.</p>\n',NULL,'cn','2014-09-03 14:45:52','2014-09-03 14:45:52',NULL,1,'boutique',0,NULL),(20097,'SHANG XIA BEIJING BOUTIQUE','<p data-effect=\"fadeup\" style=\"margin: 0px 0px 25px; padding: 0px; border: 0px; font-family: Garamond; font-size: 18px; text-align: center; color: rgb(158, 146, 122); line-height: 24px; opacity: 1;\">\n	The arcbitecture of thsSHANG XIA Paris boutique is designed as a cloud-like space made of thin ceramic panels. Historically,ceramic has been a crucial element that forms Chinese culture. Chinese ceramic bad also long been an object of admination in Europe.</p>\n<p data-effect=\"fadeup\" style=\"margin: 0px 0px 25px; padding: 0px; border: 0px; font-family: Garamond; font-size: 18px; text-align: center; color: rgb(158, 146, 122); line-height: 24px; opacity: 1;\">\n	Six thousand thin ceramic panels are suspended from the ceiling to cover the entire space.The glossy white face,unique to ceramic,created a lighting state you might find in the pointillism paintings of the impressionistic art age.</p>\n',NULL,'cn','2014-09-03 14:46:59','2014-09-03 14:46:59',NULL,1,'boutique',0,NULL),(20098,'SHANG XIA bamboo weaving','<div>\n	Bamboo wares started when Chinese history was merely a mixture of legends and folklore. </div>\n<div>\n	Can Cong (Chinese: silk worm man), the legendary forefather of Sichuan people, was born and grew up in Qingshen county. He “taught the locals agriculture and sericulture, and was therefore regarded as God”. </div>\n<div>\n	At this time Qingshen locals started to use bamboo woven dustpans to breed silk worms. In the Tang dynasty (618-907 AD), bamboo wares prevailed in daily life, from mats, to baskets, to fans. In the Song (906-1279 AD) and </div>\n<div>\n	Ming dynasties (1368 - 1644 AD) bamboo woven wares were extremely varied, including many different patterns and shapes. Yu Chengxun from Qingshen county, who became an official during the Ming dynasty was selected to </div>\n<div>\n	enter the Hanlin Academy. When he entered palace service he owned bamboo book cases and food containers </div>\n<div>\n	that were so exquisitely crafted, they are now collected in the Museum of Chinese Bamboo Artifacts. </div>\n<div>\n	Nowadays, craftsmen continue to innovate, building on traditional craftsmanship, inventing new techniques and styles. </div>\n<div>\n	 </div>\n',NULL,'cn','2014-09-03 15:45:01','2014-09-03 16:27:07',NULL,1,'craft',0,NULL),(20099,'SHANG XIA Eggshell Porcelain','<div>\n	The Eggshell porcelain technique has existed for almost a thousand years. Before eggshell porcelain shadowy blue and white wares (Yingqingci) had been largely produced in Jingdezhen during the Song Dynasty (960-1279). But it wasn’t until under the Ming Dynasty reign of Wanli (1573-1619) that the famous porcelain master Hao Shijiu invented eggshell cups, creating a unique type of porcelain which required an independent manufacturing technique. From this time on, the technique was named eggshell porcelain.  </div>\n<div>\n	Remarkable in their extraordinary thinness, eggshell wares take over 40 processes to make, including mixing ingredients, turning the clay mixture, repairing, smoothing, trimming, drawing and glazing, firing three times, etc. and all by hand.</div>\n',NULL,'cn','2014-09-03 15:48:33','2014-09-03 16:19:55',NULL,1,'craft',0,NULL),(20100,'SHANGXIA zitan','<div>\n	Zitan has been used to make furniture throughout China’s long history. </div>\n<div>\n	There are records of its use at the end of the Eastern dynasty. (23-200 AD) and there are records of its use </div>\n<div>\n	at the Tang Dynasty court (618-907 AD). By the Ming dynasty (1368-1644 AD), the court showed a liking for zitan furniture. </div>\n<div>\n	In the Qing dynasty (1644-1911 AD) zitan entered the court and it became the must have material </div>\n<div>\n	used by palace workshops to make Qing court furniture and curios. </div>\n<div>\n	Wealthy aristocratic and merchant families also had furniture and daily objects commissioned in zitan.</div>\n',NULL,'cn','2014-09-03 15:59:01','2014-09-03 16:19:03',NULL,1,'craft',0,NULL);
+/*!40000 ALTER TABLE `content` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `field`
+--
+
+DROP TABLE IF EXISTS `field`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `field` (
+  `fid` int(10) NOT NULL AUTO_INCREMENT,
+  `cdate` datetime DEFAULT NULL,
+  `mdate` datetime DEFAULT NULL,
+  `field_name` varchar(45) DEFAULT NULL,
+  `field_content` text,
+  `cid` int(10) DEFAULT NULL,
+  PRIMARY KEY (`fid`)
+) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `field`
+--
+
+LOCK TABLES `field` WRITE;
+/*!40000 ALTER TABLE `field` DISABLE KEYS */;
+INSERT INTO `field` VALUES (50,'2014-08-23 12:13:11','2014-08-23 13:36:31','collection_name','hello world, 你好',1),(51,'2014-08-23 15:28:51','2014-08-23 15:38:41','body','Shang xia is a brand for art of living<br>\r\n			that promises a unique encounter with the heritage of Chinese design and craftsmanship.',1),(52,'2014-08-23 16:31:25','2014-08-23 16:39:02','link_to','',20037),(53,'2014-08-23 16:37:54','2014-08-23 16:39:02','title','测试的Slideshow',20037),(54,'2014-08-24 19:00:08','2014-08-24 19:31:39','summary','',0),(55,'2014-08-24 19:22:43','2014-08-24 19:22:57','summary','',20042),(56,'2014-08-26 23:40:55','2014-08-26 23:40:55','summary','sumary',20069),(57,'2014-08-28 00:45:14','2014-09-03 15:37:12','public_date','2012 - 2014',20079),(58,'2014-08-29 06:27:18','2014-09-03 13:55:47','video_title','DA TIAN DI - ARMCHAIR (ZITAN)',20080),(59,'2014-08-29 06:27:18','2014-09-03 13:55:47','video_description','',20080),(60,'2014-08-29 06:27:18','2014-09-03 13:55:47','product_type','3',20080),(61,'2014-08-29 06:27:18','2014-09-03 13:55:47','collection','20079',20080),(62,'2014-08-29 06:35:33','2014-09-02 17:24:56','video_title','DA TIAN DI - ROCKING CHAIR (WALNUT)',20081),(63,'2014-08-29 06:35:33','2014-09-02 17:24:56','video_description','',20081),(64,'2014-08-29 06:35:33','2014-09-02 17:24:56','product_type','3',20081),(65,'2014-08-29 06:35:33','2014-09-02 17:24:56','collection','20079',20081),(66,'2014-08-29 06:36:07','2014-09-02 04:34:34','product','[\"20080\",\"20081\"]',20082),(67,'2014-09-02 05:00:01','2014-09-02 05:00:01','product','[\"20081\",\"20080\"]',20083),(68,'2014-09-02 14:09:37','2014-09-03 15:38:05','product','\"[\"',20087),(69,'2014-09-02 17:48:18','2014-09-03 13:33:13','video_title','DRAGON CLOUD - GILDED BAMBOO WOVEN PORCELAIN TEA',20088),(70,'2014-09-02 17:48:18','2014-09-03 13:33:13','video_description','<p>\n	DRAGON CLOUD - GILDED BAMBOO WOVEN PORCELAIN TEA</p>\n',20088),(71,'2014-09-02 17:48:18','2014-09-03 13:33:13','product_type','5',20088),(72,'2014-09-02 17:48:18','2014-09-03 13:33:13','collection','20079',20088),(73,'2014-09-03 12:50:02','2014-09-03 15:37:03','public_date','2012-2014',20089),(74,'2014-09-03 12:50:26','2014-09-03 15:36:45','public_date','2012-2014',20090),(75,'2014-09-03 13:06:38','2014-09-03 13:07:50','date','2012/06/12',20092),(76,'2014-09-03 13:07:25','2014-09-03 13:07:25','date','2013/05/21',20093),(77,'2014-09-03 13:33:13','2014-09-03 13:33:13','craft','20087',20088),(78,'2014-09-03 13:43:55','2014-09-03 13:43:55','location','Shanghai',20094),(79,'2014-09-03 13:43:55','2014-09-03 13:43:55','report_to','Design Director',20094),(80,'2014-09-03 13:43:55','2014-09-03 13:43:55','general_role','<p>\n	<span style=\"color: rgb(158, 146, 122); font-family: Garamond, \'Microsoft Yahei\', simsun, arial, sans-serif; font-size: 18px; line-height: 24px;\">Assist all sales activities in store. Deliver quality and consistency of service including identifying customers&rsquo; needs, developing client relationships, sales, and delivering post-sale services.</span></p>\n',20094),(81,'2014-09-03 13:43:55','2014-09-03 13:43:55','key_responsibilities','<p>\n	<span style=\"color: rgb(158, 146, 122); font-family: Garamond, \'Microsoft Yahei\', simsun, arial, sans-serif; font-size: 18px; line-height: 24px;\">- To response to daily store operations&nbsp;</span><br style=\"color: rgb(158, 146, 122); font-family: Garamond, \'Microsoft Yahei\', simsun, arial, sans-serif; font-size: 18px; line-height: 24px;\" />\n	<span style=\"color: rgb(158, 146, 122); font-family: Garamond, \'Microsoft Yahei\', simsun, arial, sans-serif; font-size: 18px; line-height: 24px;\">- To assist in providing excellent customer service and maintain a pleasant shopping environment consistent with our brand image&nbsp;</span><br style=\"color: rgb(158, 146, 122); font-family: Garamond, \'Microsoft Yahei\', simsun, arial, sans-serif; font-size: 18px; line-height: 24px;\" />\n	<span style=\"color: rgb(158, 146, 122); font-family: Garamond, \'Microsoft Yahei\', simsun, arial, sans-serif; font-size: 18px; line-height: 24px;\">- To identify and handle clients&rsquo; enquiries and concerns&nbsp;</span><br style=\"color: rgb(158, 146, 122); font-family: Garamond, \'Microsoft Yahei\', simsun, arial, sans-serif; font-size: 18px; line-height: 24px;\" />\n	<span style=\"color: rgb(158, 146, 122); font-family: Garamond, \'Microsoft Yahei\', simsun, arial, sans-serif; font-size: 18px; line-height: 24px;\">- To communicate feedback gathered through in-store activities to store management&nbsp;</span><br style=\"color: rgb(158, 146, 122); font-family: Garamond, \'Microsoft Yahei\', simsun, arial, sans-serif; font-size: 18px; line-height: 24px;\" />\n	<span style=\"color: rgb(158, 146, 122); font-family: Garamond, \'Microsoft Yahei\', simsun, arial, sans-serif; font-size: 18px; line-height: 24px;\">- Other duties as assigned&nbsp;</span></p>\n',20094),(82,'2014-09-03 13:43:55','2014-09-03 13:43:55','requirements_capabilities','<p>\n	<span style=\"color: rgb(158, 146, 122); font-family: Garamond, \'Microsoft Yahei\', simsun, arial, sans-serif; font-size: 18px; line-height: 24px;\">- University students (grade 4 is must) with similar internship experience is prefer (The qualified candidate might be offered )</span><br style=\"color: rgb(158, 146, 122); font-family: Garamond, \'Microsoft Yahei\', simsun, arial, sans-serif; font-size: 18px; line-height: 24px;\" />\n	<span style=\"color: rgb(158, 146, 122); font-family: Garamond, \'Microsoft Yahei\', simsun, arial, sans-serif; font-size: 18px; line-height: 24px;\">- Passionate in retail industry with good selling skills&nbsp;</span><br style=\"color: rgb(158, 146, 122); font-family: Garamond, \'Microsoft Yahei\', simsun, arial, sans-serif; font-size: 18px; line-height: 24px;\" />\n	<span style=\"color: rgb(158, 146, 122); font-family: Garamond, \'Microsoft Yahei\', simsun, arial, sans-serif; font-size: 18px; line-height: 24px;\">- Like fashion and appreciate quality products&nbsp;</span><br style=\"color: rgb(158, 146, 122); font-family: Garamond, \'Microsoft Yahei\', simsun, arial, sans-serif; font-size: 18px; line-height: 24px;\" />\n	<span style=\"color: rgb(158, 146, 122); font-family: Garamond, \'Microsoft Yahei\', simsun, arial, sans-serif; font-size: 18px; line-height: 24px;\">- Fluent in English and Chinese. French or Japanese is a plus&nbsp;</span><br style=\"color: rgb(158, 146, 122); font-family: Garamond, \'Microsoft Yahei\', simsun, arial, sans-serif; font-size: 18px; line-height: 24px;\" />\n	<span style=\"color: rgb(158, 146, 122); font-family: Garamond, \'Microsoft Yahei\', simsun, arial, sans-serif; font-size: 18px; line-height: 24px;\">- Must be a good team player, pleasant, service oriented with good communication skills&nbsp;</span><br style=\"color: rgb(158, 146, 122); font-family: Garamond, \'Microsoft Yahei\', simsun, arial, sans-serif; font-size: 18px; line-height: 24px;\" />\n	<span style=\"color: rgb(158, 146, 122); font-family: Garamond, \'Microsoft Yahei\', simsun, arial, sans-serif; font-size: 18px; line-height: 24px;\">- Basic computer skills&nbsp;</span></p>\n',20094),(83,'2014-09-03 13:55:47','2014-09-03 13:55:47','craft','20087',20080),(84,'2014-09-03 14:44:19','2014-09-03 14:46:18','location','shanghai',20095),(85,'2014-09-03 14:44:19','2014-09-03 14:46:18','address','<p style=\"margin: 0px auto; padding: 0px; border: 0px; font-size: 18px; width: 235.15625px; font-family: \'Gotham Book\'; color: rgb(158, 146, 122); line-height: 24px; text-align: center;\">\n	8 Serves Road , 75006 Paris,France</p>\n<p style=\"margin: 0px auto; padding: 0px; border: 0px; font-size: 18px; width: 235.15625px; font-family: \'Gotham Book\'; color: rgb(158, 146, 122); line-height: 24px; text-align: center;\">\n	Tel: +33-1-42-22-53-62</p>\n<p style=\"margin: 0px auto; padding: 0px; border: 0px; font-size: 18px; width: 235.15625px; font-family: \'Gotham Book\'; color: rgb(158, 146, 122); line-height: 24px; text-align: center;\">\n	Fax: +33-1-42-22-58-03</p>\n<p style=\"margin: 0px auto; padding: 0px; border: 0px; font-size: 18px; width: 235.15625px; font-family: \'Gotham Book\'; color: rgb(158, 146, 122); line-height: 24px; text-align: center;\">\n	sevres.paris@shang-xia.com</p>\n',20095),(86,'2014-09-03 14:45:52','2014-09-03 14:45:52','location','paris',20096),(87,'2014-09-03 14:45:52','2014-09-03 14:45:52','address','<p style=\"margin: 0px auto; padding: 0px; border: 0px; font-size: 18px; width: 235.15625px; font-family: Garamond; color: rgb(158, 146, 122); line-height: 24px; text-align: center;\">\n	8 Serves Road , 75006 Paris,France</p>\n<p style=\"margin: 0px auto; padding: 0px; border: 0px; font-size: 18px; width: 235.15625px; font-family: Garamond; color: rgb(158, 146, 122); line-height: 24px; text-align: center;\">\n	Tel: +33-1-42-22-53-62</p>\n<p style=\"margin: 0px auto; padding: 0px; border: 0px; font-size: 18px; width: 235.15625px; font-family: Garamond; color: rgb(158, 146, 122); line-height: 24px; text-align: center;\">\n	Fax: +33-1-42-22-58-03</p>\n<p style=\"margin: 0px auto; padding: 0px; border: 0px; font-size: 18px; width: 235.15625px; font-family: Garamond; color: rgb(158, 146, 122); line-height: 24px; text-align: center;\">\n	sevres.paris@shang-xia.com</p>\n',20096),(88,'2014-09-03 14:46:59','2014-09-03 14:46:59','location','beijing',20097),(89,'2014-09-03 14:46:59','2014-09-03 14:46:59','address','<p>\n	8 Serves Road , 75006 Paris,France Tel: +33-1-42-22-53-62 Fax: +33-1-42-22-58-03 sevres.paris@shang-xia.com</p>\n',20097),(90,'2014-09-03 15:45:04','2014-09-03 16:27:12','product','[\"20088\",\"20081\",\"20080\"]',20098),(91,'2014-09-03 15:48:36','2014-09-03 16:19:57','product','[\"20088\",\"20081\",\"20080\"]',20099),(92,'2014-09-03 15:59:04','2014-09-03 16:19:04','product','[\"20088\",\"20081\",\"20080\"]',20100);
+/*!40000 ALTER TABLE `field` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `media`
+--
+
+DROP TABLE IF EXISTS `media`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `media` (
+  `mid` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) DEFAULT NULL,
+  `uri` varchar(255) DEFAULT NULL,
+  `cdate` datetime DEFAULT NULL,
+  `mdate` datetime DEFAULT NULL,
+  `type` varchar(45) DEFAULT '',
+  `cid` int(11) DEFAULT NULL,
+  `field_name` varchar(45) DEFAULT NULL,
+  `weight` int(11) DEFAULT NULL,
+  PRIMARY KEY (`mid`)
+) ENGINE=InnoDB AUTO_INCREMENT=684 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `media`
+--
+
+LOCK TABLES `media` WRITE;
+/*!40000 ALTER TABLE `media` DISABLE KEYS */;
+INSERT INTO `media` VALUES (601,'xxsdl3','/uploads/xxsdl1.png','2014-08-23 13:36:31','2014-08-23 13:36:31','content',1,'image',NULL),(602,'xxsdl3','/uploads/xxsdl2.png','2014-08-23 13:36:31','2014-08-23 13:36:31','content',1,'image',NULL),(603,'xxsdl3','/uploads/xxsdl2.png','2014-08-23 13:36:31','2014-08-23 13:36:31','content',1,'image',NULL),(604,'11130844407c075139d6fbe5e5c758fc','/upload/11130844407c075139d6fbe5e5c758fc.jpg','2014-08-26 21:53:15','2014-08-26 21:53:15','slideshow',20044,'image',NULL),(605,'db2ec4122d8a7dcd433d328b5f583976','/upload/db2ec4122d8a7dcd433d328b5f583976.jpg','2014-08-26 22:34:35','2014-08-26 22:46:53','slideshow',0,'image',NULL),(606,'aab426f4b19f58e68a682b3e69df9f55','/upload/aab426f4b19f58e68a682b3e69df9f55.jpg','2014-08-26 23:03:25','2014-08-26 23:18:24','slideshow',20065,'image',NULL),(607,'ae2d67f0cfcfbac2fe8c63d59df3c96c','/upload/ae2d67f0cfcfbac2fe8c63d59df3c96c.jpg','2014-08-26 23:40:39','2014-08-26 23:40:39','slideshow',20068,'image',NULL),(608,'a94d0383fcc7c05aca0fb7d6dd76032f','/upload/a94d0383fcc7c05aca0fb7d6dd76032f.png','2014-08-28 00:45:14','2014-08-28 00:45:14','collection',20079,'master_image',NULL),(609,'0b5976ae62da44e1f5f2627731d90b5b','/upload/0b5976ae62da44e1f5f2627731d90b5b.jpg','2014-08-28 00:45:14','2014-09-03 15:37:12','collection',20079,'thumbnail_image',NULL),(623,'c8307a1d9be605c70c5cefda3fdda866','/upload/c8307a1d9be605c70c5cefda3fdda866.jpg','2014-09-02 04:05:12','2014-09-02 04:34:35','craft',20082,'thumbnail_image',NULL),(624,'af76fdbc41f1a97c1bdfc7cd1ede3ff2','/upload/af76fdbc41f1a97c1bdfc7cd1ede3ff2.jpg','2014-09-02 04:14:45','2014-09-02 04:34:35','craft',20082,'video_poster',NULL),(626,'dafcf0de2d63abda22a0dd5355216be8','/upload/dafcf0de2d63abda22a0dd5355216be8.jpg','2014-09-02 04:47:49','2014-09-03 13:55:47','product',20080,'thumbnail',NULL),(628,'76dcd1fc2e66daa6e61c4dcb9c081e0f','/upload/76dcd1fc2e66daa6e61c4dcb9c081e0f.jpg','2014-09-02 04:48:57','2014-09-02 17:24:56','product',20081,'thumbnail',NULL),(629,'4ebaceb7e53ff9111f2fdcf3c857e9d1','/upload/4ebaceb7e53ff9111f2fdcf3c857e9d1.jpg','2014-09-02 05:00:01','2014-09-02 05:00:01','craft',20083,'thumbnail_image',NULL),(630,'38f362fa1c9d8121aefc9765d5b39a35','/upload/38f362fa1c9d8121aefc9765d5b39a35.jpg','2014-09-02 05:00:01','2014-09-02 05:00:01','craft',20083,'video_poster',NULL),(631,'4fa826a00dcf656e60d39816afa8a4ab','/upload/4fa826a00dcf656e60d39816afa8a4ab.jpg','2014-09-02 14:04:17','2014-09-02 17:01:09','slideShow',20086,'image',NULL),(632,'02bad58b633419b3e8ec4378eb8bc0d7','/upload/02bad58b633419b3e8ec4378eb8bc0d7.jpg','2014-09-02 14:09:38','2014-09-03 15:38:06','craft',20087,'thumbnail_image',NULL),(633,'abcf6774df5f3cf48e28d584bcd5edda','/upload/abcf6774df5f3cf48e28d584bcd5edda.jpg','2014-09-02 14:09:38','2014-09-03 15:38:06','craft',20087,'video_poster',NULL),(638,'859f072b868cfc8d36a6a8892b3af76d','/upload/50d57bb4de7fbf844b5dda90e35eb6f5.jpg','2014-09-02 17:24:56','2014-09-02 17:24:56','product',20081,'product_slide_image',NULL),(639,'859f072b868cfc8d36a6a8892b3af76d','/upload/859f072b868cfc8d36a6a8892b3af76d.jpg','2014-09-02 17:24:56','2014-09-02 17:24:56','product',20081,'product_slide_image',NULL),(645,'84d52e26eb7627a2928832a8ab400320','/upload/84d52e26eb7627a2928832a8ab400320.jpg','2014-09-02 17:48:18','2014-09-03 13:33:13','product',20088,'thumbnail',NULL),(647,'7cde1f062887dfc0574696aee3baa2c4','/upload/7cde1f062887dfc0574696aee3baa2c4.jpg','2014-09-03 12:50:02','2014-09-03 15:37:03','collection',20089,'thumbnail_image',NULL),(649,'4b8f2ae1443336150d3009ecbad07f76','/upload/4b8f2ae1443336150d3009ecbad07f76.jpg','2014-09-03 12:50:26','2014-09-03 15:36:45','collection',20090,'thumbnail_image',NULL),(650,'ba98e77debe898e7e1f5f1a2f78ef9df','/upload/ba98e77debe898e7e1f5f1a2f78ef9df.jpg','2014-09-03 12:54:40','2014-09-03 12:54:40','slideShow',20091,'image',NULL),(655,'32ec854c90b84f48cd99ebd5c5b7fe89','/upload/32ec854c90b84f48cd99ebd5c5b7fe89.jpg','2014-09-03 13:06:38','2014-09-03 13:07:50','news',20092,'thumbnail',NULL),(656,'aa2d204d15b5d2c386abf40d516f2063','/upload/aa2d204d15b5d2c386abf40d516f2063.jpg','2014-09-03 13:07:25','2014-09-03 13:07:25','news',20093,'news_slide_image',NULL),(657,'bbcd4a0dc8379cc4414ef15c6ce19a75','/upload/bbcd4a0dc8379cc4414ef15c6ce19a75.jpg','2014-09-03 13:07:25','2014-09-03 13:07:25','news',20093,'thumbnail',NULL),(658,'a8e8e15b78ec4632c5450962c203f2aa','/upload/a8e8e15b78ec4632c5450962c203f2aa.jpg','2014-09-03 13:07:50','2014-09-03 13:07:50','news',20092,'news_slide_image',NULL),(659,'c3f77ae79fcc32d33c2689b8ac08c0f7','/upload/c3f77ae79fcc32d33c2689b8ac08c0f7.jpg','2014-09-03 13:33:13','2014-09-03 13:33:13','product',20088,'product_slide_image',NULL),(660,'567229a5eb5c1dc2f9558d629d5a45cf','/upload/3fc65b1bcee80582ffd1093d508bc21f.jpg','2014-09-03 13:55:47','2014-09-03 13:55:47','product',20080,'product_slide_image',NULL),(661,'567229a5eb5c1dc2f9558d629d5a45cf','/upload/567229a5eb5c1dc2f9558d629d5a45cf.jpg','2014-09-03 13:55:47','2014-09-03 13:55:47','product',20080,'product_slide_image',NULL),(667,'07d9da86e9dc63108e3e30d11a44f1e5','/upload/87088fa446bebeec77d5109ffe3c7d2b.jpg','2014-09-03 15:36:45','2014-09-03 15:36:45','collection',20090,'slide_image',NULL),(668,'07d9da86e9dc63108e3e30d11a44f1e5','/upload/07d9da86e9dc63108e3e30d11a44f1e5.jpg','2014-09-03 15:36:45','2014-09-03 15:36:45','collection',20090,'slide_image',NULL),(669,'b07a6c75bb80b77d0a92012d1c1c9b6b','/upload/b07a6c75bb80b77d0a92012d1c1c9b6b.jpg','2014-09-03 15:36:45','2014-09-03 15:36:45','collection',20090,'nav_image',NULL),(670,'172000f85445dad7c6701c1f957323c6','/upload/172000f85445dad7c6701c1f957323c6.jpg','2014-09-03 15:37:03','2014-09-03 15:37:03','collection',20089,'slide_image',NULL),(671,'21dd34c9e1aef117034127b6196f69e6','/upload/21dd34c9e1aef117034127b6196f69e6.jpg','2014-09-03 15:37:03','2014-09-03 15:37:03','collection',20089,'nav_image',NULL),(672,'de6c3baffeed58ae6fd07839042938a1','/upload/de6c3baffeed58ae6fd07839042938a1.jpg','2014-09-03 15:37:12','2014-09-03 15:37:12','collection',20079,'slide_image',NULL),(673,'874d2c882613558785eafb57843141c5','/upload/874d2c882613558785eafb57843141c5.jpg','2014-09-03 15:37:12','2014-09-03 15:37:12','collection',20079,'nav_image',NULL),(674,'ce1b7e0e5792082b95f524c54a69f7ac','/upload/ce1b7e0e5792082b95f524c54a69f7ac.jpg','2014-09-03 15:37:58','2014-09-03 15:38:07','craft',20087,'nav_image',NULL),(675,'d8d198683b6f7fa080c0c01a6fa034e6','/upload/d8d198683b6f7fa080c0c01a6fa034e6.jpg','2014-09-03 15:45:05','2014-09-03 16:27:15','craft',20098,'video_poster',NULL),(676,'b5cf28c1214f56a3f9f36e87d11b7db0','/upload/b5cf28c1214f56a3f9f36e87d11b7db0.jpg','2014-09-03 15:45:05','2014-09-03 16:27:16','craft',20098,'nav_image',NULL),(677,'6b00996fb5fcef9f3ecfdeccb14fdb21','/upload/6b00996fb5fcef9f3ecfdeccb14fdb21.jpg','2014-09-03 15:48:37','2014-09-03 16:19:58','craft',20099,'video_poster',NULL),(678,'46aa3b1686a8bf81dde54a2afb22fea6','/upload/46aa3b1686a8bf81dde54a2afb22fea6.jpg','2014-09-03 15:48:37','2014-09-03 16:19:58','craft',20099,'nav_image',NULL),(679,'03d9fff609c27de1250f263ef0950781','/upload/03d9fff609c27de1250f263ef0950781.jpg','2014-09-03 15:59:05','2014-09-03 16:19:05','craft',20100,'video_poster',NULL),(680,'26bf44b8bdfa1b8b2b1f065676ac70cc','/upload/26bf44b8bdfa1b8b2b1f065676ac70cc.jpg','2014-09-03 15:59:05','2014-09-03 16:19:06','craft',20100,'nav_image',NULL),(681,'f593651a301fcbdf04550457b58dc87d','/upload/f593651a301fcbdf04550457b58dc87d.jpg','2014-09-03 16:19:05','2014-09-03 16:19:05','craft',20100,'thumbnail_image',NULL),(682,'3e308ff5b9792dee07e842c33f254ba3','/upload/3e308ff5b9792dee07e842c33f254ba3.jpg','2014-09-03 16:19:58','2014-09-03 16:19:58','craft',20099,'thumbnail_image',NULL),(683,'1d91beee0250708331e595de682e4379','/upload/1d91beee0250708331e595de682e4379.jpg','2014-09-03 16:26:49','2014-09-03 16:27:13','craft',20098,'thumbnail_image',NULL);
+/*!40000 ALTER TABLE `media` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `navigation_menu`
+--
+
+DROP TABLE IF EXISTS `navigation_menu`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `navigation_menu` (
+  `nm_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `text` varchar(255) DEFAULT NULL,
+  `media_uri` varchar(255) DEFAULT NULL,
+  `url` varchar(45) DEFAULT '',
+  `cdate` datetime DEFAULT NULL,
+  `udate` datetime DEFAULT NULL,
+  PRIMARY KEY (`nm_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `navigation_menu`
+--
+
+LOCK TABLES `navigation_menu` WRITE;
+/*!40000 ALTER TABLE `navigation_menu` DISABLE KEYS */;
+INSERT INTO `navigation_menu` VALUES (15,'title_media','测试  Media Media','/upload/9aa41b77b695834608483b80c15ebe7e.JPG','','2014-07-11 22:50:23','2014-07-20 08:50:15'),(16,'title_coporation','Coporation','/upload/7c0231dd2b9ec93336e44dcda0ba9ea3.png','','2014-07-11 22:57:43','2014-07-20 08:50:15'),(17,'title_brand','Brand','/upload/ae9462663ca978b29c0c3d23b422cd73.JPG','','2014-07-11 22:57:43','2014-07-20 08:50:15'),(18,'title_career','Career','/upload/790c3b0f87e526f7aad80187bcfc864a.jpg','','2014-07-11 22:57:43','2014-07-20 08:50:15'),(19,'title_home','Home','/upload/e9ab8b7cd9608a7ab06cca2339ed1638.png','','2014-07-11 22:57:43','2014-07-20 08:50:15');
+/*!40000 ALTER TABLE `navigation_menu` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `session`
+--
+
+DROP TABLE IF EXISTS `session`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `session` (
+  `id` char(32) NOT NULL,
+  `expire` int(11) DEFAULT NULL,
+  `data` longblob,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `session`
+--
+
+LOCK TABLES `session` WRITE;
+/*!40000 ALTER TABLE `session` DISABLE KEYS */;
+INSERT INTO `session` VALUES ('7ba23q90jnaqct92225tf5tjb6',1409819239,'login|b:1;'),('dva0kpif4u5dogktnsedplk925',1409807718,'login|b:1;'),('u92ssge0a6d68t5sdfhhbnms76',1409736740,'login|b:1;');
+/*!40000 ALTER TABLE `session` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `shop`
+--
+
+DROP TABLE IF EXISTS `shop`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `shop` (
+  `shop_id` int(11) NOT NULL AUTO_INCREMENT,
+  `country` varchar(50) DEFAULT NULL,
+  `city` varchar(50) DEFAULT NULL,
+  `distinct` varchar(50) DEFAULT NULL,
+  `title` varchar(500) DEFAULT NULL,
+  `address` text,
+  `phone` varchar(45) DEFAULT NULL,
+  `lat` varchar(45) DEFAULT NULL,
+  `lng` varchar(45) DEFAULT NULL,
+  `cdate` varchar(45) DEFAULT NULL,
+  `mdate` varchar(45) DEFAULT NULL,
+  `status` tinyint(4) DEFAULT '1',
+  `type` tinyint(4) DEFAULT '0',
+  `star` tinyint(4) DEFAULT '0',
+  `language` varchar(10) DEFAULT 'cn',
+  `category` varchar(100) DEFAULT '',
+  PRIMARY KEY (`shop_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `shop`
+--
+
+LOCK TABLES `shop` WRITE;
+/*!40000 ALTER TABLE `shop` DISABLE KEYS */;
+/*!40000 ALTER TABLE `shop` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `system`
+--
+
+DROP TABLE IF EXISTS `system`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `system` (
+  `sid` int(11) NOT NULL,
+  `name` varchar(200) DEFAULT NULL,
+  `value` text,
+  `mdate` datetime DEFAULT NULL,
+  PRIMARY KEY (`sid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `system`
+--
+
+LOCK TABLES `system` WRITE;
+/*!40000 ALTER TABLE `system` DISABLE KEYS */;
+/*!40000 ALTER TABLE `system` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `video`
+--
+
+DROP TABLE IF EXISTS `video`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `video` (
+  `vid` int(11) NOT NULL AUTO_INCREMENT,
+  `uri` text,
+  `cid` int(11) DEFAULT NULL,
+  `field_name` varchar(45) DEFAULT NULL,
+  `type` varchar(45) DEFAULT NULL COMMENT 'mp4/avi/mpeg/',
+  `cdate` datetime DEFAULT NULL,
+  `format` varchar(45) DEFAULT NULL,
+  `name` varchar(200) DEFAULT NULL,
+  `mdate` datetime DEFAULT NULL,
+  PRIMARY KEY (`vid`)
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `video`
+--
+
+LOCK TABLES `video` WRITE;
+/*!40000 ALTER TABLE `video` DISABLE KEYS */;
+INSERT INTO `video` VALUES (14,'s:44:\"/upload/7b0bb402dbed25d841de323ad0e26e8c.mp4\";',20074,'video_mp4','video',NULL,'mp4','7b0bb402dbed25d841de323ad0e26e8c',NULL),(15,'s:44:\"/upload/663c07528537f7a461cae4c57dc65ad4.mp4\";',20074,'video_webm','video',NULL,'mp4','663c07528537f7a461cae4c57dc65ad4',NULL),(16,'s:44:\"/upload/3935a150bcfa86a0d0bb4039b7815618.mp4\";',20080,'product_video','product',NULL,'mp4','3935a150bcfa86a0d0bb4039b7815618',NULL),(17,'s:0:\"\";',20081,'product_video','product',NULL,'','admin',NULL),(18,'s:44:\"/upload/6e52b3b7b10af874bb100c90bfc05ed0.mp4\";',20082,'craft_video','craft',NULL,'mp4','6e52b3b7b10af874bb100c90bfc05ed0',NULL),(19,'s:0:\"\";',20083,'craft_video','craft',NULL,'','admin',NULL),(20,'s:0:\"\";',20087,'craft_video','craft',NULL,'','admin',NULL),(21,'s:0:\"\";',20088,'product_video','product',NULL,'','admin',NULL),(22,'s:0:\"\";',20098,'craft_video','craft',NULL,'','admin',NULL),(23,'s:0:\"\";',20099,'craft_video','craft',NULL,'','admin',NULL),(24,'s:0:\"\";',20100,'craft_video','craft',NULL,'','admin',NULL);
+/*!40000 ALTER TABLE `video` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2014-09-03 16:52:31

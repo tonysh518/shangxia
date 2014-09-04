@@ -17,15 +17,29 @@ class FieldAR extends CActiveRecord {
   }
   
   public static function getCache($key) {
+    $max_size_in_chunk = 200;
+    // 初始化缓存
     if (!self::$caches) {
       $res = Yii::app()->db->createCommand("SELECT * FROM field")->queryAll();
+      $chunk = array();
       foreach ($res as $row) {
         $key = "{$row["cid"]}_{$row["field_name"]}";
-        self::$caches[$key] = FieldAR::model()->findByPk($row["fid"]);
+        $chunk[$key] = FieldAR::model()->findByPk($row["fid"]);
+        if (count($chunk) > $max_size_in_chunk) {
+          self::$caches[] = $chunk;
+          $chunk = array();
+        }
+      }
+      if (count($chunk) < $max_size_in_chunk) {
+        self::$caches[] = $chunk;
       }
     }
     
-    return isset(self::$caches[$key]) ? self::$caches[$key] : FALSE;
+    foreach (self::$caches as $chunk) {
+      if (isset($chunk[$key])) {
+        return $chunk[$key];
+      }
+    }
   }
   
   public function rules() {
@@ -91,10 +105,13 @@ class FieldAR extends CActiveRecord {
    * @param type $field
    */
   public function getFieldInstance($content, $field) {
-    self::getCache("");
+    if (!self::$caches) {
+      self::getCache("");
+    }
     $key = "{$content->cid}_{$field}";
-    if (self::getCache($key)) {
-      return self::getCache($key);
+    $fieldInstance = self::getCache($key);
+    if ($fieldInstance) {
+      return $fieldInstance;
     }
     $query = new CDbCriteria();
     $query->addCondition("field_name=:field_name");

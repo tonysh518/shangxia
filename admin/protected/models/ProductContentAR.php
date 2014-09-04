@@ -25,6 +25,8 @@ class ProductContentAR extends ContentAR {
     }
     $this->hasContentField("collection", array("type" => "select", "options" => $options));
     
+     $this->hasContentField("craft", array("type" => "select", "options" => CraftContentAR::model()->loadCraftOption()));
+    
     return parent::getFields();
   }
   
@@ -51,6 +53,10 @@ class ProductContentAR extends ContentAR {
   
   public static function model($class = __CLASS__) {
     return parent::model($class);
+  }
+  
+  public function getList($limit = 10, $offset = FALSE) {
+    return parent::getList($limit, $offset);
   }
 }
 
