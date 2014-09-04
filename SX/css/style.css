@@ -273,7 +273,7 @@ color: #4b3700;}
 .conformbtn{font-size: 18px;cursor:pointer;color:#fff;background: #4b3700;text-align: center;border: 0;width: 290px;height: 66px;margin: 40px 0;}
 
 /*collpicitem*/
-.collpicitem p{padding: 10px 0 20px;height: 2em;overflow: hidden;}
+.collpicitem p{padding: 10px 0 20px;height: 2em;overflow: hidden;height: 3em;}
 .collpicitem .collicon{background: url('../images/collicon.png') no-repeat left center;padding: 30px 50px 26px;}
 
 /*appareltit*/
