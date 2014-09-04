@@ -59,7 +59,7 @@ else {
                 <?php foreach ($products as $product): ?>
                   <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
                     <a href="./product-detail.php?id=<?php echo $product->cid?>">
-                      <img src="<?php echo makeThumbnail($product->thumbnail, array(1000, 950))?>" width="100%" />
+                      <img src="<?php echo makeThumbnail($product->thumbnail, array(600, 570))?>" width="100%" />
                       <p><span class="collicon"><?php echo $product->title?></span></p>
                     </a>
                   </li>

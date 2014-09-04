@@ -111,7 +111,7 @@ include_once 'common/header.php';?>
             <?php for($i = 1; $i < count($products); $i++): ?>
             <?php $product = $products[$i];?>
               <a href="#" class="prolistitem intoview-effect" data-effect="fadeup">
-                <img src="<?php echo makeThumbnail($product->thumbnail, array(1000, 950))?>" width="100%" />
+                <img src="<?php echo makeThumbnail($product->thumbnail, array(600, 570))?>" width="100%" />
                 <p><?php echo $product->title?></p>
               </a>
             <?php endfor;?>

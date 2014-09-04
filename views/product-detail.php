@@ -67,7 +67,7 @@ else {
 					<ul class="piclist cs-clear">
             <?php foreach (loadSimilarProducts($product) as $p): ?>
               <li class="piclistitem collpicitem">
-                <a href="./product-detail.php?id=<?php echo $p->cid?>"><img src="<?php echo makeThumbnail($p->thumbnail, array(1000, 950))?>" width="100%" />
+                <a href="./product-detail.php?id=<?php echo $p->cid?>"><img src="<?php echo makeThumbnail($p->thumbnail, array(600, 570))?>" width="100%" />
                 <p><span class="collicon"><?php echo $p->title?></span></p></a>
               </li>
             <?php endforeach;?>
