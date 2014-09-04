@@ -102,7 +102,7 @@ a{text-decoration:none;outline: none;color:inherit;}
 .slidetab li{width: 20px;height: 20px;border-bottom: #fff solid 3px;float: left;display: inline;margin: 0 3px;cursor: pointer;}
 .slidetab .on{opacity: 0.5;filter:alpha(opacity=50);-moz-opacity:0.5;cursor: default;}
 
-.slidetip {position: absolute;text-align: center;width: 100%;bottom: 120px;z-index: 2;color: white;line-height: 2em; font-size: 18px;font-family: 'Gotham Book';}
+.slidetip {position: absolute;text-align: center;width: 100%;bottom: 120px;z-index: 2;color: white;line-height: 2em; font-size: 18px;font-family: 'Gotham Book';text-transform: uppercase;}
 .slidetip h4{font-size: 36px;}
 .slidetip i{font-size: 18px;font-family: 'Garamond';}
 
@@ -115,7 +115,7 @@ a{text-decoration:none;outline: none;color:inherit;}
 
 /*piclist*/
 .piclist{padding: 0 0 130px;}
-.piclistitem{float: left;width: 32.8%;margin-right:0.8%;font-size: 18px;text-transform : uppercase;text-align: center;font-family: 'Gotham Medium';}
+.piclistitem{float: left;width: 32.53%;min-height:300px; margin-right:0.8%;font-size: 18px;text-transform : uppercase;text-align: center;font-family: 'Gotham Medium';}
 .piclistitem img{display: block;margin: 0 0 20px}
 .piclistitem img:hover{opacity: 0.9;}
 
@@ -197,7 +197,7 @@ a{text-decoration:none;outline: none;color:inherit;}
 .proinforpic{float: right;width: 66.4%;overflow: hidden;}
 .productscom{position: relative;font-family: "Gotham Book";}
 .productslist{padding:10px 0;}
-.prolistitem{text-transform : uppercase;float: left;width: 32.8%;margin-right: 0.8%;}
+.prolistitem{text-transform : uppercase;float: left;width: 32.53%;margin-right: 0.8%;}
 .prolistitem img{display: block;margin: 0 0 10px;}
 .prolistitem p{background: #000;color:#fff;padding:12px;font-size: 18px;text-align: center ;}
 .prolistitem p.date{font-family: garamond;}
@@ -273,7 +273,7 @@ color: #4b3700;}
 .conformbtn{font-size: 18px;cursor:pointer;color:#fff;background: #4b3700;text-align: center;border: 0;width: 290px;height: 66px;margin: 40px 0;}
 
 /*collpicitem*/
-.collpicitem p{padding: 10px 0 20px;}
+.collpicitem p{padding: 10px 0 20px;height: 2em;overflow: hidden;}
 .collpicitem .collicon{background: url('../images/collicon.png') no-repeat left center;padding: 30px 50px 26px;}
 
 /*appareltit*/
@@ -458,4 +458,10 @@ body .vjs-default-skin .vjs-big-play-button:focus{box-shadow: none;}
 .nav-pop-nav{float: left;width: 16%;}
 .nav-pop-nav p {margin-left: 40%;font-size: 16px;font-family: 'Gotham Book';}
 .map-marker{position: absolute;left: 50%;top: 50%;margin-left: -25px;margin-top: -25px;}
+
+.slidetip .transition {
+  color: #fff;
+  text-transform: capitalize;
+  font-style: normal;
+}
 
