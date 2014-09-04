@@ -48,12 +48,6 @@ else {
 			<!-- 数量改变需要改变css，或者用js来调整slidebox的宽度和slidetab的位置 -->
 		</div>
 		
-	<!-- 	<div class="video">      
-      <img src="<?php echo makeThumbnail(array_shift($product->product_slide_image), array(1596,558))?>" width="100%" />
-      <?php foreach ($product->product_slide_image as $image): ?>
-        
-      <?php endforeach;?>
-    </div> -->
 			<!-- barbg -->
 		<div class="barbg"></div>
 		
