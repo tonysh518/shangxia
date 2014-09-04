@@ -17,11 +17,14 @@ class BoutiqueContentAR extends ContentAR {
   public function getFields() {
     $this->hasContentField("location", array("type" => "select", "options" => self::getLocation()));
     $this->hasContentField("address", array("type" => "textarea"));
+    $this->hasContentField("latlng", array("type" => "location"));
+    $this->hasContentField("info_title");
     return parent::getFields();
   }
   
   public function getImageFields() {
     $this->hasImageField("boutique_slide", array("multi" => TRUE));
+    $this->hasImageField("nav_image");
     return parent::getImageFields();
   }
   

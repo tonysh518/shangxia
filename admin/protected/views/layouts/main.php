@@ -120,9 +120,17 @@
       <li class="nav-header">
         <?php echo Yii::t("strings", "Job")?>
       </li>
-      <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "Job"))?>"><?php echo Yii::t("strings", "Add Job")?></a></li>
-      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "Job"))?>"><?php echo Yii::t("strings", "Job")?></a></li>
-      <!-- End boutique-->
+      <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "job"))?>"><?php echo Yii::t("strings", "Add Job")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "job"))?>"><?php echo Yii::t("strings", "Job")?></a></li>
+      <!-- End Job-->
+      
+      <!-- Press  -->
+      <li class="nav-header">
+        <?php echo Yii::t("strings", "Press")?>
+      </li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "press"))?>"><?php echo Yii::t("strings", "Add Press")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "press"))?>"><?php echo Yii::t("strings", "Press")?></a></li>
+      <!-- End Press-->
       
       <li class="nav-header">
         <?php echo Yii::t("strings", "System")?>

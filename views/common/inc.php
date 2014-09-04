@@ -16,7 +16,7 @@ $app = Yii::createWebApplication($config);
 $scriptUrl = Yii::app()->getRequest()->getScriptUrl();
 
 $ret = Yii::app()->getRequest()->getBaseUrl();
-Yii::app()->getRequest()->setBaseUrl("/shangxia/admin");
+Yii::app()->getRequest()->setBaseUrl("/admin");
 
 Yii::app()->language = "zh_cn";
 
@@ -184,6 +184,27 @@ function loadNewsWithYearGroup($teaser = FALSE) {
   }
   
   return $newsGroup;
+}
+
+/**
+ * 加载所有的Press. 如果参数Year 没有提供 则把所有的加载进来，否则只加载Year 所表示的Press
+ * @param type $year
+ * @param type $limit
+ */
+function loadPressWithYearGroup($yearGroup = FALSE, $limit = 10) {
+  $presses = PressContentAR::model()->getList();
+  $pressGroup = array();
+  foreach ($presses as $press) {
+    $year = date("Y", strtotime($press->publish_date));
+    if ($yearGroup && $yearGroup == $year) {
+      continue;
+    }
+    if (isset($pressGroup[$year]) && count($pressGroup[$year]) > $limit) 
+      continue;
+    $pressGroup[$year] = $press;
+  }
+  
+  return $pressGroup;
 }
 
 // 从产品中加载对应的系列

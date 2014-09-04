@@ -6,7 +6,7 @@ include_once 'common/header.php';?>
 			<div class="detail cs-clear">
 				<div class="arrows arrows2 detailprev" data-a="page-prev"></div>
 				<div class=" detailcon">
-					<h2>about SHANG XIA</h2>
+					<h2><?php echo Yii::t("strings", "about SHANG XIA")?></h2>
 				</div>
 				<div class="arrows arrows2 detailnext" data-a="page-next"></div>
 			</div>

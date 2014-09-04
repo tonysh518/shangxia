@@ -41,7 +41,7 @@ include_once 'common/header.php';?>
 		<!-- intro -->
 		<div class="section ">
 			<div class="intro introparis">
-				<h2 class="intoview-effect" data-effect="fadeup">PARIS:THE 1<sup>st</sup> european shang xia boutique</h2>
+				<h2 class="intoview-effect" data-effect="fadeup"><?php echo $boutique->info_title?></h2>
         <p class="intoview-effect" data-effect="fadeup"><?php echo $boutique->body?></p>
       </div>
 		</div>
@@ -71,7 +71,7 @@ include_once 'common/header.php';?>
 					<div class="storechoose storechoose2 intoview-effect" data-effect="fadeup">
 						<?php echo $boutique->address?>
 					</div>
-					<div class="storemap intoview-effect" data-map="121.478988,31.227919" data-effect="fadeup">
+					<div class="storemap intoview-effect" data-map="<?php echo $boutique->latlng?>" data-effect="fadeup">
 						<img src="../SX/images/findus.jpg" width="100%" />
 					</div>
 				</div>

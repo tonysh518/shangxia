@@ -4,8 +4,8 @@
 			<div class="detail cs-clear">
 				<div class="arrows arrows3 detailprev" data-a="page-prev"></div>
 				<div class=" detailcon">
-					<h2>PRESS</h2>
-					<div class="press-lock">Press access</div>
+					<h2><?php echo Yii::t("strings", "PRESS")?></h2>
+					<div class="press-lock"><?php echo Yii::t("strings", "Press access")?></div>
 				</div>
 				<div class="arrows arrows3 detailnext" data-a="page-next"></div>
 			</div>
@@ -15,51 +15,21 @@
 		<div class="section">
 			<div class="products">
 				<div class="productscom">
+          <?php $presses = loadPressWithYearGroup();?>
+          <?php $years = array_keys($presses);?>
 					<div class="newsoldertime">
-						<a href="#">2010</a>
-						<a href="#">2011</a>
-						<a href="#">2012</a>
-						<a class="on" href="#">2013</a>
-						<a href="#">2014</a>
+            <?php foreach ($years as $index =>  $year): ?>
+              <a href="<?php if ($index == 0) echo "on"?>"><?php echo $year?></a>
+            <?php endforeach;?>
 					</div>
 					<!--  -->
 					<div class="productslist cs-clear">
-						<a href="#" data-a="pop-press-item" data-press="../SX/images/poppicdemo.jpg" class="prolistitem newsitem">
-							<img src="../SX/images/newsdemo4.jpg" width="100%" />
-							<p>PARIS STORE OPENING<br /><span class="date">2013 OCT 25</span></p>
-						</a>
-						<a href="#" data-a="pop-press-item" data-press="../SX/images/poppicdemo.jpg" class="prolistitem newsitem">
-							<img src="../SX/images/newsdemo4.jpg" width="100%" />
-							<p>PARIS STORE OPENING<br /><span class="date">2013 OCT 25</span></p>
-						</a>
-						<a href="#" data-a="pop-press-item" data-press="../SX/images/poppicdemo.jpg" class="prolistitem newsitem marginR0">
-							<img src="../SX/images/newsdemo4.jpg" width="100%" />
-							<p>PARIS STORE OPENING<br /><span class="date">2013 OCT 25</span></p>
-						</a>
-						<a href="#" data-a="pop-press-item" data-press="../SX/images/poppicdemo.jpg" class="prolistitem newsitem">
-							<img src="../SX/images/newsdemo4.jpg" width="100%" />
-							<p>PARIS STORE OPENING<br /><span class="date">2013 OCT 25</span></p>
-						</a>
-						<a href="#" data-a="pop-press-item" data-press="../SX/images/poppicdemo.jpg" class="prolistitem newsitem">
-							<img src="../SX/images/newsdemo4.jpg" width="100%" />
-							<p>PARIS STORE OPENING<br /><span class="date">2013 OCT 25</span></p>
-						</a>
-						<a href="#" data-a="pop-press-item" data-press="../SX/images/poppicdemo.jpg" class="prolistitem newsitem marginR0">
-							<img src="../SX/images/newsdemo4.jpg" width="100%" />
-							<p>PARIS STORE OPENING<br /><span class="date">2013 OCT 25</span></p>
-						</a>
-						<a href="#" data-a="pop-press-item" data-press="../SX/images/poppicdemo.jpg" class="prolistitem newsitem">
-							<img src="../SX/images/newsdemo4.jpg" width="100%" />
-							<p>PARIS STORE OPENING<br /><span class="date">2013 OCT 25</span></p>
-						</a>
-						<a href="#" data-a="pop-press-item" data-press="../SX/images/poppicdemo.jpg" class="prolistitem newsitem">
-							<img src="../SX/images/newsdemo4.jpg" width="100%" />
-							<p>PARIS STORE OPENING<br /><span class="date">2013 OCT 25</span></p>
-						</a>
-						<a href="#" data-a="pop-press-item" data-press="../SX/images/poppicdemo.jpg" class="prolistitem newsitem marginR0">
-							<img src="../SX/images/newsdemo4.jpg" width="100%" />
-							<p>PARIS STORE OPENING<br /><span class="date">2013 OCT 25</span></p>
-						</a>
+            <?php foreach ($presses as $year => $press): ?>
+              <a href="#" data-a="pop-press-item" data-press="<?php echo $press->master_image?>" class="prolistitem newsitem">
+                <img src="<?php echo $press->press_image?>" width="100%" />
+                <p><?php echo $press->title?><br /><span class="date"><?php echo date("Y M d", strtotime($press->publish_date))?></span></p>
+              </a>
+            <?php endforeach;?>
 					</div>
 					<!--  -->
 				</div>
