@@ -1024,4 +1024,13 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
         return false;
     });
+
+
+    LP.action('craft-read' , function(){
+        $( $(this).parent().siblings('textarea').val() )
+            .appendTo( document.body )
+            .hide()
+            .fadeIn();
+        return false;
+    });
 });
