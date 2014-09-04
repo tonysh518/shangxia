@@ -287,13 +287,25 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 var page = $('.head').data('page');
                 var fn = pageInits[ page ];
 
+                var $allImgs = $('img');
+                var $noPreLoadImgs = $('.slide .slideitem img').filter(function( index ){
+                    return index > 0;
+                }).add( $('.js-horizontal-slide .slide-con img').filter(function( index ){
+                    return index > 2;
+                }));
+
+                var noPreLoadImgs = $noPreLoadImgs.toArray();
+                $allImgs = $allImgs.filter(function( i ){
+                    return $.inArray( this , noPreLoadImgs ) == -1;
+                });
+
                 if( fn ){
                     fn( function(){
                         $(window).trigger('scroll');
-                        loadImages( $('img') , loadingMgr.hide );
+                        loadImages( $allImgs , loadingMgr.hide );
                     });
                 } else {
-                    loadImages( $('img') , loadingMgr.hide );
+                    loadImages( $allImgs , loadingMgr.hide );
                 }
 
                 // fix common page init
