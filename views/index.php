@@ -3,7 +3,7 @@
 	<!-- intro -->
 	<div class="section intoview-effect" data-effect="fadeup" data-editme-key="home_brand_story_summary">
     <?php editme("home_brand_story_summary")?>
-		<div class="intro" >
+		<div class="intro">
 			<p class="introtxt" data-editme-body=".introtxt">SHANG XIA IS A BRAND FOR ART OF LIVING
 THAT PROMISES A UNIQUE ENCOUNTER WITH THE HERITAGE OF CHINESE DESIGN AND CRAFTSMANSHIP.</p>
 			<a href="./about.php" title="" class="introbtn transition-wrap"><span class="transition"><?php echo Yii::t("strings" ,"Brand story")?><br/><br/><?php echo Yii::t("strings", "Brand story")?></span></a>

@@ -54,13 +54,13 @@ else {
 					<div class="products-wrap js-horizontal-slide intoview-effect" data-effect="fadeup" data-num="3">
 						<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
 						<div class="slide-con">
-              <?php $products = getProductInTypeWithCollection($type_id, $collection->cid)?>
+              <?php $products = getProductInTypeWithCollection($type_id, $collection->cid);?>
 							<ul class="slide-con-inner piclist cs-clear">
                 <?php foreach ($products as $product): ?>
                   <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-                    <a href="">
-                      <img src="../SX/images/colldemo2.jpg" width="100%" />
-                      <p><span class="collicon">architecture</span></p>
+                    <a href="./product-detail.php?id=<?php echo $product->cid?>">
+                      <img src="<?php echo makeThumbnail($product->thumbnail, array(1000, 950))?>" width="100%" />
+                      <p><span class="collicon"><?php echo $product->title?></span></p>
                     </a>
                   </li>
                 <?php endforeach;?>

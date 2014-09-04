@@ -116,6 +116,14 @@
       <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "boutique"))?>"><?php echo Yii::t("strings", "boutique")?></a></li>
       <!-- End boutique-->
       
+      <!-- Job  -->
+      <li class="nav-header">
+        <?php echo Yii::t("strings", "Job")?>
+      </li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "Job"))?>"><?php echo Yii::t("strings", "Add Job")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "Job"))?>"><?php echo Yii::t("strings", "Job")?></a></li>
+      <!-- End boutique-->
+      
       <li class="nav-header">
         <?php echo Yii::t("strings", "System")?>
       </li>

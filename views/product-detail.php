@@ -1,16 +1,30 @@
+<?php 
+
+if (isset($_GET["id"])) {
+  require_once 'common/inc.php';
+  $product = ProductContentAR::model()->findByPk($_GET["id"]);
+  if (!$product || $product->type != ProductContentAR::model()->type) {
+    exit(header("Location: ./index.php"));
+  }
+}
+else {
+  exit(header("Location: ./index.php"));
+}
+
+?>
 <?php include_once 'common/header.php';?>
 		<!--  -->
 		<!-- newscrumbs -->
 		<div class="newscrumbs">
-			<p>COLLECTIONS      IN & OUT      DA TIAN DI TABLE </p>
+      <p><?php echo Yii::t("strings", "collections")?>&nbsp;&nbsp;<?php echo loadCollectionFromProduct($product)->title?>&nbsp;&nbsp;<?php echo $product->title?> </p>
 		</div>
 		<!-- detail -->
 		<div class="section ">
 			<div class="detail coll_product cs-clear">
 				<div class="arrows detailprev" data-a="page-prev"></div>
 				<div class=" detailcon">
-					<h2>da tian di</h2>
-					<p>The collection embodies the concept of heaven and earth, where the original concept of rounded exterior lines and straight interior lines is now transformed to exterior lines that are straight and upright shielding one from the soft round curves of the interior lines.<br />The Da Tian Di collection is based on traditional Ming furniture construction principles, where each piece, is deftly hand crafted by a master craftsman.<br />The mortise and tenons of each element are skillfully fitted and hidden away allowing one to appreciate the pure beauty of the color, pattern and finish of the polished rare zitan wood surface.<br />Each piece of furniture is ergonomically designed. The wood is also treated to prevent warping and distortion. </p>
+					<h2><?php echo $product->title?></h2>
+          <p><?php echo $product->body?></p>
 				</div>
 				<div class="arrows detailnext" data-a="page-next"></div>
 			</div>
@@ -18,8 +32,13 @@
 		<!--  -->
 		<div class="coll_iconbg"></div>
 		<!-- video -->
-		<div class="video" data-video-render="../SX/video/small"><img src="../SX/images/videodemo.jpg" width="100%" /></div>
-		<!-- barbg -->
+		<div class="video">      
+      <img src="<?php echo makeThumbnail(array_shift($product->product_slide_image), array(1596,558))?>" width="100%" />
+      <?php foreach ($product->product_slide_image as $image): ?>
+        
+      <?php endforeach;?>
+    </div>
+			<!-- barbg -->
 		<div class="barbg"></div>
 		
 		<!-- collpiclist -->
@@ -41,23 +60,17 @@
 		<div class="section">
 			<div class="products ">
 				<div class="productstit ">
-					<h2>similar products</h2>
+					<h2><?php echo Yii::t("strings", "similar products")?></h2>
 				</div>	
 				<!--  -->
 				<div class="">
 					<ul class="piclist cs-clear">
-						<li class="piclistitem collpicitem">
-							<img src="../SX/images/colldemo2.jpg" width="100%" />
-							<p><span class="collicon">architecture</span></p>
-						</li>
-						<li class="piclistitem collpicitem">
-							<img src="../SX/images/colldemo2.jpg" width="100%" />
-							<p><span>architecture</span></p>
-						</li>
-						<li class="piclistitem collpicitem marginR0">
-							<img src="../SX/images/colldemo2.jpg" width="100%" />
-							<p><span>architecture</span></p>
-						</li>
+            <?php foreach (loadSimilarProducts($product) as $p): ?>
+              <li class="piclistitem collpicitem">
+                <a href="./product-detail.php?id=<?php echo $p->cid?>"><img src="<?php echo makeThumbnail($p->thumbnail, array(1000, 950))?>" width="100%" />
+                <p><span class="collicon"><?php echo $p->title?></span></p></a>
+              </li>
+            <?php endforeach;?>
 					</ul>
 				</div>
 			</div>

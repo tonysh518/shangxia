@@ -74,6 +74,7 @@ include_once 'common/header.php';?>
 		</div>
     <?php $products = loadCraftRelatedProducts($craft);?>
 		<!-- related products -->
+    <?php if (count($products)) : ?>
 		<div class="section">
 			<div class="products">
 				<div class="productstit intoview-effect" data-effect="fadeup">
@@ -93,7 +94,7 @@ include_once 'common/header.php';?>
 							<div class="slide">
 								<div class="slidebox cs-clear">
                   <?php foreach ($product->product_slide_image as $slide_image): ?>
-                    <img class="slideitem" src="<?php echo $slide_image?>" width="100%" />
+                  <img class="slideitem" src="../SX/images/product_related.jpg" width="100%" />
                   <?php endforeach;?>
 								</div>
 								<ul class="slidetab">
@@ -110,7 +111,7 @@ include_once 'common/header.php';?>
             <?php for($i = 1; $i < count($products); $i++): ?>
             <?php $product = $products[$i];?>
               <a href="#" class="prolistitem intoview-effect" data-effect="fadeup">
-                <img src="<?php echo $product->thumbnail?>" width="100%" />
+                <img src="<?php echo makeThumbnail($product->thumbnail, array(1000, 950))?>" width="100%" />
                 <p><?php echo $product->title?></p>
               </a>
             <?php endfor;?>
@@ -118,6 +119,7 @@ include_once 'common/header.php';?>
 				</div>
 			</div>
 		</div>
+    <?php endif;?>
 		<!--  other crafts -->
 		<div class="section">
 			<div class="products othercraf">

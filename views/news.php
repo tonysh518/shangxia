@@ -4,7 +4,7 @@
 			<div class="detail cs-clear">
 				<div class="arrows arrows2 detailprev" data-a="page-prev"></div>
 				<div class=" detailcon">
-					<h2>shang xia news</h2>
+					<h2><?php echo Yii::t("strings", "shang xia news")?></h2>
 				</div>
 				<div class="arrows arrows2 detailnext" data-a="page-next"></div>
 			</div>
@@ -13,27 +13,26 @@
 		<div class="section intoview-effect" data-effect="fadeup">
 			<div class="picinfor cs-clear">
 				<div class="picinfortxt">
-					<h2>PARIS STORE OPENING</h2>
-					<h3>2013 OCT 25</h3>
-					<p>In September 2013, SHANG XIA came to Paris, city of art and culture. The first overseas SHANG XIA space was unveiled at 8 rue de Sèvres, on the left bank of the Seine, and simultaneously launched a two-week exhibition of Chinese contemporary crafts. SHANG XIA presented and shared with the world the pleasures and sensibility of Chinese craftsmanship and oriental elegance. The exhibition finished on September 26.</p>
-					<p>The exhibition was held in an old building with high ceilings in Saint Germain. The entire space was designed by architect Kengo Kuma and SHANG XIA artistic director Jiang Qiong Er around the theme of bamboo. Engaging all five senses, SHANG XIA used shape, sound, color, aroma and texture to create an airy but satisfying interplay of light and shade. Bamboo screens guided visitors through a sinuous tea space, incense space and craft demonstration. Bamboo trees constructed of bamboo slips loomed like living sculptures, suspending the space between daylight and the shade of the bamboo grove. Here visitors could experience a lifestyle that balances heaven and earth, inside and outside, man and nature and the lavish and the plain.</p>
-					<p>SHANG XIA Paris boutique is located at 8 Rue de Sèvres, Paris, designed by celebrated architect Kengo Kuma, who utilized a combination of rhythms and principals of art inspired by historic Paris.</p>
-					<p>The architecture of the SHANG XIA Paris boutique is designed as a cloud-like space made of thin ceramic panels. Historically, ceramic has been a crucial element that forms Chinese culture. Chinese ceramic had also long been an object of admiration in Europe. Six thousand thin ceramic panels are suspended from the ceiling to cover the entire space. The glossy white face, unique to ceramic, created a lighting state you might find in the pointillism paintings of the impressionistic art age.</p>
-					<p>The SHANG XIA Paris boutique is now open to visitors. SHANG XIA welcomes all friends, new and old, to share tea with us, and to begin a journey into eastern thought and life</p>
-				</div>
+          <?php $news = loadFirstNews();?>
+          <?php if ($news): ?>
+            <h2><?php echo $news->title?></h2>
+            <h3><?php echo date("Y M d", strtotime($news->date))?></h3>
+            <div class="body">
+              <?php echo $news->body?>
+            </div>
+          <?php endif;?>
+					</div>
 				<div class="picinforpic">
 					<div class="slide">
 						<div class="slidebox cs-clear">
-							<img class="slideitem" src="../SX/images/newsdemo.jpg" width="100%" />
-							<img class="slideitem" src="../SX/images/newsdemo.jpg" width="100%" />
-							<img class="slideitem" src="../SX/images/newsdemo.jpg" width="100%" />
-							<img class="slideitem" src="../SX/images/newsdemo.jpg" width="100%" />
+              <?php foreach($news->news_slide_image as $image): ?>
+                <img class="slideitem" src="<?php echo $image?>" width="100%" />
+              <?php endforeach;?>
 						</div>
 						<ul class="slidetab">
-							<li></li>
-							<li class="on"></li>
-							<li></li>
-							<li></li>
+              <?php foreach($news->news_slide_image as $index => $image): ?>
+							<li class="<?php if ($index == 0) echo "on"?>"></li>
+              <?php endforeach;?>
 						</ul>
 						<!-- 数量改变需要改变css，或者用js来调整slidebox的宽度和slidetab的位置 -->
 					</div>
@@ -47,72 +46,26 @@
 				<div class="productstit othercraftit intoview-effect" data-effect="fadeup">
 					<h2>older news</h2>
 				</div>
+        <?php $newsList = loadNewsWithYearGroup(TRUE);?>
 				<div class="productscom intoview-effect slide" data-effect="fadeup">
-					<!-- <ul class="newsoldertime slidetab">
-						<li class="on"><a href="#">2010</a></li>
-						<li><a href="#">2011</a></li>
-						<li><a href="#">2012</a></li>
-						<li><a href="#">2013</a></li>
-						<li><a href="#">2014</a></li>
-					</ul> -->
+					<ul class="newsoldertime slidetab">
+            <?php $years = array_keys($newsList);?>
+            <?php foreach ($years as $index => $year): ?>
+              <li class="<?php if($index == 0) echo "on"?>"><a href="#"><?php echo $year?></a></li>
+            <?php endforeach;?>
+					</ul>
 					<!--  -->
 					<ul class="slidebox">
-						<li class="productslist cs-clear slideitem">
-							<div class="prolistitem newsitem">
-								<img src="../SX/images/newsdemo2.jpg" width="100%" />
-								<p>PARIS STORE OPENING<br />2013 OCT 25</p>
-							</div>
-							<div class="prolistitem newsitem">
-								<img src="../SX/images/newsdemo2.jpg" width="100%" />
-								<p>PARIS STORE OPENING<br />2013 OCT 25</p>
-							</div>
-							<div class="prolistitem newsitem marginR0">
-								<img src="../SX/images/newsdemo2.jpg" width="100%" />
-								<p>PARIS STORE OPENING<br />2013 OCT 25</p>
-							</div>
-						</li>
-						<li class="productslist cs-clear slideitem">
-							<div class="prolistitem newsitem">
-								<img src="../SX/images/newsdemo2.jpg" width="100%" />
-								<p>PARIS STORE OPENING<br />2013 OCT 25</p>
-							</div>
-							<div class="prolistitem newsitem">
-								<img src="../SX/images/newsdemo2.jpg" width="100%" />
-								<p>PARIS STORE OPENING<br />2013 OCT 25</p>
-							</div>
-							<div class="prolistitem newsitem marginR0">
-								<img src="../SX/images/newsdemo2.jpg" width="100%" />
-								<p>PARIS STORE OPENING<br />2013 OCT 25</p>
-							</div>
-						</li>
-						<li class="productslist cs-clear slideitem">
-							<div class="prolistitem newsitem">
-								<img src="../SX/images/newsdemo2.jpg" width="100%" />
-								<p>PARIS STORE OPENING<br />2013 OCT 25</p>
-							</div>
-							<div class="prolistitem newsitem">
-								<img src="../SX/images/newsdemo2.jpg" width="100%" />
-								<p>PARIS STORE OPENING<br />2013 OCT 25</p>
-							</div>
-							<div class="prolistitem newsitem marginR0">
-								<img src="../SX/images/newsdemo2.jpg" width="100%" />
-								<p>PARIS STORE OPENING<br />2013 OCT 25</p>
-							</div>
-						</li>
-						<li class="productslist cs-clear slideitem">
-							<div class="prolistitem newsitem">
-								<img src="../SX/images/newsdemo2.jpg" width="100%" />
-								<p>PARIS STORE OPENING<br />2013 OCT 25</p>
-							</div>
-							<div class="prolistitem newsitem">
-								<img src="../SX/images/newsdemo2.jpg" width="100%" />
-								<p>PARIS STORE OPENING<br />2013 OCT 25</p>
-							</div>
-							<div class="prolistitem newsitem marginR0">
-								<img src="../SX/images/newsdemo2.jpg" width="100%" />
-								<p>PARIS STORE OPENING<br />2013 OCT 25</p>
-							</div>
-						</li>
+            <?php foreach($newsList as $year => $newsYear): ?>
+              <li class="productslist cs-clear slideitem">
+                <?php foreach ($newsYear as $news): ?>
+                  <div class="prolistitem newsitem">
+                    <img src="<?php echo $news->thumbnail?>" width="100%" />
+                    <p><?php echo $news->title?><br /><?php echo date("Y M d", strtotime($news->date))?></p>
+                  </div>
+                <?php endforeach;?>
+              </li>
+            <?php endforeach;?>
 					</ul>
 				</div>
 				<!--  -->

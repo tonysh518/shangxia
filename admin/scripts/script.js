@@ -146,7 +146,7 @@
                 scope.src.push(window.baseurl + uri);
                 scope.source.push(uri);
                 scope.$digest();
-                ctrl[0].$setViewValue(scope.source);
+                ctrl[0].$setViewValue(scope.src);
               }
             });
           });

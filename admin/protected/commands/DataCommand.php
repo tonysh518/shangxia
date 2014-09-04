@@ -21,7 +21,6 @@ class DataCommand extends CConsoleCommand {
     // 把collection 转换到ID
     foreach ($productGroupes as $products) {
       foreach ($products as $index => $product) {
-        if ($index > 10) break;
         $collection = trim($product["collection_name"]);
         if ($product["language"] == "fr") {
           continue;
@@ -34,8 +33,9 @@ class DataCommand extends CConsoleCommand {
         $product["thumbnail"] = "/upload/". $product["thumbnail"];
         $product["video_title"] = $product["title"];
         $product["video_description"] = $product["title"];
-        $_REQUEST += $product;
-        $_POST += $product;
+        $product["craft"] = "";
+        $_REQUEST = $product;
+        $_POST = $product;
         $productModel = new ProductContentAR();
         $product["type"] = $productModel->type;
         $productModel->attributes = $product;
@@ -44,7 +44,7 @@ class DataCommand extends CConsoleCommand {
         $language = $product["language"];
         
         if ($cid = $productModel->save()) {
-          print "Content: [$productModel->cid] is inserted\r\n";
+          print "Content with {$productModel->product_type}: [$productModel->cid] is inserted\r\n";
         }
         else {
           print_r($productModel->getErrors());
