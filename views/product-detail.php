@@ -32,12 +32,28 @@ else {
 		<!--  -->
 		<div class="coll_iconbg"></div>
 		<!-- video -->
-		<div class="video">      
+		<div class="slide">
+			<div class="slidebox cs-clear">
+				<a href="#" class="slideitem"><img src="images/parisdemo.jpg" width="100%" /></a>
+				<a href="#" class="slideitem"><img src="images/parisdemo.jpg" width="100%" /></a>
+				<a href="#" class="slideitem"><img src="images/parisdemo.jpg" width="100%" /></a>
+				<a href="#" class="slideitem"><img src="images/parisdemo.jpg" width="100%" /></a>
+			</div>
+			<ul class="slidetab cs-clear">
+				<li class="on"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<!-- 数量改变需要改变css，或者用js来调整slidebox的宽度和slidetab的位置 -->
+		</div>
+		
+	<!-- 	<div class="video">      
       <img src="<?php echo makeThumbnail(array_shift($product->product_slide_image), array(1596,558))?>" width="100%" />
       <?php foreach ($product->product_slide_image as $image): ?>
         
       <?php endforeach;?>
-    </div>
+    </div> -->
 			<!-- barbg -->
 		<div class="barbg"></div>
 		
