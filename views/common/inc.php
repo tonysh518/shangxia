@@ -122,7 +122,7 @@ function getProductInTypeWithCollection($type = "", $collection = NULL) {
  
   $query = new CDbCriteria();
   $query->addInCondition("cid", $cids);
-  $query->limit = "3";
+  $query->limit = "5";
   return ProductContentAR::model()->findAll($query);
 }
 
@@ -136,7 +136,7 @@ function loadCraftRelatedProducts($craft) {
     return array();
   }
   $query = new CDbCriteria();
-  $query->limit = "3";
+  $query->limit = "5";
   $query->addInCondition("cid", $product_ids);
   
   $products = ProductContentAR::model()->findAll($query);
@@ -230,7 +230,7 @@ function loadSimilarProducts($product) {
    $query->params[":language"] = $language;
    $query->params[":type"] = "product";
    $query->params[":status"] = ContentAR::STATUS_ENABLE;
-   $query->limit = "3";
+   $query->limit = "5";
    return ProductContentAR::model()->findAll($query);
 }
 
