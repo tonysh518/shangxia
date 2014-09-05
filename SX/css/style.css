@@ -380,6 +380,12 @@ color: #4b3700;}
 .press-lock{width: 250px;height: 60px;line-height: 60px;background: #4b3700 url(../images/press-lock.png) no-repeat 35px center;color: white;margin: 0 auto;margin-bottom: -35px;}
 
 
+/*collpictit_app*/
+.collpictit_app h2{width:440px;margin-left: -220px;bottom:-55px;}
+.collpictit_app span{display: block;font-size: 18px;font-family: Garamond;padding: 10px 0}
+.collpictit_app2 h2{width: 600px;margin-left:-300px;}
+.collpictit_app3 h2{width: 640px;margin-left:-320px;}
+
 .home-collarrowsprev,.home-collarrowsnext{background-position: center;}
 /* Clear Used
 ================================================================================================= */
