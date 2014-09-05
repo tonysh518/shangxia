@@ -34,10 +34,10 @@ else {
 		<!-- video -->
 		<div class="slide">
 			<div class="slidebox cs-clear">
-				<a href="#" class="slideitem"><img src="images/parisdemo.jpg" width="100%" /></a>
-				<a href="#" class="slideitem"><img src="images/parisdemo.jpg" width="100%" /></a>
-				<a href="#" class="slideitem"><img src="images/parisdemo.jpg" width="100%" /></a>
-				<a href="#" class="slideitem"><img src="images/parisdemo.jpg" width="100%" /></a>
+				<a href="javascript:void(0)" class="slideitem"><img src="../SX/images/parisdemo.jpg" width="100%" /></a>
+        <a href="javascript:void(0)" class="slideitem"><img src="../SX/images/parisdemo.jpg" width="100%" /></a>
+				<a href="javascript:void(0)" class="slideitem"><img src="../SX/images/parisdemo.jpg" width="100%" /></a>
+				<a href="javascript:void(0)" class="slideitem"><img src="../SX/images/parisdemo.jpg" width="100%" /></a>
 			</div>
 			<ul class="slidetab cs-clear">
 				<li class="on"></li>

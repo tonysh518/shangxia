@@ -16,7 +16,7 @@ $app = Yii::createWebApplication($config);
 $scriptUrl = Yii::app()->getRequest()->getScriptUrl();
 
 $ret = Yii::app()->getRequest()->getBaseUrl();
-Yii::app()->getRequest()->setBaseUrl("/shangxia/admin");
+Yii::app()->getRequest()->setBaseUrl("/admin");
 
 Yii::app()->language = "zh_cn";
 
@@ -186,6 +186,27 @@ function loadNewsWithYearGroup($teaser = FALSE) {
   return $newsGroup;
 }
 
+/**
+ * 加载所有的Press. 如果参数Year 没有提供 则把所有的加载进来，否则只加载Year 所表示的Press
+ * @param type $year
+ * @param type $limit
+ */
+function loadPressWithYearGroup($yearGroup = FALSE, $limit = 10) {
+  $presses = PressContentAR::model()->getList();
+  $pressGroup = array();
+  foreach ($presses as $press) {
+    $year = date("Y", strtotime($press->publish_date));
+    if ($yearGroup && $yearGroup == $year) {
+      continue;
+    }
+    if (isset($pressGroup[$year]) && count($pressGroup[$year]) > $limit) 
+      continue;
+    $pressGroup[$year] = $press;
+  }
+  
+  return $pressGroup;
+}
+
 // 从产品中加载对应的系列
 function loadCollectionFromProduct($product) {
   return CollectionContentAR::model()->findByPk($product->collection);
@@ -237,4 +258,47 @@ function loadSimilarProducts($product) {
 //加载Job 
 function loadJob() {
   return JobContentAR::model()->getList();
+}
+
+// 搜索关键字
+function searchWithKeyword($keyword) {
+   if ($keyword) {
+     $types = array("collection", "craft");
+     global $language;
+     $query = new CDbCriteria();
+     $query->addInCondition("type", $types);
+     $query->addCondition("language=:language");
+     $query->params[":language"] = $language;
+     
+     $query_2 = clone $query;
+     // 首先搜索标题
+     $query->addSearchCondition("title", '%'.mysql_escape_string($keyword).'%', FALSE, "AND", "LIKE BINARY");
+     
+     $res = ContentAR::model()->findAll($query, array(), FALSE);
+     $results = array();
+     foreach ($res as $content) {
+       $results[$content->type][] = $content->cid;
+     }
+     
+     // 再搜索内容
+     $query_2->addSearchCondition("body", '%'.mysql_escape_string($keyword).'%', FALSE, "AND", "LIKE BINARY");
+     $res = ContentAR::model()->findAll($query, array(), FALSE);
+     foreach ($res as $content) {
+       $results[$content->type][] = $content->cid;
+     }
+     
+     $rets = array();
+     foreach ($results as $type => $cids) {
+       $class = ucfirst($type)."ContentAR";
+       if (!class_exists($class)) {
+         continue;
+       }
+       $obj = new $class();
+       $query = new CDbCriteria();
+       $query->addInCondition("cid", $cids);
+       $rets += $obj->findAll($query);
+     }
+     
+     return $rets;
+   }
 }

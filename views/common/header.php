@@ -74,7 +74,8 @@
 					<div class="nav-pop-inner">
             <?php $first = TRUE;?>
             <?php foreach (BoutiqueContentAR::getLocation() as $key => $name): ?>
-              <a class="nav-pop-item" <?php if ($first) echo 'style="margin-left: 12%;"'?> data-a="nav-link" href="./boutique.php?key=<?php echo urlencode($key)?>"><img src="../SX/images/nav_top.jpg"/> <span><i><?php echo $name?></i></span></a>
+              <?php $boutique = BoutiqueContentAR::model()->loadByAddressKey($key);?>
+              <a class="nav-pop-item" <?php if ($first) echo 'style="margin-left: 12%;"'?> data-a="nav-link" href="./boutique.php?key=<?php echo urlencode($key)?>"><img src="<?php echo ($boutique->nav_image) ?>"/> <span><i><?php echo $name?></i></span></a>
             <?php $first = FALSE;?>
             <?php endforeach;?>
 						</div>

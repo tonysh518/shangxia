@@ -46,18 +46,16 @@
 				<div class="productstit othercraftit intoview-effect" data-effect="fadeup">
 					<h2>older news</h2>
 				</div>
-        <?php $newsList = loadNewsWithYearGroup(TRUE);?>
+        <?php $newsList = NewsContentAR::model()->getList(3);?>
 				<div class="productscom intoview-effect slide" data-effect="fadeup">
 					<!--  -->
 					<ul class="slidebox">
-            <?php foreach($newsList as $year => $newsYear): ?>
+            <?php foreach($newsList as $key => $news): ?>
               <li class="productslist cs-clear slideitem">
-                <?php foreach ($newsYear as $news): ?>
                   <div class="prolistitem newsitem">
                     <img src="<?php echo $news->thumbnail?>" width="100%" />
                     <p><?php echo $news->title?><br /><?php echo date("Y M d", strtotime($news->date))?></p>
                   </div>
-                <?php endforeach;?>
               </li>
             <?php endforeach;?>
 					</ul>
@@ -88,45 +86,19 @@
 		<div class="section">
 			<div class="products press">
 				<div class="productstit intoview-effect" data-effect="fadeup">
-					<h2>press</h2>
+					<h2><?php echo Yii::t("strings", "Press");?></h2>
 				</div>
 				<div class="productscom js-horizontal-slide" data-num="3">
 					<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
 					<!--  -->
 					<div class="slide-con">
 						<div class="productslist cs-clear slide-con-inner">
-							<div class="prolistitem pressitem intoview-effect" data-effect="fadeup">
-								<img src="../SX/images/newsdemo4.jpg" width="100%" />
-								<p>life week<br />jan  2014</p>
-							</div>
-							<div class="prolistitem pressitem intoview-effect" data-effect="fadeup">
-								<img src="../SX/images/newsdemo4.jpg" width="100%" />
-								<p>life week<br />jan  2014</p>
-							</div>
-							<div class="prolistitem pressitem intoview-effect" data-effect="fadeup">
-								<img src="../SX/images/newsdemo4.jpg" width="100%" />
-								<p>life week<br />jan  2014</p>
-							</div>
-							<div class="prolistitem pressitem intoview-effect" data-effect="fadeup">
-								<img src="../SX/images/newsdemo4.jpg" width="100%" />
-								<p>life week<br />jan  2014</p>
-							</div>
-							<div class="prolistitem pressitem intoview-effect" data-effect="fadeup">
-								<img src="../SX/images/newsdemo4.jpg" width="100%" />
-								<p>life week<br />jan  2014</p>
-							</div>
-							<div class="prolistitem pressitem intoview-effect" data-effect="fadeup">
-								<img src="../SX/images/newsdemo4.jpg" width="100%" />
-								<p>life week<br />jan  2014</p>
-							</div>
-							<div class="prolistitem pressitem intoview-effect" data-effect="fadeup">
-								<img src="../SX/images/newsdemo4.jpg" width="100%" />
-								<p>life week<br />jan  2014</p>
-							</div>
-							<div class="prolistitem pressitem intoview-effect" data-effect="fadeup">
-								<img src="../SX/images/newsdemo4.jpg" width="100%" />
-								<p>life week<br />jan  2014</p>
-							</div>
+              <?php foreach(PressContentAR::model()->getList(10) as $press): ?>
+                <div class="prolistitem pressitem intoview-effect" data-effect="fadeup">
+                  <img src="../SX/images/newsdemo4.jpg" width="100%" />
+                  <p><?php echo $press->title?><br /><?php echo date("M Y", strtotime($press->publish_date))?></p>
+                </div>
+              <?php endforeach;?>
 						</div>
 					</div>
 					<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>

@@ -29,7 +29,7 @@
           <td><?php echo $item->weight?></td>
           <td><?php echo $item->cdate?></td>
           <td>
-            <a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => $type, "id" => $item->cid))?>"><?php echo Yii::t("strings", "Edit")?></a>
+            <a ng-click="preview(<?php echo $item->cid?>)" href="javascript:void()"><?php echo Yii::t("strings", "View")?></a>
             &nbsp;|&nbsp;
             <a ng-click='deleteConfirm(<?php echo $item->cid?>)' href="javascript:void()"><?php echo Yii::t("strings", "Delete")?></a>
           </td>
