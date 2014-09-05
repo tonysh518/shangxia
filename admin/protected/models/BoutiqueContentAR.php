@@ -12,7 +12,7 @@ class BoutiqueContentAR extends ContentAR {
         "paris" => Yii::t("strings", "Paris"),
         "beijing" => Yii::t("strings", "Beijing")
     );
-  } 
+  }
   
   public function getFields() {
     $this->hasContentField("location", array("type" => "select", "options" => self::getLocation()));

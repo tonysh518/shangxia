@@ -38,7 +38,7 @@
 					<!--  -->
 					<div class="hd_oter cs-clear">
 						<div class="hd_language">
-							<a href="#">中文</a>|<a href="#" class="on">EN</a>|<a href="#">FR</a>
+							<a href="javascript:void(0)" data-lang="zh_cn">中文</a>|<a href="javascript:void(0)" data-lang="en_us" class="on">EN</a>|<a href="javascript:void(0)" data-lang="fr">FR</a>
 						</div>
 						<a href="#" data-a="show-search-form" class="hd_search"></a>
 					</div>
@@ -53,7 +53,7 @@
 					<div class="nav-pop-inner">
 						<div class="nav-pop-nav">
               <?php foreach (ProductContentAR::getType() as $id => $name):  ?>
-              <p><a href="./type.php?id=<?php echo $id?>"><?php echo ucfirst($name)?> &gt;</a></p>
+              <p><a href="./product-type.php?id=<?php echo $id?>"><?php echo ucfirst($name)?> &gt;</a></p>
               <?php endforeach;?>
 						</div>
             <?php $collectiones = CollectionContentAR::model()->getList();?>
@@ -75,7 +75,9 @@
             <?php $first = TRUE;?>
             <?php foreach (BoutiqueContentAR::getLocation() as $key => $name): ?>
               <?php $boutique = BoutiqueContentAR::model()->loadByAddressKey($key);?>
-              <a class="nav-pop-item" <?php if ($first) echo 'style="margin-left: 12%;"'?> data-a="nav-link" href="./boutique.php?key=<?php echo urlencode($key)?>"><img src="<?php echo ($boutique->nav_image) ?>"/> <span><i><?php echo $name?></i></span></a>
+              <?php if ($boutique): ?>
+                <a class="nav-pop-item" <?php if ($first) echo 'style="margin-left: 12%;"'?> data-a="nav-link" href="./boutique.php?key=<?php echo urlencode($key)?>"><img src="<?php //echo ($boutique->nav_image) ?>"/> <span><i><?php echo $name?></i></span></a>
+              <?php endif;?>
             <?php $first = FALSE;?>
             <?php endforeach;?>
 						</div>

@@ -18,10 +18,31 @@ $scriptUrl = Yii::app()->getRequest()->getScriptUrl();
 $ret = Yii::app()->getRequest()->getBaseUrl();
 Yii::app()->getRequest()->setBaseUrl("/admin");
 
+global $language;
+// 获取语言
+$cookies = Yii::app()->request->cookies;
+$lang = $cookies["sx-lang"];
+if ($lang) {
+  Yii::app()->language = (string)$lang;
+}
+else {
+    if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
+      $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+      if ($lang == "zh") {
+        Yii::app()->language = "zh_cn";
+      }
+      else {
+        Yii::app()->language = "en_us";
+      }
+    }
+}
 Yii::app()->language = "zh_cn";
 
 if (Yii::app()->language == "zh_cn") {
   $language = "cn";
+}
+else if (Yii::app()->language == "fr") {
+  $language = "fr";
 }
 else {
   $language = "en";
