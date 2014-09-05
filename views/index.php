@@ -15,21 +15,21 @@ THAT PROMISES A UNIQUE ENCOUNTER WITH THE HERITAGE OF CHINESE DESIGN AND CRAFTSM
 			<li class="piclistitem intoview-effect" data-effect="fadeup" data-editme-key="home_middle_slide_one">
         		<a href="">
 					<img src="../SX/images/homepage01.jpg" width="100%" />
-					<p>shang xia is now opening its maison in shanghai</p>
+					<p>shang xia is now opening <br/> its maison in shanghai</p>
 				</a>
 			</li>
 			<li class="piclistitem intoview-effect" data-effect="fadeup" data-editme-key="home_middle_slide_two">
         <?php editme("home_middle_slide_two" ,array("title", "link_to"), array("image"))?>
         		<a href="">
-					<img src="../SX/images/homepage01.jpg" width="100%" />
-					<p>shang xia is now opening </p>
+					<img src="../SX/images/homepage02.jpg" width="100%" />
+					<p>THE FIRST SHANG XIA BAG</p>
 				</a>
 			</li>
 			<li class="piclistitem intoview-effect marginR0" data-effect="fadeup" data-editme-key="home_middle_slide_third">
         <?php editme("home_middle_slide_third" ,array("title", "link_to"), array("image"))?>
         		<a href="">
-					<img src="../SX/images/homepage01.jpg" width="100%" />
-					<p>shang xia is now opening </p>
+					<img src="../SX/images/homepage03.jpg" width="100%" />
+					<p>GIFT CORNER</p>
 				</a>
 			</li>
 		</ul>
@@ -39,39 +39,24 @@ THAT PROMISES A UNIQUE ENCOUNTER WITH THE HERITAGE OF CHINESE DESIGN AND CRAFTSM
 		<div class="collarrows collarrowsprev home-collarrowsprev" data-a="home-collarrowsprev"></div>
 		<div class="slide" id="homepage-video-slide" data-auto="false">
 			<ul class="slidebox cs-clear">
-				<li href="#" class="slideitem">
+				<li href="#" class="slideitem" data-video="../SX/video/small">
 					<img src="../SX/images/homepage_demo2.jpg" width="100%" />
-					<div class="slidetip">
-						<span class="slidetip2-tit">chinese craftmanship</span> <br>
-						<span class="slidetip2-index">1/4</span> <br>
-						<a href="#" title="" data-video="../SX/video/small" data-a="homepage-watch-video" class="btn btn-white transition-wrap"><i class="transition">Watch video<br/><br/>Watch video</i></a>
-					</div>
 				</li>
-				<li href="#" class="slideitem">
+				<li href="#" class="slideitem" data-video="../SX/video/small">
 					<img src="../SX/images/homepage_demo2.jpg" width="100%" />
-					<div class="slidetip">
-						<span class="slidetip2-tit">chinese craftmanship</span> <br>
-						<span class="slidetip2-index">2/4</span> <br>
-						<a href="#" title="" data-video="../SX/video/small" data-a="homepage-watch-video" class="btn btn-white transition-wrap"><i class="transition">Watch video<br/><br/>Watch video</i></a>
-					</div>
 				</li>
-				<li href="#" class="slideitem">
+				<li href="#" class="slideitem" data-video="../SX/video/small">
 					<img src="../SX/images/homepage_demo2.jpg" width="100%" />
-					<div class="slidetip">
-						<span class="slidetip2-tit">chinese craftmanship</span> <br>
-						<span class="slidetip2-index">3/4</span> <br>
-						<a href="#" title="" data-video="../SX/video/small" data-a="homepage-watch-video" class="btn btn-white transition-wrap"><i class="transition">Watch video<br/><br/>Watch video</i></a>
-					</div>
 				</li>
-				<li href="#" class="slideitem">
+				<li href="#" class="slideitem" data-video="../SX/video/small">
 					<img src="../SX/images/homepage_demo2.jpg" width="100%" />
-					<div class="slidetip">
-						<span class="slidetip2-tit">chinese craftmanship</span> <br>
-						<span class="slidetip2-index">4/4</span> <br>
-						<a href="#" title="" data-video="../SX/video/small" data-a="homepage-watch-video" class="btn btn-white transition-wrap"><i class="transition">Watch video<br/><br/>Watch video</i></a>
-					</div>
 				</li>
 			</ul>
+			<div class="slidetip intoview-effect" data-effect="fadeup">
+				<span class="slidetip2-tit">chinese craftmanship</span> <br>
+				<span class="slidetip2-index">1/4</span> <br>
+				<a href="#" title="" data-a="homepage-watch-video" class="btn btn-white transition-wrap"><i class="transition">Watch video<br/><br/>Watch video</i></a>
+			</div>
 			<ul class="slidetab cs-clear">
 				<li class="on"></li>
 				<li></li>
@@ -83,6 +68,6 @@ THAT PROMISES A UNIQUE ENCOUNTER WITH THE HERITAGE OF CHINESE DESIGN AND CRAFTSM
 		<div class="collarrows collarrowsnext home-collarrowsnext" data-a="home-collarrowsnext"></div>
 	</div>
 	<!-- barbg -->
-	<div class="barbg intoview-effect" data-effect="fadeup"></div>	
+	<!-- <div class="barbg intoview-effect" data-effect="fadeup"></div>	 -->
 
 <?php include_once 'common/footer.php';?>

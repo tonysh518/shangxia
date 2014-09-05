@@ -1,12 +1,14 @@
 		<!-- footer -->
 		<div class="footer">		
 			<!-- location -->
-			<div class="location intoview-effect" data-effect="fadeup">
-				<div class="range">
-					<p class="rangetxt">In addition to the range of homeware and accessories</p>
-					<a href="#" title="" class="rangebtn transition-wrap"><span class="transition">Enter the gift corner<br/><br/>Enter the gift corner</span></a>
-				</div>			
-			</div>
+			<?php
+			// <div class="location intoview-effect" data-effect="fadeup">
+			// 	<div class="range">
+			// 		<p class="rangetxt">In addition to the range of homeware and accessories</p>
+			// 		<a href="#" title="" class="rangebtn transition-wrap"><span class="transition">Enter the gift corner<br/><br/>Enter the gift corner</span></a>
+			// 	</div>			
+			// </div>
+			?>
 			<!-- store -->
 			<div class="section store cs-clear intoview-effect" data-effect="fadeup">
 				<div class="storechoose">
@@ -62,11 +64,13 @@
 					<h2>CONTACT</h2>
 					<a href="#" class="ft_wx">weixin</a>
 					<a href="#" class="ft_wb">weibo</a>
+					<br>
+					<a href="" style="width: auto;line-height: initial;height: auto;margin-top: 48px;">subscribe to shang xia newsletter</a>
 				</div>
 			</div>
 			<!-- copyright -->
 			<div class="copyright">
-				<p>ICP LICENCE 12345678 - PRIVACY POLICY LEGAL INFORMATION - NEWSLETTER</p>
+				<p>ICP LICENCE 12345678 - PRIVACY POLICY LEGAL INFORMATION - <a href="#">NEWSLETTER</a></p>
 			</div>
 		</div>
 		<!--  -->

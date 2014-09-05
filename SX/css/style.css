@@ -52,7 +52,7 @@ ul{list-style:none;}
 table{border-collapse:collapse;border-spacing:0;}
 form{margin: 0;padding: 0;}
 sup{font-size: 0.5em;}
-* {
+body {
     outline: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -68,8 +68,8 @@ a{text-decoration:none;outline: none;color:inherit;}
 .cs-clear{+zoom:1;}
 .cs-clear:before,
 .cs-clear:after{clear:both;content:".";font-size:0;display:block;height:0;overflow:hidden;visibility:hidden;}
-.btn{font-family: 'Garamond';font-size: 18px;font-style: italic;border: #000 solid 1px;display: block;margin: 20px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px;}
-.btn{font-size: 18px;font-style: italic;border: #000 solid 1px;display: block;margin: 20px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px;}
+.btn{font-family: 'Garamond';font-size: 18px;border: #000 solid 1px;display: block;margin: 20px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px;}
+.btn{font-size: 18px;border: #000 solid 1px;display: block;margin: 20px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px;}
 .btn-white{border-color: white;color: white!important;}
 
 /* Commonly Used
@@ -95,7 +95,8 @@ a{text-decoration:none;outline: none;color:inherit;}
 .section{width: 80%;margin: 0 auto;}
 
 /*slide*/
-.slide{position: relative;overflow: hidden;}
+.slide-wrap{margin-bottom: 130px;}
+.slide{position: relative;overflow: hidden;box-shadow: 0px 50px 50px #eee;}
 .slidebox{width: 400%}
 .slideitem{float: left;width:25%; position: relative;}
 .slidetab{position: absolute;left:50%;bottom:10%;margin-left:-52px;}
@@ -111,11 +112,11 @@ a{text-decoration:none;outline: none;color:inherit;}
 /*intro*/
 .intro{padding:20px 0 100px;font-family: 'Gotham Book';}
 .introtxt{font-size: 30px;text-align: center;text-transform : uppercase;line-height: 38px;color:#4b3700;}
-.introbtn{font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 50px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px}
+.introbtn{font-size: 18px;border:#000 solid 1px;display: block;margin: 50px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px}
 
 /*piclist*/
-.piclist{padding: 0 0 130px;}
-.piclistitem{float: left;width: 32.53%;min-height:300px; margin-right:0.8%;font-size: 18px;text-transform : uppercase;text-align: center;font-family: 'Gotham Medium';}
+.piclist{padding: 0 0 80px;}
+.piclistitem{float: left;width: 32.53%;min-height:300px; margin-right:0.8%;font-size: 18px;text-transform : uppercase;text-align: center;font-family: 'Gotham Medium';color: #4b3700;}
 .piclistitem img{display: block;margin: 0 0 20px}
 .piclistitem img:hover{opacity: 0.9;}
 
@@ -136,14 +137,14 @@ a{text-decoration:none;outline: none;color:inherit;}
 .storechooselist{width:60%;margin: 40px auto 0}
 .storechooselist li{float: left;width: 50%;font-family: Garamond;}
 .storechooselist a{font-size: 18px;border:#423608 solid 1px;display: block;margin: 0 auto;text-align: center;height: 62px;line-height: 62px;width: 90%}
-.storemap{float: left;width: 50%;height: 400px;position: relative;}
+.storemap{float: left;width: 50%;height: 400px;position: relative;padding-right: 80px;margin-right: -80px;}
 .storemap-wrap{position: absolute;top:0;left:0 ;width: 100%;height: 100%;}
 
 /*sitelinks*/
 .sitelinks{text-transform : uppercase;padding:0 0 45px;}
 .sitelinkitem{float: left;width:20%;}
 .sitelinkitemS{width: 15%}
-.sitelinkitemXS{width: 10%}
+.sitelinkitemXS{width: 20%;margin-right: -10%;}
 .sitelinkitem h2{font-size: 18px;padding:0 0 10px;font-family: "Gotham Book";font-weight: bold;}
 .sitelinkitem a{display: block;line-height: 32px;font-family: 'Gotham Light';}
 .sitelinkitemXS a{float: left;width: 27px;height: 22px;margin-right: 10px;overflow: hidden;line-height: 500em}
@@ -158,7 +159,7 @@ a{text-decoration:none;outline: none;color:inherit;}
 .detail{padding:50px 0 0;text-align: center;}
 .detailcon{float: left;width: 68%;padding:0 0 35px;font-size: 18px;font-family: "Gotham Book";}
 .detail h2{font-size:30px;padding:0 0 20px;text-transform : uppercase;line-height: 40px;font-family: "Gotham Book";color:#4b3700;}
-.detail p{font-size: 18px;font-style: italic;font-family: Garamond;}
+.detail p{font-size: 18px;font-family: Garamond;}
 .detail .arrows{height:180px;float: left;width: 16%;cursor: pointer;}
 .detail .arrows2{height: 44px;}
 .detail .arrows3{height: 80px;}
@@ -182,7 +183,7 @@ a{text-decoration:none;outline: none;color:inherit;}
 .knowhowR{float: right}
 .knowhowintro{width: 28%;font-size:18px;text-align: center;padding-top:150px;font-family: Garamond;}
 .knowhowintro2{width: 28%;font-size:18px;text-align: center;background: #f9f4f4}
-.knowhowintro2 a{font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 100px;height: 42px;line-height: 42px;font-family: Garamond;}
+.knowhowintro2 a{font-size: 18px;border:#000 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 100px;height: 42px;line-height: 42px;font-family: Garamond;}
 .knowhowpic{width: 70%;}
 
 /*products*/
@@ -227,8 +228,8 @@ color: #4b3700;}
 /*newsnvents*/
 .newsnvents{text-align: center;font-size: 18px;}
 .newsnvents h3{font-size: 30px;text-transform: uppercase;padding: 30px 0;color:#423608;}
-.newsnvents p{font-style: italic;padding: 20px 0 30px;}
-/*.newsnvents a{font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px}*/
+.newsnvents p{padding: 20px 0 30px;}
+/*.newsnvents a{font-size: 18px;border:#000 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px}*/
 .newsnvents a.more{text-decoration: underline;}
 
 /*press*/
@@ -254,7 +255,8 @@ color: #4b3700;}
 
 /*contactpic*/
 .contactpic{padding: 40px 0}
-.contactintro h3{font-weight: bold;text-transform: uppercase;padding:0 0 18px;font-family: "Gotham Book";color:#4b3700;}
+.contactintro{font-family: "Gotham Book";}
+.contactintro h3{font-weight: bold;text-transform: uppercase;padding:0 0 18px;color:#4b3700;}
 .contactintro p{padding-bottom: 10px;}
 
 /*contactfrom*/
@@ -263,7 +265,7 @@ color: #4b3700;}
 .conformbox{width: 62%;margin: 0 auto;text-align: center;min-width: 620px;}
 .conformbox input{height: 42px;line-height: 42px;}
 .conformbox input,
-.conformbox textarea{display: block;width: 100%;border: #4b3700 solid 1px}
+.conformbox textarea{display: block;width: 100%;border: #4b3700 solid 1px;font-family: "gotham medium";font-size: 20px;}
 .conformbox .upload{width: 30px;height: 30px;background: url(../images/upload.png) no-repeat;position: absolute;bottom: 1px;right: -5px;cursor: pointer;overflow: hidden;}
 .conformbox .upload input{opacity: 0;filter:alpha(opacity=0);height: 100%;width: 100%;}
 .conformtit{font-size: 18px;line-height: 40px;font-family:"gotham medium";color: #4b3700;}
@@ -289,7 +291,7 @@ color: #4b3700;}
 /*colllisticon*/
 .detail .colllisticon{background: url('../images/collicon.png') no-repeat top center;padding:70px 0 30px}
 .colllistbox p{height: 60px;}
-.colllistbox a{text-transform:none;font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 250px;height: 60px;line-height: 60px}
+.colllistbox a{text-transform:none;font-size: 18px;border:#000 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 250px;height: 60px;line-height: 60px}
 .colllistbox .piclistitem{margin-bottom: 90px;}
 .colllistbox .piclist{padding: 0}
 
@@ -361,19 +363,19 @@ color: #4b3700;}
 .jobstit h2{width: 180px;margin-left: -90px}
 .jobsitem{float: left;width: 32.8%;margin-right: 0.8%;font-size:18px;height: 300px}
 .jobsitem h3{font-size: 18px;font-weight: bold;height: 60px;text-transform: uppercase;font-family: 'Gotham Light';}
-.jobsitem p{font-family: 'Garamond';font-style: italic;height: 80px}
+.jobsitem p{font-family: 'Garamond';height: 80px}
 .jobsitem a{font-size: 18px;border:#000 solid 1px;display: block;margin: 12px 0;text-align: center;width: 250px;height: 62px;line-height: 62px;max-width: 80%;font-family: Garamond;}
 
 /*press*/
 .presscom .pressitem{margin:40px 0}
-.pressbtn{font-size: 18px;font-style: italic;border:#000 solid 1px;display: block;margin:0 auto 50px;text-align: center;width: 250px;height: 62px;line-height: 62px;max-width: 80%;font-family: Garamond;}
+.pressbtn{font-size: 18px;border:#000 solid 1px;display: block;margin:0 auto 50px;text-align: center;width: 250px;height: 62px;line-height: 62px;max-width: 80%;font-family: Garamond;}
 
 /*coll_product*/
 .coll_product .arrows{height: 280px}
 .coll_iconbg{background: url('../images/collicon.png') no-repeat top center;height: 50px;margin-bottom: 50px}
 .coll_video{margin-bottom: 50px}
 .coll_video h2{width: 540px;margin-left: -270px}
-.coll_videocom{font-size: 18px;font-style: italic;text-align: center;}
+.coll_videocom{font-size: 18px;text-align: center;}
 .coll_videobox{margin: 50px auto}
 
 /* press */
@@ -464,4 +466,16 @@ body .vjs-default-skin .vjs-big-play-button:focus{box-shadow: none;}
   text-transform: capitalize;
   font-style: normal;
 }
+/* baidu */
+#zoomer,.anchorBL{display: none;}
+
+
+
+
+
+
+
+
+
+
 

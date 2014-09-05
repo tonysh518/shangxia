@@ -48,12 +48,6 @@
 				</div>
         <?php $newsList = loadNewsWithYearGroup(TRUE);?>
 				<div class="productscom intoview-effect slide" data-effect="fadeup">
-					<ul class="newsoldertime slidetab">
-            <?php $years = array_keys($newsList);?>
-            <?php foreach ($years as $index => $year): ?>
-              <li class="<?php if($index == 0) echo "on"?>"><a href="#"><?php echo $year?></a></li>
-            <?php endforeach;?>
-					</ul>
 					<!--  -->
 					<ul class="slidebox">
             <?php foreach($newsList as $year => $newsYear): ?>

@@ -678,14 +678,14 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     "featureType": "building",
                     "elementType": "all",
                     "stylers": {
-                              "color": "#8c8678"
+                              "color": "#9e927a"
                     }
           },
           {
                     "featureType": "administrative",
                     "elementType": "labels.text.fill",
                     "stylers": {
-                              "color": "#8c8678"
+                              "color": "#9e927a"
                     }
           },
           {
@@ -700,7 +700,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     "featureType": "road",
                     "elementType": "labels.text.fill",
                     "stylers": {
-                              "color": "#9d988b"
+                              "color": "#9e927a"
                     }
           },
           {
@@ -937,20 +937,22 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
     LP.action('homepage-watch-video' , function(){
         var $dom = $(this);
-        var $li = $dom.closest('li');
+        var $tip = $dom.closest('.slidetip');
+        
+        var index = $tip.next().find('.on').index();
+        var $li = $tip.prev().children().eq( index );
         var stopHtml = 'Watch video<br><br>Watch video';
         var playHtml = 'Pause video<br><br>Pause video';
 
         if( $li.find('.video-wrap').length ){
-            var obj = $dom.closest('li').data('video-object');
+            var obj = $li.data('video-object');
             var isPaused = obj.paused();
             obj[ isPaused ? 'play' : 'pause' ]();
 
             $dom.find('i').html( isPaused ? playHtml : stopHtml );
         } else {
-            $li.siblings().find('[data-a="homepage-watch-video"] i').html( stopHtml );
             disposeVideo();
-            var video = $dom.data('video');
+            var video = $li.data('video');
             renderVideo( $li , video , $li.find('img').attr('src') , {autoplay: true} );
             $dom.find('i').html( playHtml );
         }
