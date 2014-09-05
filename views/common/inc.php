@@ -259,3 +259,46 @@ function loadSimilarProducts($product) {
 function loadJob() {
   return JobContentAR::model()->getList();
 }
+
+// 搜索关键字
+function searchWithKeyword($keyword) {
+   if ($keyword) {
+     $types = array("collection", "craft");
+     global $language;
+     $query = new CDbCriteria();
+     $query->addInCondition("type", $types);
+     $query->addCondition("language=:language");
+     $query->params[":language"] = $language;
+     
+     $query_2 = clone $query;
+     // 首先搜索标题
+     $query->addSearchCondition("title", '%'.mysql_escape_string($keyword).'%', FALSE, "AND", "LIKE BINARY");
+     
+     $res = ContentAR::model()->findAll($query, array(), FALSE);
+     $results = array();
+     foreach ($res as $content) {
+       $results[$content->type][] = $content->cid;
+     }
+     
+     // 再搜索内容
+     $query_2->addSearchCondition("body", '%'.mysql_escape_string($keyword).'%', FALSE, "AND", "LIKE BINARY");
+     $res = ContentAR::model()->findAll($query, array(), FALSE);
+     foreach ($res as $content) {
+       $results[$content->type][] = $content->cid;
+     }
+     
+     $rets = array();
+     foreach ($results as $type => $cids) {
+       $class = ucfirst($type)."ContentAR";
+       if (!class_exists($class)) {
+         continue;
+       }
+       $obj = new $class();
+       $query = new CDbCriteria();
+       $query->addInCondition("cid", $cids);
+       $rets += $obj->findAll($query);
+     }
+     
+     return $rets;
+   }
+}

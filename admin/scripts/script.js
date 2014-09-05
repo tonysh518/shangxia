@@ -253,12 +253,35 @@
       $scope.cancel = function () {
         $modalInstance.dismiss('cancel');
       };
+      
+      $.ajax({
+        url: window.baseurl + "/api/content",
+        data: {cid: cid},
+        type: "GET"
+      }).done(function (res) {
+        $scope.title = res["data"]["title"];
+        $scope.body = res["data"]["body"];
+        $scope.email = res["data"]["email"];
+        $scope.$digest();
+      });
     };
     
     
     $scope.deleteConfirm = function (cid) {
       var modal = $modal.open({
         templateUrl: "myModalContent.html",
+        controller: ModalInstanceCtrl,
+        resolve: {
+          cid: function () {
+            return cid;
+          }
+        }
+      });
+    };
+    
+    $scope.preview = function (cid) {
+      var modal = $modal.open({
+        templateUrl: "previewcontent.html",
         controller: ModalInstanceCtrl,
         resolve: {
           cid: function () {

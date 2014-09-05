@@ -85,5 +85,11 @@ class PageController extends Controller {
     
     $this->render("content", array("model" => $model, "type" => $type, "list" => $list));
   }
+  
+  public function actionContact() {
+    $list = ContactContentAR::model()->getList();
+    $this->render("contact", array("model" => ContactContentAR::model(), "type" => "contact", "list" => $list));
+    
+  }
 }
 

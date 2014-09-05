@@ -2,7 +2,10 @@
 if( !isset( $_GET['type'] ) ){
 	$_GET['type'] = 'all';
 }
-include_once 'common/header.php';?>
+include_once 'common/header.php';
+
+$results = searchWithKeyword($_GET["s"]);
+?>
 		<!-- detail -->
 		<div class="section ">
 			<div class="detail cs-clear">
@@ -23,60 +26,14 @@ include_once 'common/header.php';?>
 				<!--  -->
 				<div class="">
 					<ul class="piclist cs-clear">
-						<li class="piclistitem searchpicitem">
-							<a href="">
-								<img src="../SX/images/colldemo6.jpg" width="100%" />
-								<p><span>bridge</span></p>
-							</a>
-						</li>
-						<li class="piclistitem searchpicitem">
-							<a href="">
-								<img src="../SX/images/colldemo6.jpg" width="100%" />
-								<p><span>bridge</span></p>
-							</a>
-						</li>
-						<li class="piclistitem searchpicitem marginR0">
-							<a href="">
-								<img src="../SX/images/colldemo6.jpg" width="100%" />
-								<p><span>bridge</span></p>
-							</a>
-						</li>
-						<li class="piclistitem searchpicitem">
-							<a href="">
-								<img src="../SX/images/colldemo6.jpg" width="100%" />
-								<p><span>bridge</span></p>
-							</a>
-						</li>
-						<li class="piclistitem searchpicitem">
-							<a href="">
-								<img src="../SX/images/colldemo6.jpg" width="100%" />
-								<p><span>bridge</span></p>
-							</a>
-						</li>
-						<li class="piclistitem searchpicitem marginR0">
-							<a href="">
-								<img src="../SX/images/colldemo6.jpg" width="100%" />
-								<p><span>bridge</span></p>
-							</a>
-						</li>
-						<li class="piclistitem searchpicitem">
-							<a href="">
-								<img src="../SX/images/colldemo6.jpg" width="100%" />
-								<p><span>bridge</span></p>
-							</a>
-						</li>
-						<li class="piclistitem searchpicitem">
-							<a href="">
-								<img src="../SX/images/colldemo6.jpg" width="100%" />
-								<p><span>bridge</span></p>
-							</a>
-						</li>
-						<li class="piclistitem searchpicitem marginR0">
-							<a href="">
-								<img src="../SX/images/colldemo6.jpg" width="100%" />
-								<p><span>bridge</span></p>
-							</a>
-						</li>
+            <?php foreach ($results as $item): ?>
+              <li class="piclistitem searchpicitem" data-type="<?php echo $item->type?>">
+                <a href="./<?php echo $item->type == "collection" ? "collections": "craft"?>.php?id=<?php echo $item->cid?>">
+                  <img src="<?php echo makeThumbnail($item->thumbnail_image)?>" width="100%" />
+                  <p><span><?php echo $item->title?></span></p>
+                </a>
+              </li>
+            <?php endforeach;?>
 					</ul>
 				</div>
 			</div>

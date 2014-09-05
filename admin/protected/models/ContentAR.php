@@ -80,17 +80,16 @@ class ContentAR extends CActiveRecord {
   }
   
   public function beforeSave() {
-    if ($this->isNewRecord) {
+    if ($this->getIsNewRecord()) {
       $this->cdate = date("Y-m-d H:i:s");
     }
     $this->mdate = date("Y-m-d H:i:s");
     
     global $language;
-    if ($this->isNewRecord) {
+    if ($this->getIsNewRecord()) {
       $this->language = $language;
       $this->status = self::STATUS_ENABLE;
     }
-    
     return TRUE;
   }
   
@@ -325,8 +324,8 @@ class ContentAR extends CActiveRecord {
     return $row;
   }
   
-  public function findAll($condition = '', $params = array()) {
-    if ($condition instanceof CDbCriteria) {
+  public function findAll($condition = '', $params = array(), $withType = TRUE) {
+    if ($condition instanceof CDbCriteria && $withType) {
       $condition->addCondition("type=:type");
       $condition->params[":type"] = $this->type;
     }

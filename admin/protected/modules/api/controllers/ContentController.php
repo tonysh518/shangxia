@@ -2,7 +2,6 @@
 
 class ContentController extends Controller {
   
-  
   public function actionDelete() {
     $request = Yii::app()->getRequest();
     
@@ -87,6 +86,63 @@ class ContentController extends Controller {
 //    }
     print "end time: ". time() . "<br />";
  }
-  
+ 
+ public function actionContact() {
+   $request = Yii::app()->getRequest();
+   
+   if (!$request->isPostRequest) {
+     return $this->responseError("invalid http verb", ErrorAR::ERROR_HTTP_VERB_ERROR);
+   }
+   
+   //name , email, message, 
+   $name = $request->getPost("name");
+   $email = $request->getPost("email");
+   $message = htmlspecialchars($request->getPost("message"));
+   
+   if (!$name || !$email) {
+     return $this->responseError("invild params error", ErrorAR::ERROR_MISSED_REQUIRED_PARAMS);
+   }
+   
+   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+     return $this->responseError("email error", ErrorAR::ERROR_MISSED_REQUIRED_PARAMS);
+   }
+   
+   $contactAr = ContactContentAR::model();
+   $contactAr->attributes = array(
+       "title" => $name,
+       "email" => $email,
+       "body" => $message
+   );
+   $contactAr->setIsNewRecord(true);
+   
+   if ($ret = $contactAr->save()) {
+     return $this->responseJSON(array(), "success");
+   }
+   else {
+     $error = $contactAr->getErrors();
+     return $this->responseError("post message error", ErrorAR::ERROR_UNKNOWN, $error);
+   }
+ }
+ 
+ public function actionNewsletter() {
+   
+ }
+ 
+ public function actionIndex() {
+   $request = Yii::app()->getRequest();
+   
+   $cid = $request->getParam("cid");
+   if (!$cid) {
+     return $this->responseError("invild params error", ErrorAR::ERROR_MISSED_REQUIRED_PARAMS);
+   }
+   
+   $contact = ContactContentAR::model()->findByPk($cid);
+   
+   if (!$contact) {
+     return $this->responseError("invild params error", ErrorAR::ERROR_MISSED_REQUIRED_PARAMS);
+   }
+   
+   $this->responseJSON($contact, "success");
+ }
 }
 

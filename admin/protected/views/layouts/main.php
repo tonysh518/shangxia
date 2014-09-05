@@ -135,6 +135,8 @@
       <li class="nav-header">
         <?php echo Yii::t("strings", "System")?>
       </li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/contact", array("type" => "contact"))?>"><?php echo Yii::t("strings", "Contact")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "contact"))?>"><?php echo Yii::t("strings", "Newsletter")?></a></li>
       <li><a href="<?php echo Yii::app()->createUrl("page/logout")?>"><?php echo Yii::t("strings", "Logout")?></a></li>
     </ul>
   </div>
@@ -175,6 +177,20 @@
       </div>
       <div class="modal-footer">
           <button class="btn btn-primary" ng-click="ok()"><?php echo Yii::t("strings" ,"Delete")?></button>
+          <button class="btn btn-warning" ng-click="cancel()"><?php echo Yii::t("strings" ,"Cancel")?></button>
+      </div>
+  </script>
+  
+  <script type="text/ng-template" id="previewcontent.html">
+      <div class="modal-header" ng-init="init()">
+          <h3 class="modal-title"><?php echo Yii::t("strings","Contact Box")?></h3>
+      </div>
+      <div class="modal-body">
+        <p><?php echo Yii::t("strings", "Name")?>: {{title}}</p>
+        <p><?php echo Yii::t("strings", "Email")?>: {{email}}</p>
+        <p><?php echo Yii::t("strings", "Body")?>: {{body}}</p>
+      </div>
+      <div class="modal-footer">
           <button class="btn btn-warning" ng-click="cancel()"><?php echo Yii::t("strings" ,"Cancel")?></button>
       </div>
   </script>
