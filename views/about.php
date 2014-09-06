@@ -46,10 +46,8 @@ include_once 'common/header.php';?>
 					<div class="productsinfor cs-clear">
 						<div class="proinfortxt aboutinfortxt">
 							<!-- <h2> </h2> -->
-							<p>
-                <?php echo Yii::t("strings", "about_brand_founter_desc")?>
-              </p>
-							<a href="#"><?php echo Yii::t("strings", "Read more")?></a>
+							<p><?php echo Yii::t("strings", "about_brand_founter_desc")?></p>
+							<a href="#" class="btn transition-wrap"><span class="transition"><?php echo Yii::t("strings", "Read more")?><br><br><?php echo Yii::t("strings", "Read more")?></span></a>
 						</div>
 						<div class="proinforpic">
 							<div class="slide">
@@ -110,7 +108,7 @@ include_once 'common/header.php';?>
               <?php foreach (loadJob() as $job): ?>
                 <div class="jobsitem">
                     <h3><?php echo $job->title?></h3>
-                    <a href="#" data-a="pop-jobs"><?php echo Yii::t("strings", "Read more")?></a>
+                    <a href="#" class="btn transition-wrap" data-a="pop-jobs"><span class="transition"><?php echo Yii::t("strings", "Read more")?><br><br><?php echo Yii::t("strings", "Read more")?></span></a>
                     <textarea style="display:none;">
                       <div class="popshade"></div>
                       <div class="pop pop1">
@@ -137,7 +135,7 @@ include_once 'common/header.php';?>
                               <?php echo $job->requirements_capabilities?>
                               </p>
                           </div>
-                          <a href="mailto:xxx@aaa.com" class="popaboutbtn">Apply</a>
+                          <a href="mailto:xxx@aaa.com" class="btn popaboutbtn transition-wrap" data-a="pop-jobs"><span class="transition">Apply<br><br>Apply</span></a>
                           <div class="popshare cs-clear">
                             <a href="#" class="popsharef"></a>
                             <a href="#" class="popsharet"></a>

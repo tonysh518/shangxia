@@ -48,15 +48,15 @@
 				</div>	
 				<!-- store -->
 				<div class="conformbox intoview-effect" data-effect="fadeup">
-					<form action="">
+					<form action="admin/api/content/newsletter">
 
 						<div class="conformtit">NAME</div>
-						<input type="text" />
+						<input type="text" name="name" />
 						<div class="conformtit">EMAIL</div>
-						<input type="text" />
+						<input type="text" name="email"/>
 						<div class="conformtit">MESSAGE</div>
 						<div style="position:relative;">
-							<textarea name="" id="" cols="30" rows="15"></textarea>
+							<textarea name="message" id="" cols="30" rows="15"></textarea>
 							<div class="upload">
 								<input type="file" name="appendix" />
 							</div>

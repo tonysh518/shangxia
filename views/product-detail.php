@@ -11,6 +11,7 @@ else {
   exit(header("Location: ./index.php"));
 }
 
+$pagename = 'product-detail';
 ?>
 <?php include_once 'common/header.php';?>
 		<!--  -->
@@ -28,9 +29,9 @@ else {
 				</div>
 				<div class="arrows detailnext" data-a="page-next"></div>
 			</div>
+			<a href="#" style="margin-top:0;margin-bottom:100px;" class="btn transition-wrap" data-a="newsletter"><span class="transition">I Want To Buy<br/><br/>I Want To Buy</span></a>
 		</div>
 		<!--  -->
-		<div class="coll_iconbg"></div>
 		<!-- video -->
 		<div class="slide">
 			<div class="slidebox cs-clear">
@@ -61,9 +62,12 @@ else {
 					<p>The Da Tian Di collection is based on traditional Ming furniture construction principles, <br />where each piece is deftly hand crafted by a master craftman</p>
 					<div class="coll_videobox" data-video-render="../SX/video/small"><img src="../SX/images/coll_videodemo.jpg" width="100%" /></div>
 				</div>
+				<a href="#" class="btn transition-wrap" ><span class="transition">View more<br/><br/>View more</span></a>
 			</div>
 		</div>
 		<!-- collpiclist -->
+
+
 	<div class="collpiclist cs-clear" style="position:relative">
 		<div class="collarrows collarrowsprev"></div>
 		<!--  -->
@@ -73,15 +77,20 @@ else {
 					<h2><?php echo Yii::t("strings", "similar products")?></h2>
 				</div>	
 				<!--  -->
-				<div class="">
-					<ul class="piclist cs-clear">
-            <?php foreach (loadSimilarProducts($product) as $index => $p): ?>
-              <li class="piclistitem collpicitem">
-                <a href="./product-detail.php?id=<?php echo $p->cid?>"><img <?php if ($index > 3) echo "data-nopreload"?> src="<?php echo makeThumbnail($p->thumbnail, array(600, 570))?>" width="100%" />
-                <p><span class="collicon"><?php echo $p->title?></span></p></a>
-              </li>
-            <?php endforeach;?>
-					</ul>
+				<div class="products-wrap js-horizontal-slide intoview-effect" data-effect="fadeup" data-num="3">
+					<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
+					<div class="slide-con">
+						<ul class="slide-con-inner piclist cs-clear">
+							<?php foreach (loadSimilarProducts($product) as $index => $p): ?>
+			                <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+			                  	<a href="./product-detail.php?id=<?php echo $p->cid?>"><img <?php if ($index > 3) echo "data-nopreload"?> src="<?php echo makeThumbnail($p->thumbnail, array(600, 570))?>" width="100%" />
+			                  		<p><span class="collicon"><?php echo $p->title?></span></p>
+			                	</a> 
+			                </li>
+            			    <?php endforeach;?>
+						</ul>
+					</div>
+					<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
 				</div>
 			</div>
 		</div>

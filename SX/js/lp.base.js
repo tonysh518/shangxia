@@ -146,30 +146,29 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     } else {
                         $header.find('.head-fixed').css('position' , 'static');
                     }
+                });
 
-                    // init home page slider mouse move event
-                    var isMoving = false;
-                    var moveTimer = null;
-                    $('#homepage-video-slide .slideitem').mousemove(function(){
-                        // judge is ithe video is playing
-                        var videoObject = $(this).data('video-object');
-                        clearTimeout( moveTimer );
-                        if( !videoObject || videoObject.paused() )  {
-                            return false;
-                        }
+                // init home page slider mouse move event
+                var isMoving = false;
+                var moveTimer = null;
+                $('#homepage-video-slide .slideitem').mousemove(function(){
+                    // judge is ithe video is playing
+                    var videoObject = $(this).data('video-object');
+                    clearTimeout( moveTimer );
+                    if( !videoObject || videoObject.paused() )  {
+                        return false;
+                    }
 
-                        var $tip = $(this).find('.slidetip');
+                    var $tip = $(this).find('.slidetip');
 
-                        console.log( isMoving );
-                        if( isMoving == false ){
-                            $tip.fadeIn();
-                            isMoving = true;
-                        }
-                        moveTimer = setTimeout(function(){
-                            isMoving = false;
-                            $tip.stop(true).fadeOut();
-                        } , 2000);
-                    });
+                    if( isMoving == false ){
+                        $tip.fadeIn();
+                        isMoving = true;
+                    }
+                    moveTimer = setTimeout(function(){
+                        isMoving = false;
+                        $tip.stop(true).fadeOut();
+                    } , 2000);
                 });
                 cb && cb();
             },
@@ -194,6 +193,30 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
                 $('.footer .store').hide();
                 console.log( $('.footer .store') );
+                cb && cb();
+            },
+            "product-detail": function( cb ){
+                var headHeight = $('.head').height();
+                var $slider = $('.slide');
+                var top = $slider.offset().top;
+                $(window).scroll(function(){
+                    var st = $(window).scrollTop();
+
+                    if( top - st < 150 ){
+                        $slider.find('.slidebox')
+                            .css({
+                                marginTop: ( st + 150 - top ) * 2 / 3,
+                                marginBottom: - ( st + 150 - top ) * 2 / 3
+                            });
+                    } else {
+                        $slider.find('.slidebox')
+                            .css({
+                                marginTop: 0,
+                                marginBottom: 0
+                            });
+                    }
+                });
+
                 cb && cb();
             }
             
@@ -344,30 +367,67 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 $('.js-horizontal-slide').each(function(){
                     var $dom = $(this);
                     var wrapWidth = $dom.width();
-                    var num = $dom.data('num') || 3;
+                    var num = 3;
                     var $items = $dom.find('.slide-con-inner').children();
 
-                    var $inner = $dom.find('.slide-con-inner').width( $items.length / num * 100 + '%' );
-                    var marginRight = 0.8;//parseInt( $items.css('margin-right') );
-                    $items.width( 1 / $items.length * 100 - marginRight + '%' );
+                    // 计算每一个item的宽度 
+                    var $imgs = $items.find('img');
+                    var totalItems = 0;
+                    $imgs.each(function(){
+                        totalItems += Math.round( $(this).data('width') / $(this).data('height') ) || 1;
+                    });
 
-                    var index = $dom.data('index') || 0;
+                    var $inner = $dom.find('.slide-con-inner').width( totalItems / num * 100 + '%' );
+                    var marginRight = 0.8;//parseInt( $items.css('margin-right') );
+                    var counted = 0;
+                    var prev = 0;
+                    $items.each(function(){
+                        var $this = $(this);
+                        var $img = $this.find('img');
+                        var indent = Math.round( $img.data('width') / $img.data('height') ) || 1;
+                        counted += indent;
+                        if( counted % 3 == 0 ){
+                            if( indent == 1 && prev == 1 ){ // 111
+                                // 第一个margin-left: 0.4%
+                                // 最后一个margin-right: 0.4 %
+                                $this
+                                .css('marginRight' , '0.4%')
+                                .prev()
+                                .prev()
+                                .css('marginLeft' , '0.4%' );
+                            } else if( indent == 3 ) { // 1
+                                $this.css({
+                                    marginLeft: '0.4%',
+                                    marginRight: '0.4%'
+                                });
+                            } else { // 21 || 12
+                                $this.css('marginRight' , '0.4%')
+                                    .prev()
+                                    .css('marginLeft' , '0.4%');
+                            }
+                        }
+
+                        $this.width( indent /  totalItems * 100 - marginRight + '%' );
+                        prev = indent;
+                    });
+
                     var total = $items.length;
                     $dom.find('.collarrowsprev').click(function(){
-                        if( index == 0 ) return false;
-                        index -= num;
+                        var ml = parseInt( $inner.css('marginLeft') ) || 0;
+                        if( ml == 0 ) return false;
                         $inner.animate({
-                            marginLeft: - index / num * 100 + '%'
+                            marginLeft: -Math.round( Math.abs( ml ) / $inner.parent().width() - 1 ) * 100 + '%'
                         } , 500);
                         $(window).trigger('scroll');
                     })
                     .end()
                     .find('.collarrowsnext')
                     .click(function(){
-                        if( index + num >= total ) return false;
-                        index += num;
+                        var ml = parseInt( $inner.css('marginLeft') ) || 0;
+                        var outerWidth = $inner.parent().width();
+                        if( Math.abs( ml ) >= $inner.width() - outerWidth ) return false;
                         $inner.animate({
-                            marginLeft: - index / num * 100 + '%'
+                            marginLeft: -Math.round( Math.abs( ml ) / outerWidth + 1 ) * 100 + '%'
                         } , 500);
                         $(window).trigger('scroll');
                     });
@@ -618,6 +678,66 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         });
     }
 
+    /* init hover effect */
+    function initHoverMoveEffect( $dom ){
+        var $bg = $dom.find('.bg');
+        $dom.css('position','relative');
+
+        var width = $dom.width();
+        var height = $dom.height();
+        $dom.hover(function( ev ){
+
+            var off = $dom.offset();
+            var topOff = ev.pageY - off.top;
+            var leftOff = ev.pageX - off.left;
+            var bottomOff = height + off.top - ev.pageY;
+            var rightOff = width + off.left - ev.pageX;
+
+            var min = Math.min( topOff , leftOff , bottomOff , rightOff );
+            var ori = null;
+            var tar = null;
+            if( min == topOff ){ // from top 
+                ori = { left: 0,top: '-100%'};
+                tar = { top: 0 };
+            } else if( min == leftOff ){
+                ori = { left: '-100%',top: 0};
+                tar = { left: 0 };
+            } else if( min == bottomOff ){
+                ori = { left: 0,top: '100%'};
+                tar = { top: 0 };
+            } else {
+                ori = { left: '100%',top: 0};
+                tar = { left: 0 };
+            }
+            $bg.css( ori ).stop( true )
+                .animate( tar , 500 );
+        } , function( ev ){
+            var off = $dom.offset();
+            var topOff = ev.pageY - off.top;
+            var leftOff = ev.pageX - off.left;
+            var bottomOff = height + off.top - ev.pageY;
+            var rightOff = width + off.left - ev.pageX;
+
+            var min = Math.min( topOff , leftOff , bottomOff , rightOff );
+            var ori = null;
+            var tar = null;
+            if( min == topOff ){ // from top 
+                ori = { left: 0,top: '-100%'};
+                tar = { top: 0 };
+            } else if( min == leftOff ){
+                ori = { left: '-100%',top: 0};
+                tar = { left: 0 };
+            } else if( min == bottomOff ){
+                ori = { left: 0,top: '100%'};
+                tar = { top: 0 };
+            } else {
+                ori = { left: '100%',top: 0};
+                tar = { left: 0 };
+            }
+            $bg.stop( true )
+                .animate( ori , 500 );
+        });
+    }
 
     var mapHelper = (function(){
         return {
@@ -956,6 +1076,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             renderVideo( $li , video , $li.find('img').attr('src') , {autoplay: true} );
             $dom.find('i').html( playHtml );
         }
+
         return false;
     });
 
@@ -1009,14 +1130,42 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     });
 
     LP.action('home-collarrowsprev' , function(){
-        var $prev = $(this).parent().find('.slidetab li.on').prev();
-        $prev.length ? $prev.trigger('click') : $(this).parent().find('.slidetab li').lase().trigger('click');
+        var $slider = $(this).parent();
+        var $li = $slider.find('.slidetab li.on');
+        var $prev = $li.prev();
+        $prev.length ? $prev.trigger('click') : $slider.find('.slidetab li').last().trigger('click');
+        // change the tit
+        var index = $li.index() - 1;
+        if( !$prev.length ){
+            index = $slider.find('.slidebox li').length - 1;
+        }
+        var $item = $slider.find('.slidebox li').eq( index );
+
+        $slider.find('.slidetip2-tit').html( $item.data('tit') )
+            .end()
+            .find('.slidetip2-index')
+            .html( ( index + 1 ) + '/' + $slider.find(".slidebox").children().length );
+
         return false;
     });
 
     LP.action('home-collarrowsnext' , function(){
+        var $slider = $(this).parent();
+        var $li = $slider.find('.slidetab li.on');
         var $next = $(this).parent().find('.slidetab li.on').next();
         $next.length ? $next.trigger('click') : $(this).parent().find('.slidetab li').first().trigger('click');
+
+        // change the tit
+        var index = $li.index() + 1;
+        if( !$next.length ){
+            index = 0;
+        }
+        var $item = $slider.find('.slidebox li').eq( index );
+
+        $slider.find('.slidetip2-tit').html( $item.data('tit') )
+            .end()
+            .find('.slidetip2-index')
+            .html( ( index + 1 ) + '/' + $slider.find(".slidebox").children().length );
         return false;
     });
 

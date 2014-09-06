@@ -27,6 +27,7 @@ $has_slider = array('apparel','homeware');
 				<div class="arrows arrows3 detailnext" data-a="page-next"></div>
 			</div>
 		</div>
+
 		<!-- slide -->
 		<div class="slide intoview-effect" data-effect="fadeup">
 			<div class="slidebox cs-clear">
