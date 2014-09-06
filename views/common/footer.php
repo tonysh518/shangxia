@@ -11,16 +11,32 @@
 			?>
 			<!-- store -->
 			<div class="section store cs-clear intoview-effect" data-effect="fadeup">
+        <?php 
+          $city = getCity();
+          $store = BoutiqueContentAR::model()->loadByAddressKey($city);
+          // 如果没有找到，拿认为Shanghai 是默认的
+          if (!$store) {
+            $store = BoutiqueContentAR::model()->loadByAddressKey("shanghai");
+          }
+          $cities = array_diff(array_keys(BoutiqueContentAR::getLocation()), array($store->location));
+          
+        ?>
 				<div class="storechoose">
-					<h2>shanghai  store</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. Consectetur adipisicing elit, sed do eiusmod tempor incididunt, consectetur adipisicing elit, sed do eiusmod tempor incididunt, sed do eiusmod tempor incididunt, sed do eiusmod tempor incididunt ...</p>
+					<h2><?php echo $store->title?></h2>
+          <p><?php echo $store->body?></p>
 					<ul class="storechooselist cs-clear">
-						<li><a href="./boutique.php?type=paris" title="" class="transition-wrap"><span class="transition">Paris store<br/>Paris store</span></a></li>
-						<li><a href="./boutique.php?type=beijing" title="" class="transition-wrap"><span class="transition">Beijing store<br/>Beijing store</span></a></li>
+            <?php foreach ($cities as $city): ?>
+            <li><a href="./boutique.php?type=<?php echo $city?>" title="" class="transition-wrap">
+                <span class="transition"><?php echo Yii::t("strings", "{city} Store", array("{city}" => ucfirst($city)))?>
+                  <br/><?php echo Yii::t("strings", "{city} Store", array("{city}" => ucfirst($city)))?>
+                </span>
+              </a>
+            </li>
+            <?php endforeach;?>
 					</ul>
 				</div>
 				<div class="storemap" style="height:400px;position:relative;">
-					<div class="storemap-wrap" id="map" data-map="121.478988,31.227919" >
+					<div class="storemap-wrap" id="map" data-map="<?php echo $store->latlng?>" >
 					</div>
 				</div>
 				

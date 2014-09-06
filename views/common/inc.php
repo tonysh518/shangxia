@@ -36,6 +36,7 @@ else {
       }
     }
 }
+// 测试代码
 Yii::app()->language = "zh_cn";
 
 if (Yii::app()->language == "zh_cn") {
@@ -322,4 +323,11 @@ function searchWithKeyword($keyword) {
      
      return $rets;
    }
+}
+
+function getCity() {
+  $userIp = (isset($_SERVER["HTTP_VIA"])) ? $_SERVER["HTTP_X_FORWARDED_FOR"] : $_SERVER["REMOTE_ADDR"]; 
+  $city = Yii::app()->ip->toCity($userIp);
+  
+  return strtolower($city);
 }
