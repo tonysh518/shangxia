@@ -294,7 +294,7 @@ function searchWithKeyword($keyword) {
      
      $query_2 = clone $query;
      // 首先搜索标题
-     $query->addSearchCondition("title", '%'.mysql_real_escape_string($keyword).'%', FALSE, "AND", "LIKE BINARY");
+     $query->addSearchCondition("title", '%'.  addslashes($keyword).'%', FALSE, "AND", "LIKE BINARY");
      
      $res = ContentAR::model()->findAll($query, array(), FALSE);
      $results = array();
@@ -303,7 +303,7 @@ function searchWithKeyword($keyword) {
      }
      
      // 再搜索内容
-     $query_2->addSearchCondition("body", '%'.mysql_real_escape_string($keyword).'%', FALSE, "AND", "LIKE BINARY");
+     $query_2->addSearchCondition("body", '%'.  addslashes($keyword).'%', FALSE, "AND", "LIKE BINARY");
      $res = ContentAR::model()->findAll($query, array(), FALSE);
      foreach ($res as $content) {
        $results[$content->type][] = $content->cid;
