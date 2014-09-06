@@ -13,9 +13,9 @@
   </header>
     <table class="table table-striped">
       <thead>
-        <td><?php echo Yii::t("strings", "Title")?></td>
-        <td><?php echo Yii::t("strings", "Type")?></td>
-        <td><?php echo Yii::t("strings", "Body")?></td>
+        <td><?php echo Yii::t("strings", "Name")?></td>
+        <td><?php echo Yii::t("strings", "Phone")?></td>
+        <td><?php echo Yii::t("strings", "Email")?></td>
         <td><?php echo Yii::t("strings", "Date")?></td>
         <td><?php echo Yii::t("strings", "Actions")?></td>
       </thead>
@@ -23,8 +23,8 @@
         <?php foreach ($list as $item): ?>
         <tr>
           <td><?php echo $item->title?></td>
-          <td><?php echo ucfirst($type)?></td>
-          <td class="body"><?php echo strip_tags($item->body)?></td>
+          <td><?php echo $item->phone?></td>
+          <td><?php echo $item->email?></td>
           <td><?php echo $item->cdate?></td>
           <td>
             <a ng-click="preview(<?php echo $item->cid?>)" href="javascript:void()"><?php echo Yii::t("strings", "View")?></a>

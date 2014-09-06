@@ -136,7 +136,7 @@
         <?php echo Yii::t("strings", "System")?>
       </li>
       <li><a href="<?php echo Yii::app()->createUrl("page/contact", array("type" => "contact"))?>"><?php echo Yii::t("strings", "Contact")?></a></li>
-      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "contact"))?>"><?php echo Yii::t("strings", "Newsletter")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/newsletter", array("type" => "newsletter"))?>"><?php echo Yii::t("strings", "Newsletter")?></a></li>
       <li><a href="<?php echo Yii::app()->createUrl("page/logout")?>"><?php echo Yii::t("strings", "Logout")?></a></li>
     </ul>
   </div>

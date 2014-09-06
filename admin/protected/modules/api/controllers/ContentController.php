@@ -125,7 +125,40 @@ class ContentController extends Controller {
  }
  
  public function actionNewsletter() {
+   $request = Yii::app()->getRequest();
    
+   if (!$request->isPostRequest) {
+     return $this->responseError("invalid http verb", ErrorAR::ERROR_HTTP_VERB_ERROR);
+   }
+   
+   //name , email, message, 
+   $name = $request->getPost("name");
+   $email = $request->getPost("email");
+   $phone = $request->getPost("phone");
+   
+   if (!$name || !$email) {
+     return $this->responseError("invild params error", ErrorAR::ERROR_MISSED_REQUIRED_PARAMS);
+   }
+   
+   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+     return $this->responseError("email error", ErrorAR::ERROR_MISSED_REQUIRED_PARAMS);
+   }
+   
+   $newsletterAr = NewsletterContentAR::model();
+   $newsletterAr->attributes = array(
+       "title" => $name,
+       "phone" => $phone,
+       "email" => $email
+   );
+   $newsletterAr->setIsNewRecord(true);
+   
+   if ($ret = $newsletterAr->save()) {
+     return $this->responseJSON(array(), "success");
+   }
+   else {
+     $error = $newsletterAr->getErrors();
+     return $this->responseError("post message error", ErrorAR::ERROR_UNKNOWN, $error);
+   }
  }
  
  public function actionIndex() {
