@@ -1,7 +1,6 @@
 <?php  $homepage = 1; $pagename = 'home-page';?>
 <?php include_once 'common/header.php';?>
 
-	<div class="hover-effect" style="height:300px;width:300px;position:relative;"><div class="bg" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;background:red;"></div></div>
 	<!-- intro -->
 	<div class="section intoview-effect" data-effect="fadeup" data-editme-key="home_brand_story_summary">
     <?php editme("home_brand_story_summary")?>
