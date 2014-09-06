@@ -6,11 +6,11 @@
 		<div class="knowhowcom ">
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowL">Silk-like Bamboo Strands</div>
-				<div class="knowhowpic  knowhowR"><img src="../SX/photo/how-weaving1.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowR"><img src="/photo/how-weaving1.jpg" width="100%" /></div>
 			</div>
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowR">Collecting the Bamboo</div>
-				<div class="knowhowpic  knowhowL"><img src="../SX/photo/how-weaving2.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowL"><img src="/photo/how-weaving2.jpg" width="100%" /></div>
 			</div>
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro2  knowhowL">
@@ -38,19 +38,19 @@
 					</textarea>
 				</div>
 
-				<div class="knowhowpic  knowhowR"><img src="../SX/photo/how-weaving3.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowR"><img src="/photo/how-weaving3.jpg" width="100%" /></div>
 			</div>
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowR">Separating <br/>the Bamboo  </div>
-				<div class="knowhowpic  knowhowL"><img src="../SX/photo/how-weaving4.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowL"><img src="/photo/how-weaving4.jpg" width="100%" /></div>
 			</div>
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowL">Drying the Slice</div>
-				<div class="knowhowpic  knowhowR"><img src="../SX/photo/how-weaving5.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowR"><img src="/photo/how-weaving5.jpg" width="100%" /></div>
 			</div>
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowR">Separating Strands</div>
-				<div class="knowhowpic  knowhowL"><img src="../SX/photo/how-weaving6.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowL"><img src="/photo/how-weaving6.jpg" width="100%" /></div>
 			</div>
 		</div>
 	</div>

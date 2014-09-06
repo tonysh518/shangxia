@@ -6,11 +6,11 @@
 		<div class="knowhowcom ">
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowL">Gathering</div>
-				<div class="knowhowpic  knowhowR"><img src="../SX/photo/how-felt1.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowR"><img src="/photo/how-felt1.jpg" width="100%" /></div>
 			</div>
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowR">Selecting <br>the cashmere</div>
-				<div class="knowhowpic  knowhowL"><img src="../SX/photo/how-felt2.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowL"><img src="/photo/how-felt2.jpg" width="100%" /></div>
 			</div>
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro2  knowhowL">
@@ -35,19 +35,19 @@
 					</textarea>
 				</div>
 
-				<div class="knowhowpic  knowhowR"><img src="../SX/photo/how-felt3.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowR"><img src="/photo/how-felt3.jpg" width="100%" /></div>
 			</div>
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowR">Rolling the Felt </div>
-				<div class="knowhowpic  knowhowL"><img src="../SX/photo/how-felt4.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowL"><img src="/photo/how-felt4.jpg" width="100%" /></div>
 			</div>
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowL">Creating <br>Clothing</div>
-				<div class="knowhowpic  knowhowR"><img src="../SX/photo/how-felt5.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowR"><img src="/photo/how-felt5.jpg" width="100%" /></div>
 			</div>
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowR">Shrinking <br>the Clothing</div>
-				<div class="knowhowpic  knowhowL"><img src="../SX/photo/how-felt6.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowL"><img src="/photo/how-felt6.jpg" width="100%" /></div>
 			</div>
 		</div>
 	</div>

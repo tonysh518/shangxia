@@ -45,15 +45,15 @@
 
 
 						<li class="piclistitem collpicitem">
-							<img src="../SX/images/colldemo3.jpg" width="100%" />
+							<img src="/images/colldemo3.jpg" width="100%" />
 							<p><span>view</span></p>
 						</li>
 						<li class="piclistitem collpicitem">
-							<img src="../SX/images/colldemo3.jpg" width="100%" />
+							<img src="/images/colldemo3.jpg" width="100%" />
 							<p><span>view</span></p>
 						</li>
 						<li class="piclistitem collpicitem marginR0">
-							<img src="../SX/images/colldemo3.jpg" width="100%" />
+							<img src="/images/colldemo3.jpg" width="100%" />
 							<p><span>view</span></p>
 						</li>
 					</ul>

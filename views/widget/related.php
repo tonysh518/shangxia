@@ -15,10 +15,10 @@
 				<div class="proinforpic intoview-effect" data-effect="fadeup">
 					<div class="slide">
 						<div class="slidebox cs-clear">
-							<img class="slideitem" src="../SX/images/proinfopic.jpg" width="100%" />
-							<img class="slideitem" src="../SX/images/proinfopic.jpg" width="100%" />
-							<img class="slideitem" src="../SX/images/proinfopic.jpg" width="100%" />
-							<img class="slideitem" src="../SX/images/proinfopic.jpg" width="100%" />
+							<img class="slideitem" src="/images/proinfopic.jpg" width="100%" />
+							<img class="slideitem" src="/images/proinfopic.jpg" width="100%" />
+							<img class="slideitem" src="/images/proinfopic.jpg" width="100%" />
+							<img class="slideitem" src="/images/proinfopic.jpg" width="100%" />
 						</div>
 						<ul class="slidetab">
 							<li></li>
