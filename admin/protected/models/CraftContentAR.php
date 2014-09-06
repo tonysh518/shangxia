@@ -17,6 +17,9 @@ class CraftContentAR extends ContentAR {
   }
   
   public function getFields() {
+    $this->hasContentField("head_title");
+    $this->hasContentField("head_body", array("type" => "textarea"));
+    
     $options = array();
     foreach (ProductContentAR::model()->getList() as $product) {
       $options[$product->cid] = $product->title;

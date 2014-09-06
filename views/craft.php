@@ -34,8 +34,8 @@ include_once 'common/header.php';?>
 		<!-- detail -->
 		<div class="section ">
 			<div class="detail detailW6 cs-clear">
-					<h2 class="intoview-effect" data-effect="fadeup">Body and Soul Together<br />Seamless Clothing</h2>
-					<p class="intoview-effect" data-effect="fadeup">Felt making is an ancient technique invented by herdsman to make non-woven cloth. Herdsmen use felt to make their rugs, yurts, clothing and cooking utensils. As nomadic peoples used these skills used to make yurts, the same skills, combined with original innovative designs, are used to create seamless felted cashmere one-off and unique garments with no stitching.</p>
+					<h2 class="intoview-effect" data-effect="fadeup"><?php echo $craft->head_title?></h2>
+					<p class="intoview-effect" data-effect="fadeup"><?php echo $craft->head_body?></p>
 			</div>
 		</div>
 		<!-- know how -->

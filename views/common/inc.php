@@ -16,7 +16,7 @@ $app = Yii::createWebApplication($config);
 $scriptUrl = Yii::app()->getRequest()->getScriptUrl();
 
 $ret = Yii::app()->getRequest()->getBaseUrl();
-Yii::app()->getRequest()->setBaseUrl("/admin");
+Yii::app()->getRequest()->setBaseUrl("/shangxia/admin");
 
 global $language;
 // 获取语言
@@ -36,6 +36,7 @@ else {
       }
     }
 }
+// 测试代码
 Yii::app()->language = "zh_cn";
 
 if (Yii::app()->language == "zh_cn") {
@@ -293,7 +294,7 @@ function searchWithKeyword($keyword) {
      
      $query_2 = clone $query;
      // 首先搜索标题
-     $query->addSearchCondition("title", '%'.mysql_escape_string($keyword).'%', FALSE, "AND", "LIKE BINARY");
+     $query->addSearchCondition("title", '%'.  addslashes($keyword).'%', FALSE, "AND", "LIKE BINARY");
      
      $res = ContentAR::model()->findAll($query, array(), FALSE);
      $results = array();
@@ -302,7 +303,7 @@ function searchWithKeyword($keyword) {
      }
      
      // 再搜索内容
-     $query_2->addSearchCondition("body", '%'.mysql_escape_string($keyword).'%', FALSE, "AND", "LIKE BINARY");
+     $query_2->addSearchCondition("body", '%'.  addslashes($keyword).'%', FALSE, "AND", "LIKE BINARY");
      $res = ContentAR::model()->findAll($query, array(), FALSE);
      foreach ($res as $content) {
        $results[$content->type][] = $content->cid;
@@ -322,4 +323,11 @@ function searchWithKeyword($keyword) {
      
      return $rets;
    }
+}
+
+function getCity() {
+  $userIp = (isset($_SERVER["HTTP_VIA"])) ? $_SERVER["HTTP_X_FORWARDED_FOR"] : $_SERVER["REMOTE_ADDR"]; 
+  $city = Yii::app()->ip->toCity($userIp);
+  
+  return strtolower($city);
 }

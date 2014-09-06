@@ -91,5 +91,10 @@ class PageController extends Controller {
     $this->render("contact", array("model" => ContactContentAR::model(), "type" => "contact", "list" => $list));
     
   }
+  
+  public function actionNewsletter() {
+    $list = NewsletterContentAR::model()->getList();
+    $this->render("newsletter", array("model" => NewsletterContentAR::model(), "type" => "contact", "list" => $list));
+  }
 }
 

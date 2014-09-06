@@ -25,15 +25,15 @@
 			<div class="head-fixed" <?php if( isset($homepage) ){?> style="position:static" <?php } ?>>
 				<div class="head-inner cs-clear">
 					<ul class="nav nav1">
-						<li><a data-a="nav-pop" href="#" title="">COLLECTIONS</a><img class="nav-bg" src="../SX/images/nav-bg.jpg"/></li>
-						<li><a data-a="nav-pop" href="#" title="">CRAFTS</a><img class="nav-bg" src="../SX/images/nav-bg.jpg"/></li>
-						<li><a data-a="nav-pop" href="#" title="">BOUTIQUES</a><img class="nav-bg" src="../SX/images/nav-bg.jpg"/></li>
+						<li><a data-a="nav-pop" href="#" title=""><?php echo Yii::t("strings", "COLLECTIONS")?></a><img class="nav-bg" src="../SX/images/nav-bg.jpg"/></li>
+						<li><a data-a="nav-pop" href="#" title=""><?php echo Yii::t("strings", "CRAFTS")?></a><img class="nav-bg" src="../SX/images/nav-bg.jpg"/></li>
+						<li><a data-a="nav-pop" href="#" title=""><?php echo Yii::t("strings", "BOUTIQUES")?></a><img class="nav-bg" src="../SX/images/nav-bg.jpg"/></li>
 					</ul>
 					<h1 class="logo"><a data-a="nav-link" href="./index.php"></a></h1>
 					<ul class="nav nav2">
-						<li><a data-a="nav-link" href="./news.php" title="">NEWS</a><img class="nav-bg" src="../SX/images/nav-bg.jpg"/></li>
-						<li><a data-a="nav-link" href="./about.php" title="">ABOUT</a><img class="nav-bg" src="../SX/images/nav-bg.jpg"/></li>
-						<li><a data-a="nav-link" href="./contact.php" title="">CONTACT</a></li>
+						<li><a data-a="nav-link" href="./news.php" title=""><?php echo Yii::t("strings", "NEWS")?></a><img class="nav-bg" src="../SX/images/nav-bg.jpg"/></li>
+						<li><a data-a="nav-link" href="./about.php" title=""><?php echo Yii::t("strings", "ABOUT")?></a><img class="nav-bg" src="../SX/images/nav-bg.jpg"/></li>
+						<li><a data-a="nav-link" href="./contact.php" title=""><?php echo Yii::t("strings", "CONTACT")?></a></li>
 					</ul>
 					<!--  -->
 					<div class="hd_oter cs-clear">
@@ -45,8 +45,8 @@
 				</div>
 				<div class="searchform">
 					<form action="./search.php" class="section cs-clear">
-						<input type="text" placeholder="SEARCH DEMO" name="s" value="">
-						<button>SEARCH</button>
+						<input type="text" placeholder="<?php echo Yii::t("strings" ,"SEARCH DEMO")?>" name="s" value="">
+						<button><?php echo Yii::t("strings" ,"SEARCH")?></button>
 					</form>
 				</div>
 				<div class="nav-pop nav-pop-collections">
@@ -76,7 +76,7 @@
             <?php foreach (BoutiqueContentAR::getLocation() as $key => $name): ?>
               <?php $boutique = BoutiqueContentAR::model()->loadByAddressKey($key);?>
               <?php if ($boutique): ?>
-                <a class="nav-pop-item" <?php if ($first) echo 'style="margin-left: 12%;"'?> data-a="nav-link" href="./boutique.php?key=<?php echo urlencode($key)?>"><img src="<?php //echo ($boutique->nav_image) ?>"/> <span><i><?php echo $name?></i></span></a>
+                <a class="nav-pop-item" <?php if ($first) echo 'style="margin-left: 12%;"'?> data-a="nav-link" href="./boutique.php?key=<?php echo urlencode($key)?>"><img src="<?php echo ($boutique->nav_image) ?>"/> <span><i><?php echo $name?></i></span></a>
               <?php endif;?>
             <?php $first = FALSE;?>
             <?php endforeach;?>
