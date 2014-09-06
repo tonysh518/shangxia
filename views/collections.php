@@ -1,4 +1,4 @@
-<?php 
+<?php
 if (isset($_GET["cid"])) {
   require_once 'common/inc.php';
   $collection = CollectionContentAR::model()->findByPk($_GET["cid"]);
