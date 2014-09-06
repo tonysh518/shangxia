@@ -39,59 +39,12 @@ include_once 'common/header.php';?>
 			</div>
 		</div>
 		<!-- know how -->
-		<div class="section">
-			<div class="knowhow">
-				<div class="knowhowtit intoview-effect" data-effect="fadeup">
-					<h2><?php echo Yii::t("strings", "KNOW - HOW")?></h2>
-				</div>
-				<div class="knowhowcom ">
-					<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
-						<div class="knowhowintro  knowhowL">GATHERING</div>
-						<div class="knowhowpic  knowhowR"><img src="../SX/images/knowhowpic.jpg" width="100%" /></div>
-					</div>
-					<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
-						<div class="knowhowintro  knowhowR">SELECTING<br />THE CASHMERE</div>
-						<div class="knowhowpic  knowhowL"><img src="../SX/images/knowhowpic.jpg" width="100%" /></div>
-					</div>
-					<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
-						<div class="knowhowintro2  knowhowL">
-							<p>COMBING <a href="#" data-a="craft-read">read</a> </p>
-							<textarea style="display:none;">
-								<div class="popshade"></div>
-								<div class="pop">
-									<div class="popclose" data-a="popclose"></div>
-									<!--  -->
-									<div class="popcon">
-										<h2>Construction</h2>
-										<div class="popcontxt">
-											<p>All Chinese furniture bases its construction on ancient architecture. The bridge, beam, post, pole and sparrow brace in architecture all have their equivalent within chair making, as the seat frame, edge, stretcher and brace are similar to elements in architecture.</p>
-											<p>Metal nails are never used when connecting components, instead, mortise and tenons are used to fit legs and waists together in waisted furniture, and also together with stretchers. </p>
-											<p>Ancient people used the expression “will not fall in eternity” to describe the strength of mortise and tenons. Mortise and tenons can endure pressure from several directions making the furniture as stable and enduring as Mount Tai. </p>
-											<p>In ancient times, due to the technical limit of carpentry, mortise and tenons were difficult to make and joints came loose easily. </p>
-											<p>Today, with the help of precise mechanisms,Master Gu has improved the accuracy of the joints by perfecting the quality of the mortise and tenons so that indeed they “will not fall in eternity”.</p>
-										</div>
-									</div>
-								</div>
-							</textarea>
-						</div>
-
-						<div class="knowhowpic  knowhowR"><img src="../SX/images/knowhowpic.jpg" width="100%" /></div>
-					</div>
-					<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
-						<div class="knowhowintro  knowhowR">ROLLING THE FELT</div>
-						<div class="knowhowpic  knowhowL"><img src="../SX/images/knowhowpic.jpg" width="100%" /></div>
-					</div>
-					<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
-						<div class="knowhowintro  knowhowL">CREATING<br />CLOTHING</div>
-						<div class="knowhowpic  knowhowR"><img src="../SX/images/knowhowpic.jpg" width="100%" /></div>
-					</div>
-					<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
-						<div class="knowhowintro  knowhowR">SHRINKING<br />THE CLOTHING</div>
-						<div class="knowhowpic  knowhowL"><img src="../SX/images/knowhowpic.jpg" width="100%" /></div>
-					</div>
-				</div>
-			</div>
-		</div>
+	<?php include_once 'widget/how-weaving.php';?>
+	<?php include_once 'widget/how-felt.php';?>
+	<?php include_once 'widget/how-weaving.php';?>
+	<?php include_once 'widget/how-weaving.php';?>
+	<?php include_once 'widget/how-weaving.php';?>
+	<?php include_once 'widget/how-weaving.php';?>
     <?php $products = loadCraftRelatedProducts($craft);?>
 		<!-- related products -->
     <?php if (count($products)) : ?>
@@ -140,6 +93,42 @@ include_once 'common/header.php';?>
 			</div>
 		</div>
     <?php endif;?>
+
+    	<!-- related products -->
+		<div class="section">
+			<div class="products">
+				<div class="productstit">
+					<h2><?php echo Yii::t("strings", "related products");?></h2>
+				</div>
+				<div class="productscom">
+					<div class="productsinfor cs-clear">
+						<div class="proinfortxt aboutinfortxt intoview-effect" data-effect="fadeup">
+							<!-- <h2> </h2> -->
+							<p>As Artistic Director and CEO of SHANG XIA, Ms. Jiang Qiong Er is a Chinese contemporary designer of international reputation infusing the subtlety, beauty and heritage of Chinese culture. Her designs breathe elegance of innovation and imagination. Her international vision and open mind, along with her multi-cultural background, naturally allow her creativity to express itself; preserving and respecting tradition, both Eastern and Western.Jiang Qiong Er was introduced to traditional painting when she was only two and later became a student of famous painter Cheng Shi Fa and calligrapher Han Tian Hong. After graduation from Tong Ji University in Art & Design, she went on to the Decorative Arts School in Paris to further her studies in furniture and interior design.</p>
+							<a href="#" class="btn transition-wrap"><span class="transition">Read more<br><br>Read more</span></a>
+						</div>
+						<div class="proinforpic intoview-effect" data-effect="fadeup">
+							<div class="slide">
+								<div class="slidebox cs-clear">
+									<img class="slideitem" src="../SX/images/proinfopic.jpg" width="100%" />
+									<img class="slideitem" src="../SX/images/proinfopic.jpg" width="100%" />
+									<img class="slideitem" src="../SX/images/proinfopic.jpg" width="100%" />
+									<img class="slideitem" src="../SX/images/proinfopic.jpg" width="100%" />
+								</div>
+								<ul class="slidetab">
+									<li></li>
+									<li class="on"></li>
+									<li></li>
+									<li></li>
+								</ul>
+								<!-- 数量改变需要改变css，或者用js来调整slidebox的宽度和slidetab的位置 -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<!--  other crafts -->
 		<div class="section">
 			<div class="products othercraf">
