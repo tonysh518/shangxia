@@ -332,6 +332,18 @@ function getCity() {
   return strtolower($city);
 }
 
-function url() {
-  
+// 生成一个URL
+function url($uri, $params = array()) {
+  if (( $pos = strpos($uri, ".php")) !== FALSE) {
+    $simple_uri = substr($uri, 0, $pos);
+  }
+  else {
+    $simple_uri = $uri;
+  }
+  if (isset($params["cid"])) {
+    $content = ContentAR::model()->findByPk($params["cid"]);
+    if ($content) {
+      return $simple_uri."/".$content->cid."/". $content->title;
+    }
+  }
 }

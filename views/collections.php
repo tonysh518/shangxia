@@ -1,7 +1,7 @@
 <?php 
-if (isset($_GET["id"])) {
+if (isset($_GET["cid"])) {
   require_once 'common/inc.php';
-  $collection = CollectionContentAR::model()->findByPk($_GET["id"]);
+  $collection = CollectionContentAR::model()->findByPk($_GET["cid"]);
   if (!$collection || $collection->type != CollectionContentAR::model()->type) {
     exit(header("Location: ./index.php"));
   }

@@ -26,7 +26,7 @@
           <p><?php echo $store->body?></p>
 					<ul class="storechooselist cs-clear">
             <?php foreach ($cities as $city): ?>
-            <li><a href="./boutique.php?type=<?php echo $city?>" title="" class="transition-wrap">
+            <li><a href="/boutique.php?type=<?php echo $city?>" title="" class="transition-wrap">
                 <span class="transition"><?php echo Yii::t("strings", "{city} Store", array("{city}" => ucfirst($city)))?>
                   <br/><?php echo Yii::t("strings", "{city} Store", array("{city}" => ucfirst($city)))?>
                 </span>
@@ -45,29 +45,29 @@
 			<div class="section sitelinks cs-clear">
 				<div class="sitelinkitem">
 					<h2>COLLECTIONS</h2>
-					<a data-a="nav-link" href="./collections.php?a=0">heritage & emotion</a>
-					<a data-a="nav-link" href="./collections.php?a=1">human & nature</a>
-					<a data-a="nav-link" href="./collections.php?a=2">in & out</a>
-					<a data-a="nav-link" href="./collections.php?a=3">gifts</a>
+					<a data-a="nav-link" href="/collections.php?a=0">heritage & emotion</a>
+					<a data-a="nav-link" href="/collections.php?a=1">human & nature</a>
+					<a data-a="nav-link" href="/collections.php?a=2">in & out</a>
+					<a data-a="nav-link" href="/collections.php?a=3">gifts</a>
 				</div>
 				<div class="sitelinkitem">
 					<h2>CRAFTS</h2>
-					<a data-a="nav-link" href="./craft.php?a=1">bamboo weaving</a>
-					<a data-a="nav-link" href="./craft.php?a=2">cashmere felt</a>
-					<a data-a="nav-link" href="./craft.php?a=3">eggshe rorcelain</a>
-					<a data-a="nav-link" href="./craft.php?a=4">zitan wood</a>
+					<a data-a="nav-link" href="/craft.php?a=1">bamboo weaving</a>
+					<a data-a="nav-link" href="/craft.php?a=2">cashmere felt</a>
+					<a data-a="nav-link" href="/craft.php?a=3">eggshe rorcelain</a>
+					<a data-a="nav-link" href="/craft.php?a=4">zitan wood</a>
 				</div>
 				<div class="sitelinkitem sitelinkitemS">
 					<h2>BOUTIQUES</h2>
-					<a data-a="nav-link" href="./boutique.php">beijing</a>
-					<a data-a="nav-link" href="./boutique.php">shanghai</a>
-					<a data-a="nav-link" href="./boutique.php">paris</a>
+					<a data-a="nav-link" href="/boutique.php">beijing</a>
+					<a data-a="nav-link" href="/boutique.php">shanghai</a>
+					<a data-a="nav-link" href="/boutique.php">paris</a>
 				</div>
 				<div class="sitelinkitem sitelinkitemS">
 					<h2>NEWS</h2>
-					<a data-a="nav-link" href="./news-detail.php">news</a>
-					<a data-a="nav-link" href="./news-detail.php">events</a>
-					<a data-a="nav-link" href="./news-detail.php">press</a>
+					<a data-a="nav-link" href="/news-detail.php">news</a>
+					<a data-a="nav-link" href="/news-detail.php">events</a>
+					<a data-a="nav-link" href="/news-detail.php">press</a>
 				</div>
 				<div class="sitelinkitem">
 					<h2>ABOUT</h2>
@@ -120,12 +120,12 @@
 
 <!--  -->
 <!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script> -->
-<script type="text/javascript" src="../SX/js/plugin/modernizr-2.5.3.min.js"></script>
-<script type="text/javascript" src="../SX/js/sea/sea-debug.js" data-config="../config.js"></script>
-<script type="text/javascript" src="../SX/js/sea/plugin-shim.js"></script>
-<script type="text/javascript" src="../SX/js/lp.core.js"></script>
-<script type="text/javascript" src="../SX/js/lp.base.js"></script>
-<script type="text/javascript" src="./js/script.js"></script>
+<script type="text/javascript" src="/js/plugin/modernizr-2.5.3.min.js"></script>
+<script type="text/javascript" src="/js/sea/sea-debug.js" data-config="/js/config.js"></script>
+<script type="text/javascript" src="/js/sea/plugin-shim.js"></script>
+<script type="text/javascript" src="/js/lp.core.js"></script>
+<script type="text/javascript" src="/js/lp.base.js"></script>
+<script type="text/javascript" src="/js/script.js"></script>
 
 <!--IE6透明判断-->
 <!--[if IE 6]>
