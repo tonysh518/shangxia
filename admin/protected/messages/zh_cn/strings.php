@@ -112,5 +112,12 @@ return array(
 今天,她继续执著地追求着 
 一份理想",
     "jobs" => "招聘",
-    
+    "COLLECTIONS" => "「上下」系列",
+    "CRAFTS" => "",
+    "BOUTIQUES" => "「上下」空间",
+    "NEWS" => "最新消息",
+    "ABOUT" => "关于「上下」",
+    "CONTACT" => "联系「上下」",
+    "SEARCH" => "搜索",
+    "SEARCH DEMO" => "搜索示例",
 );
