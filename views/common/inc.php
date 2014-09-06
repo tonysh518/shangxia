@@ -16,7 +16,7 @@ $app = Yii::createWebApplication($config);
 $scriptUrl = Yii::app()->getRequest()->getScriptUrl();
 
 $ret = Yii::app()->getRequest()->getBaseUrl();
-Yii::app()->getRequest()->setBaseUrl("/admin");
+Yii::app()->getRequest()->setBaseUrl("/shangxia/admin");
 
 global $language;
 // 获取语言
