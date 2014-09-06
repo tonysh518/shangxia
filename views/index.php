@@ -40,7 +40,7 @@ THAT PROMISES A UNIQUE ENCOUNTER WITH THE HERITAGE OF CHINESE DESIGN AND CRAFTSM
 		<div class="slide" id="homepage-video-slide" data-auto="false">
 			<ul class="slidebox cs-clear">
 				<li href="#" class="slideitem">
-					<img src="../SX/video/homepage_demo2.jpg" width="100%" />
+					<img src="../SX/images/homepage_demo2.jpg" width="100%" />
 					<div class="slidetip">
 						<span class="slidetip2-tit"><?php echo Yii::t("strings", "Bamboo Weaving")?></span> <br>
 						<span class="slidetip2-index">1/4</span> <br>
