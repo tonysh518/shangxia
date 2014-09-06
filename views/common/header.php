@@ -58,7 +58,7 @@
 						</div>
             <?php $collectiones = CollectionContentAR::model()->getList();?>
             <?php foreach($collectiones as $item):?>
-              <a class="nav-pop-item" data-a="nav-link" href="<?php echo url("collections.php", array("cid" => $item->cid))?>"><img src="<?php echo $item->nav_image?>"/> <span><i> <?php echo $item->title?></i></span></a>
+              <a class="nav-pop-item" data-a="nav-link" href="/collections.php?cid=<?php echo $item->cid?>" data-href="<?php echo url("collections.php", array("cid" => $item->cid))?>"><img src="<?php echo $item->nav_image?>"/> <span><i> <?php echo $item->title?></i></span></a>
             <?php endforeach;?>
 					</div>
 				</div>
@@ -66,7 +66,7 @@
 					<div class="nav-pop-inner">
             <?php $crafts = CraftContentAR::model()->getList();?>
             <?php foreach($crafts as $craft): ?>
-            <a class="nav-pop-item" data-a="nav-link" href="<?php echo url("craft.php", array("cid" => $craft->cid))?>" data-href="/craft.php?id=<?php echo $craft->cid?>"><img src="<?php echo $craft->nav_image?>"/> <span><i><?php echo $craft->title?></i></span></a>
+            <a class="nav-pop-item" data-a="nav-link" data-href="<?php echo url("craft.php", array("cid" => $craft->cid))?>" href="/craft.php?id=<?php echo $craft->cid?>"><img src="<?php echo $craft->nav_image?>"/> <span><i><?php echo $craft->title?></i></span></a>
             <?php endforeach;?>
 					</div>
 				</div>

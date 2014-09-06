@@ -120,7 +120,7 @@
   $(function () {
     $(".hd_language a").click(function () {
       $.cookie("sx-lang", $(this).data("lang"));
-      window.location.reload();
+      window.location.href = "/";
     });
   });
 })(jQuery);
