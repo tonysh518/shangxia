@@ -4,11 +4,11 @@ if (isset($_GET["id"])) {
   require_once 'common/inc.php';
   $product = ProductContentAR::model()->findByPk($_GET["id"]);
   if (!$product || $product->type != ProductContentAR::model()->type) {
-    exit(header("Location: ./index.php"));
+    exit(header("Location: /index.php"));
   }
 }
 else {
-  exit(header("Location: ./index.php"));
+  exit(header("Location: /index.php"));
 }
 
 $pagename = 'product-detail';
@@ -35,10 +35,10 @@ $pagename = 'product-detail';
 		<!-- video -->
 		<div class="slide">
 			<div class="slidebox cs-clear">
-				<a href="javascript:void(0)" class="slideitem"><img src="../SX/images/parisdemo.jpg" width="100%" /></a>
-        <a href="javascript:void(0)" class="slideitem"><img src="../SX/images/parisdemo.jpg" width="100%" /></a>
-				<a href="javascript:void(0)" class="slideitem"><img src="../SX/images/parisdemo.jpg" width="100%" /></a>
-				<a href="javascript:void(0)" class="slideitem"><img src="../SX/images/parisdemo.jpg" width="100%" /></a>
+				<a href="javascript:void(0)" class="slideitem"><img src="/images/parisdemo.jpg" width="100%" /></a>
+        <a href="javascript:void(0)" class="slideitem"><img src="/images/parisdemo.jpg" width="100%" /></a>
+				<a href="javascript:void(0)" class="slideitem"><img src="/images/parisdemo.jpg" width="100%" /></a>
+				<a href="javascript:void(0)" class="slideitem"><img src="/images/parisdemo.jpg" width="100%" /></a>
 			</div>
 			<ul class="slidetab cs-clear">
 				<li class="on"></li>
@@ -60,7 +60,7 @@ $pagename = 'product-detail';
 				</div>
 				<div class="coll_videocom ">
 					<p>The Da Tian Di collection is based on traditional Ming furniture construction principles, <br />where each piece is deftly hand crafted by a master craftman</p>
-					<div class="coll_videobox" data-video-render="../SX/video/small"><img src="../SX/images/coll_videodemo.jpg" width="100%" /></div>
+					<div class="coll_videobox" data-video-render="/video/small"><img src="/images/coll_videodemo.jpg" width="100%" /></div>
 				</div>
 				<a href="#" class="btn transition-wrap" ><span class="transition">View more<br/><br/>View more</span></a>
 			</div>
@@ -83,7 +83,7 @@ $pagename = 'product-detail';
 						<ul class="slide-con-inner piclist cs-clear">
 							<?php foreach (loadSimilarProducts($product) as $index => $p): ?>
 			                <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-			                  	<a href="./product-detail.php?id=<?php echo $p->cid?>"><img <?php if ($index > 3) echo "data-nopreload"?> src="<?php echo makeThumbnail($p->thumbnail, array(600, 570))?>" width="100%" />
+			                  	<a href="/product-detail.php?id=<?php echo $p->cid?>"><img <?php if ($index > 3) echo "data-nopreload"?> src="<?php echo makeThumbnail($p->thumbnail, array(600, 570))?>" width="100%" />
 			                  		<p><span class="collicon"><?php echo $p->title?></span></p>
 			                	</a> 
 			                </li>

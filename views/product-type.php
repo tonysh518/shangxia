@@ -12,7 +12,7 @@
 		</div>
 		<!-- slide -->
 		<div class="banner">
-			<img src="../SX/photo/collection-apparels.jpg" width="100%" />
+			<img src="/photo/collection-apparels.jpg" width="100%" />
 		</div>
 		<!-- barbg -->
 		<div class="barbg"></div>
@@ -29,15 +29,15 @@
 				<div class="">
 					<ul class="piclist cs-clear">
 						<li class="piclistitem collpicitem">
-							<img src="../SX/images/colldemo2.jpg" width="100%" />
+							<img src="/images/colldemo2.jpg" width="100%" />
 							<p><span class="collicon">architecture</span></p>
 						</li>
 						<li class="piclistitem collpicitem">
-							<img src="../SX/images/colldemo2.jpg" width="100%" />
+							<img src="/images/colldemo2.jpg" width="100%" />
 							<p><span>architecture</span></p>
 						</li>
 						<li class="piclistitem collpicitem marginR0">
-							<img src="../SX/images/colldemo2.jpg" width="100%" />
+							<img src="/images/colldemo2.jpg" width="100%" />
 							<p><span>architecture</span></p>
 						</li>
 					</ul>
@@ -63,15 +63,15 @@
 					<div class="slide-con">
 						<ul class="slide-con-inner piclist cs-clear">
 							<li class="piclistitem collpicitem">
-								<img src="../SX/images/colldemo3.jpg" width="100%" />
+								<img src="/images/colldemo3.jpg" width="100%" />
 								<p><span>view</span></p>
 							</li>
 							<li class="piclistitem collpicitem">
-								<img src="../SX/images/colldemo3.jpg" width="100%" />
+								<img src="/images/colldemo3.jpg" width="100%" />
 								<p><span>view</span></p>
 							</li>
 							<li class="piclistitem collpicitem marginR0">
-								<img src="../SX/images/colldemo3.jpg" width="100%" />
+								<img src="/images/colldemo3.jpg" width="100%" />
 								<p><span>view</span></p>
 							</li>
 						</ul>

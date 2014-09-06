@@ -19,7 +19,7 @@
 							<p>1F,South Tower, Hong Kong Plaza, 283 Huaihai Middle Rd, Shanghai, 200021, China</p>
 							<p>+86-21-6390 8899</p>
 						</div>
-						<div class="knowhowpic  knowhowL"><img src="../SX/images/contact-sh.jpg" width="100%" /></div>
+						<div class="knowhowpic  knowhowL"><img src="/images/contact-sh.jpg" width="100%" /></div>
 					</div>
 					<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 						<div class="knowhowintro contactintro  knowhowL">
@@ -27,7 +27,7 @@
 							<p>SB107B, B1 China World Mall, China World Trade Center 1, Jianguomen Waidajie, Beijing, 100001, China</p>
 							<p>+86-10-6505-7358</p>
 						</div>
-						<div class="knowhowpic  knowhowR"><img src="../SX/images/contact-bj.jpg" width="100%" /></div>
+						<div class="knowhowpic  knowhowR"><img src="/images/contact-bj.jpg" width="100%" /></div>
 					</div>
 					<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 						<div class="knowhowintro contactintro  knowhowR">
@@ -35,7 +35,7 @@
 							<p>8 Sèvres Road, 75006 Paris, France</p>
 							<p>+33-1-42-22-53-62</p>
 						</div>
-						<div class="knowhowpic  knowhowL"><img src="../SX/images/contact-pa.jpg" width="100%" /></div>
+						<div class="knowhowpic  knowhowL"><img src="/images/contact-pa.jpg" width="100%" /></div>
 					</div>
 				</div>
 			</div>
@@ -48,7 +48,7 @@
 				</div>	
 				<!-- store -->
 				<div class="conformbox intoview-effect" data-effect="fadeup">
-					<form action="admin/api/content/newsletter">
+					<form action="/admin/api/content/newsletter">
 
 						<div class="conformtit">NAME</div>
 						<input type="text" name="name" />

@@ -3,11 +3,11 @@ if (isset($_GET["id"])) {
   require_once 'common/inc.php';
   $craft = CraftContentAR::model()->findByPk($_GET["id"]);
   if (!$craft || $craft->type != CraftContentAR::model()->type) {
-    exit(header("Location: ./index.php"));
+    exit(header("Location: /index.php"));
   }
 }
 else {
-  exit(header("Location: ./index.php"));
+  exit(header("Location: /index.php"));
 }
 ?>
 
@@ -28,7 +28,7 @@ include_once 'common/header.php';?>
 		</div>
 		
 		<!-- video -->
-		<div class="video intoview-effect" data-video-render="../SX/video/small" style="position:relative;overflow:hidden;"  data-effect="fadeup"><img src="<?php echo $craft->video_poster?>" width="100%" /></div>
+		<div class="video intoview-effect" data-video-render="/video/small" style="position:relative;overflow:hidden;"  data-effect="fadeup"><img src="<?php echo $craft->video_poster?>" width="100%" /></div>
 		<!-- barbg -->
 		<div class="barbg intoview-effect" data-effect="fadeup"></div>
 		<!-- detail -->
@@ -67,7 +67,7 @@ include_once 'common/header.php';?>
 							<div class="slide">
 								<div class="slidebox cs-clear">
                   <?php foreach ($product->product_slide_image as $index => $slide_image): ?>
-                  <img <?php if ($index > 3) echo "data-nopreload"?> class="slideitem" src="../SX/images/product_related.jpg" width="100%" />
+                  <img <?php if ($index > 3) echo "data-nopreload"?> class="slideitem" src="/images/product_related.jpg" width="100%" />
                   <?php endforeach;?>
 								</div>
 								<ul class="slidetab">
@@ -110,10 +110,10 @@ include_once 'common/header.php';?>
 						<div class="proinforpic intoview-effect" data-effect="fadeup">
 							<div class="slide">
 								<div class="slidebox cs-clear">
-									<img class="slideitem" src="../SX/images/proinfopic.jpg" width="100%" />
-									<img class="slideitem" src="../SX/images/proinfopic.jpg" width="100%" />
-									<img class="slideitem" src="../SX/images/proinfopic.jpg" width="100%" />
-									<img class="slideitem" src="../SX/images/proinfopic.jpg" width="100%" />
+									<img class="slideitem" src="/images/proinfopic.jpg" width="100%" />
+									<img class="slideitem" src="/images/proinfopic.jpg" width="100%" />
+									<img class="slideitem" src="/images/proinfopic.jpg" width="100%" />
+									<img class="slideitem" src="/images/proinfopic.jpg" width="100%" />
 								</div>
 								<ul class="slidetab">
 									<li></li>
