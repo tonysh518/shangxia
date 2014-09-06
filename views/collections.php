@@ -9,6 +9,10 @@ if (isset($_GET["id"])) {
 else {
   exit(header("Location: ./index.php"));
 }
+
+
+// fix has slider
+$has_slider = array('apparel','homeware');
 ?>
 
 <?php include_once 'common/header.php';?>
@@ -52,7 +56,9 @@ else {
 					</div>
 					<!--  -->
 					<div class="products-wrap js-horizontal-slide intoview-effect" data-effect="fadeup" data-num="3">
+						<?php if ( in_array( strtolower($type), $has_slider ) ){ ?>
 						<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
+						<?php }?>
 						<div class="slide-con">
               <?php $products = getProductInTypeWithCollection($type_id, $collection->cid);?>
 							<ul class="slide-con-inner piclist cs-clear">
@@ -66,10 +72,13 @@ else {
                 <?php endforeach;?>
 							</ul>
 						</div>
+						<?php if ( in_array( strtolower($type), $has_slider ) ){ ?>
 						<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
+						<?php }?>
 					</div>
 				</div>
 			</div>
 		</div>
     <?php endforeach;?>
+    <div style="height:100px;"></div>
 <?php include_once 'common/footer.php';?>

@@ -7,7 +7,7 @@
         <li class="slideitem"><img src="<?php echo makeThumbnail($show->image)?>" width="100%" />
           <div class="slidetip">
             <h4 class="tit"><?php echo $show->title?></h4>
-            <i><?php echo $show->body?></i>
+            <p><?php echo $show->body?></p>
           </div>
         </li>
       <?php endforeach;?>

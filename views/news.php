@@ -54,7 +54,7 @@
               <li class="productslist cs-clear slideitem">
                   <div class="prolistitem newsitem">
                     <img src="<?php echo $news->thumbnail?>" width="100%" />
-                    <p><?php echo $news->title?><br /><?php echo date("Y M d", strtotime($news->date))?></p>
+                    <p><?php echo $news->title?><br /><span class="date"><?php echo date("Y M d", strtotime($news->date))?></span></p>
                   </div>
               </li>
             <?php endforeach;?>
@@ -76,8 +76,8 @@
 					<!--  -->
 					<img src="../SX/images/newsdemo3.jpg" class="intoview-effect" data-effect="fadeup" width="100%" alt="">
 					<h3 class="intoview-effect" data-effect="fadeup">shang xia maison opening </h3>
-					<h4  class="intoview-effect" data-effect="fadeup">2014 SEP 09</h4>
-					<p  class="intoview-effect" data-effect="fadeup">This aurum, the SHANG XIA, maision will be opened on Hua Hai Road, Shanghai.<br />A new journey ....     <a class="more" href="#">Read more</a> </p>
+					<h4  class="productscom-desc intoview-effect" data-effect="fadeup">2014 SEP 09</h4>
+					<p  class="productscom-desc intoview-effect" data-effect="fadeup"><i>This aurum, the SHANG XIA, maision will be opened on Hua Hai Road, Shanghai.<br />A new journey ....     <a class="more" href="#">Read more</a> </i></p>
 					<a href="./news-detail.php" title="" class="btn transition-wrap"><span class="transition">View all events<br/><br/>View all events</span></a>
 				</div>
 			</div>

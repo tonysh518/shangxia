@@ -65,16 +65,43 @@
 					<a href="#" class="ft_wx">weixin</a>
 					<a href="#" class="ft_wb">weibo</a>
 					<br>
-					<a href="" style="width: auto;line-height: initial;height: auto;margin-top: 48px;">subscribe to shang xia newsletter</a>
+					<a href="#" style="width: auto;line-height: initial;height: auto;margin-top: 48px;" data-a="newsletter">subscribe to shang xia newsletter</a>
 				</div>
 			</div>
 			<!-- copyright -->
 			<div class="copyright">
-				<p>ICP LICENCE 12345678 - PRIVACY POLICY LEGAL INFORMATION - <a href="#">NEWSLETTER</a></p>
+				<p>ICP LICENCE 12345678 - PRIVACY POLICY LEGAL INFORMATION - <a href="#" data-a="newsletter">NEWSLETTER</a></p>
 			</div>
 		</div>
 		<!--  -->
 	</div>
+
+<script type="text/tpl" id="newsletter">
+<div class="popshade"></div>
+<div class="pop">
+	<div class="popclose" data-a="popclose"></div>
+	<!--  -->
+	<div class="popcon">
+		<h2>I want to buy</h2>
+		<div class="popcontxt">
+			<p>You are interested by buying this product? <br/>
+			Let us contact you back and we will arrange a way to provide you this prodcut</p>
+			<form class="buy-form conformbox">
+				<div class="conformtit">YOUR NAME</div>
+				<input type="text" />
+				<div class="conformtit">YOUR EMAIL</div>
+				<input type="text" />
+				<div class="conformtit">YOUR PHONE</div>
+				<input type="text" />
+				<button class="conformbtn">CONTACT ME BACK</button>
+
+				<a href="">VIEW ALL THE SHANG XIA GIFTS</a>
+			</form>
+		</div>
+	</div>
+</div>
+</script>
+
 <!--  -->
 <!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script> -->
 <script type="text/javascript" src="../SX/js/plugin/modernizr-2.5.3.min.js"></script>

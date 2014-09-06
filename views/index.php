@@ -41,15 +41,47 @@ THAT PROMISES A UNIQUE ENCOUNTER WITH THE HERITAGE OF CHINESE DESIGN AND CRAFTSM
 			<ul class="slidebox cs-clear">
 				<li href="#" class="slideitem" data-video="../SX/video/small">
 					<img src="../SX/images/homepage_demo2.jpg" width="100%" />
+<<<<<<< HEAD
+=======
+					<div class="slidetip">
+						<span class="slidetip2-tit"><?php echo Yii::t("strings", "Bamboo Weaving")?></span> <br>
+						<span class="slidetip2-index">1/4</span> <br>
+						<a href="#" title="" data-video="../SX/video/Bamboo_Weaving_竹丝扣瓷_30s_1" data-a="homepage-watch-video" class="btn btn-white transition-wrap"><i class="transition">Watch video<br/><br/>Watch video</i></a>
+					</div>
+>>>>>>> 2978de8e3a49e1ad874a37f84eb37fd932cddb70
 				</li>
 				<li href="#" class="slideitem" data-video="../SX/video/small">
 					<img src="../SX/images/homepage_demo2.jpg" width="100%" />
+<<<<<<< HEAD
+=======
+					<div class="slidetip">
+						<span class="slidetip2-tit"><?php echo Yii::t("strings", "Cashmere Felt")?></span> <br>
+						<span class="slidetip2-index">2/4</span> <br>
+						<a href="#" title="" data-video="../SX/video/Cashmere_Felt_羊绒毡_30s_1" data-a="homepage-watch-video" class="btn btn-white transition-wrap"><i class="transition">Watch video<br/><br/>Watch video</i></a>
+					</div>
+>>>>>>> 2978de8e3a49e1ad874a37f84eb37fd932cddb70
 				</li>
 				<li href="#" class="slideitem" data-video="../SX/video/small">
 					<img src="../SX/images/homepage_demo2.jpg" width="100%" />
+<<<<<<< HEAD
+=======
+					<div class="slidetip">
+						<span class="slidetip2-tit"><?php echo Yii::t("strings", "Eggshell Porcelain")?></span> <br>
+						<span class="slidetip2-index">3/4</span> <br>
+						<a href="#" title="" data-video="../SX/video/Eggshell_Porcelain_薄胎瓷_30s_1" data-a="homepage-watch-video" class="btn btn-white transition-wrap"><i class="transition">Watch video<br/><br/>Watch video</i></a>
+					</div>
+>>>>>>> 2978de8e3a49e1ad874a37f84eb37fd932cddb70
 				</li>
 				<li href="#" class="slideitem" data-video="../SX/video/small">
 					<img src="../SX/images/homepage_demo2.jpg" width="100%" />
+<<<<<<< HEAD
+=======
+					<div class="slidetip">
+						<span class="slidetip2-tit"><?php echo Yii::t("strings", "Zitan")?></span> <br>
+						<span class="slidetip2-index">4/4</span> <br>
+						<a href="#" title="" data-video="../SX/video/Zitan_紫檀_30s_1" data-a="homepage-watch-video" class="btn btn-white transition-wrap"><i class="transition">Watch video<br/><br/>Watch video</i></a>
+					</div>
+>>>>>>> 2978de8e3a49e1ad874a37f84eb37fd932cddb70
 				</li>
 			</ul>
 			<div class="slidetip intoview-effect" data-effect="fadeup">

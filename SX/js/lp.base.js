@@ -140,7 +140,6 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                         })
                         .find('img')
                         .css({marginTop: - mtop , marginBottom: - mtop * 2 / 3});
-
                     // // header fixed effect
                     if( stTop >= $header.offset().top ){
                         $header.find('.head-fixed').css('position' , 'fixed');
@@ -807,7 +806,8 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     .keyup(function( ev ){
         switch( ev.which ){
             case 27:
-                $('.pop .popclose').get(0).click();
+                var dom = $('.pop .popclose').get(0);
+                dom && dom.click();
                 break;
         }
     });
@@ -1036,6 +1036,14 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         var html = LP.format( tpl , {img: $(this).data('press')} );
         $(html).appendTo( document.body ).hide().fadeIn();
 
+        return false;
+    });
+
+    LP.action('newsletter' , function(){
+        var tpl = $('#newsletter').html();
+        $(tpl).appendTo( document.body )
+            .hide()
+            .fadeIn();
         return false;
     });
 
