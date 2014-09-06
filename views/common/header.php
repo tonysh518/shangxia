@@ -76,7 +76,10 @@
             <?php foreach (BoutiqueContentAR::getLocation() as $key => $name): ?>
               <?php $boutique = BoutiqueContentAR::model()->loadByAddressKey($key);?>
               <?php if ($boutique): ?>
-                <a class="nav-pop-item" <?php if ($first) echo 'style="margin-left: 12%;"'?> data-a="nav-link" href="/boutique.php?key=<?php echo urlencode($key)?>"><img src="<?php echo ($boutique->nav_image) ?>"/> <span><i><?php echo $name?></i></span></a>
+                <a class="nav-pop-item" <?php if ($first) echo 'style="margin-left: 12%;"'?> data-a="nav-link" href="/boutique.php?key=<?php echo urlencode($key)?>">
+                  <img src="<?php echo ($boutique->nav_image) ?>"/> 
+                  <span><i><?php echo $name?></i></span>
+                </a>
               <?php endif;?>
             <?php $first = FALSE;?>
             <?php endforeach;?>

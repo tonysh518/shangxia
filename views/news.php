@@ -23,17 +23,21 @@
           <?php endif;?>
 					</div>
 				<div class="picinforpic">
+            <?php if ($news->news_slide_image):?>
 					<div class="slide">
 						<div class="slidebox cs-clear">
               <?php foreach($news->news_slide_image as $image): ?>
                 <img class="slideitem" src="<?php echo $image?>" width="100%" />
               <?php endforeach;?>
 						</div>
+            <?php endif;?>
+            <?php if ($news->news_slide_image):?>
 						<ul class="slidetab">
               <?php foreach($news->news_slide_image as $index => $image): ?>
 							<li class="<?php if ($index == 0) echo "on"?>"></li>
               <?php endforeach;?>
 						</ul>
+            <?php endif;?>
 						<!-- 数量改变需要改变css，或者用js来调整slidebox的宽度和slidetab的位置 -->
 					</div>
 				</div>
