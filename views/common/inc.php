@@ -37,7 +37,7 @@ else {
     }
 }
 // 测试代码
-Yii::app()->language = "zh_cn";
+//Yii::app()->language = "zh_cn";
 
 if (Yii::app()->language == "zh_cn") {
   $language = "cn";
@@ -330,4 +330,8 @@ function getCity() {
   $city = Yii::app()->ip->toCity($userIp);
   
   return strtolower($city);
+}
+
+function url() {
+  
 }

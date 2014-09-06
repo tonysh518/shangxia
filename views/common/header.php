@@ -38,7 +38,7 @@
 					<!--  -->
 					<div class="hd_oter cs-clear">
 						<div class="hd_language">
-							<a href="javascript:void(0)" data-lang="zh_cn">中文</a>|<a href="javascript:void(0)" data-lang="en_us" class="on">EN</a>|<a href="javascript:void(0)" data-lang="fr">FR</a>
+							<a href="javascript:void(0)" class="<?php global $language; if ($language == "cn") echo "active"?>" data-lang="zh_cn">中文</a>|<a href="javascript:void(0)" class="<?php global $language; if ($language == "en") echo "active"?>" data-lang="en_us" class="on">EN</a>|<a href="javascript:void(0)" class="<?php global $language; if ($language == "fr") echo "active"?>" data-lang="fr">FR</a>
 						</div>
 						<a href="#" data-a="show-search-form" class="hd_search"></a>
 					</div>
