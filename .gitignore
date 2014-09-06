@@ -2,12 +2,12 @@
 
 nbproject
 
-admin/upload
+views/admin/upload
 
-admin/protected/config/main.php
+views/admin/protected/config/main.php
 
-admin/protected/cache
+views/admin/protected/cache
 
-admin/protected/runtime
+views/admin/protected/runtime
 
 .DS_Store

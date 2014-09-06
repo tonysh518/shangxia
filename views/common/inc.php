@@ -1,6 +1,6 @@
 <?php
 // 载入 Yii / 后台系统
-$root = dirname(dirname(dirname(__FILE__)));
+$root = (dirname(dirname(__FILE__)));
 
 define("ROOT_PATH", $root);
 
@@ -16,7 +16,7 @@ $app = Yii::createWebApplication($config);
 $scriptUrl = Yii::app()->getRequest()->getScriptUrl();
 
 $ret = Yii::app()->getRequest()->getBaseUrl();
-Yii::app()->getRequest()->setBaseUrl("/shangxia/admin");
+Yii::app()->getRequest()->setBaseUrl("/admin");
 
 global $language;
 // 获取语言
