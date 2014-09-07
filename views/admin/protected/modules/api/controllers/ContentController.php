@@ -194,5 +194,49 @@ class ContentController extends Controller {
    
    $this->responseJSON($news, "success");
  }
+ 
+ public function actionWanttobuy() {
+   $request = Yii::app()->getRequest();
+   
+   if (!$request->isPostRequest) {
+     return $this->responseError("invalid http verb", ErrorAR::ERROR_HTTP_VERB_ERROR);
+   }
+   
+   //name , email, message, 
+   $name = $request->getPost("name");
+   $email = $request->getPost("email");
+   $phone = $request->getPost("phone");
+   $product_id = $request->getPost("product");
+   
+   if (!$name || !$email || !$product_id) {
+     return $this->responseError("invild params error", ErrorAR::ERROR_MISSED_REQUIRED_PARAMS);
+   }
+   
+   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+     return $this->responseError("email error", ErrorAR::ERROR_MISSED_REQUIRED_PARAMS);
+   }
+   
+   $product = ProductContentAR::model()->findByPk($product_id);
+   if (!$product) {
+     return $this->responseError("product is not exist", ErrorAR::ERROR_MISSED_REQUIRED_PARAMS);
+   }
+   
+   $buyAr = BuyContentAR::model();
+   $buyAr->attributes = array(
+       "title" => $name,
+       "phone" => $phone,
+       "email" => $email,
+       "product" => $product->cid
+   );
+   $buyAr->setIsNewRecord(true);
+   
+   if ($buyAr->save()) {
+     return $this->responseJSON(array(), "success");
+   }
+   else {
+     $error = $buyAr->getErrors();
+     return $this->responseError("post message error", ErrorAR::ERROR_UNKNOWN, $error);
+   }
+ }
 }
 
