@@ -39,18 +39,18 @@
 	<!-- slide -->
 	<div class="slide-wrap section">
 		<div class="collarrows collarrowsprev home-collarrowsprev" data-a="home-collarrowsprev"></div>
-		<div class="slide intoview-effect" data-effect="fadeup" id="homepage-video-slide" data-auto="false">
+		<div class="slide intoview-effect" data-effect="fadeup" id="homepage-video-slide" data-auto="false" data-slide="absolute">
 			<ul class="slidebox cs-clear">
-				<li href="#" class="slideitem" data-tit="<?php echo Yii::t("strings", "Bamboo Weaving")?>" data-video="/video/Bamboo_Weaving_竹丝扣瓷_30s_1">
+				<li href="#" class="slideitem" data-tit="<?php echo Yii::t("strings", "Bamboo Weaving")?>" data-mp4="/video/Bamboo_Weaving_竹丝扣瓷_30s_1.mp4" data-webm="/video/Bamboo_Weaving_竹丝扣瓷_30s_1.webm">
 					<img src="/images/homepage_demo2.jpg" width="100%" />
 				</li>
-				<li href="#" class="slideitem" data-tit="<?php echo Yii::t("strings", "Cashmere Felt")?>" data-video="/video/Cashmere_Felt_羊绒毡_30s_1">
+				<li href="#" class="slideitem" data-tit="<?php echo Yii::t("strings", "Cashmere Felt")?>" data-mp4="/video/Cashmere_Felt_羊绒毡_30s_1.mp4" data-webm="/video/Cashmere_Felt_羊绒毡_30s_1.webm">
 					<img src="/images/homepage_demo2.jpg" width="100%" />
 				</li>
-				<li href="#" class="slideitem" data-tit="<?php echo Yii::t("strings", "Eggshell Porcelain")?>" data-video="/video/Eggshell_Porcelain_薄胎瓷_30s_1">
+				<li href="#" class="slideitem" data-tit="<?php echo Yii::t("strings", "Eggshell Porcelain")?>" data-mp4="/video/Eggshell_Porcelain_薄胎瓷_30s_1.mp4" data-webm="/video/Eggshell_Porcelain_薄胎瓷_30s_1.webm">
 					<img src="/images/homepage_demo2.jpg" width="100%" />
 				</li>
-				<li href="#" class="slideitem" data-tit="<?php echo Yii::t("strings", "Zitan")?>" data-video="/video/Zitan_紫檀_30s_1">
+				<li href="#" class="slideitem" data-tit="<?php echo Yii::t("strings", "Zitan")?>" data-mp4="/video/Zitan_紫檀_30s_1.mp4" data-webm="/video/Zitan_紫檀_30s_1.webm">
 					<img src="/images/homepage_demo2.jpg" width="100%" />
 				</li>
 			</ul>
@@ -58,7 +58,7 @@
 				<div class="slidetip">
 					<span class="slidetip2-tit"><?php echo Yii::t("strings", "Bamboo Weaving")?></span> <br>
 					<span class="slidetip2-index">1/4</span> <br>
-					<a href="#" title="" data-a="homepage-watch-video" class="btn btn-white transition-wrap"><i class="transition">Watch video<br/><br/>Watch video</i></a>
+					<a href="#" title="" data-play-text="<?php echo Yii::t("strings", "Watch video")?>" data-pause-text="<?php echo Yii::t("strings", "Pause video")?>" data-a="homepage-watch-video" class="btn btn-white transition-wrap"><i class="transition">Watch video<br/><br/>Watch video</i></a>
 				</div>
 			</div>
 			<ul class="slidetab cs-clear intoview-effect" data-effect="fadeup" data-effect-delay="700" >
