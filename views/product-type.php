@@ -1,18 +1,29 @@
 
-<?php include_once 'common/header.php';?>
+<?php
+if (isset($_GET["name"])) {
+  require_once 'common/inc.php';
+  if (array_search($_GET["name"], ProductContentAR::getType()) === FALSE) {
+    exit(header("Location: /index.php"));
+  }
+}
+else {
+  exit(header("Location: /index.php"));
+}?>
+
+  <?php include_once 'common/header.php';?>
 		<!-- detail -->
 		<div class="section ">
 			<div class="detail cs-clear">
 				<div class="arrows arrows2 detailprev"></div>
 				<div class=" detailcon">
-					<h2>SHANG XIA apparels</h2>
+					<h2><?php echo Yii::t("strings", "SHANG XIA ". $_GET["name"])?></h2>
 				</div>
 				<div class="arrows arrows2 detailnext"></div>
 			</div>
 		</div>
 		<!-- slide -->
 		<div class="banner">
-			<img src="/photo/collection-apparels.jpg" width="100%" />
+			<img src="/photo/collection-<?php echo $_GET["name"]?>.jpg" width="100%" />
 		</div>
 		<!-- barbg -->
 		<div class="barbg"></div>

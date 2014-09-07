@@ -55,7 +55,7 @@ require_once "inc.php";?>
 					<div class="nav-pop-inner">
 						<div class="nav-pop-nav">
               <?php foreach (ProductContentAR::getType() as $id => $name):  ?>
-              <p><a href="/product-type.php?cid=<?php echo $id?>"><?php echo ucfirst($name)?> &gt;</a></p>
+              <p><a href="/product-type.php?name=<?php echo $name?>"><?php echo ucfirst($name)?> &gt;</a></p>
               <?php endforeach;?>
 						</div>
             <?php $collectiones = CollectionContentAR::model()->getList();?>
