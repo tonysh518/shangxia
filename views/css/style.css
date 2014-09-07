@@ -126,7 +126,8 @@ a{text-decoration:none;outline: none;color:inherit;}
 .piclistitem img:hover{opacity: 0.9;}
 
 /*footer*/
-.footer{background: #eee;padding-top: 50px;}
+.footer{background: #f4f4f4;padding-top: 50px;}
+.footer-bottom{background: #eaebea;padding-top: 60px;}
 /*location*/
 .location{padding:66px 0 0 ;margin: 50px; background: white;}
 .range{background: url('../images/range.png') no-repeat top center;padding:40px 0 30px;}
@@ -181,8 +182,8 @@ a{text-decoration:none;outline: none;color:inherit;}
 
 /*knowhow*/
 .knowhow{}
-.knowhowtit{height: 100px;border-bottom: #000 solid 1px;position: relative;margin:0 0 110px;}
-.knowhowtit h2{font-size: 30px;width: 290px;background: #fff;text-align: center;position: absolute;bottom:-14px;left:50%;margin-left:-145px;font-family: "Gotham Book";}
+.knowhowtit{height: 100px;border-bottom: #000 solid 1px;position: relative;margin: 0 0 110px;line-height: 200px;text-align: center;}
+.knowhowtit h2{font-size: 30px;width: 290px;background: #fff;text-align: center;font-family: "Gotham Book";display: inline-block;}
 .knowhowitem{margin: 0 0 10px;font-family: "Gotham Book";}
 .knowhowL{float: left}
 .knowhowR{float: right}
@@ -196,8 +197,8 @@ a{text-decoration:none;outline: none;color:inherit;}
 
 /*products*/
 .products{}
-.productstit{height: 100px;border-bottom: #000 solid 1px;position: relative;margin:0 0 110px;font-family: "Gotham Book";}
-.productstit h2{font-size: 30px;width: 420px;background: #fff;text-align: center;position: absolute;bottom:-14px;left:50%;margin-left:-210px;text-transform : uppercase;color:#4b3700;}
+.productstit{height: 100px;border-bottom: #000 solid 1px;position: relative;margin: 0 0 100px;font-family: "Gotham Book";line-height: 200px;text-align: center;}
+.productstit h2{display: inline-block;padding: 0 50px; font-size: 30px;background: #fff;text-align: center;text-transform : uppercase;color:#4b3700;}
 .products-wrap{position: relative;}
 .proinfortxt{float: left;width: 32.8%;background: #F6EEEE}
 .proinfortxt h2{font-size: 18px;text-align: center;padding: 70px 50px 40px}
@@ -214,7 +215,7 @@ a{text-decoration:none;outline: none;color:inherit;}
 
 /*othercraf*/
 .othercraf{padding-bottom:50px;}
-.othercraftit h2{width: 320px;margin-left: -160px;}
+/*.othercraftit h2{width: 320px;margin-left: -160px;}*/
 .othercrafcom p{padding: 20px 0}
 
 /*picinfor*/
@@ -243,7 +244,7 @@ color: #4b3700;}
 
 /*press*/
 .press{padding-bottom: 80px;}
-.press .productstit h2{width: 180px;margin-left: -90px;}
+/*.press .productstit h2{width: 180px;margin-left: -90px;}*/
 .pressitem{width: 24.4%;margin-right: 0.8%;}
 .pressitem p{background: #fff;color:#4b3700;}
 
@@ -285,12 +286,12 @@ color: #4b3700;}
 
 /*collpicitem*/
 .collpicitem p{padding: 10px 0 20px;height: 2em;overflow: hidden;height: 3em;}
-.collpicitem .collicon{background: url('../images/collicon.png') no-repeat left center;padding: 30px 50px 26px;}
+.collpicitem .collicon{background: url('../images/range.png') no-repeat left center;padding: 30px 50px 26px;}
 
 /*appareltit*/
 .collpiclist .piclist{padding: 0;}
-.collpictit h2{width: 230px;margin-left: -115px;}
-.collpictit2 h2{width: 300px;margin-left: -150px;}
+/*.collpictit h2{width: 230px;margin-left: -115px;}
+.collpictit2 h2{width: 300px;margin-left: -150px;}*/
 
 .collarrows{position: absolute;left: -10%;height: 100%;width: 10%;top: 0; cursor: pointer;}
 .collarrowsprev{background: url('../images/detailprev.png') no-repeat center 30%;}
@@ -350,6 +351,7 @@ color: #4b3700;}
 .picoperate a{margin:0 15px;background: url('../images/picoperateicon.png') no-repeat;width: 49px;height: 49px;float:right;}
 .picoperate .picopsizeup{background-position:-82px 0;}
 .picoperate .picopsized{background-position: -164px 0}
+.pic-press{width: 100%;overflow: auto;}
 /*popconabout*/
 .popconabout{font-size: 18px}
 .popconabout h2{text-align: left;padding-bottom: 20px;}

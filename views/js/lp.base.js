@@ -121,10 +121,11 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         var effects = {
             'fadeup': function( $dom , index , cb ){
                 var delay = $dom.data('effect-delay') || 0;
+                var tarMarginTop = $dom.data('margin-top') || 0;
                 $dom.delay( 150 * index + delay )
                     .animate({
                         opacity: 1,
-                        marginTop: 0
+                        marginTop: tarMarginTop
                     } , 500 )
                     .promise()
                     .then(function(){
@@ -1248,6 +1249,24 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             alert( $('textarea[name="message"]').data('required') );
             return false;
         }
+    });
+
+    LP.action('picopsizeup' , function(){
+        var $img = $(this).closest('.pop')
+            .find('img');
+
+        $img.width( ( $img.width() / $(window).width() * 1.1 ) * 100 + '%' );
+
+        return false;
+    });
+
+    LP.action('picopsized' , function(){
+        var $img = $(this).closest('.pop')
+            .find('img');
+
+        $img.width( ( $img.width() / $(window).width() * 0.9 ) * 100 + '%' );
+
+        return false;
     });
 
 

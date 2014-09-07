@@ -32,11 +32,13 @@
               </a>
               <textarea style="display:none;">
               	<div class="picoperate cs-clear">
-                    <a href="#" class="picopsized"></a>
-                    <a href="#" class="picopsizeup"></a>
-                    <a href="#" class="picopdown"></a>
+                    <a href="#" class="picopsized" data-a="picopsized"></a>
+                    <a href="#" class="picopsizeup" data-a="picopsizeup"></a>
+                    <a href="<?php echo $press->master_image?>" class="picopdown" target="_blank"></a>
                 </div>
-                <img src="<?php echo $press->master_image?>" alt="">
+                <div class="pic-press">
+                	<img src="<?php echo $press->master_image?>" width="100%" style="margin:0 auto;">
+                </div>
               </textarea>
             <?php endforeach;?>
 					</div>

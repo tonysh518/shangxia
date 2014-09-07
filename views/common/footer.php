@@ -10,7 +10,7 @@
 			// </div>
 			?>
 			<!-- store -->
-			<div class="section store cs-clear intoview-effect" data-effect="fadeup">
+			<div class="section store cs-clear ">
         <?php 
           $city = getCity();
           $store = BoutiqueContentAR::model()->loadByAddressKey($city);
@@ -21,7 +21,7 @@
           $cities = array_diff(array_keys(BoutiqueContentAR::getLocation()), array($store->location));
           
         ?>
-				<div class="storechoose">
+				<div class="storechoose intoview-effect" data-effect="fadeup">
 					<h2><?php echo $store->title?></h2>
           <p><?php echo $store->body?></p>
 					<ul class="storechooselist cs-clear">
@@ -35,58 +35,60 @@
             <?php endforeach;?>
 					</ul>
 				</div>
-				<div class="storemap" style="height:400px;position:relative;">
+				<div class="storemap intoview-effect" data-effect="fadeup" style="height:400px;position:relative;">
 					<div class="storemap-wrap" id="map" data-map-type="<?php echo $map;?>" data-map="<?php echo $store->latlng?>" >
 					</div>
 				</div>
 				
 			</div>
 			<!-- sitelinks -->
-			<div class="section sitelinks cs-clear">
-				<div class="sitelinkitem">
-					<h2>COLLECTIONS</h2>
-					<a data-a="nav-link" href="/collections.php?a=0">heritage & emotion</a>
-					<a data-a="nav-link" href="/collections.php?a=1">human & nature</a>
-					<a data-a="nav-link" href="/collections.php?a=2">in & out</a>
-					<a data-a="nav-link" href="/collections.php?a=3">gifts</a>
+			<div class="footer-bottom">
+				<div class="section sitelinks cs-clear">
+					<div class="sitelinkitem intoview-effect" data-effect="fadeup">
+						<h2>COLLECTIONS</h2>
+						<a data-a="nav-link" href="/collections.php?a=0">heritage & emotion</a>
+						<a data-a="nav-link" href="/collections.php?a=1">human & nature</a>
+						<a data-a="nav-link" href="/collections.php?a=2">in & out</a>
+						<a data-a="nav-link" href="/collections.php?a=3">gifts</a>
+					</div>
+					<div class="sitelinkitem intoview-effect" data-effect="fadeup">
+						<h2>CRAFTS</h2>
+						<a data-a="nav-link" href="/craft.php?a=1">bamboo weaving</a>
+						<a data-a="nav-link" href="/craft.php?a=2">cashmere felt</a>
+						<a data-a="nav-link" href="/craft.php?a=3">eggshe rorcelain</a>
+						<a data-a="nav-link" href="/craft.php?a=4">zitan wood</a>
+					</div>
+					<div class="sitelinkitem sitelinkitemS intoview-effect" data-effect="fadeup">
+						<h2>BOUTIQUES</h2>
+						<a data-a="nav-link" href="/boutique.php">beijing</a>
+						<a data-a="nav-link" href="/boutique.php">shanghai</a>
+						<a data-a="nav-link" href="/boutique.php">paris</a>
+					</div>
+					<div class="sitelinkitem sitelinkitemS intoview-effect" data-effect="fadeup">
+						<h2>NEWS</h2>
+						<a data-a="nav-link" href="/news-detail.php">news</a>
+						<a data-a="nav-link" href="/news-detail.php">events</a>
+						<a data-a="nav-link" href="/news-detail.php">press</a>
+					</div>
+					<div class="sitelinkitem intoview-effect" data-effect="fadeup">
+						<h2>ABOUT</h2>
+						<a data-a="nav-link" href="#">brand story</a>
+						<a data-a="nav-link" href="#">artstic director</a>
+						<a data-a="nav-link" href="#">hertage & encounter</a>
+						<a data-a="nav-link" href="#">jobs</a>
+					</div>
+					<div class="sitelinkitem sitelinkitemXS intoview-effect" data-effect="fadeup">
+						<h2>CONTACT</h2>
+						<a href="#" class="ft_wx">weixin</a>
+						<a href="#" class="ft_wb">weibo</a>
+						<br>
+						<a href="#" style="width: auto;line-height: initial;height: auto;margin-top: 48px;" data-a="newsletter">subscribe to shang xia newsletter</a>
+					</div>
 				</div>
-				<div class="sitelinkitem">
-					<h2>CRAFTS</h2>
-					<a data-a="nav-link" href="/craft.php?a=1">bamboo weaving</a>
-					<a data-a="nav-link" href="/craft.php?a=2">cashmere felt</a>
-					<a data-a="nav-link" href="/craft.php?a=3">eggshe rorcelain</a>
-					<a data-a="nav-link" href="/craft.php?a=4">zitan wood</a>
+				<!-- copyright -->
+				<div class="copyright">
+					<p>ICP LICENCE 12345678 - PRIVACY POLICY LEGAL INFORMATION - <a href="#" data-a="newsletter">NEWSLETTER</a></p>
 				</div>
-				<div class="sitelinkitem sitelinkitemS">
-					<h2>BOUTIQUES</h2>
-					<a data-a="nav-link" href="/boutique.php">beijing</a>
-					<a data-a="nav-link" href="/boutique.php">shanghai</a>
-					<a data-a="nav-link" href="/boutique.php">paris</a>
-				</div>
-				<div class="sitelinkitem sitelinkitemS">
-					<h2>NEWS</h2>
-					<a data-a="nav-link" href="/news-detail.php">news</a>
-					<a data-a="nav-link" href="/news-detail.php">events</a>
-					<a data-a="nav-link" href="/news-detail.php">press</a>
-				</div>
-				<div class="sitelinkitem">
-					<h2>ABOUT</h2>
-					<a data-a="nav-link" href="#">brand story</a>
-					<a data-a="nav-link" href="#">artstic director</a>
-					<a data-a="nav-link" href="#">hertage & encounter</a>
-					<a data-a="nav-link" href="#">jobs</a>
-				</div>
-				<div class="sitelinkitem sitelinkitemXS">
-					<h2>CONTACT</h2>
-					<a href="#" class="ft_wx">weixin</a>
-					<a href="#" class="ft_wb">weibo</a>
-					<br>
-					<a href="#" style="width: auto;line-height: initial;height: auto;margin-top: 48px;" data-a="newsletter">subscribe to shang xia newsletter</a>
-				</div>
-			</div>
-			<!-- copyright -->
-			<div class="copyright">
-				<p>ICP LICENCE 12345678 - PRIVACY POLICY LEGAL INFORMATION - <a href="#" data-a="newsletter">NEWSLETTER</a></p>
 			</div>
 		</div>
 		<!--  -->

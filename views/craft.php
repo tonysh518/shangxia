@@ -28,11 +28,14 @@ include_once 'common/header.php';?>
 		</div>
 		
 		<!-- video -->
-		<div class="video intoview-effect" data-mp4="/video/small.mp4" data-webm="/video/small.webm" style="position:relative;overflow:hidden;"  data-effect="fadeup">
-			<img src="<?php echo $loadedCraft->video_poster?>" width="100%" />
+		<div class="intoview-effect" data-effect="fadeup">
+			<div class="video" data-video-render="1" data-mp4="/video/small.mp4" data-webm="/video/small.webm" style="position:relative;overflow:hidden;"  >
+				<img src="<?php echo $loadedCraft->video_poster?>" width="100%" />
+			</div>
+			<!-- barbg -->
+			<div class="barbg"></div>
 		</div>
-		<!-- barbg -->
-		<div class="barbg"></div>
+		
 		<!-- detail -->
 		<div class="section ">
 			<div class="detail detailW6 cs-clear">

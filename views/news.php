@@ -113,7 +113,7 @@
 					<h3 class="intoview-effect" data-effect="fadeup">shang xia maison opening </h3>
 					<h4  class="productscom-desc intoview-effect" data-effect="fadeup">2014 SEP 09</h4>
 					<p  class="productscom-desc intoview-effect" data-effect="fadeup"><i>This aurum, the SHANG XIA, maision will be opened on Hua Hai Road, Shanghai.<br />A new journey ....     <a class="more" href="#">Read more</a> </i></p>
-					<a href="/news-events.php" title="" class="btn transition-wrap"><span class="transition">View all events<br/><br/>View all events</span></a>
+					<a href="/news-events.php" title="" class="btn transition-wrap intoview-effect" data-effect="fadeup"><span class="transition">View all events<br/><br/>View all events</span></a>
 				</div>
 			</div>
 		</div>
@@ -138,11 +138,13 @@
                 </a>
                 <textarea style="display:none;">
 	              	<div class="picoperate cs-clear">
-	                    <a href="#" class="picopsized"></a>
-	                    <a href="#" class="picopsizeup"></a>
-	                    <a href="#" class="picopdown"></a>
+	                    <a href="#" class="picopsized" data-a="picopsized"></a>
+	                    <a href="#" class="picopsizeup" data-a="picopsizeup"></a>
+	                    <a href="<?php echo $press->master_image?>" class="picopdown" target="_blank"></a>
 	                </div>
-	                <img src="<?php echo $press->master_image?>" alt="">
+	                <div class="pic-press">
+	                	<img src="<?php echo $press->master_image?>" alt="" width="100%" style="margin:0 auto;">
+	                </div>
 	            </textarea>
               <?php endforeach;?>
 						</div>
@@ -151,7 +153,7 @@
 					<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
 					<?php } ?>
 					<!--  -->
-					<div class="newsolderbtn">
+					<div class="newsolderbtn intoview-effect" data-effect="fadeup">
 						<a href="/news-press.php" title="" class="transition-wrap"><span class="transition"><?php echo Yii::t("strings", "View all  press articles")?><br/><br/><?php echo Yii::t("strings", "View all  press articles")?></span></a>
 					</div>
 				</div>
