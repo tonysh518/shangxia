@@ -55,7 +55,7 @@
 					<!--  -->
 					<ul class="slidebox">
             <?php foreach($newsList as $key => $news): ?>
-              <li class="productslist cs-clear slideitem">
+              <li class="productslist cs-clear slideitem" data-id="<?php echo $news->cid?>">
                   <div class="prolistitem newsitem">
                     <img src="<?php echo $news->thumbnail?>" width="100%" />
                     <p><?php echo $news->title?><br /><span class="date"><?php echo date("Y M d", strtotime($news->date))?></span></p>

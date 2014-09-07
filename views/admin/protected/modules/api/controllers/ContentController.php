@@ -177,5 +177,22 @@ class ContentController extends Controller {
    
    $this->responseJSON($contact, "success");
  }
+ 
+ public function actionNews() {
+   $request = Yii::app()->getRequest();
+   
+   $cid = $request->getParam("id");
+   if (!$cid) {
+     return $this->responseError("invild params error", ErrorAR::ERROR_MISSED_REQUIRED_PARAMS);
+   }
+   
+   $news = NewsContentAR::model()->findByPk($cid);
+   
+   if (!$news) {
+     return $this->responseError("invild params error", ErrorAR::ERROR_MISSED_REQUIRED_PARAMS);
+   }
+   
+   $this->responseJSON($news, "success");
+ }
 }
 

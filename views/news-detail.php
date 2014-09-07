@@ -3,7 +3,7 @@
     <?php $news = loadFirstNews();?>
 		<!-- newscrumbs -->
 		<div class="newscrumbs">
-			<p><?php echo Yii::t("strings", "News")?> > <?php echo Yii::t("strings", "SHORT NEWS")?></p>
+			<p><a href="<?php echo "/news.php"?>"><?php echo Yii::t("strings", "News")?></a> > <?php echo Yii::t("strings", "SHORT NEWS")?></p>
 		</div>
 		<!-- related products -->
 	<div class="collpiclist cs-clear">
@@ -54,7 +54,7 @@
 					<div class="productslist cs-clear">
             <?php foreach ($groupedNews as $year => $newslist): ?>
               <?php foreach ($newslist as $news): ?>
-                <div class="prolistitem newsitem" data-year="<?php echo $year?>">
+                <div class="prolistitem newsitem" data-year="<?php echo $year?>" data-id="<?php echo $news->cid?>">
                   <img src="<?php echo $news->thumbnail?>" width="100%" />
                   <p><?php echo $news->title?><br /><?php echo date("Y M d", strtotime($news->date))?></p>
                 </div>
