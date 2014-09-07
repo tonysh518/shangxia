@@ -124,19 +124,32 @@
 					<h2><?php echo Yii::t("strings", "Press");?></h2>
 				</div>
 				<div class="productscom js-horizontal-slide" data-num="3">
+					<?php $presses = PressContentAR::model()->getList(10); ?>
+					<?php if( count( $presses ) > 3 ){ ?>
 					<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
+					<?php } ?>
 					<!--  -->
 					<div class="slide-con">
 						<div class="productslist cs-clear slide-con-inner">
-              <?php foreach(PressContentAR::model()->getList(10) as $press): ?>
-                <div class="prolistitem pressitem intoview-effect" data-effect="fadeup">
+              <?php foreach( $presses as $press): ?>
+                <a class="prolistitem pressitem intoview-effect" data-a="show-pop" data-d="press=1" data-effect="fadeup" href="#">
                   <img src="/images/newsdemo4.jpg" width="100%" />
                   <p><?php echo $press->title?><br /><?php echo date("M Y", strtotime($press->publish_date))?></p>
-                </div>
+                </a>
+                <textarea style="display:none;">
+	              	<div class="picoperate cs-clear">
+	                    <a href="#" class="picopsized"></a>
+	                    <a href="#" class="picopsizeup"></a>
+	                    <a href="#" class="picopdown"></a>
+	                </div>
+	                <img src="<?php echo $press->master_image?>" alt="">
+	            </textarea>
               <?php endforeach;?>
 						</div>
 					</div>
+					<?php if( count( $presses ) > 3 ){ ?>
 					<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
+					<?php } ?>
 					<!--  -->
 					<div class="newsolderbtn">
 						<a href="/news-press.php" title="" class="transition-wrap"><span class="transition"><?php echo Yii::t("strings", "View all  press articles")?><br/><br/><?php echo Yii::t("strings", "View all  press articles")?></span></a>

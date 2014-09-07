@@ -817,7 +817,8 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 <div class="popcon transition">#[con]</div>\
             </div>';
         return {
-            show: function( con ){
+            show: function( con , data ){
+                data = data || {};
                 var html = LP.format( tpl , { con: con } );
                 var $pop = $( html )
                     .appendTo( document.body )
@@ -826,6 +827,14 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                         $(this).find('.popcon')
                             .addClass( 'popcon-show' );
                     } );
+                if( data.press ){
+                    $pop.find('.popcon')
+                        .css({
+                            width: '100%',
+                            padding: 0,
+                            textAlign: 'center'
+                        });
+                }
             }
         }
     })();
@@ -1082,12 +1091,8 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     });
 
 
-    LP.action('pop-jobs' , function(){
-        var html = $(this).next().val();
-        $(html).appendTo( document.body )
-            .hide()
-            .fadeIn();
-
+    LP.action('show-pop' , function( data ){
+        popHelper.show( $(this).siblings('textarea').val() , data );
         return false;
     });
 
@@ -1141,24 +1146,24 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         return false;
     });
 
-    LP.action('pop-press-item' , function(){
-        var tpl = '<div class="popshade"></div>\
-                <div class="pop">\
-                    <div class="popclose" data-a="popclose"></div>\
-                    <div class="poppiccon">\
-                        <div class="picoperate cs-clear">\
-                            <a href="#" class="picopsized"></a>\
-                            <a href="#" class="picopsizeup"></a>\
-                            <a href="#" class="picopdown"></a>\
-                        </div>\
-                        <img src="#[img]" alt="">\
-                    </div>\
-                </div>';
-        var html = LP.format( tpl , {img: $(this).data('press')} );
-        $(html).appendTo( document.body ).hide().fadeIn();
+    // LP.action('pop-press-item' , function(){
+    //     var tpl = '<div class="popshade"></div>\
+    //             <div class="pop">\
+    //                 <div class="popclose" data-a="popclose"></div>\
+    //                 <div class="poppiccon">\
+    //                     <div class="picoperate cs-clear">\
+    //                         <a href="#" class="picopsized"></a>\
+    //                         <a href="#" class="picopsizeup"></a>\
+    //                         <a href="#" class="picopdown"></a>\
+    //                     </div>\
+    //                     <img src="#[img]" alt="">\
+    //                 </div>\
+    //             </div>';
+    //     var html = LP.format( tpl , {img: $(this).data('press')} );
+    //     $(html).appendTo( document.body ).hide().fadeIn();
 
-        return false;
-    });
+    //     return false;
+    // });
 
     LP.action('newsletter' , function(){
         popHelper.show( $('#newsletter').html() );
@@ -1188,10 +1193,6 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     });
 
 
-    LP.action('craft-read' , function(){
-        popHelper.show( $(this).siblings('textarea').val() );
-        return false;
-    });
 
 
     LP.action('show-news' , function(){

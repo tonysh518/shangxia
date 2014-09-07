@@ -5,7 +5,8 @@
 				<div class="arrows arrows3 detailprev" data-a="page-prev"></div>
 				<div class=" detailcon">
 					<h2><?php echo Yii::t("strings", "PRESS")?></h2>
-					<div class="press-lock"><?php echo Yii::t("strings", "Press access")?></div>
+
+					<a href="#" title="" class="press-lock btn btn-white transition-wrap"><span class="transition">&nbsp;&nbsp;<?php echo Yii::t("strings", "Press access")?><br/><br/>&nbsp;&nbsp;<?php echo Yii::t("strings", "Press access")?></span></a>
 				</div>
 				<div class="arrows arrows3 detailnext" data-a="page-next"></div>
 			</div>
@@ -25,12 +26,21 @@
 					<!--  -->
 					<div class="productslist cs-clear">
             <?php foreach ($presses as $year => $press): ?>
-              <a href="#" data-year="<?php echo $year?>" data-a="pop-press-item" data-press="<?php echo $press->master_image?>" class="prolistitem newsitem intoview-effect" data-effect="fadeup">
+              <a href="#" data-year="<?php echo $year?>" data-a="show-pop" data-d="press=1" class="prolistitem newsitem intoview-effect" data-effect="fadeup">
                 <img src="<?php echo $press->press_image?>" width="100%" />
                 <p><?php echo $press->title?><br /><span class="date"><?php echo date("Y M d", strtotime($press->publish_date))?></span></p>
               </a>
+              <textarea style="display:none;">
+              	<div class="picoperate cs-clear">
+                    <a href="#" class="picopsized"></a>
+                    <a href="#" class="picopsizeup"></a>
+                    <a href="#" class="picopdown"></a>
+                </div>
+                <img src="<?php echo $press->master_image?>" alt="">
+              </textarea>
             <?php endforeach;?>
 					</div>
+					<a href="#" style="margin-bottom:150px;" title="" class="btn transition-wrap"><span class="transition"><?php echo Yii::t("strings", "Load more")?><br/><br/><?php echo Yii::t("strings", "Load more")?></span></a>
 					<!--  -->
 				</div>
 			</div>

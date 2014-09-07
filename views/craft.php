@@ -102,7 +102,7 @@ include_once 'common/header.php';?>
 						<div class="proinfortxt aboutinfortxt intoview-effect" data-effect="fadeup">
 							<!-- <h2> </h2> -->
 							<p>As Artistic Director and CEO of SHANG XIA, Ms. Jiang Qiong Er is a Chinese contemporary designer of international reputation infusing the subtlety, beauty and heritage of Chinese culture. Her designs breathe elegance of innovation and imagination. Her international vision and open mind, along with her multi-cultural background, naturally allow her creativity to express itself; preserving and respecting tradition, both Eastern and Western.Jiang Qiong Er was introduced to traditional painting when she was only two and later became a student of famous painter Cheng Shi Fa and calligrapher Han Tian Hong. After graduation from Tong Ji University in Art & Design, she went on to the Decorative Arts School in Paris to further her studies in furniture and interior design.</p>
-							<a href="#" data-a="craft-read" class="btn transition-wrap"><span class="transition">Read more<br><br>Read more</span></a>
+							<a href="#" data-a="show-pop" class="btn transition-wrap"><span class="transition">Read more<br><br>Read more</span></a>
 							<textarea style="display:none;">
 								<h2>Construction</h2>
 								<div class="popcontxt">
