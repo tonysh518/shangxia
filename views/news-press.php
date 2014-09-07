@@ -25,7 +25,7 @@
 					<!--  -->
 					<div class="productslist cs-clear">
             <?php foreach ($presses as $year => $press): ?>
-              <a href="#" data-a="pop-press-item" data-press="<?php echo $press->master_image?>" class="prolistitem newsitem">
+              <a href="#" data-year="<?php echo $year?>" data-a="pop-press-item" data-press="<?php echo $press->master_image?>" class="prolistitem newsitem">
                 <img src="<?php echo $press->press_image?>" width="100%" />
                 <p><?php echo $press->title?><br /><span class="date"><?php echo date("Y M d", strtotime($press->publish_date))?></span></p>
               </a>
