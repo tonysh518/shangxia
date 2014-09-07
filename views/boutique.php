@@ -3,11 +3,11 @@ if (isset($_GET["key"])) {
   require_once 'common/inc.php';
   $boutique = BoutiqueContentAR::model()->loadByAddressKey($_GET["key"]);
   if (!$boutique || $boutique->type != BoutiqueContentAR::model()->type) {
-    exit(header("Location: ./index.php"));
+    exit(header("Location: /index.php"));
   }
 }
 else {
-  exit(header("Location: ./index.php"));
+  exit(header("Location: /index.php"));
 }
 
 $pagename="boutique-page";
@@ -23,19 +23,21 @@ include_once 'common/header.php';?>
 			</div>
 		</div>
 		<!-- slide -->
-		<div class="slide intoview-effect" data-effect="fadeup">
-			<div class="slidebox cs-clear">
-        <?php foreach ($boutique->boutique_slide as $image): ?>
-          <a href="javascript:void(0)" class="slideitem"><img src="<?php echo $image?>" width="100%" /></a>
-        <?php endforeach;?>
-			</div>
-			<ul class="slidetab cs-clear">
-        <?php foreach ($boutique->boutique_slide as $index => $image): ?>
-          <li class="<?php if ($index == 0) echo "on";?>"></li>
-        <?php endforeach;?>
-			</ul>
-			<!-- 数量改变需要改变css，或者用js来调整slidebox的宽度和slidetab的位置 -->
-		</div>
+    <?php if ($boutique->boutique_slide): ?>
+      <div class="slide intoview-effect" data-effect="fadeup">
+        <div class="slidebox cs-clear">
+          <?php foreach ($boutique->boutique_slide as $image): ?>
+            <a href="javascript:void(0)" class="slideitem"><img src="<?php echo $image?>" width="100%" /></a>
+          <?php endforeach;?>
+        </div>
+        <ul class="slidetab cs-clear">
+          <?php foreach ($boutique->boutique_slide as $index => $image): ?>
+            <li class="<?php if ($index == 0) echo "on";?>"></li>
+          <?php endforeach;?>
+        </ul>
+        <!-- 数量改变需要改变css，或者用js来调整slidebox的宽度和slidetab的位置 -->
+      </div>
+    <?php endif;?>
 		<!-- barbg -->
 		<div class="barbg"></div>
 		<!-- intro -->

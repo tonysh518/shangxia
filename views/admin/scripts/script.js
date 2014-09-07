@@ -66,6 +66,11 @@
       link: function (scope, element, attrs, ctrl) {
             if (attrs.ngModel) {
                 var value = attrs.value || element.val();
+                if (element.is("select")) {
+                  setTimeout(function () {
+                    element.val(value);
+                  });
+                }
                 ctrl[0].$setViewValue(value);
             }
         }
