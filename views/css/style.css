@@ -120,7 +120,7 @@ a{text-decoration:none;outline: none;color:inherit;}
 
 /*piclist*/
 .piclist{padding: 0 0 80px;}
-.piclistitem{float: left;width: 32.53%;min-height:300px; margin-right:0.8%;font-size: 18px;text-transform : uppercase;text-align: center;font-family: 'Gotham book';color: #4b3700;}
+.piclistitem{float: left;width: 32.53%;min-height:300px; margin-right:0.8%;font-size: 18px;text-transform : uppercase;text-align: center;font-family: 'Gotham book';color: #4b3700;overflow: hidden;}
 .piclistitem img{display: block;-webkit-transition: margin 0.2s linear;-moz-transition: margin 0.2s linear;-o-transition: margin 0.2s linear;-ms-transition: margin 0.2s linear;transition: margin 0.2s linear;}
 .piclistitem p{padding-top:20px;background: white;}
 .piclistitem img:hover{opacity: 0.9;}

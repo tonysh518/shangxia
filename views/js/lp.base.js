@@ -766,16 +766,17 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     var mapHelper = (function(){
         return {
             render: function( $dom ){
-                return;
                 var point = $dom.data('map').split(',');
-                if( $dom.data('baidu') ){ // use baidu
-                    this.renderBaidu( $dom , point );
-                } else {
+                if( $dom.data('map-type') == 'google' ){ // use baidu
                     this.renderGoogle( $dom , point );
+                } else {
+                    this.renderBaidu( $dom , point );
                 }
                 $dom.removeAttr('data-map');
             },
             renderBaidu: function( $dom , point ){
+                point[0] = point[0] || 0;
+                point[1] = point[1] || 0;
                 // var html = '<img class="map-marker" src="#[markerPath]" />\
                 //     <img src="http://api.map.baidu.com/staticimage?center=#[pointer]&width=#[width]&height=#[height]&zoom=11" />';
                 // $dom.html( LP.format( html , {
@@ -856,7 +857,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 ]
                         });
 
-                        var myIcon = new BMap.Icon("../SX/images/marker.png", new BMap.Size(34,40));
+                        var myIcon = new BMap.Icon("/images/marker.png", new BMap.Size(34,40));
                         var marker2 = new BMap.Marker(point,{icon:myIcon});  // 创建标注
                         oMap.addOverlay(marker2);              // 将标注添加到地图中
                     }
@@ -901,7 +902,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 new google.maps.Marker({
                     map: map,
                     position: new google.maps.LatLng(point[0],point[1]),
-                    icon: "../SX/images/marker.png"
+                    icon: "/images/marker.png"
                 });
 
                 // var map = new google.maps.Map($dom[0],{
