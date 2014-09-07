@@ -28,7 +28,9 @@ include_once 'common/header.php';?>
 		</div>
 		
 		<!-- video -->
-		<div class="video intoview-effect" data-video-render="/video/small" style="position:relative;overflow:hidden;"  data-effect="fadeup"><img src="<?php echo $craft->video_poster?>" width="100%" /></div>
+		<div class="video intoview-effect" data-video-render="/video/small" style="position:relative;overflow:hidden;"  data-effect="fadeup">
+      <img src="<?php echo $loadedCraft->video_poster?>" width="100%" />
+    </div>
 		<!-- barbg -->
 		<div class="barbg"></div>
 		<!-- detail -->
