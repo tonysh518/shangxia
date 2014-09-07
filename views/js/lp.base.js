@@ -40,26 +40,28 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     }
                 });
 
+
                 // init home page slider mouse move event
                 var isMoving = false;
                 var moveTimer = null;
-                $('#homepage-video-slide .slideitem').mousemove(function(){
+                $('#homepage-video-slide').mousemove(function(){
                     // judge is ithe video is playing
-                    var videoObject = $(this).data('video-object');
+                    var $item = $(this).find('.slideitem').eq( $(this).find('.slidetab li.on').index() );
+                    var $tip = $('#homepage-video-slide').find('.slidetip');
+                    var videoObject = $item.data('video-object');
                     clearTimeout( moveTimer );
                     if( !videoObject || videoObject.paused() )  {
+                        $tip.stop(true , true).fadeIn();
                         return false;
                     }
 
-                    var $tip = $(this).find('.slidetip');
-
                     if( isMoving == false ){
-                        $tip.fadeIn();
+                        $tip.stop(true , true).fadeIn();
                         isMoving = true;
                     }
                     moveTimer = setTimeout(function(){
                         isMoving = false;
-                        $tip.stop(true).fadeOut();
+                        $tip.stop(true , true).fadeOut();
                     } , 2000);
                 });
 
@@ -425,23 +427,76 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         var $slidetabs = $wrap.find('.slidetab li');
         var currentIndex = 0;
         var length = $slidebox.children().length;
-        $slidebox.css( 'width' , length * 100 + '%' )
-            .children()
-            .css('width' , 1 / length * 100 + '%' );
+        var isAbs = $wrap.data('slide') == 'absolute';
+        if( isAbs ){
+            $slidebox.children().find('img')
+                .eq(0)
+                .load(function(){
+                    $wrap.height( this.height );
+                });
+            $(window).resize(function(){
+                $wrap.height( 
+                    $slidebox.children().find('img')
+                        .eq(0).height() );
+            });
+
+            $slidebox.children().css({
+                position: 'absolute',
+                width: '100%',
+                left:0,
+                top: 0
+            })
+            .eq(0)
+            .css('zIndex' , 1);
 
 
-        $slidetabs.click(function(){
-            $(this).addClass('on')
-                .siblings()
-                .removeClass('on');
+            $slidetabs.click(function(){
 
-            var index = $(this).index();
-            $slidebox.stop(true).animate({
-                marginLeft: - index * 100 + '%'
-            } , 400 );
+                if( $(this).hasClass('on') ) return false;
+                if( $slidebox.find('.video-wrap').length ){
+                    disposeVideo();
+                    // change btn text
+                    var $btn = $('a[data-a="homepage-watch-video"]');
+                    $btn.find('i').html( $btn.data('play-text') + '<br/><br/>' + $btn.data('pause-text') );
+                }
 
-            return false;
-        });
+                var lastIndex = $slidetabs.filter('.on').index();
+                $(this).addClass('on')
+                    .siblings()
+                    .removeClass('on');
+
+                var index = $(this).index();
+
+                $slidebox.children().eq( index )
+                    .css({'zIndex': 2 , left: lastIndex > index ? '-100%' : '100%'})
+                    .stop(true)
+                    .animate({
+                        left: 0
+                    } , 400 , function(){
+                        $(this).css('zIndex' , 1)
+                            .siblings('zIndex' , 0);
+                    } );
+
+                return false;
+            });
+        } else {
+            $slidebox.css( 'width' , length * 100 + '%' )
+                .children()
+                .css('width' , 1 / length * 100 + '%' );
+
+            $slidetabs.click(function(){
+                $(this).addClass('on')
+                    .siblings()
+                    .removeClass('on');
+
+                var index = $(this).index();
+                $slidebox.stop(true).animate({
+                    marginLeft: - index * 100 + '%'
+                } , 400 );
+
+                return false;
+            });
+        }
 
         if( $wrap.data('auto') !== false ){
             setInterval(function(){
@@ -511,11 +566,12 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                         var h = $wrap.height() ;
                         var vh = 0 ;
                         var vw = 0 ;
+                        var exp = 0;
                         if( h / w > ratio ){
-                            vh = h + 40;
+                            vh = h + exp;
                             vw = vh / ratio;
                         } else {
-                            vw = w + 40;
+                            vw = w + exp;
                             vh = vw * ratio;
                         }
 
@@ -1039,12 +1095,14 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
     LP.action('homepage-watch-video' , function(){
         var $dom = $(this);
+        var playText = $dom.data('play-text');
+        var pauseText = $dom.data('pause-text');
         var $tip = $dom.closest('.slidetip-wrap');
         
         var index = $tip.next().find('.on').index();
         var $li = $tip.prev().children().eq( index );
-        var stopHtml = 'Watch video<br><br>Watch video';
-        var playHtml = 'Pause video<br><br>Pause video';
+        var stopHtml = playText + '<br><br>' + playText;
+        var playHtml = pauseText + '<br><br>' + pauseText;
 
         if( $li.find('.video-wrap').length ){
             var obj = $li.data('video-object');
