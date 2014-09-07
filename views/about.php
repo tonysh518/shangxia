@@ -110,11 +110,7 @@ include_once 'common/header.php';?>
                     <h3><?php echo $job->title?></h3>
                     <a href="#" class="btn transition-wrap" data-a="pop-jobs"><span class="transition"><?php echo Yii::t("strings", "Read more")?><br><br><?php echo Yii::t("strings", "Read more")?></span></a>
                     <textarea style="display:none;">
-                      <div class="popshade"></div>
-                      <div class="pop pop1">
-                        <div class="popclose" data-a="popclose"></div>
-                        <!--  -->
-                        <div class="popcon popconabout">
+                        <div class="popconabout">
                           <h2><?php echo $job->title?></h2>
                           <div class="popcontxt">
                             <p><?php echo Yii::t("strings", "Reports To")?>: <?php echo $job->report_to?><br /><br /><?php echo Yii::t("strings", "Location")?>: <?php echo $job->location?></p>
@@ -144,7 +140,6 @@ include_once 'common/header.php';?>
                             <a href="#" class="popsharewx"></a>
                           </div>
                         </div>
-                      </div>
                     </textarea>
                 </div>
               <?php endforeach;?>

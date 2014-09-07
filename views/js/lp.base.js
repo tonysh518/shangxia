@@ -920,9 +920,22 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
 
     var popHelper = (function(){
-
+        var tpl ='<div class="popshade"></div>\
+            <div class="pop">\
+                <div class="popclose" data-a="popclose"></div>\
+                <div class="popcon transition">#[con]</div>\
+            </div>';
         return {
-
+            show: function( con ){
+                var html = LP.format( tpl , { con: con } );
+                var $pop = $( html )
+                    .appendTo( document.body )
+                    .hide()
+                    .fadeIn( function(){
+                        $(this).find('.popcon')
+                            .addClass( 'popcon-show' );
+                    } );
+            }
         }
     })();
 
@@ -1258,19 +1271,13 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     });
 
     LP.action('newsletter' , function(){
-        var tpl = $('#newsletter').html();
-        $(tpl).appendTo( document.body )
-            .hide()
-            .fadeIn();
+        popHelper.show( $('#newsletter').html() );
         return false;
     });
 
 
     LP.action('craft-read' , function(){
-        $( $(this).siblings('textarea').val() )
-            .appendTo( document.body )
-            .hide()
-            .fadeIn();
+        popHelper.show( $(this).siblings('textarea').val() );
         return false;
     });
 });

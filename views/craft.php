@@ -30,7 +30,7 @@ include_once 'common/header.php';?>
 		<!-- video -->
 		<div class="video intoview-effect" data-video-render="/video/small" style="position:relative;overflow:hidden;"  data-effect="fadeup"><img src="<?php echo $craft->video_poster?>" width="100%" /></div>
 		<!-- barbg -->
-		<div class="barbg intoview-effect" data-effect="fadeup"></div>
+		<div class="barbg"></div>
 		<!-- detail -->
 		<div class="section ">
 			<div class="detail detailW6 cs-clear">
