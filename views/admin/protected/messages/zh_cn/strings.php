@@ -120,4 +120,6 @@ return array(
     "CONTACT" => "联系「上下」",
     "SEARCH" => "搜索",
     "SEARCH DEMO" => "搜索示例",
+    "Brand story" => "品牌故事",
+    "home_brand_story" => "SHANG XIA IS A BRAND FOR ART OF LIVING THAT PROMISES A UNIQUE ENCOUNTER WITH THE HERITAGE OF CHINESE DESIGN AND CRAFTSMANSHIP.",
 );

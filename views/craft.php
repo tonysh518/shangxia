@@ -1,8 +1,8 @@
 <?php 
 
-if (isset($_GET["id"])) {
+if (isset($_GET["cid"])) {
   require_once 'common/inc.php';
-  $loadedCraft = CraftContentAR::model()->findByPk($_GET["id"]);
+  $loadedCraft = CraftContentAR::model()->findByPk($_GET["cid"]);
   if (!$loadedCraft || $loadedCraft->type != CraftContentAR::model()->type) {
     exit(header("Location: /index.php"));
   }
@@ -39,12 +39,16 @@ include_once 'common/header.php';?>
 			</div>
 		</div>
 		<!-- know how -->
-	<?php include_once 'widget/how-weaving.php';?>
-	<?php include_once 'widget/how-felt.php';?>
-	<?php include_once 'widget/how-weaving.php';?>
-	<?php include_once 'widget/how-weaving.php';?>
-	<?php include_once 'widget/how-weaving.php';?>
-	<?php include_once 'widget/how-weaving.php';?>
+    <?php if (is_weaving()): ?>
+      <?php include_once 'widget/how-weaving.php';?>
+    <?php elseif (is_cashmere()): ?>
+      <?php include_once 'widget/how-cashmere_felt.php';?>
+    <?php elseif (is_eggshell()): ?>
+      <?php include_once 'widget/how-eggshell_porcelain.php';?>
+    <?php else: ?>
+      <?php include_once 'widget/how-zitan.php';?>
+    <?php ?>
+    <?php endif;?>
     <?php $products = loadCraftRelatedProducts($loadedCraft);?>
 		<!-- related products -->
     <?php if (count($products)) : ?>

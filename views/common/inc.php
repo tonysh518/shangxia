@@ -350,3 +350,36 @@ function url($uri, $params = array()) {
     }
   }
 }
+
+
+function is_weaving() {
+  //           中       英     , 法
+  $ids = array("20322", "20315");
+  if (isset($_GET["cid"]) && in_array($_GET["cid"], $ids)) {
+    return TRUE;
+  }
+}
+
+function is_zitan() {
+  //           中       英     , 法
+  $ids = array("20321", "20316");
+  if (isset($_GET["cid"]) && in_array($_GET["cid"], $ids)) {
+    return TRUE;
+  }
+}
+
+function is_cashmere() {
+  //           中       英     , 法
+  $ids = array("20319", "20318");
+  if (isset($_GET["cid"]) && in_array($_GET["cid"], $ids)) {
+    return TRUE;
+  }
+}
+
+function is_eggshell() {
+  //           中       英     , 法
+  $ids = array("20320", "20317");
+  if (isset($_GET["cid"]) && in_array($_GET["cid"], $ids)) {
+    return TRUE;
+  }
+}

@@ -29,26 +29,26 @@ $pagename = 'product-detail';
 				</div>
 				<div class="arrows detailnext" data-a="page-next"></div>
 			</div>
-			<a href="#" style="margin-top:0;margin-bottom:100px;" class="btn transition-wrap" data-a="newsletter"><span class="transition">I Want To Buy<br/><br/>I Want To Buy</span></a>
+			<a href="#" style="margin-top:0;margin-bottom:100px;" class="btn transition-wrap" data-a="newsletter"><span class="transition"><?php echo Yii::t("strings", "I Want To Buy")?><br/><br/><?php echo Yii::t("strings", "I Want To Buy")?></span></a>
 		</div>
 		<!--  -->
 		<!-- video -->
-		<div class="slide">
-			<div class="slidebox cs-clear">
-				<a href="javascript:void(0)" class="slideitem"><img src="/images/parisdemo.jpg" width="100%" /></a>
-        <a href="javascript:void(0)" class="slideitem"><img src="/images/parisdemo.jpg" width="100%" /></a>
-				<a href="javascript:void(0)" class="slideitem"><img src="/images/parisdemo.jpg" width="100%" /></a>
-				<a href="javascript:void(0)" class="slideitem"><img src="/images/parisdemo.jpg" width="100%" /></a>
-			</div>
-			<ul class="slidetab cs-clear">
-				<li class="on"></li>
-				<li></li>
-				<li></li>
-				<li></li>
-			</ul>
-			<!-- 数量改变需要改变css，或者用js来调整slidebox的宽度和slidetab的位置 -->
-		</div>
-		
+    <?php if ($product->product_slide_image): ?>
+      <div class="slide">
+        <div class="slidebox cs-clear">
+          <?php foreach ($product->product_slide_image as $slide_image):?>
+            <a href="javascript:void(0)" class="slideitem"><img src="<?php echo $slide_image?>" width="100%" /></a>
+          <?php endforeach;?>
+        </div>
+        <ul class="slidetab cs-clear">
+          <?php foreach ($product->product_slide_image as $index => $slide_image):?>
+            <li class="<?php if ($index == 0) echo "on"?>"></li>
+          <?php endforeach;?>
+        </ul>
+        <!-- 数量改变需要改变css，或者用js来调整slidebox的宽度和slidetab的位置 -->
+      </div>
+    <?php endif;?>
+    
 			<!-- barbg -->
 		<div class="barbg"></div>
 		
@@ -56,13 +56,13 @@ $pagename = 'product-detail';
 		<div class="section">
 			<div class="knowhow">
 				<div class="knowhowtit coll_video">
-					<h2>ZITAN WOOD CRAFTMANSHIP</h2>
+					<h2><?php echo $product->video_title?></h2>
 				</div>
 				<div class="coll_videocom ">
-					<p>The Da Tian Di collection is based on traditional Ming furniture construction principles, <br />where each piece is deftly hand crafted by a master craftman</p>
+          <p><?php echo $product->video_description?></p>
 					<div class="coll_videobox" data-video-render="/video/small"><img src="/images/coll_videodemo.jpg" width="100%" /></div>
 				</div>
-				<a href="#" class="btn transition-wrap" ><span class="transition">View more<br/><br/>View more</span></a>
+				<a href="<?php echo "/collection.php?cid=". $product->collection?>" class="btn transition-wrap" ><span class="transition"><?php echo Yii::t("strings", "View more")?><br/><br/><?php echo Yii::t("strings", "View more")?></span></a>
 			</div>
 		</div>
 		<!-- collpiclist -->
@@ -87,7 +87,7 @@ $pagename = 'product-detail';
 			                  		<p><span class="collicon"><?php echo $p->title?></span></p>
 			                	</a> 
 			                </li>
-            			    <?php endforeach;?>
+            	<?php endforeach;?>
 						</ul>
 					</div>
 					<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>

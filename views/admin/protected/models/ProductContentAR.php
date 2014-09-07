@@ -42,6 +42,7 @@ class ProductContentAR extends ContentAR {
   
   public function getImageFields() {
     $this->hasImageField("product_slide_image", array("multi" => TRUE));
+    $this->hasImageField("video_poster");
     $this->hasImageField("thumbnail");
     return parent::getImageFields();
   }

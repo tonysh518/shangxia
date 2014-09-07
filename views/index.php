@@ -5,8 +5,9 @@
 	<div class="section intoview-effect" data-effect="fadeup" data-editme-key="home_brand_story_summary">
     <?php editme("home_brand_story_summary")?>
 		<div class="intro">
-			<p class="introtxt" data-editme-body=".introtxt">SHANG XIA IS A BRAND FOR ART OF LIVING
-THAT PROMISES A UNIQUE ENCOUNTER WITH THE HERITAGE OF CHINESE DESIGN AND CRAFTSMANSHIP.</p>
+			<p class="introtxt" data-editme-body=".introtxt">
+<?php echo Yii::t("strings", "home_brand_story")?>
+      </p>
 			<a href="./about.php" title="" class="introbtn transition-wrap"><span class="transition"><?php echo Yii::t("strings" ,"Brand story")?><br/><br/><?php echo Yii::t("strings", "Brand story")?></span></a>
 		</div>
 	</div>
@@ -16,21 +17,21 @@ THAT PROMISES A UNIQUE ENCOUNTER WITH THE HERITAGE OF CHINESE DESIGN AND CRAFTSM
 			<li class="piclistitem intoview-effect" data-effect="fadeup" data-editme-key="home_middle_slide_one">
         		<a href="">
 					<img src="/images/homepage01.jpg" width="100%" />
-					<p>shang xia is now opening <br/> its maison in shanghai</p>
+          <p><?php echo Yii::t("strings", "shang xia is now opening <br/> its maison in shanghai")?></p>
 				</a>
 			</li>
 			<li class="piclistitem intoview-effect" data-effect="fadeup" data-editme-key="home_middle_slide_two">
         <?php editme("home_middle_slide_two" ,array("title", "link_to"), array("image"))?>
         		<a href="">
 					<img src="/images/homepage02.jpg" width="100%" />
-					<p>THE FIRST SHANG XIA BAG</p>
+					<p><?php echo Yii::t("strings", 'THE FIRST SHANG XIA BAG')?></p>
 				</a>
 			</li>
 			<li class="piclistitem intoview-effect marginR0" data-effect="fadeup" data-editme-key="home_middle_slide_third">
         <?php editme("home_middle_slide_third" ,array("title", "link_to"), array("image"))?>
         		<a href="">
 					<img src="/images/homepage03.jpg" width="100%" />
-					<p>GIFT CORNER</p>
+					<p><?php echo Yii::t("strings", "GIFT CORNER")?></p>
 				</a>
 			</li>
 		</ul>
