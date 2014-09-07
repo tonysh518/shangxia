@@ -48,13 +48,13 @@ include_once 'common/header.php';?>
 		<!-- parislist -->
 		<div class="section">
 			<div class="parislist cs-clear">
-				<a href="#" class="parisitem intoview-effect" data-effect="fadeup">
+				<a href="javascript:void(0)" class="parisitem intoview-effect" data-effect="fadeup">
 					<img src="/images/parisdemo1.jpg" width="100%" alt="">
 				</a>
-				<a href="#" class="parisitem intoview-effect" data-effect="fadeup">
+				<a href="javascript:void(0)" class="parisitem intoview-effect" data-effect="fadeup">
 					<img src="/images/parisdemo1.jpg" width="100%" alt="">
 				</a>
-				<a href="#" class="parisitem marginR0 intoview-effect" data-effect="fadeup">
+				<a href="javascript:void(0)" class="parisitem marginR0 intoview-effect" data-effect="fadeup">
 					<img src="/images/parisdemo1.jpg" width="100%" alt="">
 				</a>
 			</div>
