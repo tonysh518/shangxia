@@ -22,6 +22,7 @@
             </div>
           <?php endif;?>
 					</div>
+        <?php if ($news): ?>
 				<div class="picinforpic">
             <?php if ($news->news_slide_image):?>
 					<div class="slide">
@@ -41,6 +42,7 @@
 						<!-- 数量改变需要改变css，或者用js来调整slidebox的宽度和slidetab的位置 -->
 					</div>
 				</div>
+        <?php endif;?>
 				<!--  -->
 			</div>
 		</div>
