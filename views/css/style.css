@@ -207,7 +207,7 @@ a{text-decoration:none;outline: none;color:inherit;}
 .prolistitem img{display: block;margin: 0 0 10px;}
 .prolistitem p{background: #4b3700;color:#fff;padding:12px;font-size: 18px;text-align: center ;}
 .prolistitem p.date{font-family: garamond;}
-.newsitem p{background: #fff;color:#4b3700  ;height: 80px;}
+.newsitem p{background: #fff;color:#4b3700	;height: 80px;}
 
 /*othercraf*/
 .othercraf{padding-bottom:50px;}
@@ -450,7 +450,7 @@ body .vjs-default-skin .vjs-big-play-button:focus{box-shadow: none;}
 
 /*horizontal slide*/
 .js-horizontal-slide{}
-    .js-horizontal-slide .slide-con{width: 100%;overflow: hidden;}
+	.js-horizontal-slide .slide-con{width: 100%;overflow: hidden;}
 
 
 
