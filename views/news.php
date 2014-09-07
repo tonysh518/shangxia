@@ -12,17 +12,16 @@
 		<!-- related products -->
 		<div class="section intoview-effect" data-effect="fadeup">
 			<div class="picinfor cs-clear">
-				<div class="picinfortxt">
+				
           <?php $news = loadFirstNews();?>
           <?php if ($news): ?>
-            <h2><?php echo $news->title?></h2>
-            <h3><?php echo date("Y M d", strtotime($news->date))?></h3>
-            <div class="body">
-              <?php echo $news->body?>
-            </div>
-          <?php endif;?>
-					</div>
-        <?php if ($news): ?>
+	          	<div class="picinfortxt">
+		            <h2><?php echo $news->title?></h2>
+		            <h3><?php echo date("Y M d", strtotime($news->date))?></h3>
+		            <div class="body">
+		              <?php echo $news->body?>
+		            </div>
+	            </div>
 				<div class="picinforpic">
             <?php if ($news->news_slide_image):?>
 					<div class="slide">
@@ -42,7 +41,7 @@
 						<!-- 数量改变需要改变css，或者用js来调整slidebox的宽度和slidetab的位置 -->
 					</div>
 				</div>
-        <?php endif;?>
+        	<?php endif;?>
 				<!--  -->
 			</div>
 		</div>
@@ -58,10 +57,40 @@
 					<ul class="slidebox">
             <?php foreach($newsList as $key => $news): ?>
               <li class="productslist cs-clear slideitem" data-id="<?php echo $news->cid?>">
-                  <div class="prolistitem newsitem">
+                  <a href="#" class="prolistitem newsitem" data-a="show-news">
                     <img src="<?php echo $news->thumbnail?>" width="100%" />
                     <p><?php echo $news->title?><br /><span class="date"><?php echo date("Y M d", strtotime($news->date))?></span></p>
-                  </div>
+                    <textarea style="display:none;">
+                    	<?php if ($news): ?>
+				          	<div class="picinfortxt">
+					            <h2><?php echo $news->title?></h2>
+					            <h3><?php echo date("Y M d", strtotime($news->date))?></h3>
+					            <div class="body">
+					              <?php echo $news->body?>
+					            </div>
+				            </div>
+							<div class="picinforpic">
+			            <?php if ($news->news_slide_image):?>
+								<div class="slide">
+									<div class="slidebox cs-clear">
+			              <?php foreach($news->news_slide_image as $image): ?>
+			                <img class="slideitem" src="<?php echo $image?>" width="100%" />
+			              <?php endforeach;?>
+									</div>
+			            <?php endif;?>
+			            <?php if ($news->news_slide_image):?>
+									<ul class="slidetab">
+			              <?php foreach($news->news_slide_image as $index => $image): ?>
+										<li class="<?php if ($index == 0) echo "on"?>"></li>
+			              <?php endforeach;?>
+									</ul>
+			            <?php endif;?>
+									<!-- 数量改变需要改变css，或者用js来调整slidebox的宽度和slidetab的位置 -->
+								</div>
+							</div>
+			        	<?php endif;?>
+                    </textarea>
+                  </a>
               </li>
             <?php endforeach;?>
 					</ul>

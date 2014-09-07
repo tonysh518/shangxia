@@ -2,7 +2,7 @@
 $pagename="about-page";
 include_once 'common/header.php';?>
 		<!-- detail -->
-		<div class="section ">
+		<div class="section intoview-effect" data-effect="fadeup">
 			<div class="detail cs-clear">
 				<div class="arrows arrows2 detailprev" data-a="page-prev"></div>
 				<div class=" detailcon">
@@ -12,7 +12,7 @@ include_once 'common/header.php';?>
 			</div>
 		</div>
 		<!-- slide -->
-		<div class="slide">
+		<div class="slide intoview-effect" data-effect="fadeup">
 			<div class="slidebox cs-clear">
 				<a href="#" class="slideitem"><img src="/images/parisdemo.jpg" width="100%" /></a>
 				<a href="#" class="slideitem"><img src="/images/parisdemo.jpg" width="100%" /></a>
@@ -30,7 +30,7 @@ include_once 'common/header.php';?>
 		<!-- barbg -->
 		<div class="barbg"></div>
 		<!-- intro -->
-		<div class="section ">
+		<div class="section intoview-effect" data-effect="fadeup">
 			<div class="intro introparis ">
 				<h2 class="aboutintrotit"><?php echo Yii::t("strings", "about_brand_story_title")?></h2>
         <?php echo Yii::t("strings", "about_brand_story_desc")?>
@@ -44,12 +44,12 @@ include_once 'common/header.php';?>
 				</div>
 				<div class="productscom">
 					<div class="productsinfor cs-clear">
-						<div class="proinfortxt aboutinfortxt">
+						<div class="proinfortxt aboutinfortxt intoview-effect" data-effect="fadeup">
 							<!-- <h2> </h2> -->
 							<p><?php echo Yii::t("strings", "about_brand_founter_desc")?></p>
 							<a href="#" class="btn transition-wrap"><span class="transition"><?php echo Yii::t("strings", "Read more")?><br><br><?php echo Yii::t("strings", "Read more")?></span></a>
 						</div>
-						<div class="proinforpic">
+						<div class="proinforpic intoview-effect" data-effect="fadeup">
 							<div class="slide">
 								<div class="slidebox cs-clear">
 									<img class="slideitem" src="/images/proinfopic.jpg" width="100%" />
@@ -73,23 +73,31 @@ include_once 'common/header.php';?>
 		<!-- know how -->
 		<div class="section">
 			<div class="knowhow">
-				<div class="productstit about2tit">
+				<div class="productstit about2tit intoview-effect" data-effect="fadeup">
 					<h2><?php echo Yii::t("strings", "about_brand_emplee_subject")?></h2>
 				</div>
 				<div class="knowhowcom ">
-					<div class="knowhowitem cs-clear">
-						<div class="knowhowintro  knowhowR"><?php echo Yii::t("strings", "about_brand_emplee_one")?></div>
+					<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
+						<div class="knowhowintro  knowhowR">
+							<div class="cwrap">
+							<?php echo Yii::t("strings", "about_brand_emplee_one")?>
+							</div>
+						</div>
             <div class="knowhowpic  knowhowL"><img src="/images/about_em_1.jpg" width="100%" /></div>
 					</div>
-					<div class="knowhowitem cs-clear">
+					<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 						<div class="knowhowintro  knowhowL">
+							<div class="cwrap">
               <?php echo Yii::t("strings" ,"about_brand_emplee_two")?>
+              </div>
             </div>
 						<div class="knowhowpic  knowhowR"><img src="/images/about_em_2.jpg" width="100%" /></div>
 					</div>
-					<div class="knowhowitem cs-clear">
+					<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 						<div class="knowhowintro  knowhowR">
+							<div class="cwrap">
               <?php echo Yii::t("strings" ,"about_brand_emplee_third")?>
+              </div>
             </div>
 						<div class="knowhowpic  knowhowL"><img src="/images/about_em_3.jpg" width="100%" /></div>
 					</div>
@@ -99,14 +107,14 @@ include_once 'common/header.php';?>
 		<!--  other jobs -->
 		<div class="section">
 			<div class="products othercraf">
-				<div class="productstit jobstit">
+				<div class="productstit jobstit intoview-effect" data-effect="fadeup">
 					<h2><?php echo Yii::t("strings", "jobs")?></h2>
 				</div>
 				<div class="productscom jobscom">
 					<!--  -->
 					<div class="productslist cs-clear">
               <?php foreach (loadJob() as $job): ?>
-                <div class="jobsitem">
+                <div class="jobsitem intoview-effect" data-effect="fadeup">
                     <h3><?php echo $job->title?></h3>
                     <a href="#" class="btn transition-wrap" data-a="pop-jobs"><span class="transition"><?php echo Yii::t("strings", "Read more")?><br><br><?php echo Yii::t("strings", "Read more")?></span></a>
                     <textarea style="display:none;">

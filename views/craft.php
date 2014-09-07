@@ -28,7 +28,7 @@ include_once 'common/header.php';?>
 		</div>
 		
 		<!-- video -->
-		<div class="video intoview-effect" data-video-render="/video/small" style="position:relative;overflow:hidden;"  data-effect="fadeup"><img src="<?php echo $craft->video_poster?>" width="100%" /></div>
+		<div class="video intoview-effect" data-mp4="/video/small.mp4" data-webm="/video/small.webm" style="position:relative;overflow:hidden;"  data-effect="fadeup"><img src="<?php echo $craft->video_poster?>" width="100%" /></div>
 		<!-- barbg -->
 		<div class="barbg"></div>
 		<!-- detail -->
@@ -100,7 +100,17 @@ include_once 'common/header.php';?>
 						<div class="proinfortxt aboutinfortxt intoview-effect" data-effect="fadeup">
 							<!-- <h2> </h2> -->
 							<p>As Artistic Director and CEO of SHANG XIA, Ms. Jiang Qiong Er is a Chinese contemporary designer of international reputation infusing the subtlety, beauty and heritage of Chinese culture. Her designs breathe elegance of innovation and imagination. Her international vision and open mind, along with her multi-cultural background, naturally allow her creativity to express itself; preserving and respecting tradition, both Eastern and Western.Jiang Qiong Er was introduced to traditional painting when she was only two and later became a student of famous painter Cheng Shi Fa and calligrapher Han Tian Hong. After graduation from Tong Ji University in Art & Design, she went on to the Decorative Arts School in Paris to further her studies in furniture and interior design.</p>
-							<a href="#" class="btn transition-wrap"><span class="transition">Read more<br><br>Read more</span></a>
+							<a href="#" data-a="craft-read" class="btn transition-wrap"><span class="transition">Read more<br><br>Read more</span></a>
+							<textarea style="display:none;">
+								<h2>Construction</h2>
+								<div class="popcontxt">
+									<p>All Chinese furniture bases its construction on ancient architecture. The bridge, beam, post, pole and sparrow brace in architecture all have their equivalent within chair making, as the seat frame, edge, stretcher and brace are similar to elements in architecture.</p>
+									<p>Metal nails are never used when connecting components, instead, mortise and tenons are used to fit legs and waists together in waisted furniture, and also together with stretchers. </p>
+									<p>Ancient people used the expression “will not fall in eternity” to describe the strength of mortise and tenons. Mortise and tenons can endure pressure from several directions making the furniture as stable and enduring as Mount Tai. </p>
+									<p>In ancient times, due to the technical limit of carpentry, mortise and tenons were difficult to make and joints came loose easily. </p>
+									<p>Today, with the help of precise mechanisms,Master Gu has improved the accuracy of the joints by perfecting the quality of the mortise and tenons so that indeed they “will not fall in eternity”.</p>
+								</div>
+							</textarea>
 						</div>
 						<div class="proinforpic intoview-effect" data-effect="fadeup" data-effect-delay="400">
 							<div class="slide">

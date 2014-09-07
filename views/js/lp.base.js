@@ -12,114 +12,6 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
     }
 
-
-    /*
-     * Animate Class
-     * {@param originNumArr} 需要变化的初始化数据
-     * {@param targetNumArr} 数据的最终值
-     * {@param speed} 动画持续时间
-     * {@param easing} 动画特效
-     * {@param step} 动画每一步需要执行的了函数，主要用于更新元素的样式值，其第一个参数是个数组，数组里为数据变化的当前值
-     * {@param callback} 动画结束时的回调函数
-     */
-    var Animate = function(originNumArr,targetNumArr,speed,easing,step,callback){
-        this.queue = [];
-        this.duration = speed;
-        this.easing = easing;
-        this.step = step;
-        this.callback = callback;
-        for (var i = 0; i < originNumArr.length; i++){
-            this.queue.push(new Animate.fx(originNumArr[i],targetNumArr[i]));
-        }
-        // begin animation
-        this.begin();
-    }
-
-    Animate.prototype = {
-        begin: function(){
-            if(this._t) return ;
-            var that = this;
-            this.startTime = +new Date();
-            // loop
-            this._t = setInterval(function(){
-                var dur = +new Date() - that.startTime;
-                var queue = that.queue;
-                if(dur > that.duration){
-                    that.end();
-                    // end Animate
-                    return;
-                }
-                var easing = Animate.easing[that.easing] || Animate.easing.linear,
-                    currValues = [];
-                for (var i = 0,len = queue.length; i < len; i++){
-                    currValues.push(queue[i].update(dur,that.duration,easing));
-                }
-                // run step to update
-                that.step(currValues);
-            },13);
-        },
-        // go to end of the animation
-        end: function(){
-            clearInterval(this._t);
-            var queue = this.queue,
-                currValues = [];
-            for (var i = 0,len = queue.length; i < len; i++){
-                currValues.push(queue[i].target);
-            }
-            this.step(currValues);
-            // call callback function
-            this.callback && this.callback();
-        },
-        turnTo: function( targetNumArr ){
-            clearInterval(this._t);
-            var that = this;
-            // reset queue
-            this.startTime = + new Date();
-            for (var i = 0,len = that.queue.length; i < len; i++){
-                that.queue[i] = new Animate.fx(that.queue[i].current,targetNumArr[i]);
-            }
-            // reset interval
-            this._t = setInterval(function(){
-                var dur = +new Date() - that.startTime;
-                var queue = that.queue;
-                if(dur > that.duration){
-                    that.end();
-                    // end Animate
-                    return;
-                }
-                var easing = Animate.easing[that.easing] || Animate.easing.linear,
-                    currValues = [];
-                for (var i = 0,len = queue.length; i < len; i++){
-                    currValues.push(queue[i].update(dur,that.duration,easing));
-                }
-                // run step to update
-                that.step(currValues);
-            } , 13);
-        }
-    }
-    //
-    Animate.fx = function(origin,target){
-        this.origin = origin;
-        this.target = target;
-        this.dist = target - origin;
-    }
-    Animate.fx.prototype = {
-        update: function(n,duration,easing){
-            var pos = easing(n/duration, n , 0 ,1 , duration);
-            this.current = this.origin + this.dist * pos;
-            return this.current;
-        }
-    }
-    // easing
-    Animate.easing = {
-        linear: function( p, n, firstNum, diff ) {
-            return firstNum + diff * p;
-        },
-        swing: function( p, n, firstNum, diff ) {
-            return ((-Math.cos(p*Math.PI)/2) + 0.5) * diff + firstNum;
-        }
-    }
-
     
     var pageManager = (function(){
         var $header = $('.head');
@@ -445,10 +337,9 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     var $dom = $(this).css({
                         position: 'relative',
                         overflow: 'hidden'
-                    }) ;
-                    var video = $dom.data('video-render');
+                    });
                     var poster = $dom.find('img').attr('src');
-                    renderVideo( $dom , video , poster , {pause_button: true} );
+                    renderVideo( $dom , $dom.data('mp4') , $dom.data('webm') , poster , {pause_button: true} );
                 });
 
                 // render initHoverMoveEffect
@@ -597,15 +488,14 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         });
     }
 
-    function renderVideo ( $wrap , movie , poster , config , cb ){
+    function renderVideo ( $wrap , mp4 , webm , poster , config , cb ){
         var id = 'video-js-' + ( $.guid++ );
         $wrap.append( LP.format( '<div class="video-wrap" style="display:none;"><video id="#[id]" style="width: 100%;height: 100%;" class="video-js vjs-default-skin"\
             preload="auto"\
               poster="#[poster]">\
-             <source src="#[videoFile].mp4" type="video/mp4" />\
-             <source src="#[videoFile].webm" type="video/webm" />\
-             <source src="#[videoFile].ogv" type="video/ogg" />\
-        </video></div>' , {id: id  , videoFile: movie , poster: poster}));
+             <source src="#[mp4]" type="video/mp4" />\
+             <source src="#[webm]" type="video/webm" />\
+        </video></div>' , {id: id  , mp4: mp4 , webm: webm , poster: poster}));
 
         config = $.extend( { "controls": false, "muted": false, "autoplay": false, "preload": "auto","loop": true, "children": {"loadingSpinner": false} } , config || {} );
         var ratio = config.ratio || 9/16;
@@ -1155,8 +1045,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             $dom.find('i').html( isPaused ? playHtml : stopHtml );
         } else {
             disposeVideo();
-            var video = $li.data('video');
-            renderVideo( $li , video , $li.find('img').attr('src') , {autoplay: true} );
+            renderVideo( $li , $li.data('mp4') , $li.data('webm') , $li.find('img').attr('src') , {autoplay: true} );
             $dom.find('i').html( playHtml );
         }
 
@@ -1276,9 +1165,49 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         return false;
     });
 
+    LP.action('newletter-submit' , function(){
+        var $form = $(this).closest('form');
+        var data = LP.query2json( $form.serialize() );
+        if( !data.poliry ){
+            alert( $('input[name="poliry"]').data('required') );
+            return false;
+        }
+        if( !data.name ){
+            alert( $('input[name="name"]').data('required') );
+            return false;
+        }
+        if( !data.email || !data.email.match( /[a-zA-Z0-9\-\._]+@(\w+\.)+\w+/ ) ){
+            alert( $('input[name="email"]').data('required') );
+            return false;
+        }
+
+        if( !data.message ){
+            alert( $('textarea[name="message"]').data('required') );
+            return false;
+        }
+    });
+
 
     LP.action('craft-read' , function(){
         popHelper.show( $(this).siblings('textarea').val() );
+        return false;
+    });
+
+
+    LP.action('show-news' , function(){
+        // scroll to top 
+        $('html,body').animate({
+            scrollTop: 0
+        } , 500);
+
+        var $html = $( $(this).find('textarea').val() )
+            .appendTo( $('.picinfor').html('') )
+            .hide()
+            .fadeIn( 500 );
+
+        // init slider
+        initSlider( $html.find('.slide') );
+
         return false;
     });
 });

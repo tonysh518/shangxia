@@ -54,26 +54,26 @@
 				</div>	
 				<!-- store -->
 				<div class="conformbox intoview-effect" data-effect="fadeup">
-					<form action="/admin/api/content/newsletter">
+					<form action="/admin/api/content/newsletter" method="post">
 
 						<div class="conformtit">NAME</div>
-						<input type="text" name="name" />
+						<input type="text" name="name" data-required="name required" />
 						<div class="conformtit">EMAIL</div>
-						<input type="text" name="email"/>
+						<input type="text" name="email" data-required="right email required"/>
 						<div class="conformtit">MESSAGE</div>
 						<div style="position:relative;">
-							<textarea name="message" id="" cols="30" rows="15"></textarea>
+							<textarea name="message" data-required="message required" id="" cols="30" rows="15"></textarea>
 							<div class="upload">
 								<input type="file" name="appendix" />
 							</div>
 						</div>
 						<div class="conformcheck cs-clear">
 							<label>
-								<input type="checkbox" />
+								<input type="checkbox" name="poliry" data-required="you should agree the Privacy poliry" />
 								<span>I also would like to receive the SHANGXIA newsletter. Please read out <a href="#">Privacy poliry </a>for more informamtion</span>
 							</label>
 						</div>
-						<button class="conformbtn intoview-effect" data-effect="fadeup">SEND</button>
+						<button data-a="newletter-submit" class="conformbtn intoview-effect" data-effect="fadeup">SEND</button>
 					</form>
 				</div>
 			</div>
