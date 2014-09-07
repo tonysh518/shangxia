@@ -170,6 +170,15 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                         $tip.stop(true).fadeOut();
                     } , 2000);
                 });
+
+
+                // nav-pop-item inout-effect
+                $('.nav-pop-item.inout-effect').hover(function(){
+                    $(this).find('span:not(.inout-bg)').fadeOut(500);
+                } , function(){
+                    $(this).find('span:not(.inout-bg)').fadeIn(500);
+                });
+
                 cb && cb();
             },
             'craft-page': function( cb ){
@@ -449,6 +458,12 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     renderVideo( $dom , video , poster , {pause_button: true} );
                 });
 
+                // render initHoverMoveEffect
+                $('.inout-effect').each(function(){
+                    initHoverMoveEffect( $(this) );
+                });
+                
+
                 $(window).trigger('resize');
                 return false;
             },
@@ -679,13 +694,15 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     }
 
     /* init hover effect */
-    function initHoverMoveEffect( $dom ){
-        var $bg = $dom.find('.bg');
+    function initHoverMoveEffect( $dom , hoverin , hoverout ){
+        if( $dom.data('initHoverMoveEffect') ) return;
+        $dom.data('initHoverMoveEffect' , 1);
+        var $bg = $dom.find('.inout-bg');
         $dom.css('position','relative');
 
-        var width = $dom.width();
-        var height = $dom.height();
         $dom.hover(function( ev ){
+            var width = $dom.width();
+            var height = $dom.height();
 
             var off = $dom.offset();
             var topOff = ev.pageY - off.top;
@@ -711,7 +728,12 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             }
             $bg.css( ori ).stop( true )
                 .animate( tar , 500 );
+
+            hoverin && hoverin();
         } , function( ev ){
+            var width = $dom.width();
+            var height = $dom.height();
+
             var off = $dom.offset();
             var topOff = ev.pageY - off.top;
             var leftOff = ev.pageX - off.left;
@@ -736,6 +758,8 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             }
             $bg.stop( true )
                 .animate( ori , 500 );
+
+            hoverout && hoverout();
         });
     }
 
@@ -743,8 +767,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         return {
             render: function( $dom ){
                 var point = $dom.data('map').split(',');
-                console.log( point );
-                if( point[0] > 100 && point[0] < 140 ){ // use baidu
+                if( $dom.data('baidu') ){ // use baidu
                     this.renderBaidu( $dom , point );
                 } else {
                     this.renderGoogle( $dom , point );
@@ -839,19 +862,57 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 } , 100 );
             },
             renderGoogle: function( $dom , point ){
-                var html = '<img class="map-marker" src="#[markerPath]" />\
-                    <img src="http://maps.google.com/maps/api/staticmap?center=#[pointer]&zoom=11&size=#[width]x#[height]&format=jpg&maptype=roadmap&markers=size:mid|color:red|label:S|%E8%A5%BF%E5%AE%89,%E9%92%9F%E6%A5%BC&sensor=false" />';
-                $dom.html( LP.format( html , {
-                    markerPath: SOURCE_PATH + '/images/map-marker.png',
-                    pointer: point.join(','),
-                    width: $dom.width(),
-                    height: $dom.height()
-                } ) );
-                // var map=new google.maps.Map($dom[0],{
-                //     center:new google.maps.LatLng(point[0],point[1]),
+                point[0] = point[0] || 0;
+                point[1] = point[1] || 0;
+
+
+                var map = new google.maps.Map($dom[0],{
+                    center: new google.maps.LatLng(point[0],point[1]),
+                    zoom:5,
+                    mapTypeId:google.maps.MapTypeId.ROADMAP
+                });
+
+
+                var styleArray = [
+                  {
+                    featureType: "all",
+                    stylers: [
+                      { saturation: -80 }
+                    ]
+                  },{
+                    featureType: "road.arterial",
+                    elementType: "geometry",
+                    stylers: [
+                      { hue: "#4b3700" },
+                      { saturation: 50 }
+                    ]
+                  },{
+                    featureType: "all",
+                    elementType: "labels.text.stroke",
+                    stylers: [
+                      { hue: "#4b3700" },
+                      { saturation: 50 }
+                    ]                
+                  }
+                ];
+                map.setOptions({styles: styleArray});
+
+                new google.maps.Marker({
+                    map: map,
+                    position: new google.maps.LatLng(point[0],point[1]),
+                    icon: "../SX/images/marker.png"
+                });
+
+                // var map = new google.maps.Map($dom[0],{
+                //     center: new google.maps.LatLng(point[0],point[1]),
                 //     zoom:5,
                 //     mapTypeId:google.maps.MapTypeId.ROADMAP
                 // });
+
+                // new google.maps.Marker({
+                //     map: map,
+                //     position: new google.maps.LatLng(point[0],point[1])
+                //   });
             }
         }
     })();
@@ -901,14 +962,14 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
     $(window).resize(function(){
         // fix height
+        // $('.knowhowintro').each(function(){
+        //     var h = $(this).parent('.knowhowitem').children('.knowhowpic').height()
+        //     $(this).css('padding-top' , (h - $(this).height())/2)
+        // })
         $('.knowhowintro').each(function(){
             var h = $(this).parent('.knowhowitem').children('.knowhowpic').height()
-            $(this).css('padding-top' , (h - $(this).height())/2)
-        })
-        $('.knowhowintro2').each(function(){
-            var h = $(this).parent('.knowhowitem').children('.knowhowpic').height()
             $(this).css('height' , h)
-            $(this).children('p').css('margin-top' , h/2-50)
+            $(this).children('p').css('padding-top' , (h - $(this).children('p').height())/2)
         })
         $('.proinfortxt').each(function(){
             var h = $(this).next('.proinforpic').height();
@@ -984,6 +1045,8 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             }
         });
     });
+
+    
 
 
 
@@ -1198,7 +1261,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
 
     LP.action('craft-read' , function(){
-        $( $(this).parent().siblings('textarea').val() )
+        $( $(this).siblings('textarea').val() )
             .appendTo( document.body )
             .hide()
             .fadeIn();
