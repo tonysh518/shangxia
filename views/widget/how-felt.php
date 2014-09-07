@@ -78,7 +78,7 @@
 					</textarea>
 				</div>
 
-				<div class="knowhowpic  knowhowR"><img src="../SX/photo/how-felt3.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowR"><img src="/photo/how-felt3.jpg" width="100%" /></div>
 			</div>
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowR inout-effect">

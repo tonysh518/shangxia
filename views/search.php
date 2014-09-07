@@ -15,9 +15,9 @@ $results = searchWithKeyword($_GET["s"]);
 		<!-- search nav -->
 		<div class="searchnav ">
 			<div class="searchnavcom cs-clear">
-				<a href="./search.php?s=<?php echo $_GET['s']; ?>&type=all" class="<?php if($_GET['type'] == 'all'){echo 'on';} ?>">all</a>
-				<a href="./search.php?s=<?php echo $_GET['s']; ?>&type=collection" class="<?php if($_GET['type'] == 'collection'){echo 'on';} ?>">collection</a>
-				<a href="./search.php?s=<?php echo $_GET['s']; ?>&type=craft" class="<?php if($_GET['type'] == 'craft'){echo 'on';} ?>">craft</a>
+				<a href="/search.php?s=<?php echo $_GET['s']; ?>&type=all" class="<?php if($_GET['type'] == 'all'){echo 'on';} ?>">all</a>
+				<a href="/search.php?s=<?php echo $_GET['s']; ?>&type=collection" class="<?php if($_GET['type'] == 'collection'){echo 'on';} ?>">collection</a>
+				<a href="/search.php?s=<?php echo $_GET['s']; ?>&type=craft" class="<?php if($_GET['type'] == 'craft'){echo 'on';} ?>">craft</a>
 			</div>
 		</div>
 		<!-- searchlist -->
@@ -28,7 +28,7 @@ $results = searchWithKeyword($_GET["s"]);
 					<ul class="piclist cs-clear">
             <?php foreach ($results as $item): ?>
               <li class="piclistitem searchpicitem" data-type="<?php echo $item->type?>">
-                <a href="./<?php echo $item->type == "collection" ? "collections": "craft"?>.php?id=<?php echo $item->cid?>">
+                <a href="/<?php echo $item->type == "collection" ? "collections": "craft"?>.php?id=<?php echo $item->cid?>">
                   <img src="<?php echo makeThumbnail($item->thumbnail_image)?>" width="100%" />
                   <p><span><?php echo $item->title?></span></p>
                 </a>

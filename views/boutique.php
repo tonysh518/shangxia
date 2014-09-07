@@ -49,13 +49,13 @@ include_once 'common/header.php';?>
 		<div class="section">
 			<div class="parislist cs-clear">
 				<a href="#" class="parisitem intoview-effect" data-effect="fadeup">
-					<img src="../SX/images/parisdemo1.jpg" width="100%" alt="">
+					<img src="/images/parisdemo1.jpg" width="100%" alt="">
 				</a>
 				<a href="#" class="parisitem intoview-effect" data-effect="fadeup">
-					<img src="../SX/images/parisdemo1.jpg" width="100%" alt="">
+					<img src="/images/parisdemo1.jpg" width="100%" alt="">
 				</a>
 				<a href="#" class="parisitem marginR0 intoview-effect" data-effect="fadeup">
-					<img src="../SX/images/parisdemo1.jpg" width="100%" alt="">
+					<img src="/images/parisdemo1.jpg" width="100%" alt="">
 				</a>
 			</div>
 		</div>
@@ -72,7 +72,7 @@ include_once 'common/header.php';?>
 						<?php echo $boutique->address?>
 					</div>
 					<div class="storemap intoview-effect" data-map="<?php echo $boutique->latlng?>" data-effect="fadeup">
-						<img src="../SX/images/findus.jpg" width="100%" />
+						<img src="/images/findus.jpg" width="100%" />
 					</div>
 				</div>
 			</div>

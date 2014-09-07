@@ -21,10 +21,10 @@
 					<div class="picinforpic">
 							<div class="slide">
 								<div class="slidebox cs-clear">
-									<img class="slideitem" src="../SX/images/newsdemo.jpg" width="100%" />
-									<img class="slideitem" src="../SX/images/newsdemo.jpg" width="100%" />
-									<img class="slideitem" src="../SX/images/newsdemo.jpg" width="100%" />
-									<img class="slideitem" src="../SX/images/newsdemo.jpg" width="100%" />
+									<img class="slideitem" src="/images/newsdemo.jpg" width="100%" />
+									<img class="slideitem" src="/images/newsdemo.jpg" width="100%" />
+									<img class="slideitem" src="/images/newsdemo.jpg" width="100%" />
+									<img class="slideitem" src="/images/newsdemo.jpg" width="100%" />
 								</div>
 								<ul class="slidetab">
 									<li></li>
@@ -58,39 +58,39 @@
 					<!--  -->
 					<div class="productslist cs-clear">
 						<div class="prolistitem newsitem">
-							<img src="../SX/images/newsdemo2.jpg" width="100%" />
+							<img src="/images/newsdemo2.jpg" width="100%" />
 							<p>PARIS STORE OPENING<br />2013 OCT 25</p>
 						</div>
 						<div class="prolistitem newsitem">
-							<img src="../SX/images/newsdemo2.jpg" width="100%" />
+							<img src="/images/newsdemo2.jpg" width="100%" />
 							<p>PARIS STORE OPENING<br />2013 OCT 25</p>
 						</div>
 						<div class="prolistitem newsitem marginR0">
-							<img src="../SX/images/newsdemo2.jpg" width="100%" />
+							<img src="/images/newsdemo2.jpg" width="100%" />
 							<p>PARIS STORE OPENING<br />2013 OCT 25</p>
 						</div>
 						<div class="prolistitem newsitem">
-							<img src="../SX/images/newsdemo2.jpg" width="100%" />
+							<img src="/images/newsdemo2.jpg" width="100%" />
 							<p>PARIS STORE OPENING<br />2013 OCT 25</p>
 						</div>
 						<div class="prolistitem newsitem">
-							<img src="../SX/images/newsdemo2.jpg" width="100%" />
+							<img src="/images/newsdemo2.jpg" width="100%" />
 							<p>PARIS STORE OPENING<br />2013 OCT 25</p>
 						</div>
 						<div class="prolistitem newsitem marginR0">
-							<img src="../SX/images/newsdemo2.jpg" width="100%" />
+							<img src="/images/newsdemo2.jpg" width="100%" />
 							<p>PARIS STORE OPENING<br />2013 OCT 25</p>
 						</div>
 						<div class="prolistitem newsitem">
-							<img src="../SX/images/newsdemo2.jpg" width="100%" />
+							<img src="/images/newsdemo2.jpg" width="100%" />
 							<p>PARIS STORE OPENING<br />2013 OCT 25</p>
 						</div>
 						<div class="prolistitem newsitem">
-							<img src="../SX/images/newsdemo2.jpg" width="100%" />
+							<img src="/images/newsdemo2.jpg" width="100%" />
 							<p>PARIS STORE OPENING<br />2013 OCT 25</p>
 						</div>
 						<div class="prolistitem newsitem marginR0">
-							<img src="../SX/images/newsdemo2.jpg" width="100%" />
+							<img src="/images/newsdemo2.jpg" width="100%" />
 							<p>PARIS STORE OPENING<br />2013 OCT 25</p>
 						</div>
 					</div>

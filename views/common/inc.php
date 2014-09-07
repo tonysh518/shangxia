@@ -1,6 +1,6 @@
 <?php
 // 载入 Yii / 后台系统
-$root = dirname(dirname(dirname(__FILE__)));
+$root = (dirname(dirname(__FILE__)));
 
 define("ROOT_PATH", $root);
 
@@ -16,7 +16,7 @@ $app = Yii::createWebApplication($config);
 $scriptUrl = Yii::app()->getRequest()->getScriptUrl();
 
 $ret = Yii::app()->getRequest()->getBaseUrl();
-Yii::app()->getRequest()->setBaseUrl("/shangxia/admin");
+Yii::app()->getRequest()->setBaseUrl("/admin");
 
 global $language;
 // 获取语言
@@ -35,9 +35,12 @@ else {
         Yii::app()->language = "en_us";
       }
     }
+    // 如果没有Cookie , 那就用默认得英文.
+    Yii::app()->language = "en_us";
 }
+
 // 测试代码
-Yii::app()->language = "zh_cn";
+//Yii::app()->language = "zh_cn";
 
 if (Yii::app()->language == "zh_cn") {
   $language = "cn";
@@ -330,4 +333,20 @@ function getCity() {
   $city = Yii::app()->ip->toCity($userIp);
   
   return strtolower($city);
+}
+
+// 生成一个URL
+function url($uri, $params = array()) {
+  if (( $pos = strpos($uri, ".php")) !== FALSE) {
+    $simple_uri = substr($uri, 0, $pos);
+  }
+  else {
+    $simple_uri = $uri;
+  }
+  if (isset($params["cid"])) {
+    $content = ContentAR::model()->findByPk($params["cid"]);
+    if ($content) {
+      return '/'.$simple_uri."/".$content->cid."/". $content->title;
+    }
+  }
 }

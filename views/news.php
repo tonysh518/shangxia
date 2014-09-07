@@ -23,17 +23,21 @@
           <?php endif;?>
 					</div>
 				<div class="picinforpic">
+            <?php if ($news->news_slide_image):?>
 					<div class="slide">
 						<div class="slidebox cs-clear">
               <?php foreach($news->news_slide_image as $image): ?>
                 <img class="slideitem" src="<?php echo $image?>" width="100%" />
               <?php endforeach;?>
 						</div>
+            <?php endif;?>
+            <?php if ($news->news_slide_image):?>
 						<ul class="slidetab">
               <?php foreach($news->news_slide_image as $index => $image): ?>
 							<li class="<?php if ($index == 0) echo "on"?>"></li>
               <?php endforeach;?>
 						</ul>
+            <?php endif;?>
 						<!-- 数量改变需要改变css，或者用js来调整slidebox的宽度和slidetab的位置 -->
 					</div>
 				</div>
@@ -62,7 +66,7 @@
 				</div>
 				<!--  -->
 				<div class="newsolderbtn intoview-effect" data-effect="fadeup">
-					<a href="./news-detail.php" title="" class="transition-wrap"><span class="transition">View all news<br/><br/>View all news</span></a>
+					<a href="/news-detail.php" title="" class="transition-wrap"><span class="transition">View all news<br/><br/>View all news</span></a>
 				</div>
 			</div>
 		</div>
@@ -74,11 +78,11 @@
 				</div>
 				<div class="productscom newsnvents">
 					<!--  -->
-					<img src="../SX/images/newsdemo3.jpg" class="intoview-effect" data-effect="fadeup" width="100%" alt="">
+					<img src="/images/newsdemo3.jpg" class="intoview-effect" data-effect="fadeup" width="100%" alt="">
 					<h3 class="intoview-effect" data-effect="fadeup">shang xia maison opening </h3>
 					<h4  class="productscom-desc intoview-effect" data-effect="fadeup">2014 SEP 09</h4>
 					<p  class="productscom-desc intoview-effect" data-effect="fadeup"><i>This aurum, the SHANG XIA, maision will be opened on Hua Hai Road, Shanghai.<br />A new journey ....     <a class="more" href="#">Read more</a> </i></p>
-					<a href="./news-detail.php" title="" class="btn transition-wrap"><span class="transition">View all events<br/><br/>View all events</span></a>
+					<a href="/news-detail.php" title="" class="btn transition-wrap"><span class="transition">View all events<br/><br/>View all events</span></a>
 				</div>
 			</div>
 		</div>
@@ -95,7 +99,7 @@
 						<div class="productslist cs-clear slide-con-inner">
               <?php foreach(PressContentAR::model()->getList(10) as $press): ?>
                 <div class="prolistitem pressitem intoview-effect" data-effect="fadeup">
-                  <img src="../SX/images/newsdemo4.jpg" width="100%" />
+                  <img src="/images/newsdemo4.jpg" width="100%" />
                   <p><?php echo $press->title?><br /><?php echo date("M Y", strtotime($press->publish_date))?></p>
                 </div>
               <?php endforeach;?>
@@ -104,7 +108,7 @@
 					<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
 					<!--  -->
 					<div class="newsolderbtn">
-						<a href="./news-press.php" title="" class="transition-wrap"><span class="transition">View all  press articles<br/><br/>View all  press articles</span></a>
+						<a href="/news-press.php" title="" class="transition-wrap"><span class="transition">View all  press articles<br/><br/>View all  press articles</span></a>
 					</div>
 				</div>
 			</div>

@@ -14,10 +14,10 @@ include_once 'common/header.php';?>
 		<!-- slide -->
 		<div class="slide">
 			<div class="slidebox cs-clear">
-				<a href="#" class="slideitem"><img src="../SX/images/parisdemo.jpg" width="100%" /></a>
-				<a href="#" class="slideitem"><img src="../SX/images/parisdemo.jpg" width="100%" /></a>
-				<a href="#" class="slideitem"><img src="../SX/images/parisdemo.jpg" width="100%" /></a>
-				<a href="#" class="slideitem"><img src="../SX/images/parisdemo.jpg" width="100%" /></a>
+				<a href="#" class="slideitem"><img src="/images/parisdemo.jpg" width="100%" /></a>
+				<a href="#" class="slideitem"><img src="/images/parisdemo.jpg" width="100%" /></a>
+				<a href="#" class="slideitem"><img src="/images/parisdemo.jpg" width="100%" /></a>
+				<a href="#" class="slideitem"><img src="/images/parisdemo.jpg" width="100%" /></a>
 			</div>
 			<ul class="slidetab cs-clear">
 				<li class="on"></li>
@@ -52,10 +52,10 @@ include_once 'common/header.php';?>
 						<div class="proinforpic">
 							<div class="slide">
 								<div class="slidebox cs-clear">
-									<img class="slideitem" src="../SX/images/proinfopic.jpg" width="100%" />
-									<img class="slideitem" src="../SX/images/proinfopic.jpg" width="100%" />
-									<img class="slideitem" src="../SX/images/proinfopic.jpg" width="100%" />
-									<img class="slideitem" src="../SX/images/proinfopic.jpg" width="100%" />
+									<img class="slideitem" src="/images/proinfopic.jpg" width="100%" />
+									<img class="slideitem" src="/images/proinfopic.jpg" width="100%" />
+									<img class="slideitem" src="/images/proinfopic.jpg" width="100%" />
+									<img class="slideitem" src="/images/proinfopic.jpg" width="100%" />
 								</div>
 								<ul class="slidetab">
 									<li></li>
@@ -79,19 +79,19 @@ include_once 'common/header.php';?>
 				<div class="knowhowcom ">
 					<div class="knowhowitem cs-clear">
 						<div class="knowhowintro  knowhowR"><?php echo Yii::t("strings", "about_brand_emplee_one")?></div>
-            <div class="knowhowpic  knowhowL"><img src="./images/about_em_1.jpg" width="100%" /></div>
+            <div class="knowhowpic  knowhowL"><img src="/images/about_em_1.jpg" width="100%" /></div>
 					</div>
 					<div class="knowhowitem cs-clear">
 						<div class="knowhowintro  knowhowL">
               <?php echo Yii::t("strings" ,"about_brand_emplee_two")?>
             </div>
-						<div class="knowhowpic  knowhowR"><img src="./images/about_em_2.jpg" width="100%" /></div>
+						<div class="knowhowpic  knowhowR"><img src="/images/about_em_2.jpg" width="100%" /></div>
 					</div>
 					<div class="knowhowitem cs-clear">
 						<div class="knowhowintro  knowhowR">
               <?php echo Yii::t("strings" ,"about_brand_emplee_third")?>
             </div>
-						<div class="knowhowpic  knowhowL"><img src="./images/about_em_3.jpg" width="100%" /></div>
+						<div class="knowhowpic  knowhowL"><img src="/images/about_em_3.jpg" width="100%" /></div>
 					</div>
 				</div>
 			</div>

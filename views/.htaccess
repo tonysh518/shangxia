@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+		
+	RewriteRule ^(\w+)/(\d+)/(.+) $1.php?cid=$2&title=$3&app=$1 [L,QSA]
+
+	
+</IfModule>

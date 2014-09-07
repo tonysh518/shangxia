@@ -15,21 +15,21 @@ THAT PROMISES A UNIQUE ENCOUNTER WITH THE HERITAGE OF CHINESE DESIGN AND CRAFTSM
 		<ul class="piclist home-piclist cs-clear">
 			<li class="piclistitem intoview-effect" data-effect="fadeup" data-editme-key="home_middle_slide_one">
         		<a href="">
-					<img src="../SX/images/homepage01.jpg" width="100%" />
+					<img src="/images/homepage01.jpg" width="100%" />
 					<p>shang xia is now opening <br/> its maison in shanghai</p>
 				</a>
 			</li>
 			<li class="piclistitem intoview-effect" data-effect="fadeup" data-editme-key="home_middle_slide_two">
         <?php editme("home_middle_slide_two" ,array("title", "link_to"), array("image"))?>
         		<a href="">
-					<img src="../SX/images/homepage02.jpg" width="100%" />
+					<img src="/images/homepage02.jpg" width="100%" />
 					<p>THE FIRST SHANG XIA BAG</p>
 				</a>
 			</li>
 			<li class="piclistitem intoview-effect marginR0" data-effect="fadeup" data-editme-key="home_middle_slide_third">
         <?php editme("home_middle_slide_third" ,array("title", "link_to"), array("image"))?>
         		<a href="">
-					<img src="../SX/images/homepage03.jpg" width="100%" />
+					<img src="/images/homepage03.jpg" width="100%" />
 					<p>GIFT CORNER</p>
 				</a>
 			</li>
@@ -40,17 +40,17 @@ THAT PROMISES A UNIQUE ENCOUNTER WITH THE HERITAGE OF CHINESE DESIGN AND CRAFTSM
 		<div class="collarrows collarrowsprev home-collarrowsprev" data-a="home-collarrowsprev"></div>
 		<div class="slide" id="homepage-video-slide" data-auto="false">
 			<ul class="slidebox cs-clear">
-				<li href="#" class="slideitem" data-tit="<?php echo Yii::t("strings", "Bamboo Weaving")?>" data-video="../SX/video/Bamboo_Weaving_竹丝扣瓷_30s_1">
-					<img src="../SX/images/homepage_demo2.jpg" width="100%" />
+				<li href="#" class="slideitem" data-tit="<?php echo Yii::t("strings", "Bamboo Weaving")?>" data-video="/video/Bamboo_Weaving_竹丝扣瓷_30s_1">
+					<img src="/images/homepage_demo2.jpg" width="100%" />
 				</li>
-				<li href="#" class="slideitem" data-tit="<?php echo Yii::t("strings", "Cashmere Felt")?>" data-video="../SX/video/Cashmere_Felt_羊绒毡_30s_1">
-					<img src="../SX/images/homepage_demo2.jpg" width="100%" />
+				<li href="#" class="slideitem" data-tit="<?php echo Yii::t("strings", "Cashmere Felt")?>" data-video="/video/Cashmere_Felt_羊绒毡_30s_1">
+					<img src="/images/homepage_demo2.jpg" width="100%" />
 				</li>
-				<li href="#" class="slideitem" data-tit="<?php echo Yii::t("strings", "Eggshell Porcelain")?>" data-video="../SX/video/Eggshell_Porcelain_薄胎瓷_30s_1">
-					<img src="../SX/images/homepage_demo2.jpg" width="100%" />
+				<li href="#" class="slideitem" data-tit="<?php echo Yii::t("strings", "Eggshell Porcelain")?>" data-video="/video/Eggshell_Porcelain_薄胎瓷_30s_1">
+					<img src="/images/homepage_demo2.jpg" width="100%" />
 				</li>
-				<li href="#" class="slideitem" data-tit="<?php echo Yii::t("strings", "Zitan")?>" data-video="../SX/video/Zitan_紫檀_30s_1">
-					<img src="../SX/images/homepage_demo2.jpg" width="100%" />
+				<li href="#" class="slideitem" data-tit="<?php echo Yii::t("strings", "Zitan")?>" data-video="/video/Zitan_紫檀_30s_1">
+					<img src="/images/homepage_demo2.jpg" width="100%" />
 				</li>
 			</ul>
 			<div class="slidetip intoview-effect" data-effect="fadeup">

@@ -1,16 +1,16 @@
 <?php 
-if (isset($_GET["id"])) {
+
+if (isset($_GET["cid"])) {
   require_once 'common/inc.php';
-  $craft = CraftContentAR::model()->findByPk($_GET["id"]);
-  if (!$craft || $craft->type != CraftContentAR::model()->type) {
-    exit(header("Location: ./index.php"));
+  $loadedCraft = CraftContentAR::model()->findByPk($_GET["cid"]);
+  if (!$loadedCraft || $loadedCraft->type != CraftContentAR::model()->type) {
+    exit(header("Location: /index.php"));
   }
 }
 else {
-  exit(header("Location: ./index.php"));
+  exit(header("Location: /index.php"));
 }
 ?>
-
 
 <?php 
 $pagename="craft-page";
@@ -20,22 +20,22 @@ include_once 'common/header.php';?>
 			<div class="detail cs-clear">
 				<div class="arrows detailprev" data-a="page-prev"></div>
 				<div class=" detailcon">
-					<h2 class="intoview-effect" data-effect="fadeup"><?php echo $craft->title?></h2>
-					<p class="intoview-effect" data-effect="fadeup"><?php echo $craft->body?></p>
+					<h2 class="intoview-effect" data-effect="fadeup"><?php echo $loadedCraft->title?></h2>
+					<p class="intoview-effect" data-effect="fadeup"><?php echo $loadedCraft->body?></p>
 				</div>
 				<div class="arrows detailnext" data-a="page-next"></div>
 			</div>
 		</div>
 		
 		<!-- video -->
-		<div class="video intoview-effect" data-video-render="../SX/video/small" style="position:relative;overflow:hidden;"  data-effect="fadeup"><img src="<?php echo $craft->video_poster?>" width="100%" /></div>
+		<div class="video intoview-effect" data-video-render="/video/small" style="position:relative;overflow:hidden;"  data-effect="fadeup"><img src="<?php echo $craft->video_poster?>" width="100%" /></div>
 		<!-- barbg -->
 		<div class="barbg intoview-effect" data-effect="fadeup"></div>
 		<!-- detail -->
 		<div class="section ">
 			<div class="detail detailW6 cs-clear">
-					<h2 class="intoview-effect" data-effect="fadeup"><?php echo $craft->head_title?></h2>
-					<p class="intoview-effect" data-effect="fadeup"><?php echo $craft->head_body?></p>
+					<h2 class="intoview-effect" data-effect="fadeup"><?php echo $loadedCraft->head_title?></h2>
+					<p class="intoview-effect" data-effect="fadeup"><?php echo $loadedCraft->head_body?></p>
 			</div>
 		</div>
 		<!-- know how -->
@@ -45,7 +45,7 @@ include_once 'common/header.php';?>
 	<?php include_once 'widget/how-weaving.php';?>
 	<?php include_once 'widget/how-weaving.php';?>
 	<?php include_once 'widget/how-weaving.php';?>
-    <?php $products = loadCraftRelatedProducts($craft);?>
+    <?php $products = loadCraftRelatedProducts($loadedCraft);?>
 		<!-- related products -->
     <?php if (count($products)) : ?>
 		<div class="section">
@@ -67,7 +67,7 @@ include_once 'common/header.php';?>
 							<div class="slide">
 								<div class="slidebox cs-clear">
                   <?php foreach ($product->product_slide_image as $index => $slide_image): ?>
-                  <img <?php if ($index > 3) echo "data-nopreload"?> class="slideitem" src="../SX/images/product_related.jpg" width="100%" />
+                  <img <?php if ($index > 3) echo "data-nopreload"?> class="slideitem" src="/images/product_related.jpg" width="100%" />
                   <?php endforeach;?>
 								</div>
 								<ul class="slidetab">
@@ -110,10 +110,10 @@ include_once 'common/header.php';?>
 						<div class="proinforpic intoview-effect" data-effect="fadeup">
 							<div class="slide">
 								<div class="slidebox cs-clear">
-									<img class="slideitem" src="../SX/images/proinfopic.jpg" width="100%" />
-									<img class="slideitem" src="../SX/images/proinfopic.jpg" width="100%" />
-									<img class="slideitem" src="../SX/images/proinfopic.jpg" width="100%" />
-									<img class="slideitem" src="../SX/images/proinfopic.jpg" width="100%" />
+									<img class="slideitem" src="/images/proinfopic.jpg" width="100%" />
+									<img class="slideitem" src="/images/proinfopic.jpg" width="100%" />
+									<img class="slideitem" src="/images/proinfopic.jpg" width="100%" />
+									<img class="slideitem" src="/images/proinfopic.jpg" width="100%" />
 								</div>
 								<ul class="slidetab">
 									<li></li>

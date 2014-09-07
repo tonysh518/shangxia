@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'GaramondRegular';
+    src: url('garamond.eot');
+    src: url('garamond.eot') format('embedded-opentype'),
+         url('garamond.woff2') format('woff2'),
+         url('garamond.woff') format('woff'),
+         url('garamond.ttf') format('truetype'),
+         url('garamond.svg#GaramondRegular') format('svg');
+}

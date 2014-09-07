@@ -6,12 +6,12 @@
   <title>SX</title>
   <meta name="keywords" content="" />
   <meta name="description" content="" />
-  <link rel="stylesheet" type="text/css" href="../SX/css/style.css" />
-  <link rel="stylesheet" type="text/css" href="./css/editme.css" />
-  <script type="text/javascript" src="./js/jquery.js"></script>
-  <script type="text/javascript" src="./js/jquery.form.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="/css/editme.css" />
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/jquery.form.js"></script>
   <script type="text/javascript">
-  	 var SOURCE_PATH = '../SX';
+  	 var SOURCE_PATH = '.';
   </script>
 </head>
 <body>
@@ -25,26 +25,26 @@
 			<div class="head-fixed" <?php if( isset($homepage) ){?> style="position:static" <?php } ?>>
 				<div class="head-inner cs-clear">
 					<ul class="nav nav1">
-						<li><a data-a="nav-pop" href="#" title=""><?php echo Yii::t("strings", "COLLECTIONS")?></a><img class="nav-bg" src="../SX/images/nav-bg.jpg"/></li>
-						<li><a data-a="nav-pop" href="#" title=""><?php echo Yii::t("strings", "CRAFTS")?></a><img class="nav-bg" src="../SX/images/nav-bg.jpg"/></li>
-						<li><a data-a="nav-pop" href="#" title=""><?php echo Yii::t("strings", "BOUTIQUES")?></a><img class="nav-bg" src="../SX/images/nav-bg.jpg"/></li>
+						<li><a data-a="nav-pop" href="#" title=""><?php echo Yii::t("strings", "COLLECTIONS")?></a><img class="nav-bg" src="/images/nav-bg.jpg"/></li>
+						<li><a data-a="nav-pop" href="#" title=""><?php echo Yii::t("strings", "CRAFTS")?></a><img class="nav-bg" src="/images/nav-bg.jpg"/></li>
+						<li><a data-a="nav-pop" href="#" title=""><?php echo Yii::t("strings", "BOUTIQUES")?></a><img class="nav-bg" src="/images/nav-bg.jpg"/></li>
 					</ul>
-					<h1 class="logo"><a data-a="nav-link" href="./index.php"></a></h1>
+					<h1 class="logo"><a data-a="nav-link" href="/index.php"></a></h1>
 					<ul class="nav nav2">
-						<li><a data-a="nav-link" href="./news.php" title=""><?php echo Yii::t("strings", "NEWS")?></a><img class="nav-bg" src="../SX/images/nav-bg.jpg"/></li>
-						<li><a data-a="nav-link" href="./about.php" title=""><?php echo Yii::t("strings", "ABOUT")?></a><img class="nav-bg" src="../SX/images/nav-bg.jpg"/></li>
-						<li><a data-a="nav-link" href="./contact.php" title=""><?php echo Yii::t("strings", "CONTACT")?></a></li>
+						<li><a data-a="nav-link" href="/news.php" title=""><?php echo Yii::t("strings", "NEWS")?></a><img class="nav-bg" src="/images/nav-bg.jpg"/></li>
+						<li><a data-a="nav-link" href="/about.php" title=""><?php echo Yii::t("strings", "ABOUT")?></a><img class="nav-bg" src="/images/nav-bg.jpg"/></li>
+						<li><a data-a="nav-link" href="/contact.php" title=""><?php echo Yii::t("strings", "CONTACT")?></a></li>
 					</ul>
 					<!--  -->
 					<div class="hd_oter cs-clear">
 						<div class="hd_language">
-							<a href="javascript:void(0)" data-lang="zh_cn">中文</a>|<a href="javascript:void(0)" data-lang="en_us" class="on">EN</a>|<a href="javascript:void(0)" data-lang="fr">FR</a>
+							<a href="javascript:void(0)" class="<?php global $language; if ($language == "cn") echo "active"?>" data-lang="zh_cn">中文</a>|<a href="javascript:void(0)" class="<?php global $language; if ($language == "en") echo "active"?>" data-lang="en_us" class="on">EN</a>|<a href="javascript:void(0)" class="<?php global $language; if ($language == "fr") echo "active"?>" data-lang="fr">FR</a>
 						</div>
 						<a href="#" data-a="show-search-form" class="hd_search"></a>
 					</div>
 				</div>
 				<div class="searchform">
-					<form action="./search.php" class="section cs-clear">
+					<form action="/search.php" class="section cs-clear">
 						<input type="text" placeholder="<?php echo Yii::t("strings" ,"SEARCH DEMO")?>" name="s" value="">
 						<button><?php echo Yii::t("strings" ,"SEARCH")?></button>
 					</form>
@@ -53,7 +53,7 @@
 					<div class="nav-pop-inner">
 						<div class="nav-pop-nav">
               <?php foreach (ProductContentAR::getType() as $id => $name):  ?>
-              <p><a href="./product-type.php?id=<?php echo $id?>"><?php echo ucfirst($name)?> &gt;</a></p>
+              <p><a href="/product-type.php?id=<?php echo $id?>"><?php echo ucfirst($name)?> &gt;</a></p>
               <?php endforeach;?>
 						</div>
             <?php $collectiones = CollectionContentAR::model()->getList();?>
@@ -94,22 +94,6 @@
             <?php endforeach;?>
 						</div>
 				</div>
-				<!-- <div class="nav-pop nav-pop-news">
-					<div class="nav-pop-inner">
-						<a class="nav-pop-item" data-a="nav-link" href="./collections.php"><img src="../SX/images/nav_top.jpg"/> <span><i>PAOLO REVERSI</i></span></a>
-						<a class="nav-pop-item" data-a="nav-link" href="./collections.php"><img src="../SX/images/nav_top.jpg"/> <span><i>LATEST NEWS</i></span></a>
-						<a class="nav-pop-item" data-a="nav-link" href="./collections.php"><img src="../SX/images/nav_top.jpg"/> <span><i>PRESS</i></span></a>
-						<a class="nav-pop-item" data-a="nav-link" href="./collections.php"><img src="../SX/images/nav_top.jpg"/> <span><i>EVENTS</i></span></a>
-					</div>
-				</div>
-				<div class="nav-pop nav-pop-about">
-					<div class="nav-pop-inner">
-						<a class="nav-pop-item" data-a="nav-link" href="./collections.php"><img src="../SX/images/nav_top.jpg"/> <span><i> BRAND STORY</i></span></a>
-						<a class="nav-pop-item" data-a="nav-link" href="./collections.php"><img src="../SX/images/nav_top.jpg"/> <span><i>ARTISTIC DIRECTOR</i></span></a>
-						<a class="nav-pop-item" data-a="nav-link" href="./collections.php"><img src="../SX/images/nav_top.jpg"/> <span><i>HERITAGE &amp; ENCOUNTER </i></span></a>
-						<a class="nav-pop-item" data-a="nav-link" href="./collections.php"><img src="../SX/images/nav_top.jpg"/> <span><i>JOBS</i></span></a>
-					</div>
-				</div> -->
 			</div>
 		</div>
 		<div class="nav-mask" data-a="nav-mask"></div>
