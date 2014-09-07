@@ -1,4 +1,6 @@
-<?php require_once "inc.php";?>
+<?php 
+$map = 'baidu';
+require_once "inc.php";?>
 <!doctype html>
 <html>
 <head>

@@ -36,7 +36,7 @@
 					</ul>
 				</div>
 				<div class="storemap" style="height:400px;position:relative;">
-					<div class="storemap-wrap" id="map" data-map="<?php echo $store->latlng?>" >
+					<div class="storemap-wrap" id="map" data-map-type="<?php echo $map;?>" data-map="<?php echo $store->latlng?>" >
 					</div>
 				</div>
 				
@@ -93,34 +93,29 @@
 	</div>
 
 <script type="text/tpl" id="newsletter">
-<div class="popshade"></div>
-<div class="pop">
-	<div class="popclose" data-a="popclose"></div>
-	<!--  -->
-	<div class="popcon">
-		<h2>I want to buy</h2>
-		<div class="popcontxt">
-			<p>You are interested by buying this product? <br/>
-			Let us contact you back and we will arrange a way to provide you this prodcut</p>
-			<form class="buy-form conformbox">
-				<div class="conformtit">YOUR NAME</div>
-				<input type="text" />
-				<div class="conformtit">YOUR EMAIL</div>
-				<input type="text" />
-				<div class="conformtit">YOUR PHONE</div>
-				<input type="text" />
-				<button class="conformbtn">CONTACT ME BACK</button>
+	<h2>I want to buy</h2>
+	<div class="popcontxt">
+		<p>You are interested by buying this product? <br/>
+		Let us contact you back and we will arrange a way to provide you this prodcut</p>
+		<form class="buy-form conformbox">
+			<div class="conformtit">YOUR NAME</div>
+			<input type="text" />
+			<div class="conformtit">YOUR EMAIL</div>
+			<input type="text" />
+			<div class="conformtit">YOUR PHONE</div>
+			<input type="text" />
+			<button class="conformbtn">CONTACT ME BACK</button>
 
-				<a href="">VIEW ALL THE SHANG XIA GIFTS</a>
-			</form>
-		</div>
+			<a href="">VIEW ALL THE SHANG XIA GIFTS</a>
+		</form>
 	</div>
-</div>
 </script>
 
 <!--  -->
-
-<!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script> -->
+<?php
+if( $map == 'google' ) {?>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>
+<?php }?>
 <script type="text/javascript" src="/js/plugin/modernizr-2.5.3.min.js"></script>
 <script type="text/javascript" src="/js/sea/sea-debug.js" data-config="/js/config.js"></script>
 <script type="text/javascript" src="/js/sea/plugin-shim.js"></script>
