@@ -25,9 +25,9 @@
 			<div class="head-fixed" <?php if( isset($homepage) ){?> style="position:static" <?php } ?>>
 				<div class="head-inner cs-clear">
 					<ul class="nav nav1">
-						<li><a data-a="nav-pop" href="#" title=""><?php echo Yii::t("strings", "COLLECTIONS")?></a><img class="nav-bg" src="/images/nav-bg.jpg"/></li>
-						<li><a data-a="nav-pop" href="#" title=""><?php echo Yii::t("strings", "CRAFTS")?></a><img class="nav-bg" src="/images/nav-bg.jpg"/></li>
-						<li><a data-a="nav-pop" href="#" title=""><?php echo Yii::t("strings", "BOUTIQUES")?></a><img class="nav-bg" src="/images/nav-bg.jpg"/></li>
+						<li><a data-a="nav-pop" data-d="type=collections" href="#" title=""><?php echo Yii::t("strings", "COLLECTIONS")?></a><img class="nav-bg" src="/images/nav-bg.jpg"/></li>
+						<li><a data-a="nav-pop" data-d="type=crafts" href="#" title=""><?php echo Yii::t("strings", "CRAFTS")?></a><img class="nav-bg" src="/images/nav-bg.jpg"/></li>
+						<li><a data-a="nav-pop" data-d="type=boutiques" href="#" title=""><?php echo Yii::t("strings", "BOUTIQUES")?></a><img class="nav-bg" src="/images/nav-bg.jpg"/></li>
 					</ul>
 					<h1 class="logo"><a data-a="nav-link" href="/index.php"></a></h1>
 					<ul class="nav nav2">

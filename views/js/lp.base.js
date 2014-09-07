@@ -171,14 +171,6 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     } , 2000);
                 });
 
-
-                // nav-pop-item inout-effect
-                $('.nav-pop-item.inout-effect').hover(function(){
-                    $(this).find('span:not(.inout-bg)').fadeOut(500);
-                } , function(){
-                    $(this).find('span:not(.inout-bg)').fadeIn(500);
-                });
-
                 cb && cb();
             },
             'craft-page': function( cb ){
@@ -234,7 +226,8 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
         var effects = {
             'fadeup': function( $dom , index , cb ){
-                $dom.delay( 150 * index )
+                var delay = $dom.data('effect-delay') || 0;
+                $dom.delay( 150 * index + delay )
                     .animate({
                         opacity: 1,
                         marginTop: 0
@@ -461,6 +454,13 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 // render initHoverMoveEffect
                 $('.inout-effect').each(function(){
                     initHoverMoveEffect( $(this) );
+                });
+
+                 // nav-pop-item inout-effect
+                $('.nav-pop-item.inout-effect').hover(function(){
+                    $(this).find('span:not(.inout-bg)').delay(200).stop(true).fadeOut(500);
+                } , function(){
+                    $(this).find('span:not(.inout-bg)').delay(200).stop(true).fadeIn(500);
                 });
                 
 
@@ -766,6 +766,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     var mapHelper = (function(){
         return {
             render: function( $dom ){
+                return;
                 var point = $dom.data('map').split(',');
                 if( $dom.data('baidu') ){ // use baidu
                     this.renderBaidu( $dom , point );
@@ -968,8 +969,9 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         // })
         $('.knowhowintro').each(function(){
             var h = $(this).parent('.knowhowitem').children('.knowhowpic').height()
-            $(this).css('height' , h)
-            $(this).children('p').css('padding-top' , (h - $(this).children('p').height())/2)
+            $(this).css('height' , h);
+            var $wrap = $(this).children('.cwrap');
+            $wrap.css('padding-top' , (h - $wrap.height())/2);
         })
         $('.proinfortxt').each(function(){
             var h = $(this).next('.proinforpic').height();
@@ -981,7 +983,11 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         $('.aboutinfortxt').each(function(){
             var h = $(this).next('.proinforpic').height();
             $(this).height( h - 80 )
-                .find('p').height( h - 240 );
+                .find('p')
+                .css({
+                    height: h - 280,
+                    marginBottom: 40
+                });
         });
     })
     .keyup(function( ev ){
@@ -1052,9 +1058,9 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
     // page actions here
     // ============================================================================
-    LP.action('nav-pop' , function(){
+    LP.action('nav-pop' , function( data ){
         
-        var text = $.trim( $(this).text() ).toLowerCase();
+        var text = data.type;
         var $inner = $(this).closest('.head-inner');
         $inner.attr('class' , 'head-inner cs-clear active-' + text );
         
@@ -1120,7 +1126,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
     LP.action('homepage-watch-video' , function(){
         var $dom = $(this);
-        var $tip = $dom.closest('.slidetip');
+        var $tip = $dom.closest('.slidetip-wrap');
         
         var index = $tip.next().find('.on').index();
         var $li = $tip.prev().children().eq( index );

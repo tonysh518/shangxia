@@ -7,7 +7,7 @@
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowL inout-effect">
 					<span class="inout-bg"></span>
-					<p>Silk-like Bamboo Strands</p>
+					<p class="eff cwrap">Silk-like Bamboo Strands</p>
 					<a href="#" class="btn transition-wrap" data-a="craft-read"><span class="transition">read<br/><br/>read</span></a>
 					<textarea style="display:none;">
 						<div class="popshade"></div>
@@ -27,12 +27,12 @@
 						</div>
 					</textarea>
 				</div>
-				<div class="knowhowpic  knowhowR"><img src="../SX/photo/how-weaving1.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowR"><img src="/photo/how-weaving1.jpg" width="100%" /></div>
 			</div>
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowR inout-effect">
 					<span class="inout-bg"></span>
-					<p>Collecting the Bamboo</p>
+					<p class="eff cwrap">Collecting the Bamboo</p>
 					<a href="#" class="btn transition-wrap" data-a="craft-read"><span class="transition">read<br/><br/>read</span></a>
 					<textarea style="display:none;">
 						<div class="popshade"></div>
@@ -52,12 +52,12 @@
 						</div>
 					</textarea>
 				</div>
-				<div class="knowhowpic  knowhowL"><img src="../SX/photo/how-weaving2.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowL"><img src="/photo/how-weaving2.jpg" width="100%" /></div>
 			</div>
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowL inout-effect">
 					<span class="inout-bg"></span>
-					<p>Scraping the Cyan <br/>(Bamboo Skin)</p>
+					<p class="eff cwrap">Scraping the Cyan <br/>(Bamboo Skin)</p>
 					<a href="#" class="btn transition-wrap" data-a="craft-read"><span class="transition">read<br/><br/>read</span></a>
 					<textarea style="display:none;">
 						<div class="popshade"></div>
@@ -83,7 +83,7 @@
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowR inout-effect">
 					<span class="inout-bg"></span>
-					<p>Separating <br/>the Bamboo  </p>
+					<p class="eff cwrap">Separating <br/>the Bamboo  </p>
 					<a href="#" class="btn transition-wrap" data-a="craft-read"><span class="transition">read<br/><br/>read</span></a>
 					<textarea style="display:none;">
 						<div class="popshade"></div>
@@ -103,12 +103,12 @@
 						</div>
 					</textarea>
 				</div>
-				<div class="knowhowpic  knowhowL"><img src="../SX/photo/how-weaving4.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowL"><img src="/photo/how-weaving4.jpg" width="100%" /></div>
 			</div>
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowL inout-effect">
 					<span class="inout-bg"></span>
-					<p>Drying the Slice</p>
+					<p class="eff cwrap">Drying the Slice</p>
 					<a href="#" class="btn transition-wrap" data-a="craft-read"><span class="transition">read<br/><br/>read</span></a>
 					<textarea style="display:none;">
 						<div class="popshade"></div>
@@ -128,12 +128,12 @@
 						</div>
 					</textarea>
 				</div>
-				<div class="knowhowpic  knowhowR"><img src="../SX/photo/how-weaving5.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowR"><img src="/photo/how-weaving5.jpg" width="100%" /></div>
 			</div>
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowR inout-effect">
 					<span class="inout-bg"></span>
-					<p>Separating Strands</p>
+					<p class="eff cwrap">Separating Strands</p>
 					<a href="#" class="btn transition-wrap" data-a="craft-read"><span class="transition">read<br/><br/>read</span></a>
 					<textarea style="display:none;">
 						<div class="popshade"></div>
@@ -153,7 +153,7 @@
 						</div>
 					</textarea>
 				</div>
-				<div class="knowhowpic  knowhowL"><img src="../SX/photo/how-weaving6.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowL"><img src="/photo/how-weaving6.jpg" width="100%" /></div>
 			</div>
 		</div>
 	</div>

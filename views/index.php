@@ -36,9 +36,9 @@ THAT PROMISES A UNIQUE ENCOUNTER WITH THE HERITAGE OF CHINESE DESIGN AND CRAFTSM
 		</ul>
 	</div>
 	<!-- slide -->
-	<div class="slide-wrap section intoview-effect" data-effect="fadeup">
+	<div class="slide-wrap section">
 		<div class="collarrows collarrowsprev home-collarrowsprev" data-a="home-collarrowsprev"></div>
-		<div class="slide" id="homepage-video-slide" data-auto="false">
+		<div class="slide intoview-effect" data-effect="fadeup" id="homepage-video-slide" data-auto="false">
 			<ul class="slidebox cs-clear">
 				<li href="#" class="slideitem" data-tit="<?php echo Yii::t("strings", "Bamboo Weaving")?>" data-video="/video/Bamboo_Weaving_竹丝扣瓷_30s_1">
 					<img src="/images/homepage_demo2.jpg" width="100%" />
@@ -53,12 +53,14 @@ THAT PROMISES A UNIQUE ENCOUNTER WITH THE HERITAGE OF CHINESE DESIGN AND CRAFTSM
 					<img src="/images/homepage_demo2.jpg" width="100%" />
 				</li>
 			</ul>
-			<div class="slidetip intoview-effect" data-effect="fadeup">
-				<span class="slidetip2-tit"><?php echo Yii::t("strings", "Bamboo Weaving")?></span> <br>
-				<span class="slidetip2-index">1/4</span> <br>
-				<a href="#" title="" data-a="homepage-watch-video" class="btn btn-white transition-wrap"><i class="transition">Watch video<br/><br/>Watch video</i></a>
+			<div class="slidetip-wrap intoview-effect" data-effect="fadeup" data-effect-delay="500" >
+				<div class="slidetip">
+					<span class="slidetip2-tit"><?php echo Yii::t("strings", "Bamboo Weaving")?></span> <br>
+					<span class="slidetip2-index">1/4</span> <br>
+					<a href="#" title="" data-a="homepage-watch-video" class="btn btn-white transition-wrap"><i class="transition">Watch video<br/><br/>Watch video</i></a>
+				</div>
 			</div>
-			<ul class="slidetab cs-clear">
+			<ul class="slidetab cs-clear intoview-effect" data-effect="fadeup" data-effect-delay="700" >
 				<li class="on"></li>
 				<li></li>
 				<li></li>

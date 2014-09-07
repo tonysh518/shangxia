@@ -1,8 +1,8 @@
 <?php 
 
-if (isset($_GET["cid"])) {
+if (isset($_GET["id"])) {
   require_once 'common/inc.php';
-  $loadedCraft = CraftContentAR::model()->findByPk($_GET["cid"]);
+  $loadedCraft = CraftContentAR::model()->findByPk($_GET["id"]);
   if (!$loadedCraft || $loadedCraft->type != CraftContentAR::model()->type) {
     exit(header("Location: /index.php"));
   }
@@ -107,7 +107,7 @@ include_once 'common/header.php';?>
 							<p>As Artistic Director and CEO of SHANG XIA, Ms. Jiang Qiong Er is a Chinese contemporary designer of international reputation infusing the subtlety, beauty and heritage of Chinese culture. Her designs breathe elegance of innovation and imagination. Her international vision and open mind, along with her multi-cultural background, naturally allow her creativity to express itself; preserving and respecting tradition, both Eastern and Western.Jiang Qiong Er was introduced to traditional painting when she was only two and later became a student of famous painter Cheng Shi Fa and calligrapher Han Tian Hong. After graduation from Tong Ji University in Art & Design, she went on to the Decorative Arts School in Paris to further her studies in furniture and interior design.</p>
 							<a href="#" class="btn transition-wrap"><span class="transition">Read more<br><br>Read more</span></a>
 						</div>
-						<div class="proinforpic intoview-effect" data-effect="fadeup">
+						<div class="proinforpic intoview-effect" data-effect="fadeup" data-effect-delay="400">
 							<div class="slide">
 								<div class="slidebox cs-clear">
 									<img class="slideitem" src="/images/proinfopic.jpg" width="100%" />

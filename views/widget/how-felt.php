@@ -7,7 +7,7 @@
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowL inout-effect">
 					<span class="inout-bg"></span>
-					<p>Gathering</p>
+					<p class="eff cwrap">Gathering</p>
 					<a href="#" class="btn transition-wrap" data-a="craft-read"><span class="transition">read<br/><br/>read</span></a>
 					<textarea style="display:none;">
 						<div class="popshade"></div>
@@ -27,12 +27,12 @@
 						</div>
 					</textarea>
 				</div>
-				<div class="knowhowpic  knowhowR"><img src="../SX/photo/how-felt1.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowR"><img src="/photo/how-felt1.jpg" width="100%" /></div>
 			</div>
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowR inout-effect">
 					<span class="inout-bg"></span>
-					<p>Selecting <br>the cashmere</p>
+					<p class="eff cwrap">Selecting <br>the cashmere</p>
 					<a href="#" class="btn transition-wrap" data-a="craft-read"><span class="transition">read<br/><br/>read</span></a>
 					<textarea style="display:none;">
 						<div class="popshade"></div>
@@ -52,12 +52,12 @@
 						</div>
 					</textarea>
 				</div>
-				<div class="knowhowpic  knowhowL"><img src="../SX/photo/how-felt2.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowL"><img src="/photo/how-felt2.jpg" width="100%" /></div>
 			</div>
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowL inout-effect">
 					<span class="inout-bg"></span>
-					<p>Combing </p>
+					<p class="eff cwrap">Combing </p>
 					<a href="#" class="btn transition-wrap" data-a="craft-read"><span class="transition">read<br/><br/>read</span></a>
 					<textarea style="display:none;">
 						<div class="popshade"></div>
@@ -83,7 +83,7 @@
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowR inout-effect">
 					<span class="inout-bg"></span>
-					<p>Rolling the Felt</p>
+					<p class="eff cwrap">Rolling the Felt</p>
 					<a href="#" class="btn transition-wrap" data-a="craft-read"><span class="transition">read<br/><br/>read</span></a>
 					<textarea style="display:none;">
 						<div class="popshade"></div>
@@ -103,12 +103,12 @@
 						</div>
 					</textarea>
 				</div>
-				<div class="knowhowpic  knowhowL"><img src="../SX/photo/how-felt4.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowL"><img src="/photo/how-felt4.jpg" width="100%" /></div>
 			</div>
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowL inout-effect">
 					<span class="inout-bg"></span>
-					<p>Creating <br>Clothing</p>
+					<p class="eff cwrap">Creating <br>Clothing</p>
 					<a href="#" class="btn transition-wrap" data-a="craft-read"><span class="transition">read<br/><br/>read</span></a>
 					<textarea style="display:none;">
 						<div class="popshade"></div>
@@ -128,12 +128,12 @@
 						</div>
 					</textarea>
 				</div>
-				<div class="knowhowpic  knowhowR"><img src="../SX/photo/how-felt5.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowR"><img src="/photo/how-felt5.jpg" width="100%" /></div>
 			</div>
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowR inout-effect">
 					<span class="inout-bg"></span>
-					<p>Shrinking <br>the Clothing</p>
+					<p class="eff cwrap">Shrinking <br>the Clothing</p>
 					<a href="#" class="btn transition-wrap" data-a="craft-read"><span class="transition">read<br/><br/>read</span></a>
 					<textarea style="display:none;">
 						<div class="popshade"></div>
@@ -153,7 +153,7 @@
 						</div>
 					</textarea>
 				</div>
-				<div class="knowhowpic  knowhowL"><img src="../SX/photo/how-felt6.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowL"><img src="/photo/how-felt6.jpg" width="100%" /></div>
 			</div>
 		</div>
 	</div>
