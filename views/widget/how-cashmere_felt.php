@@ -8,7 +8,7 @@
 				<div class="knowhowintro  knowhowL inout-effect">
 					<span class="inout-bg"></span>
 					<p class="eff cwrap">Gathering</p>
-					<a href="#" class="btn transition-wrap" data-a="craft-read"><span class="transition">read<br/><br/>read</span></a>
+					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition">read<br/><br/>read</span></a>
 					<textarea style="display:none;">
 						<h2>Construction</h2>
 						<div class="popcontxt">
@@ -26,7 +26,7 @@
 				<div class="knowhowintro  knowhowR inout-effect">
 					<span class="inout-bg"></span>
 					<p class="eff cwrap">Selecting <br>the cashmere</p>
-					<a href="#" class="btn transition-wrap" data-a="craft-read"><span class="transition">read<br/><br/>read</span></a>
+					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition">read<br/><br/>read</span></a>
 					<textarea style="display:none;">
 						<h2>Construction</h2>
 						<div class="popcontxt">
@@ -44,7 +44,7 @@
 				<div class="knowhowintro  knowhowL inout-effect">
 					<span class="inout-bg"></span>
 					<p class="eff cwrap">Combing </p>
-					<a href="#" class="btn transition-wrap" data-a="craft-read"><span class="transition">read<br/><br/>read</span></a>
+					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition">read<br/><br/>read</span></a>
 					<textarea style="display:none;">
 						<h2>Construction</h2>
 						<div class="popcontxt">
@@ -63,7 +63,7 @@
 				<div class="knowhowintro  knowhowR inout-effect">
 					<span class="inout-bg"></span>
 					<p class="eff cwrap">Rolling the Felt</p>
-					<a href="#" class="btn transition-wrap" data-a="craft-read"><span class="transition">read<br/><br/>read</span></a>
+					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition">read<br/><br/>read</span></a>
 					<textarea style="display:none;">
 						<h2>Construction</h2>
 						<div class="popcontxt">
@@ -81,7 +81,7 @@
 				<div class="knowhowintro  knowhowL inout-effect">
 					<span class="inout-bg"></span>
 					<p class="eff cwrap">Creating <br>Clothing</p>
-					<a href="#" class="btn transition-wrap" data-a="craft-read"><span class="transition">read<br/><br/>read</span></a>
+					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition">read<br/><br/>read</span></a>
 					<textarea style="display:none;">
 						<h2>Construction</h2>
 						<div class="popcontxt">
@@ -99,7 +99,7 @@
 				<div class="knowhowintro  knowhowR inout-effect">
 					<span class="inout-bg"></span>
 					<p class="eff cwrap">Shrinking <br>the Clothing</p>
-					<a href="#" class="btn transition-wrap" data-a="craft-read"><span class="transition">read<br/><br/>read</span></a>
+					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition">read<br/><br/>read</span></a>
 					<textarea style="display:none;">
 						<h2>Construction</h2>
 						<div class="popcontxt">
