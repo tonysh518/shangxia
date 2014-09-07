@@ -28,7 +28,7 @@
             <?php foreach ($cities as $city): ?>
             <li><a href="./boutique.php?type=<?php echo $city?>" title="" class="transition-wrap">
                 <span class="transition"><?php echo Yii::t("strings", "{city} Store", array("{city}" => ucfirst($city)))?>
-                  <br/><?php echo Yii::t("strings", "{city} Store", array("{city}" => ucfirst($city)))?>
+                  <br/><br/><?php echo Yii::t("strings", "{city} Store", array("{city}" => ucfirst($city)))?>
                 </span>
               </a>
             </li>
@@ -119,7 +119,7 @@
 </script>
 
 <!--  -->
-<!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script> -->
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM"></script>
 <script type="text/javascript" src="../SX/js/plugin/modernizr-2.5.3.min.js"></script>
 <script type="text/javascript" src="../SX/js/sea/sea-debug.js" data-config="../config.js"></script>
 <script type="text/javascript" src="../SX/js/sea/plugin-shim.js"></script>

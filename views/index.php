@@ -12,7 +12,7 @@ THAT PROMISES A UNIQUE ENCOUNTER WITH THE HERITAGE OF CHINESE DESIGN AND CRAFTSM
 	</div>
 	<!-- piclist -->
 	<div class="section">
-		<ul class="piclist cs-clear">
+		<ul class="piclist home-piclist cs-clear">
 			<li class="piclistitem intoview-effect" data-effect="fadeup" data-editme-key="home_middle_slide_one">
         		<a href="">
 					<img src="../SX/images/homepage01.jpg" width="100%" />
