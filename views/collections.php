@@ -32,7 +32,7 @@ $has_slider = array('apparel','homeware');
 		<div class="slide intoview-effect" data-effect="fadeup">
 			<div class="slidebox cs-clear">
         <?php foreach ($collection->slide_image as $image): ?>
-				<a href="#" class="slideitem"><img src="<?php echo $image?>" width="100%" /></a>
+        <a href="#" class="slideitem"><img data-width="<?php echo image_size($image, "width")?>" data-height="<?php echo image_size($image, "height")?>" src="<?php echo $image?>" width="100%" /></a>
         <?php endforeach;?>
 			</div>
 			<ul class="slidetab cs-clear">

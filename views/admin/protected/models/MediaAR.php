@@ -287,6 +287,16 @@ class MediaAR extends CActiveRecord {
     return Yii::app()->getBaseUrl(TRUE). $uri;
   }
   
+  public static function getImageSize($uri) {
+    if (strpos($uri, "http://") !== FALSE) {
+      $uri = str_replace(Yii::app()->getBaseUrl(TRUE), "", $uri);
+    }
+    $root = dirname(Yii::app()->basePath);
+    $absPath = $root.$uri;
+    
+    return getimagesize($absPath);
+  }
+  
 	public function makeImageThumbnail($path, $save_to, $w, $h, $isOutput = FALSE) {
 		$abspath = $path;
 		$abssaveto = $save_to;

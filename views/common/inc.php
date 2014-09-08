@@ -397,3 +397,15 @@ function is_eggshell() {
   }
 }
 
+function image_size($uri, $what = "width") {
+  static $sizes = array();
+  if (isset($sizes[$uri])) {
+    $size = $sizes[$uri];
+  }
+  else {
+    $size = MediaAR::model()->getImageSize($uri);
+    $sizes[$uri] = $size;
+  }
+  return $what == "width" ?  $size[0]: $size[1];
+}
+
