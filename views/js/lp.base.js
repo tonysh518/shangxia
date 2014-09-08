@@ -383,7 +383,55 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 } , function(){
                     $(this).find('span:not(.inout-bg)').delay(200).stop(true).fadeIn(500);
                 });
+
+
                 
+                var isRunning = false;
+                // init nav pop mouse move event
+                $('.nav-pop-collections .nav-pop-wrap').mousemove(function( ev ){
+                    var winWidth = $(window).width();
+                    var off = $(this).offset();
+                    var $item = $(this).children().first();
+                    if( ev.pageX / winWidth < 0.7 && ( ev.pageX - off.left ) / winWidth > 0.3 ){
+                        isRunning = false;
+                        $item.stop( true );
+                    } else {
+                        if( isRunning ) return;
+                        if( ev.pageX / winWidth > 0.7 ){
+                            isRunning = true;
+                            $item.stop( true )
+                                .animate({
+                                    marginLeft: '-16%'
+                                } , 500);
+                            } else {
+                                isRunning = true;
+                                $item.stop( true )
+                                    .animate({
+                                        marginLeft: 0
+                                    } , 500);
+                            }
+                    }
+                    // if( ev.pageX / winWidth > 0.7 && !isRunning ){
+                    //     console.log( 'right' );
+                    //     isRunning = true;
+                    //     $item.stop( true )
+                    //         .animate({
+                    //             marginLeft: '-16%'
+                    //         } , 500);
+                    // } else if( ( ev.pageX - off.left ) / winWidth < 0.3 && !isRunning ){
+                    //     console.log( 'left' );
+                    //     isRunning = true;
+                    //     $item.stop( true )
+                    //         .animate({
+                    //             marginLeft: 0
+                    //         } , 500);
+                    // } else {
+                    //     console.log( 'stop' );
+                    //     isRunning = false;
+                    //     $item.stop( true );
+                    // }
+                });
+
 
                 $(window).trigger('resize');
                 return false;
@@ -868,6 +916,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 } , 100 );
             },
             renderGoogle: function( $dom , point ){
+                if( !window.google ) return;
                 point[0] = point[0] || 0;
                 point[1] = point[1] || 0;
 
