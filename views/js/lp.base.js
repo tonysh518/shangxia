@@ -345,7 +345,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     .click(function(){
                         var ml = parseInt( $inner.css('marginLeft') ) || 0;
                         var outerWidth = $inner.parent().width();
-                        if( Math.abs( ml ) >= $inner.width() - outerWidth ) return false;
+                        if( Math.abs( ml ) >= $inner.width() - outerWidth - 100 ) return false;
                         $inner.animate({
                             marginLeft: -Math.round( Math.abs( ml ) / outerWidth + 1 ) * 100 + '%'
                         } , 500);
@@ -407,7 +407,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                                 isRunning = true;
                                 $item.stop( true )
                                     .animate({
-                                        marginLeft: 0
+                                        marginLeft: '0.6%'
                                     } , 500);
                             }
                     }
