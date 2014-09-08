@@ -949,6 +949,18 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                             textAlign: 'center'
                         });
                 }
+
+                $('html,body').css('overflow' , 'hidden');
+            },
+            hide: function(){
+                var $pop = $('.pop').fadeOut( function(){
+                    $(this).remove();
+                } );
+                $('.popshade').fadeOut( function(){
+                    $(this).remove();
+                } );
+
+                $('html,body').css('overflow' , 'auto');
             }
         }
     })();
@@ -1233,12 +1245,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     });
 
     LP.action('popclose' , function(){
-        var $pop = $(this).closest('.pop').fadeOut( function(){
-            $(this).remove();
-        } );
-        $pop.prev('.popshade').fadeOut( function(){
-            $(this).remove();
-        } );
+        popHelper.hide();
         return false;
     });
 
