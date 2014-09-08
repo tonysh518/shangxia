@@ -32,7 +32,7 @@ $has_slider = array('apparel','homeware');
 		<div class="slide intoview-effect" data-effect="fadeup">
 			<div class="slidebox cs-clear">
         <?php foreach ($collection->slide_image as $image): ?>
-        <a href="#" class="slideitem"><img data-width="<?php echo image_size($image, "width")?>" data-height="<?php echo image_size($image, "height")?>" src="<?php echo $image?>" width="100%" /></a>
+        <a href="#" class="slideitem"><img src="<?php echo $image?>" width="100%" /></a>
         <?php endforeach;?>
 			</div>
 			<ul class="slidetab cs-clear">
@@ -66,7 +66,7 @@ $has_slider = array('apparel','homeware');
                 <?php foreach (array_values($products) as $index => $product): ?>
                   <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
                     <a href="./product-detail.php?id=<?php echo $product->cid?>">
-                      <img <?php if ($index > 3) echo "data-nopreload"?> src="<?php echo makeThumbnail($product->thumbnail, array(600, 570))?>" width="100%" />
+                    	<?php echo getSlideImageHtml( $product->thumbnail ); ?>
                       <p><span class="collicon"><?php echo $product->title?></span></p>
                     </a>
                   </li>

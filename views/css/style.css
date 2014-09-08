@@ -286,7 +286,7 @@ color: #4b3700;}
 
 /*collpicitem*/
 .collpicitem p{padding: 10px 0 20px;height: 2em;overflow: hidden;height: 3em;}
-.collpicitem .collicon{background: url('../images/range.png') no-repeat left center;padding: 30px 50px 26px;}
+/*.collpicitem .collicon{background: url('../images/range.png') no-repeat left center;padding: 30px 50px 26px;}*/
 
 /*appareltit*/
 .collpiclist .piclist{padding: 0;}
@@ -326,7 +326,7 @@ color: #4b3700;}
 .searchform button{height: 115px;line-height: 115px;cursor:pointer;float: right;width: 20%;border: 0;background: none;font-size: 18px;}
 
 /*newscrumbs*/
-.newscrumbs{width: 80%;margin: 0 auto;font-family: "Gotham Book";text-transform: uppercase;}
+.newscrumbs{width: 80%;margin: 0 auto;font-family: "Gotham Light";text-transform: uppercase;}
 .newscrumbs p{padding: 0 50px 30px}
 
 /*news 2 arrow*/

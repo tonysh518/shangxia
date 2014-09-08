@@ -1292,7 +1292,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         return false;
     });
 
-    LP.action('collarrowsnext' , function(){
+    LP.action('page-next' , function(){
         var href = location.href;//.replace(/#.*/ , '');
         var $links = $('.footer a[data-a="nav-link"]');
         $links.each(function( i ){
@@ -1306,7 +1306,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         return false;
     });
 
-    LP.action('collarrowsprev' , function(){
+    LP.action('page-prev' , function(){
         var href = location.href;//.replace(/#.*/ , '');
         var $links = $('.footer a[data-a="nav-link"]');
         $links.each(function( i ){

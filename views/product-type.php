@@ -14,11 +14,11 @@ else {
 		<!-- detail -->
 		<div class="section ">
 			<div class="detail cs-clear">
-				<div class="arrows arrows2 detailprev"></div>
+				<div class="arrows arrows2 detailprev" data-a="page-prev"></div>
 				<div class=" detailcon">
 					<h2><?php echo Yii::t("strings", "SHANG XIA ". $_GET["name"])?></h2>
 				</div>
-				<div class="arrows arrows2 detailnext"></div>
+				<div class="arrows arrows2 detailnext" data-a="page-next"></div>
 			</div>
 		</div>
 		<!-- slide -->
