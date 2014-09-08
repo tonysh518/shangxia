@@ -331,6 +331,19 @@ function searchWithKeyword($keyword) {
 function getCity() {
   $userIp = (isset($_SERVER["HTTP_VIA"])) ? $_SERVER["HTTP_X_FORWARDED_FOR"] : $_SERVER["REMOTE_ADDR"]; 
   $city = Yii::app()->ip->toCity($userIp);
+  if ($city == "上海市") {
+    $city = "shanghai";
+  }
+  else if ($city == "北京市") {
+    $city = "beijing";
+  }
+  else if ($city === FALSE){
+    $city = "paris";
+  }
+  // 默认是上海. 
+  else {
+    $city = "shanghai";
+  }
   
   return strtolower($city);
 }

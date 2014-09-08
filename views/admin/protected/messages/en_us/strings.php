@@ -20,6 +20,5 @@ To the booming economy
 To East-West cross cultural exchange
 She is a fortunate witness to and experiences two styles of life Today, she carries on the ambition
 She carries on the ideal",
-    "home_brand_story" => "SHANG XIA IS A BRAND FOR ART OF LIVING THAT PROMISES A UNIQUE ENCOUNTER WITH THE HERITAGE OF CHINESE DESIGN AND CRAFTSMANSHIP.",
-    "Brand story" => "品牌故事",
+    "home_brand_story" => "SHANG XIA IS A BRAND FOR ART OF LIVING THAT PROMISES A UNIQUE ENCOUNTER WITH THE HERITAGE OF CHINESE DESIGN AND CRAFTSMANSHIP.",   
 );

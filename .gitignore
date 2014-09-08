@@ -4,6 +4,8 @@ nbproject
 
 views/admin/upload
 
+views/admin/download.zip
+
 views/admin/protected/config/main.php
 
 views/admin/protected/cache

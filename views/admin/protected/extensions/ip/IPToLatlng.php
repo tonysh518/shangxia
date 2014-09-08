@@ -70,7 +70,7 @@ class IPToLatlng extends CApplicationComponent {
     }
     // 默认是上海市
     else {
-      return Yii::t("strings", "Shanghai");
+      return FALSE;
     }
   }
   
