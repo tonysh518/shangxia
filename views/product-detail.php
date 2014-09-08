@@ -17,7 +17,7 @@ $pagename = 'product-detail';
 		<!--  -->
 		<!-- newscrumbs -->
 		<div class="newscrumbs">
-      <p><?php echo Yii::t("strings", "collections")?>&nbsp;&nbsp;<?php $collection = loadCollectionFromProduct($product); ?><a href="<?php echo "/collection.php?cid=". $collection->cid?>"><?php echo loadCollectionFromProduct($product)->title?></a>&nbsp;&nbsp;<?php echo $product->title?> </p>
+      <p><?php echo Yii::t("strings", "collections")?>&nbsp;&gt;&nbsp;<?php $collection = loadCollectionFromProduct($product); ?><a href="<?php echo "/collection.php?cid=". $collection->cid?>"><?php echo loadCollectionFromProduct($product)->title?></a>&nbsp;&gt;&nbsp;<?php echo $product->title?> </p>
 		</div>
 		<!-- detail -->
 		<div class="section ">

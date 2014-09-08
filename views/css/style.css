@@ -183,7 +183,7 @@ a{text-decoration:none;outline: none;color:inherit;}
 /*knowhow*/
 .knowhow{}
 .knowhowtit{height: 100px;border-bottom: #000 solid 1px;position: relative;margin: 0 0 110px;line-height: 200px;text-align: center;}
-.knowhowtit h2{font-size: 30px;width: 290px;background: #fff;text-align: center;font-family: "Gotham Book";display: inline-block;}
+.knowhowtit h2{font-size: 30px;padding:0 50px;background: #fff;text-align: center;font-family: "Gotham Book";display: inline-block;color:#4b3700;}
 .knowhowitem{margin: 0 0 10px;font-family: "Gotham Book";}
 .knowhowL{float: left}
 .knowhowR{float: right}
@@ -326,7 +326,7 @@ color: #4b3700;}
 .searchform button{height: 115px;line-height: 115px;cursor:pointer;float: right;width: 20%;border: 0;background: none;font-size: 18px;}
 
 /*newscrumbs*/
-.newscrumbs{width: 80%;margin: 0 auto;font-family: "Gotham Book"}
+.newscrumbs{width: 80%;margin: 0 auto;font-family: "Gotham Book";text-transform: uppercase;}
 .newscrumbs p{padding: 0 50px 30px}
 
 /*news 2 arrow*/
@@ -386,7 +386,7 @@ color: #4b3700;}
 .coll_product .arrows{height: 280px}
 .coll_iconbg{background: url('../images/range.png') no-repeat top center;height: 50px;margin-bottom: 50px}
 .coll_video{margin-bottom: 50px}
-.coll_video h2{width: 540px;margin-left: -270px}
+/*.coll_video h2{width: 540px;margin-left: -270px}*/
 .coll_videocom{font-size: 18px;text-align: center;}
 .coll_videobox{margin: 50px auto}
 

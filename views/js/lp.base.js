@@ -264,7 +264,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 $('.js-horizontal-slide').each(function(){
                     var $dom = $(this);
                     var wrapWidth = $dom.width();
-                    var num = 3;
+                    var num = $(this).data('num') || 3;
                     var $items = $dom.find('.slide-con-inner').children();
 
                     // 计算每一个item的宽度 
@@ -275,10 +275,13 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     });
 
                     var $inner = $dom.find('.slide-con-inner').width( totalItems / num * 100 + '%' );
-                    var marginRight = 0.8;//parseInt( $items.css('margin-right') );
+                    var marginRight = 0.8 /( totalItems / num  );//parseInt( $items.css('margin-right') );
+                    var halfMR = marginRight / 2 + '%';
                     var counted = 0;
                     var prev = 0;
-                    $items.each(function(){
+                    $items
+                        .css('marginRight' , marginRight + '%' )
+                        .each(function(){
                         var $this = $(this);
                         var $img = $this.find('img');
                         var indent = Math.round( $img.data('width') / $img.data('height') ) || 1;
@@ -288,19 +291,19 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                                 // 第一个margin-left: 0.4%
                                 // 最后一个margin-right: 0.4 %
                                 $this
-                                .css('marginRight' , '0.4%')
+                                .css('marginRight' , halfMR)
                                 .prev()
                                 .prev()
-                                .css('marginLeft' , '0.4%' );
+                                .css('marginLeft' , halfMR );
                             } else if( indent == 3 ) { // 1
                                 $this.css({
-                                    marginLeft: '0.4%',
-                                    marginRight: '0.4%'
+                                    marginLeft: halfMR,
+                                    marginRight: halfMR
                                 });
                             } else { // 21 || 12
-                                $this.css('marginRight' , '0.4%')
+                                $this.css('marginRight' , halfMR)
                                     .prev()
-                                    .css('marginLeft' , '0.4%');
+                                    .css('marginLeft' , halfMR);
                             }
                         }
 
@@ -1289,6 +1292,33 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         return false;
     });
 
+    LP.action('collarrowsnext' , function(){
+        var href = location.href;//.replace(/#.*/ , '');
+        var $links = $('.footer a[data-a="nav-link"]');
+        $links.each(function( i ){
+            if( href.indexOf( $(this).attr('href') ) >= 0 ){
+                if( $links.eq(i + 1).get(0) )
+                    $links.eq(i + 1).get(0).click();
+                return false;
+            }
+        });
+
+        return false;
+    });
+
+    LP.action('collarrowsprev' , function(){
+        var href = location.href;//.replace(/#.*/ , '');
+        var $links = $('.footer a[data-a="nav-link"]');
+        $links.each(function( i ){
+            if( href.indexOf( $(this).attr('href') ) >= 0 ){
+                if( $links.eq(i - 1).get(0) )
+                    $links.eq(i - 1).get(0).click();
+                return false;
+            }
+        });
+
+        return false;
+    });
 
     
     // 多语言切换
