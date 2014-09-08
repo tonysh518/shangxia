@@ -69,9 +69,11 @@ body {
     -ms-user-select: none;
     user-select: none;
 }
+input,textarea,button{outline: none;}
 /* Base Used
 ================================================================================================= */
 a{text-decoration:none;outline: none;color:inherit;}
+.error{color:red;}
 .Garamond{font-family: Garamond;}
 .fl{float: left;_display: inline}
 .fr{float: right;_display: inline}
@@ -284,7 +286,7 @@ color: #4b3700;}
 
 /*contactfrom*/
 .contactform .productstit{margin: 0 0 120px;height: 150px}
-.contactform .productstit h2{width: 500px;margin-left: -250px;line-height: 40px;bottom: -35px}
+.contactform .productstit h2{line-height: 40px;}
 .conformbox{width: 62%;margin: 0 auto;text-align: center;min-width: 620px;}
 .conformbox input{height: 42px;line-height: 42px;}
 .conformbox input,

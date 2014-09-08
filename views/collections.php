@@ -32,7 +32,7 @@ $has_slider = array('apparel','homeware','teaware');
 		<div class="slide intoview-effect" data-effect="fadeup">
 			<div class="slidebox cs-clear">
         <?php foreach ($collection->slide_image as $image): ?>
-        <a href="#" class="slideitem"><img src="<?php echo $image?>" width="100%" /></a>
+        <div class="slideitem"><img src="<?php echo $image?>" width="100%" /></div>
         <?php endforeach;?>
 			</div>
 			<!-- 数量改变需要改变css，或者用js来调整slidebox的宽度和slidetab的位置 -->
