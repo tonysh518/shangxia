@@ -1288,4 +1288,12 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
         return false;
     });
+
+
+    
+    // 多语言切换
+    LP.action('chang-lang' , function(){
+        LP.setCookie( "sx-lang", $(this).data("lang") );
+        LP.reload();
+    });
 });
