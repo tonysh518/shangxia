@@ -57,13 +57,13 @@
             <?php endforeach;?>
 					</div>
 					<div class="sitelinkitem intoview-effect" data-effect="fadeup">
-            <?php echo Yii::t("strings", "CRAFTS")?>
+            <h2><?php echo Yii::t("strings", "CRAFTS")?></h2>
             <?php foreach (CraftContentAR::model()->getList() as $craft): ?>
               <a data-a="nav-link" href="/craft.php?a=<?php echo $craft->cid?>"><?php echo $craft->title?></a>
             <?php endforeach;?>
 					</div>
 					<div class="sitelinkitem sitelinkitemS intoview-effect" data-effect="fadeup">
-            <?php echo Yii::t("strings", "BOUTIQUES")?>
+            <h2><?php echo Yii::t("strings", "BOUTIQUES")?></h2>
             <?php foreach (BoutiqueContentAR::getLocation() as $key => $name): ?>
               <a data-a="nav-link" href="/boutique.php?type=<?php echo $key?>"><?php echo $name?></a>
             <?php endforeach;?>
@@ -82,7 +82,7 @@
 						<a data-a="nav-link" href="#">jobs</a>
 					</div>
 					<div class="sitelinkitem sitelinkitemXS intoview-effect" data-effect="fadeup">
-						<h2>CONTACT</h2>
+						<h2><?php echo Yii::t("strings", "CONTACT")?></h2>
 						<a href="#" class="ft_wx">weixin</a>
 						<a href="#" class="ft_wb">weibo</a>
 						<br>
