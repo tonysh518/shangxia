@@ -81,6 +81,18 @@ $has_slider = array('apparel','homeware');
                     </li>
                   <?php endforeach;?>
                 </ul>
+              
+              <?php elseif ($_GET["cid"] == 20331 && strtolower("jewelry")): ?>
+                  <ul class="slide-con-inner piclist cs-clear slider-type-2">
+                  <?php foreach (array_values($products) as $index => $product): ?>
+                    <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+                      <a href="./product-detail.php?id=<?php echo $product->cid?>">
+                          <?php echo getSlideImageHtml( $product->thumbnail, 2); ?>
+                          <p><span class="collicon"><?php echo $product->title?></span></p>
+                      </a>
+                    </li>
+                  <?php endforeach;?>
+                  </ul>
               <?php else: ?>
                 <ul class="slide-con-inner piclist cs-clear">
                   <?php foreach (array_values($products) as $index => $product): ?>

@@ -34,9 +34,9 @@ class ProductContentAR extends ContentAR {
     return array(
         self::TYPE_APPAREL =>  "apparel",
         self::TYPE_JEWELRY => "jewelry",
-        self::TYPE_FURNITURE => "furniture",
-        self::TYPE_HOMEWARE => "homeware",
         self::TYPE_TEAWARE => "teaware",
+        self::TYPE_HOMEWARE => "homeware",
+        self::TYPE_FURNITURE => "furniture",
         );
   }
   

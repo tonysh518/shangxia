@@ -287,15 +287,15 @@ function loadSimilarProducts($product) {
    global $language;
    $cids = array_intersect($cids1, $cids2);
    $query = new CDbCriteria();
-   $query->addCondition('language=:language')
-           ->addCondition("type=:type")
+   $query->addCondition("type=:type")
            ->addCondition("status=:status")
            ->addInCondition("cid", $cids);
-   $query->params[":language"] = $language;
+   //$query->params[":language"] = $language;
    $query->params[":type"] = "product";
    $query->params[":status"] = ContentAR::STATUS_ENABLE;
    $query->limit = "5";
-   return ProductContentAR::model()->findAll($query);
+   $products = ProductContentAR::model()->findAll($query);
+   return $products;
 }
 
 //加载Job 

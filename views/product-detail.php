@@ -33,15 +33,15 @@ $pagename = 'product-detail';
 		</div>
 		<!--  -->
 		<!-- video -->
-    <?php if ($product->product_slide_image): ?>
+    <?php if ($product->thumbnail): ?>
       <div class="slide">
         <div class="slidebox cs-clear">
-          <?php foreach ($product->product_slide_image as $slide_image):?>
+          <?php foreach (array($product->thumbnail) as $slide_image):?>
             <div data-resize="1600:560" class="slideitem"><img src="<?php echo $slide_image?>" width="100%" /></div>
           <?php endforeach;?>
         </div>
         <ul class="slidetab cs-clear">
-          <?php foreach ($product->product_slide_image as $index => $slide_image):?>
+          <?php foreach (array($product->thumbnail) as $index => $slide_image):?>
             <li class="<?php if ($index == 0) echo "on"?>"></li>
           <?php endforeach;?>
         </ul>
@@ -77,7 +77,7 @@ $pagename = 'product-detail';
 			<div class="products ">
 				<div class="productstit ">
 					<h2><?php echo Yii::t("strings", "similar products")?></h2>
-				</div>	
+				</div>
 				<!--  -->
 				<div class="products-wrap js-horizontal-slide intoview-effect" data-effect="fadeup" data-num="3">
 					<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
