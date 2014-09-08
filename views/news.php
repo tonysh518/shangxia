@@ -123,7 +123,7 @@
 				<div class="productstit intoview-effect" data-effect="fadeup">
 					<h2><?php echo Yii::t("strings", "Press");?></h2>
 				</div>
-				<div class="productscom js-horizontal-slide" data-num="3">
+				<div class="productscom js-horizontal-slide" data-num="4">
 					<?php $presses = PressContentAR::model()->getList(10); ?>
 					<?php if( count( $presses ) > 3 ){ ?>
 					<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>

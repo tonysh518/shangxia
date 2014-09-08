@@ -9,11 +9,6 @@ require_once "inc.php";?>
   <meta name="description" content="" />
   <link rel="stylesheet" type="text/css" href="/css/style.css" />
   <link rel="stylesheet" type="text/css" href="/css/editme.css" />
-  <script type="text/javascript" src="/js/jquery.js"></script>
-  <script type="text/javascript" src="/js/jquery.form.js"></script>
-  <script type="text/javascript">
-  	 var SOURCE_PATH = '.';
-  </script>
 </head>
 <body>
 	<div class="loading-wrap" style="display:block;"><div class="loading"></div></div>
@@ -39,7 +34,7 @@ require_once "inc.php";?>
 					<!--  -->
 					<div class="hd_oter cs-clear">
 						<div class="hd_language">
-							<a href="javascript:void(0)" class="<?php global $language; if ($language == "cn") echo "active"?>" data-lang="zh_cn">中文</a>|<a href="javascript:void(0)" class="<?php global $language; if ($language == "en") echo "active"?>" data-lang="en_us" class="on">EN</a>|<a href="javascript:void(0)" class="<?php global $language; if ($language == "fr") echo "active"?>" data-lang="fr">FR</a>
+							<a href="javascript:void(0)" class="<?php global $language; if ($language == "cn") echo "active"?>" data-a="chang-lang" data-lang="zh_cn">中文</a>|<a href="javascript:void(0)" class="<?php global $language; if ($language == "en") echo "active"?>" data-a="chang-lang" data-lang="en_us" class="on">EN</a>|<a href="javascript:void(0)" class="<?php global $language; if ($language == "fr") echo "active"?>" data-a="chang-lang" data-lang="fr">FR</a>
 						</div>
 						<a href="#" data-a="show-search-form" class="hd_search"></a>
 					</div>

@@ -130,7 +130,6 @@ if( $map == 'google' ) {?>
 <script type="text/javascript" src="/js/sea/plugin-shim.js"></script>
 <script type="text/javascript" src="/js/lp.core.js"></script>
 <script type="text/javascript" src="/js/lp.base.js"></script>
-<script type="text/javascript" src="/js/script.js"></script>
 
 <!--IE6透明判断-->
 <!--[if IE 6]>
