@@ -1,4 +1,10 @@
-		<!-- footer -->
+<?php 
+  $map = 'baidu';
+  if ($city == "paris") {
+    $map = "google";
+  }
+?>
+<!-- footer -->
 		<div class="footer">		
 			<!-- location -->
 			<?php
@@ -114,6 +120,7 @@
 </script>
 
 <!--  -->
+
 <?php
 if( $map == 'google' ) {?>
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>

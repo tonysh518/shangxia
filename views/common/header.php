@@ -1,5 +1,4 @@
 <?php 
-$map = 'baidu';
 require_once "inc.php";?>
 <!doctype html>
 <html>
