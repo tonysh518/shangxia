@@ -1,5 +1,6 @@
 <?php 
   $map = 'baidu';
+  $city = getCity();
   if ($city == "paris") {
     $map = "google";
   }
@@ -18,7 +19,6 @@
 			<!-- store -->
 			<div class="section store cs-clear ">
         <?php 
-          $city = getCity();
           $store = BoutiqueContentAR::model()->loadByAddressKey($city);
           // 如果没有找到，拿认为Shanghai 是默认的
           if (!$store) {
@@ -51,40 +51,38 @@
 			<div class="footer-bottom">
 				<div class="section sitelinks cs-clear">
 					<div class="sitelinkitem intoview-effect" data-effect="fadeup">
-						<h2>COLLECTIONS</h2>
-						<a data-a="nav-link" href="/collections.php?a=0">heritage & emotion</a>
-						<a data-a="nav-link" href="/collections.php?a=1">human & nature</a>
-						<a data-a="nav-link" href="/collections.php?a=2">in & out</a>
-						<a data-a="nav-link" href="/collections.php?a=3">gifts</a>
+						<h2><?php echo Yii::t("strings", "COLLECTIONS")?></h2>
+            <?php foreach (CollectionContentAR::model()->getList() as $collection): ?>
+              <a data-a="nav-link" href="/collections.php?cid=<?php echo $collection->cid?>"><?php echo $collection->title?></a>
+            <?php endforeach;?>
 					</div>
 					<div class="sitelinkitem intoview-effect" data-effect="fadeup">
-						<h2>CRAFTS</h2>
-						<a data-a="nav-link" href="/craft.php?a=1">bamboo weaving</a>
-						<a data-a="nav-link" href="/craft.php?a=2">cashmere felt</a>
-						<a data-a="nav-link" href="/craft.php?a=3">eggshe rorcelain</a>
-						<a data-a="nav-link" href="/craft.php?a=4">zitan wood</a>
+            <h2><?php echo Yii::t("strings", "CRAFTS")?></h2>
+            <?php foreach (CraftContentAR::model()->getList() as $craft): ?>
+              <a data-a="nav-link" href="/craft.php?a=<?php echo $craft->cid?>"><?php echo $craft->title?></a>
+            <?php endforeach;?>
 					</div>
 					<div class="sitelinkitem sitelinkitemS intoview-effect" data-effect="fadeup">
-						<h2>BOUTIQUES</h2>
-						<a data-a="nav-link" href="/boutique.php">beijing</a>
-						<a data-a="nav-link" href="/boutique.php">shanghai</a>
-						<a data-a="nav-link" href="/boutique.php">paris</a>
+            <h2><?php echo Yii::t("strings", "BOUTIQUES")?></h2>
+            <?php foreach (BoutiqueContentAR::getLocation() as $key => $name): ?>
+              <a data-a="nav-link" href="/boutique.php?type=<?php echo $key?>"><?php echo $name?></a>
+            <?php endforeach;?>
 					</div>
 					<div class="sitelinkitem sitelinkitemS intoview-effect" data-effect="fadeup">
-						<h2>NEWS</h2>
-						<a data-a="nav-link" href="/news-detail.php">news</a>
-						<a data-a="nav-link" href="/news-detail.php">events</a>
-						<a data-a="nav-link" href="/news-detail.php">press</a>
+						<h2><?php echo Yii::t("strings", "NEWS")?></h2>
+						<a data-a="nav-link" href="/news.php"><?php echo Yii::t("strings", "news")?></a>
+						<a data-a="nav-link" href="/news-event.php"><?php echo Yii::t("strings", "events")?></a>
+						<a data-a="nav-link" href="/news-press.php"><?php echo Yii::t("strings", "press")?></a>
 					</div>
 					<div class="sitelinkitem intoview-effect" data-effect="fadeup">
-						<h2>ABOUT</h2>
+						<h2><?php echo Yii::t("strings", "ABOUT")?></h2>
 						<a data-a="nav-link" href="#">brand story</a>
 						<a data-a="nav-link" href="#">artstic director</a>
 						<a data-a="nav-link" href="#">hertage & encounter</a>
 						<a data-a="nav-link" href="#">jobs</a>
 					</div>
 					<div class="sitelinkitem sitelinkitemXS intoview-effect" data-effect="fadeup">
-						<h2>CONTACT</h2>
+						<h2><?php echo Yii::t("strings", "CONTACT")?></h2>
 						<a href="#" class="ft_wx">weixin</a>
 						<a href="#" class="ft_wb">weibo</a>
 						<br>

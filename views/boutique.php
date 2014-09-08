@@ -1,8 +1,8 @@
 <?php 
-if (isset($_GET["key"])) {
+if (isset($_GET["type"])) {
   require_once 'common/inc.php';
-  $boutique = BoutiqueContentAR::model()->loadByAddressKey($_GET["key"]);
-  if (!$boutique || $boutique->type != BoutiqueContentAR::model()->type) {
+  $crtboutique = BoutiqueContentAR::model()->loadByAddressKey($_GET["type"]);
+  if (!$crtboutique || $crtboutique->type != BoutiqueContentAR::model()->type) {
     exit(header("Location: /index.php"));
   }
 }
@@ -17,21 +17,21 @@ include_once 'common/header.php';?>
 			<div class="detail cs-clear">
 				<div class="arrows arrows2 detailprev" data-a="page-prev"></div>
 				<div class=" detailcon">
-					<h2><?php echo $boutique->title?></h2>
+					<h2><?php echo $crtboutique->title?></h2>
 				</div>
 				<div class="arrows arrows2 detailnext" data-a="page-next"></div>
 			</div>
 		</div>
 		<!-- slide -->
-    <?php if ($boutique->boutique_slide): ?>
+    <?php if ($crtboutique->boutique_slide): ?>
       <div class="slide intoview-effect" data-effect="fadeup">
         <div class="slidebox cs-clear">
-          <?php foreach ($boutique->boutique_slide as $image): ?>
+          <?php foreach ($crtboutique->boutique_slide as $image): ?>
             <a href="javascript:void(0)" class="slideitem"><img src="<?php echo $image?>" width="100%" /></a>
           <?php endforeach;?>
         </div>
         <ul class="slidetab cs-clear">
-          <?php foreach ($boutique->boutique_slide as $index => $image): ?>
+          <?php foreach ($crtboutique->boutique_slide as $index => $image): ?>
             <li class="<?php if ($index == 0) echo "on";?>"></li>
           <?php endforeach;?>
         </ul>
@@ -43,22 +43,20 @@ include_once 'common/header.php';?>
 		<!-- intro -->
 		<div class="section ">
 			<div class="intro introparis">
-				<h2 class="intoview-effect" data-effect="fadeup"><?php echo $boutique->info_title?></h2>
-        <p class="intoview-effect" data-effect="fadeup"><?php echo $boutique->body?></p>
+				<h2 class="intoview-effect" data-effect="fadeup"><?php echo $crtboutique->info_title?></h2>
+        <p class="intoview-effect" data-effect="fadeup"><?php echo $crtboutique->body?></p>
       </div>
 		</div>
 		<!-- parislist -->
 		<div class="section">
 			<div class="parislist cs-clear">
-				<a href="javascript:void(0)" class="parisitem intoview-effect" data-effect="fadeup">
-					<img src="/images/parisdemo1.jpg" width="100%" alt="">
-				</a>
-				<a href="javascript:void(0)" class="parisitem intoview-effect" data-effect="fadeup">
-					<img src="/images/parisdemo1.jpg" width="100%" alt="">
-				</a>
-				<a href="javascript:void(0)" class="parisitem marginR0 intoview-effect" data-effect="fadeup">
-					<img src="/images/parisdemo1.jpg" width="100%" alt="">
-				</a>
+        <?php if ($crtboutique->thumbnail_image): ?>
+          <?php foreach ($crtboutique->thumbnail_image as $image): ?>
+            <a href="javascript:void(0)" class="parisitem intoview-effect" data-effect="fadeup">
+              <img src="<?php echo $image?>" width="100%" alt="">
+            </a>
+          <?php endforeach;?>
+        <?php endif;?>
 			</div>
 		</div>
 		<!-- find us -->
@@ -71,9 +69,9 @@ include_once 'common/header.php';?>
 				<!-- store -->
 				<div class="section store cs-clear">
 					<div class="storechoose storechoose2 intoview-effect" data-effect="fadeup">
-						<?php echo $boutique->address?>
+						<?php echo $crtboutique->address?>
 					</div>
-					<div class="storemap intoview-effect" data-map="<?php echo $boutique->latlng?>" data-effect="fadeup">
+					<div class="storemap intoview-effect" data-map="<?php echo $crtboutique->latlng?>" data-effect="fadeup">
 						<img src="/images/findus.jpg" width="100%" />
 					</div>
 				</div>

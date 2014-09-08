@@ -41,7 +41,7 @@
         <label for=""><?php echo Yii::t("strings", "Weight")?></label>
       </div>
       <div class="controls">
-        <select ng-model="content.weight"  ng-initial>
+        <select ng-model="content.weight"  ng-initial value="<?php echo $instance->weight?>">
           <?php foreach (range(0, 10) as $weight): ?>
           <option value="<?php echo ($weight)?>" <?php if ($instance->weight == $weight) echo "selected"?>><?php echo ($weight)?></option>
           <?php endforeach;?>
