@@ -1,7 +1,7 @@
 <?php 
-if (isset($_GET["key"])) {
+if (isset($_GET["type"])) {
   require_once 'common/inc.php';
-  $boutique = BoutiqueContentAR::model()->loadByAddressKey($_GET["key"]);
+  $boutique = BoutiqueContentAR::model()->loadByAddressKey($_GET["type"]);
   if (!$boutique || $boutique->type != BoutiqueContentAR::model()->type) {
     exit(header("Location: /index.php"));
   }

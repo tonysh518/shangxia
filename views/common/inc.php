@@ -337,7 +337,7 @@ function getCity() {
   else if ($city == "北京市") {
     $city = "beijing";
   }
-  else if ($city === FALSE){
+  else if ($city === FALSE && $userIp != "127.0.0.1"){
     $city = "paris";
   }
   // 默认是上海. 
