@@ -221,7 +221,7 @@ a{text-decoration:none;outline: none;color:inherit;}
 /*picinfor*/
 .picinfor{}
 .picinfortxt{float: left;width: 32.8%;font-size: 18px;}
-.picinfortxt h2{padding-right: 50px;height: 50px;font-size: 26px;font-family: "Gotham Book";color:#4b3700;}
+.picinfortxt h2{padding-right: 50px;font-size: 26px;font-family: "Gotham Book";color:#4b3700;}
 .picinfortxt p{font-family: Garamond;padding-top: 20px;padding-right: 50px;}
 .picinforpic{float: right;width: 66.4%;overflow: hidden;}
 
