@@ -14,14 +14,12 @@ include_once 'common/header.php';?>
 		<!-- slide -->
 		<div class="slide intoview-effect" data-effect="fadeup">
 			<div class="slidebox cs-clear">
-				<a href="#" class="slideitem"><img src="/images/parisdemo.jpg" width="100%" /></a>
-				<a href="#" class="slideitem"><img src="/images/parisdemo.jpg" width="100%" /></a>
-				<a href="#" class="slideitem"><img src="/images/parisdemo.jpg" width="100%" /></a>
-				<a href="#" class="slideitem"><img src="/images/parisdemo.jpg" width="100%" /></a>
+				<div class="slideitem"><img src="/images/about_slide_1.jpg" width="100%" /></div>
+				<div class="slideitem"><img src="/images/about_slide_2.jpg" width="100%" /></div>
+				<div class="slideitem"><img src="/images/about_slide_3.jpg" width="100%" /></div>
 			</div>
 			<ul class="slidetab cs-clear">
 				<li class="on"></li>
-				<li></li>
 				<li></li>
 				<li></li>
 			</ul>
@@ -44,7 +42,7 @@ include_once 'common/header.php';?>
 				</div>
 				<div class="productscom">
 					<div class="productsinfor cs-clear">
-						<div class="proinfortxt aboutinfortxt intoview-effect" data-effect="fadeup">
+						<div class="proinfortxt aboutinfortxt bg-fef8f4 intoview-effect" data-effect="fadeup">
 							<!-- <h2> </h2> -->
 							<p><?php echo Yii::t("strings", "about_brand_founter_desc")?></p>
 							<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition"><?php echo Yii::t("strings", "Read more")?><br><br><?php echo Yii::t("strings", "Read more")?></span></a>
@@ -53,15 +51,11 @@ include_once 'common/header.php';?>
 						<div class="proinforpic intoview-effect" data-effect="fadeup">
 							<div class="slide">
 								<div class="slidebox cs-clear">
-									<img class="slideitem" src="/images/proinfopic.jpg" width="100%" />
-									<img class="slideitem" src="/images/proinfopic.jpg" width="100%" />
-									<img class="slideitem" src="/images/proinfopic.jpg" width="100%" />
-									<img class="slideitem" src="/images/proinfopic.jpg" width="100%" />
+									<img class="slideitem" src="/images/about_1.jpg" width="100%" />
+									<img class="slideitem" src="/images/about_2.jpg" width="100%" />
 								</div>
 								<ul class="slidetab">
-									<li></li>
 									<li class="on"></li>
-									<li></li>
 									<li></li>
 								</ul>
 								<!-- 数量改变需要改变css，或者用js来调整slidebox的宽度和slidetab的位置 -->

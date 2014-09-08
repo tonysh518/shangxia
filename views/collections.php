@@ -63,11 +63,10 @@ $has_slider = array('apparel','homeware');
                     <a href="./product-detail.php?id=<?php echo $product->cid?>">
                     	<?php 
                     	// TODO ...
-                    	if( $_GET['cid'] = 20331 && strtolower($type) == 'apparel' ){
-                    		echo getSlideImageHtml( $product->thumbnail ); 
-                    	} else {?>
-                      	<img data-width="1" data-height="1"  src="<?php echo makeThumbnail($product->thumbnail, array(600, 570))?>" width="100%" />
-                      	<?php }?>
+                    	// 后面的参数是个比例  1表示正方形 , 2中长的图片 , 3最长图
+                    	$rand = rand( 1 , 3 );
+                    	echo getSlideImageHtml( $product->thumbnail , $rand ); 
+                    	?>
                       	<p><span class="collicon"><?php echo $product->title?></span></p>
                     </a>
                   </li>
