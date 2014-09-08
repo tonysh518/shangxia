@@ -232,6 +232,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 var $footer = $('.footer');
                 $(window).scroll(function(){
                     var stTop = $(window).scrollTop();
+                    var headHeight = $('.head').height();
                     var winHeight = $(window).height();
 
                     // fix up-fadein
@@ -248,6 +249,25 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                                         $dom.removeClass('intoview-effect');
                                     } );
                                 }
+                            }
+                        });
+                    }
+
+                    // fix $('.scroll-lowheight')
+                    if( $('.scroll-lowheight') ){
+                        $('.scroll-lowheight').css('overflow','hidden').each(function(){
+                            var off = $(this).offset();
+                            var $item = $(this).find('.scroll-lowheight-item');
+                            if( stTop > off.top - headHeight ){
+                                $item.css({
+                                    marginTop: ( stTop + headHeight - off.top ) / 2,
+                                    marginBottom: -( stTop + headHeight - off.top ) / 2
+                                });
+                            } else {
+                                $item.css({
+                                    marginTop: 0,
+                                    marginBottom: 0
+                                });
                             }
                         });
                     }
@@ -340,10 +360,14 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
                 // render video
                 $('[data-video-render]').each(function(){
+                    // fix video image
                     var $dom = $(this).css({
                         position: 'relative',
                         overflow: 'hidden'
                     });
+
+                    fixImageToWrap( $dom , $dom.find('img') );
+
                     var poster = $dom.find('img').attr('src');
                     renderVideo( $dom , $dom.data('mp4') , $dom.data('webm') , poster , {pause_button: true} );
                 });
@@ -544,6 +568,36 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 }
             })
             .attr('src' , this.getAttribute('src'));
+        });
+    }
+
+
+    function fixImageToWrap( $wrap , $img ){
+        if( !$img.width() ){
+            $img.load(function(){
+                fixImageToWrap( $wrap , $img );
+            });
+            return ;
+        }
+        var ratio = $img.height() / $img.width();
+        var w = $wrap.width()  ;
+        var h = $wrap.height() ;
+        var vh = 0 ;
+        var vw = 0 ;
+        var exp = 0;
+        if( h / w > ratio ){
+            vh = h + exp;
+            vw = vh / ratio;
+        } else {
+            vw = w + exp;
+            vh = vw * ratio;
+        }
+
+        $img.css({
+            width: vw,
+            height: vh,
+            marginTop: ( h - vh ) / 2,
+            marginLeft: ( w - vw ) / 2
         });
     }
 
@@ -873,7 +927,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     var popHelper = (function(){
         var tpl ='<div class="popshade"></div>\
             <div class="pop">\
-                <div class="popclose" data-a="popclose"></div>\
+                <div class="popclose transition" data-a="popclose"></div>\
                 <div class="popcon transition">#[con]</div>\
             </div>';
         return {
@@ -935,6 +989,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     // });
 
     $(window).resize(function(){
+        var winWidth = $(window).width();
         // fix height
         // $('.knowhowintro').each(function(){
         //     var h = $(this).parent('.knowhowitem').children('.knowhowpic').height()
@@ -945,11 +1000,21 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             $(this).css('height' , h);
             var $wrap = $(this).children('.cwrap');
             $wrap.css('padding-top' , (h - $wrap.height())/2);
-        })
+        });
         $('.proinfortxt').each(function(){
             var h = $(this).next('.proinforpic').height();
             $(this).height( h );
             $(this).find('.proinfortxt-inner').height( h - 100 )
+                .css('overflow' , 'hidden');
+        });
+
+        $('.picinfortxt').each(function(){
+            var h = $(this).next('.picinforpic').height();
+            $(this).height( h - 50 ).css({
+                overflow: 'hidden',
+                paddingBottom: 50
+            });
+            $(this).find('.picinfortxt-inner').height( h - 100 )
                 .css('overflow' , 'hidden');
         });
 
@@ -961,6 +1026,15 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     height: h - 280,
                     marginBottom: 40
                 });
+        });
+
+        // fix resize:
+        $('[data-resize]').each(function(){
+            var val = $(this).data('resize');
+            val = val.split(':');
+            $(this).css({
+                height: winWidth / val[0] * val[1]
+            });
         });
     })
     .keyup(function( ev ){

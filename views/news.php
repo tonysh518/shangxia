@@ -17,7 +17,7 @@
           <?php if ($news): ?>
 	          	<div class="picinfortxt">
 		            <h2><?php echo $news->title?></h2>
-		            <h3><?php echo date("Y M d", strtotime($news->date))?></h3>
+		            <h3 style="text-transform:uppercase;"><?php echo date("Y M d", strtotime($news->date))?></h3>
 		            <div class="body">
 		              <?php echo $news->body?>
 		            </div>
@@ -64,7 +64,7 @@
                     	<?php if ($news): ?>
 				          	<div class="picinfortxt">
 					            <h2><?php echo $news->title?></h2>
-					            <h3><?php echo date("Y M d", strtotime($news->date))?></h3>
+					            <h3 style="text-transform:uppercase;"><?php echo date("Y M d", strtotime($news->date))?></h3>
 					            <div class="body">
 					              <?php echo $news->body?>
 					            </div>
@@ -96,7 +96,7 @@
 					</ul>
 				</div>
 				<!--  -->
-				<div class="newsolderbtn intoview-effect" data-effect="fadeup">
+				<div class="newsolderbtn intoview-effect" data-effect="fadeup" data-margin-top="50">
 					<a href="/news-detail.php" title="" class="transition-wrap"><span class="transition"><?php echo Yii::t("strings", "View all news")?><br/><br/><?php echo Yii::t("strings", "View all news")?></span></a>
 				</div>
 			</div>
@@ -112,7 +112,7 @@
 					<img src="/images/newsdemo3.jpg" class="intoview-effect" data-effect="fadeup" width="100%" alt="">
 					<h3 class="intoview-effect" data-effect="fadeup">shang xia maison opening </h3>
 					<h4  class="productscom-desc intoview-effect" data-effect="fadeup">2014 SEP 09</h4>
-					<p  class="productscom-desc intoview-effect" data-effect="fadeup"><i>This aurum, the SHANG XIA, maision will be opened on Hua Hai Road, Shanghai.<br />A new journey ....     <a class="more" href="#">Read more</a> </i></p>
+					<p  class="productscom-desc intoview-effect" data-effect="fadeup"><i>This aurum, the SHANG XIA, maision will be opened on Hua Hai Road, Shanghai.<br />A new journey ....     <a class="more" href="#">Read more &gt;</a> </i></p>
 					<a href="/news-events.php" title="" class="btn transition-wrap intoview-effect" data-effect="fadeup"><span class="transition">View all events<br/><br/>View all events</span></a>
 				</div>
 			</div>
@@ -134,7 +134,10 @@
               <?php foreach( $presses as $press): ?>
                 <a class="prolistitem pressitem intoview-effect" data-a="show-pop" data-d="press=1" data-effect="fadeup" href="#">
                   <img src="/images/newsdemo4.jpg" width="100%" />
-                  <p><?php echo $press->title?><br /><?php echo date("M Y", strtotime($press->publish_date))?></p>
+                  <p>
+                  	<?php echo $press->title?><br />
+                  	<span class="date"><?php echo date("M Y", strtotime($press->publish_date))?></span>
+                  </p>
                 </a>
                 <textarea style="display:none;">
 	              	<div class="picoperate cs-clear">
