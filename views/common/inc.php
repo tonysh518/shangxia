@@ -103,17 +103,22 @@ function makeThumbnail($uri, $size = array()) {
 }
 
 
-function getSlideImageHtml( $uri , $rate = 1 ){
-  // $width = image_size($uri, "width");
-  // $height = image_size($uri, "height");
-  $per = array( 0 , 600,1200,1800 );
-  $tarW = $per[ $rate ];//$per[ round( $width / $height ) ];
+function getSlideImageHtml( $uri , $percent = FALSE) {
+  $width = image_size($uri, "width");
+  $height = image_size($uri, "height");
+  $per = array( 0 , 600, 1200 ,1800 );
+  if ($percent !== FALSE) {
+    $tarW = $per[$percent];
+  }
+  else {
+    $tarW = $per[ round( $width / $height ) ];
+  }
   if( !$tarW ){
     $tarW = 600;
   }
-  // $tarW = min( $tarW , $width );
-  $tarH = 570;//min( 570 , $height );
-  return  "<img data-width=\"$rate\" data-height=\"1\"  src=\"" . makeThumbnail($uri, array($tarW, $tarH)) . "\" width=\"100%\" />";
+  $tarW = min( $tarW , $width );
+  $tarH = min( 570 , $height );
+  return  "<img data-width=\"$width\" data-height=\"$height\"  src=\"" . makeThumbnail($uri, array($tarW, $tarH)) . "\" width=\"100%\" />";
 }
 /**
  * 返回在某个系列下的某个类型的产品
