@@ -14,31 +14,34 @@ else {
 		<!-- detail -->
 		<div class="section ">
 			<div class="detail cs-clear">
-				<div class="arrows arrows2 detailprev"></div>
+				<div class="arrows arrows2 detailprev" data-a="page-prev"></div>
 				<div class=" detailcon">
 					<h2><?php echo Yii::t("strings", "SHANG XIA ". $_GET["name"])?></h2>
 				</div>
-				<div class="arrows arrows2 detailnext"></div>
+				<div class="arrows arrows2 detailnext" data-a="page-next"></div>
 			</div>
 		</div>
 		<!-- slide -->
-		<div class="banner">
-			<img src="/photo/collection-apparels.jpg" width="100%" />
+		<div class="banner scroll-lowheight" >
+			<img class="scroll-lowheight-item" src="/photo/collection-apparels.jpg" width="100%" />
 		</div>
 		<!-- barbg -->
 		<div class="barbg"></div>
 		<!-- apparel -->
+
+
 	<div class="collpiclist cs-clear">
 		<div class="collarrows collarrowsprev"></div>
 		<!--  -->
 		<div class="section">
 			<div class="products ">
-				<div class="productstit collpictit_app">
-					<h2 style="width: 600px;margin-left: -300px;bottom: -40px;">the sound of tea COLLECTION<span>2010-2011</span></h2>					
+				<div class="productstit collpictit_app" style="line-height: 230px;">
+					<h2 style="line-height: 20px;">the sound of tea COLLECTION<span>2010-2011</span></h2>					
 				</div>	
 				<!--  -->
-				<div class="">
-					<ul class="piclist cs-clear">
+				<div class="products-wrap js-horizontal-slide intoview-effect" data-effect="fadeup" data-num="3">
+					<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
+					<ul class="piclist cs-clear slide-con">
 						<li class="piclistitem collpicitem">
 							<img src="/images/colldemo2.jpg" width="100%" />
 							<p><span class="collicon">architecture</span></p>
@@ -52,6 +55,7 @@ else {
 							<p><span>architecture</span></p>
 						</li>
 					</ul>
+					<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
 				</div>
 			</div>
 		</div>
@@ -61,7 +65,6 @@ else {
 		<!-- jewelry -->
 
 	<div class="collpiclist cs-clear" style="position:relative">
-		<div class="collarrows collarrowsprev"></div>
 		<!--  -->
 		<div class="section">
 			<div class="products ">
@@ -92,7 +95,6 @@ else {
 			</div>
 		</div>
 		<!--  -->
-		<div class="collarrows collarrowsnext"></div>
 	</div>
 
 <?php include_once 'common/footer.php';?>

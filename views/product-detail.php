@@ -60,9 +60,11 @@ $pagename = 'product-detail';
 				</div>
 				<div class="coll_videocom ">
           <p><?php echo $product->video_description?></p>
-					<div class="coll_videobox" data-video-render="/video/small"><img src="/images/coll_videodemo.jpg" width="100%" /></div>
+					<div class="coll_videobox" data-video-render="1" data-mp4="/video/Bamboo_Weaving_竹丝扣瓷_30s_1.mp4" data-webm="/video/Bamboo_Weaving_竹丝扣瓷_30s_1.webm">
+						<img src="/images/coll_videodemo.jpg" width="100%" />
+					</div>
 				</div>
-				<a href="<?php echo "/collection.php?cid=". $product->collection?>" class="btn transition-wrap" ><span class="transition"><?php echo Yii::t("strings", "View more")?><br/><br/><?php echo Yii::t("strings", "View more")?></span></a>
+				<a href="<?php echo "/collections.php?cid=". $product->collection?>" class="btn transition-wrap" ><span class="transition"><?php echo Yii::t("strings", "View more")?><br/><br/><?php echo Yii::t("strings", "View more")?></span></a>
 			</div>
 		</div>
 		<!-- collpiclist -->

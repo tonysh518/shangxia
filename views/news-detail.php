@@ -63,7 +63,7 @@
                   		<?php if ($news): ?>
 				          	<div class="picinfortxt">
 					            <h2><?php echo $news->title?></h2>
-					            <h3><?php echo date("Y M d", strtotime($news->date))?></h3>
+					            <h3 style="text-transform:uppercase;"><?php echo date("Y M d", strtotime($news->date))?></h3>
 					            <div class="body">
 					              <?php echo $news->body?>
 					            </div>

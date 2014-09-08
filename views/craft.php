@@ -29,7 +29,7 @@ include_once 'common/header.php';?>
 		
 		<!-- video -->
 		<div class="intoview-effect" data-effect="fadeup">
-			<div class="video" data-video-render="1" data-mp4="/video/small.mp4" data-webm="/video/small.webm" style="position:relative;overflow:hidden;"  >
+			<div class="video" data-resize="1600:560" data-video-render="1" data-mp4="/video/small.mp4" data-webm="/video/small.webm" style="position:relative;overflow:hidden;height:560px;"  >
 				<img src="<?php echo $loadedCraft->video_poster?>" width="100%" />
 			</div>
 			<!-- barbg -->

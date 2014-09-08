@@ -22,7 +22,7 @@ $has_slider = array('apparel','homeware');
 				<div class="arrows arrows3 detailprev" data-a="page-prev"></div>
 				<div class=" detailcon">
 					<h2><?php echo $collection->title?></h2>
-					<div><?php echo $collection->public_date?></div>
+					<div class="Garamond"><?php echo $collection->public_date?></div>
 				</div>
 				<div class="arrows arrows3 detailnext" data-a="page-next"></div>
 			</div>
@@ -32,18 +32,13 @@ $has_slider = array('apparel','homeware');
 		<div class="slide intoview-effect" data-effect="fadeup">
 			<div class="slidebox cs-clear">
         <?php foreach ($collection->slide_image as $image): ?>
-        <a href="#" class="slideitem"><img data-width="<?php echo image_size($image, "width")?>" data-height="<?php echo image_size($image, "height")?>" src="<?php echo $image?>" width="100%" /></a>
+        <a href="#" class="slideitem"><img src="<?php echo $image?>" width="100%" /></a>
         <?php endforeach;?>
 			</div>
-			<ul class="slidetab cs-clear">
-				<?php foreach ($collection->slide_image as $key => $image): ?>
-          <li class="<?php if ($key == 0) echo "on"?>"></li>
-        <?php endforeach;?>
-			</ul>
 			<!-- 数量改变需要改变css，或者用js来调整slidebox的宽度和slidetab的位置 -->
 		</div>
 		<!-- barbg -->
-		<div class="barbg"></div>
+		<div class="barbg intoview-effect" data-effect="fadeup"></div>
     <?php $types = ProductContentAR::getType(); ?>
     
     <?php foreach($types as $type_id => $type): ?>
@@ -66,8 +61,14 @@ $has_slider = array('apparel','homeware');
                 <?php foreach (array_values($products) as $index => $product): ?>
                   <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
                     <a href="./product-detail.php?id=<?php echo $product->cid?>">
-                      <img <?php if ($index > 3) echo "data-nopreload"?> src="<?php echo makeThumbnail($product->thumbnail, array(600, 570))?>" width="100%" />
-                      <p><span class="collicon"><?php echo $product->title?></span></p>
+                    	<?php 
+                    	// TODO ...
+                    	if( $_GET['cid'] = 20331 && strtolower($type) == 'apparel' ){
+                    		echo getSlideImageHtml( $product->thumbnail ); 
+                    	} else {?>
+                      	<img data-width="1" data-height="1"  src="<?php echo makeThumbnail($product->thumbnail, array(600, 570))?>" width="100%" />
+                      	<?php }?>
+                      	<p><span class="collicon"><?php echo $product->title?></span></p>
                     </a>
                   </li>
                 <?php endforeach;?>

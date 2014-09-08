@@ -10,7 +10,7 @@ require_once "inc.php";?>
   <link rel="stylesheet" type="text/css" href="/css/style.css" />
   <link rel="stylesheet" type="text/css" href="/css/editme.css" />
 </head>
-<body>
+<body class="<?php if ( isset($pagename) ) {echo $pagename;}?>">
 	<div class="loading-wrap" style="display:block;"><div class="loading"></div></div>
 	<div class="wrap">
 		<?php if ( isset($homepage) ) { ?>
