@@ -106,7 +106,7 @@ function makeThumbnail($uri, $size = array()) {
 function getSlideImageHtml( $uri , $percent = 1) {
   // $width = image_size($uri, "width");
   // $height = image_size($uri, "height");
-  $per = array( 0 , 600, 1200 ,1800 );
+  $per = array( 0 , 600, 1214 ,1800 );
   $tarW = $per[$percent];
   if( !$tarW ){
       $tarW = 600;
