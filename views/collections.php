@@ -10,7 +10,6 @@ else {
   exit(header("Location: /index.php"));
 }
 
-
 // fix has slider
 $has_slider = array('apparel','homeware','teaware');
 ?>
@@ -21,7 +20,7 @@ $has_slider = array('apparel','homeware','teaware');
 			<div class="detail cs-clear">
 				<div class="arrows arrows3 detailprev" data-a="page-prev"></div>
 				<div class=" detailcon">
-					<h2><?php echo $collection->title?></h2>
+					<h2><?php echo $collection->collection_title?></h2>
 					<div class="Garamond"><?php echo $collection->public_date?></div>
 				</div>
 				<div class="arrows arrows3 detailnext" data-a="page-next"></div>
