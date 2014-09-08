@@ -27,6 +27,7 @@
           $cities = array_diff(array_keys(BoutiqueContentAR::getLocation()), array($store->location));
           
         ?>
+        <?php if ($store): ?>
 				<div class="storechoose intoview-effect" data-effect="fadeup">
 					<h2><?php echo $store->title?></h2>
           <p><?php echo $store->body?></p>
@@ -45,6 +46,7 @@
 					<div class="storemap-wrap" id="map" data-map-type="<?php echo $map;?>" data-map="<?php echo $store->latlng?>" >
 					</div>
 				</div>
+      <?php endif;?>
 				
 			</div>
 			<!-- sitelinks -->
