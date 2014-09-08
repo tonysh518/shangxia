@@ -15,6 +15,7 @@ class CollectionContentAR extends ContentAR {
   
   public function getFields() {
     $this->hasContentField("public_date");
+    $this->hasContentField("collection_title");
     return parent::getFields();
   }
   

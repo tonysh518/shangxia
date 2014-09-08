@@ -20,7 +20,7 @@ include_once 'common/header.php';?>
 			<div class="detail cs-clear">
 				<div class="arrows detailprev" data-a="page-prev"></div>
 				<div class=" detailcon">
-					<h2 class="intoview-effect" data-effect="fadeup"><?php echo $loadedCraft->title?></h2>
+					<h2 class="intoview-effect" data-effect="fadeup"><?php echo $loadedCraft->craft_title?></h2>
 					<p class="intoview-effect" data-effect="fadeup"><?php echo $loadedCraft->body?></p>
 				</div>
 				<div class="arrows detailnext" data-a="page-next"></div>
