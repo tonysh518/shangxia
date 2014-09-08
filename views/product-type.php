@@ -23,7 +23,7 @@ else {
 		</div>
 		<!-- slide -->
 		<div class="banner">
-			<img src="/photo/collection-<?php echo $_GET["name"]?>.jpg" width="100%" />
+			<img src="/photo/collection-apparels.jpg" width="100%" />
 		</div>
 		<!-- barbg -->
 		<div class="barbg"></div>
