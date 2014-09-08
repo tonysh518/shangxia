@@ -24,6 +24,7 @@ class BoutiqueContentAR extends ContentAR {
   
   public function getImageFields() {
     $this->hasImageField("boutique_slide", array("multi" => TRUE));
+    $this->hasImageField("thumbnail_image", array("multi" => TRUE));
     $this->hasImageField("nav_image");
     return parent::getImageFields();
   }
