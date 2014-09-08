@@ -52,14 +52,16 @@ require_once "inc.php";?>
               <p><a href="/product-type.php?name=<?php echo $name?>"><?php echo ucfirst($name)?> &gt;</a></p>
               <?php endforeach;?>
 						</div>
-            <?php $collectiones = CollectionContentAR::model()->getList();?>
-            <?php foreach($collectiones as $item):?>
-              <a class="nav-pop-item inout-effect" data-a="nav-link" href="./collections.php?cid=<?php echo $item->cid?>">
-              	<img src="<?php echo $item->nav_image?>"/> 
-              	<span class="nav-text"><i> <?php echo $item->title?></i></span>
-              	<span class="home-inout-bg inout-bg"></span>
-              </a>
-            <?php endforeach;?>
+						<div class="nav-pop-wrap">
+			            <?php $collectiones = CollectionContentAR::model()->getList();?>
+			            <?php foreach($collectiones as $item):?>
+			              <a class="nav-pop-item inout-effect" data-a="nav-link" href="./collections.php?cid=<?php echo $item->cid?>">
+			              	<img src="<?php echo $item->nav_image?>"/> 
+			              	<span class="nav-text"><i> <?php echo $item->title?></i></span>
+			              	<span class="home-inout-bg inout-bg"></span>
+			              </a>
+			            <?php endforeach;?>
+			            </div>
 					</div>
 				</div>
 				<div class="nav-pop nav-pop-crafts">

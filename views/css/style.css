@@ -491,10 +491,11 @@ body .vjs-default-skin .vjs-big-play-button:focus{box-shadow: none;}
 .nav-pop-item .nav-text {position: absolute;color: white;font-size: 18px;height: 100%;width: 100%;text-align: center;left: 0;top: 0;background: rgba(0,0,0,.2);font-family: 'Gotham Medium';}
 .nav-pop-item .nav-text i{position: absolute;font-style: normal;width: 100%;left: 0;top: 50%;margin-top: -12px;}
 
-.nav-pop-collections .nav-pop-item{width: 19.8%;}
+/*.nav-pop-collections .nav-pop-item{width: 19.8%;}*/
 .nav-pop-nav{float: left;width: 16%;}
 .nav-pop-nav a:hover{color:#4b3700;}
 .nav-pop-nav p {margin-left: 40%;font-size: 16px;font-family: 'Gotham Book';}
+.nav-pop-wrap{width: 100%;overflow: hidden;margin-right: -16%;float: left;}
 .map-marker{position: absolute;left: 50%;top: 50%;margin-left: -25px;margin-top: -25px;}
 
 .slidetip .transition {
