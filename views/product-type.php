@@ -1,5 +1,5 @@
-
 <?php
+
 if (isset($_GET["name"])) {
   require_once 'common/inc.php';
   if (array_search($_GET["name"], ProductContentAR::getType()) === FALSE) {
@@ -8,7 +8,15 @@ if (isset($_GET["name"])) {
 }
 else {
   exit(header("Location: /index.php"));
-}?>
+}
+
+$products = getProductInTypeWithCollection(array_search($_GET["name"], ProductContentAR::getType()));
+$productsGroupWithCollection = array();
+foreach ($products as $product) {
+  $productsGroupWithCollection[$product->collection] = $product;
+}
+
+?>
 
   <?php include_once 'common/header.php';?>
 		<!-- detail -->
@@ -29,7 +37,11 @@ else {
 		<div class="barbg"></div>
 		<!-- apparel -->
 
+<?php foreach ($productsGroupWithCollection as $collection_id => $products): ?>
+<?php $collection = CollectionContentAR::model()->findByPk($collection_id);?>
 
+<?php endforeach;?>
+    
 	<div class="collpiclist cs-clear">
 		<div class="collarrows collarrowsprev"></div>
 		<!--  -->
@@ -62,6 +74,7 @@ else {
 		<!--  -->
 		<div class="collarrows collarrowsnext"></div>
 	</div>
+
 		<!-- jewelry -->
 
 	<div class="collpiclist cs-clear" style="position:relative">

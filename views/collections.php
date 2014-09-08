@@ -57,22 +57,50 @@ $has_slider = array('apparel','homeware');
 						<?php }?>
 						<div class="slide-con">
               <?php $products = getProductInTypeWithCollection($type_id, $collection->cid);?>
-							<ul class="slide-con-inner piclist cs-clear">
-                <?php foreach (array_values($products) as $index => $product): ?>
-                  <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-                    <a href="./product-detail.php?id=<?php echo $product->cid?>">
-                    	<?php 
-                    	// TODO ...
-                    	if( $_GET['cid'] = 20331 && strtolower($type) == 'apparel' ){
-                    		echo getSlideImageHtml( $product->thumbnail ); 
-                    	} else {?>
-                      	<img data-width="1" data-height="1"  src="<?php echo makeThumbnail($product->thumbnail, array(600, 570))?>" width="100%" />
-                      	<?php }?>
-                      	<p><span class="collicon"><?php echo $product->title?></span></p>
-                    </a>
-                  </li>
-                <?php endforeach;?>
-							</ul>
+              <?php if ($_GET["cid"] == 20331 && strtolower($type) == 'apparel'): ?>
+                <ul class="slide-con-inner piclist cs-clear slider-type-3">
+                  <?php foreach (array_values($products) as $index => $product): ?>
+                    <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+                      <a href="./product-detail.php?id=<?php echo $product->cid?>">
+                        <?php if ($_GET["cid"] == 20331 && strtolower($type) == 'apparel'): ?>
+                          <?php echo getSlideImageHtml( $product->thumbnail, 3); ?>
+                        <?php endif;?>
+                          <p><span class="collicon"><?php echo $product->title?></span></p>
+                      </a>
+                    </li>
+                  <?php endforeach;?>
+                </ul>
+              <?php elseif ($_GET["cid"] == 20331 && strtolower($type) == "teaware"): ?>
+                <ul class="slide-con-inner piclist cs-clear slider-type-2">
+                  <?php foreach (array_values($products) as $index => $product): ?>
+                    <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+                      <a href="./product-detail.php?id=<?php echo $product->cid?>">
+                          <?php echo getSlideImageHtml( $product->thumbnail, 2); ?>
+                          <p><span class="collicon"><?php echo $product->title?></span></p>
+                      </a>
+                    </li>
+                  <?php endforeach;?>
+                </ul>
+              <?php else: ?>
+                <ul class="slide-con-inner piclist cs-clear">
+                  <?php foreach (array_values($products) as $index => $product): ?>
+                    <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+                      <a href="./product-detail.php?id=<?php echo $product->cid?>">
+                        <?php
+                        if ($_GET["cid"] == 20331 && strtolower($type) == 'apparel') { ?>
+                        <?php echo getSlideImageHtml( $product->thumbnail, 3); ?>
+                     <?php   }
+                        else if( ($_GET['cid'] = 20331) && strtolower($type) == 'apparel' ){
+                          echo getSlideImageHtml( $product->thumbnail ); 
+                        } else {?>
+                          <img data-width="1" data-height="1"  src="<?php echo makeThumbnail($product->thumbnail, array(600, 570))?>" width="100%" />
+                          <?php }?>
+                          <p><span class="collicon"><?php echo $product->title?></span></p>
+                      </a>
+                    </li>
+                  <?php endforeach;?>
+                </ul>
+              <?php endif;?>
 						</div>
 						<?php if ( in_array( strtolower($type), $has_slider ) ){ ?>
 						<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>

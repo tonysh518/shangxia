@@ -103,11 +103,16 @@ function makeThumbnail($uri, $size = array()) {
 }
 
 
-function getSlideImageHtml( $uri ){
+function getSlideImageHtml( $uri , $percent = FALSE) {
   $width = image_size($uri, "width");
   $height = image_size($uri, "height");
-  $per = array( 0 , 600,1200,1800 );
-  $tarW = $per[ round( $width / $height ) ];
+  $per = array( 0 , 600, 1200 ,1800 );
+  if ($percent !== FALSE) {
+    $tarW = $per[$percent];
+  }
+  else {
+    $tarW = $per[ round( $width / $height ) ];
+  }
   if( !$tarW ){
     $tarW = 600;
   }
