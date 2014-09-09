@@ -56,7 +56,7 @@ class ProductContentAR extends ContentAR {
     return parent::model($class);
   }
   
-  public function getList($limit = 5, $offset = FALSE) {
+  public function getList($limit = FALSE, $offset = FALSE) {
     return parent::getList($limit, $offset);
   }
 }
