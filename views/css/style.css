@@ -236,8 +236,9 @@ a{text-decoration:none;outline: none;color:inherit;}
 /*picinfor*/
 .picinfor{}
 .picinfortxt{float: left;width: 32.8%;font-size: 18px;}
-.picinfortxt h2{padding-right: 50px;font-size: 26px;font-family: "Gotham Book";color: #4b3700;padding-bottom: 20px;}
+.picinfortxt h2{padding-right: 50px;font-size: 24px;font-family: "Gotham Book";color: #4b3700;padding-bottom: 20px;text-transform: uppercase;line-height: 120%;}
 .picinfortxt p{font-family: Garamond;padding-top: 20px;padding-right: 50px;}
+.picinfortxt p strong{font-weight: normal;}
 .picinforpic{float: right;width: 66.4%;overflow: hidden;}
 
 /*newsolder*/
@@ -521,7 +522,15 @@ body .vjs-default-skin .vjs-big-play-button:focus{box-shadow: none;}
 
 .story_summary {margin-bottom: 5em;}
 
+.picinfortxt p b {
+  font-weight: normal;
+}
 
+.normalbox {width:100%;}
+
+.normalbox .slideitem {width: 31.33%;margin-right: 1em;}
+
+.normalbox .slideitem .prolistitem {width: 100%;}
 
 
 
