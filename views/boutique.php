@@ -17,7 +17,7 @@ include_once 'common/header.php';?>
 			<div class="detail cs-clear">
 				<div class="arrows arrows2 detailprev" data-a="page-prev"></div>
 				<div class=" detailcon">
-					<h2><?php echo $crtboutique->title?></h2>
+					<h2><?php echo $crtboutique->boutique_title?></h2>
 				</div>
 				<div class="arrows arrows2 detailnext" data-a="page-next"></div>
 			</div>
@@ -71,7 +71,7 @@ include_once 'common/header.php';?>
 					<div class="storechoose storechoose2 intoview-effect" data-effect="fadeup">
 						<?php echo $crtboutique->address?>
 					</div>
-					<div class="storemap intoview-effect" data-map="<?php echo $crtboutique->latlng?>" data-effect="fadeup">
+					<div class="storemap intoview-effect" <?php if ($_GET["type"] == "paris") echo 'data-map-type="google"'?> data-map="<?php echo $crtboutique->latlng?>" data-effect="fadeup">
 						<img src="/images/findus.jpg" width="100%" />
 					</div>
 				</div>

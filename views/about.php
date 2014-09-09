@@ -115,13 +115,17 @@ include_once 'common/header.php';?>
                     <textarea style="display:none;">
                         <div class="popconabout">
                           <h2><?php echo $job->title?></h2>
+                          <?php if (($job->report_to)):?>
                           <div class="popcontxt">
-                            <p><?php echo Yii::t("strings", "Reports To")?>: <?php echo $job->report_to?><br /><br /><?php echo Yii::t("strings", "Location")?>: <?php echo $job->location?></p>
+                            <p><?php echo Yii::t("strings", "Reports To")?>: <?php echo $job->report_to?><br /><br /><?php if ($job->location):?><?php echo Yii::t("strings", "Location")?>: <?php echo $job->location?><?php endif;?></p>
                           </div>
+                          <?php endif;?>
+                          <?php if ($job->general_role): ?>
       										<h3><?php echo Yii::t("strings", "General Role")?>:</h3>
                           <div class="popcontxt">
                             <p><?php echo $job->general_role?></p>
                           </div>
+                          <?php endif;?>
                           <h3><?php echo Yii::t("strings", "Key Responsibilities")?>:</h3>
                           <div class="popcontxt">
                             <p>
