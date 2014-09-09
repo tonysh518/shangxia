@@ -925,7 +925,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
                 var map = new google.maps.Map($dom[0],{
                     center: new google.maps.LatLng(point[0],point[1]),
-                    zoom:5,
+                    zoom:17,
                     mapTypeId:google.maps.MapTypeId.ROADMAP
                 });
 
