@@ -1363,23 +1363,52 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     });
 
     LP.action('newletter-submit' , function(){
+        $('#name-tip,#email-tip,#message-tip').html('');
         var $form = $(this).closest('form');
         var data = LP.query2json( $form.serialize() );
         if( !data.poliry ){
             alert( $('input[name="poliry"]').data('required') );
             return false;
         }
+        var error = false;
         if( !data.name ){
-            alert( $('input[name="name"]').data('required') );
-            return false;
+            $('#name-tip').html( $('input[name="name"]').data('required') );
+            error = true;
         }
         if( !data.email || !data.email.match( /[a-zA-Z0-9\-\._]+@(\w+\.)+\w+/ ) ){
-            alert( $('input[name="email"]').data('required') );
-            return false;
+            $('#email-tip').html( $('input[name="email"]').data('required') );
+            error = true;
         }
 
         if( !data.message ){
-            alert( $('textarea[name="message"]').data('required') );
+            $('#message-tip').html( $('textarea[name="message"]').data('required') );
+            error = true;
+        }
+        if( error ){
+            return false;
+        }
+    });
+
+
+    LP.action('contact-me-back' , function(){
+        $('#name-tip,#email-tip,#phone-tip').html('');
+        var $form = $(this).closest('form');
+        var data = LP.query2json( $form.serialize() );
+        var error = false;
+        if( !data.name ){
+            $('#name-tip').html( $('input[name="name"]').data('required') );
+            error = true;
+        }
+        if( !data.email || !data.email.match( /[a-zA-Z0-9\-\._]+@(\w+\.)+\w+/ ) ){
+            $('#email-tip').html( $('input[name="email"]').data('required') );
+            error = true;
+        }
+
+        if( !data.phone ){
+            $('#phone-tip').html( $('input[name="phone"]').data('required') );
+            error = true;
+        }
+        if( error ){
             return false;
         }
     });

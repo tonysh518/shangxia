@@ -105,15 +105,15 @@
 	<div class="popcontxt">
 		<p>You are interested by buying this product? <br/>
 		Let us contact you back and we will arrange a way to provide you this prodcut</p>
-		<form class="buy-form conformbox">
-			<div class="conformtit">YOUR NAME</div>
-			<input type="text" />
-			<div class="conformtit">YOUR EMAIL</div>
-			<input type="text" />
-			<div class="conformtit">YOUR PHONE</div>
-			<input type="text" />
-			<button class="conformbtn">CONTACT ME BACK</button>
-
+		<iframe name="newsletter" id="newsletter" style="display:none;" src="about:blank"></iframe>
+		<form class="buy-form conformbox" action="/admin/api/content/newsletter" method="post" target="newsletter">
+			<div class="conformtit">YOUR NAME <span class="error" id="name-tip"></span></div>
+			<input type="text" name="name" data-required="name required"/>
+			<div class="conformtit">YOUR EMAIL <span class="error" id="email-tip"></span></div>
+			<input type="text" name="email" data-required="email required"/>
+			<div class="conformtit">YOUR PHONE <span class="error" id="phone-tip"></span></div>
+			<input type="text" name="phone" data-required="phone required"/>
+			<button class="conformbtn" data-a="contact-me-back">CONTACT ME BACK</button>
 			<a href="">VIEW ALL THE SHANG XIA GIFTS</a>
 		</form>
 	</div>

@@ -49,18 +49,19 @@
 		<!-- contact from -->
 		<div class="section">
 			<div class="products contactform">
-				<div class="productstit intoview-effect" data-effect="fadeup">
+				<div class="productstit intoview-effect" data-effect="fadeup" style="line-height: 350px;">
 					<h2>for more information <br />please send us an email</h2>
 				</div>	
 				<!-- store -->
 				<div class="conformbox intoview-effect" data-effect="fadeup">
-					<form action="/admin/api/content/newsletter" method="post">
+					<iframe name="newsletter" id="newsletter" style="display:none;" src="about:blank"></iframe>
+					<form action="/admin/api/content/newsletter" method="post" target="newsletter">
 
-						<div class="conformtit">NAME</div>
+						<div class="conformtit">NAME <span class="error" id="name-tip"></span></div>
 						<input type="text" name="name" data-required="name required" />
-						<div class="conformtit">EMAIL</div>
+						<div class="conformtit">EMAIL <span class="error" id="email-tip"></span></div>
 						<input type="text" name="email" data-required="right email required"/>
-						<div class="conformtit">MESSAGE</div>
+						<div class="conformtit">MESSAGE <span class="error" id="message-tip"></span></div>
 						<div style="position:relative;">
 							<textarea name="message" data-required="message required" id="" cols="30" rows="15"></textarea>
 							<div class="upload">
