@@ -49,12 +49,12 @@
 		<div class="section intoview-effect" data-effect="fadeup">
 			<div class="products">
 				<div class="productstit othercraftit intoview-effect" data-effect="fadeup">
-					<h2>older news</h2>
+					<h2><?php echo Yii::t("strings", "older news")?></h2>
 				</div>
         <?php $newsList = NewsContentAR::model()->getList(3);?>
-				<div class="productscom intoview-effect slide" data-effect="fadeup">
+				<div class="productscom intoview-effect" data-effect="fadeup">
 					<!--  -->
-					<ul class="slidebox">
+					<ul class="normalbox cs-clear">
             <?php foreach($newsList as $key => $news): ?>
               <li class="productslist cs-clear slideitem" data-id="<?php echo $news->cid?>">
                   <a href="#" class="prolistitem newsitem" data-a="show-news">
