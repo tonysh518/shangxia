@@ -15,6 +15,7 @@ class BoutiqueContentAR extends ContentAR {
   }
   
   public function getFields() {
+    $this->hasContentField("boutique_title");
     $this->hasContentField("location", array("type" => "select", "options" => self::getLocation()));
     $this->hasContentField("address", array("type" => "textarea"));
     $this->hasContentField("latlng", array("type" => "location"));
