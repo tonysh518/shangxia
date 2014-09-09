@@ -312,42 +312,29 @@ function loadJob() {
 // 搜索关键字
 function searchWithKeyword($keyword) {
    if ($keyword) {
-     $types = array("collection", "craft");
+     $types = array("'collection'", "'craft'");
      global $language;
-     $query = new CDbCriteria();
-     $query->addInCondition("type", $types);
-     $query->addCondition("language=:language");
-     $query->params[":language"] = $language;
+     $intype = implode(",", $types);
+     $sql = "SELECT * FROM content where type in (".$intype.")";
+     $sql .= " AND language = '".$language."'";
+     $keyword = addslashes($keyword);
+     $sql .= " AND ( title COLLATE UTF8_GENERAL_CI like binary '%".strtolower($keyword)."%' OR body COLLATE UTF8_GENERAL_CI like binary '%".  strtolower($keyword)."%') ";
      
-     $query_2 = clone $query;
-     // 首先搜索标题
-     $query->addSearchCondition("title", '%'.  addslashes($keyword).'%', FALSE, "AND", "LIKE BINARY");
+     $query = Yii::app()->db->createCommand($sql);
+     $rows = $query->queryAll();
      
-     $res = ContentAR::model()->findAll($query, array(), FALSE);
-     $results = array();
-     foreach ($res as $content) {
-       $results[$content->type][] = $content->cid;
+     $cids = array();
+     foreach ($rows as $row) {
+       $cids[$row["type"]][] = $row["cid"];
      }
-     
-     // 再搜索内容
-     $query_2->addSearchCondition("body", '%'.  addslashes($keyword).'%', FALSE, "AND", "LIKE BINARY");
-     $res = ContentAR::model()->findAll($query, array(), FALSE);
-     foreach ($res as $content) {
-       $results[$content->type][] = $content->cid;
-     }
-     
      $rets = array();
-     foreach ($results as $type => $cids) {
+     foreach ($cids as $type => $cidArray) {
        $class = ucfirst($type)."ContentAR";
-       if (!class_exists($class)) {
-         continue;
-       }
-       $obj = new $class();
-       $query = new CDbCriteria();
-       $query->addInCondition("cid", $cids);
-       $rets += $obj->findAll($query);
-     }
-     
+         $ar = new $class();
+         $query = new CDbCriteria();
+         $query->addInCondition("cid", $cidArray);
+         $rets += $ar->findAll($query);
+      }
      return $rets;
    }
 }
