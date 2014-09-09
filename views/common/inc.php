@@ -312,6 +312,7 @@ function loadJob() {
 // 搜索关键字
 function searchWithKeyword($keyword) {
    if ($keyword) {
+     $keyword = trim($keyword);
      $types = array("'collection'", "'craft'");
      global $language;
      $intype = implode(",", $types);
