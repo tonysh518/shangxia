@@ -29,11 +29,13 @@ class DataCommand extends CConsoleCommand {
         $collectionId = $collectionCids[$collection];
         $product["collection"] = $collectionId;
         $product["product_type"] = $types[trim($product["category"])];
-        $product["product_slide_image"] = ["/upload/videodemo.jpg"];
+        $product["product_slide_image"] = ["/upload/". $product["thumbnail"]];
         $product["thumbnail"] = "/upload/". $product["thumbnail"];
         $product["video_title"] = $product["title"];
         $product["video_description"] = $product["title"];
         $product["craft"] = "";
+        print_r($product);
+        continue;
         $_REQUEST = $product;
         $_POST = $product;
         $productModel = new ProductContentAR();
