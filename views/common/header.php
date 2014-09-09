@@ -4,7 +4,7 @@ require_once "inc.php";?>
 <html>
 <head>
   <meta charset="utf-8">
-  <title>SX</title>
+  <title>SHANG XIA</title>
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <link rel="stylesheet" type="text/css" href="/css/style.css" />
