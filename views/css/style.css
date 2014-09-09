@@ -190,7 +190,7 @@ a{text-decoration:none;outline: none;color:inherit;}
 
 
 /*barbg*/
-.barbg{background: url('../images/barbg.png') no-repeat center;height: 70px;width: 100%;z-index: 1;margin-bottom: -50px;position: relative;}
+.barbg{background: url('../images/barbg.png') no-repeat center;height: 70px;width: 100%;z-index: 1;position: relative;}
 
 /*knowhow*/
 .knowhow{}
