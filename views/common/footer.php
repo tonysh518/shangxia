@@ -78,10 +78,10 @@
 					</div>
 					<div class="sitelinkitem intoview-effect" data-effect="fadeup">
 						<h2><?php echo Yii::t("strings", "ABOUT")?></h2>
-						<a data-a="nav-link" href="#">brand story</a>
-						<a data-a="nav-link" href="#">artstic director</a>
-						<a data-a="nav-link" href="#">hertage & encounter</a>
-						<a data-a="nav-link" href="#">jobs</a>
+						<a data-a="nav-link" href="/about.php#bran">brand story</a>
+						<a data-a="nav-link" href="/about.php#arts">artstic director</a>
+						<a data-a="nav-link" href="/about.php#hert">hertage & encounter</a>
+						<a data-a="nav-link" href="/about.php#jobs">jobs</a>
 					</div>
 					<div class="sitelinkitem sitelinkitemXS intoview-effect" data-effect="fadeup">
 						<h2><?php echo Yii::t("strings", "CONTACT")?></h2>
