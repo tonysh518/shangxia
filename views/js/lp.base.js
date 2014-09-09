@@ -520,7 +520,8 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 position: 'absolute',
                 width: '100%',
                 left:0,
-                top: 0
+                top: 0,
+                zIndex: 0
             })
             .eq(0)
             .css('zIndex' , 1);
@@ -550,7 +551,8 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                         left: 0
                     } , 400 , function(){
                         $(this).css('zIndex' , 1)
-                            .siblings('zIndex' , 0);
+                            .siblings()
+                            .css('zIndex' , 0);
                     } );
 
                 return false;
