@@ -42,16 +42,16 @@
 		<div class="slide intoview-effect" data-effect="fadeup" id="homepage-video-slide" data-auto="false" data-slide="absolute">
 			<ul class="slidebox cs-clear">
 				<li href="#" class="slideitem" data-tit="<?php echo Yii::t("strings", "Bamboo Weaving")?>" data-mp4="/video/Bamboo_Weaving_竹丝扣瓷_30s_1.mp4" data-webm="/video/Bamboo_Weaving_竹丝扣瓷_30s_1.webm">
-					<img src="/images/homepage_demo2.jpg" width="100%" />
+					<img src="/photo/video2.jpg" width="100%" />
 				</li>
 				<li href="#" class="slideitem" data-tit="<?php echo Yii::t("strings", "Cashmere Felt")?>" data-mp4="/video/Cashmere_Felt_羊绒毡_30s_1.mp4" data-webm="/video/Cashmere_Felt_羊绒毡_30s_1.webm">
-					<img src="/images/homepage_demo2.jpg" width="100%" />
+					<img src="/photo/video3.jpg" width="100%" />
 				</li>
 				<li href="#" class="slideitem" data-tit="<?php echo Yii::t("strings", "Eggshell Porcelain")?>" data-mp4="/video/Eggshell_Porcelain_薄胎瓷_30s_1.mp4" data-webm="/video/Eggshell_Porcelain_薄胎瓷_30s_1.webm">
-					<img src="/images/homepage_demo2.jpg" width="100%" />
+					<img src="/photo/video4.jpg" width="100%" />
 				</li>
 				<li href="#" class="slideitem" data-tit="<?php echo Yii::t("strings", "Zitan")?>" data-mp4="/video/Zitan_紫檀_30s_1.mp4" data-webm="/video/Zitan_紫檀_30s_1.webm">
-					<img src="/images/homepage_demo2.jpg" width="100%" />
+					<img src="/photo/video1.jpg" width="100%" />
 				</li>
 			</ul>
 			<div class="slidetip-wrap intoview-effect" data-effect="fadeup" data-effect-delay="500" >
