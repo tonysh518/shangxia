@@ -22,12 +22,21 @@ $pagename = 'product-detail';
 		<!-- detail -->
 		<div class="section ">
 			<div class="detail coll_product cs-clear">
-				<div class="arrows detailprev" data-a="page-prev"></div>
-				<div class=" detailcon">
-					<h2><?php echo $product->title?></h2>
-          <p><?php echo $product->body?></p>
+				<h2 class="intoview-effect" data-effect="fadeup"><?php echo $product->title?></h2>
+				<div class=" detailcon js-horizontal-slide intoview-effect" data-effect="fadeup" data-num="1" style="margin:0 auto;float:none;">
+					<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
+					<div class="slide-con">
+						<ul class="slide-con-inner cs-clear">
+							<li style="float:left;">
+								<p><?php echo $product->body?></p>
+							</li>
+							<li style="float:left;">
+								<p><?php echo $product->body?></p>
+							</li>
+						</ul>
+					</div>
+					<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
 				</div>
-				<div class="arrows detailnext" data-a="page-next"></div>
 			</div>
 			<a href="#" style="margin-top:0;margin-bottom:100px;" class="btn transition-wrap" data-id="<?php echo $product->cid?>" data-a="i-want-to-buy"><span class="transition"><?php echo Yii::t("strings", "I Want To Buy")?><br/><br/><?php echo Yii::t("strings", "I Want To Buy")?></span></a>
 		</div>

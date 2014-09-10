@@ -318,7 +318,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
                 $('.nav-pop').hover(function(){
                     clearTimeout( navPopHoverTimer );
-                    $(this).stop( true );
+
                 } , function(){
                     clearTimeout( navPopHoverShowTimer );
                     $('.nav1 li.active').trigger('mouseout');
@@ -337,9 +337,14 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     // 计算每一个item的宽度 
                     var $imgs = $items.find('img');
                     var totalItems = 0;
-                    $imgs.each(function(){
-                        totalItems += Math.round( $(this).data('width') / $(this).data('height') ) || 1;
-                    });
+                    if( $imgs.length ){
+                        $imgs.each(function(){
+                            totalItems += Math.round( $(this).data('width') / $(this).data('height') ) || 1;
+                        });
+                    } else {
+                        totalItems = $items.length;
+                    }
+                    
 
                     var $inner = $dom.find('.slide-con-inner').width( totalItems / num * 100 + '%' );
                     var marginRight = 0.8 /( totalItems / num  );//parseInt( $items.css('margin-right') );

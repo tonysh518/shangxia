@@ -18,12 +18,26 @@ include_once 'common/header.php';?>
 <!-- detail -->
 		<div class="section ">
 			<div class="detail cs-clear">
-				<div class="arrows detailprev" data-a="page-prev"></div>
-				<div class=" detailcon">
-					<h2 class="intoview-effect" data-effect="fadeup"><?php echo $loadedCraft->craft_title?></h2>
+				<h2 class="intoview-effect" data-effect="fadeup"><?php echo $loadedCraft->craft_title?></h2>
+				<div class=" detailcon js-horizontal-slide intoview-effect" data-effect="fadeup" data-num="1" style="margin:0 auto;float:none;">
+					<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
+					<div class="slide-con">
+						<ul class="slide-con-inner cs-clear">
+							<li style="float:left;">
+								<p><?php echo $loadedCraft->body?></p>
+							</li>
+							<li style="float:left;">
+								<p><?php echo $loadedCraft->body?></p>
+							</li>
+						</ul>
+					</div>
+					<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
+<!-- 
+					<div class="arrows detailprev" data-a="page-prev"></div>
 					<p class="intoview-effect" data-effect="fadeup"><?php echo $loadedCraft->body?></p>
+					<p class="intoview-effect" data-effect="fadeup"><?php echo $loadedCraft->body?></p>
+					<div class="arrows detailnext" data-a="page-next"></div> -->
 				</div>
-				<div class="arrows detailnext" data-a="page-next"></div>
 			</div>
 		</div>
 		
