@@ -155,6 +155,7 @@ function getProductInTypeWithCollection($type = "", $collection = NULL) {
  
   $query = new CDbCriteria();
   $query->addInCondition("cid", $cids);
+  $query->order = "weight DESC , cdate DESC";
   return ProductContentAR::model()->findAll($query);
 }
 
