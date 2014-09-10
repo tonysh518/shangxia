@@ -74,20 +74,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 cb && cb();
             },
             "boutique-page":function( cb ){
-
-                $('[data-map]').each(function(){
-                    // need to judge if use baidu or goole map to render the map
-                    var val = $(this).data('map');
-                    var first = val.split(',')[0];
-                    if( first > 100 ){ // use baidu
-
-                    } else { // use google
-
-                    }
-                });
-
                 $('.footer .store').hide();
-                console.log( $('.footer .store') );
                 cb && cb();
             },
             "product-detail": function( cb ){
@@ -195,10 +182,12 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
         return {
             go: function( url , type ){
+                var urls = url.split('#');
                 History.pushState({
                     prev: location.href,
+                    hash: urls[1],
                     type: type
-                },  undefined , url );
+                },  undefined , urls[0] );
             },
             init: function(){
                 loadingMgr.show();
@@ -221,10 +210,20 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 if( fn ){
                     fn( function(){
                         $(window).trigger('scroll');
-                        loadImages( $allImgs , loadingMgr.hide );
+                        loadImages( $allImgs , function(){
+                            loadingMgr.hide( function(){
+                                // 如果是首页,则需处理其logo
+                                if( $('.head').data('page') == 'home-page' ){
+                                    var loadingOff = $('.loading-wrap .loading').offset();
+                                    var logoOff = $('.logo').offset();
+                                    console.log( logoOff.top , loadingOff.top , logoOff.top - loadingOff.top );
+                                    $(window).scrollTop( ~~( logoOff.top - loadingOff.top ) );
+                                }
+                            } );
+                        } , loadingMgr.process );
                     });
                 } else {
-                    loadImages( $allImgs , loadingMgr.hide );
+                    loadImages( $allImgs , loadingMgr.hide , loadingMgr.process );
                 }
 
                 // fix common page init
@@ -279,7 +278,55 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     initSlider( $(this) );
                 });
 
+                // =====================================================================================
 
+                var navPopHoverTimer = null;
+                var navPopHoverShowTimer = null;
+                // init nav hover effect
+                $('.nav1 li').hover(function(){
+                    var $li = $(this);
+                    clearTimeout( navPopHoverShowTimer );
+                    navPopHoverShowTimer = setTimeout(function(){
+                        var text = $li.data('type');
+                        var $inner = $li.closest('.head-inner');
+                        $inner.attr('class' , 'head-inner cs-clear active-' + text );
+                        $li.addClass('active');
+
+                        $('.nav-pop-' + text ).stop(true).show()
+                            .css('zIndex',99)
+                            .animate({
+                                top: 110
+                            } , 500 , '' , function(){
+                                $(this).css('zIndex' , 101);
+                            });
+                    } , 150);
+                } , function(){
+                    var $li = $(this);
+                    clearTimeout( navPopHoverShowTimer );
+                    navPopHoverTimer = setTimeout(function(){
+                        $li.removeClass('active');
+                        var text = $li.data('type');
+                        var $inner = $('.head-inner').attr('class' , 'head-inner cs-clear');
+
+                        $('.nav-pop-' + text ).stop(true)
+                            .css('zIndex' , 98)
+                            .animate({
+                                top: -110
+                            } , 500);
+                    } , 100);
+                });
+
+                $('.nav-pop').hover(function(){
+                    clearTimeout( navPopHoverTimer );
+                    $(this).stop( true );
+                } , function(){
+                    clearTimeout( navPopHoverShowTimer );
+                    $('.nav1 li.active').trigger('mouseout');
+                });
+
+
+
+                // =====================================================================================
                 // init horizontal slide
                 $('.js-horizontal-slide').each(function(){
                     var $dom = $(this);
@@ -379,9 +426,9 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
                  // nav-pop-item inout-effect
                 $('.nav-pop-item.inout-effect').hover(function(){
-                    $(this).find('span:not(.inout-bg)').delay(200).stop(true).fadeOut(500);
+                    $(this).find('span:not(.inout-bg)').stop(true , true).fadeOut(700);
                 } , function(){
-                    $(this).find('span:not(.inout-bg)').delay(200).stop(true).fadeIn(500);
+                    $(this).find('span:not(.inout-bg)').stop(true , true ).fadeIn(700);
                 });
 
 
@@ -443,12 +490,11 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         }
     })();
 
-    
 
     var loadingMgr = (function(){
         var $loading = $('.loading-wrap');
         if( !$loading.length )
-            $loading = $('<div class="loading-wrap"><div class="loading"></div></div>')
+            $loading = $('<div class="loading-wrap"><div class="loading loading_small"></div></div>')
                 .appendTo(document.body);
         // var positions = [-44,-142,-240,-338,-436,-534];
         // var interval = null;
@@ -456,44 +502,51 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         // var colors = {
         //     'black': 'rgba(0,0,0,.85)'
         // }
-
-        var startTime = null;
-        
+        var MAX_STEPS = 59;
+        // var IMG_WIDTH = 57.9;
+        // var IMG_HEIGHT = 56.2;
+        var IMG_WIDTH = 103;
+        var IMG_HEIGHT = 100;
+        var current = 0;
+        var target = 10;
+        var interval;
         return {
-            showLoading: function( $wrap ){
-                $('<div class="loading-wrap" style="position: absolute;"><div class="loading" style="position:absolute;"></div></div>').appendTo( $wrap )
-                    .fadeIn();
-                var $loading = $wrap.find('.loading');
-                clearInterval( $wrap.data('interval') );
-                var index = 0;
-                $wrap.data('interval' , setInterval(function(){
-                    $loading.css('background-position' , 'right ' +  positions[ ( index++ % positions.length ) ] + 'px' );
-                } , 1000 / 6 ) );
-            },
-            hideLoading: function( $wrap ){
-                clearInterval( $wrap.data('interval') );
-                $wrap.find('.loading-wrap').fadeOut();
+            process: function( index , total ){
+                target = Math.max( target , Math.round( index / total * MAX_STEPS ) );
             },
             show: function( bgcolor ){
-                startTime = new Date();
-                $loading.fadeIn();
-                // var index = 0;
-                // bgcolor = colors[bgcolor] || bgcolor || 'white';
-                // var $inner = $loading.fadeIn().find('.loading');
-                // $loading.css({
-                //     'background-color':  bgcolor
-                // });
-                // clearInterval( interval );
-                // interval = setInterval(function(){
-                //     $inner.css('background-position' , 'right ' +  positions[ ( index++ % positions.length ) ] + 'px' );
-                // } , 1000 / 6 );
+                current = 0;
+                clearInterval( interval );
+
+                var page = $('.head').data('page');
+                var $loadingInner = $loading.find('.loading');
+                interval = setInterval( function(){
+                    if( target < 20 ) return;
+                    if( current >= target ) return;
+                    current++;
+
+                    if( page == 'home-page' && current < 10 ){
+                        $loadingInner.css('top' , 30 + current * 4 + '%' );
+                    }
+
+                    var x = ( ( current % 10 - 10 ) % 10 ) *  IMG_WIDTH;
+                    var y = -~~( ( current - 1 ) / 10 ) * IMG_HEIGHT;
+                    $loadingInner
+                        .css('background-position' , x + 'px ' + y + 'px'  );
+                } , 50 );
+                $loading.fadeIn()
+                    .find('.loading')
+                    .css('background-position' , '1000px  1000px');
             },
-            hide: function(){
-                console.log( 1500 - ( new Date() - startTime ) );
-                // clearInterval( interval );
-                setTimeout(function(){
-                    $loading.fadeOut();
-                } , 1700 - ( new Date() - startTime ) );
+            hide: function( cb ){
+                var timer = setInterval(function(){
+                    if( current == MAX_STEPS ){
+                        clearInterval( timer );
+                        clearInterval( interval );
+                        $loading.fadeOut();
+                        cb && cb();
+                    }
+                } , 200);
             }
         }
     })();
@@ -598,7 +651,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             });
     }
 
-    function loadImages( $img , cb ){
+    function loadImages( $img , cb , step ){
         var index = 0 ;
         var length = $img.length;
         if( length == 0 ){
@@ -607,12 +660,14 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         $img.each(function(){
             $('<img/>').load(function(){
                 index ++;
+                step && step( index , length );
                 if( index == length ){
                     cb && cb();
                 }
             })
             .error(function(){
                 index ++;
+                step && step( index , length );
                 if( index == length ){
                     cb && cb();
                 }
@@ -978,7 +1033,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     var popHelper = (function(){
         var tpl ='<div class="popshade"></div>\
             <div class="pop">\
-                <div class="popclose transition" data-a="popclose"></div>\
+                <div class="popclose" data-a="popclose"></div>\
                 <div class="popcon transition">#[con]</div>\
             </div>';
         return {
@@ -1122,13 +1177,13 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             var State = History.getState(); // Note: We are using History.getState() instead of event.state
             var prev = State.data.prev;
             var type = State.data.type;
-
+            var hash = State.data.hash;
             // if only change hash
             if( State.url.indexOf('##') >= 0 ){
                 return false;
             }
-            // show loading
-            loadingMgr.show();
+            // // show loading
+            // loadingMgr.show();
             switch( type ){
                 default: 
                     $.get( location.href , '' , function( html ){
@@ -1151,8 +1206,13 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                                 .fadeIn();
                             //pagetitarrbottom
 
+                            var sttop = 0;
+                            if( hash ){
+                                var $a = $('a[name="' + hash + '"]'); 
+                                sttop = $a.length && $a.offset().top - 150;
+                            }
                             $('html,body').animate({
-                                scrollTop: 0
+                                scrollTop: sttop || 0
                             } , 300 );
                             pageManager.destroy( );
                             pageManager.init( );
@@ -1168,38 +1228,49 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
     // page actions here
     // ============================================================================
-    LP.action('nav-pop' , function( data ){
+    // LP.action('nav-pop' , function( data ){
         
-        var text = data.type;
-        var $inner = $(this).closest('.head-inner');
-        $inner.attr('class' , 'head-inner cs-clear active-' + text );
+    //     var text = data.type;
+    //     var $inner = $(this).closest('.head-inner');
+    //     $inner.attr('class' , 'head-inner cs-clear active-' + text );
         
-        if( $('.nav-pop-' + text ).is(':visible') ){
-            LP.triggerAction('nav-mask');
-            return false;
-        }
-        $('.head .nav li').removeClass('active');
-        $(this).closest('li').addClass('active');
+    //     if( $('.nav-pop-' + text ).is(':visible') ){
+    //         LP.triggerAction('nav-mask');
+    //         return false;
+    //     }
+    //     $('.head .nav li').removeClass('active');
+    //     $(this).closest('li').addClass('active');
 
-        $('.nav-pop').fadeOut();
-        $('.nav-pop-' + text ).stop(true , true).fadeIn();
-        $('.nav-mask').fadeIn();
-        return false;
-    });
+    //     $('.nav-pop').fadeOut();
+    //     $('.nav-pop-' + text ).stop(true , true).fadeIn();
+    //     $('.nav-mask').fadeIn();
+    //     return false;
+    // });
 
-    LP.action('nav-mask' , function(){
-        var $inner = $('.head-inner').attr('class' , 'head-inner cs-clear');
-        $('.head-inner').find('li.active').removeClass('active');
-        $('.nav-pop').fadeOut();
-        $('.nav-mask').fadeOut();
+    // LP.action('nav-mask' , function(){
+    //     var $inner = $('.head-inner').attr('class' , 'head-inner cs-clear');
+    //     $('.head-inner').find('li.active').removeClass('active');
+    //     $('.nav-pop').fadeOut();
+    //     $('.nav-mask').fadeOut();
 
-        return false;
-    });
+    //     return false;
+    // });
 
     LP.action('nav-link' , function(){
         disposeVideo();
         // load next page
+        var lhref = location.href;
         var href = $(this).attr('href');
+
+        if( href.indexOf('#') >= 0 ){
+            var hrefs = href.split('#');
+            if( lhref.indexOf( hrefs[0] ) >= 0 ){
+                $('html,body').animate({
+                    scrollTop: $('a[name="' + hrefs[1] + '"]').offset().top - 130
+                } , 300 );
+                return false;
+            }
+        }
         pageManager.go( href );
 
         return false;
@@ -1362,6 +1433,10 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     LP.action('newsletter' , function(){
         popHelper.show( $('#newsletter').html() );
         return false;
+    });
+
+    LP.action('i-want-to-buy' , function(){
+        popHelper.show( $('#i_want_to_buy').html() );
     });
 
     LP.action('newletter-submit' , function(){

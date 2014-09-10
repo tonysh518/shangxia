@@ -15,19 +15,20 @@ include_once 'common/header.php';?>
 		<div class="slide intoview-effect" data-effect="fadeup">
 			<div class="slidebox cs-clear">
 				<div class="slideitem"><img src="/images/about_slide_1.jpg" width="100%" /></div>
-				<div class="slideitem"><img src="/images/about_slide_2.jpg" width="100%" /></div>
-				<div class="slideitem"><img src="/images/about_slide_3.jpg" width="100%" /></div>
+				<!-- <div class="slideitem"><img src="/images/about_slide_2.jpg" width="100%" /></div>
+				<div class="slideitem"><img src="/images/about_slide_3.jpg" width="100%" /></div> -->
 			</div>
-			<ul class="slidetab cs-clear">
+			<!-- <ul class="slidetab cs-clear">
 				<li class="on"></li>
 				<li></li>
 				<li></li>
-			</ul>
+			</ul> -->
 			<!-- 数量改变需要改变css，或者用js来调整slidebox的宽度和slidetab的位置 -->
 		</div>
 		<!-- barbg -->
 		<div class="barbg"></div>
 		<!-- intro -->
+		<a name="bran"></a>
 		<div class="section intoview-effect" data-effect="fadeup">
 			<div class="intro introparis ">
 				<h2 class="aboutintrotit"><?php echo Yii::t("strings", "about_brand_story_title")?></h2>
@@ -35,6 +36,7 @@ include_once 'common/header.php';?>
 				</div>
 		</div>
 		<!-- related products -->
+		<a name="arts"></a>
 		<div class="section">
 			<div class="products">
 				<div class="productstit abouttit">
@@ -52,12 +54,7 @@ include_once 'common/header.php';?>
 							<div class="slide">
 								<div class="slidebox cs-clear">
 									<img class="slideitem" src="/images/about_1.jpg" width="100%" />
-									<img class="slideitem" src="/images/about_2.jpg" width="100%" />
 								</div>
-								<ul class="slidetab">
-									<li class="on"></li>
-									<li></li>
-								</ul>
 								<!-- 数量改变需要改变css，或者用js来调整slidebox的宽度和slidetab的位置 -->
 							</div>
 						</div>
@@ -66,6 +63,7 @@ include_once 'common/header.php';?>
 			</div>
 		</div>
 		<!-- know how -->
+		<a name="hert"></a>
 		<div class="section">
 			<div class="knowhow">
 				<div class="productstit about2tit intoview-effect" data-effect="fadeup">
@@ -100,6 +98,7 @@ include_once 'common/header.php';?>
 			</div>
 		</div>
 		<!--  other jobs -->
+		<a name="jobs"></a>
 		<div class="section">
 			<div class="products othercraf">
 				<div class="productstit jobstit intoview-effect" data-effect="fadeup">

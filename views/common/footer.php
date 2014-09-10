@@ -81,19 +81,19 @@
 						<a data-a="nav-link" href="/about.php#bran">brand story</a>
 						<a data-a="nav-link" href="/about.php#arts">artstic director</a>
 						<a data-a="nav-link" href="/about.php#hert">hertage & encounter</a>
-						<a data-a="nav-link" href="/about.php#jobs">jobs</a>
+						<a data-a="nav-link" href="/about.php#jobs">JOIN SHANG XIA</a>
 					</div>
 					<div class="sitelinkitem sitelinkitemXS intoview-effect" data-effect="fadeup">
 						<h2><?php echo Yii::t("strings", "CONTACT")?></h2>
 						<a href="#" class="ft_wx">weixin</a>
-						<a href="#" class="ft_wb">weibo</a>
+						<a href="http://www.weibo.com/shangxia" target="_blank" class="ft_wb">weibo</a>
 						<br>
 						<a href="#" style="width: auto;line-height: initial;height: auto;margin-top: 48px;" data-a="newsletter">subscribe to shang xia newsletter</a>
 					</div>
 				</div>
 				<!-- copyright -->
 				<div class="copyright">
-					<p>ICP LICENCE 12345678 - PRIVACY POLICY LEGAL INFORMATION - <a href="#" data-a="newsletter">NEWSLETTER</a></p>
+					<p><a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=20120529122952909">ICP LICENCE 20120529122952909</a> - PRIVACY POLICY LEGAL INFORMATION</p>
 				</div>
 			</div>
 		</div>
@@ -101,6 +101,26 @@
 	</div>
 
 <script type="text/tpl" id="newsletter">
+	<h2>SUBSCRIBE TO <br/> SHANG XIA NEWSLETTER </h2>
+	<div class="popcontxt">
+		<p style="margin:5px 0;">To receive updates about SHANGXIA , <br/>
+		please provide the following information:</p>
+		<iframe name="newsletter" id="newsletter" style="display:none;" src="about:blank"></iframe>
+		<form class="buy-form conformbox" action="/admin/api/content/newsletter" method="post" target="newsletter">
+			<div class="conformtit">YOUR NAME <span class="error" id="name-tip"></span></div>
+			<input type="text" name="name" data-required="name required"/>
+			<div class="conformtit">YOUR EMAIL <span class="error" id="email-tip"></span></div>
+			<input type="text" name="email" data-required="email required"/>
+			<div class="conformtit">YOUR PHONE <span class="error" id="phone-tip"></span></div>
+			<input type="text" name="phone" data-required="phone required"/>
+			<p style="margin:30px -20px 0">SHANGXIA does not rent or sell customer <br/>
+			email addresses to third parties.</p>
+			<button class="conformbtn" data-a="newsletter-send">SEND</button>
+		</form>
+	</div>
+</script>
+
+<script type="text/tpl" id="i_want_to_buy">
 	<h2>I want to buy</h2>
 	<div class="popcontxt">
 		<p>You are interested by buying this product? <br/>
