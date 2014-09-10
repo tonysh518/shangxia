@@ -130,7 +130,7 @@ include_once 'common/header.php';?>
 					<!--  -->
 					<div class="productslist cs-clear">
             <?php foreach(loadOtherCraft($craft->cid) as $item): ?>
-              <a href="#" class="prolistitem intoview-effect" data-effect="fadeup">
+              <a href="/craft.php?cid=<?php echo $item->cid?>" class="prolistitem intoview-effect" data-effect="fadeup">
                 <img src="<?php echo $item->thumbnail_image?>" width="100%" />
                 <p><?php echo $item->title?></p>
               </a>
