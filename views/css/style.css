@@ -545,13 +545,13 @@ body .vjs-default-skin .vjs-big-play-button:focus{box-shadow: none;}
 .normalbox .slideitem .prolistitem {width: 100%;}
 
 .related-product {
-  padding-top: 50px;
-  padding-bottom: 30px;
+  padding-top: 30px;
+  padding-bottom: 50px;
 }
 
 .related-product h2 {
   padding-top:0px;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   text-transform: uppercase;
 }
 
