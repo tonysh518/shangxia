@@ -1,5 +1,5 @@
 <div class="section">
-	<div class="knowhow">
+	<div class="knowhow zitan-knowhow">
 		<div class="knowhowtit intoview-effect" data-effect="fadeup">
 			<h2><?php echo Yii::t("strings", "KNOW - HOW")?></h2>
 		</div>

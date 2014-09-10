@@ -6,7 +6,7 @@
 				<div class="productscom">
 					<div class="productsinfor cs-clear">
 						<div class="proinfortxt aboutinfortxt intoview-effect related-product" data-effect="fadeup" style='background-color: #ecf6f0'>
-<!--							<h2>Close to the Universe</h2>-->
+							<h2>Master Zhang created a new weaving </h2>
               <p>
 Master Zhang created a new weaving 
 technique for SHANG XIA’s white porcelain tea set “Bridge”. The technique is called Bamboo covered Porcelain, an innovative and creative process based on the traditional bamboo over porcelain technique. Around the ceramic body, the thin bamboo strips are softly woven following the shape of the tea ware, melding seamlessly one material into the other.

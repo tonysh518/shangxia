@@ -111,6 +111,7 @@ include_once 'common/header.php';?>
 
     <!-- related products -->
     <?php if (is_weaving()): ?>
+      <?php include_once 'widget/product-w.php';?>
     <?php elseif (is_cashmere()): ?>
       <?php include_once 'widget/product-cf.php';?>
     <?php elseif (is_eggshell()): ?>
