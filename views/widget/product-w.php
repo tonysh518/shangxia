@@ -5,7 +5,7 @@
 				</div>
 				<div class="productscom">
 					<div class="productsinfor cs-clear">
-						<div class="proinfortxt aboutinfortxt intoview-effect related-product" data-effect="fadeup">
+						<div class="proinfortxt aboutinfortxt intoview-effect related-product" data-effect="fadeup" style='background-color: #ecf6f0'>
 <!--							<h2>Close to the Universe</h2>-->
               <p>
 Master Zhang created a new weaving 

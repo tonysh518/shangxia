@@ -5,8 +5,8 @@
 				</div>
 				<div class="productscom">
 					<div class="productsinfor cs-clear">
-						<div class="proinfortxt aboutinfortxt intoview-effect related-product" data-effect="fadeup">
-<!--							<h2>Close to the Universe</h2>-->
+						<div class="proinfortxt aboutinfortxt intoview-effect related-product" data-effect="fadeup" style='background-color: #edf3f3;'>
+              <h2>Thin and Beautiful <br> Rare Perfection</h2>
               <p>
 It is obvious to any viewer that Master Lu has poured his heart and experience into creating “Tianlai” (“Echo”), the eggshell porcelain for “Shang Xia”. The design of the “Tianlai” bowl is simple in shape, but conveys brilliance and near transparency in a daily object, just as the Chinese saying goes; “Turn nothing into something”. 
 If to set the high standard of beauty for eggshell porcelain as thin, translucent 

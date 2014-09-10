@@ -5,8 +5,8 @@
 				</div>
 				<div class="productscom">
 					<div class="productsinfor cs-clear">
-						<div class="proinfortxt aboutinfortxt intoview-effect related-product" data-effect="fadeup">
-<!--							<h2>Close to the Universe</h2>-->
+            <div class="proinfortxt aboutinfortxt intoview-effect related-product" data-effect="fadeup" style="background-color: #f6f2e7;">
+							<h2>Close to the Universe</h2>
               <p>
 “ Da Tian Di (Grand Universe) ” , the zitan furniture series for Shang Xia, achieves “the highest simplicity and accuracy”, 
 according to Master Gu.
@@ -20,13 +20,12 @@ However, the usual rounded outer lines have been developed into a more complex s
 								<div class="popcontxt">
                   <p>“Da Tian Di (Grand Universe)”, the zitan furniture series for Shang Xia, achieves “the highest simplicity and accuracy”, according to Master Gu.</p>
                   <p>Universe means heaven and earth. The series has a simple design and smooth form that, conveys a composed and generous shape, big enough to accommodate both heaven and earth.</p>
-                  <p>The design is inspired by traditional Ming style furniture. However, the usual rounded outer lines have been developed into a more complex square outline with rounded interior lines creating lines that are both graceful and modern. Mortise and tenons, and only mortise and tenons were used to connect the round stool with the square back of the chair. The two join perfectly and tightly with each other after hundreds of thousands of polishes. Pure handcraft gives the most precious and hard zitan the most velvety texture.
+                  <p>The design is inspired by traditional Ming style furniture. However, the usual rounded outer lines have been developed into a more complex square outline with rounded interior lines creating lines that are both graceful and modern. Mortise and tenons, and only mortise and tenons were used to connect the round stool with the square back of the chair. The two join perfectly and tightly with each other after hundreds of thousands of polishes. Pure handcraft gives the most precious and hard zitan the most velvety texture.</p>
 The design is based on a careful study of human ergonomics, striving to provide the best experience for its user. Furniture is filled with feeling, and it provides warmth and comfort to man.</p>
                   
                   <p>Every piece of “Da Tian Di” furniture takes over 6 months to complete. Each piece presents superb craftsmanship in detail, each piece an excellent artwork. “Da Tian Di” furniture is a life companion. The lines are smooth and simple; the emotion is gentle and warm, the chair carries your affection and thoughts. It is a direct approach to the universe.</p>
-            </div>
+                </div>
 							</textarea>
-              
 						</div>
 						<div class="proinforpic intoview-effect" data-effect="fadeup" data-effect-delay="400">
 							<div class="slide">

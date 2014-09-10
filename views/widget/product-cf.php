@@ -5,8 +5,8 @@
 				</div>
 				<div class="productscom">
 					<div class="productsinfor cs-clear">
-						<div class="proinfortxt aboutinfortxt intoview-effect related-product" data-effect="fadeup">
-<!--							<h2>Close to the Universe</h2>-->
+						<div class="proinfortxt aboutinfortxt intoview-effect related-product" data-effect="fadeup" style='background:#f6eeee;'>
+							<h2>HAND SCULPTURE CLOTHING</h2>
               <p>
 Felt making is an ancient technique invented by herdsman to make non-woven cloth. Herdsmen use felt to make their rugs, yurts, clothing and cooking utensils. As nomadic peoples used these skills used to make yurts, the same skills, combined with original innovative designs, are used to create seamless felted cashmere one-off and unique 
 garments with no stitchingFelt making is an ancient technique invented by herdsman to make non-woven cloth. 

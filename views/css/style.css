@@ -544,5 +544,20 @@ body .vjs-default-skin .vjs-big-play-button:focus{box-shadow: none;}
 
 .normalbox .slideitem .prolistitem {width: 100%;}
 
+.related-product {
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
+.related-product h2 {
+  padding-top:0px;
+  padding-bottom: 50px;
+  text-transform: uppercase;
+}
+
+.related-product p {
+  line-height: 150%;
+}
+
 
 
