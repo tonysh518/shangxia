@@ -553,11 +553,29 @@ body .vjs-default-skin .vjs-big-play-button:focus{box-shadow: none;}
   padding-top:0px;
   padding-bottom: 20px;
   text-transform: uppercase;
+  color: #4b3700;
+  font-family: "Gotham Bold";
 }
 
 .related-product p {
-  line-height: 150%;
+  line-height: 160%;
+  color: #9e927a;
 }
 
+.zitan-knowhow .inout-bg {
+  background-color: #f6f2e7;
+}
+
+.ep-knowhow .inout-bg {
+  background-color: #edf3f3;
+}
+
+.w-knowhow .inout-bg {
+  background-color: #ecf6f0;
+}
+
+.cf-knowhow .inout-bg {
+  background-color: #f9f4f4;
+}
 
 
