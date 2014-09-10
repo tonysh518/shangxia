@@ -11,7 +11,7 @@
     </div>
     <h5><?php echo Yii::t("strings", ucfirst($type)." Table")?></h5>
   </header>
-    <table class="table table-striped">
+    <table class="table table-striped tablepager">
       <thead>
         <td><?php echo Yii::t("strings", "Title")?></td>
         <td><?php echo Yii::t("strings", "Type")?></td>

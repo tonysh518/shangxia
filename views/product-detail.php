@@ -33,10 +33,10 @@ $pagename = 'product-detail';
 		</div>
 		<!--  -->
 		<!-- video -->
-    <?php if ($product->thumbnail): ?>
+    <?php if ($product->product_slide_image): ?>
       <div class="slide">
         <div class="slidebox cs-clear">
-          <?php foreach (array($product->thumbnail) as $slide_image):?>
+          <?php foreach (($product->product_slide_image) as $slide_image):?>
             <div data-resize="1600:560" class="slideitem"><img src="<?php echo $slide_image?>" width="100%" /></div>
           <?php endforeach;?>
         </div>

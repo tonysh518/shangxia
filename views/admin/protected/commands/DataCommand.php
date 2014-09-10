@@ -6,9 +6,9 @@ class DataCommand extends CConsoleCommand {
         "人与自然" => "20093",
         "传承与情感" => "20092",
         "里·外" => "20079",
-        "Human & Nature" => "20091",
-        "Heritage & Emotion" => "20090",
-        "In & Out" => "20089",
+        "Human & Nature" => "20332",
+        "Heritage & Emotion" => "20333",
+        "In & Out" => "20330",
     );
     $types = array();
     $tmp_types = ProductContentAR::getType();
@@ -25,6 +25,9 @@ class DataCommand extends CConsoleCommand {
         if ($product["language"] == "fr") {
           continue;
         }
+        else  if ($product["language"] == "cn") {
+          continue;
+        }
         
         $collectionId = $collectionCids[$collection];
         $product["collection"] = $collectionId;
@@ -34,8 +37,6 @@ class DataCommand extends CConsoleCommand {
         $product["video_title"] = $product["title"];
         $product["video_description"] = $product["title"];
         $product["craft"] = "";
-        print_r($product);
-        continue;
         $_REQUEST = $product;
         $_POST = $product;
         $productModel = new ProductContentAR();

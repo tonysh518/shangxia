@@ -133,45 +133,28 @@ function getSlideImageHtml( $uri , $percent = 1) {
  * @return 
  */
 function getProductInTypeWithCollection($type = "", $collection = NULL) {
-  $query = new CDbCriteria();
-  if ($type !== "") {
-    $query->addCondition("field_name=:field_name")
-          ->addCondition("field_content=:field_content");
-    $query->params[":field_name"] = "product_type";
-    $query->params[":field_content"] = $type;
-    
-    $tmp = FieldAR::model()->findAll($query);
-    $res1 = array();
-    foreach ($tmp as $item) {
-      $res1[] = $item->cid;
-    }
+  global $language;
+  if ($type && $collection) {
+    $sql = 'select * from content left join field on field_name="product_type" and field.cid = content.cid where field_content="'.$type.'" AND  type="product" and language="'.$language.'" and content.cid in (select cid from field where field_name="collection" and field_content="'.$collection.'")';
   }
-  
-  if ($collection) {
-    $query->addCondition("field_name=:field_name")
-          ->addCondition("field_content=:field_content");
-    $query->params[":field_name"] = "product_type";
-    $query->params[":field_content"] = $type;
-    $tmp = FieldAR::model()->findAll($query);
-    foreach ($tmp as $item) {
-      $res2[] = $item->cid;
-    }
+  else if ($type && !$collection) {
+    $sql = 'select * from content left join field on field_name="product_type" and field.cid = content.cid where field_content="'.$type.'" AND  type="product" and language="'.$language.'"';
+  }
+  else if ($collection && !$type) {
+    $sql = 'select * from content left join field on field_name="collection" and field.cid = content.cid where field_content="'.$collection.'" AND  type="product" and language="'.$language.'"';
+  }
+  // 没有任何条件 就直接返回一个空数组
+  else {
+    return array();
   }
   $cids = array();
-  // 如果同时查找2个条件，则取并集
-  if (isset($res1) && isset($res2)) {
-    $cids = array_intersect($res1, $res2);
-  }
-  else if (isset($res1)) {
-    $cids = $res1;
-  }
-  else if (isset($res2)) {
-    $cids = $res2;
+  $res = Yii::app()->db->createCommand($sql)->queryAll();
+  foreach ($res as $item) {
+    $cids[] = $item["cid"];
   }
  
   $query = new CDbCriteria();
   $query->addInCondition("cid", $cids);
-  $query->limit = "5";
   return ProductContentAR::model()->findAll($query);
 }
 
