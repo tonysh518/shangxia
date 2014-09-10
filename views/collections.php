@@ -12,6 +12,7 @@ else {
 
 // fix has slider
 $has_slider = array('apparel','homeware','teaware');
+
 ?>
 
 <?php include_once 'common/header.php';?>

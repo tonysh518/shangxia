@@ -2,6 +2,7 @@
 
 class CraftContentAR extends ContentAR {
   public $type = "craft";
+  public static $products;
   
   public function getImageFields() {
     $this->hasImageField("thumbnail_image");
@@ -22,8 +23,14 @@ class CraftContentAR extends ContentAR {
     $this->hasContentField("craft_title");
     
     $options = array();
-    foreach (ProductContentAR::model()->getList() as $product) {
-      $options[$product->cid] = $product->title;
+    if (!(self::$products)) {
+      foreach (ProductContentAR::model()->getList() as $product) {
+        $options[$product->cid] = $product->title;
+      }
+      self::$products = $options;
+    }
+    else {
+      $options = self::$products;
     }
     $this->hasContentField("product", array("type" => "select", "options" => $options,  "select_multi" => TRUE));
     return parent::getFields();

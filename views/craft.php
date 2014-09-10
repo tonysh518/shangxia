@@ -1,5 +1,4 @@
 <?php 
-
 if (isset($_GET["cid"])) {
   require_once 'common/inc.php';
   $loadedCraft = CraftContentAR::model()->findByPk($_GET["cid"]);
@@ -46,19 +45,19 @@ include_once 'common/header.php';?>
 		<div class="intoview-effect" data-effect="fadeup">
 			<!-- barbg -->
       <?php if (is_weaving()): ?>
-        <div class="video" data-resize="1600:560" data-video-render="1" data-mp4="Bamboo_Weaving_竹丝扣瓷_30s_1.mp4" data-webm="Bamboo_Weaving_竹丝扣瓷_30s_1.webm" style="position:relative;overflow:hidden;height:560px;"  >
+        <div class="video" data-resize="1600:560" data-video-render="1" data-mp4="/video/Bamboo_Weaving_竹丝扣瓷_30s_1.mp4" data-webm="Bamboo_Weaving_竹丝扣瓷_30s_1.webm" style="position:relative;overflow:hidden;height:560px;"  >
           <img src="/photo/video2.jpg" width="100%" />
         </div>
       <?php elseif (is_cashmere()): ?>
-        <div class="video" data-resize="1600:560" data-video-render="1" data-mp4="Cashmere_Felt_羊绒毡_30s_1.mp4" data-webm="Cashmere_Felt_羊绒毡_30s_1.webm" style="position:relative;overflow:hidden;height:560px;"  >
+        <div class="video" data-resize="1600:560" data-video-render="1" data-mp4="/video/Cashmere_Felt_羊绒毡_30s_1.mp4" data-webm="Cashmere_Felt_羊绒毡_30s_1.webm" style="position:relative;overflow:hidden;height:560px;"  >
           <img src="/photo/video3.jpg" width="100%" />
         </div>
       <?php elseif (is_eggshell()): ?>
-        <div class="video" data-resize="1600:560" data-video-render="1" data-mp4="Eggshell_Porcelain_薄胎瓷_30s_1.mp4" data-webm="Eggshell_Porcelain_薄胎瓷_30s_1.webm" style="position:relative;overflow:hidden;height:560px;"  >
+        <div class="video" data-resize="1600:560" data-video-render="1" data-mp4="/video/Eggshell_Porcelain_薄胎瓷_30s_1.mp4" data-webm="Eggshell_Porcelain_薄胎瓷_30s_1.webm" style="position:relative;overflow:hidden;height:560px;"  >
           <img src="/photo/video4.jpg" width="100%" />
         </div>
       <?php else: ?>
-        <div class="video" data-resize="1600:560" data-video-render="1" data-mp4="Zitan_紫檀_30s_1.mp4" data-webm="Zitan_紫檀_30s_1.webm" style="position:relative;overflow:hidden;height:560px;"  >
+        <div class="video" data-resize="1600:560" data-video-render="1" data-mp4="/video/Zitan_紫檀_30s_1.mp4" data-webm="Zitan_紫檀_30s_1.webm" style="position:relative;overflow:hidden;height:560px;"  >
           <img src="/photo/video1.jpg" width="100%" />
         </div>
       <?php ?>
@@ -145,7 +144,7 @@ include_once 'common/header.php';?>
 					<!--  -->
 					<div class="productslist cs-clear">
             <?php foreach(loadOtherCraft($craft->cid) as $item): ?>
-              <a href="#" class="prolistitem intoview-effect" data-effect="fadeup">
+              <a href="/craft.php?cid=<?php echo $item->cid?>" class="prolistitem intoview-effect" data-effect="fadeup">
                 <img src="<?php echo $item->thumbnail_image?>" width="100%" />
                 <p><?php echo $item->title?></p>
               </a>

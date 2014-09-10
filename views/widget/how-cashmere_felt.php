@@ -82,7 +82,7 @@ fabric and untangle the tangled spots. The fabric is rinsed unhooked and hung up
 					<p class="eff cwrap">Shrinking <br>the Clothing</p>
 					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition">read<br/><br/>read</span></a>
 					<textarea style="display:none;">
-						<h2>Construction</h2>
+						<h2>SHRINKING THE CLOTHING</h2>
 						<div class="popcontxt">
               <p>At the final step, the garment is boiled in water to set the shape. As there is a certain amount of shrinkage in this process, the ultimate desired size of the garment depends on the skill, and experience of the felt worker in controlling the temperature and length of time the garment is boiled.</p>
 						</div>
