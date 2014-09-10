@@ -19,19 +19,20 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             'home-page' : function( cb ){
                 var $slider = $('#home-slider');
                 var slideHeight = $slider.children().height();
+                var $header = $('.head');
                 $(window).scroll(function(){
                     var stTop = $(window).scrollTop();
                     var winHeight = $(window).height();
 
                     // fix home slider
-                    var mtop = Math.min( stTop , slideHeight / 2 );
-                    $slider
-                        .css({
-                            height: slideHeight - 2 * mtop,
-                            overflow: 'hidden'
-                        })
-                        .find('img')
-                        .css({marginTop: - mtop , marginBottom: - mtop * 2 / 3});
+                    // var mtop = Math.min( stTop , slideHeight / 2 );
+                    // $slider
+                    //     .css({
+                    //         height: slideHeight - 2 * mtop,
+                    //         overflow: 'hidden'
+                    //     })
+                    //     .find('img')
+                    //     .css({marginTop: - mtop , marginBottom: - mtop * 2 / 3});
                     // // header fixed effect
                     if( stTop >= $header.offset().top ){
                         $header.find('.head-fixed').css('position' , 'fixed');
@@ -179,9 +180,134 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             // }
         }
 
+        var normalPageLoading = function( $allImgs ){
+            loadImages( $allImgs , function(){
+                loadingMgr.hide( function(){
+                    $(window).trigger('resize')
+                        .trigger('scroll');
+                } );
+            } , loadingMgr.process );
+        }
+
+        var homePageLoading = function( $allImgs ){
+            // disable scroll event
+            var startAnimate = false;
+            loadImages( $allImgs , function(){
+
+                loadingMgr.hide( function(){
+
+                    var $cloneHeader = $('.loading-wrap .head-inner-wrap')
+                    .animate({
+                        top: 0,
+                        marginTop: -150
+                    } , 800);
+
+
+                    var sliderHeight = $(window).height() - 150;
+
+                    // set slider css
+                    var $homeSilder = $('#home-slider')
+                        .css({
+                            height: sliderHeight,
+                            overflow: 'hidden'
+                        })
+                        .find('.slide')
+                        .css({
+                            height: '100%',
+                            marginTop: -sliderHeight
+                        })
+                        .find('.slidetip,.slidetab')
+                        .css({
+                            opacity: 0,
+                            bottom: 0
+                        })
+                        .end();
+
+                    var $loadingWrap = $('.loading-wrap');
+                    $loadingWrap.stop(true)
+                        .animate({
+                            top: '100%'
+                        } , 800)
+                        .promise()
+                        .then(function(){
+                            // run the animate
+                            $homeSilder
+                                .animate({
+                                    marginTop: 0
+                                } , 500)
+                                .promise()
+                                .then(function(){
+                                    $(this).find('.slidetip')
+                                        .animate({
+                                            opacity: 1,
+                                            bottom: 120
+                                        } , 300)
+                                        .end()
+                                        .find('.slidetab')
+                                        .animate({
+                                            opacity: 1,
+                                            bottom: 50
+                                        } , 300);
+                                });
+
+                            $loadingWrap.fadeOut( function(){
+                                $loadingWrap.removeAttr('style')
+                                    .find('.loading')
+                                    .appendTo( $loadingWrap )
+                                    .removeAttr('style')
+                                    .prev()
+                                    .remove();
+                            } );
+                        });
+
+                    $(window).trigger('resize')
+                        .scrollTop(0);;
+                } );
+
+                
+            } , function( index , total ){
+
+                loadingMgr.process( index , total , function( percent ){
+                    if( !startAnimate && percent > 0.7 ){
+                        startAnimate = true;
+                        var $cloneHeader = $('.head-inner-wrap').clone()
+                            .appendTo( $('.loading-wrap') )
+                            .css({
+                                marginTop: -63,
+                                top: '66%'
+                            })
+                            // hide logo
+                            .find('.logo a')
+                            .css('background' , 'none')
+                            .end()
+                            // animate other menus
+                            .find('.nav li ,.hd_oter')
+                            .each(function( i ){
+                                $(this).css({
+                                    opacity: 0,
+                                    marginTop: 30
+                                }).delay( i * 80 )
+                                .animate({
+                                    opacity: 1,
+                                    marginTop: 0
+                                } , 300 , 'easeLightOutBack');
+                            })
+                            .end();
+
+                        $('.loading-wrap .loading')
+                            .appendTo( $cloneHeader.find('.logo a') )
+                            .css({
+                                top: 23,
+                                left: '50%'
+                            });
+                    }
+                } );
+            });
+        }
+
 
         return {
-            go: function( url , type ){
+            gotoPage: function( url , type ){
                 var urls = url.split('#');
                 History.pushState({
                     prev: location.href,
@@ -190,7 +316,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 },  undefined , urls[0] );
             },
             init: function(){
-                loadingMgr.show();
+                loadingMgr.start();
                 $('.footer .store').show();
                 var page = $('.head').data('page');
                 var fn = pageInits[ page ];
@@ -209,26 +335,14 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
                 if( fn ){
                     fn( function(){
-                        $(window).trigger('scroll');
-                        loadImages( $allImgs , function(){
-                            loadingMgr.hide( function(){
-                                // 如果是首页,则需处理其logo
-                                if( $('.head').data('page') == 'home-page' ){
-                                    var loadingOff = $('.loading-wrap .loading').offset();
-                                    var logoOff = $('.logo').offset();
-                                    console.log( logoOff.top , loadingOff.top , logoOff.top - loadingOff.top );
-                                    $(window).scrollTop( ~~( logoOff.top - loadingOff.top ) );
-                                }
-                            } );
-
-                            $(window).trigger('resize');
-                        } , loadingMgr.process );
+                        if( page == 'home-page' ){
+                            homePageLoading( $allImgs );
+                        } else {
+                            normalPageLoading( $allImgs );
+                        }
                     });
                 } else {
-                    loadImages( $allImgs , function(){
-                        loadingMgr.hide();
-                        $(window).trigger('resize');
-                    } , loadingMgr.process );
+                    normalPageLoading( $allImgs );
                 }
 
                 // fix common page init
@@ -501,9 +615,11 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
     var loadingMgr = (function(){
         var $loading = $('.loading-wrap');
-        if( !$loading.length )
-            $loading = $('<div class="loading-wrap"><div class="loading loading_small"></div></div>')
-                .appendTo(document.body);
+        // if( !$loading.length )
+        //     $loading = $('<div class="loading-wrap"><div class="loading loading_small"></div></div>')
+        //         .appendTo(document.body);
+
+        var $loadingInner = $loading.find('.loading');
         // var positions = [-44,-142,-240,-338,-436,-534];
         // var interval = null;
 
@@ -518,20 +634,26 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         var current = 0;
         var target = 10;
         var interval;
+        var stepCallBack = null;
+
+        var isHomePage = false;
+        var isToStart = false;
         return {
-            process: function( index , total ){
+            process: function( index , total , cb ){
+                stepCallBack = cb;
                 target = Math.max( target , Math.round( index / total * MAX_STEPS ) );
             },
-            show: function( bgcolor ){
+            start: function( ){
                 current = 0;
                 clearInterval( interval );
-
                 var page = $('.head').data('page');
-                var $loadingInner = $loading.find('.loading');
                 interval = setInterval( function(){
                     if( target < 20 ) return;
                     if( current >= target ) return;
                     current++;
+
+
+                    stepCallBack && stepCallBack( current / MAX_STEPS );
 
                     if( page == 'home-page' && current < 10 ){
                         $loadingInner.css('top' , 30 + current * 4 + '%' );
@@ -542,16 +664,38 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     $loadingInner
                         .css('background-position' , x + 'px ' + y + 'px'  );
                 } , 50 );
-                $loading.fadeIn()
-                    .find('.loading')
-                    .css('background-position' , '1000px  1000px');
+            },
+            show: function( isNormal ){
+                $(document.body).css('overflow' , 'hidden');
+
+                if( !$loading.is(':visible') ){
+                    $loading
+                        .removeAttr('style')
+                        .fadeIn();    
+                }
+
+                $loadingInner
+                    .removeAttr('style');
+
+                isHomePage = !isNormal;
+                if( isNormal ){
+                    $loadingInner.appendTo( $('.logo a').css('background' , 'none') )
+                        .css('top' , 23 );
+                    $loading.css('zIndex' , 90);
+                }
+
             },
             hide: function( cb ){
                 var timer = setInterval(function(){
                     if( current == MAX_STEPS ){
                         clearInterval( timer );
                         clearInterval( interval );
-                        $loading.fadeOut();
+                        $(document.body).css('overflow' , 'auto');
+
+                        if( !isHomePage ){
+                            $loadingInner.appendTo( $loading.fadeOut() );
+                            $('.logo a').removeAttr('style');
+                        }
                         cb && cb();
                     }
                 } , 200);
@@ -663,6 +807,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         var index = 0 ;
         var length = $img.length;
         if( length == 0 ){
+            step && step( 1 , 1 );
             cb && cb();
         }
         $img.each(function(){
@@ -1116,6 +1261,22 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
     $(window).resize(function(){
         var winWidth = $(window).width();
+        var winHeight = $(window).height();
+
+        // fix home slider
+        $('#home-slider').height( winHeight - 150 )
+            .find('.slideitem')
+            .each(function(){
+                // fix image size
+                fixImageToWrap( $(this) , $(this).find('img') );
+            });
+        
+
+        // fix slidetab marginleft
+        $('.slidetab').each(function(){
+            $(this).css('marginLeft' , - $(this).width() / 2);
+        });
+
         // fix height
         // $('.knowhowintro').each(function(){
         //     var h = $(this).parent('.knowhowitem').children('.knowhowpic').height()
@@ -1174,6 +1335,9 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     // change history
     LP.use('../plugin/history.js' , function(){
         History.replaceState( { prev: '' } , undefined , location.href  );
+
+        var isHomePage = ( location.pathname == '' || location.pathname == '/' || location.pathname == '/index.php' );
+        loadingMgr.show( !isHomePage );
         pageManager.init( );
 
         $(document).ajaxError(function(){
@@ -1190,27 +1354,36 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             if( State.url.indexOf('##') >= 0 ){
                 return false;
             }
-            // // show loading
-            // loadingMgr.show();
+
+            // show loading
+            var isHomePage = ( location.pathname == '' || location.pathname == '/' || location.pathname == '/index.php' );
+            loadingMgr.show( !isHomePage );
             switch( type ){
                 default: 
                     $.get( location.href , '' , function( html ){
                         var $newPage = $('<div>' + html + '</div>');
+
+                        var bodyClass = $newPage.find('body').attr('class');
+                        var page = $newPage.find('.head').data('page');
+                        $('.head').data('page' , page || '');
+                        $(document.body).attr('class' , bodyClass || '');
+
                         html = $newPage.find('.wrap')
-                            .find('.footer')
+                            .find( isHomePage ? '.footer' : '.footer,.head' )
                             .remove()
                             .end()
                             .html();
-                        $( '.wrap' ).children(':not(.footer)').animate({
+                        $( '.wrap' ).children(isHomePage ? ':not(.footer)' : ':not(.footer,.head)').animate({
                             opacity: 0
                         } , 500);
 
                         setTimeout(function(){
-                            $( '.wrap' ).children(':not(.footer)')
+                            $('#home-slider').remove();
+                            $( '.wrap' ).children( isHomePage ? ':not(.footer)' : ':not(.footer,.head)' )
                                 .remove()
                                 .end()
                                 .prepend( html )
-                                .children(':not(.nav-mask)')
+                                .children( isHomePage? '' : ':not(.head)')
                                 .fadeIn();
                             //pagetitarrbottom
 
@@ -1278,8 +1451,26 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 } , 300 );
                 return false;
             }
+        } else if( lhref.indexOf( href ) >= 0 ){ // 如果是同一个页面
+            History.Adapter.trigger( window , 'statechange');
+            return false;
         }
-        pageManager.go( href );
+
+        if( $('#home-slider').length ){
+            $('html,body').animate({
+                scrollTop: $('#home-slider').height()
+            } , 400)
+            .promise()
+            .then(function(){
+                $(this).scrollTop(0);
+                $('#home-slider').remove();
+                $('.head-fixed').removeAttr('style');
+
+                pageManager.gotoPage( href );
+            });
+        } else {
+            pageManager.gotoPage( href );
+        }
 
         return false;
     });

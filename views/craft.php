@@ -31,11 +31,6 @@ include_once 'common/header.php';?>
 						</ul>
 					</div>
 					<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
-<!-- 
-					<div class="arrows detailprev" data-a="page-prev"></div>
-					<p class="intoview-effect" data-effect="fadeup"><?php echo $loadedCraft->body?></p>
-					<p class="intoview-effect" data-effect="fadeup"><?php echo $loadedCraft->body?></p>
-					<div class="arrows detailnext" data-a="page-next"></div> -->
 				</div>
 			</div>
 		</div>
