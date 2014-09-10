@@ -220,10 +220,15 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                                     $(window).scrollTop( ~~( logoOff.top - loadingOff.top ) );
                                 }
                             } );
+
+                            $(window).trigger('resize');
                         } , loadingMgr.process );
                     });
                 } else {
-                    loadImages( $allImgs , loadingMgr.hide , loadingMgr.process );
+                    loadImages( $allImgs , function(){
+                        loadingMgr.hide();
+                        $(window).trigger('resize');
+                    } , loadingMgr.process );
                 }
 
                 // fix common page init
@@ -311,7 +316,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                         $('.nav-pop-' + text ).stop(true)
                             .css('zIndex' , 98)
                             .animate({
-                                top: -110
+                                top: -200
                             } , 500);
                     } , 100);
                 });
@@ -484,8 +489,6 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     // }
                 });
 
-
-                $(window).trigger('resize');
                 return false;
             },
             destroy: function(){
