@@ -263,8 +263,6 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     $(window).trigger('resize')
                         .scrollTop(0);;
                 } );
-
-                
             } , function( index , total ){
 
                 loadingMgr.process( index , total , function( percent ){

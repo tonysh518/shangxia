@@ -124,7 +124,7 @@ a{text-decoration:none;outline: none;color:inherit;}
 .slide-wrap{margin-bottom: 130px;}
 .slide{position: relative;overflow: hidden;}
 .slidebox{width: 400%;height: 100%;}
-.slideitem{float: left;width:25%; position: relative;height: 100%;}
+.slideitem{float: left;width:25%; position: relative;height: 100%;overflow: hidden;}
 .slidetab{position: absolute;left:50%;bottom:50px;margin-left:-52px;z-index: 5;}
 .slidetab li{width: 20px;height: 20px;border-bottom: #fff solid 3px;float: left;display: inline;margin: 0 3px;cursor: pointer;-webkit-transition: all 0.2s linear;-moz-transition: all 0.2s linear;-o-transition: all 0.2s linear;-ms-transition: all 0.2s linear;transition: all 0.2s linear;}
 .slidetab li:hover{border-width: 10px;margin-top: -7px;}
