@@ -65,7 +65,7 @@
 						<div style="position:relative;">
 							<textarea name="message" data-required="message required" id="" cols="30" rows="15"></textarea>
 							<div class="upload">
-								<input type="file" name="appendix" />
+								<input type="file" name="file" />
 							</div>
 						</div>
 						<div class="conformcheck cs-clear">
