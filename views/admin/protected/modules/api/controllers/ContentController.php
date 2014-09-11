@@ -195,7 +195,7 @@ class ContentController extends Controller {
    $this->responseJSON($news, "success");
  }
  
- public function actionWanttobuy() {
+ public function actionWantobuy() {
    $request = Yii::app()->getRequest();
    
    if (!$request->isPostRequest) {
