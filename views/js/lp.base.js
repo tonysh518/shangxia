@@ -1378,9 +1378,9 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                         setTimeout(function(){
                             $('#home-slider').remove();
                             $( '.wrap' ).children( isHomePage ? ':not(.footer)' : ':not(.footer,.head)' )
-                                .remove()
-                                .end()
-                                .prepend( html )
+                                .remove();
+                            $(html).insertAfter( $('.head') );
+                            $( '.wrap' )
                                 .children( isHomePage? '' : ':not(.head)')
                                 .fadeIn();
                             //pagetitarrbottom
@@ -1632,59 +1632,141 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         return false;
     });
 
-    LP.action('i-want-to-buy' , function(){
-        popHelper.show( $('#i_want_to_buy').html() );
+    LP.action('i-want-to-buy' , function( data ){
+        popHelper.show( LP.format( $('#i_want_to_buy').html() , data ) );
+        LP.use('form' , function(){
+            $('.pop form').ajaxSubmit({
+                type: 'post',
+                dataType: 'json',
+                success: function( data ){
+                    console.log( data );
+                }
+            });
+        });
+        return false;
     });
 
-    LP.action('newletter-submit' , function(){
-        $('#name-tip,#email-tip,#message-tip').html('');
-        var $form = $(this).closest('form');
-        var data = LP.query2json( $form.serialize() );
-        if( !data.poliry ){
-            alert( $('input[name="poliry"]').data('required') );
-            return false;
-        }
-        var error = false;
-        if( !data.name ){
-            $('#name-tip').html( $('input[name="name"]').data('required') );
-            error = true;
-        }
-        if( !data.email || !data.email.match( /[a-zA-Z0-9\-\._]+@(\w+\.)+\w+/ ) ){
-            $('#email-tip').html( $('input[name="email"]').data('required') );
-            error = true;
-        }
-
-        if( !data.message ){
-            $('#message-tip').html( $('textarea[name="message"]').data('required') );
-            error = true;
-        }
-        if( error ){
-            return false;
-        }
-    });
-
-
-    LP.action('contact-me-back' , function(){
-        $('#name-tip,#email-tip,#phone-tip').html('');
+    LP.action('newsletter-send' , function(){
+        var $pop = $(this).closest('.pop');
+        $pop.find('#name-tip,#email-tip,#phone-tip').html('');
         var $form = $(this).closest('form');
         var data = LP.query2json( $form.serialize() );
         var error = false;
         if( !data.name ){
-            $('#name-tip').html( $('input[name="name"]').data('required') );
+            $pop.find('#name-tip').html( $pop.find('input[name="name"]').data('required') );
             error = true;
         }
         if( !data.email || !data.email.match( /[a-zA-Z0-9\-\._]+@(\w+\.)+\w+/ ) ){
-            $('#email-tip').html( $('input[name="email"]').data('required') );
+            $pop.find('#email-tip').html( $pop.find('input[name="email"]').data('required') );
             error = true;
         }
 
         if( !data.phone ){
-            $('#phone-tip').html( $('input[name="phone"]').data('required') );
+            $pop.find('#phone-tip').html( $pop.find('input[name="phone"]').data('required') );
             error = true;
         }
         if( error ){
             return false;
         }
+        LP.use('form' , function(){
+            $form.ajaxSubmit({
+                type: 'post',
+                dataType: 'json',
+                success: function( data ){
+                    if( data.status == 0 ){
+                        alert('submit success');
+                        $pop.find('.popclose')[0].click();
+                    } else {
+                        alert( data.message );
+                    }
+                }
+            });
+        });
+        return false;
+    })
+
+    LP.action('contact-submit' , function(){
+        var $form = $(this).closest('form');
+        $form.find('#name-tip,#email-tip,#message-tip').html('');
+        var data = LP.query2json( $form.serialize() );
+        if( !data.poliry ){
+            alert( $form.find('input[name="poliry"]').data('required') );
+            return false;
+        }
+        var error = false;
+        if( !data.name ){
+            $form.find('#name-tip').html( $form.find('input[name="name"]').data('required') );
+            error = true;
+        }
+        if( !data.email || !data.email.match( /[a-zA-Z0-9\-\._]+@(\w+\.)+\w+/ ) ){
+            $form.find('#email-tip').html( $form.find('input[name="email"]').data('required') );
+            error = true;
+        }
+
+        if( !data.message ){
+            $form.find('#message-tip').html( $form.find('textarea[name="message"]').data('required') );
+            error = true;
+        }
+        if( error ){
+            return false;
+        }
+
+        LP.use('form' , function(){
+            $form.ajaxSubmit({
+                type: 'post',
+                dataType: 'json',
+                success: function( data ){
+                    if( data.status == 0 ){
+                        alert('submit success');
+                        LP.reload();
+                    } else {
+                        alert( data.message );
+                    }
+                }
+            });
+        });
+        return false;
+    });
+
+
+    LP.action('contact-me-back' , function(){
+        var $form = $(this).closest('form');
+        $form.find('#name-tip,#email-tip,#phone-tip').html('');
+        
+        var data = LP.query2json( $form.serialize() );
+        var error = false;
+        if( !data.name ){
+            $form.find('#name-tip').html( $form.find('input[name="name"]').data('required') );
+            error = true;
+        }
+        if( !data.email || !data.email.match( /[a-zA-Z0-9\-\._]+@(\w+\.)+\w+/ ) ){
+            $form.find('#email-tip').html( $form.find('input[name="email"]').data('required') );
+            error = true;
+        }
+
+        if( !data.phone ){
+            $form.find('#phone-tip').html( $form.find('input[name="phone"]').data('required') );
+            error = true;
+        }
+        if( error ){
+            return false;
+        }
+        LP.use('form' , function(){
+            $form.ajaxSubmit({
+                type: 'post',
+                dataType: 'json',
+                success: function( data ){
+                    if( data.status == 0 ){
+                        alert('submit success');
+                        $form.closest('.pop').find('.popclose')[0].click();
+                    } else {
+                        alert( data.message );
+                    }
+                }
+            });
+        });
+
+        return false;
     });
 
     LP.action('picopsizeup' , function(){

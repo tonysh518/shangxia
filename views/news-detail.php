@@ -3,7 +3,7 @@
     <?php $news = loadFirstNews();?>
 		<!-- newscrumbs -->
 		<div class="newscrumbs">
-			<p><a href="<?php echo "/news.php"?>"><?php echo Yii::t("strings", "News")?></a> > <?php echo Yii::t("strings", "SHORT NEWS")?></p>
+			<p><a data-a="nav-link" href="<?php echo "/news.php"?>"><?php echo Yii::t("strings", "News")?></a> > <?php echo Yii::t("strings", "SHORT NEWS")?></p>
 		</div>
     <?php if ($news): ?>
         <!-- related products -->

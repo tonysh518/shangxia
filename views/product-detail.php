@@ -17,7 +17,7 @@ $pagename = 'product-detail';
 		<!--  -->
 		<!-- newscrumbs -->
 		<div class="newscrumbs">
-      <p><?php echo Yii::t("strings", "collections")?>&nbsp;&gt;&nbsp;<?php $collection = loadCollectionFromProduct($product); ?><a href="<?php echo "/collection.php?cid=". $collection->cid?>"><?php echo loadCollectionFromProduct($product)->title?></a>&nbsp;&gt;&nbsp;<?php echo $product->title?> </p>
+      <p><?php echo Yii::t("strings", "collections")?>&nbsp;&gt;&nbsp;<?php $collection = loadCollectionFromProduct($product); ?><a data-a="nav-link" href="<?php echo "/collection.php?cid=". $collection->cid?>"><?php echo loadCollectionFromProduct($product)->title?></a>&nbsp;&gt;&nbsp;<?php echo $product->title?> </p>
 		</div>
 		<!-- detail -->
 		<div class="section ">
@@ -38,7 +38,7 @@ $pagename = 'product-detail';
 					<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
 				</div>
 			</div>
-			<a href="#" style="margin-top:0;margin-bottom:100px;" class="btn transition-wrap" data-id="<?php echo $product->cid?>" data-a="i-want-to-buy"><span class="transition"><?php echo Yii::t("strings", "I Want To Buy")?><br/><br/><?php echo Yii::t("strings", "I Want To Buy")?></span></a>
+			<a href="#" style="margin-top:0;margin-bottom:100px;" class="btn transition-wrap" data-id="<?php echo $product->cid?>" data-d="product=<?php echo $product->cid?>" data-a="i-want-to-buy"><span class="transition"><?php echo Yii::t("strings", "I Want To Buy")?><br/><br/><?php echo Yii::t("strings", "I Want To Buy")?></span></a>
 		</div>
 		<!--  -->
 		<!-- video -->
@@ -73,15 +73,13 @@ $pagename = 'product-detail';
 						<img src="/images/coll_videodemo.jpg" width="100%" />
 					</div>
 				</div>
-				<a href="<?php echo "/collections.php?cid=". $product->collection?>" class="btn transition-wrap" ><span class="transition"><?php echo Yii::t("strings", "View more")?><br/><br/><?php echo Yii::t("strings", "View more")?></span></a>
+				<a data-a="nav-link" href="<?php echo "/collections.php?cid=". $product->collection?>" class="btn transition-wrap" ><span class="transition"><?php echo Yii::t("strings", "View more")?><br/><br/><?php echo Yii::t("strings", "View more")?></span></a>
 			</div>
 		</div>
 		<!-- collpiclist -->
 
 
 	<div class="collpiclist cs-clear" style="position:relative">
-		<div class="collarrows collarrowsprev"></div>
-		<!--  -->
 		<div class="section">
 			<div class="products ">
 				<div class="productstit ">
@@ -94,7 +92,7 @@ $pagename = 'product-detail';
 						<ul class="slide-con-inner piclist cs-clear">
 							<?php foreach (loadSimilarProducts($product) as $index => $p): ?>
 			                <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-			                  	<a href="/product-detail.php?id=<?php echo $p->cid?>"><img <?php if ($index > 3) echo "data-nopreload"?> src="<?php echo makeThumbnail($p->thumbnail, array(600, 570))?>" width="100%" />
+			                  	<a data-a="nav-link" href="/product-detail.php?id=<?php echo $p->cid?>"><img <?php if ($index > 3) echo "data-nopreload"?> src="<?php echo makeThumbnail($p->thumbnail, array(600, 570))?>" width="100%" />
 			                  		<p><span class="collicon"><?php echo $p->title?></span></p>
 			                	</a> 
 			                </li>
@@ -105,8 +103,6 @@ $pagename = 'product-detail';
 				</div>
 			</div>
 		</div>
-		<!--  -->
-		<div class="collarrows collarrowsnext"></div>
 	</div>
 
 <?php include_once 'common/footer.php';?>

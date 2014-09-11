@@ -105,8 +105,7 @@
 	<div class="popcontxt">
 		<p style="margin:5px 0;">To receive updates about SHANGXIA , <br/>
 		please provide the following information:</p>
-		<iframe name="newsletter" id="newsletter" style="display:none;" src="about:blank"></iframe>
-		<form class="buy-form conformbox" action="/admin/api/content/newsletter" method="post" target="newsletter">
+		<form class="buy-form conformbox" action="/admin/api/content/newsletter" method="post">
 			<div class="conformtit">YOUR NAME <span class="error" id="name-tip"></span></div>
 			<input type="text" name="name" data-required="name required"/>
 			<div class="conformtit">YOUR EMAIL <span class="error" id="email-tip"></span></div>
@@ -125,8 +124,8 @@
 	<div class="popcontxt">
 		<p>You are interested by buying this product? <br/>
 		Let us contact you back and we will arrange a way to provide you this prodcut</p>
-		<iframe name="newsletter" id="newsletter" style="display:none;" src="about:blank"></iframe>
-		<form class="buy-form conformbox" action="/admin/api/content/newsletter" method="post" target="newsletter">
+		<form class="buy-form conformbox" action="/admin/api/content/wantobuy" method="post">
+			<input type="hidden" name="product" value="#[product]"/>
 			<div class="conformtit">YOUR NAME <span class="error" id="name-tip"></span></div>
 			<input type="text" name="name" data-required="name required"/>
 			<div class="conformtit">YOUR EMAIL <span class="error" id="email-tip"></span></div>

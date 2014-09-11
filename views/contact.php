@@ -54,8 +54,7 @@
 				</div>	
 				<!-- store -->
 				<div class="conformbox intoview-effect" data-effect="fadeup">
-					<iframe name="newsletter" id="newsletter" style="display:none;" src="about:blank"></iframe>
-					<form action="/admin/api/content/newsletter" method="post" target="newsletter">
+					<form action="/admin/api/content/contact" method="post" >
 
 						<div class="conformtit">NAME <span class="error" id="name-tip"></span></div>
 						<input type="text" name="name" data-required="name required" />
@@ -74,7 +73,7 @@
 								<span>I also would like to receive the SHANGXIA newsletter. Please read out <a href="#">Privacy poliry </a>for more informamtion</span>
 							</label>
 						</div>
-						<button data-a="newletter-submit" class="conformbtn intoview-effect" data-effect="fadeup">SEND</button>
+						<button data-a="contact-submit" class="conformbtn intoview-effect" data-effect="fadeup">SEND</button>
 					</form>
 				</div>
 			</div>

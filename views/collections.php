@@ -61,7 +61,7 @@ $has_slider = array('apparel','homeware','teaware');
                 <ul class="slide-con-inner piclist cs-clear slider-type-3">
                   <?php foreach (array_values($products) as $index => $product): ?>
                     <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-                      <a href="./product-detail.php?id=<?php echo $product->cid?>">
+                      <a data-a="nav-link" href="./product-detail.php?id=<?php echo $product->cid?>">
                         <?php if ($_GET["cid"] == 20331 && strtolower($type) == 'apparel'): ?>
                           <?php echo getSlideImageHtml( $product->thumbnail, 3); ?>
                         <?php endif;?>
@@ -74,7 +74,7 @@ $has_slider = array('apparel','homeware','teaware');
                 <ul class="slide-con-inner piclist cs-clear slider-type-2">
                   <?php foreach (array_values($products) as $index => $product): ?>
                     <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-                      <a href="./product-detail.php?id=<?php echo $product->cid?>">
+                      <a data-a="nav-link" href="./product-detail.php?id=<?php echo $product->cid?>">
                           <?php if ($index % 2 == 0): ?>
                             <?php echo getSlideImageHtml( $product->thumbnail, 1); ?>
                           <?php else: ?>
@@ -89,7 +89,7 @@ $has_slider = array('apparel','homeware','teaware');
                   <ul class="slide-con-inner piclist cs-clear slider-type-2">
                   <?php foreach (array_values($products) as $index => $product): ?>
                     <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-                      <a href="./product-detail.php?id=<?php echo $product->cid?>">
+                      <a  data-a="nav-link" href="./product-detail.php?id=<?php echo $product->cid?>">
                           <?php if ($index % 2 == 0): ?>
                             <?php echo getSlideImageHtml( $product->thumbnail, 2); ?>
                           <?php else: ?>
@@ -104,7 +104,7 @@ $has_slider = array('apparel','homeware','teaware');
                 <ul class="slide-con-inner piclist cs-clear">
                   <?php foreach (array_values($products) as $index => $product): ?>
                     <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-                      <a href="./product-detail.php?id=<?php echo $product->cid?>">
+                      <a data-a="nav-link" href="./product-detail.php?id=<?php echo $product->cid?>">
                           <img data-width="1" data-height="1"  src="<?php echo makeThumbnail($product->thumbnail, array(600, 570))?>" width="100%" />
                           <p><span class="collicon"><?php echo $product->title?></span></p>
                       </a>

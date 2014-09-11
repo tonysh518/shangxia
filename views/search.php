@@ -28,7 +28,7 @@ $results = searchWithKeyword($_GET["s"]);
 					<ul class="piclist cs-clear">
             <?php foreach ($results as $item): ?>
               <li class="piclistitem searchpicitem" data-type="<?php echo $item->type?>">
-                <a href="/<?php echo $item->type == "collection" ? "collections": "craft"?>.php?id=<?php echo $item->cid?>">
+                <a data-a="nav-link" href="/<?php echo $item->type == "collection" ? "collections": "craft"?>.php?id=<?php echo $item->cid?>">
                   <img src="<?php echo makeThumbnail($item->thumbnail_image)?>" width="100%" />
                   <p><span><?php echo $item->title?></span></p>
                 </a>
