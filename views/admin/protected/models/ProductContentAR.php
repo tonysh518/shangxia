@@ -29,6 +29,7 @@ class ProductContentAR extends ContentAR {
     $crafOptions = array(0 => "None") + $crafOptions;
     $this->hasContentField("craft", array("type" => "select", "options" => $crafOptions));
     
+    
     return parent::getFields();
   }
   

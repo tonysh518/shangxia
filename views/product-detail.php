@@ -1,8 +1,7 @@
 <?php 
-
-if (isset($_GET["id"])) {
+if (isset($_GET["cid"])) {
   require_once 'common/inc.php';
-  $product = ProductContentAR::model()->findByPk($_GET["id"]);
+  $product = ProductContentAR::model()->findByPk($_GET["cid"]);
   if (!$product || $product->type != ProductContentAR::model()->type) {
     exit(header("Location: /index.php"));
   }
@@ -109,7 +108,7 @@ $pagename = 'product-detail';
 						<ul class="slide-con-inner piclist cs-clear">
 							<?php foreach (loadSimilarProducts($product) as $index => $p): ?>
 			                <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-			                  	<a data-a="nav-link" href="/product-detail.php?id=<?php echo $p->cid?>"><img <?php if ($index > 3) echo "data-nopreload"?> src="<?php echo makeThumbnail($p->thumbnail, array(600, 570))?>" width="100%" />
+			                  	<a data-a="nav-link" href="<?php echo url("product-detail", array("cid" => $p->cid)) ?>"><img <?php if ($index > 3) echo "data-nopreload"?> src="<?php echo makeThumbnail($p->thumbnail, array(600, 570))?>" width="100%" />
 			                  		<p><span class="collicon"><?php echo $p->title?></span></p>
 			                	</a> 
 			                </li>

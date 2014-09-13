@@ -63,6 +63,10 @@ class FieldAR extends CActiveRecord {
    */
   public function afterContentSave($content, $field_name) {
     $options = $content->getContentFieldOption($field_name);
+    // 如果没有传这个field 得值，则不要保存数据了
+    if (!isset($_REQUEST[$field_name])) {
+      return;
+    }
     if (isset($options["select_multi"]) && $options["select_multi"]) {
       $field_data = array(
           "mdate" =>  date("Y-m-d H:i:s"),

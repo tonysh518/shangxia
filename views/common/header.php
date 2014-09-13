@@ -57,7 +57,7 @@ require_once "inc.php";?>
 						<div class="nav-pop-wrap">
 			            <?php $collectiones = CollectionContentAR::model()->getList();?>
 			            <?php foreach($collectiones as $item):?>
-			              <a class="nav-pop-item inout-effect" data-a="nav-link" href="./collections.php?cid=<?php echo $item->cid?>">
+			              <a class="nav-pop-item inout-effect" data-a="nav-link" href="/collections.php?cid=<?php echo $item->cid?>">
 			              	<img src="<?php echo $item->nav_image?>"/> 
 			              	<span class="nav-text"><i> <?php echo $item->title?></i></span>
 			              	<span class="home-inout-bg inout-bg"></span>
@@ -70,7 +70,7 @@ require_once "inc.php";?>
 					<div class="nav-pop-inner">
             <?php $crafts = CraftContentAR::model()->getList();?>
             <?php foreach($crafts as $craft): ?>
-            <a class="nav-pop-item inout-effect" data-a="nav-link" href="./craft.php?cid=<?php echo $craft->cid?>">
+            <a class="nav-pop-item inout-effect" data-a="nav-link" href="/craft.php?cid=<?php echo $craft->cid?>">
             	<img src="<?php echo $craft->nav_image?>"/>
             	<span class="nav-text"><i><?php echo $craft->title?></i></span>
             	<span class="home-inout-bg inout-bg"></span>
@@ -84,7 +84,7 @@ require_once "inc.php";?>
             <?php foreach (BoutiqueContentAR::getLocation() as $key => $name): ?>
               <?php $boutique = BoutiqueContentAR::model()->loadByAddressKey($key);?>
               <?php if ($boutique): ?>
-                <a class="nav-pop-item inout-effect" <?php if ($first) echo 'style="margin-left: 12%;"'?> data-a="nav-link" href="./boutique.php?type=<?php echo urlencode($key)?>">
+                <a class="nav-pop-item inout-effect" <?php if ($first) echo 'style="margin-left: 12%;"'?> data-a="nav-link" href="/boutique.php?type=<?php echo urlencode($key)?>">
                 	<img src="<?php echo ($boutique->nav_image) ?>"/>
                 	<span class="nav-text"><i><?php echo $name?></i></span>
                 	<span class="home-inout-bg inout-bg"></span>

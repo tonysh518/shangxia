@@ -355,7 +355,7 @@ function url($uri, $params = array()) {
   if (isset($params["cid"])) {
     $content = ContentAR::model()->findByPk($params["cid"]);
     if ($content) {
-      return '/'.$simple_uri."/".$content->cid."/". $content->title;
+      return '/'.$simple_uri."/".ContentAR::getContentUrl($content);
     }
   }
 }
