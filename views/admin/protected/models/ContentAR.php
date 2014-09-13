@@ -336,7 +336,7 @@ class ContentAR extends CActiveRecord {
   }
   
   public static function getContentUrl($content) {
-    return "{$content->cid}/". preg_replace(array("(\s+|&)"), "-", strtolower($content->url_key));
+    return "{$content->cid}/". preg_replace(array("(\s+|&)"), "-", strtolower($content->url_key == "" ? $content->title: $content->url_key));
   }
 }
 

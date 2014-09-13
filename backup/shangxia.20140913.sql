@@ -158,7 +158,7 @@ CREATE TABLE `session` (
 
 LOCK TABLES `session` WRITE;
 /*!40000 ALTER TABLE `session` DISABLE KEYS */;
-INSERT INTO `session` VALUES ('pch8hoi8m39n9qd0um4iai9ba0',1410684815,'login|b:1;'),('tf4chg9s4lkre5jaedugqgchd0',1410600133,'');
+INSERT INTO `session` VALUES ('pch8hoi8m39n9qd0um4iai9ba0',1410698495,'login|b:1;');
 /*!40000 ALTER TABLE `session` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -264,4 +264,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-09-13 17:01:43
+-- Dump completed on 2014-09-13 20:42:28
