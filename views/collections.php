@@ -51,12 +51,12 @@ $has_slider = array('apparel','homeware','teaware');
 						<h2><?php echo $type?></h2>
 					</div>
 					<!--  -->
+          <?php $products = getProductInTypeWithCollection($type_id, $collection->cid);?>
 					<div class="products-wrap js-horizontal-slide intoview-effect" data-effect="fadeup" data-num="3">
-						<?php if ( in_array( strtolower($type), $has_slider ) ){ ?>
+						<?php if ( count($products) > 3 ){ ?>
 						<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
 						<?php }?>
 						<div class="slide-con">
-              <?php $products = getProductInTypeWithCollection($type_id, $collection->cid);?>
               <?php if ($_GET["cid"] == 20331 && strtolower($type) == 'apparel'): ?>
                 <ul class="slide-con-inner piclist cs-clear slider-type-3">
                   <?php foreach (array_values($products) as $index => $product): ?>
@@ -113,7 +113,7 @@ $has_slider = array('apparel','homeware','teaware');
                 </ul>
               <?php endif;?>
 						</div>
-						<?php if ( in_array( strtolower($type), $has_slider ) ){ ?>
+						<?php if ( count($products) > 3 ){ ?>
 						<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
 						<?php }?>
 					</div>
