@@ -62,6 +62,7 @@ $pagename = 'product-detail';
 		<div class="barbg"></div>
 		
 		<!-- collpiclist -->
+    <?php if ($product->craft):?>
 		<div class="section">
 			<div class="knowhow">
 				<div class="knowhowtit coll_video">
@@ -76,6 +77,7 @@ $pagename = 'product-detail';
 				<a data-a="nav-link" href="<?php echo "/collections.php?cid=". $product->collection?>" class="btn transition-wrap" ><span class="transition"><?php echo Yii::t("strings", "View more")?><br/><br/><?php echo Yii::t("strings", "View more")?></span></a>
 			</div>
 		</div>
+    <?php endif;?>
 		<!-- collpiclist -->
 
 
