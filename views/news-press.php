@@ -15,16 +15,20 @@
 		<!-- older news -->
 		<div class="section">
 			<div class="products">
-				<div class="productscom">
+				<div class="productscom slide" data-auto="false">
           <?php $presses = loadPressWithYearGroup();?>
           <?php $years = array_keys($presses);?>
 					<div class="newsoldertime intoview-effect" data-effect="fadeup">
+						<ul class="slidetab">
             <?php foreach ($years as $index =>  $year): ?>
-              <a href="<?php if ($index == 0) echo "on"?>"><?php echo $year?></a>
+              <li class="<?php if ($index == count($years)-1) echo "on"?>"><?php echo $year?></li>
             <?php endforeach;?>
+            			</ul>
 					</div>
 					<!--  -->
-					<div class="productslist cs-clear">
+					<div class="productslist cs-clear slidebox" style="margin-left:<?php echo -(count( $presses )-1) * 100 . '%'; ?>">>
+						<div data-year="" class="cs-clear slideitem">
+
             <?php foreach ($presses as $year => $press): ?>
               <a href="#" data-year="<?php echo $year?>" data-a="show-pop" data-d="press=1" class="prolistitem newsitem intoview-effect" data-effect="fadeup">
                 <img src="<?php echo $press->press_image?>" width="100%" />
@@ -41,6 +45,7 @@
                 </div>
               </textarea>
             <?php endforeach;?>
+            			</div>
 					</div>
 					<a href="#" style="margin-bottom:150px;" title="" class="btn transition-wrap"><span class="transition"><?php echo Yii::t("strings", "Load more")?><br/><br/><?php echo Yii::t("strings", "Load more")?></span></a>
 					<!--  -->

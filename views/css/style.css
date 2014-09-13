@@ -253,12 +253,11 @@ a{text-decoration:none;outline: none;color:inherit;}
 .picinforpic{float: right;width: 66.4%;overflow: hidden;}
 
 /*newsolder*/
-.newsoldertime{height: 90px;line-height: 90px;text-align: center;position: static;margin-left: 0;}
+.newsoldertime{height: 90px;line-height: 90px;text-align: center;position: relative;margin-left: 0;}
+.newsoldertime .slidetab{bottom: 0px;}
 .newsoldertime li{width: auto;height: auto;border-bottom: none;display: inline;float:none;}
 .newsoldertime a{padding: 0 40px;font-size: 14px;}
-.newsoldertime .on{text-decoration: underline;
-font-weight: bold;
-color: #4b3700;}
+.newsoldertime li.on{text-decoration: underline;font-weight: bold;color: #4b3700;opacity: 1;}
 .newsolderbtn a{font-size: 18px;border:#423608 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px}
 
 /*newsnvents*/

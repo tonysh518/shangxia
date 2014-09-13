@@ -12,8 +12,8 @@ include_once 'common/header.php';?>
 			</div>
 		</div>
 		<!-- slide -->
-		<div class="slide intoview-effect" data-effect="fadeup">
-			<div class="slidebox cs-clear">
+		<div class="slide scroll-lowheight intoview-effect" data-effect="fadeup">
+			<div class="slidebox cs-clear scroll-lowheight-item">
 				<div class="slideitem"><img src="/images/about_slide_1.jpg" width="100%" /></div>
 				<!-- <div class="slideitem"><img src="/images/about_slide_2.jpg" width="100%" /></div>
 				<div class="slideitem"><img src="/images/about_slide_3.jpg" width="100%" /></div> -->

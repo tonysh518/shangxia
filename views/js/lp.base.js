@@ -1352,6 +1352,8 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             if( State.url.indexOf('##') >= 0 ){
                 return false;
             }
+            // hid head pop
+            $('.nav1 li.active').trigger('mouseout');
 
             // show loading
             var isHomePage = ( location.pathname == '' || location.pathname == '/' || location.pathname == '/index.php' );
@@ -1803,6 +1805,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
         // init slider
         initSlider( $html.find('.slide') );
+        $(window).trigger('resize');
 
         return false;
     });
@@ -1840,5 +1843,28 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     LP.action('chang-lang' , function(){
         LP.setCookie( "sx-lang", $(this).data("lang") );
         LP.reload();
+    });
+
+    LP.action('search-type' , function( data ){
+        switch( data.type ){
+            case 'collection':
+            case 'craft':
+                $('#search-result').children()
+                    .filter('[data-type="' + data.type + '"]')
+                    .fadeIn()
+                    .end()
+                    .filter('[data-type!="' + data.type + '"]')
+                    .fadeOut();
+                break;
+            default:
+                $('#search-result').children()
+                    .fadeIn();
+        }
+
+        $(this).addClass('on')
+            .siblings()
+            .removeClass('on');
+
+        return false;
     });
 });
