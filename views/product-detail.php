@@ -70,9 +70,24 @@ $pagename = 'product-detail';
 				</div>
 				<div class="coll_videocom ">
           <p><?php echo $product->video_description?></p>
-					<div class="coll_videobox" data-video-render="1" data-mp4="/video/Bamboo_Weaving_竹丝扣瓷_30s_1.mp4" data-webm="/video/Bamboo_Weaving_竹丝扣瓷_30s_1.webm">
-						<img src="/images/coll_videodemo.jpg" width="100%" />
-					</div>
+          <?php if (is_weaving($product->craft)): ?>
+            <div class="video" data-video-render="1" data-mp4="/video/Bamboo_Weaving_竹丝扣瓷_30s_1.mp4" data-webm="Bamboo_Weaving_竹丝扣瓷_30s_1.webm" >
+              <img src="/photo/video2.jpg" width="100%" />
+            </div>
+          <?php elseif (is_cashmere($product->craft)): ?>
+            <div class="video" data-video-render="1" data-mp4="/video/Cashmere_Felt_羊绒毡_30s_1.mp4" data-webm="Cashmere_Felt_羊绒毡_30s_1.webm"  >
+              <img src="/photo/video3.jpg" width="100%" />
+            </div>
+          <?php elseif (is_eggshell($product->craft)): ?>
+            <div class="video"  data-video-render="1" data-mp4="/video/Eggshell_Porcelain_薄胎瓷_30s_1.mp4" data-webm="Eggshell_Porcelain_薄胎瓷_30s_1.webm">
+              <img src="/photo/video4.jpg" width="100%" />
+            </div>
+          <?php else: ?>
+            <div class="video" data-video-render="1" data-mp4="/video/Zitan_紫檀_30s_1.mp4" data-webm="Zitan_紫檀_30s_1.webm"  >
+              <img src="/photo/video1.jpg" width="100%" />
+            </div>
+          <?php ?>
+          <?php endif;?>
 				</div>
 				<a data-a="nav-link" href="<?php echo "/collections.php?cid=". $product->collection?>" class="btn transition-wrap" ><span class="transition"><?php echo Yii::t("strings", "View more")?><br/><br/><?php echo Yii::t("strings", "View more")?></span></a>
 			</div>

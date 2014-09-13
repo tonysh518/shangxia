@@ -361,34 +361,46 @@ function url($uri, $params = array()) {
 }
 
 
-function is_weaving() {
+function is_weaving($craft_id = NULL) {
   //           中       英     , 法
+  if (!$craft_id) {
+    $craft_id = isset($_GET["cid"]) ? $_GET["cid"]: 0;
+  }
   $ids = array("20322", "20315");
-  if (isset($_GET["cid"]) && in_array($_GET["cid"], $ids)) {
+  if (isset($craft_id) && in_array($craft_id, $ids)) {
     return TRUE;
   }
 }
 
-function is_zitan() {
+function is_zitan($craft_id = NULL) {
   //           中       英     , 法
+  if (!$craft_id) {
+    $craft_id = isset($_GET["cid"]) ? $_GET["cid"]: 0;
+  }
   $ids = array("20321", "20316");
-  if (isset($_GET["cid"]) && in_array($_GET["cid"], $ids)) {
+  if (isset($craft_id) && in_array($craft_id, $ids)) {
     return TRUE;
   }
 }
 
-function is_cashmere() {
+function is_cashmere($craft_id = NULL) {
   //           中       英     , 法
+  if (!$craft_id) {
+    $craft_id = isset($_GET["cid"]) ? $_GET["cid"]: 0;
+  }
   $ids = array("20319", "20318");
-  if (isset($_GET["cid"]) && in_array($_GET["cid"], $ids)) {
+  if (isset($craft_id) && in_array($craft_id, $ids)) {
     return TRUE;
   }
 }
 
-function is_eggshell() {
+function is_eggshell($craft_id = NULL) {
   //           中       英     , 法
+  if (!$craft_id) {
+    $craft_id = isset($_GET["cid"]) ? $_GET["cid"]: 0;
+  }
   $ids = array("20320", "20317");
-  if (isset($_GET["cid"]) && in_array($_GET["cid"], $ids)) {
+  if (isset($craft_id) && in_array($craft_id, $ids)) {
     return TRUE;
   }
 }
