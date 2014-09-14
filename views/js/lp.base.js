@@ -27,15 +27,16 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     <img src="#[master_image]" width="100%" style="margin:0 auto;">\
                 </div>\
               </textarea>';
-
-        LP.getAjax('/admin/api/content/press?year=' + year + '&page=' + page , function( e ){
+        $.get('/admin/api/content/press?year=' + year + '&page=' + page , function( e ){
             var list = e.data;
             var aHtml = [];
             $.each( list , function( i , press ){
+                press.date = press.publish_date;
                 aHtml.push( LP.format( tpl , press ) );
             });
 
             var $dom = $('.press-list[data-year="' + year + '"]');
+            $dom.data('page' , page);
             $dom.append( aHtml.join('') );
             if( list.length >= 15 ){
                 $dom.data('more-press' , true);
@@ -46,7 +47,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             }
 
             cb && cb();
-        });
+        } , 'json');
     }
     
     var pageManager = (function(){
@@ -141,8 +142,15 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             "news-press": function( cb ){
                 var $years = $('.newsoldertime').find('li');
                 var lastYear = $years.last().trigger('click').html();
-
                 loadPressData( lastYear , 1 , cb );
+                // bind event
+                $('.newsoldertime li').click(function(){
+                    var year = $.trim( $(this).html() );
+                    var $dom = $('.press-list[data-year="' + year + '"]');
+                    if( !$dom.children().length ){
+                        loadPressData( year , 1 );
+                    }
+                });
             }
         }
 
@@ -1422,7 +1430,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                             $('#home-slider').remove();
                             $( '.wrap' ).children( isHomePage ? ':not(.footer)' : ':not(.footer,.head)' )
                                 .remove();
-                            $(html).insertAfter( $('.head') );
+                            $(html).insertBefore( $('.footer') );
                             $( '.wrap' )
                                 .children( isHomePage? '' : ':not(.head)')
                                 .fadeIn();
@@ -1906,6 +1914,15 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             .siblings()
             .removeClass('on');
 
+        return false;
+    });
+
+
+    LP.action('loadmore-press' , function(){
+        var year = $.trim( $('.newsoldertime li.on').html() );
+        var $dom = $('.press-list[data-year="' + year + '"]');
+        var page = $dom.data('page') || 1;
+        loadPressData( year , page );
         return false;
     });
 });
