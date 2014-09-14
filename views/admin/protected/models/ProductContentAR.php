@@ -25,7 +25,10 @@ class ProductContentAR extends ContentAR {
     }
     $this->hasContentField("collection", array("type" => "select", "options" => $options));
     
-     $this->hasContentField("craft", array("type" => "select", "options" => CraftContentAR::model()->loadCraftOption()));
+    $crafOptions = CraftContentAR::model()->loadCraftOption();
+    $crafOptions = array(0 => "None") + $crafOptions;
+    $this->hasContentField("craft", array("type" => "select", "options" => $crafOptions));
+    
     
     return parent::getFields();
   }

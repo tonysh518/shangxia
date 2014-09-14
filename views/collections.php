@@ -51,17 +51,17 @@ $has_slider = array('apparel','homeware','teaware');
 						<h2><?php echo $type?></h2>
 					</div>
 					<!--  -->
+          <?php $products = getProductInTypeWithCollection($type_id, $collection->cid);?>
 					<div class="products-wrap js-horizontal-slide intoview-effect" data-effect="fadeup" data-num="3">
-						<?php if ( in_array( strtolower($type), $has_slider ) ){ ?>
+						<?php if ( count($products) > 3 ){ ?>
 						<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
 						<?php }?>
 						<div class="slide-con">
-              <?php $products = getProductInTypeWithCollection($type_id, $collection->cid);?>
               <?php if ($_GET["cid"] == 20331 && strtolower($type) == 'apparel'): ?>
                 <ul class="slide-con-inner piclist cs-clear slider-type-3">
                   <?php foreach (array_values($products) as $index => $product): ?>
                     <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-                      <a data-a="nav-link" href="./product-detail.php?id=<?php echo $product->cid?>">
+                      <a data-a="nav-link" href="<?php echo url("product-detail", array("cid" => $product->cid)) ?>">
                         <?php if ($_GET["cid"] == 20331 && strtolower($type) == 'apparel'): ?>
                           <?php echo getSlideImageHtml( $product->thumbnail, 3); ?>
                         <?php endif;?>
@@ -74,7 +74,7 @@ $has_slider = array('apparel','homeware','teaware');
                 <ul class="slide-con-inner piclist cs-clear slider-type-2">
                   <?php foreach (array_values($products) as $index => $product): ?>
                     <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-                      <a data-a="nav-link" href="./product-detail.php?id=<?php echo $product->cid?>">
+                      <a data-a="nav-link" href="<?php echo url("product-detail", array("cid" => $product->cid)) ?>">
                           <?php if ($index % 2 == 0): ?>
                             <?php echo getSlideImageHtml( $product->thumbnail, 1); ?>
                           <?php else: ?>
@@ -89,7 +89,7 @@ $has_slider = array('apparel','homeware','teaware');
                   <ul class="slide-con-inner piclist cs-clear slider-type-2">
                   <?php foreach (array_values($products) as $index => $product): ?>
                     <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-                      <a  data-a="nav-link" href="./product-detail.php?id=<?php echo $product->cid?>">
+                      <a  data-a="nav-link" href="<?php echo url("product-detail", array("cid" => $product->cid)) ?>">
                           <?php if ($index % 2 == 0): ?>
                             <?php echo getSlideImageHtml( $product->thumbnail, 2); ?>
                           <?php else: ?>
@@ -104,7 +104,7 @@ $has_slider = array('apparel','homeware','teaware');
                 <ul class="slide-con-inner piclist cs-clear">
                   <?php foreach (array_values($products) as $index => $product): ?>
                     <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-                      <a data-a="nav-link" href="./product-detail.php?id=<?php echo $product->cid?>">
+                      <a data-a="nav-link" href="<?php echo url("product-detail.php", array("cid" => $product->cid))?>" tmp-href="./product-detail.php?id=<?php echo $product->cid?>">
                           <img data-width="1" data-height="1"  src="<?php echo makeThumbnail($product->thumbnail, array(600, 570))?>" width="100%" />
                           <p><span class="collicon"><?php echo $product->title?></span></p>
                       </a>
@@ -113,7 +113,7 @@ $has_slider = array('apparel','homeware','teaware');
                 </ul>
               <?php endif;?>
 						</div>
-						<?php if ( in_array( strtolower($type), $has_slider ) ){ ?>
+						<?php if ( count($products) > 3 ){ ?>
 						<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
 						<?php }?>
 					</div>

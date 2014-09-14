@@ -1,6 +1,6 @@
 <?php
 
-
+// 文件Field
 class FileAR extends CActiveRecord {
   public static $caches = array();
   public static $allowTypes = array("pdf", "txt", "doc", "docx", "png", "jpg", "jpeg", "bmp", "gif");

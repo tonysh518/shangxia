@@ -36,6 +36,9 @@ class ContentAR extends CActiveRecord {
    * @return type
    */
   public function getFields() {
+    // 增加URL 字段
+    $this->hasContentField("url_key");
+    
     return array_keys($this->fields);
   }
   
@@ -330,6 +333,10 @@ class ContentAR extends CActiveRecord {
       $condition->params[":type"] = $this->type;
     }
     return parent::findAll($condition, $params);
+  }
+  
+  public static function getContentUrl($content) {
+    return "{$content->cid}/". preg_replace('/([\s-&])+/i', "-", strip_tags(strtolower($content->url_key == "" ? $content->title: $content->url_key)));
   }
 }
 

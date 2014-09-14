@@ -238,5 +238,20 @@ class ContentController extends Controller {
      return $this->responseError("post message error", ErrorAR::ERROR_UNKNOWN, $error);
    }
  }
+ 
+ // 用年份 查询Press
+ public function actionPress() {
+   $request = Yii::app()->getRequest();
+   
+   $year = $request->getParam("year", FALSE);
+   $page = $request->getParam("page", 1);
+   if (!$year) {
+     return $this->responseError('miss param error', ErrorAR::ERROR_MISSED_REQUIRED_PARAMS);
+   }
+   
+   $presses = PressContentAR::model()->getListWithYear($year, $page);
+   
+   return $this->responseJSON($presses, "success");
+ }
 }
 

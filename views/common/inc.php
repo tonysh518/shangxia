@@ -224,7 +224,7 @@ function loadNewsWithYearGroup($teaser = FALSE) {
  * @param type $year
  * @param type $limit
  */
-function loadPressWithYearGroup($yearGroup = FALSE, $limit = 10) {
+function loadPressWithYearGroup($yearGroup = FALSE, $limit = 15) {
   $presses = PressContentAR::model()->getList();
   $pressGroup = array();
   foreach ($presses as $press) {
@@ -238,6 +238,15 @@ function loadPressWithYearGroup($yearGroup = FALSE, $limit = 10) {
   }
   
   return $pressGroup;
+}
+
+// 加载Press 所有的年份
+function loadPressYears() {
+  $sql = 'select distinct year(field_content) as year from field where field_name="publish_date" order by year ASC';
+  $query = Yii::app()->db->createCommand($sql);
+  
+  $rows = $query->queryAll();
+  return $rows;
 }
 
 // 从产品中加载对应的系列
@@ -355,40 +364,52 @@ function url($uri, $params = array()) {
   if (isset($params["cid"])) {
     $content = ContentAR::model()->findByPk($params["cid"]);
     if ($content) {
-      return '/'.$simple_uri."/".$content->cid."/". $content->title;
+      return '/'.$simple_uri."/".ContentAR::getContentUrl($content);
     }
   }
 }
 
 
-function is_weaving() {
+function is_weaving($craft_id = NULL) {
   //           中       英     , 法
+  if (!$craft_id) {
+    $craft_id = isset($_GET["cid"]) ? $_GET["cid"]: 0;
+  }
   $ids = array("20322", "20315");
-  if (isset($_GET["cid"]) && in_array($_GET["cid"], $ids)) {
+  if (isset($craft_id) && in_array($craft_id, $ids)) {
     return TRUE;
   }
 }
 
-function is_zitan() {
+function is_zitan($craft_id = NULL) {
   //           中       英     , 法
+  if (!$craft_id) {
+    $craft_id = isset($_GET["cid"]) ? $_GET["cid"]: 0;
+  }
   $ids = array("20321", "20316");
-  if (isset($_GET["cid"]) && in_array($_GET["cid"], $ids)) {
+  if (isset($craft_id) && in_array($craft_id, $ids)) {
     return TRUE;
   }
 }
 
-function is_cashmere() {
+function is_cashmere($craft_id = NULL) {
   //           中       英     , 法
+  if (!$craft_id) {
+    $craft_id = isset($_GET["cid"]) ? $_GET["cid"]: 0;
+  }
   $ids = array("20319", "20318");
-  if (isset($_GET["cid"]) && in_array($_GET["cid"], $ids)) {
+  if (isset($craft_id) && in_array($craft_id, $ids)) {
     return TRUE;
   }
 }
 
-function is_eggshell() {
+function is_eggshell($craft_id = NULL) {
   //           中       英     , 法
+  if (!$craft_id) {
+    $craft_id = isset($_GET["cid"]) ? $_GET["cid"]: 0;
+  }
   $ids = array("20320", "20317");
-  if (isset($_GET["cid"]) && in_array($_GET["cid"], $ids)) {
+  if (isset($craft_id) && in_array($craft_id, $ids)) {
     return TRUE;
   }
 }
