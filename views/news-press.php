@@ -16,21 +16,22 @@
 		<div class="section">
 			<div class="products">
 				<div class="productscom slide" data-auto="false">
-          <?php $presses = loadPressWithYearGroup();?>
-          <?php $years = array_keys($presses);?>
+          <?php $years = loadPressYears();?>
 					<div class="newsoldertime intoview-effect" data-effect="fadeup">
 						<ul class="slidetab">
             <?php foreach ($years as $index =>  $year): ?>
-              <li class="<?php if ($index == count($years)-1) echo "on"?>"><?php echo $year?></li>
+              <li data-year="<?php echo $year["year"]?>" class="<?php if ($index == count($years)-1) echo "on"?>"><?php echo $year["year"]?></li>
             <?php endforeach;?>
             			</ul>
 					</div>
+          
+          <?php $first_year = array_shift($years);?>
+          <?php $presses = PressContentAR::model()->getListWithYear($first_year["year"]);?>
 					<!--  -->
 					<div class="productslist cs-clear slidebox" style="margin-left:<?php echo -(count( $presses )-1) * 100 . '%'; ?>">>
 						<div data-year="" class="cs-clear slideitem">
-
             <?php foreach ($presses as $year => $press): ?>
-              <a href="#" data-year="<?php echo $year?>" data-a="show-pop" data-d="press=1" class="prolistitem newsitem intoview-effect" data-effect="fadeup">
+              <a href="#" data-year="<?php echo date("Y", strtotime($press->publish_date))?>" data-a="show-pop" data-d="press=1" class="prolistitem newsitem intoview-effect" data-effect="fadeup">
                 <img src="<?php echo $press->press_image?>" width="100%" />
                 <p><?php echo $press->title?><br /><span class="date"><?php echo date("Y M d", strtotime($press->publish_date))?></span></p>
               </a>

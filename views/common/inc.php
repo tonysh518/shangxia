@@ -224,7 +224,7 @@ function loadNewsWithYearGroup($teaser = FALSE) {
  * @param type $year
  * @param type $limit
  */
-function loadPressWithYearGroup($yearGroup = FALSE, $limit = 10) {
+function loadPressWithYearGroup($yearGroup = FALSE, $limit = 15) {
   $presses = PressContentAR::model()->getList();
   $pressGroup = array();
   foreach ($presses as $press) {
@@ -238,6 +238,15 @@ function loadPressWithYearGroup($yearGroup = FALSE, $limit = 10) {
   }
   
   return $pressGroup;
+}
+
+// 加载Press 所有的年份
+function loadPressYears() {
+  $sql = 'select distinct year(field_content) as year from field where field_name="publish_date" order by year ASC';
+  $query = Yii::app()->db->createCommand($sql);
+  
+  $rows = $query->queryAll();
+  return $rows;
 }
 
 // 从产品中加载对应的系列
