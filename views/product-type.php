@@ -51,18 +51,18 @@ foreach ($products as $product) {
 					<h2 style="line-height: 20px;">the sound of tea COLLECTION<span>2010-2011</span></h2>					
 				</div>	
 				<!--  -->
-				<div class="products-wrap js-horizontal-slide intoview-effect" data-effect="fadeup" data-num="3">
+				<div class="products-wrap js-horizontal-slide" data-num="3">
 					<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
 					<ul class="piclist cs-clear slide-con">
-						<li class="piclistitem collpicitem">
+						<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
 							<img src="/images/colldemo2.jpg" width="100%" />
 							<p><span class="collicon">architecture</span></p>
 						</li>
-						<li class="piclistitem collpicitem">
+						<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
 							<img src="/images/colldemo2.jpg" width="100%" />
 							<p><span>architecture</span></p>
 						</li>
-						<li class="piclistitem collpicitem marginR0">
+						<li class="piclistitem collpicitem marginR0 intoview-effect" data-effect="fadeup">
 							<img src="/images/colldemo2.jpg" width="100%" />
 							<p><span>architecture</span></p>
 						</li>
@@ -85,19 +85,19 @@ foreach ($products as $product) {
 					<h2><?php echo Yii::t("strings", "TIMELESS COLLECTIONS")?></h2>
 				</div>	
 				<!--  -->
-				<div class="products-wrap js-horizontal-slide intoview-effect" data-effect="fadeup" data-num="3">
+				<div class="products-wrap js-horizontal-slide " data-num="3">
 					<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
 					<div class="slide-con">
 						<ul class="slide-con-inner piclist cs-clear">
-							<li class="piclistitem collpicitem">
+							<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
 								<img src="/images/colldemo3.jpg" width="100%" />
 								<p><span>view</span></p>
 							</li>
-							<li class="piclistitem collpicitem">
+							<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
 								<img src="/images/colldemo3.jpg" width="100%" />
 								<p><span>view</span></p>
 							</li>
-							<li class="piclistitem collpicitem marginR0">
+							<li class="piclistitem collpicitem marginR0 intoview-effect" data-effect="fadeup">
 								<img src="/images/colldemo3.jpg" width="100%" />
 								<p><span>view</span></p>
 							</li>

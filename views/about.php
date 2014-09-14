@@ -51,12 +51,12 @@ include_once 'common/header.php';?>
 							<textarea style="display:none;"><?php echo Yii::t("strings", "about_brand_founter_desc")?></textarea>
 						</div>
 						<div class="proinforpic intoview-effect" data-effect="fadeup">
-							<div class="slide">
-								<div class="slidebox cs-clear">
-									<img class="slideitem" src="/images/about_1.jpg" width="100%" />
-								</div>
+							<!-- <div class="slide"> -->
+								<!-- <div class="slidebox cs-clear"> -->
+									<img src="/images/about_1.jpg" width="100%" />
+								<!-- </div> -->
 								<!-- 数量改变需要改变css，或者用js来调整slidebox的宽度和slidetab的位置 -->
-							</div>
+							<!-- </div> -->
 						</div>
 					</div>
 				</div>

@@ -29,8 +29,8 @@ $has_slider = array('apparel','homeware','teaware');
 		</div>
 
 		<!-- slide -->
-		<div class="slide intoview-effect" data-effect="fadeup">
-			<div class="slidebox cs-clear">
+		<div class="slide intoview-effect scroll-lowheight" data-effect="fadeup">
+			<div class="slidebox cs-clear scroll-lowheight-item">
         <?php foreach ($collection->slide_image as $image): ?>
         <div class="slideitem"><img src="<?php echo $image?>" width="100%" /></div>
         <?php endforeach;?>

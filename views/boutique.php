@@ -24,8 +24,8 @@ include_once 'common/header.php';?>
 		</div>
 		<!-- slide -->
     <?php if ($crtboutique->boutique_slide): ?>
-      <div class="slide intoview-effect" data-effect="fadeup">
-        <div class="slidebox cs-clear">
+      <div class="slide intoview-effect scroll-lowheight" data-effect="fadeup">
+        <div class="slidebox cs-clear scroll-lowheight-item">
           <?php foreach ($crtboutique->boutique_slide as $image): ?>
             <a href="javascript:void(0)" class="slideitem"><img src="<?php echo $image?>" width="100%" /></a>
           <?php endforeach;?>

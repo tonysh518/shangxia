@@ -12,6 +12,42 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
     }
 
+    var loadPressData = function( year , page , cb ){
+        var tpl = '<a href="#" data-a="show-pop" data-d="press=1" class="prolistitem newsitem intoview-effect" data-effect="fadeup">\
+                <img src="#[press_image]" width="100%" />\
+                <p>#[title]<br /><span class="date">#[date]</span></p>\
+              </a>\
+              <textarea style="display:none;">\
+                <div class="picoperate cs-clear">\
+                    <a href="#" class="picopsized" data-a="picopsized"></a>\
+                    <a href="#" class="picopsizeup" data-a="picopsizeup"></a>\
+                    <a href="#[master_image]" class="picopdown" target="_blank"></a>\
+                </div>\
+                <div class="pic-press">\
+                    <img src="#[master_image]" width="100%" style="margin:0 auto;">\
+                </div>\
+              </textarea>';
+
+        LP.getAjax('/admin/api/content/press?year=' + year + '&page=' + page , function( e ){
+            var list = e.data;
+            var aHtml = [];
+            $.each( list , function( i , press ){
+                aHtml.push( LP.format( tpl , press ) );
+            });
+
+            var $dom = $('.press-list[data-year="' + year + '"]');
+            $dom.append( aHtml.join('') );
+            if( list.length >= 15 ){
+                $dom.data('more-press' , true);
+                $('[data-a="loadmore-press"]').show();
+            } else {
+                $dom.data('more-press' , false);
+                $('[data-a="loadmore-press"]').hide();
+            }
+
+            cb && cb();
+        });
+    }
     
     var pageManager = (function(){
         var $header = $('.head');
@@ -101,8 +137,13 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 });
 
                 cb && cb();
+            },
+            "news-press": function( cb ){
+                var $years = $('.newsoldertime').find('li');
+                var lastYear = $years.last().trigger('click').html();
+
+                loadPressData( lastYear , 1 , cb );
             }
-            
         }
 
 

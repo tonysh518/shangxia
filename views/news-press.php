@@ -26,7 +26,7 @@
             			</ul>
 					</div>
 					<!--  -->
-					<div class="productslist cs-clear slidebox" style="margin-left:<?php echo -(count( $presses )-1) * 100 . '%'; ?>">>
+					<div class="press-list-warp productslist cs-clear slidebox" style="margin-left:<?php echo -(count( $presses )-1) * 100 . '%'; ?>">>
 						<div data-year="" class="cs-clear slideitem">
 
             <?php foreach ($presses as $year => $press): ?>
