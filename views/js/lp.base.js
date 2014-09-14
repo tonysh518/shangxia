@@ -230,12 +230,30 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         }
 
         var normalPageLoading = function( $allImgs ){
+            var startAnimate = false;
             loadImages( $allImgs , function(){
                 loadingMgr.hide( function(){
                     $(window).trigger('resize')
                         .trigger('scroll');
                 } );
-            } , loadingMgr.process );
+            } , function( index , total ){
+                loadingMgr.process( index , total , function( percent ){
+                    if( !startAnimate && percent > 0.7 ){
+                        startAnimate = true;
+                        $('.nav li ,.hd_oter')
+                            .each(function( i ){
+                                $(this).css({
+                                    opacity: 0,
+                                    marginTop: 30
+                                }).delay( i * 80 )
+                                .animate({
+                                    opacity: 1,
+                                    marginTop: 0
+                                } , 300 , 'easeLightOutBack');
+                            });
+                    }
+                });
+            });
         }
 
         var homePageLoading = function( $allImgs ){
@@ -729,6 +747,14 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     $loadingInner.appendTo( $('.logo a').css('background' , 'none') )
                         .css('top' , 23 );
                     $loading.css('zIndex' , 90);
+                    // fade out other navs
+                    $('.nav li,.hd_oter').each(function( i ){
+                        $(this).delay(i * 100)
+                            .animate({
+                                marginTop: 30,
+                                opacity: 0
+                            } , 200);
+                    });
                 }
 
             },
@@ -908,7 +934,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
     function renderVideo ( $wrap , mp4 , webm , poster , config , cb ){
         var id = 'video-js-' + ( $.guid++ );
-        $wrap.append( LP.format( '<div class="video-wrap" style="display:none;"><video id="#[id]" style="width: 100%;height: 100%;" class="video-js vjs-default-skin"\
+        $wrap.append( LP.format( '<div class="video-wrap"><video id="#[id]" style="width: 100%;height: 100%;" class="video-js vjs-default-skin"\
             preload="auto"\
               poster="#[poster]">\
              <source src="#[mp4]" type="video/mp4" />\
@@ -917,7 +943,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
         config = $.extend( { "controls": false, "muted": false, "autoplay": false, "preload": "auto","loop": true, "children": {"loadingSpinner": false} } , config || {} );
         var ratio = config.ratio || 9/16;
-
+        //config['techOrder'] = ['flash'];
         LP.use('video-js' , function(){
             var is_playing = false;
             videojs.options.flash.swf = "/js/video-js/video-js.swf";
@@ -962,6 +988,14 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
                 // if need to add pause button
                 if( config.pause_button ){
+                    $('<div></div>').insertBefore($wrap.find('.vjs-poster').fadeIn() )
+                        .css({
+                            position: 'absolute',
+                            top: 0,
+                            left:0,
+                            width: '100%',
+                            height: '100%'
+                        });
                     if( !config.controls ){
                         $wrap.off('click.video-operation').on('click.video-operation' , function(){
                             if( is_playing ){
@@ -1366,9 +1400,11 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         $('[data-resize]').each(function(){
             var val = $(this).data('resize');
             val = val.split(':');
+            var height = winWidth / val[0] * val[1];
             $(this).css({
-                height: winWidth / val[0] * val[1]
+                height: height
             });
+            fixImageToWrap( $(this) , $(this).find('img') );
         });
     })
     .keyup(function( ev ){
@@ -1438,6 +1474,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
                             var sttop = 0;
                             if( hash ){
+                                location.hash = hash;
                                 var $a = $('a[name="' + hash + '"]'); 
                                 sttop = $a.length && $a.offset().top - 150;
                             }
