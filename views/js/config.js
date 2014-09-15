@@ -80,6 +80,9 @@ seajs.config({
     ,skrollr:{
       src: "../plugin/skrollr.min.js"
     }
+    ,smoothscroll: {
+      src: '../plugin/jquery.smooth-scroll.min.js'
+    }
     ,queryloader:{
       src: "../plugin/jquery.queryloader22.js"
       ,deps: ['jquery']
