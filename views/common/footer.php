@@ -35,7 +35,7 @@
           <p><?php echo $store->body?></p>
 					<ul class="storechooselist cs-clear">
             <?php foreach ($cities as $city): ?>
-            <li><a href="/boutique.php?type=<?php echo $city?>" title="" class="transition-wrap">
+            <li><a href="<?php echo url("boutique", array("type" => $city))?>"  title="" class="transition-wrap">
                 <span class="transition"><?php echo Yii::t("strings", "{city} Store", array("{city}" => ucfirst($locations[$city])))?>
                   <br/><br/><?php echo Yii::t("strings", "{city} Store", array("{city}" => ucfirst($locations[$city])))?>
                 </span>
@@ -59,34 +59,34 @@
 					<div class="sitelinkitem intoview-effect" data-effect="fadeup">
 						<h2><?php echo Yii::t("strings", "COLLECTIONS")?></h2>
             <?php foreach (CollectionContentAR::model()->getList() as $collection): ?>
-              <a data-a="nav-link" href="/collections.php?cid=<?php echo $collection->cid?>"><?php echo $collection->title?></a>
+              <a data-a="nav-link" href="<?php echo url("collections", array("cid" => $collection->cid))?>"><?php echo $collection->title?></a>
             <?php endforeach;?>
 					</div>
 					<div class="sitelinkitem intoview-effect" data-effect="fadeup">
             <h2><?php echo Yii::t("strings", "CRAFTS")?></h2>
             <?php foreach (CraftContentAR::model()->getList() as $craft): ?>
-              <a data-a="nav-link" href="/craft.php?a=<?php echo $craft->cid?>"><?php echo $craft->title?></a>
+              <a data-a="nav-link" href="<?php echo url("craft", array("cid" => $craft->cid))?>"><?php echo $craft->title?></a>
             <?php endforeach;?>
 					</div>
 					<div class="sitelinkitem sitelinkitemS intoview-effect" data-effect="fadeup">
             <h2><?php echo Yii::t("strings", "BOUTIQUES")?></h2>
             <?php foreach (BoutiqueContentAR::getLocation() as $key => $name): ?>
-              <a data-a="nav-link" href="/boutique.php?type=<?php echo $key?>"><?php echo $name?></a>
+              <a data-a="nav-link" href="<?php echo url("boutique", array("type" => $key))?>" ><?php echo $name?></a>
             <?php endforeach;?>
 					</div>
 					<div class="sitelinkitem sitelinkitemS intoview-effect" data-effect="fadeup">
 						<h2><?php echo Yii::t("strings", "NEWS")?></h2>
-						<a data-a="nav-link" style="display:none;" href="/news.php"></a>
-						<a data-a="nav-link" href="/news-detail.php"><?php echo Yii::t("strings", "news")?></a>
-						<a data-a="nav-link" href="/news-event.php"><?php echo Yii::t("strings", "events")?></a>
-						<a data-a="nav-link" href="/news-press.php"><?php echo Yii::t("strings", "press")?></a>
+						<a data-a="nav-link" style="display:none;" href="<?php echo url("news")?>"></a>
+						<a data-a="nav-link" href="<?php echo url("news-detail")?>"><?php echo Yii::t("strings", "news")?></a>
+						<a data-a="nav-link" href="<?php echo url("news-event")?>"><?php echo Yii::t("strings", "events")?></a>
+						<a data-a="nav-link" href="<?php echo url("news-press")?>"><?php echo Yii::t("strings", "press")?></a>
 					</div>
 					<div class="sitelinkitem intoview-effect" data-effect="fadeup">
 						<h2><?php echo Yii::t("strings", "ABOUT")?></h2>
-						<a data-a="nav-link" href="/about.php#bran"><?php echo Yii::t("strings", "brand story")?></a>
-						<a data-a="nav-link" href="/about.php#arts"><?php echo Yii::t("strings", "artstic director")?></a>
-						<a data-a="nav-link" href="/about.php#hert"><?php echo Yii::t("strings", "hertage & encounter")?></a>
-						<a data-a="nav-link" href="/about.php#jobs"><?php echo Yii::t("strings", "JOIN SHANG XIA")?></a>
+						<a data-a="nav-link" href="<?php echo url("about")?>#bran"><?php echo Yii::t("strings", "brand story")?></a>
+						<a data-a="nav-link" href="<?php echo url("about")?>#arts"><?php echo Yii::t("strings", "artstic director")?></a>
+						<a data-a="nav-link" href="<?php echo url("about")?>#hert"><?php echo Yii::t("strings", "hertage & encounter")?></a>
+						<a data-a="nav-link" href="<?php echo url("about")?>#jobs"><?php echo Yii::t("strings", "JOIN SHANG XIA")?></a>
 					</div>
 					<div class="sitelinkitem sitelinkitemXS intoview-effect" data-effect="fadeup">
 						<h2><?php echo Yii::t("strings", "CONTACT")?></h2>

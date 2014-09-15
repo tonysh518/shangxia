@@ -244,6 +244,7 @@ return array(
     "older news" => "新闻回顾",
     "View all news" => "所有新闻",
     "View all  press articles" => "所有杂志报道",
+    "Press" => "杂志",
     );
 
 
