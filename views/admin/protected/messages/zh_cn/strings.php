@@ -237,7 +237,13 @@ return array(
 云想衣裳花想容，白瓷和竹篾，相互映衬，草木通灵，共一世界。</p>',
     
     "CRAFTS" => "「上下」工艺",
-    
+    "related products" => "相关产品",
+    "other crafts" => "其他工艺",
+    "find us" => "找到我们",
+    "shang xia news" => "「上下」新闻",
+    "older news" => "新闻回顾",
+    "View all news" => "所有新闻",
+    "View all  press articles" => "所有杂志报道",
     );
 
 
