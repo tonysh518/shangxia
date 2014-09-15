@@ -6,15 +6,9 @@
 				<div class="productscom">
 					<div class="productsinfor cs-clear">
             <div class="proinfortxt aboutinfortxt intoview-effect related-product" data-effect="fadeup" style="background-color: #f6f2e7;">
-							<h2>Close to the Universe</h2>
-              <p>
-“ Da Tian Di (Grand Universe) ” , the zitan furniture series for Shang Xia, achieves “the highest simplicity and accuracy”, 
-according to Master Gu.
-Universe means heaven and earth. 
-The series has a simple design and smooth form that, conveys a composed and generous shape, big enough to accommodate both heaven and earth.The design is inspired 
-by traditional Ming style furniture. 
-However, the usual rounded outer lines have been developed into a more complex square outline with rounded interior lines creating lines that are both graceful and modern.  </p>
-							<a href="#" data-a="show-pop" class="btn transition-wrap"><span class="transition">Read more<br><br>Read more</span></a>
+							<h2><?php echo Yii::t("strings", "Close to the Universe")?></h2>
+              <?php echo Yii::t("strings", "Close to the Universe Desc")?>
+              <a href="#" data-a="show-pop" class="btn transition-wrap"><span class="transition">Read more<br><br>Read more</span></a>
 							<textarea style="display:none;">
 								<h2>Close to the Universe</h2>
 								<div class="popcontxt">
