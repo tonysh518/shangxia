@@ -28,9 +28,9 @@ require_once "inc.php";?>
 						</ul>
 						<h1 class="logo"><a data-a="nav-link" href="/index.php"></a></h1>
 						<ul class="nav nav2">
-							<li><a data-a="nav-link" href="/news.php"><?php echo Yii::t("strings", "NEWS")?></a><img class="nav-bg" src="/images/nav-bg.jpg"/></li>
-							<li><a data-a="nav-link" href="/about.php"><?php echo Yii::t("strings", "ABOUT")?></a><img class="nav-bg" src="/images/nav-bg.jpg"/></li>
-							<li><a data-a="nav-link" href="/contact.php"><?php echo Yii::t("strings", "CONTACT")?></a></li>
+							<li><a data-a="nav-link" href="<?php echo url("news")?>"><?php echo Yii::t("strings", "NEWS")?></a><img class="nav-bg" src="/images/nav-bg.jpg"/></li>
+							<li><a data-a="nav-link" href="<?php echo url("about")?>"><?php echo Yii::t("strings", "ABOUT")?></a><img class="nav-bg" src="/images/nav-bg.jpg"/></li>
+							<li><a data-a="nav-link" href="<?php echo url("contact")?>"><?php echo Yii::t("strings", "CONTACT")?></a></li>
 						</ul>
 						<!--  -->
 						<div class="hd_oter cs-clear">
@@ -51,13 +51,13 @@ require_once "inc.php";?>
 					<div class="nav-pop-inner">
 						<div class="nav-pop-nav">
               <?php foreach (ProductContentAR::getType() as $id => $name):  ?>
-              <p><a href="/product-type.php?name=<?php echo $name?>"><?php echo ucfirst($name)?> &gt;</a></p>
+              <p><a href="<?php echo url("product-type", array("name" => $name))?>"><?php echo ucfirst($name)?> &gt;</a></p>
               <?php endforeach;?>
 						</div>
 						<div class="nav-pop-wrap">
 			            <?php $collectiones = CollectionContentAR::model()->getList();?>
 			            <?php foreach($collectiones as $item):?>
-			              <a class="nav-pop-item inout-effect" data-a="nav-link" href="/collections.php?cid=<?php echo $item->cid?>">
+			              <a class="nav-pop-item inout-effect" data-a="nav-link" href="<?php echo url("collections", array("cid" => $item->cid))?>">
 			              	<img src="<?php echo $item->nav_image?>"/> 
 			              	<span class="nav-text"><i> <?php echo $item->title?></i></span>
 			              	<span class="home-inout-bg inout-bg"></span>
@@ -70,7 +70,7 @@ require_once "inc.php";?>
 					<div class="nav-pop-inner">
             <?php $crafts = CraftContentAR::model()->getList();?>
             <?php foreach($crafts as $craft): ?>
-            <a class="nav-pop-item inout-effect" data-a="nav-link" href="/craft.php?cid=<?php echo $craft->cid?>">
+            <a class="nav-pop-item inout-effect" data-a="nav-link" href="<?php echo url("craft", array("cid" => $craft->cid))?>">
             	<img src="<?php echo $craft->nav_image?>"/>
             	<span class="nav-text"><i><?php echo $craft->title?></i></span>
             	<span class="home-inout-bg inout-bg"></span>
@@ -84,7 +84,7 @@ require_once "inc.php";?>
             <?php foreach (BoutiqueContentAR::getLocation() as $key => $name): ?>
               <?php $boutique = BoutiqueContentAR::model()->loadByAddressKey($key);?>
               <?php if ($boutique): ?>
-                <a class="nav-pop-item inout-effect" <?php if ($first) echo 'style="margin-left: 12%;"'?> data-a="nav-link" href="/boutique.php?type=<?php echo urlencode($key)?>">
+                <a class="nav-pop-item inout-effect" <?php if ($first) echo 'style="margin-left: 12%;"'?> data-a="nav-link" href="<?php echo url("boutique", array("type" => urlencode($key)))?>">
                 	<img src="<?php echo ($boutique->nav_image) ?>"/>
                 	<span class="nav-text"><i><?php echo $name?></i></span>
                 	<span class="home-inout-bg inout-bg"></span>

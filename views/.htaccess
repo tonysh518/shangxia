@@ -4,7 +4,22 @@
 	RewriteCond %{REQUEST_FILENAME} !-d
 	
 	RewriteRule ^([\w-]+)/(\d+)/(.+) $1.php?cid=$2	
-	#RewriteRule ^(\w+)/(\d+)/(.+)/(.+) $1.php?cid=$2&title=$4&app=$1&type=$3 [L,QSA]
 
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^([\w]+)/cid/([\d]+) $1.php?cid=$2
+	
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^([\w-]+)$ $1.php
+
+ 	RewriteCond %{REQUEST_FILENAME} !-f
+ 	RewriteCond %{REQUEST_FILENAME} !-d
+ 	RewriteRule ^([\w-]+)/name/([\w]+) $1.php?name=$2
+
+
+ 	RewriteCond %{REQUEST_FILENAME} !-f
+ 	RewriteCond %{REQUEST_FILENAME} !-d
+ 	RewriteRule ^([\w-]+)/type/([\w]+) $1.php?type=$2
 	
 </IfModule>

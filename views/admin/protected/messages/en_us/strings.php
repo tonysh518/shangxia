@@ -43,7 +43,63 @@ The series has a simple design and smooth form that, conveys a composed and gene
 by traditional Ming style furniture. 
 However, the usual rounded outer lines have been developed into a more complex square outline with rounded interior lines creating lines that are both graceful and modern.  </p>
 							",
+    "Silk-like Bamboo Strands Desc" => "<p>It was daybreak, the bamboo cutting Shifu (master) chopped his way to Cilao Mountain, a bamboo cutter hanging from his belt. The mountain and woods were shrouded in mist, his clothes soon became wet. The morning moisture was essential for the bamboo he was collecting, as when the sun came up the bamboo would turn hard and lose its flexibility.</p>
+              <p>Ci Bamboo (sinocalamus affinis) is a plant that requires shade, and favors moist areas. As the bamboo has beautiful lush branches and leaves, local people describe it as “reaching for the sky, collecting water and energy”. According to the bamboo weaving Master Zhang who traveled with us, Ci bamboo grows in a water pit, in shade, away from the sun. Its shoots take only one year to grow into mature plants.  </p>
+            ",
+    "Collecting the Bamboo Desc" => "<p>Shifu was collecting one-year-old bamboo plants. He walked in water, and investigated. With merely one glimpse, he could tell which bamboo made the best material. He studied the direction of the bamboo hair in order to judge which plants were bitter bamboo, and which were sweet. Only the bitter plants are suitable for making bamboo woven ware. “Tall and straight, with long joints, that makes the best material” said Master Zhang. Some of the bamboo plants are crooked, their lives are determined by changes in direction. Only the strong and upright are true bamboo plants that can bravely face what is presented to them in life. </p>
+              <p>The cutters aimed carefully and cut the bamboo from the roots. Then they cut off the branches lengthways, and separated the bamboo into several segments using a hacksaw. Finally, they carried them down the mountain. This is usually a job for men. </p>
+  	",
     
+    "Scraping the Cyan <br/>(Bamboo Skin) Desc" => "              <p>The women had to sharpen their knives and be well prepared to scrape the cyan, they had to be quick. The colloid layer has to be scraped from the stalk before the moisture has left the bamboo. A second later, cyan colored fine hair floated from the bamboo, leaving a faint trace of sweet fragrance. </p>
+",
+    
+    "Separating <br/>the Bamboo Desc" => "<p>The first step was to separate bamboo into blocks, as quickly and as accurately as possible, when the bamboo was still fresh and tender. The bamboo stalk is split into equally thick segments and these in turn are split into strips. Taking a smooth strip in the palm of the left hand, holding the strip with the thumb and the index finger one centimeter away from the end, the cutter uses her right hand, a third of the way down the slice the cutter cuts into the bamboo, slicing toward herself. </p>
+              <p>After hundreds of thousands of times of practice, a woman took two movements to complete the task. She cut a block, swung it up and down, then one bamboo slice fell off. She then cut again and swung, another slice off, and then another. All of the bamboo was sliced up in this way. Bamboo woven wares only require the first four layers of slices, sometimes only the first layer, since they have the best sheen.  </p>
+              <p>Finally, the slices needed to be scraped again and again, until they were transparent, thinner than silk, less than 1mm.</p>
+     ",
+    
+    "Drying the Slice Desc" => "              <p>The delicately thin slices were hung and dried in a ventilated place. When a breeze drifted through, all of the bluish green pieces floated up and down in the wind, like waves rolling on the water. Looking at the fluttering green, the women can breath a relaxed breathe., </p>
+",
+    
+    "Separating Strands Desc" => "<p>The dried slices were ready for their last step. In general, a 1 cm wide bamboo slice can be separated into 2 to 48 strands (width ranging from 0.15 mm to 0.5 mm). With the strands separated, we could proceed to weaving.</p>
+              <p>Master Zhang spent over a decade studying bamboo woven wares. Well edified by natural landscapes and local cultures, he feels his bamboo cutting skills come from the traditions, environment and spirit of the land and its people. </p>
+     ",
+    
+    "One Clay, <br/>72 Pairs of Hands Desc" => "<p>“The Book of Jingdezhen Pottery” describes the pottery workshop in the 17th century, “Ceramics are made in kilns. Kilns belong to different families. Workers associate with their workshops. Workshops have masters. Division of work in ceramic production is fine.” </p>
+							<p>Song Yingxing, a scientist in the Ming Dynasty, wrote in his book “Works of Science” that “one clay needs to pass through 72 pairs of hands before it is finally finished.” </p>
+              <p>Today, in Master Lu’s eggshell porcelain workshop, the centuries long tradition is preserved. One worker takes charge of one process only. </p>
+            ",
+    
+    "Mixing Ingredients Desc" => " <p>Porcelain stones and Kaolin clay mixed and crushed together in the muller. Though machinery has been introduced, the process is still the same as it always has been “at an even speed the muller stones grind together, so ingredients get well crushed and ground into a powder“. Master Lu is the only one who knows the proportion of each ingredient, water and muller stones. </p>
+",
+    
+    
+    "Turning the Clay Desc" => "<p>The well mixed ingredients were kneaded into a paste, under the hands of the craftsman, the clay is worked into the shape of a bowl. Turning the clay mixture is the first step of molding. According to the craftsman, “turning is all about how you apply pressure. You have to be stable and even to keep air out of the clay mixture, a bubble destroys everything. You want your bowl to be round, you have to be hard and firm, otherwise it becomes out of shape.” The technique and feel for the clay is not something one can learn in one or two years.</p>
+",
+    
+    "Paring and Trimming Desc" => "<p>After turning, the thickness of the bowls wall was about 2-3 mm. Eggshell porcelain needs to be pared and fine trimmed using a knife at least one hundred times to achieve a fine 0.4 mm thickness as thin as eggshell and as thin as the cicada’s wing. </p>
+              <p>The paring craftsman, Lei, is a quiet man. Knife in hand, he focused on the bowl. Eggshell is extremely fragile and can easily be pierced if one tiny mistake is made. ”I rely on my experience, sometimes on instinct too,” said Lei. The inner and outer walls must be equally thin and smooth. </p>
+              <p>Fine trimming requires an even more precise execution. Each cut is a test for the executor. One has to have no distracting thought in mind, so that the beginning and end of every cut is identical, as sharp as the last. ”Too hard a breath will cause a hand movement too big, destroying your work. Trimming men often say ‘success depends on every cut and every breath.’ It is quite true. They trim the wares, and they cultivate their minds, searching for peace and stability from within,” Master Lu pointed out.</p>
+          ",
+    
+    "Firing the <br/>Unglazed Body Desc" => "<p>The fine pared bodies were put on a wooden board and sent to the firing room. In a temperature of 750-800℃, they were fired for 1.5 hours.</p>
+",
+    "Adding Water Before Glazing Desc" => "<p>The body wetting process needs serious care and attention. Craftsman Xiong, brushed water onto the bodies. Gaps or pinholes were filled and the bodies were cleaned and inspected for hidden air holes and dead mud.  </p>
+",
+    "Glazing Desc" => "              <p>Glazing is the most crucial part in the whole process, and was performed by Master Lu himself. The varying viscosities of glazes create different final outcomes. The glaze has to be even on all parts of the body, the same thickness throughout. Seemingly easy, glazing is actually the most difficult part.</p>",
+    
+    "Final Firing Desc" => "<p>
+                The glazed bodies were placed into the kiln. At last, stone and clay are bound together by the skilled hands of the craftsman to create the most wonderful porcelain.
+              </p>",
+    
+    "Thin and Beautiful <br> Rare Perfection Desc" => "<p>
+It is obvious to any viewer that Master Lu has poured his heart and experience into creating “Tianlai” (“Echo”), the eggshell porcelain for “Shang Xia”. The design of the “Tianlai” bowl is simple in shape, but conveys brilliance and near transparency in a daily object, just as the Chinese saying goes; “Turn nothing into something”. 
+If to set the high standard of beauty for eggshell porcelain as thin, translucent 
+and made from fine ingredients, then to achieve that beauty is not easy. 
+At any moment the thinness can be pierced or the body deformed. </p>",
+    
+    "Master Zhang created a new weaving Desc" => '<p>Master Zhang created a new weaving technique for "SHANG XIA"\'s white porcelain tea set "Bridge". The technique is called Bamboo covered Porcelain, an innovative and creative process based on the traditional bamboo over porcelain technique. Around the ceramic body, the thin bamboo strips are softly woven following the shape of the tea ware, melding seamlessly one material into the other.</p><p>Unlike other bamboo woven wares, bamboo covered porcelain is a delicate work. The choice of bamboo material is extremely rigid. The bamboo piece must be over 66 cm long between two ridges, lack marks or scratches of any kind, and be at least two years of age. The traditional expression used to describe superior quality bamboo states "vertical bamboo strips as thin as silk, horizontal strips stretched tight as a strand of hair. The quality of the set is such that 50 kg of bamboo can produce only 400 grams of finished bamboo strips, the same price as silver.</p><p>According to tradition, bamboo covered porcelain uses a single base slice and a single strand to weave the pattern. But Master Zhang discovered that using double strands creates a totally different pattern and final result.</p><p>Master Zhang points out, "The double cross strands technique creates a 3D effect. The strands I use are only 0.4 mm wide, and the slices are even thinner." The innovation turns the craftsmanship into an art form.</p><p>One layer of strands makes a 2D bamboo woven effect. When slices and strands are doubled, the whole weaving dimension starts to change, generating a new pattern. The slices and strands weave and intertwine, one pattern appears on top of another.</p><p>"The original plain strands on porcelain start to become fluid, to become lively, as if they really contain life. Some strands stay still, and others twist and stir, echoing each other. This is a brand new bamboo weaving texture," concluded Master Zhang.</p><p>As the Tang dynasty poet described the beauty of the empress, as "Enveloped in radiant clothing appears the sight of a flower as out of drifting clouds" so too does the beauty of the ceramic appear out of the bamboo woven casing, perfectly complimenting each other and from the same world.</p>',
+
     
     
 );
