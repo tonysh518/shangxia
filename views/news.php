@@ -97,7 +97,7 @@
 				</div>
 				<!--  -->
 				<div class="newsolderbtn intoview-effect" data-effect="fadeup" data-margin-top="50">
-					<a data-a="nav-link" href="/news-detail.php" title="" class="transition-wrap"><span class="transition"><?php echo Yii::t("strings", "View all news")?><br/><br/><?php echo Yii::t("strings", "View all news")?></span></a>
+					<a data-a="nav-link" href="<?php echo url("news-detail")?>" title="" class="transition-wrap"><span class="transition"><?php echo Yii::t("strings", "View all news")?><br/><br/><?php echo Yii::t("strings", "View all news")?></span></a>
 				</div>
 			</div>
 		</div>
@@ -113,7 +113,7 @@
 					<h3 class="intoview-effect" data-effect="fadeup">shang xia maison opening </h3>
 					<h4  class="productscom-desc intoview-effect" data-effect="fadeup">2014 SEP 09</h4>
 					<p  class="productscom-desc intoview-effect" data-effect="fadeup"><i>This aurum, the SHANG XIA, maision will be opened on Hua Hai Road, Shanghai.<br />A new journey ....     <a class="more" href="#">Read more &gt;</a> </i></p>
-					<a data-a="nav-link" href="/news-events.php" title="" class="btn transition-wrap intoview-effect" data-effect="fadeup"><span class="transition">View all events<br/><br/>View all events</span></a>
+					<a data-a="nav-link" href="<?php echo url("news-events")?>" title="" class="btn transition-wrap intoview-effect" data-effect="fadeup"><span class="transition">View all events<br/><br/>View all events</span></a>
 				</div>
 			</div>
 		</div>
@@ -157,7 +157,7 @@
 					<?php } ?>
 					<!--  -->
 					<div class="newsolderbtn intoview-effect" data-effect="fadeup">
-						<a href="/news-press.php" title="" class="transition-wrap"><span class="transition"><?php echo Yii::t("strings", "View all  press articles")?><br/><br/><?php echo Yii::t("strings", "View all  press articles")?></span></a>
+						<a href="<?php echo url("news-press")?>" title="" class="transition-wrap"><span class="transition"><?php echo Yii::t("strings", "View all  press articles")?><br/><br/><?php echo Yii::t("strings", "View all  press articles")?></span></a>
 					</div>
 				</div>
 			</div>
