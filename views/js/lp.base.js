@@ -112,7 +112,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 cb && cb();
             },
             "boutique-page":function( cb ){
-                $('.footer .store').hide();
+                $('.footer .store-wrap').hide();
                 cb && cb();
             },
             "product-detail": function( cb ){
@@ -389,7 +389,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             },
             init: function(){
                 loadingMgr.start();
-                $('.footer .store').show();
+                $('.footer .store-wrap').show();
                 var page = $('.head').data('page');
                 var fn = pageInits[ page ];
 
@@ -451,12 +451,12 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                             var $item = $(this).find('.scroll-lowheight-item');
                             if( stTop > off.top - headHeight ){
                                 $item.css({
-                                    marginTop: ( stTop + headHeight - off.top ) / 2,
+                                    //marginTop: ( stTop + headHeight - off.top ) / 2,
                                     marginBottom: -( stTop + headHeight - off.top ) / 2
                                 });
                             } else {
                                 $item.css({
-                                    marginTop: 0,
+                                    //marginTop: 0,
                                     marginBottom: 0
                                 });
                             }
@@ -558,7 +558,10 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                                 .css('marginRight' , halfMR)
                                 .prev()
                                 .prev()
-                                .css('marginLeft' , halfMR );
+                                .css({
+                                    marginLeft: halfMR ,
+                                    marginRight: marginRight + '%'
+                                });
                             } else if( indent == 3 ) { // 3
                                 $this.css({
                                     marginLeft: halfMR,
@@ -569,6 +572,11 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                                     .prev()
                                     .css('marginLeft' , halfMR);
                             }
+                        } else if( counted % 3 == 1 ){
+                            $this.css({
+                                marginLeft: halfMR ,
+                                marginRight: halfMR
+                            });
                         }
 
                         $this.width( indent /  totalItems * 100 - marginRight + '%' );
@@ -658,6 +666,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 var isRunning = false;
                 // init nav pop mouse move event
                 $('.nav-pop-collections .nav-pop-wrap').mousemove(function( ev ){
+                    if( $(this).find('.nav-pop-wrap').children().length < 4 ) return;
                     var winWidth = $(window).width();
                     var off = $(this).offset();
                     var $item = $(this).children().first();
@@ -1371,6 +1380,14 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     //     zoom:5,
     //     mapTypeId:google.maps.MapTypeId.ROADMAP
     // });
+    $(document).click(function( ev ){
+        if ( $(ev.target).closest('.searchform').length || $(ev.target).hasClass('hd_search') ){
+            return;
+        }
+        if( $('.searchform').is(':visible') )
+            $('.searchform').fadeOut();
+
+    });
 
     $(window).resize(function(){
         var winWidth = $(window).width();
@@ -1962,7 +1979,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     
     // 多语言切换
     LP.action('chang-lang' , function(){
-        LP.setCookie( "sx-lang", $(this).data("lang") );
+        LP.setCookie( "lang", $(this).data("lang") );
         LP.reload();
     });
 

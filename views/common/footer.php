@@ -17,38 +17,40 @@
 			// </div>
 			?>
 			<!-- store -->
-			<div class="section store cs-clear ">
-        <?php 
-          $store = BoutiqueContentAR::model()->loadByAddressKey($city);
-          // 如果没有找到，拿认为Shanghai 是默认的
-          if (!$store) {
-            $store = BoutiqueContentAR::model()->loadByAddressKey("shanghai");
-          }
-          $cities = array_diff(array_keys(BoutiqueContentAR::getLocation()), array($store->location));
-          
-        ?>
-        <?php if ($store): ?>
-				<div class="storechoose intoview-effect" data-effect="fadeup">
-					<h2><?php echo $store->title?></h2>
-          <p><?php echo $store->body?></p>
-					<ul class="storechooselist cs-clear">
-            <?php foreach ($cities as $city): ?>
-            <li><a href="/boutique.php?type=<?php echo $city?>" title="" class="transition-wrap">
-                <span class="transition"><?php echo Yii::t("strings", "{city} Store", array("{city}" => ucfirst($city)))?>
-                  <br/><br/><?php echo Yii::t("strings", "{city} Store", array("{city}" => ucfirst($city)))?>
-                </span>
-              </a>
-            </li>
-            <?php endforeach;?>
-					</ul>
-				</div>
-				<div class="storemap intoview-effect" data-effect="fadeup" style="height:400px;position:relative;">
-					<div class="storemap-wrap" id="map" data-map-type="<?php echo $map;?>" data-map="<?php echo $store->latlng?>" >
+			<div class="store-wrap">
+				<div class="section store cs-clear ">
+	        <?php 
+	          $store = BoutiqueContentAR::model()->loadByAddressKey($city);
+	          // 如果没有找到，拿认为Shanghai 是默认的
+	          if (!$store) {
+	            $store = BoutiqueContentAR::model()->loadByAddressKey("shanghai");
+	          }
+	          $cities = array_diff(array_keys(BoutiqueContentAR::getLocation()), array($store->location));
+	        ?>
+	        <?php if ($store): ?>
+					<div class="storechoose intoview-effect" data-effect="fadeup">
+						<h2><?php echo $store->title?></h2>
+	          <p><?php echo $store->body?></p>
+						<ul class="storechooselist cs-clear">
+	            <?php foreach ($cities as $city): ?>
+	            <li><a href="/boutique.php?type=<?php echo $city?>" title="" class="transition-wrap">
+	                <span class="transition"><?php echo Yii::t("strings", "{city} Store", array("{city}" => ucfirst($city)))?>
+	                  <br/><br/><?php echo Yii::t("strings", "{city} Store", array("{city}" => ucfirst($city)))?>
+	                </span>
+	              </a>
+	            </li>
+	            <?php endforeach;?>
+						</ul>
 					</div>
+					<div class="storemap intoview-effect" data-effect="fadeup" style="height:400px;position:relative;">
+						<div class="storemap-wrap" id="map" data-map-type="<?php echo $map;?>" data-map="<?php echo $store->latlng?>" >
+						</div>
+					</div>
+	      <?php endif;?>
 				</div>
-      <?php endif;?>
-				
 			</div>
+
+
 			<!-- sitelinks -->
 			<div class="footer-bottom">
 				<div class="section sitelinks cs-clear">
