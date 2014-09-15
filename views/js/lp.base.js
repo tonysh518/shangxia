@@ -158,11 +158,18 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         var effects = {
             'fadeup': function( $dom , index , cb ){
                 var delay = $dom.data('effect-delay') || 0;
-                var tarMarginTop = $dom.data('margin-top') || 0;
-                $dom.delay( 150 * index + delay )
+                var tarMarginTop = parseInt( $dom.css('marginTop') ) || 0;
+                var marginBottom = parseInt( $dom.css('marginBottom') ) || 0;
+                $dom
+                    .css({
+                        marginTop: tarMarginTop + 150 ,
+                        marginBottom: marginBottom - 150,
+                    })
+                    .delay( 150 * index + delay )
                     .animate({
                         opacity: 1,
-                        marginTop: tarMarginTop
+                        marginTop: tarMarginTop,
+                        marginBottom: marginBottom
                     } , 500 )
                     .promise()
                     .then(function(){
@@ -424,7 +431,8 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                         $('.intoview-effect').each(function(){
                             var $dom = $(this);
                             var offTop = $dom.offset().top;
-                            if( !$dom.data('init') && offTop < stTop + winHeight && offTop > stTop ){
+                            var domHeight = $dom.height();
+                            if( !$dom.data('init') && ( offTop - winHeight < stTop && offTop + domHeight > stTop ) ){
                                 $dom.data('init' , 1);
 
                                 if( effects[ $dom.data('effect') ] ){
@@ -551,7 +559,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                                 .prev()
                                 .prev()
                                 .css('marginLeft' , halfMR );
-                            } else if( indent == 3 ) { // 1
+                            } else if( indent == 3 ) { // 3
                                 $this.css({
                                     marginLeft: halfMR,
                                     marginRight: halfMR
@@ -568,23 +576,48 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     });
 
                     var total = $items.length;
-                    $dom.find('.collarrowsprev').click(function(){
-                        var ml = parseInt( $inner.css('marginLeft') ) || 0;
-                        if( ml == 0 ) return false;
-                        $inner.animate({
-                            marginLeft: -Math.round( Math.abs( ml ) / $inner.parent().width() - 1 ) * 100 + '%'
-                        } , 500);
-                        $(window).trigger('scroll');
+                    $dom.find('.collarrowsprev')
+                        .fadeOut()
+                        .click(function(){
+                            var ml = parseInt( $inner.css('marginLeft') ) || 0;
+                            if( ml == 0 ) return false;
+
+                            var mleft = -Math.round( Math.abs( ml ) / $inner.parent().width() - 1 );
+                            $inner.animate({
+                                marginLeft: mleft * 100 + '%'
+                            } , 500);
+
+                            if( mleft == 0 ){
+                                // hide current btn
+                                $(this).fadeOut();
+                            }
+
+                            // show next btn
+                            $dom.find('.collarrowsnext').fadeIn();
+
+                            $(window).trigger('scroll');
                     })
                     .end()
                     .find('.collarrowsnext')
+                    [ totalItems > num ? 'show' : 'hide' ]()
                     .click(function(){
                         var ml = parseInt( $inner.css('marginLeft') ) || 0;
                         var outerWidth = $inner.parent().width();
-                        if( Math.abs( ml ) >= $inner.width() - outerWidth - 100 ) return false;
+                        var innerWidth = $inner.width();
+                        if( Math.abs( ml ) >= innerWidth - outerWidth - 100 ) return false;
+                        var mleft = -Math.round( Math.abs( ml ) / outerWidth + 1 );
                         $inner.animate({
-                            marginLeft: -Math.round( Math.abs( ml ) / outerWidth + 1 ) * 100 + '%'
-                        } , 500);
+                            marginLeft: mleft * 100 + '%'
+                        } , 500 );
+
+                        if( Math.abs( parseInt( $inner.css('marginLeft') ) ) + outerWidth >= innerWidth - outerWidth - 100 ){
+                            // hide current btn
+                            $(this).fadeOut();
+                        }
+
+                        // show pre btn
+                        $dom.find('.collarrowsprev').fadeIn();
+
                         $(window).trigger('scroll');
                     });
                 });
@@ -1443,6 +1476,9 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             // show loading
             var isHomePage = ( location.pathname == '' || location.pathname == '/' || location.pathname == '/index.php' );
             loadingMgr.show( !isHomePage );
+
+            $(window).scrollTop(0);
+
             switch( type ){
                 default: 
                     $.get( location.href , '' , function( html ){
