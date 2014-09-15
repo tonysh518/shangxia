@@ -4,6 +4,9 @@
 LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     'use strict'
 
+    LP.use('smoothscroll' , function(){
+        $(document.body).smoothScroll();
+    });
 
     // page components here
     // ============================================================================ 
