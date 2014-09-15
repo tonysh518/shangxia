@@ -746,7 +746,6 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 clearInterval( interval );
                 var page = $('.head').data('page');
                 interval = setInterval( function(){
-                    if( target < 20 ) return;
                     if( current >= target ) return;
                     current++;
 
