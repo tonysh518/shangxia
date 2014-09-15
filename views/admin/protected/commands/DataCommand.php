@@ -25,8 +25,13 @@ class DataCommand extends CConsoleCommand {
         if ($product["language"] == "fr") {
           continue;
         }
-        else  if ($product["language"] == "cn") {
+        else  if ($product["language"] == "en") {
           continue;
+        }
+        
+        $url_key = $product["title"];
+        if ($product["language"] != "en") {
+          $url_key = $productGroupes["en"][$index]["title"];
         }
         
         $collectionId = $collectionCids[$collection];
@@ -37,6 +42,7 @@ class DataCommand extends CConsoleCommand {
         $product["video_title"] = $product["title"];
         $product["video_description"] = $product["title"];
         $product["craft"] = "";
+        $product["url_key"] = $url_key;
         $_REQUEST = $product;
         $_POST = $product;
         $productModel = new ProductContentAR();
@@ -46,12 +52,14 @@ class DataCommand extends CConsoleCommand {
         global $language;
         $language = $product["language"];
         
-        if ($cid = $productModel->save()) {
-          print "Content with {$productModel->product_type}: [$productModel->cid] is inserted\r\n";
-        }
-        else {
-          print_r($productModel->getErrors());
-        }
+        print_r($product);
+        
+//        if ($cid = $productModel->save()) {
+//          print "Content with {$productModel->product_type}: [$productModel->cid] is inserted\r\n";
+//        }
+//        else {
+//          print_r($productModel->getErrors());
+//        }
       }
     }
   }

@@ -120,6 +120,45 @@ return array(
     "CONTACT" => "联系「上下」",
     "SEARCH" => "搜索",
     "SEARCH DEMO" => "搜索示例",
+    "home_brand_story" => "SHANG XIA, CHINESE FINE LIVING",
     "Brand story" => "品牌故事",
-    "home_brand_story" => "SHANG XIA IS A BRAND FOR ART OF LIVING THAT PROMISES A UNIQUE ENCOUNTER WITH THE HERITAGE OF CHINESE DESIGN AND CRAFTSMANSHIP.",
+    "Bamboo Weaving" => "竹丝扣瓷",
+    "Cashmere Felt" => "羊绒毡",
+    "Eggshell Porcelain" => "薄胎瓷",
+    "Zitan" => "紫檀",
+    "Bamboo Weaving" => "竹丝扣瓷",
+    "Watch video" => "观看视频",
+    "Pause video" => "暂停视频",
+    "Shanghai" => "上海",
+    "Paris" => "法国",
+    "Beijing" => "北京",
+    "{city} Store" => "{city} 零售空间",
+    "news" => "新闻",
+    "events" => "活动",
+    "press" => "杂志",
+    "JOIN SHANG XIA" => "加入「上下」",
+    "brand story" => "品牌故事",
+    "weixin" => "微信",
+    "weibo" => "微博",
+    "subscribe to shang xia newsletter" => "订阅「上下」电子报",
+    "SUBSCRIBE TO <br/> SHANG XIA NEWSLETTER" => "订阅「上下」电子报",
+    "To receive updates about SHANGXIA, <br/> please provide the following information" => "提供下面资料以便收到最新「上下」信息",
+    "YOUR NAME" => "您的名字",
+    "YOUR EMAIL" => "您的邮件",
+    "YOUR PHONE" => "您的电话",
+    "SEND" => "提交",
 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+

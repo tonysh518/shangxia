@@ -25,7 +25,7 @@
             $store = BoutiqueContentAR::model()->loadByAddressKey("shanghai");
           }
           $cities = array_diff(array_keys(BoutiqueContentAR::getLocation()), array($store->location));
-          
+          $locations = BoutiqueContentAR::getLocation();
         ?>
         <?php if ($store): ?>
 				<div class="storechoose intoview-effect" data-effect="fadeup">
@@ -34,8 +34,8 @@
 					<ul class="storechooselist cs-clear">
             <?php foreach ($cities as $city): ?>
             <li><a href="/boutique.php?type=<?php echo $city?>" title="" class="transition-wrap">
-                <span class="transition"><?php echo Yii::t("strings", "{city} Store", array("{city}" => ucfirst($city)))?>
-                  <br/><br/><?php echo Yii::t("strings", "{city} Store", array("{city}" => ucfirst($city)))?>
+                <span class="transition"><?php echo Yii::t("strings", "{city} Store", array("{city}" => ucfirst($locations[$city])))?>
+                  <br/><br/><?php echo Yii::t("strings", "{city} Store", array("{city}" => ucfirst($locations[$city])))?>
                 </span>
               </a>
             </li>
@@ -78,22 +78,22 @@
 					</div>
 					<div class="sitelinkitem intoview-effect" data-effect="fadeup">
 						<h2><?php echo Yii::t("strings", "ABOUT")?></h2>
-						<a data-a="nav-link" href="/about.php#bran">brand story</a>
-						<a data-a="nav-link" href="/about.php#arts">artstic director</a>
-						<a data-a="nav-link" href="/about.php#hert">hertage & encounter</a>
-						<a data-a="nav-link" href="/about.php#jobs">JOIN SHANG XIA</a>
+						<a data-a="nav-link" href="/about.php#bran"><?php echo Yii::t("strings", "brand story")?></a>
+						<a data-a="nav-link" href="/about.php#arts"><?php echo Yii::t("strings", "artstic director")?></a>
+						<a data-a="nav-link" href="/about.php#hert"><?php echo Yii::t("strings", "hertage & encounter")?></a>
+						<a data-a="nav-link" href="/about.php#jobs"><?php echo Yii::t("strings", "JOIN SHANG XIA")?></a>
 					</div>
 					<div class="sitelinkitem sitelinkitemXS intoview-effect" data-effect="fadeup">
 						<h2><?php echo Yii::t("strings", "CONTACT")?></h2>
-						<a href="#" class="ft_wx">weixin</a>
-						<a href="http://www.weibo.com/shangxia" target="_blank" class="ft_wb">weibo</a>
+						<a href="#" class="ft_wx"><?php echo Yii::t("strings", "weixin")?></a>
+						<a href="http://www.weibo.com/shangxia" target="_blank" class="ft_wb"><?php echo Yii::t("strings", "weibo")?></a>
 						<br>
-						<a href="#" style="width: auto;line-height: initial;height: auto;margin-top: 48px;" data-a="newsletter">subscribe to shang xia newsletter</a>
+						<a href="#" style="width: auto;line-height: initial;height: auto;margin-top: 48px;" data-a="newsletter"><?php echo Yii::t("strings", "subscribe to shang xia newsletter")?></a>
 					</div>
 				</div>
 				<!-- copyright -->
 				<div class="copyright">
-					<p><a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=20120529122952909">ICP LICENCE 20120529122952909</a> - PRIVACY POLICY LEGAL INFORMATION</p>
+					<p><a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=20120529122952909"><?php echo Yii::t("strings", "ICP LICENCE")?> 20120529122952909</a> - <?php echo Yii::t("strings", "PRIVACY POLICY LEGAL INFORMATION")?></p>
 				</div>
 			</div>
 		</div>
@@ -101,39 +101,37 @@
 	</div>
 
 <script type="text/tpl" id="newsletter">
-	<h2>SUBSCRIBE TO <br/> SHANG XIA NEWSLETTER </h2>
+	<h2><?php echo Yii::t("strings", "SUBSCRIBE TO <br/> SHANG XIA NEWSLETTER")?> </h2>
 	<div class="popcontxt">
-		<p style="margin:5px 0;">To receive updates about SHANGXIA , <br/>
-		please provide the following information:</p>
+		<p style="margin:5px 0;"><?php echo Yii::t("strings", "To receive updates about SHANGXIA, <br/> please provide the following information")?> :</p>
 		<form class="buy-form conformbox" action="/admin/api/content/newsletter" method="post">
-			<div class="conformtit">YOUR NAME <span class="error" id="name-tip"></span></div>
+			<div class="conformtit"><?php echo Yii::t("strings", "YOUR NAME")?> <span class="error" id="name-tip"></span></div>
 			<input type="text" name="name" data-required="name required"/>
-			<div class="conformtit">YOUR EMAIL <span class="error" id="email-tip"></span></div>
+			<div class="conformtit"><?php echo Yii::t("strings", "YOUR EMAIL")?> <span class="error" id="email-tip"></span></div>
 			<input type="text" name="email" data-required="email required"/>
-			<div class="conformtit">YOUR PHONE <span class="error" id="phone-tip"></span></div>
+			<div class="conformtit"><?php echo Yii::t("strings", "YOUR PHONE")?> <span class="error" id="phone-tip"></span></div>
 			<input type="text" name="phone" data-required="phone required"/>
-			<p style="margin:30px -20px 0">SHANGXIA does not rent or sell customer <br/>
-			email addresses to third parties.</p>
-			<button class="conformbtn" data-a="newsletter-send">SEND</button>
+			<p style="margin:30px -20px 0"><?php echo Yii::t("strings", "SHANGXIA does not rent or sell customer <br/> email addresses to third parties")?> 
+			.</p>
+			<button class="conformbtn" data-a="newsletter-send"><?php echo Yii::t("strings", "SEND")?></button>
 		</form>
 	</div>
 </script>
 
 <script type="text/tpl" id="i_want_to_buy">
-	<h2>I want to buy</h2>
+	<h2><?php echo Yii::t("strings", "I want to buy")?></h2>
 	<div class="popcontxt">
-		<p>You are interested by buying this product? <br/>
-		Let us contact you back and we will arrange a way to provide you this prodcut</p>
+		<p><?php echo Yii::t("strings", "You are interested by buying this product? <br/> Let us contact you back and we will arrange a way to provide you this prodcut")?></p>
 		<form class="buy-form conformbox" action="/admin/api/content/wantobuy" method="post">
 			<input type="hidden" name="product" value="#[product]"/>
-			<div class="conformtit">YOUR NAME <span class="error" id="name-tip"></span></div>
+			<div class="conformtit"><?php echo Yii::t("strings", "YOUR NAME")?> <span class="error" id="name-tip"></span></div>
 			<input type="text" name="name" data-required="name required"/>
-			<div class="conformtit">YOUR EMAIL <span class="error" id="email-tip"></span></div>
+			<div class="conformtit"><?php echo Yii::t("strings", "YOUR EMAIL")?> <span class="error" id="email-tip"></span></div>
 			<input type="text" name="email" data-required="email required"/>
-			<div class="conformtit">YOUR PHONE <span class="error" id="phone-tip"></span></div>
+			<div class="conformtit"><?php echo Yii::t("strings", "YOUR PHONE")?> <span class="error" id="phone-tip"></span></div>
 			<input type="text" name="phone" data-required="phone required"/>
-			<button class="conformbtn" data-a="contact-me-back">CONTACT ME BACK</button>
-			<a href="">VIEW ALL THE SHANG XIA GIFTS</a>
+			<button class="conformbtn" data-a="contact-me-back"><?php echo Yii::t("strings", "CONTACT ME BACK")?></button>
+//			<a href=""><?php echo Yii::t("strings", "VIEW ALL THE SHANG XIA GIFTS")?></a>
 		</form>
 	</div>
 </script>
