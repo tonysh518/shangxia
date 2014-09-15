@@ -8,7 +8,7 @@
 			<p class="introtxt" data-editme-body=".introtxt"> 
         <?php echo Yii::t("strings", "home_brand_story")?>
       </p>
-			<a data-a="nav-link" href="./about.php" title="" class="introbtn transition-wrap"><span class="transition"><?php echo Yii::t("strings" ,"Brand story")?><br/><br/><?php echo Yii::t("strings", "Brand story")?></span></a>
+			<a data-a="nav-link" href="/about.php" title="" class="introbtn transition-wrap"><span class="transition"><?php echo Yii::t("strings" ,"Brand story")?><br/><br/><?php echo Yii::t("strings", "Brand story")?></span></a>
 		</div>
 	</div>
 	<!-- piclist -->
@@ -58,7 +58,7 @@
 				<div class="slidetip">
 					<span class="slidetip2-tit"><?php echo Yii::t("strings", "Bamboo Weaving")?></span> <br>
 					<span class="slidetip2-index">1/4</span> <br>
-					<a href="#" title="" data-play-text="<?php echo Yii::t("strings", "Watch video")?>" data-pause-text="<?php echo Yii::t("strings", "Pause video")?>" data-a="homepage-watch-video" class="btn btn-white transition-wrap"><i class="transition">Watch video<br/><br/>Watch video</i></a>
+					<a href="#" title="" data-play-text="<?php echo Yii::t("strings", "Watch video")?>" data-pause-text="<?php echo Yii::t("strings", "Pause video")?>" data-a="homepage-watch-video" class="btn btn-white transition-wrap"><i class="transition"><?php echo Yii::t("strings", "Watch video")?><br/><br/><?php echo Yii::t("strings", "Watch video")?></i></a>
 				</div>
 			</div>
 			<ul class="slidetab cs-clear intoview-effect" data-effect="fadeup" data-effect-delay="700" >

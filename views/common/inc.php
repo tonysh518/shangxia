@@ -21,7 +21,7 @@ Yii::app()->getRequest()->setBaseUrl("/admin");
 global $language;
 // 获取语言
 $cookies = Yii::app()->request->cookies;
-$lang = $cookies["sx-lang"];
+$lang = $cookies["lang"];
 if ($lang) {
   Yii::app()->language = (string)$lang;
 }

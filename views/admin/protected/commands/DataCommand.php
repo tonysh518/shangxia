@@ -3,12 +3,22 @@
 class DataCommand extends CConsoleCommand {
   public function actionImportShop() {
     $collectionCids = array(
-        "人与自然" => "20093",
-        "传承与情感" => "20092",
+        "人与自然" => "20090",
+        "传承与情感" => "20089",
         "里·外" => "20079",
         "Human & Nature" => "20332",
         "Heritage & Emotion" => "20333",
         "In & Out" => "20330",
+    );
+    $craftCids = array(
+        "紫檀" => "20321",
+        "薄胎瓷" => "20320",
+        "竹编" => "20322",
+        "羊绒毡" => "20319",
+        "Zitan" => "20316",
+        "Bamboo Weaving" => "20315",
+        "Eggshell Porcelain" => "20317",
+        "Cashmere Felt" => "20318",
     );
     $types = array();
     $tmp_types = ProductContentAR::getType();
@@ -17,16 +27,21 @@ class DataCommand extends CConsoleCommand {
     }
     
     $productGroupes = require("/Users/jackeychen/Workspace/shangxia/docs/product.csv/convert.php");
-    
     // 把collection 转换到ID
     foreach ($productGroupes as $products) {
       foreach ($products as $index => $product) {
         $collection = trim($product["collection_name"]);
+        $craft = trim($product["craft"]);
         if ($product["language"] == "fr") {
           continue;
         }
-        else  if ($product["language"] == "cn") {
+        else  if ($product["language"] == "en") {
           continue;
+        }
+        
+        $url_key = $product["title"];
+        if ($product["language"] != "en") {
+          $url_key = $productGroupes["en"][$index]["title"];
         }
         
         $collectionId = $collectionCids[$collection];
@@ -36,7 +51,8 @@ class DataCommand extends CConsoleCommand {
         $product["thumbnail"] = "/upload/". $product["thumbnail"];
         $product["video_title"] = $product["title"];
         $product["video_description"] = $product["title"];
-        $product["craft"] = "";
+        $product["craft"] = $craft ? $craftCids[$craft]: "";
+        $product["url_key"] = $url_key;
         $_REQUEST = $product;
         $_POST = $product;
         $productModel = new ProductContentAR();
