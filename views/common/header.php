@@ -7,7 +7,7 @@ require_once "inc.php";?>
   <title>SHANG XIA</title>
   <meta name="keywords" content="" />
   <meta name="description" content="" />
-  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css?_=1234" />
   <link rel="stylesheet" type="text/css" href="/css/editme.css" />
 </head>
 <body class="<?php if ( isset($pagename) ) {echo $pagename;}?>">

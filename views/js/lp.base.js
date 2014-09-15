@@ -158,11 +158,18 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         var effects = {
             'fadeup': function( $dom , index , cb ){
                 var delay = $dom.data('effect-delay') || 0;
-                var tarMarginTop = $dom.data('margin-top') || 0;
-                $dom.delay( 150 * index + delay )
+                var tarMarginTop = parseInt( $dom.css('marginTop') ) || 0;
+                var marginBottom = parseInt( $dom.css('marginBottom') ) || 0;
+                $dom
+                    .css({
+                        marginTop: tarMarginTop + 150 ,
+                        marginBottom: marginBottom - 150,
+                    })
+                    .delay( 150 * index + delay )
                     .animate({
                         opacity: 1,
-                        marginTop: tarMarginTop
+                        marginTop: tarMarginTop,
+                        marginBottom: marginBottom
                     } , 500 )
                     .promise()
                     .then(function(){
@@ -230,12 +237,30 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         }
 
         var normalPageLoading = function( $allImgs ){
+            var startAnimate = false;
             loadImages( $allImgs , function(){
                 loadingMgr.hide( function(){
                     $(window).trigger('resize')
                         .trigger('scroll');
                 } );
-            } , loadingMgr.process );
+            } , function( index , total ){
+                loadingMgr.process( index , total , function( percent ){
+                    if( !startAnimate && percent > 0.7 ){
+                        startAnimate = true;
+                        $('.nav li ,.hd_oter')
+                            .each(function( i ){
+                                $(this).css({
+                                    opacity: 0,
+                                    marginTop: 30
+                                }).delay( i * 80 )
+                                .animate({
+                                    opacity: 1,
+                                    marginTop: 0
+                                } , 300 , 'easeLightOutBack');
+                            });
+                    }
+                });
+            });
         }
 
         var homePageLoading = function( $allImgs ){
@@ -406,7 +431,8 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                         $('.intoview-effect').each(function(){
                             var $dom = $(this);
                             var offTop = $dom.offset().top;
-                            if( !$dom.data('init') && offTop < stTop + winHeight && offTop > stTop ){
+                            var domHeight = $dom.height();
+                            if( !$dom.data('init') && ( offTop - winHeight < stTop && offTop + domHeight > stTop ) ){
                                 $dom.data('init' , 1);
 
                                 if( effects[ $dom.data('effect') ] ){
@@ -533,7 +559,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                                 .prev()
                                 .prev()
                                 .css('marginLeft' , halfMR );
-                            } else if( indent == 3 ) { // 1
+                            } else if( indent == 3 ) { // 3
                                 $this.css({
                                     marginLeft: halfMR,
                                     marginRight: halfMR
@@ -550,23 +576,48 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     });
 
                     var total = $items.length;
-                    $dom.find('.collarrowsprev').click(function(){
-                        var ml = parseInt( $inner.css('marginLeft') ) || 0;
-                        if( ml == 0 ) return false;
-                        $inner.animate({
-                            marginLeft: -Math.round( Math.abs( ml ) / $inner.parent().width() - 1 ) * 100 + '%'
-                        } , 500);
-                        $(window).trigger('scroll');
+                    $dom.find('.collarrowsprev')
+                        .fadeOut()
+                        .click(function(){
+                            var ml = parseInt( $inner.css('marginLeft') ) || 0;
+                            if( ml == 0 ) return false;
+
+                            var mleft = -Math.round( Math.abs( ml ) / $inner.parent().width() - 1 );
+                            $inner.animate({
+                                marginLeft: mleft * 100 + '%'
+                            } , 500);
+
+                            if( mleft == 0 ){
+                                // hide current btn
+                                $(this).fadeOut();
+                            }
+
+                            // show next btn
+                            $dom.find('.collarrowsnext').fadeIn();
+
+                            $(window).trigger('scroll');
                     })
                     .end()
                     .find('.collarrowsnext')
+                    [ totalItems > num ? 'show' : 'hide' ]()
                     .click(function(){
                         var ml = parseInt( $inner.css('marginLeft') ) || 0;
                         var outerWidth = $inner.parent().width();
-                        if( Math.abs( ml ) >= $inner.width() - outerWidth - 100 ) return false;
+                        var innerWidth = $inner.width();
+                        if( Math.abs( ml ) >= innerWidth - outerWidth - 100 ) return false;
+                        var mleft = -Math.round( Math.abs( ml ) / outerWidth + 1 );
                         $inner.animate({
-                            marginLeft: -Math.round( Math.abs( ml ) / outerWidth + 1 ) * 100 + '%'
-                        } , 500);
+                            marginLeft: mleft * 100 + '%'
+                        } , 500 );
+
+                        if( Math.abs( parseInt( $inner.css('marginLeft') ) ) + outerWidth >= innerWidth - outerWidth - 100 ){
+                            // hide current btn
+                            $(this).fadeOut();
+                        }
+
+                        // show pre btn
+                        $dom.find('.collarrowsprev').fadeIn();
+
                         $(window).trigger('scroll');
                     });
                 });
@@ -695,7 +746,6 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 clearInterval( interval );
                 var page = $('.head').data('page');
                 interval = setInterval( function(){
-                    if( target < 20 ) return;
                     if( current >= target ) return;
                     current++;
 
@@ -729,6 +779,14 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     $loadingInner.appendTo( $('.logo a').css('background' , 'none') )
                         .css('top' , 23 );
                     $loading.css('zIndex' , 90);
+                    // fade out other navs
+                    $('.nav li,.hd_oter').each(function( i ){
+                        $(this).delay(i * 100)
+                            .animate({
+                                marginTop: 30,
+                                opacity: 0
+                            } , 200);
+                    });
                 }
 
             },
@@ -908,7 +966,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
     function renderVideo ( $wrap , mp4 , webm , poster , config , cb ){
         var id = 'video-js-' + ( $.guid++ );
-        $wrap.append( LP.format( '<div class="video-wrap" style="display:none;"><video id="#[id]" style="width: 100%;height: 100%;" class="video-js vjs-default-skin"\
+        $wrap.append( LP.format( '<div class="video-wrap"><video id="#[id]" style="width: 100%;height: 100%;" class="video-js vjs-default-skin"\
             preload="auto"\
               poster="#[poster]">\
              <source src="#[mp4]" type="video/mp4" />\
@@ -917,7 +975,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
         config = $.extend( { "controls": false, "muted": false, "autoplay": false, "preload": "auto","loop": true, "children": {"loadingSpinner": false} } , config || {} );
         var ratio = config.ratio || 9/16;
-
+        //config['techOrder'] = ['flash'];
         LP.use('video-js' , function(){
             var is_playing = false;
             videojs.options.flash.swf = "/js/video-js/video-js.swf";
@@ -962,6 +1020,14 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
                 // if need to add pause button
                 if( config.pause_button ){
+                    $('<div></div>').insertBefore($wrap.find('.vjs-poster').fadeIn() )
+                        .css({
+                            position: 'absolute',
+                            top: 0,
+                            left:0,
+                            width: '100%',
+                            height: '100%'
+                        });
                     if( !config.controls ){
                         $wrap.off('click.video-operation').on('click.video-operation' , function(){
                             if( is_playing ){
@@ -1366,9 +1432,11 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         $('[data-resize]').each(function(){
             var val = $(this).data('resize');
             val = val.split(':');
+            var height = winWidth / val[0] * val[1];
             $(this).css({
-                height: winWidth / val[0] * val[1]
+                height: height
             });
+            fixImageToWrap( $(this) , $(this).find('img') );
         });
     })
     .keyup(function( ev ){
@@ -1407,6 +1475,9 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             // show loading
             var isHomePage = ( location.pathname == '' || location.pathname == '/' || location.pathname == '/index.php' );
             loadingMgr.show( !isHomePage );
+
+            $(window).scrollTop(0);
+
             switch( type ){
                 default: 
                     $.get( location.href , '' , function( html ){
@@ -1438,6 +1509,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
                             var sttop = 0;
                             if( hash ){
+                                location.hash = hash;
                                 var $a = $('a[name="' + hash + '"]'); 
                                 sttop = $a.length && $a.offset().top - 150;
                             }

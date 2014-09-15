@@ -4,11 +4,13 @@ include_once 'common/header.php';?>
 		<!-- detail -->
 		<div class="section intoview-effect" data-effect="fadeup">
 			<div class="detail cs-clear">
-				<div class="arrows arrows2 detailprev" data-a="page-prev"></div>
+				<a href="/news.php" class="arrows arrows2 detailprev" data-a="nav-link"></a>
+				<!-- <div class="arrows arrows2 detailprev" data-a="page-prev"></div> -->
 				<div class=" detailcon">
 					<h2><?php echo Yii::t("strings", "about SHANG XIA")?></h2>
 				</div>
-				<div class="arrows arrows2 detailnext" data-a="page-next"></div>
+				<a href="/contact.php" class="arrows arrows2 detailnext" data-a="nav-link"></a>
+				<!-- <div class="arrows arrows2 detailnext" data-a="page-next"></div> -->
 			</div>
 		</div>
 		<!-- slide -->

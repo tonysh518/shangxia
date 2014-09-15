@@ -8,7 +8,7 @@ include_once 'common/header.php';?>
 				<div class=" detailcon">
 					<h2><?php echo Yii::t("strings", "PRESS")?></h2>
 
-					<a href="#" title="" class="press-lock btn btn-white transition-wrap"><span class="transition">&nbsp;&nbsp;<?php echo Yii::t("strings", "Press access")?><br/><br/>&nbsp;&nbsp;<?php echo Yii::t("strings", "Press access")?></span></a>
+					<!-- <a href="#" title="" class="press-lock btn btn-white transition-wrap"><span class="transition">&nbsp;&nbsp;<?php echo Yii::t("strings", "Press access")?><br/><br/>&nbsp;&nbsp;<?php echo Yii::t("strings", "Press access")?></span></a> -->
 				</div>
 				<div class="arrows arrows3 detailnext" data-a="page-next"></div>
 			</div>

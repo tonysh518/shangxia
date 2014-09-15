@@ -72,7 +72,8 @@
 					</div>
 					<div class="sitelinkitem sitelinkitemS intoview-effect" data-effect="fadeup">
 						<h2><?php echo Yii::t("strings", "NEWS")?></h2>
-						<a data-a="nav-link" href="/news.php"><?php echo Yii::t("strings", "news")?></a>
+						<a data-a="nav-link" style="display:none;" href="/news.php"></a>
+						<a data-a="nav-link" href="/news-detail.php"><?php echo Yii::t("strings", "news")?></a>
 						<a data-a="nav-link" href="/news-event.php"><?php echo Yii::t("strings", "events")?></a>
 						<a data-a="nav-link" href="/news-press.php"><?php echo Yii::t("strings", "press")?></a>
 					</div>
