@@ -43,6 +43,17 @@ class ProductContentAR extends ContentAR {
         );
   }
   
+  public static function getKeyWithTypeName($name) {
+    $keys = array(
+        self::TYPE_APPAREL => "apparel",
+        self::TYPE_JEWELRY => "jewelry",
+        self::TYPE_TEAWARE => "teaware",
+        self::TYPE_HOMEWARE =>  "homeware" ,
+        self::TYPE_FURNITURE =>  "furniture",
+    );
+    return array_search($name, $keys);
+  }
+  
   public static function getTypeKeyName($id) {
     $keys = array(
         self::TYPE_APPAREL => "apparel",

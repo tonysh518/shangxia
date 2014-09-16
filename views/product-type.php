@@ -10,11 +10,7 @@ else {
   exit(header("Location: /index.php"));
 }
 
-$products = getProductInTypeWithCollection(array_search($_GET["name"], ProductContentAR::getType()));
-$productsGroupWithCollection = array();
-foreach ($products as $product) {
-  $productsGroupWithCollection[$product->collection] = $product;
-}
+$productsGroupWithCollection = getProductInType(ProductContentAR::getKeyWithTypeName($_GET["name"]));
 $product_type = $_GET["name"];
 
 ?>
@@ -49,34 +45,28 @@ $product_type = $_GET["name"];
 		<!-- apparel -->
 
 <?php foreach ($productsGroupWithCollection as $collection_id => $products): ?>
-<?php $collection = CollectionContentAR::model()->findByPk($collection_id);?>
-
-<?php endforeach;?>
     
+<?php
+  $collection = CollectionContentAR::model()->findByPk($collection_id);
+?>
 	<div class="collpiclist cs-clear">
 		<div class="collarrows collarrowsprev"></div>
 		<!--  -->
 		<div class="section">
 			<div class="products ">
 				<div class="productstit collpictit_app" style="line-height: 230px;">
-					<h2 style="line-height: 20px;">the sound of tea COLLECTION<span>2010-2011</span></h2>					
+					<h2 style="line-height: 20px;"><?php echo $collection->title?><span><?php echo $collection->public_date?></span></h2>					
 				</div>	
 				<!--  -->
 				<div class="products-wrap js-horizontal-slide" data-num="3">
 					<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
 					<ul class="piclist cs-clear slide-con">
-						<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-							<img src="/images/colldemo2.jpg" width="100%" />
-							<p><span class="collicon">architecture</span></p>
-						</li>
-						<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-							<img src="/images/colldemo2.jpg" width="100%" />
-							<p><span>architecture</span></p>
-						</li>
-						<li class="piclistitem collpicitem marginR0 intoview-effect" data-effect="fadeup">
-							<img src="/images/colldemo2.jpg" width="100%" />
-							<p><span>architecture</span></p>
-						</li>
+            <?php foreach ($products as $product):?>
+              <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+                <img src="<?php echo makeThumbnail($product->thumbnail, array(412, 390))?>" width="100%" />
+                <p><span class="collicon"><?php echo $product->title?></span></p>
+              </li>
+            <?php endforeach;?>
 					</ul>
 					<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
 				</div>
@@ -85,40 +75,6 @@ $product_type = $_GET["name"];
 		<!--  -->
 		<div class="collarrows collarrowsnext"></div>
 	</div>
-
-		<!-- jewelry -->
-
-	<div class="collpiclist cs-clear" style="position:relative">
-		<!--  -->
-		<div class="section">
-			<div class="products ">
-				<div class="productstit ">
-					<h2><?php echo Yii::t("strings", "TIMELESS COLLECTIONS")?></h2>
-				</div>	
-				<!--  -->
-				<div class="products-wrap js-horizontal-slide " data-num="3">
-					<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
-					<div class="slide-con">
-						<ul class="slide-con-inner piclist cs-clear">
-							<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-								<img src="/images/colldemo3.jpg" width="100%" />
-								<p><span>view</span></p>
-							</li>
-							<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-								<img src="/images/colldemo3.jpg" width="100%" />
-								<p><span>view</span></p>
-							</li>
-							<li class="piclistitem collpicitem marginR0 intoview-effect" data-effect="fadeup">
-								<img src="/images/colldemo3.jpg" width="100%" />
-								<p><span>view</span></p>
-							</li>
-						</ul>
-					</div>
-					<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
-				</div>
-			</div>
-		</div>
-		<!--  -->
-	</div>
+<?php endforeach;?>
 
 <?php include_once 'common/footer.php';?>
