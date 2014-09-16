@@ -1466,7 +1466,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 overflow: 'hidden',
                 paddingBottom: 50
             });
-            $(this).find('.picinfortxt-inner').height( h - 100 )
+            $(this).find('.picinfortxt-inner').height( h - 150 )
                 .css('overflow' , 'hidden');
         });
 
