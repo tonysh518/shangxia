@@ -978,7 +978,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
     function renderVideo ( $wrap , mp4 , webm , poster , config , cb ){
         var id = 'video-js-' + ( $.guid++ );
-        $wrap.append( LP.format( '<div class="video-wrap"><video id="#[id]" style="width: 100%;height: 100%;" class="video-js vjs-default-skin"\
+        $wrap.append( LP.format( '<div class="video-wrap" ><video id="#[id]" style="width: 100%;height: 100%;" class="video-js vjs-default-skin"\
             preload="auto"\
               poster="#[poster]">\
              <source src="#[mp4]" type="video/mp4" />\
@@ -987,7 +987,36 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
         config = $.extend( { "controls": false, "muted": false, "autoplay": false, "preload": "auto","loop": true, "children": {"loadingSpinner": false} } , config || {} );
         var ratio = config.ratio || 9/16;
-        //config['techOrder'] = ['flash'];
+
+        var getSize = function(){
+            var w = $wrap.width()  ;
+            var h = $wrap.height() ;
+            var vh = 0 ;
+            var vw = 0 ;
+            var exp = 0;
+            if( h / w > ratio ){
+                vh = h + exp;
+                vw = vh / ratio;
+            } else {
+                vw = w + exp;
+                vh = vw * ratio;
+            }
+
+            return {
+                h: h,
+                w: w,
+                width: vw,
+                height: vh
+            }
+        }
+        var size = getSize();
+
+        config.width = size.width;
+        config.height = size.height;
+        if( window.navigator.userAgent.indexOf('Firefox') >= 0 ){
+            config['techOrder'] = ['flash'];
+        }
+        
         LP.use('video-js' , function(){
             var is_playing = false;
             videojs.options.flash.swf = "/js/video-js/video-js.swf";
@@ -995,24 +1024,27 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 var v = this;
                 if( config.resize !== false ){
                     var resizeFn = function(){
-                        var w = $wrap.width()  ;
-                        var h = $wrap.height() ;
-                        var vh = 0 ;
-                        var vw = 0 ;
-                        var exp = 0;
-                        if( h / w > ratio ){
-                            vh = h + exp;
-                            vw = vh / ratio;
-                        } else {
-                            vw = w + exp;
-                            vh = vw * ratio;
-                        }
+                        var size = getSize();
+                        try{v.dimensions( size.width , size.height );}catch(e){}
 
-                        try{v.dimensions( vw , vh );}catch(e){}
+                        // var w = $wrap.width()  ;
+                        // var h = $wrap.height() ;
+                        // var vh = 0 ;
+                        // var vw = 0 ;
+                        // var exp = 0;
+                        // if( h / w > ratio ){
+                        //     vh = h + exp;
+                        //     vw = vh / ratio;
+                        // } else {
+                        //     vw = w + exp;
+                        //     vh = vw * ratio;
+                        // }
+
+                        // try{v.dimensions( vw , vh );}catch(e){}
 
                         $('#' + v.Q).css({
-                            "margin-top": ( h - vh ) / 2,
-                            "margin-left": ( w - vw ) / 2
+                            "margin-top": ( size.h -  size.height ) / 2,
+                            "margin-left": ( size.w - size.width ) / 2
                         });
                         return false;
                     }
@@ -1022,7 +1054,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     $wrap.bind('resize.video-' + id , resizeFn);
                 }
                 setTimeout(function(){
-                    $wrap.find('.video-wrap').fadeIn();
+                    $wrap.find('.video-wrap').show();
                     if( config.autoplay ){
                         try{myVideo.play();}catch(e){}
                     } else if( config.pause_button ){
