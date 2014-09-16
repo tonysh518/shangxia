@@ -105,7 +105,7 @@
 		<div class="section">
 			<div class="products">
 				<div class="productstit intoview-effect" data-effect="fadeup">
-					<h2>SHANG XIA EVENTS</h2>
+					<h2><?php echo Yii::t("strings", "SHANG XIA EVENTS")?></h2>
 				</div>
 				<div class="productscom newsnvents">
 					<!--  -->
@@ -113,7 +113,7 @@
 					<h3 class="intoview-effect" data-effect="fadeup">shang xia maison opening </h3>
 					<h4  class="productscom-desc intoview-effect" data-effect="fadeup">2014 SEP 09</h4>
 					<p  class="productscom-desc intoview-effect" data-effect="fadeup"><i>This aurum, the SHANG XIA, maision will be opened on Hua Hai Road, Shanghai.<br />A new journey ....     <a class="more" href="#">Read more &gt;</a> </i></p>
-					<a data-a="nav-link" href="<?php echo url("news-events")?>" title="" class="btn transition-wrap intoview-effect" data-effect="fadeup"><span class="transition">View all events<br/><br/>View all events</span></a>
+					<a data-a="nav-link" href="<?php echo url("news-events")?>" title="" class="btn transition-wrap intoview-effect" data-effect="fadeup"><span class="transition"><?php echo Yii::t("strings", "View all events")?><br/><br/><?php echo Yii::t("strings", "View all events")?></span></a>
 				</div>
 			</div>
 		</div>

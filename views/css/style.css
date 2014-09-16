@@ -298,8 +298,8 @@ img.slideitem{height: auto;}
 .contactintro p{padding-bottom: 10px;}
 
 /*contactfrom*/
-.contactform .productstit{margin: 0 0 120px;height: 150px}
-.contactform .productstit h2{line-height: 40px;}
+.contactform .productstit{margin: 0 0 120px;height: 150px;}
+.contactform .productstit h2{line-height: 40px;height:auto;}
 .conformbox{width: 62%;margin: 0 auto;text-align: center;min-width: 620px;}
 .conformbox input{height: 42px;line-height: 42px;}
 .conformbox input,

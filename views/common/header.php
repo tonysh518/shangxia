@@ -26,7 +26,7 @@ require_once "inc.php";?>
 							<li data-type="crafts"><a data-a="nav-pop" data-d="type=crafts" href="javascript:;"><?php echo Yii::t("strings", "CRAFTS")?></a><img class="nav-bg" src="/images/nav-bg.jpg"/></li>
 							<li data-type="boutiques"><a data-a="nav-pop" data-d="type=boutiques" href="javascript:;"><?php echo Yii::t("strings", "BOUTIQUES")?></a><img class="nav-bg" src="/images/nav-bg.jpg"/></li>
 						</ul>
-						<h1 class="logo"><a data-a="nav-link" href="/index.php"></a></h1>
+						<h1 class="logo"><a data-a="nav-link" href="<?php echo url("index")?>"></a></h1>
 						<ul class="nav nav2">
 							<li><a data-a="nav-link" href="<?php echo url("news")?>"><?php echo Yii::t("strings", "NEWS")?></a><img class="nav-bg" src="/images/nav-bg.jpg"/></li>
 							<li><a data-a="nav-link" href="<?php echo url("about")?>"><?php echo Yii::t("strings", "ABOUT")?></a><img class="nav-bg" src="/images/nav-bg.jpg"/></li>
@@ -42,8 +42,8 @@ require_once "inc.php";?>
 					</div>
 				</div>
 				<div class="searchform">
-					<form action="/search.php" class="section cs-clear">
-						<input type="text" placeholder="<?php echo Yii::t("strings" ,"SEARCH DEMO")?>" name="s" value="">
+					<form action="<?php echo Yii::t("strings", "search")?>" class="section cs-clear">
+						<input type="text" placeholder="<?php echo Yii::t("strings" ,"ENTER YOUR SEARCH")?>" name="s" value="">
 						<button><?php echo Yii::t("strings" ,"SEARCH")?></button>
 					</form>
 				</div>

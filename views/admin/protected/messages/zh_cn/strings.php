@@ -120,33 +120,33 @@ return array(
     "CONTACT" => "联系「上下」",
     "SEARCH" => "搜索",
     "SEARCH DEMO" => "搜索示例",
-    "home_brand_story" => "SHANG XIA, CHINESE FINE LIVING",
+    "home_brand_story" => "「上下」,东方雅致生活",
     "Brand story" => "品牌故事",
     "Bamboo Weaving" => "竹丝扣瓷",
     "Cashmere Felt" => "羊绒毡",
     "Eggshell Porcelain" => "薄胎瓷",
     "Zitan" => "紫檀",
     "Bamboo Weaving" => "竹丝扣瓷",
-    "Watch video" => "观看视频",
-    "Pause video" => "暂停视频",
+    "Watch video" => "观赏视频",
+    "Pause video" => "暂停",
     "Shanghai" => "上海",
     "Paris" => "法国",
     "Beijing" => "北京",
-    "{city} Store" => "{city} 零售空间",
+    "{city} boutiquue" => "{city} 零售空间",
     "news" => "新闻",
-    "events" => "活动",
-    "press" => "杂志",
+    "events" => "活动信息",
+    "press" => "媒体",
     "JOIN SHANG XIA" => "加入「上下」",
     "brand story" => "品牌故事",
     "weixin" => "微信",
     "weibo" => "微博",
-    "subscribe to shang xia newsletter" => "订阅「上下」电子报",
-    "SUBSCRIBE TO <br/> SHANG XIA NEWSLETTER" => "订阅「上下」电子报",
+    "subscribe to shang xia newsletter" => "订阅电子报",
+    "SUBSCRIBE TO <br/> SHANG XIA NEWSLETTER" => "订阅电子报",
     "To receive updates about SHANGXIA, <br/> please provide the following information" => "提供下面资料以便收到最新「上下」信息",
     "YOUR NAME" => "您的名字",
     "YOUR EMAIL" => "您的邮件",
     "YOUR PHONE" => "您的电话",
-    "SEND" => "提交",
+    "SEND" => "寄出",
     "KNOW - HOW" => "艺",
     "Choice of timber" => "选材",
     "choice_of_timber_desc" => "紫檀极珍贵，百年不能成材，一棵紫檀木要生长几百年以后才能够使用。<br/>十檀九空，紫檀的取材率极低，一块木料只有百分之十几可用。极稀有的紫檀，能触摸到手，已是难得的缘分。木工师傅依板样裁切所需要的木材。每一个部件，都用纸板裁切了板样，搭脑、扶手、靠背、牙条、管脚枨……一把最简单的明式南官帽椅，就有四十二个组件组成。据说，明清时期用高级硬木家具在制作上都讲究每一个组件解自同一棵树。也由于紫檀的珍贵，裁切师傅需要用最合理的使用来使木尽其材，每一块木材，需要找到匹配它尺寸的部件。",
@@ -239,13 +239,59 @@ return array(
     "CRAFTS" => "「上下」工艺",
     "related products" => "相关产品",
     "other crafts" => "其他工艺",
-    "find us" => "找到我们",
     "shang xia news" => "「上下」新闻",
     "older news" => "新闻回顾",
-    "View all news" => "所有新闻",
-    "View all  press articles" => "所有杂志报道",
+    "View all news" => "所有消息",
+    "View all  press articles" => "媒体报道",
+    "View all events" => "所有活动",
+    "SHANG XIA EVENTS" => "相关活动",
     "Press" => "杂志",
-    );
+    "find us" => "联系我们",
+    "contact" => "联系我们",
+    
+    "contact_shanghai" => "<h3>上海零售空间</h3>
+								<p>1F,South Tower, Hong Kong Plaza, 283 Huaihai Middle Rd, Shanghai, 200021, China</p>
+								<p>+86-21-6390 8899</p>",
+    
+    "contact_beijing" => "<h3>北京零售空间</h3>
+								<p>SB107B, B1 China World Mall, China World Trade Center 1, Jianguomen Waidajie, Beijing, 100001, China</p>
+								<p>+86-10-6505-7358</p>",
+    
+    "contact_paris" => "<h3>巴黎零售空间</h3>
+								<p>8 Sèvres Road, 75006 Paris, France</p>
+								<p>+33-1-42-22-53-62</p>",
+    
+    "apparel" => "服饰与配饰",
+    "jewelry" => "珠宝与首饰",
+    "teaware" => "茶具",
+    "homeware" => "家饰",
+    "furniture" => "家具",
+    
+    "contact_form_title" => "请email「上下」以获取更多消息",
+    
+    "NAME" => "姓名",
+    "EMAIL" => "邮件",
+    "MESSAGE" => "消息",
+    "contact_form_footer_tip" => '订阅「上下」电子报.  隐私保护政策',
+    
+    "read" => "阅读",
+    
+    "shang xia is now opening <br/> its maison in shanghai" => "「上下」之家即将开幕",
+    
+    "THE FIRST SHANG XIA BAG" => "「上下」第一款包袋",
+    
+    "GIFT CORNER" => "赠礼专区",
+    
+    "Read more" => "更多讯息",
+    
+    "Apply" => "我有兴趣",
+    
+    "Load more" => "下载中",
+    
+    "SEARCH" => "搜寻",
+    "ENTER YOUR SEARCH" => "搜寻",
+    
+);
 
 
 
