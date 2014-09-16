@@ -291,6 +291,7 @@ return array(
     "SEARCH" => "搜寻",
     "ENTER YOUR SEARCH" => "搜寻",
     
+    "collections" => "系列",
 );
 
 
