@@ -88,7 +88,7 @@ $pagename = 'product-detail';
           <?php ?>
           <?php endif;?>
 				</div>
-				<a data-a="nav-link" href="<?php echo "/collections.php?cid=". $product->collection?>" class="btn transition-wrap" ><span class="transition"><?php echo Yii::t("strings", "View more")?><br/><br/><?php echo Yii::t("strings", "View more")?></span></a>
+				<a data-a="nav-link" href="<?php echo url("collections", array('cid' =>$product->collection ))?>" class="btn transition-wrap" ><span class="transition"><?php echo Yii::t("strings", "View more")?><br/><br/><?php echo Yii::t("strings", "View more")?></span></a>
 			</div>
 		</div>
     <?php endif;?>
