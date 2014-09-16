@@ -43,6 +43,30 @@ class ProductContentAR extends ContentAR {
         );
   }
   
+  public static function getTypeKeyName($id) {
+    $keys = array(
+        self::TYPE_APPAREL => "apparel",
+        self::TYPE_JEWELRY => "jewelry",
+        self::TYPE_TEAWARE => "teaware",
+        self::TYPE_HOMEWARE =>  "homeware" ,
+        self::TYPE_FURNITURE =>  "furniture",
+    );
+    
+    return $keys[$id];
+  }
+  
+  public static function isType($name) {
+    $keys = array(
+        self::TYPE_APPAREL => "apparel",
+        self::TYPE_JEWELRY => "jewelry",
+        self::TYPE_TEAWARE => "teaware",
+        self::TYPE_HOMEWARE =>  "homeware" ,
+        self::TYPE_FURNITURE =>  "furniture",
+    );
+    if (array_search($name,$keys) !== FALSE) return TRUE;
+  }
+
+
   public function getImageFields() {
     $this->hasImageField("product_slide_image", array("multi" => TRUE));
     $this->hasImageField("video_poster");

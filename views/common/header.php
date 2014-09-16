@@ -51,7 +51,7 @@ require_once "inc.php";?>
 					<div class="nav-pop-inner">
 						<div class="nav-pop-nav">
               <?php foreach (ProductContentAR::getType() as $id => $name):  ?>
-              <p><a href="<?php echo url("product-type", array("name" => $name))?>"><?php echo ucfirst($name)?> &gt;</a></p>
+              <p><a href="<?php echo url("product-type", array("name" => ProductContentAR::getTypeKeyName($id)))?>"><?php echo ucfirst($name)?> &gt;</a></p>
               <?php endforeach;?>
 						</div>
 						<div class="nav-pop-wrap">

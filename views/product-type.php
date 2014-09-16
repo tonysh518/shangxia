@@ -2,7 +2,7 @@
 
 if (isset($_GET["name"])) {
   require_once 'common/inc.php';
-  if (array_search($_GET["name"], ProductContentAR::getType()) === FALSE) {
+  if (ProductContentAR::isType($_GET["name"]) === FALSE) {
     exit(header("Location: /index.php"));
   }
 }
@@ -15,6 +15,7 @@ $productsGroupWithCollection = array();
 foreach ($products as $product) {
   $productsGroupWithCollection[$product->collection] = $product;
 }
+$product_type = $_GET["name"];
 
 ?>
 
@@ -30,8 +31,18 @@ foreach ($products as $product) {
 			</div>
 		</div>
 		<!-- slide -->
-		<div class="banner scroll-lowheight" >
-			<img class="scroll-lowheight-item" src="/photo/collection-apparels.jpg" width="100%" />
+		<div class="banner scroll-lowheight" name="<?php echo $product_type?>">
+      <?php if ($product_type == "apparel"): ?>
+        <img class="scroll-lowheight-item" src="/photo/collection-apparels.jpg" width="100%" />
+      <?php elseif ($product_type == "jewelry"): ?>
+        <img class="scroll-lowheight-item" src="/photo/collection-jewelry.jpg" width="100%" />
+      <?php elseif ($product_type == "teaware"): ?>
+        <img class="scroll-lowheight-item" src="/photo/product_type-teaware.jpg" width="100%" />
+      <?php elseif ($product_type == "homeware"): ?>
+        <img class="scroll-lowheight-item" src="/photo/product_type-homeware.jpg" width="100%" />
+      <?php else : ?>
+        <img class="scroll-lowheight-item" src="/photo/product_type-furniture.jpg" width="100%" />
+      <?php endif;?>
 		</div>
 		<!-- barbg -->
 		<div class="barbg"></div>
