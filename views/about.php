@@ -47,8 +47,10 @@ include_once 'common/header.php';?>
 				<div class="productscom">
 					<div class="productsinfor cs-clear">
 						<div class="proinfortxt aboutinfortxt bg-fef8f4 intoview-effect" data-effect="fadeup">
+							<div class="proinfortxt-inner">
 							<!-- <h2> </h2> -->
 							<p><?php echo Yii::t("strings", "about_brand_founter_desc")?></p>
+							</div>
 							<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition"><?php echo Yii::t("strings", "Read more")?><br><br><?php echo Yii::t("strings", "Read more")?></span></a>
 							<textarea style="display:none;"><?php echo Yii::t("strings", "about_brand_founter_desc")?></textarea>
 						</div>

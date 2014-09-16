@@ -42,10 +42,10 @@ $pagename = 'product-detail';
 		<!--  -->
 		<!-- video -->
     <?php if ($product->product_slide_image): ?>
-      <div class="slide">
+      <div data-resize="1600:560" class="slide">
         <div class="slidebox cs-clear">
           <?php foreach (($product->product_slide_image) as $slide_image):?>
-            <div data-resize="1600:560" class="slideitem"><img src="<?php echo $slide_image?>" width="100%" /></div>
+            <div class="slideitem"><img src="<?php echo $slide_image?>" width="100%" /></div>
           <?php endforeach;?>
         </div>
         <ul class="slidetab cs-clear">

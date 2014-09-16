@@ -1473,7 +1473,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         $('.aboutinfortxt').each(function(){
             var h = $(this).next('.proinforpic').height();
             $(this).height( h - 80 )
-                .find('p')
+                .find('.picinfortxt-inner')
                 .css({
                     height: h - 280,
                     marginBottom: 40

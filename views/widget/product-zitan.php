@@ -6,9 +6,11 @@
 				<div class="productscom">
 					<div class="productsinfor cs-clear">
             <div class="proinfortxt aboutinfortxt intoview-effect related-product" data-effect="fadeup" style="background-color: #f6f2e7;">
+            		<div class="proinfortxt-inner">
 							<h2><?php echo Yii::t("strings", "Close to the Universe")?></h2>
-              <?php echo Yii::t("strings", "Close to the Universe Desc")?>
-              <a href="#" data-a="show-pop" class="btn transition-wrap"><span class="transition">Read more<br><br>Read more</span></a>
+              				<?php echo Yii::t("strings", "Close to the Universe Desc")?>
+              		</div>
+              <a href="#" data-a="show-pop" class="btn transition-wrap"><span class="transition"><?php echo Yii::t("strings", "read more")?><br><br><?php echo Yii::t("strings", "read more")?></span></a>
 							<textarea style="display:none;">
 								<h2>Close to the Universe</h2>
 								<div class="popcontxt">

@@ -6,12 +6,14 @@
 				<div class="productscom">
 					<div class="productsinfor cs-clear">
 						<div class="proinfortxt aboutinfortxt intoview-effect related-product" data-effect="fadeup" style='background:#f6eeee;'>
+							<div class="proinfortxt-inner">
 							<h2>HAND SCULPTURE CLOTHING</h2>
               <p>
 Felt making is an ancient technique invented by herdsman to make non-woven cloth. Herdsmen use felt to make their rugs, yurts, clothing and cooking utensils. As nomadic peoples used these skills used to make yurts, the same skills, combined with original innovative designs, are used to create seamless felted cashmere one-off and unique 
 garments with no stitchingFelt making is an ancient technique invented by herdsman to make non-woven cloth. 
 Herdsmen use felt to make their rugs, yurts, clothing and cooking utensils. </p>
-							<a href="#" data-a="show-pop" class="btn transition-wrap"><span class="transition">Read more<br><br>Read more</span></a>
+</div>
+							<a href="#" data-a="show-pop" class="btn transition-wrap"><span class="transition"><?php echo Yii::t("strings", "read more")?><br><br><?php echo Yii::t("strings", "read more")?></span></a>
 							<textarea style="display:none;">
 								<h2>HAND SCULPTURE CLOTHING</h2>
 								<div class="popcontxt">
@@ -21,7 +23,6 @@ Most felt is made from wool, but SHANG XIA, together with Mongolian felt making 
                   <p>Kneading and rubbing, again and again, the felt makers do the job in a completely relaxed manner. To them, the process is as simple as zen.</p>
 </div>
 							</textarea>
-              
 						</div>
 						<div class="proinforpic intoview-effect" data-effect="fadeup" data-effect-delay="400">
 							<div class="slide">
