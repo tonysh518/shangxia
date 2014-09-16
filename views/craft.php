@@ -19,7 +19,7 @@ include_once 'common/header.php';?>
 			<div class="detail cs-clear">
 				<h2 class="intoview-effect" data-effect="fadeup"><?php echo $loadedCraft->craft_title?></h2>
 				<div class=" detailcon js-horizontal-slide intoview-effect" data-effect="fadeup" data-num="1" style="margin:0 auto 35px;float:none;">
-					<div class="collarrows collarrowsprev arrows4" data-a="collarrowsprev"></div>
+					<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
 					<div class="slide-con">
 						<ul class="slide-con-inner cs-clear">
 							<li style="float:left;">
@@ -30,7 +30,7 @@ include_once 'common/header.php';?>
 							</li>
 						</ul>
 					</div>
-					<div class="collarrows collarrowsnext arrows4" data-a="collarrowsnext"></div>
+					<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
 				</div>
 			</div>
 		</div>
@@ -94,7 +94,10 @@ include_once 'common/header.php';?>
 								<h2><?php echo $product->title?></h2>
                 <p><?php echo $product->body?></p>
 							</div>
-							<a href="#"><?php echo Yii::t("strings", "read more")?></a>
+							<a href="#" data-a="show-pop" class="btn transition-wrap"><span class="transition"><?php echo Yii::t("strings", "read more")?><br><br><?php echo Yii::t("strings", "read more")?></span></a>
+							<textarea style="overflow:hidden;">
+								<p><?php echo $product->body?></p>
+							</textarea>
 						</div>
 						<div class="proinforpic intoview-effect" data-effect="fadeup">
 							<div class="slide">

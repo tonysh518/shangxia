@@ -6,16 +6,18 @@
 				<div class="productscom">
 					<div class="productsinfor cs-clear">
 						<div class="proinfortxt aboutinfortxt intoview-effect related-product" data-effect="fadeup" style='background-color: #edf3f3;'>
+							<div class="proinfortxt-inner">
               <h2><?php echo Yii::t("strings", "Thin and Beautiful <br> Rare Perfection")?></h2>
               <?php echo Yii::t("strings", "Thin and Beautiful <br> Rare Perfection Desc")?>
-              
-							<a href="#" data-a="show-pop" class="btn transition-wrap"><span class="transition">Read more<br><br>Read more</span></a>
+              	</div>
+							<a href="#" data-a="show-pop" class="btn transition-wrap"><span class="transition"><?php echo Yii::t("strings", "read more")?><br><br><?php echo Yii::t("strings", "read more")?></span></a>
 							<textarea style="display:none;">
 								<h2><?php echo Yii::t("strings", "Thin and Beautiful <br> Rare Perfection")?></h2>
 								<div class="popcontxt">
                   <?php echo Yii::t("strings", "Thin and Beautiful <br> Rare Perfection Desc")?>
                 </div>
 							</textarea>
+
 						</div>
 						<div class="proinforpic intoview-effect" data-effect="fadeup" data-effect-delay="400">
 							<div class="slide">

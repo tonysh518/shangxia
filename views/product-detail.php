@@ -37,15 +37,15 @@ $pagename = 'product-detail';
 					<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
 				</div>
 			</div>
-			<a href="#" style="margin-top:0;margin-bottom:100px;" class="btn transition-wrap" data-id="<?php echo $product->cid?>" data-d="product=<?php echo $product->cid?>" data-a="i-want-to-buy"><span class="transition"><?php echo Yii::t("strings", "I Want To Buy")?><br/><br/><?php echo Yii::t("strings", "I Want To Buy")?></span></a>
+			<a href="#" style="margin-bottom:100px;" class="btn transition-wrap" data-id="<?php echo $product->cid?>" data-d="product=<?php echo $product->cid?>" data-a="i-want-to-buy"><span class="transition"><?php echo Yii::t("strings", "I Want To Buy")?><br/><br/><?php echo Yii::t("strings", "I Want To Buy")?></span></a>
 		</div>
 		<!--  -->
 		<!-- video -->
     <?php if ($product->product_slide_image): ?>
-      <div class="slide">
+      <div data-resize="1600:560" class="slide">
         <div class="slidebox cs-clear">
           <?php foreach (($product->product_slide_image) as $slide_image):?>
-            <div data-resize="1600:560" class="slideitem"><img src="<?php echo $slide_image?>" width="100%" /></div>
+            <div class="slideitem"><img src="<?php echo $slide_image?>" width="100%" /></div>
           <?php endforeach;?>
         </div>
         <ul class="slidetab cs-clear">
