@@ -18,13 +18,10 @@ include_once 'common/header.php';?>
 		<div class="section ">
 			<div class="detail cs-clear">
 				<h2 class="intoview-effect" data-effect="fadeup"><?php echo $loadedCraft->craft_title?></h2>
-				<div class=" detailcon js-horizontal-slide intoview-effect" data-effect="fadeup" data-num="1" style="margin:0 auto 35px;float:none;">
+				<div class=" detailcon js-horizontal-slide intoview-effect" data-split="1" data-effect="fadeup" data-num="1" style="margin:0 auto 35px;float:none;">
 					<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
 					<div class="slide-con">
 						<ul class="slide-con-inner cs-clear">
-							<li style="float:left;">
-								<p><?php echo $loadedCraft->body?></p>
-							</li>
 							<li style="float:left;">
 								<p><?php echo $loadedCraft->body?></p>
 							</li>

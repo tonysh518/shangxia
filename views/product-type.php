@@ -18,7 +18,7 @@ $product_type = $_GET["name"];
   <?php include_once 'common/header.php';?>
 		<!-- detail -->
 		<div class="section ">
-			<div class="detail cs-clear">
+			<div class="detail cs-clear intoview-effect" data-effect="fadeup">
 				<div class="arrows arrows2 detailprev" data-a="page-prev"></div>
 				<div class=" detailcon">
 					<h2><?php echo Yii::t("strings", "SHANG XIA ". $_GET["name"])?></h2>
@@ -27,7 +27,7 @@ $product_type = $_GET["name"];
 			</div>
 		</div>
 		<!-- slide -->
-		<div class="banner scroll-lowheight" name="<?php echo $product_type?>">
+		<div class="banner scroll-lowheight intoview-effect" data-effect="fadeup" name="<?php echo $product_type?>">
       <?php if ($product_type == "apparel"): ?>
         <img class="scroll-lowheight-item" src="/photo/collection-apparels.jpg" width="100%" />
       <?php elseif ($product_type == "jewelry"): ?>
@@ -41,7 +41,7 @@ $product_type = $_GET["name"];
       <?php endif;?>
 		</div>
 		<!-- barbg -->
-		<div class="barbg" style="margin-bottom: -50px;"></div>
+		<div class="barbg intoview-effect" data-effect="fadeup" style="margin-bottom: -50px;"></div>
 		<!-- apparel -->
 
 <?php foreach ($productsGroupWithCollection as $collection_id => $products): ?>
@@ -54,13 +54,14 @@ $product_type = $_GET["name"];
 		<!--  -->
 		<div class="section">
 			<div class="products ">
-				<div class="productstit collpictit_app" style="line-height: 230px;">
+				<div class="productstit collpictit_app intoview-effect" data-effect="fadeup" style="line-height: 230px;">
 					<h2 style="line-height: 1em;padding-top:70px;"><?php echo $collection->title?><span><?php echo $collection->public_date?></span></h2>					
 				</div>	
 				<!--  -->
 				<div class="products-wrap js-horizontal-slide" data-num="3">
 					<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
-					<ul class="piclist cs-clear slide-con">
+					<div class="slide-con">
+					<ul class="piclist cs-clear slide-con-inner">
             <?php foreach ($products as $product):?>
               <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
                 <img src="<?php echo makeThumbnail($product->thumbnail, array(412, 390))?>" width="100%" />
@@ -68,6 +69,7 @@ $product_type = $_GET["name"];
               </li>
             <?php endforeach;?>
 					</ul>
+				</div>
 					<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
 				</div>
 			</div>

@@ -245,6 +245,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 loadingMgr.hide( function(){
                     $(window).trigger('resize')
                         .trigger('scroll');
+                    window.LOADING = false;
                 } );
             } , function( index , total ){
                 loadingMgr.process( index , total , function( percent ){
@@ -336,9 +337,13 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                                     .remove();
                             } );
                         });
+                    
+
 
                     $(window).trigger('resize')
-                        .scrollTop(0);;
+                        .scrollTop(0);
+
+                    window.LOADING = false;
                 } );
             } , function( index , total ){
 
@@ -391,6 +396,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 },  undefined , urls[0] );
             },
             init: function(){
+                window.LOADING = true;
                 loadingMgr.start();
                 $('.footer .store-wrap').show();
                 var page = $('.head').data('page');
@@ -479,6 +485,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 var navPopHoverShowTimer = null;
                 // init nav hover effect
                 $('.nav1 li').hover(function(){
+                    if( window.LOADING ) return;
                     var $li = $(this);
                     clearTimeout( navPopHoverShowTimer );
                     navPopHoverShowTimer = setTimeout(function(){
@@ -537,6 +544,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                             $li.clone()
                                 .appendTo( $li.parent() )
                                 .children('div')
+                                .append( i == len - 1 ? '<br/><br/><br/><br/><br/>' : '' )
                                 .scrollTop( i * 5 * lineHeight );
                         }
                     }

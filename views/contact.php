@@ -2,7 +2,7 @@
 		<!-- detail -->
 		<div class="section intoview-effect" data-effect="fadeup">
 			<div class="detail cs-clear">
-				<a href="/about.php" class="arrows arrows2 detailprev" data-a="nav-link"></a>
+				<a href="/about" class="arrows arrows2 detailprev" data-a="nav-link"></a>
 				<!-- <div class="arrows arrows2 detailprev" data-a="page-prev"></div> -->
 				<div class=" detailcon">
 					<h2><?php echo Yii::t("strings", "contact")?></h2>
