@@ -2015,7 +2015,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     // 多语言切换
     LP.action('chang-lang' , function(){
         LP.setCookie( "lang", $(this).data("lang") );
-        LP.reload();
+        window.location.href="/";
     });
 
     LP.action('search-type' , function( data ){
