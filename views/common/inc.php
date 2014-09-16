@@ -329,7 +329,23 @@ function searchWithKeyword($keyword) {
          $query->addInCondition("cid", $cidArray);
          $rets += $ar->findAll($query);
       }
-     return $rets;
+      
+      // 然后搜索产品
+     $sql = "SELECT * FROM content where type='product' AND language='".$language."'";
+     $keyword = addslashes($keyword);
+     $sql .= " AND ( title COLLATE UTF8_GENERAL_CI like binary '%".strtolower($keyword)."%' OR body COLLATE UTF8_GENERAL_CI like binary '%".  strtolower($keyword)."%') ";
+     $query = Yii::app()->db->createCommand($sql);
+     $rows = $query->queryAll();
+     $cids = array();
+     
+     foreach ($rows as $row) {
+       $cids[] = $row["cid"];
+     }
+     $query = new CDbCriteria();
+     $query->addInCondition("cid", $cids);
+     $products = ProductContentAR::model()->findAll($query);
+     
+     return array_merge($rets, $products);
    }
 }
 

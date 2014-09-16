@@ -62,13 +62,14 @@ $pagename = 'product-detail';
 		
 		<!-- collpiclist -->
     <?php if ($product->craft):?>
-		<div class="section">
+    <?php $craft = CraftContentAR::model()->findByPk($product->craft);?>
+		<div class="section p-craft">
 			<div class="knowhow">
 				<div class="knowhowtit coll_video">
-					<h2><?php echo $product->video_title?></h2>
+					<h2><?php echo $craft->craft_title?></h2>
 				</div>
 				<div class="coll_videocom ">
-          <p><?php echo $product->video_description?></p>
+          <div class="pcb"><?php echo $craft->body?></div>
           <?php if (is_weaving($product->craft)): ?>
             <div class="video" data-video-render="1" data-mp4="/video/Bamboo_Weaving_竹丝扣瓷_30s_1.mp4" data-webm="Bamboo_Weaving_竹丝扣瓷_30s_1.webm" >
               <img src="/photo/video2.jpg" width="100%" />

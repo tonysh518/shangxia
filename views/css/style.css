@@ -579,4 +579,10 @@ body .vjs-default-skin .vjs-big-play-button:focus{box-shadow: none;}
   background-color: #f9f4f4;
 }
 
+.p-craft .knowhowtit h2 {
+  line-height: 50px;
+}
 
+.p-craft .pcb {
+  margin-bottom: 50px;
+}
