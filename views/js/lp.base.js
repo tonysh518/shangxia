@@ -4,9 +4,9 @@
 LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     'use strict'
 
-    LP.use('smoothscroll' , function(){
-        $(document.body).smoothScroll();
-    });
+    // LP.use('smoothscroll' , function(){
+    //     $('html,body').smoothScroll();
+    // });
 
     // page components here
     // ============================================================================ 
@@ -889,6 +889,9 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     .siblings()
                     .removeClass('on');
 
+
+                start_time = +new Date();
+
                 var index = $(this).index();
                 $slidebox.stop(true).animate({
                     marginLeft: - index * 100 + '%'
@@ -897,16 +900,18 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 return false;
             });
         }
+        var start_time = 0;
 
         if( $wrap.data('auto') !== false ){
-            setInterval(function(){
+            $wrap.data('interval' , setInterval(function(){
+                if( new Date() - start_time < 4000 ) return;
                 var $next = $slidetabs.filter('.on').next();
                 if( $next.length ){
                     $next.trigger('click');
                 } else {
                     $slidetabs.eq(0).trigger('click');
                 }
-            } , 5000);
+            } , 5000) );
         }
     }
 
@@ -1025,6 +1030,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 if( config.resize !== false ){
                     var resizeFn = function(){
                         var size = getSize();
+                        console.log( size );
                         try{v.dimensions( size.width , size.height );}catch(e){}
 
                         // var w = $wrap.width()  ;
@@ -1041,7 +1047,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                         // }
 
                         // try{v.dimensions( vw , vh );}catch(e){}
-
+                        console.log( v.Q );
                         $('#' + v.Q).css({
                             "margin-top": ( size.h -  size.height ) / 2,
                             "margin-left": ( size.w - size.width ) / 2
@@ -1456,8 +1462,12 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         $('.proinfortxt').each(function(){
             var h = $(this).next('.proinforpic').height();
             $(this).height( h );
-            $(this).find('.proinfortxt-inner').height( h - 100 )
-                .css('overflow' , 'hidden');
+            $(this).find('.proinfortxt-inner')
+                .css({
+                    marginBottom: 30,
+                    overflow: 'hidden',
+                    height: h - 220
+                });
         });
 
         $('.picinfortxt').each(function(){
@@ -1466,7 +1476,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 overflow: 'hidden',
                 paddingBottom: 50
             });
-            $(this).find('.picinfortxt-inner').height( h - 150 )
+            $(this).find('.picinfortxt-inner').height( h - 100 )
                 .css('overflow' , 'hidden');
         });
 

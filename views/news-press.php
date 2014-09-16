@@ -4,13 +4,13 @@ include_once 'common/header.php';?>
 		<!-- newscrumbs -->
 		<div class="section intoview-effect" data-effect="fadeup" style="opacity: 1; margin-top: 0px;">
 			<div class="detail cs-clear">
-				<div class="arrows arrows3 detailprev" data-a="page-prev"></div>
+				<div class="arrows arrows2 detailprev" data-a="page-prev"></div>
 				<div class=" detailcon">
 					<h2><?php echo Yii::t("strings", "PRESS")?></h2>
 
 					<!-- <a href="#" title="" class="press-lock btn btn-white transition-wrap"><span class="transition">&nbsp;&nbsp;<?php echo Yii::t("strings", "Press access")?><br/><br/>&nbsp;&nbsp;<?php echo Yii::t("strings", "Press access")?></span></a> -->
 				</div>
-				<div class="arrows arrows3 detailnext" data-a="page-next"></div>
+				<div class="arrows arrows2 detailnext" data-a="page-next"></div>
 			</div>
 		</div>
 

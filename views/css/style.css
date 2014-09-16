@@ -96,6 +96,8 @@ a{text-decoration:none;outline: none;color:inherit;}
 .btn-white{border-color: white;color: white!important;}
 
 .bg-fef8f4{background: #fef8f4 !important;}
+
+.c_9e927a {color:#9e927a;}
 /* Commonly Used
 ================================================================================================= */
 
@@ -152,7 +154,8 @@ img.slideitem{height: auto;}
 .piclistitem img:hover{opacity: 0.9;}
 
 /*footer*/
-.store-wrap{background: #f4f4f4;padding-top: 50px;}
+.footer{margin-top: 100px;}
+.store-wrap{background: #f4f4f4;padding: 50px 0;}
 .footer-bottom{background: #eaebea;padding-top: 60px;}
 /*location*/
 .location{padding:66px 0 0 ;margin: 50px; background: white;}
@@ -161,7 +164,6 @@ img.slideitem{height: auto;}
 .rangebtn{font-size: 18px;border:#6c0e0e solid 1px;display: block;margin: 20px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px;color:#910000 !important;}
 
 /*store*/
-.store{padding:0 0 110px;}
 .storechoose{float: left;width: 50%;text-align: center;}
 .storechoose h2{font-size: 30px; text-transform : uppercase;padding: 60px 0 20px;font-family: "Gotham Book";color:#4b3700;}
 .storechoose p{font-size: 18px;width: 78%;margin: 0 auto;font-family: Garamond;}
@@ -179,7 +181,7 @@ img.slideitem{height: auto;}
 .sitelinkitemXS{width: 20%;margin-right: -10%;margin-left: 3%;}
 .sitelinkitem h2{font-size: 18px;padding:0 0 10px;font-family: "Gotham Book";font-weight: bold;}
 .sitelinkitem a{display: block;line-height: 32px;font-family: 'Gotham Light';}
-.sitelinkitemXS a{float: left;width: 30px;height: 22px;margin-right: 10px;overflow: hidden;line-height: 500em}
+.sitelinkitemXS a{float: left;width: 30px;height: 22px;margin-right: 10px;overflow: hidden;}
 .ft_wx{background: url('../images/footer_wx.png') no-repeat;}
 .ft_wb{background: url('../images/footer_wb.png') no-repeat;}
 
@@ -242,7 +244,6 @@ img.slideitem{height: auto;}
 .newsitem p{background: #fff;color:#4b3700  ;height: 80px;}
 
 /*othercraf*/
-.othercraf{padding-bottom:100px;}
 /*.othercraftit h2{width: 320px;margin-left: -160px;}*/
 .othercrafcom p{padding: 20px 0}
 
@@ -253,6 +254,9 @@ img.slideitem{height: auto;}
 .picinfortxt p{font-family: Garamond;padding-top: 20px;padding-right: 50px;}
 .picinfortxt p strong{font-weight: normal;}
 .picinforpic{float: right;width: 66.4%;overflow: hidden;}
+
+
+.proinfortxt-inner{text-align: center;}
 
 /*newsolder*/
 .newsoldertime{height: 90px;line-height: 90px;text-align: center;position: relative;margin-left: 0;}
@@ -271,7 +275,6 @@ img.slideitem{height: auto;}
 .newsnvents a.more{text-decoration: underline;}
 
 /*press*/
-.press{padding-bottom: 80px;}
 /*.press .productstit h2{width: 180px;margin-left: -90px;}*/
 .pressitem{width: 24.4%;margin-right: 0.8%;}
 .pressitem p{background: #fff;color:#4b3700;}
@@ -292,14 +295,14 @@ img.slideitem{height: auto;}
 .findus .storemap{width: 65%;}
 
 /*contactpic*/
-.contactpic{padding: 40px 0}
+.contactpic{padding: 40px 0 0;}
 .contactintro{font-family: "Gotham Book";}
 .contactintro h3{font-weight: bold;text-transform: uppercase;padding:0 0 18px;color:#4b3700;}
 .contactintro p{padding-bottom: 10px;}
 
 /*contactfrom*/
 .contactform .productstit{margin: 0 0 120px;height: 150px}
-.contactform .productstit h2{line-height: 40px;}
+.contactform .productstit h2{line-height: 1.2em;height: auto;}
 .conformbox{width: 62%;margin: 0 auto;text-align: center;min-width: 620px;}
 .conformbox input{height: 42px;line-height: 42px;}
 .conformbox input,
@@ -322,8 +325,8 @@ img.slideitem{height: auto;}
 .collpictit2 h2{width: 300px;margin-left: -150px;}*/
 
 .collarrows{position: absolute;left: -10%;height: 100%;width: 10%;top: 0; cursor: pointer;}
-.collarrowsprev{background: url('../images/detailprev.png') no-repeat center 30%;}
-.collarrowsnext{background: url('../images/detailnext.png') no-repeat center 30%;left: 100%;}
+.collarrowsprev{background: url('../images/detailprev.png') no-repeat center 35%;}
+.collarrowsnext{background: url('../images/detailnext.png') no-repeat center 35%;left: 100%;}
 .collcon{float: left;}
 
 /*colllisticon*/
@@ -404,7 +407,7 @@ img.slideitem{height: auto;}
 /*.abouttit h2{width: 840px;margin-left: -420px}
 .about2tit h2{width: 480px;margin-left: -240px}*/
 /*.jobstit h2{width: 180px;margin-left: -90px}*/
-.jobsitem{float: left;width: 32.5%;margin-right: 0.8%;font-size:18px;height: 250px;text-align: center;}
+.jobsitem{float: left;width: 32.5%;margin-right: 0.8%;font-size:18px;height: 230px;text-align: center;}
 .jobsitem h3{font-size: 18px;height: 60px;text-transform: uppercase;font-family: 'Gotham Light';color:#4b3700;}
 .jobsitem p{font-family: 'Garamond';height: 80px}
 .jobsitem a{font-size: 18px;border:#000 solid 1px;display: block;margin: 12px auto;text-align: center;width: 250px;height: 62px;line-height: 62px;max-width: 80%;font-family: Garamond;}
@@ -531,7 +534,7 @@ body .vjs-default-skin .vjs-big-play-button:focus{box-shadow: none;}
 
 
 .inout-effect{overflow: hidden;position: relative;}
-.inout-bg{position: absolute;top:100%;left:0 ;width: 100%;height: 100%;opacity: 0.4;background: #000;z-index: 0;}
+.inout-bg{position: absolute;top:100%;left:0 ;width: 100%;height: 100%;opacity: 0.4; filter:alpha(opacity=40);background: #000;z-index: 0;}
 
 .story_summary {margin-bottom: 5em;}
 
@@ -579,4 +582,5 @@ body .vjs-default-skin .vjs-big-play-button:focus{box-shadow: none;}
   background-color: #f9f4f4;
 }
 
+/*.collection-page .collarrowsnext,.collection-page .collarrowsprev{background-position: center 30%;}*/
 

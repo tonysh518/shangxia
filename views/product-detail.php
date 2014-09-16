@@ -58,7 +58,7 @@ $pagename = 'product-detail';
     <?php endif;?>
     
 			<!-- barbg -->
-		<div class="barbg"></div>
+		<div class="barbg" style="margin-bottom: -50px;"></div>
 		
 		<!-- collpiclist -->
     <?php if ($product->craft):?>

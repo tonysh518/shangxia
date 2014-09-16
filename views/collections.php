@@ -15,7 +15,9 @@ $has_slider = array('apparel','homeware','teaware');
 
 ?>
 
-<?php include_once 'common/header.php';?>
+<?php 
+$pagename="collection-page";
+include_once 'common/header.php';?>
 		<!-- detail -->
 		<div class="section intoview-effect" data-effect="fadeup">
 			<div class="detail cs-clear">
@@ -121,5 +123,4 @@ $has_slider = array('apparel','homeware','teaware');
 			</div>
 		</div>
     <?php endforeach;?>
-    <div style="height:100px;"></div>
 <?php include_once 'common/footer.php';?>

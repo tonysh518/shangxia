@@ -34,7 +34,7 @@ foreach ($products as $product) {
 			<img class="scroll-lowheight-item" src="/photo/collection-apparels.jpg" width="100%" />
 		</div>
 		<!-- barbg -->
-		<div class="barbg"></div>
+		<div class="barbg" style="margin-bottom: -50px;"></div>
 		<!-- apparel -->
 
 <?php foreach ($productsGroupWithCollection as $collection_id => $products): ?>
@@ -48,7 +48,7 @@ foreach ($products as $product) {
 		<div class="section">
 			<div class="products ">
 				<div class="productstit collpictit_app" style="line-height: 230px;">
-					<h2 style="line-height: 20px;">the sound of tea COLLECTION<span>2010-2011</span></h2>					
+					<h2 style="line-height: 1em;padding-top:70px;">the sound of tea COLLECTION<span>2010-2011</span></h2>					
 				</div>	
 				<!--  -->
 				<div class="products-wrap js-horizontal-slide" data-num="3">

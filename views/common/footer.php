@@ -90,10 +90,10 @@
 					</div>
 					<div class="sitelinkitem sitelinkitemXS intoview-effect" data-effect="fadeup">
 						<h2><?php echo Yii::t("strings", "CONTACT")?></h2>
-						<a href="#" class="ft_wx"><?php echo Yii::t("strings", "weixin")?></a>
-						<a href="http://www.weibo.com/shangxia" target="_blank" class="ft_wb"><?php echo Yii::t("strings", "weibo")?></a>
+						<a href="#" class="ft_wx">&nbsp;</a>
+						<a href="http://www.weibo.com/shangxia" target="_blank" class="ft_wb">&nbsp;</a>
 						<br>
-						<a href="#" style="width: auto;line-height: initial;height: auto;margin-top: 48px;" data-a="newsletter"><?php echo Yii::t("strings", "subscribe to shang xia newsletter")?></a>
+						<a href="#" style="width: auto;line-height: 1em;height: auto;margin-top: 48px;" data-a="newsletter"><?php echo Yii::t("strings", "subscribe to shang xia newsletter")?></a>
 					</div>
 				</div>
 				<!-- copyright -->
