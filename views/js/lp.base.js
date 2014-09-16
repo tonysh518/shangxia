@@ -525,6 +525,23 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 // init horizontal slide
                 $('.js-horizontal-slide').each(function(){
                     var $dom = $(this);
+
+                    // split content first
+                    if( $dom.data('split') ){
+                        var $li = $dom.find('.slide-con-inner li');
+                        var height = $li.height();
+                        var lineHeight = parseInt( $li.css('lineHeight') );
+                        var len = Math.ceil( height / ( 5 * lineHeight ) );
+                        $li.html( $('<div></div>').html( $li.html() ).height( 5 * lineHeight ).css('overflow' , 'hidden') );
+                        for( var i = 1 ; i < len ; i++ ){
+                            $li.clone()
+                                .appendTo( $li.parent() )
+                                .children('div')
+                                .scrollTop( i * 5 * lineHeight );
+                        }
+                    }
+
+
                     var wrapWidth = $dom.width();
                     var num = $(this).data('num') || 3;
                     var $items = $dom.find('.slide-con-inner').children();
@@ -2025,7 +2042,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     // 多语言切换
     LP.action('chang-lang' , function(){
         LP.setCookie( "lang", $(this).data("lang") );
-        LP.reload();
+        window.location.href="/";
     });
 
     LP.action('search-type' , function( data ){

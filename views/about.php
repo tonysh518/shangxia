@@ -141,7 +141,7 @@ include_once 'common/header.php';?>
                               <?php echo $job->requirements_capabilities?>
                               </p>
                           </div>
-                          <a href="mailto:xxx@aaa.com" class="btn popaboutbtn transition-wrap" ><span class="transition">Apply<br><br>Apply</span></a>
+                          <a href="mailto:xxx@aaa.com" class="btn popaboutbtn transition-wrap" ><span class="transition"><?php echo Yii::t("strings", "Apply")?><br><br><?php echo Yii::t("strings", "Apply")?></span></a>
                           <div class="popshare cs-clear">
                             <a href="#" class="popsharef"></a>
                             <a href="#" class="popsharet"></a>

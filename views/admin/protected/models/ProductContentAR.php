@@ -35,14 +35,49 @@ class ProductContentAR extends ContentAR {
   
   public static function getType() {
     return array(
-        self::TYPE_APPAREL =>  "apparel",
-        self::TYPE_JEWELRY => "jewelry",
-        self::TYPE_TEAWARE => "teaware",
-        self::TYPE_HOMEWARE => "homeware",
-        self::TYPE_FURNITURE => "furniture",
+        self::TYPE_APPAREL =>  Yii::t("strings", "apparel"),
+        self::TYPE_JEWELRY => Yii::t("strings", "jewelry"),
+        self::TYPE_TEAWARE => Yii::t("strings", "teaware"),
+        self::TYPE_HOMEWARE => Yii::t("strings", "homeware") ,
+        self::TYPE_FURNITURE => Yii::t("strings", "furniture"),
         );
   }
   
+  public static function getKeyWithTypeName($name) {
+    $keys = array(
+        self::TYPE_APPAREL => "apparel",
+        self::TYPE_JEWELRY => "jewelry",
+        self::TYPE_TEAWARE => "teaware",
+        self::TYPE_HOMEWARE =>  "homeware" ,
+        self::TYPE_FURNITURE =>  "furniture",
+    );
+    return array_search($name, $keys);
+  }
+  
+  public static function getTypeKeyName($id) {
+    $keys = array(
+        self::TYPE_APPAREL => "apparel",
+        self::TYPE_JEWELRY => "jewelry",
+        self::TYPE_TEAWARE => "teaware",
+        self::TYPE_HOMEWARE =>  "homeware" ,
+        self::TYPE_FURNITURE =>  "furniture",
+    );
+    
+    return $keys[$id];
+  }
+  
+  public static function isType($name) {
+    $keys = array(
+        self::TYPE_APPAREL => "apparel",
+        self::TYPE_JEWELRY => "jewelry",
+        self::TYPE_TEAWARE => "teaware",
+        self::TYPE_HOMEWARE =>  "homeware" ,
+        self::TYPE_FURNITURE =>  "furniture",
+    );
+    if (array_search($name,$keys) !== FALSE) return TRUE;
+  }
+
+
   public function getImageFields() {
     $this->hasImageField("product_slide_image", array("multi" => TRUE));
     $this->hasImageField("video_poster");

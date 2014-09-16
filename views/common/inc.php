@@ -159,6 +159,29 @@ function getProductInTypeWithCollection($type = "", $collection = NULL) {
   return ProductContentAR::model()->findAll($query);
 }
 
+function getProductInType($type) {
+  global $language;
+  $sql = 'select * from content left join field on field_name="product_type" and field.cid = content.cid where field_content="'.$type.'" AND  type="product" and language="'.$language.'"';
+  
+  $cids = array();
+  $res = Yii::app()->db->createCommand($sql)->queryAll();
+  foreach ($res as $item) {
+    $cids[] = $item["cid"];
+  }
+ 
+  $query = new CDbCriteria();
+  $query->addInCondition("cid", $cids);
+  $query->order = "weight DESC , cdate DESC";
+  $products = ProductContentAR::model()->findAll($query);
+  
+  $ret = array();
+  foreach ($products as $product) {
+    $ret[$product->collection][] = $product;
+  }
+  
+  return $ret;
+}
+
 /**
  * 加载Craft 相关联的产品
  * @param type $craft
@@ -329,7 +352,23 @@ function searchWithKeyword($keyword) {
          $query->addInCondition("cid", $cidArray);
          $rets += $ar->findAll($query);
       }
-     return $rets;
+      
+      // 然后搜索产品
+     $sql = "SELECT * FROM content where type='product' AND language='".$language."'";
+     $keyword = addslashes($keyword);
+     $sql .= " AND ( title COLLATE UTF8_GENERAL_CI like binary '%".strtolower($keyword)."%' OR body COLLATE UTF8_GENERAL_CI like binary '%".  strtolower($keyword)."%') ";
+     $query = Yii::app()->db->createCommand($sql);
+     $rows = $query->queryAll();
+     $cids = array();
+     
+     foreach ($rows as $row) {
+       $cids[] = $row["cid"];
+     }
+     $query = new CDbCriteria();
+     $query->addInCondition("cid", $cids);
+     $products = ProductContentAR::model()->findAll($query);
+     
+     return array_merge($rets, $products);
    }
 }
 

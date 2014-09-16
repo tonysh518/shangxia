@@ -36,8 +36,8 @@
 					<ul class="storechooselist cs-clear">
             <?php foreach ($cities as $city): ?>
             <li><a href="<?php echo url("boutique", array("type" => $city))?>"  title="" class="transition-wrap">
-                <span class="transition"><?php echo Yii::t("strings", "{city} Store", array("{city}" => ucfirst($locations[$city])))?>
-                  <br/><br/><?php echo Yii::t("strings", "{city} Store", array("{city}" => ucfirst($locations[$city])))?>
+                <span class="transition"><?php echo Yii::t("strings", "{city} boutiquue", array("{city}" => ucfirst($locations[$city])))?>
+                  <br/><br/><?php echo Yii::t("strings", "{city} boutiquue", array("{city}" => ucfirst($locations[$city])))?>
                 </span>
               </a>
             </li>

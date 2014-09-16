@@ -583,4 +583,10 @@ body .vjs-default-skin .vjs-big-play-button:focus{box-shadow: none;}
 }
 
 /*.collection-page .collarrowsnext,.collection-page .collarrowsprev{background-position: center 30%;}*/
+.p-craft .knowhowtit h2 {
+  line-height: 50px;
+}
 
+.p-craft .pcb {
+  margin-bottom: 50px;
+}
