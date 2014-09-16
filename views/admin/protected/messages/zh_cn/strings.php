@@ -292,6 +292,8 @@ return array(
     "ENTER YOUR SEARCH" => "搜寻",
     
     "collections" => "系列",
+    
+    "SHANG XIA masion opening </b><br/> in shanghai" => "「上下」之家即将开幕",
 );
 
 
