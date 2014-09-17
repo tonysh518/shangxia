@@ -307,6 +307,14 @@ return array(
     
     "VIEW ALL THE SHANG XIA GIFTS" => "进入赠礼专区",
     
+    "artstic director" => "艺术总监",
+    
+    "heritage & encounter" => "传承与相遇",
+    
+    "PRIVACY POLICY LEGAL INFORMATION" => "法律声明",
+    
+    "ICP LICENCE" => "ICP 备案",
+    
     "You are interested by buying this product? <br/> Let us contact you back and we will arrange a way to provide you this prodcut" => "您对此产品有兴趣？我们会稍后与您取得联系",
 );
 
