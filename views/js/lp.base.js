@@ -1646,6 +1646,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     // });
 
     LP.action('nav-link' , function(){
+        if( $('html').hasClass('no-history') ) return;
         disposeVideo();
         // load next page
         var lhref = location.href;
@@ -2050,7 +2051,8 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     // 多语言切换
     LP.action('chang-lang' , function(){
         LP.setCookie( "lang", $(this).data("lang") );
-        window.location.href="/";
+        LP.reload();
+        return false;
     });
 
     LP.action('search-type' , function( data ){
