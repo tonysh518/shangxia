@@ -302,6 +302,12 @@ return array(
     "similar products" => "同类产品",
     
     "I Want To Buy" => "我想购买",
+    
+    "CONTACT ME BACK" => "我有兴趣",
+    
+    "VIEW ALL THE SHANG XIA GIFTS" => "进入赠礼专区",
+    
+    "You are interested by buying this product? <br/> Let us contact you back and we will arrange a way to provide you this prodcut" => "您对此产品有兴趣？我们会稍后与您取得联系",
 );
 
 
