@@ -120,8 +120,8 @@ a{text-decoration:none;outline: none;color:inherit;}
 .hd_search{float: left;width: 24px;height: 24px;background: url('../images/hd_search.png') no-repeat center;}
 
 
-.lang-cn .nav{width: 40%;}
-.lang-cn .logo{width: 14%;}
+.lang-zh_cn .nav{width: 40%;}
+.lang-zh_cn .logo{width: 14%;}
 /*section*/
 .section{width: 80%;margin: 0 auto;}
 
