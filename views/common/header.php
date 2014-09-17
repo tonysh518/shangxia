@@ -10,7 +10,7 @@ require_once "inc.php";?>
   <link rel="stylesheet" type="text/css" href="/css/style.css?_=1234" />
   <link rel="stylesheet" type="text/css" href="/css/editme.css" />
 </head>
-<body class="<?php if ( isset($pagename) ) {echo $pagename;}?> <?php echo 'lang-' . $_COOKIE['lang']; ?>">
+<body class="<?php if ( isset($pagename) ) {echo $pagename;}?> <?php echo 'lang-' . (string)Yii::app()->language; ?>">
 	<div class="loading-wrap" style="display:block;"><div class="loading loading_small"></div></div>
 	<div class="wrap">
 		<?php if ( isset($homepage) ) { ?>

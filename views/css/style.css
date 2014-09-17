@@ -598,3 +598,15 @@ body .vjs-default-skin .vjs-big-play-button:focus{box-shadow: none;}
 .lang-zh_cn .introparis p {
   font-size: 16px;
 }
+
+.lang-zh_cn .detail p {
+  font-size: 16px;
+}
+
+.lang-zh_cn .popcontxt {
+  font-size: 16px;
+}
+
+.lang-zh_cn .proinfortxt p{
+  font-size: 16px;
+}

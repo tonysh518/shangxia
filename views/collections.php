@@ -2,6 +2,7 @@
 
 if (isset($_GET["key"])) {
   require_once 'common/inc.php';
+  global $language;
   $collection = ContentAR::loadContentWithUrlKey($_GET["key"], "collection");
   if (!$collection || $collection->type != CollectionContentAR::model()->type) {
     exit(header("Location: /index.php"));
