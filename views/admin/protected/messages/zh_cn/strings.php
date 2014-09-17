@@ -299,7 +299,7 @@ return array(
     
     "about SHANG XIA" => "关于「上下」",
     
-    "similar products" => "相似产品",
+    "similar products" => "同类产品",
     
     "I Want To Buy" => "我想购买",
 );
