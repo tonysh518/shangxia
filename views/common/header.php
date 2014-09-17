@@ -12,7 +12,7 @@ require_once "inc.php";?>
 </head>
 <body class="<?php if ( isset($pagename) ) {echo $pagename;}?> <?php echo 'lang-' . (string)Yii::app()->language; ?>">
 	<div class="loading-wrap" style="display:block;"><div class="loading loading_small"></div></div>
-	<div class="wrap">
+	<div class="wrap <?php echo 'lang-' . (string)Yii::app()->language; ?>">
 		<?php if ( isset($homepage) ) { ?>
 		<?php include_once 'widget/home-slider.php';?>
 		<?php } ?>
