@@ -1,10 +1,12 @@
 <?php
 
 class UploadController extends Controller {
-  public function missingAction($actionID) {
-    $parts = explode("_",$actionID);
+  
+  public function makeThumbnailWithUri($uri, $prefix = "") {
+    $parts = explode("_",$uri);
     $max = count($parts);
     $index = $max - 3;
+
     $extension = array_splice($parts, $index);
     if (count($extension) == 3 || count($parts) == 4) {
       if (count($parts) > 1) {
@@ -20,7 +22,7 @@ class UploadController extends Controller {
         $ext = $extension[2];
       }
       $uri = "/upload/".$name."_".$width."_".$height.".".$ext;
-      $sourceUri = "/upload/". $name.".".$ext;
+      $sourceUri = "/upload/$prefix/". $name.".".$ext;
       $root = dirname(Yii::app()->basePath);
       $absPath = $root.$uri;
       $absSourceUri = $root. $sourceUri;
@@ -36,5 +38,14 @@ class UploadController extends Controller {
         $mediaAr->makeImageThumbnail($absSourceUri, $absPath, $width, $height, TRUE);
       }
      }
+  }
+  
+  public function missingAction($actionID) {
+    if (count($_GET)) {
+      $this->makeThumbnailWithUri(array_shift(array_keys($_GET)), $actionID);
+    }
+    else {
+      $this->makeThumbnailWithUri($actionID);
+    }
   }
 }
