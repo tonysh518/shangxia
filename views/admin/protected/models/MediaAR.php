@@ -307,7 +307,13 @@ class MediaAR extends CActiveRecord {
 		$s_h = $size[1];
 
 		$r1 = $w / $s_w;
-		$r2 = $h / $s_h;
+    if ($h == "auto") {
+      $r2 = $r1;
+      $h = $s_h * $r2;
+    }
+    else {
+      $r2 = $h / $s_h;
+    }
 		$widthSamller = TRUE;
 		if ($r1 > $r2) {
 			$r = $r1;

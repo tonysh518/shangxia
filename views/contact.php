@@ -1,4 +1,6 @@
-<?php include_once 'common/header.php';?>
+<?php 
+$pagename = 'contact-page';
+include_once 'common/header.php';?>
 		<!-- detail -->
 		<div class="section intoview-effect" data-effect="fadeup">
 			<div class="detail cs-clear">
@@ -57,7 +59,7 @@
 						<input type="text" name="email" data-required="right email required"/>
 						<div class="conformtit"><?php echo Yii::t("strings", "MESSAGE")?> <span class="error" id="message-tip"></span></div>
 						<div style="position:relative;">
-							<textarea name="message" data-required="message required" id="" cols="30" rows="15"></textarea>
+							<textarea name="message" data-required="message required" data-max-length="300" data-max-length-tip="over 300 letters" id="" cols="30" rows="15"></textarea>
 							<div class="upload">
 								<input type="file" name="file" />
 							</div>
@@ -66,8 +68,10 @@
 							<label>
 								<input type="checkbox" name="poliry" data-required="you should agree the Privacy poliry" />
 								<span><?php echo Yii::t("strings", "contact_form_footer_tip")?></span>
-              </label>
+              				</label>
 						</div>
+						<img src="/images/loading.gif" class="loading-gif">
+						<div class="error" id="other-error"></div>
 						<button data-a="contact-submit" class="conformbtn intoview-effect" data-effect="fadeup"><?php echo Yii::t("strings", "SEND")?></button>
 					</form>
 				</div>

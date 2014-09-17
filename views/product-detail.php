@@ -1,7 +1,7 @@
 <?php 
-if (isset($_GET["cid"])) {
+if (isset($_GET["key"])) {
   require_once 'common/inc.php';
-  $product = ProductContentAR::model()->findByPk($_GET["cid"]);
+  $product = ContentAR::loadContentWithUrlKey($_GET["key"], "product");
   if (!$product || $product->type != ProductContentAR::model()->type) {
     exit(header("Location: /index.php"));
   }
@@ -42,7 +42,7 @@ $pagename = 'product-detail';
       <div data-resize="1600:560" class="slide">
         <div class="slidebox cs-clear">
           <?php foreach (($product->product_slide_image) as $slide_image):?>
-          <div class="slideitem"><img src="<?php echo makeThumbnail($slide_image, array(1000, 500))?>" width="100%" /></div>
+          <div class="slideitem"><img src="<?php echo makeThumbnail($slide_image, array(1500, "auto"))?>" width="100%" /></div>
           <?php endforeach;?>
         </div>
         <ul class="slidetab cs-clear">

@@ -41,7 +41,6 @@ else {
 
 // 测试代码
 //Yii::app()->language = "zh_cn";
-
 if (Yii::app()->language == "zh_cn") {
   $language = "cn";
 }

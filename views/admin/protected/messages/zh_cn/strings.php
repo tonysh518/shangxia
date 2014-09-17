@@ -295,7 +295,7 @@ return array(
     
     "collections" => "系列",
     
-    "SHANG XIA masion opening </b><br/> in shanghai" => "「上下」之家即将开幕",
+    "<b>SHANG XIA masion opening </b><br/> in shanghai" => "「上下」之家即将开幕",
     
     "about SHANG XIA" => "关于「上下」",
     
@@ -306,6 +306,16 @@ return array(
     "CONTACT ME BACK" => "我有兴趣",
     
     "VIEW ALL THE SHANG XIA GIFTS" => "进入赠礼专区",
+    
+    "artstic director" => "艺术总监",
+    
+    "hertage & encounter" => "传承与相遇",
+    
+    "PRIVACY POLICY LEGAL INFORMATION" => "法律声明",
+    
+    "ICP LICENCE" => "ICP 备案",
+    
+    "SHANGXIA does not rent or sell customer <br/> email addresses to third parties" => "「上下」不会泄漏您任何资料给第三方",
     
     "You are interested by buying this product? <br/> Let us contact you back and we will arrange a way to provide you this prodcut" => "您对此产品有兴趣？我们会稍后与您取得联系",
 );

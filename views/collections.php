@@ -1,9 +1,14 @@
 <?php
-if (isset($_GET["cid"])) {
+
+if (isset($_GET["key"])) {
   require_once 'common/inc.php';
-  $collection = CollectionContentAR::model()->findByPk($_GET["cid"]);
+  global $language;
+  $collection = ContentAR::loadContentWithUrlKey($_GET["key"], "collection");
   if (!$collection || $collection->type != CollectionContentAR::model()->type) {
     exit(header("Location: /index.php"));
+  }
+  else {
+    $_GET["cid"] = $collection->cid;
   }
 }
 else {
@@ -105,7 +110,7 @@ include_once 'common/header.php';?>
               <?php else: ?>
                 <ul class="slide-con-inner piclist cs-clear">
                   <?php foreach (array_values($products) as $index => $product): ?>
-                    <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+                    <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup" data-cid="<?php echo $product->cid?>">
                       <a data-a="nav-link" href="<?php echo url("product-detail.php", array("cid" => $product->cid))?>" tmp-href="./product-detail.php?id=<?php echo $product->cid?>">
                           <img data-width="1" data-height="1"  src="<?php echo makeThumbnail($product->thumbnail, array(600, 570))?>" width="100%" />
                           <p><span class="collicon"><?php echo $product->title?></span></p>

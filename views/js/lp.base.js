@@ -154,6 +154,37 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                         loadPressData( year , 1 );
                     }
                 });
+            },
+            "contact-page": function( cb ){
+                $('input[type="file"]').change(function(){
+                    var fileName = this.value.replace(/.*?([^\/\\]+)$/,'$1');
+                    $(this).parent().siblings('span').remove();
+                    $('<span></span>').appendTo( this.parentNode.parentNode )
+                        .html( fileName )
+                        .css({
+                            position: 'absolute',
+                            whiteSpace: 'nowrap',
+                            right: 30,
+                            bottom: 3,
+                            color: '#4b3700'
+                        });
+                });
+
+                $('input[name="name"],input[name="email"],textarea[name="message"]').keyup(function(){
+                    $(this).prev().find('.error').html('');
+                });
+
+                $('textarea[name="message"]').keyup(function(){
+                    var len = $(this).data('max-length');
+                    var tip = $(this).data('max-length-tip');
+                    if( this.value.length > len ){
+                        $(this).prev().find('.error').html(tip);
+                    } else {
+                        $(this).prev().find('.error').html('');
+                    }
+                });
+
+                cb && cb();
             }
         }
 
@@ -1496,13 +1527,24 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         });
 
         $('.picinfortxt').each(function(){
-            var h = $(this).next('.picinforpic').height();
-            $(this).height( h - 50 ).css({
-                overflow: 'hidden',
-                paddingBottom: 50
-            });
-            $(this).find('.picinfortxt-inner').height( h - 100 )
-                .css('overflow' , 'hidden');
+            var $this = $(this);
+            var $picWrap = $(this).next('.picinforpic');
+            loadImages( $picWrap.find('img') , function(){
+                var h = $picWrap.height();
+                $this.height( h - 50 ).css({
+                    overflow: 'hidden',
+                    paddingBottom: 50
+                })
+                .find('.picinfortxt-inner').height( h - 100 )
+                    .css('overflow' , 'hidden');
+            } )
+            // var h = $(this).next('.picinforpic').height();
+            // $(this).height( h - 50 ).css({
+            //     overflow: 'hidden',
+            //     paddingBottom: 50
+            // });
+            // $(this).find('.picinfortxt-inner').height( h - 100 )
+            //     .css('overflow' , 'hidden');
         });
 
         $('.aboutinfortxt').each(function(){
@@ -1899,8 +1941,9 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         var $form = $(this).closest('form');
         $form.find('#name-tip,#email-tip,#message-tip').html('');
         var data = LP.query2json( $form.serialize() );
+        $('#other-error').html('');
         if( !data.poliry ){
-            alert( $form.find('input[name="poliry"]').data('required') );
+            $('#other-error').html( $form.find('input[name="poliry"]').data('required') );
             return false;
         }
         var error = false;
@@ -1916,21 +1959,30 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         if( !data.message ){
             $form.find('#message-tip').html( $form.find('textarea[name="message"]').data('required') );
             error = true;
+        } else if( data.message.length > $form.find('textarea[name="message"]').data('max-length') ){
+            $form.find('#message-tip').html( $form.find('textarea[name="message"]').data('max-length-tip') );
+            error = true;
         }
+
+
         if( error ){
             return false;
         }
 
+        $('.loading-gif').fadeIn();
         LP.use('form' , function(){
             $form.ajaxSubmit({
                 type: 'post',
                 dataType: 'json',
                 success: function( data ){
+                    $('.loading-gif').fadeOut();
                     if( data.status == 0 ){
-                        alert('submit success');
-                        LP.reload();
+                        $form.fadeOut(function(){
+                            $('<div class="success-tip"></div>').insertAfter( $form )
+                                .html( data.message );
+                        });
                     } else {
-                        alert( data.message );
+                        $('#other-error').html( data.message );
                     }
                 }
             });
@@ -2049,8 +2101,8 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     
     // 多语言切换
     LP.action('chang-lang' , function(){
-        LP.setCookie( "lang", $(this).data("lang") , '/' );
-        LP.reload();
+        LP.setCookie( "lang", $(this).data("lang"), 0, "/");
+        location.href = '/';
         return false;
     });
 

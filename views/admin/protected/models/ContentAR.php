@@ -336,7 +336,33 @@ class ContentAR extends CActiveRecord {
   }
   
   public static function getContentUrl($content) {
-    return "{$content->cid}/". preg_replace('/([\s-&])+/i', "-", strip_tags(strtolower($content->url_key == "" ? $content->title: $content->url_key)));
+    //return preg_replace('/([\s-&])+/i', "-", strip_tags(strtolower($content->url_key == "" ? $content->title: $content->url_key)));
+    
+    return $content->url_key == "" ? $content->title: $content->url_key;
+  }
+  
+  public static function loadContentWithUrlKey($uri, $type) {
+    global $language;
+    
+    $query = new CDbCriteria();
+    $query->join = " left join field on field.cid = ".  ContentAR::model()->getTableAlias().".cid and field.field_name='url_key'";
+    $query->addCondition("language=:language");
+    $query->addCondition("type=:type");
+    $query->addCondition("field_content=:field_content");
+    
+    $query->params[":language"] = $language;
+    $query->params[":type"] = $type;
+    $query->params[":field_content"] = $uri;
+    
+    $row = ContentAR::model()->find($query);
+    $class = ucfirst($type). "ContentAR";
+    $obj = new $class();
+    if ($row) {
+      return $obj->findByPk($row->cid);
+    }
+    else {
+      return FALSE;
+    }
   }
 }
 

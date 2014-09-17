@@ -16,11 +16,14 @@
           <?php $news = loadFirstNews();?>
           <?php if ($news): ?>
 	          	<div class="picinfortxt">
-		            <h2><?php echo $news->title?></h2>
-		            <h3 style="text-transform:uppercase;"><?php echo date("Y M d", strtotime($news->date))?></h3>
-		            <div class="body">
-		              <?php echo $news->body?>
+	          		<div class="picinfortxt-inner">
+			            <h2><?php echo $news->title?></h2>
+			            <h3 style="text-transform:uppercase;"><?php echo date("Y M d", strtotime($news->date))?></h3>
+			            <div class="body">
+			              <?php echo $news->body?>
+			            </div>
 		            </div>
+		            
 	            </div>
 				<div class="picinforpic">
             <?php if ($news->news_slide_image):?>
