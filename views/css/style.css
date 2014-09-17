@@ -593,3 +593,8 @@ body .vjs-default-skin .vjs-big-play-button:focus{box-shadow: none;}
 .p-craft .pcb {
   margin-bottom: 50px;
 }
+
+
+.lang-zh_cn .introparis p {
+  font-size: 14px;
+}
