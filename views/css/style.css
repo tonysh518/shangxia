@@ -263,7 +263,7 @@ img.slideitem{height: auto;}
 /*newsolder*/
 .newsoldertime{height: 90px;line-height: 90px;text-align: center;position: relative;margin-left: 0;}
 .newsoldertime .slidetab{bottom: 0px;}
-.newsoldertime li{width: auto;height: auto;border-bottom: none;display: inline;float:none;font-size: 14px;}
+.newsoldertime li{width: auto;height: auto;border-bottom: none;display: inline;float:none;font-size: 14px;margin:0 20px;}
 .newsoldertime a{padding: 0 40px;font-size: 14px;}
 .newsoldertime li.on{text-decoration: underline;color: #4b3700;opacity: 1;font-family: "Gotham Medium";}
 .newsolderbtn a{font-size: 18px;border:#423608 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px}

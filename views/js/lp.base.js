@@ -629,9 +629,12 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                             } else { // 21 || 12
                                 $this.css('marginRight' , halfMR)
                                     .prev()
-                                    .css('marginLeft' , halfMR);
+                                    .css({
+                                        'marginLeft': halfMR,
+                                        'marginRight': marginRight + '%'
+                                    });
                             }
-                        } else if( counted % 3 == 1 ){
+                        } else if( ( counted - indent ) % 3 == 0 ){
                             $this.css({
                                 marginLeft: halfMR ,
                                 marginRight: halfMR
