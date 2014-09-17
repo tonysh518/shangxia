@@ -124,7 +124,7 @@
 </script>
 
 <script type="text/tpl" id="i_want_to_buy">
-	<h2><?php echo Yii::t("strings", "I want to buy")?></h2>
+	<h2><?php echo Yii::t("strings", "I Want To Buy")?></h2>
 	<div class="popcontxt">
 		<p><?php echo Yii::t("strings", "You are interested by buying this product? <br/> Let us contact you back and we will arrange a way to provide you this prodcut")?></p>
 		<form class="buy-form conformbox" action="/admin/api/content/wantobuy" method="post">
@@ -136,7 +136,7 @@
 			<div class="conformtit"><?php echo Yii::t("strings", "YOUR PHONE")?> <span class="error" id="phone-tip"></span></div>
 			<input type="text" name="phone" data-required="phone required"/>
 			<button class="conformbtn" data-a="contact-me-back"><?php echo Yii::t("strings", "CONTACT ME BACK")?></button>
-//			<a href=""><?php echo Yii::t("strings", "VIEW ALL THE SHANG XIA GIFTS")?></a>
+			<a href=""><?php echo Yii::t("strings", "VIEW ALL THE SHANG XIA GIFTS")?></a>
 		</form>
 	</div>
 </script>

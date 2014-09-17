@@ -8,7 +8,7 @@
 				<div class="knowhowintro  knowhowL inout-effect">
 					<span class="inout-bg"></span>
           <p class="eff cwrap"><?php echo Yii::t("strings", "One Clay, <br/>72 Pairs of Hands")?> </p>
-					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition"><?php echo Yii::app()->t("strings", "read")?><br/><br/><?php echo Yii::app()->t("strings", "read")?></span></a>
+					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition"><?php echo Yii::t("strings", "read")?><br/><br/><?php echo Yii::t("strings", "read")?></span></a>
 					<textarea style="display:none;">
 						<h2><?php echo Yii::t("strings", "One Clay, <br/>72 Pairs of Hands")?></h2>
 						<div class="popcontxt">
@@ -22,7 +22,7 @@
 				<div class="knowhowintro  knowhowR inout-effect">
 					<span class="inout-bg"></span>
 					<p class="eff cwrap"><?php echo Yii::t("strings", "Mixing Ingredients")?> </p>
-					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition"><?php echo Yii::app()->t("strings", "read")?><br/><br/><?php echo Yii::app()->t("strings", "read")?></span></a>
+					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition"><?php echo Yii::t("strings", "read")?><br/><br/><?php echo Yii::t("strings", "read")?></span></a>
 					<textarea style="display:none;">
 						<h2><?php echo Yii::t("strings", "Mixing Ingredients")?></h2>
 						<div class="popcontxt">
@@ -36,7 +36,7 @@
 				<div class="knowhowintro  knowhowL inout-effect">
 					<span class="inout-bg"></span>
 					<p class="eff cwrap"><?php echo Yii::t("strings", "Turning the Clay")?> </p>
-					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition"><?php echo Yii::app()->t("strings", "read")?><br/><br/><?php echo Yii::app()->t("strings", "read")?></span></a>
+					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition"><?php echo Yii::t("strings", "read")?><br/><br/><?php echo Yii::t("strings", "read")?></span></a>
 					<textarea style="display:none;">
 						<h2><?php echo Yii::t("strings", "Turning the Clay")?></h2>
 						<div class="popcontxt">
@@ -51,7 +51,7 @@
 				<div class="knowhowintro  knowhowR inout-effect">
 					<span class="inout-bg"></span>
 					<p class="eff cwrap"><?php echo Yii::t("strings", "Paring and Trimming")?></p>
-					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition"><?php echo Yii::app()->t("strings", "read")?><br/><br/><?php echo Yii::app()->t("strings", "read")?></span></a>
+					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition"><?php echo Yii::t("strings", "read")?><br/><br/><?php echo Yii::t("strings", "read")?></span></a>
 					<textarea style="display:none;">
 						<h2><?php echo Yii::t("strings", "Paring and Trimming")?></h2>
 						<div class="popcontxt">
@@ -65,7 +65,7 @@
 				<div class="knowhowintro  knowhowL inout-effect">
 					<span class="inout-bg"></span>
 					<p class="eff cwrap"><?php echo Yii::t("strings", "Firing the <br/>Unglazed Body")?></p>
-					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition"><?php echo Yii::app()->t("strings", "read")?><br/><br/><?php echo Yii::app()->t("strings", "read")?></span></a>
+					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition"><?php echo Yii::t("strings", "read")?><br/><br/><?php echo Yii::t("strings", "read")?></span></a>
 					<textarea style="display:none;">
 						<h2><?php echo Yii::t("strings", "Firing the <br/>Unglazed Body")?></h2>
 						<div class="popcontxt">
@@ -79,7 +79,7 @@
 				<div class="knowhowintro  knowhowR inout-effect">
 					<span class="inout-bg"></span>
 					<p class="eff cwrap"><?php echo Yii::t("strings", "Adding Water <br/> Before Glazing")?></p>
-					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition"><?php echo Yii::app()->t("strings", "read")?><br/><br/><?php echo Yii::app()->t("strings", "read")?></span></a>
+					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition"><?php echo Yii::t("strings", "read")?><br/><br/><?php echo Yii::t("strings", "read")?></span></a>
 					<textarea style="display:none;">
 						<h2><?php echo Yii::t("strings", "Adding Water <br/> Before Glazing")?></h2>
 						<div class="popcontxt">
@@ -93,7 +93,7 @@
 				<div class="knowhowintro  knowhowL inout-effect">
 					<span class="inout-bg"></span>
 					<p class="eff cwrap"><?php echo Yii::t("strings", "Glazing")?></p>
-					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition"><?php echo Yii::app()->t("strings", "read")?><br/><br/><?php echo Yii::app()->t("strings", "read")?></span></a>
+					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition"><?php echo Yii::t("strings", "read")?><br/><br/><?php echo Yii::t("strings", "read")?></span></a>
 					<textarea style="display:none;">
 						<h2><?php echo Yii::t("strings", "Glazing")?></h2>
 						<div class="popcontxt">
@@ -107,7 +107,7 @@
 				<div class="knowhowintro  knowhowR inout-effect">
 					<span class="inout-bg"></span>
 					<p class="eff cwrap"><?php echo Yii::t("strings", "Final Firing")?></p>
-					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition"><?php echo Yii::app()->t("strings", "read")?><br/><br/><?php echo Yii::app()->t("strings", "read")?></span></a>
+					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition"><?php echo Yii::t("strings", "read")?><br/><br/><?php echo Yii::t("strings", "read")?></span></a>
 					<textarea style="display:none;">
 						<h2><?php echo Yii::t("strings", "Final Firing")?></h2>
 						<div class="popcontxt">
