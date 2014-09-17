@@ -1,4 +1,6 @@
-<?php include_once 'common/header.php';?>
+<?php 
+$pagename = 'contact-page';
+include_once 'common/header.php';?>
 		<!-- detail -->
 		<div class="section intoview-effect" data-effect="fadeup">
 			<div class="detail cs-clear">
@@ -52,22 +54,24 @@
 					<form action="/admin/api/content/contact" method="post" >
 
 						<div class="conformtit"><?php echo Yii::t("strings", "NAME")?> <span class="error" id="name-tip"></span></div>
-						<input type="text" name="name" data-required="name required" />
+						<input type="text" name="name" data-required="<?php echo Yii::t("strings", "name required")?>" />
 						<div class="conformtit"><?php echo Yii::t("strings", "EMAIL")?> <span class="error" id="email-tip"></span></div>
-						<input type="text" name="email" data-required="right email required"/>
+						<input type="text" name="email" data-required="<?php echo Yii::t("strings", "right email required")?>"/>
 						<div class="conformtit"><?php echo Yii::t("strings", "MESSAGE")?> <span class="error" id="message-tip"></span></div>
 						<div style="position:relative;">
-							<textarea name="message" data-required="message required" id="" cols="30" rows="15"></textarea>
+							<textarea name="message" data-required="<?php echo Yii::t("strings", "message required")?>" data-max-length="300" data-max-length-tip="<?php echo Yii::t("strings", "over 300 letters")?>" id="" cols="30" rows="15"></textarea>
 							<div class="upload">
 								<input type="file" name="file" />
 							</div>
+							<img src="/images/loading.gif" class="loading-gif">
 						</div>
 						<div class="conformcheck cs-clear">
 							<label>
-								<input type="checkbox" name="poliry" data-required="you should agree the Privacy poliry" />
+								<input type="checkbox" name="poliry" data-required="<?php echo Yii::t("strings", "you should agree the Privacy poliry")?>" />
 								<span><?php echo Yii::t("strings", "contact_form_footer_tip")?></span>
-              </label>
+              				</label>
 						</div>
+						<div class="error" id="other-error"></div>
 						<button data-a="contact-submit" class="conformbtn intoview-effect" data-effect="fadeup"><?php echo Yii::t("strings", "SEND")?></button>
 					</form>
 				</div>
