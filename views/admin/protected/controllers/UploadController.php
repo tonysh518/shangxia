@@ -42,7 +42,9 @@ class UploadController extends Controller {
   
   public function missingAction($actionID) {
     if (count($_GET)) {
-      $this->makeThumbnailWithUri(array_shift(array_keys($_GET)), $actionID);
+      $uri = array_keys($_GET);
+      $uri = array_shift($uri);
+      $this->makeThumbnailWithUri($uri, $actionID);
     }
     else {
       $this->makeThumbnailWithUri($actionID);
