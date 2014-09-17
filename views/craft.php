@@ -77,7 +77,7 @@ include_once 'common/header.php';?>
     <?php endif;?>
     <?php $products = loadCraftRelatedProducts($loadedCraft);?>
 		<!-- related products -->
-    <?php if (count($products)) : ?>
+    <?php if (count($products) && FALSE) : ?>
 		<div class="section">
 			<div class="products">
 				<div class="productstit intoview-effect" data-effect="fadeup">

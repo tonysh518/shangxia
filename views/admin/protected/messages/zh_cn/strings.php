@@ -284,6 +284,8 @@ return array(
     
     "Read more" => "更多讯息",
     
+    "read more" => "更多讯息",
+    
     "Apply" => "我有兴趣",
     
     "Load more" => "下载中",
@@ -294,6 +296,8 @@ return array(
     "collections" => "系列",
     
     "SHANG XIA masion opening </b><br/> in shanghai" => "「上下」之家即将开幕",
+    
+    "about SHANG XIA" => "关于「上下」",
 );
 
 

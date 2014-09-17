@@ -8,7 +8,7 @@
 				<div class="knowhowintro  knowhowL inout-effect">
 					<span class="inout-bg"></span>
 					<p class="eff cwrap"><?php echo Yii::t("strings", "Silk-like Bamboo Strands")?></p>
-					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition">read<br/><br/>read</span></a>
+					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition"><?php echo Yii::app()->t("strings", "read")?><br/><br/><?php echo Yii::app()->t("strings", "read")?></span></a>
 					<textarea style="display:none;">
 						<h2><?php echo Yii::t("strings", "Silk-like Bamboo Strands")?></h2>
 						<div class="popcontxt">
@@ -22,7 +22,7 @@
 				<div class="knowhowintro  knowhowR inout-effect">
 					<span class="inout-bg"></span>
 					<p class="eff cwrap"><?php echo Yii::t("strings", "Collecting the Bamboo")?></p>
-					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition">read<br/><br/>read</span></a>
+					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition"><?php echo Yii::app()->t("strings", "read")?><br/><br/><?php echo Yii::app()->t("strings", "read")?></span></a>
 					<textarea style="display:none;">
 						<h2><?php echo Yii::t("strings", "Collecting the Bamboo")?></h2>
 						<div class="popcontxt">
@@ -36,7 +36,7 @@
 				<div class="knowhowintro  knowhowL inout-effect">
 					<span class="inout-bg"></span>
 					<p class="eff cwrap"><?php echo Yii::t("strings", "Scraping the Cyan <br/>(Bamboo Skin)")?></p>
-					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition">read<br/><br/>read</span></a>
+					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition"><?php echo Yii::app()->t("strings", "read")?><br/><br/><?php echo Yii::app()->t("strings", "read")?></span></a>
 					<textarea style="display:none;">
 						<h2><?php echo Yii::t("strings", "Scraping the Cyan <br/>(Bamboo Skin)")?></h2>
 						<div class="popcontxt">
@@ -51,7 +51,7 @@
 				<div class="knowhowintro  knowhowR inout-effect">
 					<span class="inout-bg"></span>
 					<p class="eff cwrap"><?php echo Yii::t("strings", "Separating <br/>the Bamboo")?></p>
-					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition">read<br/><br/>read</span></a>
+					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition"><?php echo Yii::app()->t("strings", "read")?><br/><br/><?php echo Yii::app()->t("strings", "read")?></span></a>
 					<textarea style="display:none;">
 						<h2><?php echo Yii::t("strings", "Separating <br/>the Bamboo")?></h2>
 						<div class="popcontxt">
@@ -65,7 +65,7 @@
 				<div class="knowhowintro  knowhowL inout-effect">
 					<span class="inout-bg"></span>
 					<p class="eff cwrap"><?php echo Yii::t("strings", "Drying the Slice")?></p>
-					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition">read<br/><br/>read</span></a>
+					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition"><?php echo Yii::app()->t("strings", "read")?><br/><br/><?php echo Yii::app()->t("strings", "read")?></span></a>
 					<textarea style="display:none;">
 						<h2><?php echo Yii::t("strings", "Drying the Slice")?></h2>
 						<div class="popcontxt">
@@ -79,7 +79,7 @@
 				<div class="knowhowintro  knowhowR inout-effect">
 					<span class="inout-bg"></span>
 					<p class="eff cwrap"><?php echo Yii::t("strings", "Separating Strands")?></p>
-					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition">read<br/><br/>read</span></a>
+					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition"><?php echo Yii::app()->t("strings", "read")?><br/><br/><?php echo Yii::app()->t("strings", "read")?></span></a>
 					<textarea style="display:none;">
 						<h2><?php echo Yii::t("strings", "Separating Strands")?></h2>
 						<div class="popcontxt">
