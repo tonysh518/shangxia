@@ -1712,7 +1712,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 } , 300 );
                 return false;
             }
-        } else if( lhref.indexOf( href ) >= 0 ){ // 如果是同一个页面
+        } else if( lhref.match( new RegExp( href + '$' ) ) ){ // 如果是同一个页面
             History.Adapter.trigger( window , 'statechange');
             return false;
         }
