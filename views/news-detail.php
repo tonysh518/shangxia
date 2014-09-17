@@ -46,7 +46,7 @@
 					<h2><?php echo Yii::t("strings", "other news")?></h2>
 				</div>
         <?php $groupedNews = loadNewsWithYearGroup()?>
-				<div class="productscom slide" data-auto="false">
+				<div class="productscom slide" data-auto="false" style="margin-top: -50px;">
 					<div class="newsoldertime">
 						<ul class="slidetab">
             <?php $i = 0; foreach ($groupedNews as $year => $news): $i++?>
@@ -61,17 +61,30 @@
 	              <?php foreach ($newslist as $news): ?>
 	                <a href="#" data-a="show-news" class="prolistitem newsitem" data-id="<?php echo $news->cid?>">
 	                  <img src="<?php echo $news->thumbnail?>" width="100%" />
-	                  <p><?php echo $news->title?><br /><?php echo date("Y M d", strtotime($news->date))?></p>
-	                  <textarea style="display:none;">
-	                  		<?php if ($news): ?>
-					          	<div class="picinfortxt">
+	                  <p><?php echo $news->title?><br />
+	                  	<span class="date"><?php echo date("Y M d", strtotime($news->date))?></span></p>
+	                  <script type="text/tpl">
+                    	<?php if ($news): ?>
+				          	<div class="picinfortxt news-picinfortxt">
+				          		<div class="picinfortxt-inner">
 						            <h2><?php echo $news->title?></h2>
 						            <h3 style="text-transform:uppercase;"><?php echo date("Y M d", strtotime($news->date))?></h3>
 						            <div class="body">
 						              <?php echo $news->body?>
 						            </div>
 					            </div>
-								<div class="picinforpic">
+					            <div style="margin-right:50px;">
+									<a href="#" data-a="show-pop" class="btn transition-wrap"><span class="transition"><?php echo Yii::t("strings", "read more")?><br><br><?php echo Yii::t("strings", "read more")?></span></a>
+									<textarea style="display:none;">
+										<h2><?php echo $news->title?></h2>
+							            <h3 style="text-transform:uppercase;"><?php echo date("Y M d", strtotime($news->date))?></h3>
+							            <div class="body">
+							              <?php echo $news->body?>
+							            </div>
+									</textarea>
+								</div>
+				            </div>
+							<div class="picinforpic">
 				            <?php if ($news->news_slide_image):?>
 									<div class="slide">
 										<div class="slidebox cs-clear">
@@ -87,11 +100,11 @@
 				              <?php endforeach;?>
 										</ul>
 				            <?php endif;?>
-										<!-- 数量改变需要改变css，或者用js来调整slidebox的宽度和slidetab的位置 -->
-									</div>
+									<!-- 数量改变需要改变css，或者用js来调整slidebox的宽度和slidetab的位置 -->
 								</div>
-				        	<?php endif;?>
-	                  </textarea>
+							</div>
+			        	<?php endif;?>
+                    </script>
 	                </a>
 	              <?php endforeach;?>
 	              </div>

@@ -171,7 +171,7 @@ img.slideitem{height: auto;}
 .storechoose h2{font-size: 30px; text-transform : uppercase;padding: 60px 0 20px;font-family: "Gotham Book";color:#4b3700;}
 .storechoose p{font-size: 18px;width: 78%;margin: 0 auto;font-family: Garamond;}
 .storechoose2 p{font-family: "Gotham Book";}
-.storechooselist{width:60%;margin: 40px auto 0;min-width: 320px;}
+.storechooselist{width:60%;margin: 40px auto 0;min-width: 400px;}
 .storechooselist li{float: left;width: 50%;font-family: Garamond;}
 .storechooselist a{font-size: 18px;border:#423608 solid 1px;display: block;margin: 0 auto;text-align: center;height: 62px;line-height: 62px;width: 90%}
 .storemap{float: left;width: 50%;height: 400px;position: relative;padding-right: 80px;margin-right: -80px;}
@@ -258,15 +258,14 @@ img.slideitem{height: auto;}
 .picinfortxt p strong{font-weight: normal;}
 .picinforpic{float: right;width: 66.4%;overflow: hidden;}
 
-
 .proinfortxt-inner{text-align: center;}
 
 /*newsolder*/
 .newsoldertime{height: 90px;line-height: 90px;text-align: center;position: relative;margin-left: 0;}
 .newsoldertime .slidetab{bottom: 0px;}
-.newsoldertime li{width: auto;height: auto;border-bottom: none;display: inline;float:none;}
+.newsoldertime li{width: auto;height: auto;border-bottom: none;display: inline;float:none;font-size: 14px;}
 .newsoldertime a{padding: 0 40px;font-size: 14px;}
-.newsoldertime li.on{text-decoration: underline;font-weight: bold;color: #4b3700;opacity: 1;}
+.newsoldertime li.on{text-decoration: underline;font-weight: bold;color: #4b3700;opacity: 1;font-family: "Gotham Medium";}
 .newsolderbtn a{font-size: 18px;border:#423608 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px}
 
 /*newsnvents*/
@@ -378,7 +377,7 @@ img.slideitem{height: auto;}
 .popcon.popcon-show{opacity: 1; filter:alpha(opacity=100);transform:scale(1,1);-webkit-transform:scale(1,1);-moz-transform:scale(1,1);-o-transform:scale(1,1);-ms-transform:scale(1,1);}
 .popcon h2{line-height: 1.3em;text-transform: uppercase;font-size: 30px;text-align: center;padding:10px 0;font-family: "Gotham Book"; color: #4b3700;}
 .popcontxt{font-size: 18px;text-align: center;color:#9e927a;}
-.popcontxt p{padding: 10px 0}
+.popcontxt p,.popcon p{padding: 10px 0}
 .poppiccon{text-align: center;overflow-y: auto;height: 100%;}
 .poppiccon img{display: block;margin: 0 auto;max-width: 100%;}
 .picoperate{height: 100px;padding:28px 150px;}

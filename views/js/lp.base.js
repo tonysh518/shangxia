@@ -725,7 +725,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 var isRunning = false;
                 // init nav pop mouse move event
                 $('.nav-pop-collections .nav-pop-wrap').mousemove(function( ev ){
-                    if( $(this).find('.nav-pop-wrap').children().length < 4 ) return;
+                    if( $(this).children().length < 4 ) return;
                     var winWidth = $(window).width();
                     var off = $(this).offset();
                     var $item = $(this).children().first();
@@ -879,6 +879,9 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     function initSlider( $wrap , config ){
         var $slidebox = $wrap.find('.slidebox');
         var $slidetabs = $wrap.find('.slidetab li');
+        // if( $slidetabs.length == 1 ){
+        //     $slidetabs.hide();
+        // }
         var currentIndex = 0;
         var length = $slidebox.children().length;
         var isAbs = $wrap.data('slide') == 'absolute';
@@ -1558,7 +1561,12 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         });
 
 
-        $('.storemap').height( $('.storemap').prev().outerHeight() );
+        var prevHeight = $('.storemap').prev().outerHeight();
+        $('.storemap').css( 'height' , prevHeight );
+        // $('.storemap').css({
+        //     height: 0.70 * prevHeight,
+        //     marginTop: 0.15 * prevHeight
+        // });
 
         // fix resize:
         $('[data-resize]').each(function(){
@@ -2065,7 +2073,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             scrollTop: 0
         } , 500);
 
-        var $html = $( $(this).find('textarea').val() )
+        var $html = $( $(this).find('script').html() )
             .appendTo( $('.picinfor').html('') )
             .hide()
             .fadeIn( 500 );
