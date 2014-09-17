@@ -171,7 +171,7 @@ img.slideitem{height: auto;}
 .storechoose h2{font-size: 30px; text-transform : uppercase;padding: 60px 0 20px;font-family: "Gotham Book";color:#4b3700;}
 .storechoose p{font-size: 18px;width: 78%;margin: 0 auto;font-family: Garamond;}
 .storechoose2 p{font-family: "Gotham Book";}
-.storechooselist{width:60%;margin: 40px auto 0}
+.storechooselist{width:60%;margin: 40px auto 0;min-width: 320px;}
 .storechooselist li{float: left;width: 50%;font-family: Garamond;}
 .storechooselist a{font-size: 18px;border:#423608 solid 1px;display: block;margin: 0 auto;text-align: center;height: 62px;line-height: 62px;width: 90%}
 .storemap{float: left;width: 50%;height: 400px;position: relative;padding-right: 80px;margin-right: -80px;}
