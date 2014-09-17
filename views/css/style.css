@@ -627,7 +627,11 @@ body .vjs-default-skin .vjs-big-play-button:focus{box-shadow: none;}
   font-size: 16px;
 }
 
-.knowhowintro {
+.lang-zh_cn .picinfortxt {
+  font-size: 16px;
+}
+
+.lang-zh_cn .knowhowintro {
   font-size: 16px;
 }
 
