@@ -1557,6 +1557,9 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 });
         });
 
+
+        $('.storemap').height( $('.storemap').prev().outerHeight() );
+
         // fix resize:
         $('[data-resize]').each(function(){
             var val = $(this).data('resize');
@@ -1980,6 +1983,10 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                         $form.fadeOut(function(){
                             $('<div class="success-tip"></div>').insertAfter( $form )
                                 .html( data.message );
+
+                            $('html,body').animate({
+                                scrollTop: $('.success-tip').offset().top - 200
+                            } , 500);
                         });
                     } else {
                         $('#other-error').html( data.message );
@@ -2102,7 +2109,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     // 多语言切换
     LP.action('chang-lang' , function(){
         LP.setCookie( "lang", $(this).data("lang"), 0, "/");
-        location.href = '/';
+        LP.reload();
         return false;
     });
 
