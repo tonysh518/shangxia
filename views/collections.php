@@ -1,9 +1,13 @@
 <?php
-if (isset($_GET["cid"])) {
+
+if (isset($_GET["key"])) {
   require_once 'common/inc.php';
-  $collection = CollectionContentAR::model()->findByPk($_GET["cid"]);
+  $collection = ContentAR::loadContentWithUrlKey($_GET["key"], "collection");
   if (!$collection || $collection->type != CollectionContentAR::model()->type) {
     exit(header("Location: /index.php"));
+  }
+  else {
+    $_GET["cid"] = $collection->cid;
   }
 }
 else {

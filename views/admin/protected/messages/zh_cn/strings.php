@@ -309,11 +309,13 @@ return array(
     
     "artstic director" => "艺术总监",
     
-    "heritage & encounter" => "传承与相遇",
+    "hertage & encounter" => "传承与相遇",
     
     "PRIVACY POLICY LEGAL INFORMATION" => "法律声明",
     
     "ICP LICENCE" => "ICP 备案",
+    
+    "SHANGXIA does not rent or sell customer <br/> email addresses to third parties" => "「上下」不会泄漏您任何资料给第三方",
     
     "You are interested by buying this product? <br/> Let us contact you back and we will arrange a way to provide you this prodcut" => "您对此产品有兴趣？我们会稍后与您取得联系",
 );

@@ -1,7 +1,8 @@
 <?php 
-if (isset($_GET["cid"])) {
+
+if (isset($_GET["key"])) {
   require_once 'common/inc.php';
-  $loadedCraft = CraftContentAR::model()->findByPk($_GET["cid"]);
+  $loadedCraft = ContentAR::loadContentWithUrlKey($_GET["key"], "craft");
   if (!$loadedCraft || $loadedCraft->type != CraftContentAR::model()->type) {
     exit(header("Location: /index.php"));
   }

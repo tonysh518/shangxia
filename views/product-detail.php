@@ -1,7 +1,7 @@
 <?php 
-if (isset($_GET["cid"])) {
+if (isset($_GET["key"])) {
   require_once 'common/inc.php';
-  $product = ProductContentAR::model()->findByPk($_GET["cid"]);
+  $product = ContentAR::loadContentWithUrlKey($_GET["key"], "product");
   if (!$product || $product->type != ProductContentAR::model()->type) {
     exit(header("Location: /index.php"));
   }
