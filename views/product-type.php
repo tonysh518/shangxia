@@ -64,7 +64,7 @@ $product_type = $_GET["name"];
 					<ul class="piclist cs-clear slide-con-inner">
             <?php foreach ($products as $product):?>
               <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-                <img src="<?php echo makeThumbnail($product->thumbnail, array(412, 390))?>" width="100%" />
+                <a href="<?php echo url("product-detail", array("cid" => $product->cid))?>"><img src="<?php echo makeThumbnail($product->thumbnail, array(412, 390))?>" width="100%" /></a>
                 <p><span class="collicon"><?php echo $product->title?></span></p>
               </li>
             <?php endforeach;?>

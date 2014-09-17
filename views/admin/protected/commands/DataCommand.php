@@ -9,6 +9,8 @@ class DataCommand extends CConsoleCommand {
         "Human & Nature" => "20332",
         "Heritage & Emotion" => "20333",
         "In & Out" => "20330",
+        "Sound of Tea" => "20331",
+        "茶歌" => "20567",
     );
     $craftCids = array(
         "紫檀" => "20321",
@@ -26,7 +28,7 @@ class DataCommand extends CConsoleCommand {
       $types[$value] = $key;
     }
     
-    $productGroupes = require("/Users/jackeychen/Workspace/shangxia/docs/product.csv/convert.php");
+    $productGroupes = require("/Users/jackeychen/Workspace/shangxia/docs/sound_of_tea+translation/convert.php");
     // 把collection 转换到ID
     foreach ($productGroupes as $products) {
       foreach ($products as $index => $product) {
