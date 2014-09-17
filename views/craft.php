@@ -93,7 +93,7 @@ include_once 'common/header.php';?>
                 <p><?php echo $product->body?></p>
 							</div>
 							<a href="#" data-a="show-pop" class="btn transition-wrap"><span class="transition"><?php echo Yii::t("strings", "read more")?><br><br><?php echo Yii::t("strings", "read more")?></span></a>
-							<textarea style="overflow:hidden;">
+							<textarea style="display:none;">
 								<p><?php echo $product->body?></p>
 							</textarea>
 						</div>

@@ -136,7 +136,7 @@
 			<div class="conformtit"><?php echo Yii::t("strings", "YOUR PHONE")?> <span class="error" id="phone-tip"></span></div>
 			<input type="text" name="phone" data-required="phone required"/>
 			<button class="conformbtn" data-a="contact-me-back"><?php echo Yii::t("strings", "CONTACT ME BACK")?></button>
-			<a href=""><?php echo Yii::t("strings", "VIEW ALL THE SHANG XIA GIFTS")?></a>
+			<!--<a href=""><?php echo Yii::t("strings", "VIEW ALL THE SHANG XIA GIFTS")?></a>-->
 		</form>
 	</div>
 </script>
