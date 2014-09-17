@@ -295,7 +295,7 @@ return array(
     
     "collections" => "系列",
     
-    "SHANG XIA masion opening </b><br/> in shanghai" => "「上下」之家即将开幕",
+    "<b>SHANG XIA masion opening </b><br/> in shanghai" => "「上下」之家即将开幕",
     
     "about SHANG XIA" => "关于「上下」",
     
