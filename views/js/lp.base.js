@@ -244,7 +244,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             loadImages( $allImgs , function(){
                 loadingMgr.hide( function(){
                     $(window).trigger('resize')
-                        .trigger('scroll');
+                        .scrollTop(0);
                     window.LOADING = false;
                 } );
             } , function( index , total ){
@@ -1563,7 +1563,6 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             var isHomePage = ( location.pathname == '' || location.pathname == '/' || location.pathname == '/index.php' );
             loadingMgr.show( !isHomePage );
 
-            $(window).scrollTop(0);
 
             switch( type ){
                 default: 
@@ -2050,7 +2049,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     
     // 多语言切换
     LP.action('chang-lang' , function(){
-        LP.setCookie( "lang", $(this).data("lang") );
+        LP.setCookie( "lang", $(this).data("lang") , '/' );
         LP.reload();
         return false;
     });
