@@ -250,11 +250,11 @@ return array(
     "contact" => "联系我们",
     
     "contact_shanghai" => "<h3>上海零售空间</h3>
-								<p>1F,South Tower, Hong Kong Plaza, 283 Huaihai Middle Rd, Shanghai, 200021, China</p>
+								<p>中国 上海 淮海中路283号 香港广场南座一层</p>
 								<p>+86-21-6390 8899</p>",
     
     "contact_beijing" => "<h3>北京零售空间</h3>
-								<p>SB107B, B1 China World Mall, China World Trade Center 1, Jianguomen Waidajie, Beijing, 100001, China</p>
+								<p>中国 北京 建国门外大街1号中国国际贸易中心 国贸商城地下一层第SB107B号</p>
 								<p>+86-10-6505-7358</p>",
     
     "contact_paris" => "<h3>巴黎零售空间</h3>
@@ -298,6 +298,10 @@ return array(
     "SHANG XIA masion opening </b><br/> in shanghai" => "「上下」之家即将开幕",
     
     "about SHANG XIA" => "关于「上下」",
+    
+    "similar products" => "相似产品",
+    
+    "I Want To Buy" => "我想购买",
 );
 
 
