@@ -51,4 +51,10 @@ class IndexController extends Controller
     
     return $this->redirect("index/login");
   }
+  
+  public function actionTest() {
+    $collection = CollectionContentAR::model()->findByPk(20567);
+    print $collection->collection_title."<br >";
+    //print $collection->thumbnail_image;
+  }
 }

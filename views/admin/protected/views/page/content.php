@@ -11,6 +11,31 @@
     </div>
     <h5><?php echo Yii::t("strings", ucfirst($type)." Table")?></h5>
   </header>
+  <?php if($type == "product"): ?>
+  <div class="filters clearfix">
+    <div class="filter">
+      <select name="collection">
+        <?php foreach (CollectionContentAR::model()->getList() as $collection): ?>
+        <option value="<?php echo $collection->title?>"><?php echo $collection->title?></option>
+        <?php endforeach;?>
+      </select>
+    </div>
+    <div class="filter">
+      <select name="craft">
+        <?php foreach (CraftContentAR::model()->getList() as $craft):?>
+        <option value="<?php echo $craft->title?>"><?php echo $craft->title?></option>
+        <?php endforeach;?>
+      </select>
+    </div>
+    <div class="filter">
+      <select name="type">
+        <?php foreach (ProductContentAR::getType() as $key => $label):?>
+        <option value="<?php echo $key?>"><?php echo $label?></option>
+        <?php endforeach;?>
+      </select>
+    </div>
+  </div>
+  <?php endif;?>
     <table class="table table-striped tablepager">
       <thead>
         <td><?php echo Yii::t("strings", "Title")?></td>
@@ -19,6 +44,9 @@
         <td><?php echo Yii::t("strings", "Weight")?></td>
         <td><?php echo Yii::t("strings", "Date")?></td>
         <td><?php echo Yii::t("strings", "Actions")?></td>
+        <td><?php echo Yii::t("strings", "collection")?></td>
+        <td><?php echo Yii::t("strings", "craft")?></td>
+        <td><?php echo Yii::t("strings", "product type")?></td>
       </thead>
       <tbody>
         <?php foreach ($list as $item): ?>
@@ -33,6 +61,19 @@
             &nbsp;|&nbsp;
             <a ng-click='deleteConfirm(<?php echo $item->cid?>)' href="javascript:void()"><?php echo Yii::t("strings", "Delete")?></a>
           </td>
+          <?php if ($type == "product"): ?>
+            <td >
+              <?php $collection = CraftContentAR::model()->findByPk($item->collection);?>
+              <?php echo ($collection) ?  $collection->title: "none"?>
+            </td>
+            <td >
+              <?php $craft = CraftContentAR::model()->findByPk($item->craft);?>
+              <?php  echo $craft ? $craft->title: "none"?>
+            </td>
+            <td >
+              <?php  echo ProductContentAR::getTypeKeyName($item->product_type)?>
+            </td>
+          <?php endif;?>
         </tr>
         <?php endforeach;?>
       </tbody>

@@ -9,6 +9,8 @@ class ContentAR extends CActiveRecord {
   private $fields = array();
   private $imageFields = array();
   private $videoFields = array();
+  
+  public static $cached_list = array();
   public function tableName() {
     return "content";
   }
@@ -225,6 +227,11 @@ class ContentAR extends CActiveRecord {
   }
   
   public function getList($limit = FALSE, $offset = FALSE) {
+    // key: {type}_{limit}_{offset}
+    $key = "{$this->type}_{$limit}_{$offset}";
+    if (isset(self::$cached_list[$key])) {
+      return self::$cached_list[$key];
+    }
     $query = new CDbCriteria();
     
     if ($limit) {
@@ -252,6 +259,11 @@ class ContentAR extends CActiveRecord {
     $query->params[":status"] = self::STATUS_ENABLE;
     
     $rows = $this->findAll($query);
+    
+    // 缓存保存好的Get list
+    // key: {type}_{limit}_{offset}
+    $key = "{$this->type}_{$limit}_{$offset}";
+    self::$cached_list[$key] = $rows;
     
     return $rows;
   }

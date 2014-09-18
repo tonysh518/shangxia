@@ -3,6 +3,7 @@
 class CraftContentAR extends ContentAR {
   public $type = "craft";
   public static $products;
+  public static $cached_crafts;
   
   public function getImageFields() {
     $this->hasImageField("thumbnail_image");
@@ -41,12 +42,16 @@ class CraftContentAR extends ContentAR {
   }
   
   public function loadCraftOption() {
+    if (self::$cached_crafts) {
+      return self::$cached_crafts;
+    }
     global $language;
     $query = Yii::app()->db->createCommand("SELECT * FROM content where type='craft' and status=1 and language='".$language."'")->queryAll();
     $crafts = array();
     foreach ($query as $item) {
       $crafts[$item["cid"]] = $item["title"];
     }
+    self::$cached_crafts = $crafts;
     
     return $crafts;
   }

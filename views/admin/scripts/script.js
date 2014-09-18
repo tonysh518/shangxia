@@ -441,7 +441,11 @@
 // Table pager 
 (function ($) {
   $(document).ready(function () {
-    $("table.tablepager").DataTable();
+    var datatable = $("table.tablepager").DataTable();
+    $(".filters select").change(function () {
+      console.log($(this).val());
+      datatable.search($(this).val()).draw();
+    });
   });
 })(jQuery);
 

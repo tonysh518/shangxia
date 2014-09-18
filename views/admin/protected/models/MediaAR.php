@@ -9,10 +9,10 @@ class MediaAR extends CActiveRecord {
     // 把所有的media 载入
     // 然后放入缓存中，后面直接查缓存
     if (!self::$caches) {
-      $res = Yii::app()->db->createCommand("SELECT * FROM media")->queryAll();
-      foreach ($res as $row) {
-        $key = "{$row["cid"]}_{$row["field_name"]}";
-        self::$caches[$key] = MediaAR::model()->findByPk($row["mid"]);
+      $res = MediaAR::model()->findAll();
+      foreach ($res as $media) {
+        $key = "{$media->cid}_{$media->field_name}";
+        self::$caches[$key] = $media;
       }
     }
     
