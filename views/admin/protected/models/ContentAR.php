@@ -11,6 +11,7 @@ class ContentAR extends CActiveRecord {
   private $videoFields = array();
   
   public static $cached_list = array();
+  
   public function tableName() {
     return "content";
   }

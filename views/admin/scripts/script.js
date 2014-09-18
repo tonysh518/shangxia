@@ -442,9 +442,10 @@
 (function ($) {
   $(document).ready(function () {
     var datatable = $("table.tablepager").DataTable();
+    var selects = $(".filters select");
     $(".filters select").change(function () {
-      console.log($(this).val());
-      datatable.search($(this).val()).draw();
+       datatable.search($(this).val());
+      datatable.draw();
     });
   });
 })(jQuery);

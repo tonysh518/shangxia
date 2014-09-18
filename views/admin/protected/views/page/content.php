@@ -30,7 +30,7 @@
     <div class="filter">
       <select name="type">
         <?php foreach (ProductContentAR::getType() as $key => $label):?>
-        <option value="<?php echo $key?>"><?php echo $label?></option>
+        <option value="<?php echo ProductContentAR::getTypeKeyName($key)?>"><?php echo $label?></option>
         <?php endforeach;?>
       </select>
     </div>
@@ -43,10 +43,12 @@
         <td><?php echo Yii::t("strings", "Body")?></td>
         <td><?php echo Yii::t("strings", "Weight")?></td>
         <td><?php echo Yii::t("strings", "Date")?></td>
+        <?php if ($type == "product"): ?>
+          <td style=""><?php echo Yii::t("strings", "collection")?></td>
+          <td style=""><?php echo Yii::t("strings", "craft")?></td>
+          <td style=""><?php echo Yii::t("strings", "product type")?></td>
+        <?php endif;?>
         <td><?php echo Yii::t("strings", "Actions")?></td>
-        <td><?php echo Yii::t("strings", "collection")?></td>
-        <td><?php echo Yii::t("strings", "craft")?></td>
-        <td><?php echo Yii::t("strings", "product type")?></td>
       </thead>
       <tbody>
         <?php foreach ($list as $item): ?>
@@ -56,11 +58,6 @@
           <td class="body"><?php echo strip_tags($item->body)?></td>
           <td><?php echo $item->weight?></td>
           <td><?php echo $item->cdate?></td>
-          <td>
-            <a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => $type, "id" => $item->cid))?>"><?php echo Yii::t("strings", "Edit")?></a>
-            &nbsp;|&nbsp;
-            <a ng-click='deleteConfirm(<?php echo $item->cid?>)' href="javascript:void()"><?php echo Yii::t("strings", "Delete")?></a>
-          </td>
           <?php if ($type == "product"): ?>
             <td >
               <?php $collection = CraftContentAR::model()->findByPk($item->collection);?>
@@ -70,10 +67,15 @@
               <?php $craft = CraftContentAR::model()->findByPk($item->craft);?>
               <?php  echo $craft ? $craft->title: "none"?>
             </td>
-            <td >
+            <td>
               <?php  echo ProductContentAR::getTypeKeyName($item->product_type)?>
             </td>
           <?php endif;?>
+          <td>
+            <a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => $type, "id" => $item->cid))?>"><?php echo Yii::t("strings", "Edit")?></a>
+            &nbsp;|&nbsp;
+            <a ng-click='deleteConfirm(<?php echo $item->cid?>)' href="javascript:void()"><?php echo Yii::t("strings", "Delete")?></a>
+          </td>
         </tr>
         <?php endforeach;?>
       </tbody>
