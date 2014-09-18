@@ -29,6 +29,7 @@ class DataCommand extends CConsoleCommand {
     }
     
     $productGroupes = require("/Users/jackeychen/Workspace/shangxia/docs/sound_of_tea+translation/convert.php");
+    
     // 把collection 转换到ID
     foreach ($productGroupes as $products) {
       foreach ($products as $index => $product) {

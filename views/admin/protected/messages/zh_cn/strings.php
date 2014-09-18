@@ -276,6 +276,8 @@ return array(
     
     "read" => "阅读",
     
+    "SHANG XIA IS NOW OPENING ITS MAISON IN SHANGHAI" => "「上下」之家即将开幕",
+    
     "shang xia is now opening <br/> its maison in shanghai" => "「上下」之家即将开幕",
     
     "THE FIRST SHANG XIA BAG" => "「上下」第一款包袋",

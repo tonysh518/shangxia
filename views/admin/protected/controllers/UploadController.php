@@ -21,7 +21,7 @@ class UploadController extends Controller {
         $height = $extension[1];
         $ext = $extension[2];
       }
-      $uri = "/upload/".$name."_".$width."_".$height.".".$ext;
+      $uri = "/upload/$prefix/".$name."_".$width."_".$height.".".$ext;
       $sourceUri = "/upload/$prefix/". $name.".".$ext;
       $root = dirname(Yii::app()->basePath);
       $absPath = $root.$uri;

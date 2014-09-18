@@ -17,7 +17,7 @@
 			<li class="piclistitem intoview-effect" data-effect="fadeup" data-editme-key="home_middle_slide_one">
         <a data-a="nav-link" href="<?php echo url("boutique", array("type" => "shanghai"))?>">
           <img src="/images/homepage01.jpg" width="100%" />
-          <p><?php echo Yii::t("strings", "shang xia is now opening <br/> its maison in shanghai")?></p>
+          <p><?php echo Yii::t("strings", "SHANG XIA IS NOW OPENING ITS MAISON IN SHANGHAI")?></p>
 				</a>
 			</li>
 			<li class="piclistitem intoview-effect" data-effect="fadeup" data-editme-key="home_middle_slide_two">
@@ -30,8 +30,8 @@
 			<li class="piclistitem intoview-effect marginR0" data-effect="fadeup" data-editme-key="home_middle_slide_third">
         <?php editme("home_middle_slide_third" ,array("title", "link_to"), array("image"))?>
         		<a data-a="nav-link" href="<?php echo url("collections", array("cid" => 20331))?>">
-					<img src="/images/homepage03.jpg" width="100%" />
-					<p><?php echo Yii::t("strings", "GIFT CORNER")?></p>
+					<img src="/images/homepageblock1.jpg" width="100%" />
+					<p><?php echo Yii::t("strings", "shang xia by paolo roversi")?></p>
 				</a>
 			</li>
 		</ul>

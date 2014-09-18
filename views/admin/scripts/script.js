@@ -181,9 +181,13 @@
           ctrl[0].$setViewValue(attr["value"]);
           scope.src = [attr["value"]];
         }
+        
+        scope.removeItem = function (index) {
+          scope.src.splice(index, 1);
+        };
       },
       template: '<div class="preview multi">' + 
-          '<div class="multi-item" ng-repeat="s in src track by $index"><img ng-src="{{s}}" alt="" /></div>' +
+          '<div class="multi-item" ng-repeat="s in src track by $index"><span class="d-img" ng-click="removeItem($index)">Del</span><img ng-src="{{s}}" alt="" /></div>' +
         '</div>' + 
         '<input type="file"  accept="image/*" upload="Upload Image"/>',
     };

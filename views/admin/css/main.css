@@ -769,6 +769,7 @@ cursor: pointer;
   margin-right: 1em;
   border: 5px dashed #888;
   height: 10em;
+  position: relative;
 }
 
 .multi .controls input[type="file"] {
@@ -786,6 +787,16 @@ cursor: pointer;
   display: inline-block;
 }
 
+.preview .d-img {
+  display: inline-block;
+  position: absolute;
+  color: #e00;
+  top: -40%;
+  right: 0px;
+  overflow: hidden;
+  width: 3em;
+  text-align: center;
+}
 
 
 
