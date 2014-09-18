@@ -629,9 +629,12 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                             } else { // 21 || 12
                                 $this.css('marginRight' , halfMR)
                                     .prev()
-                                    .css('marginLeft' , halfMR);
+                                    .css({
+                                        'marginLeft': halfMR,
+                                        'marginRight': marginRight + '%'
+                                    });
                             }
-                        } else if( counted % 3 == 1 ){
+                        } else if( ( counted - indent ) % 3 == 0 ){
                             $this.css({
                                 marginLeft: halfMR ,
                                 marginRight: halfMR
@@ -1712,7 +1715,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 } , 300 );
                 return false;
             }
-        } else if( lhref.indexOf( href ) >= 0 ){ // 如果是同一个页面
+        } else if( lhref.match( new RegExp( href + '$' ) ) ){ // 如果是同一个页面
             History.Adapter.trigger( window , 'statechange');
             return false;
         }
