@@ -352,7 +352,8 @@
 
         document.cookie = name + "=" + encodeURIComponent(value) +
             ((expire) ? "; expires=" + dt.toGMTString() : "") +
-            ((s) ? "; secure" : "");
+            ((s) ? "; secure" : "") + 
+            ((path) ? ";path="+path: "");
 
         return true;
     };
