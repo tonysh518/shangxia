@@ -12,8 +12,15 @@ return array(
     "about_brand_founder_title" => "FOUNDER & ARTISTIC DIRECTOR OF SHANGXIA",
     "about_brand_founter_desc" => 'As Artistic Director and CEO of SHANG XIA, Ms. Jiang Qiong Er is a Chinese contemporary designer of international reputation infusing the subtlety, beauty and heritage of Chinese culture. Her designs breathe elegance of innovation and imagination. Her international vision and open mind, along with her multi-cultural background, naturally allow her creativity to express itself; preserving and respecting tradition, both Eastern and Western.Jiang Qiong Er was introduced to traditional painting when she was only two and later became a student of famous painter Cheng Shi Fa and calligrapher Han Tian Hong. After graduation from Tong Ji University in Art &amp; Design, she went on to the Decorative Arts School in Paris to further her studies in furniture and interior design.',
     "about_brand_emplee_subject" => 'HERITAGE & ENCOUNTER',
-    "about_brand_emplee_one" => 'Xiu Yin, the 90 year old grandmother From the Republic, to the war To the liberation of new China To the new century Says she, she has had four lives Today, she still radiantly smiles',
-    "about_brand_emplee_two" => "Hui Jie, the 65 year old mother From the countryside To the open reform To the frenzy of construction Her life bears the weight of three eras of time Today, she continues to lightly dance",
+    "about_brand_emplee_one" => 'Xiu Yin, the 90 year old grandmother From the Republic, to the war
+To the liberation of new China
+To the new century
+Says she, she has had four lives Today, she still radiantly smiles',
+    "about_brand_emplee_two" => "Hui Jie, the 65 year old mother
+From the countryside
+To the open reform
+To the frenzy of construction
+Her life bears the weight of three eras of time Today, she continues to lightly dance",
     "about_brand_emplee_third" => "Qiong Er, the 33 year old daughter
 From educational reform
 To the booming economy

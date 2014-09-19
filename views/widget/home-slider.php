@@ -4,7 +4,8 @@
     <?php $slideshow = loadContentList("slideShow"); ?>
 		<ul class="slidebox cs-clear">
       <?php foreach ($slideshow as $show): ?>
-        <li class="slideitem"><img src="<?php echo makeThumbnail($show->image)?>" width="100%" />
+        <li class="slideitem">
+          <a href="<?php echo $show->link?>"><img src="<?php echo makeThumbnail($show->image)?>" width="100%" /></a>
           <div class="slidetip">
             <h4 class="tit"><?php echo $show->title?></h4>
             <p><?php echo $show->body?></p>
