@@ -48,7 +48,7 @@ $pagename = 'product-detail';
           <?php endforeach;?>
         </div>
         <ul class="slidetab cs-clear">
-          <?php foreach (array($product->thumbnail) as $index => $slide_image):?>
+          <?php foreach (($product->product_slide_image) as $index => $slide_image):?>
             <li class="<?php if ($index == 0) echo "on"?>"></li>
           <?php endforeach;?>
         </ul>
