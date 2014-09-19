@@ -7,14 +7,14 @@ class CraftContentAR extends ContentAR {
   
   public function getImageFields() {
     $this->hasImageField("thumbnail_image");
-    $this->hasImageField("video_poster");
+    //$this->hasImageField("video_poster");
     $this->hasImageField("nav_image");
     
     return parent::getImageFields();
   }
   
   public function getVideoFields() {
-    $this->hasVideoField("craft_video");
+    //$this->hasVideoField("craft_video");
     return parent::getVideoFields();
   }
   

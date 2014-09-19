@@ -13,8 +13,6 @@ class ProductContentAR extends ContentAR {
   
   public $type = "product";
   public function getFields() {
-    $this->hasContentField("video_title");
-    $this->hasContentField("video_description", array("type" => "textarea"));
     
     $this->hasContentField("product_type", array("type" => "select", "options" => self::getType()));
     
@@ -28,6 +26,8 @@ class ProductContentAR extends ContentAR {
     $crafOptions = CraftContentAR::model()->loadCraftOption();
     $crafOptions = array(0 => "None") + $crafOptions;
     $this->hasContentField("craft", array("type" => "select", "options" => $crafOptions));
+    
+    $this->hasContentField("gift", array("type" => "select", "options" => array( "1" => Yii::t("strings" ,"Yes"), "0" => Yii::t("strings", "No"))));
     
     
     return parent::getFields();
@@ -80,13 +80,13 @@ class ProductContentAR extends ContentAR {
 
   public function getImageFields() {
     $this->hasImageField("product_slide_image", array("multi" => TRUE));
-    $this->hasImageField("video_poster");
+    //$this->hasImageField("video_poster");
     $this->hasImageField("thumbnail");
     return parent::getImageFields();
   }
   
   public function getVideoFields() {
-    $this->hasVideoField("product_video");
+    //$this->hasVideoField("product_video");
     return parent::getVideoFields();
   }
   

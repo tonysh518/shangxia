@@ -11,6 +11,10 @@ class DataCommand extends CConsoleCommand {
         "In & Out" => "20330",
         "Sound of Tea" => "20331",
         "茶歌" => "20567",
+        "Interieur et exterieur" => "20774",
+        "Heritage et Emotion" => "20776",
+        "LHomme et la Nature" => "20775",
+        "LE CHANT DU THE" => "20773",
     );
     $craftCids = array(
         "紫檀" => "20321",
@@ -21,6 +25,10 @@ class DataCommand extends CConsoleCommand {
         "Bamboo Weaving" => "20315",
         "Eggshell Porcelain" => "20317",
         "Cashmere Felt" => "20318",
+        "Le Zitan" => "20777",
+        "Le tissage de Bambou" => "20779",
+        "Le feutre de cachemire" => "20778",
+        'La porcelaine Coquille dOeuf' => "20780",
     );
     $types = array();
     $tmp_types = ProductContentAR::getType();
@@ -28,17 +36,18 @@ class DataCommand extends CConsoleCommand {
       $types[$value] = $key;
     }
     
-    $productGroupes = require("/Users/jackeychen/Workspace/shangxia/docs/sound_of_tea+translation/convert.php");
+    // 第一批 // 
+    $productGroupes = require("/Users/jackeychen/Workspace/shangxia/docs/product.csv/convert.php");
+    // 第二批 // sound of tea
+    //$productGroupes = require("/Users/jackeychen/Workspace/shangxia/docs/sound_of_tea+translation/convert.php");
     
     // 把collection 转换到ID
     foreach ($productGroupes as $products) {
       foreach ($products as $index => $product) {
         $collection = trim($product["collection_name"]);
         $craft = trim($product["craft"]);
-        if ($product["language"] == "fr") {
-          continue;
-        }
-        else  if ($product["language"] == "en") {
+        
+        if ($product["language"] != "fr") {
           continue;
         }
         
@@ -47,7 +56,12 @@ class DataCommand extends CConsoleCommand {
           $url_key = $productGroupes["en"][$index]["title"];
         }
         
-        $collectionId = $collectionCids[$collection];
+        if (!isset($collectionCids[$collection])) {
+          print $collection.''.  strlen($collection)."\r\n";
+          print "Héritage et Émotion".strlen("Héritage et Émotion")."\r\n";
+          continue;
+        }
+        $collectionId = $collectionCids[($collection)];
         $product["collection"] = $collectionId;
         $product["product_type"] = $types[trim($product["category"])];
         $product["product_slide_image"] = ["/upload/". $product["thumbnail"]];

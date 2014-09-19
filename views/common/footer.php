@@ -17,8 +17,9 @@
 			// </div>
 			?>
 			<!-- store -->
+    <?php $store = BoutiqueContentAR::model()->loadByAddressKey($city); ?>
+    <?php if ($store): ?>
 		<div class="store-wrap">
-
 			<div class="section store cs-clear ">
         <?php 
           $store = BoutiqueContentAR::model()->loadByAddressKey($city);
@@ -51,6 +52,7 @@
 				</div>
 			</div>
 			</div>
+    <?php endif;?>
 
 
 			<!-- sitelinks -->
