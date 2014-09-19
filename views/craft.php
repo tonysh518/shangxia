@@ -39,15 +39,15 @@ include_once 'common/header.php';?>
 
 		<div class="intoview-effect" data-effect="fadeup">
 			<!-- barbg -->
-      <?php if (is_weaving($loadedCraft)): ?>
+      <?php if (is_weaving($loadedCraft->cid)): ?>
         <div class="video" data-resize="1600:560" data-video-render="1" data-mp4="/video/Bamboo_Weaving_竹丝扣瓷_30s_1.mp4" data-webm="Bamboo_Weaving_竹丝扣瓷_30s_1.webm" style="position:relative;overflow:hidden;height:560px;"  >
           <img src="/photo/video2.jpg" width="100%" />
         </div>
-      <?php elseif (is_cashmere($loadedCraft)): ?>
+      <?php elseif (is_cashmere($loadedCraft->cid)): ?>
         <div class="video" data-resize="1600:560" data-video-render="1" data-mp4="/video/Cashmere_Felt_羊绒毡_30s_1.mp4" data-webm="Cashmere_Felt_羊绒毡_30s_1.webm" style="position:relative;overflow:hidden;height:560px;"  >
           <img src="/photo/video3.jpg" width="100%" />
         </div>
-      <?php elseif (is_eggshell($loadedCraft)): ?>
+      <?php elseif (is_eggshell($loadedCraft->cid)): ?>
         <div class="video" data-resize="1600:560" data-video-render="1" data-mp4="/video/Eggshell_Porcelain_薄胎瓷_30s_1.mp4" data-webm="Eggshell_Porcelain_薄胎瓷_30s_1.webm" style="position:relative;overflow:hidden;height:560px;"  >
           <img src="/photo/video4.jpg" width="100%" />
         </div>
@@ -68,11 +68,11 @@ include_once 'common/header.php';?>
 			</div>
 		</div>
 		<!-- know how -->
-    <?php if (is_weaving($loadedCraft)): ?>
+    <?php if (is_weaving($loadedCraft->cid)): ?>
       <?php include_once 'widget/how-weaving.php';?>
-    <?php elseif (is_cashmere($loadedCraft)): ?>
+    <?php elseif (is_cashmere($loadedCraft->cid)): ?>
       <?php include_once 'widget/how-cashmere_felt.php';?>
-    <?php elseif (is_eggshell($loadedCraft)): ?>
+    <?php elseif (is_eggshell($loadedCraft->cid)): ?>
       <?php include_once 'widget/how-eggshell_porcelain.php';?>
     <?php else: ?>
       <?php include_once 'widget/how-zitan.php';?>
@@ -122,11 +122,11 @@ include_once 'common/header.php';?>
     <?php endif;?>
 
     <!-- related products -->
-    <?php if (is_weaving($loadedCraft)): ?>
+    <?php if (is_weaving($loadedCraft->cid)): ?>
       <?php include_once 'widget/product-w.php';?>
-    <?php elseif (is_cashmere($loadedCraft)): ?>
+    <?php elseif (is_cashmere($loadedCraft->cid)): ?>
       <?php include_once 'widget/product-cf.php';?>
-    <?php elseif (is_eggshell($loadedCraft)): ?>
+    <?php elseif (is_eggshell($loadedCraft->cid)): ?>
       <?php include_once 'widget/product-ep.php';?>
     <?php else: ?>
       <?php include_once 'widget/product-zitan.php';?>

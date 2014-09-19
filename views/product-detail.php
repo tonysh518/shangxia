@@ -81,7 +81,7 @@ $pagename = 'product-detail';
             <div class="video"  data-video-render="1" data-mp4="/video/Eggshell_Porcelain_薄胎瓷_30s_1.mp4" data-webm="Eggshell_Porcelain_薄胎瓷_30s_1.webm">
               <img src="/photo/video4.jpg" width="100%" />
             </div>
-          <?php else: ?>
+          <?php elseif (is_zitan($product->craft)): ?>
             <div class="video" data-video-render="1" data-mp4="/video/Zitan_紫檀_30s_1.mp4" data-webm="Zitan_紫檀_30s_1.webm"  >
               <img src="/photo/video1.jpg" width="100%" />
             </div>

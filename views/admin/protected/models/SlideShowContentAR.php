@@ -14,6 +14,7 @@ class SlideShowContentAR extends ContentAR {
   }
   
   public function getFields() {
+    $this->hasContentField("link");
     return parent::getFields();
   }
   
