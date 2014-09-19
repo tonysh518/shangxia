@@ -67,12 +67,12 @@ include_once 'common/header.php';?>
 						<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
 						<?php }?>
 						<div class="slide-con">
-              <?php if (array_search($_GET["cid"], array("20331", "20567")) !== FALSE  && ProductContentAR::getTypeKeyName($type_id) == 'apparel'): ?>
+              <?php if (array_search($_GET["cid"], array("20331", "20567", "20773")) !== FALSE  && ProductContentAR::getTypeKeyName($type_id) == 'apparel'): ?>
                 <ul class="slide-con-inner piclist cs-clear slider-type-3">
                   <?php foreach (array_values($products) as $index => $product): ?>
                     <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup" data-cid="<?php echo $product->cid?>">
                       <a data-a="nav-link" href="<?php echo url("product-detail", array("cid" => $product->cid)) ?>">
-                        <?php if (array_search($_GET["cid"], array("20331", "20567")) !== FALSE  && ProductContentAR::getTypeKeyName($type_id) == 'apparel'): ?>
+                        <?php if (array_search($_GET["cid"], array("20331", "20567", "20773")) !== FALSE  && ProductContentAR::getTypeKeyName($type_id) == 'apparel'): ?>
                           <?php echo getSlideImageHtml( $product->thumbnail, 3); ?>
                         <?php endif;?>
                           <p><span class="collicon"><?php echo $product->title?></span></p>
@@ -80,7 +80,7 @@ include_once 'common/header.php';?>
                     </li>
                   <?php endforeach;?>
                 </ul>
-              <?php elseif (array_search($_GET["cid"], array("20331", "20567")) !== FALSE  &&  ProductContentAR::getTypeKeyName($type_id) == 'teaware'): ?>
+              <?php elseif (array_search($_GET["cid"], array("20331", "20567", "20773")) !== FALSE  &&  ProductContentAR::getTypeKeyName($type_id) == 'teaware'): ?>
                 <ul class="slide-con-inner piclist cs-clear slider-type-2">
                   <?php foreach (array_values($products) as $index => $product): ?>
                     <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup" data-cid="<?php echo $product->cid?>">
@@ -95,7 +95,7 @@ include_once 'common/header.php';?>
                     </li>
                   <?php endforeach;?>
                 </ul>
-              <?php elseif (array_search($_GET["cid"], array("20331", "20567")) !== FALSE  && ProductContentAR::getTypeKeyName($type_id) == 'jewelry'): ?>
+              <?php elseif (array_search($_GET["cid"], array("20331", "20567", "20773")) !== FALSE  && ProductContentAR::getTypeKeyName($type_id) == 'jewelry'): ?>
                   <ul class="slide-con-inner piclist cs-clear slider-type-2">
                   <?php foreach (array_values($products) as $index => $product): ?>
                     <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup" data-cid="<?php echo $product->cid?>">
