@@ -242,7 +242,25 @@
   });
   
   AdminModule.controller("ContentTable", function ($scope, $modal) {
-    var ModalInstanceCtrl = function ($scope, $modalInstance, cid) {
+    
+    $scope.viewimage = function (url) {
+      $modal.open({
+        templateUrl: "imagepreview.html",
+        controller: ModalInstanceCtrl,
+        resolve: {
+          cid: function () {
+            return "";
+          },
+          url: function () {
+            return url;
+          }
+        }
+      });
+    };
+    
+    var ModalInstanceCtrl = function ($scope, $modalInstance, cid, url) {
+      $scope.cid = cid;
+      $scope.src = url;
       
       $scope.ok = function () {
         $.ajax({
@@ -263,16 +281,18 @@
         $modalInstance.dismiss('cancel');
       };
       
-      $.ajax({
-        url: window.baseurl + "/api/content",
-        data: {cid: cid},
-        type: "GET"
-      }).done(function (res) {
-        $scope.title = res["data"]["title"];
-        $scope.body = res["data"]["body"];
-        $scope.email = res["data"]["email"];
-        $scope.$digest();
-      });
+      if (cid) {
+        $.ajax({
+          url: window.baseurl + "/api/content",
+          data: {cid: cid},
+          type: "GET"
+        }).done(function (res) {
+          $scope.title = res["data"]["title"];
+          $scope.body = res["data"]["body"];
+          $scope.email = res["data"]["email"];
+          $scope.$digest();
+        });
+      }
     };
     
     

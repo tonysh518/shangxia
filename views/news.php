@@ -157,7 +157,7 @@
 						<div class="productslist cs-clear slide-con-inner">
               <?php foreach( $presses as $press): ?>
                 <a class="prolistitem pressitem intoview-effect" data-a="show-pop" data-d="press=1" data-effect="fadeup" href="#">
-                  <img src="<?php echo $press->press_image?>" width="100%" />
+                  <img src="<?php echo makeThumbnail($press->press_image, array(415, 220))?>" width="100%" />
                   <p>
                   	<?php echo $press->title?><br />
                   	<span class="date"><?php echo date("M Y", strtotime($press->publish_date))?></span>

@@ -94,7 +94,13 @@ class PageController extends Controller {
   
   public function actionNewsletter() {
     $list = NewsletterContentAR::model()->getList();
-    $this->render("newsletter", array("model" => NewsletterContentAR::model(), "type" => "contact", "list" => $list));
+    $this->render("newsletter", array("model" => NewsletterContentAR::model(), "type" => "newsletter", "list" => $list));
+  }
+  
+  public function actionWantobuy() {
+    $list = BuyContentAR::model()->getList();
+    
+    $this->render("wantobuy", array("model" => NewsletterContentAR::model(), "type" => "buy", "list" => $list));
   }
 }
 
