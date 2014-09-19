@@ -9,6 +9,7 @@ if (isset($_GET["type"])) {
 else {
   exit(header("Location: /index.php"));
 }
+$content_title = $crtboutique->title;
 
 $pagename="boutique-page";
 include_once 'common/header.php';?>

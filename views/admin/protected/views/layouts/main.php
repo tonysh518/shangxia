@@ -204,7 +204,7 @@
         <img src="{{src}}" alt="" />
       </div>
       <div class="modal-footer">
-          <button class="btn btn-warning" ng-click="cancel()"><?php echo Yii::t("strings" ,"Cancel")?></button>
+          <button class="btn btn-warning" ng-click="cancel()"><?php echo Yii::t("strings" ,"Close")?></button>
       </div>
   </script>
 </body>

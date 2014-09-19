@@ -10,6 +10,8 @@ if (isset($_GET["key"])) {
 else {
   exit(header("Location: /index.php"));
 }
+
+$content_title = $loadedCraft->title;
 ?>
 
 <?php 

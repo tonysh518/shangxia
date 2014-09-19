@@ -15,6 +15,8 @@ else {
   exit(header("Location: /index.php"));
 }
 
+$content_title = $collection->title;
+
 // fix has slider
 $has_slider = array('apparel','homeware','teaware');
 

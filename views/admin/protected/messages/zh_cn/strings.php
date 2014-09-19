@@ -317,6 +317,8 @@ return array(
     
     "ICP LICENCE" => "ICP 备案",
     
+    "shang xia" => "上下",
+    
     "SHANGXIA does not rent or sell customer <br/> email addresses to third parties" => "「上下」不会泄漏您任何资料给第三方",
     
     "You are interested by buying this product? <br/> Let us contact you back and we will arrange a way to provide you this prodcut" => "您对此产品有兴趣？我们会稍后与您取得联系",

@@ -4,7 +4,7 @@ require_once "inc.php";?>
 <html>
 <head>
   <meta charset="utf-8">
-  <title>SHANG XIA</title>
+  <title><?php if (isset($content_title)) echo $content_title." | "?><?php echo $page_title?> | <?php echo Yii::t("strings" ,"shang xia")?></title>
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <link rel="stylesheet" type="text/css" href="/css/style.css?_=1234" />

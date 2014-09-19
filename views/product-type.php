@@ -10,6 +10,9 @@ else {
   exit(header("Location: /index.php"));
 }
 
+$types = ProductContentAR::getType();
+$content_title = $types[ProductContentAR::getKeyWithTypeName($_GET["name"])];
+
 $productsGroupWithCollection = getProductInType(ProductContentAR::getKeyWithTypeName($_GET["name"]));
 $product_type = $_GET["name"];
 

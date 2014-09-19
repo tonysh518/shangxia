@@ -10,6 +10,8 @@ else {
   exit(header("Location: /index.php"));
 }
 
+$content_title = $product->title;
+
 $pagename = 'product-detail';
 ?>
 <?php include_once 'common/header.php';?>

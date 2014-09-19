@@ -51,6 +51,14 @@ else {
   $language = "en";
 }
 
+// 计算出 Page title
+$page_title = "首页";
+
+$uri = preg_replace("/(\.php)|(^\/)/", "", $_SERVER["SCRIPT_NAME"]);
+$uri = str_replace("-", " ", $uri);
+
+$page_title = Yii::t("page_title", $uri);
+        
 /**
  * 生成一个编辑我的区块
  */
@@ -470,4 +478,3 @@ function image_size($uri, $what = "width") {
   }
   return $what == "width" ?  $size[0]: $size[1];
 }
-
