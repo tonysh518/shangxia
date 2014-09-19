@@ -22,7 +22,7 @@
 			</li>
 			<li class="piclistitem intoview-effect" data-effect="fadeup" data-editme-key="home_middle_slide_two">
         <?php editme("home_middle_slide_two" ,array("title", "link_to"), array("image"))?>
-        <a data-a="nav-link" href="<?php echo url("collections", array("cid" => 20331))?>">
+        <a data-a="nav-link" href="/product-detail/lan-yue-">
 					<img src="/images/homepage02.jpg" width="100%" />
 					<p><?php echo Yii::t("strings", 'THE FIRST SHANG XIA BAG')?></p>
 				</a>
