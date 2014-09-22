@@ -1825,7 +1825,12 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
 
     LP.action('show-pop' , function( data ){
-        popHelper.show( $(this).siblings('textarea').val() , data );
+        if ($(this).siblings('textarea').size() > 0) {
+          popHelper.show( $(this).siblings('textarea').val() , data );
+        }
+        else {
+          popHelper.show($(this).parent().siblings().find("textarea").val(), data );
+        }
         return false;
     });
 
