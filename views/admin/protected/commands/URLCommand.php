@@ -178,7 +178,12 @@ class URLCommand extends CConsoleCommand {
     $language = "fr";
     $productAr = ProductContentAR::model()->getList();
     foreach ($productAr as $product) {
-      if ($product->collection != "20773") {
+      // sound of tea
+//      if ($product->collection != "20773") {
+//        continue;
+//      }
+      // 其他 collection
+      if ($product->collection == "20773") {
         continue;
       }
       $url_key = $product->url_key;

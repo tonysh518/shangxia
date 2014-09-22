@@ -217,6 +217,7 @@ function loadOtherCraft($craft_id = 0) {
   $query->addNotInCondition("cid", array($craft_id));
   $query->addCondition("language=:language");
   $query->params[":language"] = $language;
+  $query->order = "weight DESC, cdate DESC";
   
   return CraftContentAR::model()->findAll($query);
 }
