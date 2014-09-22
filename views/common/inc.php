@@ -154,6 +154,7 @@ function getProductInTypeWithCollection($type = "", $collection = NULL) {
   else {
     return array();
   }
+  
   $cids = array();
   $res = Yii::app()->db->createCommand($sql)->queryAll();
   foreach ($res as $item) {

@@ -3,14 +3,14 @@
 class DataCommand extends CConsoleCommand {
   public function actionImportShop() {
     $collectionCids = array(
-        "人与自然" => "20090",
-        "传承与情感" => "20089",
+        "人与自然" => "20089",
+        "传承与情感" => "20090",
         "里·外" => "20079",
+        "茶歌" => "20567",
         "Human & Nature" => "20332",
         "Heritage & Emotion" => "20333",
         "In & Out" => "20330",
         "Sound of Tea" => "20331",
-        "茶歌" => "20567",
         "Interieur et exterieur" => "20774",
         "Heritage et Emotion" => "20776",
         "LHomme et la Nature" => "20775",
@@ -37,9 +37,9 @@ class DataCommand extends CConsoleCommand {
     }
     
     // 第一批 // 
-    //$productGroupes = require("/Users/jackeychen/Workspace/shangxia/docs/product.csv/convert.php");
+    $productGroupes = require("/Users/jackeychen/Workspace/shangxia/docs/product.csv/convert.php");
     // 第二批 // sound of tea
-    $productGroupes = require("/Users/jackeychen/Workspace/shangxia/docs/sound_of_tea+translation/convert.php");
+    //$productGroupes = require("/Users/jackeychen/Workspace/shangxia/docs/sound_of_tea+translation/convert.php");
     
     // 把collection 转换到ID
     foreach ($productGroupes as $products) {
@@ -47,7 +47,7 @@ class DataCommand extends CConsoleCommand {
         $collection = trim($product["collection_name"]);
         $craft = trim($product["craft"]);
         
-        if ($product["language"] != "fr") {
+        if ($product["language"] != "cn") {
           continue;
         }
         
