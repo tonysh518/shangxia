@@ -1,7 +1,7 @@
 <?php 
   $map = 'baidu';
   $city = getCity();
-  if ($city == "paris" || ( isset($_GET["type"]) && $_GET["type"] == "paris")) {
+  if ($city == "paris") {
     $map = "google";
   }
 ?>

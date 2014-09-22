@@ -27,7 +27,7 @@ class ProductContentAR extends ContentAR {
     $crafOptions = array(0 => "None") + $crafOptions;
     $this->hasContentField("craft", array("type" => "select", "options" => $crafOptions));
     
-    $this->hasContentField("gift", array("type" => "select", "options" => array( "1" => Yii::t("strings" ,"Yes"), "0" => Yii::t("strings", "No"))));
+    $this->hasContentField("gift", array("type" => "select", "options" => array( "0" => Yii::t("strings", "No"), "1" => Yii::t("strings" ,"Yes") )));
     
     
     return parent::getFields();
