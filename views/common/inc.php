@@ -481,3 +481,14 @@ function image_size($uri, $what = "width") {
   }
   return $what == "width" ?  $size[0]: $size[1];
 }
+
+function getLastCollection() {
+  $list = CollectionContentAR::model()->getList(1);
+  
+  if ($list) {
+    return $list[0];
+  }
+  
+  return FALSE;
+  
+}
