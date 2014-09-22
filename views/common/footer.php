@@ -6,7 +6,7 @@
   }
 ?>
 <!-- footer -->
-		<div class="footer">		
+		<div class="footer">
 			<!-- location -->
 			<?php
 			// <div class="location intoview-effect" data-effect="fadeup">
