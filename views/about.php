@@ -116,7 +116,7 @@ include_once 'common/header.php';?>
                     <h3><?php echo $job->title?></h3>
                     <a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition"><?php echo Yii::t("strings", "Read more")?><br><br><?php echo Yii::t("strings", "Read more")?></span></a>
                     <textarea style="display:none;">
-                        <div class="popconabout">
+                        <div class="popconabout" id="job-popup">
                           <h2><?php echo $job->title?></h2>
                           <?php if (($job->report_to)):?>
                           <div class="popcontxt">
@@ -135,7 +135,7 @@ include_once 'common/header.php';?>
                               <?php echo $job->key_responsibilities?>
                             </p>
                           </div>
-                          <h3><?php echo Yii::t("strings", "Requirements & Capabilities")?></h3>
+                          <h3><?php echo Yii::t("strings", "Requirements & Capabilities")?>:</h3>
                           <div class="popcontxt">
                             <p> 
                               <?php echo $job->requirements_capabilities?>

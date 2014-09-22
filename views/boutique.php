@@ -28,7 +28,7 @@ include_once 'common/header.php';?>
       <div class="slide intoview-effect scroll-lowheight" data-effect="fadeup">
         <div class="slidebox cs-clear scroll-lowheight-item">
           <?php foreach ($crtboutique->boutique_slide as $image): ?>
-            <a href="javascript:void(0)" class="slideitem"><img src="<?php echo $image?>" width="100%" /></a>
+            <a class="slideitem"><img src="<?php echo $image?>" width="100%" /></a>
           <?php endforeach;?>
         </div>
         <ul class="slidetab cs-clear">
@@ -53,7 +53,7 @@ include_once 'common/header.php';?>
 			<div class="parislist cs-clear">
         <?php if ($crtboutique->thumbnail_image): ?>
           <?php foreach ($crtboutique->thumbnail_image as $image): ?>
-            <a href="javascript:void(0)" class="parisitem intoview-effect" data-effect="fadeup">
+            <a class="parisitem intoview-effect" data-effect="fadeup">
               <img src="<?php echo $image?>" width="100%" alt="">
             </a>
           <?php endforeach;?>

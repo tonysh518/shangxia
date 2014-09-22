@@ -75,7 +75,7 @@ include_once 'common/header.php';?>
                     <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup" data-cid="<?php echo $product->cid?>">
                       <a data-a="nav-link" href="<?php echo url("product-detail", array("cid" => $product->cid)) ?>">
                         <?php if (array_search($_GET["cid"], array("20331", "20567", "20773")) !== FALSE  && ProductContentAR::getTypeKeyName($type_id) == 'apparel'): ?>
-                          <?php echo getSlideImageHtml( $product->thumbnail, 3); ?>
+                          <?php echo getSlideImageHtml( $product->thumbnail, 1); ?>
                         <?php endif;?>
                           <p><span class="collicon"><?php echo $product->title?></span></p>
                       </a>

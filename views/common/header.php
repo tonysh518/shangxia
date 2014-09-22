@@ -5,8 +5,8 @@ require_once "inc.php";?>
 <head>
   <meta charset="utf-8">
   <title><?php if (isset($content_title)) echo $content_title." | "?><?php echo $page_title?> | <?php echo Yii::t("strings" ,"shang xia")?></title>
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
+  <meta name="keywords" content="<?php echo Yii::t("page_title", "meta_keywords")?>" />
+  <meta name="description" content="<?php echo Yii::t("page_title", "meta_desc")?>" />
   <link rel="stylesheet" type="text/css" href="/css/style.css?_=1234" />
   <link rel="stylesheet" type="text/css" href="/css/editme.css" />
 </head>
