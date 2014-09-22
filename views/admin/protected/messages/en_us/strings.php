@@ -1,7 +1,7 @@
 <?php 
 
 return array(
-    "about_brand_story_title" => "brand story<br>Renaissance of Chinese Art of Living",
+    "about_brand_story_title" => "brand story<br>Renaissance of Chinese fine Living",
     "about_brand_story_desc" => "<p>SHANG XIA is a brand for art of living that promises a unique encounter with the heritage of Chinese design and craftsmanship.</p>".
 				"<p>The renowned designer Jiang Qiong Er established SHANG XIA with a mission to create a 21st century lifestyle founded on the finest of Chinese design traditions.</p>".
 				"<p>The SHANG XIA name is simple yet profound. It embodies the concept of “up” and “down” in the continuous flow of energy from past, present and future, transmitting the essence of Chinese culture and its sublime aesthetics.</p>".

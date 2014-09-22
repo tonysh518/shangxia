@@ -19,7 +19,6 @@ $content_title = $collection->title;
 
 // fix has slider
 $has_slider = array('apparel','homeware','teaware');
-
 ?>
 
 <?php 

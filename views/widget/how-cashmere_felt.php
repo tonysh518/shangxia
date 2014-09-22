@@ -16,7 +16,7 @@
 						</div>
 					</textarea>
 				</div>
-				<div class="knowhowpic  knowhowR"><img src="/photo/how-felt1.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowR"><img data-a="show-pop" src="/photo/how-felt1.jpg" width="100%" /></div>
 			</div>
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowR inout-effect">
@@ -30,7 +30,7 @@
 						</div>
 					</textarea>
 				</div>
-				<div class="knowhowpic  knowhowL"><img src="/photo/how-felt2.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowL"><img data-a="show-pop" src="/photo/how-felt2.jpg" width="100%" /></div>
 			</div>
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowL inout-effect">
@@ -45,7 +45,7 @@
 					</textarea>
 				</div>
 
-				<div class="knowhowpic  knowhowR"><img src="/photo/how-felt3.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowR"><img data-a="show-pop" src="/photo/how-felt3.jpg" width="100%" /></div>
 			</div>
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowR inout-effect">
@@ -60,7 +60,7 @@ fabric and untangle the tangled spots. The fabric is rinsed unhooked and hung up
 						</div>
 					</textarea>
 				</div>
-				<div class="knowhowpic  knowhowL"><img src="/photo/how-felt4.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowL"><img data-a="show-pop" src="/photo/how-felt4.jpg" width="100%" /></div>
 			</div>
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowL inout-effect">
@@ -74,7 +74,7 @@ fabric and untangle the tangled spots. The fabric is rinsed unhooked and hung up
 						</div>
 					</textarea>
 				</div>
-				<div class="knowhowpic  knowhowR"><img src="/photo/how-felt5.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowR"><img data-a="show-pop" src="/photo/how-felt5.jpg" width="100%" /></div>
 			</div>
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowR inout-effect">
@@ -88,7 +88,7 @@ fabric and untangle the tangled spots. The fabric is rinsed unhooked and hung up
 						</div>
 					</textarea>
 				</div>
-				<div class="knowhowpic  knowhowL"><img src="/photo/how-felt6.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowL"><img data-a="show-pop" src="/photo/how-felt6.jpg" width="100%" /></div>
 			</div>
 		</div>
 	</div>

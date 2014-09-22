@@ -16,7 +16,7 @@
               </div>
 					</textarea>
 				</div>
-				<div class="knowhowpic  knowhowR"><img src="/photo/how-weaving1.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowR"><img data-a="show-pop" src="/photo/how-weaving1.jpg" width="100%" /></div>
 			</div>
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowR inout-effect">
@@ -30,7 +30,7 @@
               </div>
 					</textarea>
 				</div>
-				<div class="knowhowpic  knowhowL"><img src="/photo/how-weaving2.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowL"><img data-a="show-pop" src="/photo/how-weaving2.jpg" width="100%" /></div>
 			</div>
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowL inout-effect">
@@ -45,7 +45,7 @@
 					</textarea>
 				</div>
 
-				<div class="knowhowpic  knowhowR"><img src="/photo/how-weaving3.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowR"><img data-a="show-pop" src="/photo/how-weaving3.jpg" width="100%" /></div>
 			</div>
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowR inout-effect">
@@ -59,7 +59,7 @@
                </div>
 					</textarea>
 				</div>
-				<div class="knowhowpic  knowhowL"><img src="/photo/how-weaving4.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowL"><img data-a="show-pop" src="/photo/how-weaving4.jpg" width="100%" /></div>
 			</div>
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowL inout-effect">
@@ -73,7 +73,7 @@
 						</div>
 					</textarea>
 				</div>
-				<div class="knowhowpic  knowhowR"><img src="/photo/how-weaving5.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowR"><img data-a="show-pop" src="/photo/how-weaving5.jpg" width="100%" /></div>
 			</div>
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowR inout-effect">
@@ -87,7 +87,7 @@
                </div>
 					</textarea>
 				</div>
-				<div class="knowhowpic  knowhowL"><img src="/photo/how-weaving6.jpg" width="100%" /></div>
+				<div class="knowhowpic  knowhowL"><img data-a="show-pop" src="/photo/how-weaving6.jpg" width="100%" /></div>
 			</div>
 		</div>
 	</div>
