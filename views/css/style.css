@@ -102,10 +102,10 @@ a{text-decoration:none;outline: none;color:inherit;}
 ================================================================================================= */
 
 /*head*/
-.head{z-index: 100;background: white;height: 150px;position: relative;}
+.head{z-index: 100;background: white;height: 118px;position: relative;}
 .head-fixed{position: fixed;width: 100%;background: white;top:0;}
 .head-inner-wrap{position: relative;z-index: 100;background: white;}
-.head-inner{width: 80%;margin: 0 auto;padding: 40px 0;position: relative;}
+.head-inner{width: 80%;margin: 0 auto;padding: 24px 0;position: relative;}
 .nav{float: left;width: 42%;}
 .nav2{width: 30%}
 .nav li{float: left;line-height: 70px;width: 33%;text-align: center;font-size: 14px;position: relative;font-family: 'Gotham Light';cursor: pointer;}
@@ -543,7 +543,7 @@ text-align: right;}
 
 
 .inout-effect{overflow: hidden;position: relative;}
-.inout-bg{position: absolute;top:100%;left:0 ;width: 100%;height: 100%;opacity: 0.4; filter:alpha(opacity=40);background: #000;z-index: 0;}
+.inout-bg{position: absolute;top:100%;left:0 ;width: 100%;height: 100%;opacity: 0.2; filter:alpha(opacity=20);background: #000;z-index: 0;}
 
 .story_summary {margin-bottom: 5em;}
 

@@ -125,11 +125,11 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 $(window).scroll(function(){
                     var st = $(window).scrollTop();
 
-                    if( top - st < 150 ){
+                    if( top - st < headHeight ){
                         $slider.find('.slidebox')
                             .css({
-                                marginTop: ( st + 150 - top ) * 2 / 3,
-                                marginBottom: - ( st + 150 - top ) * 2 / 3
+                                marginTop: ( st + headHeight - top ) * 2 / 3,
+                                marginBottom: - ( st + headHeight - top ) * 2 / 3
                             });
                     } else {
                         $slider.find('.slidebox')
@@ -308,11 +308,11 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     var $cloneHeader = $('.loading-wrap .head-inner-wrap')
                     .animate({
                         top: 0,
-                        marginTop: -150
+                        marginTop: -headHeight
                     } , 800);
 
 
-                    var sliderHeight = $(window).height() - 150;
+                    var sliderHeight = $(window).height() - headHeight;
 
                     // set slider css
                     var $homeSilder = $('#home-slider')
@@ -1492,12 +1492,14 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
     });
 
+    var headHeight = $('.head').height();
+
     $(window).resize(function(){
         var winWidth = $(window).width();
         var winHeight = $(window).height();
 
         // fix home slider
-        $('#home-slider').height( winHeight - 150 )
+        $('#home-slider').height( winHeight - headHeight )
             .find('.slideitem')
             .each(function(){
                 // fix image size
@@ -1653,7 +1655,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                             if( hash ){
                                 location.hash = hash;
                                 var $a = $('a[name="' + hash + '"]'); 
-                                sttop = $a.length && $a.offset().top - 150;
+                                sttop = $a.length && $a.offset().top - headHeight;
                             }
                             $('html,body').animate({
                                 scrollTop: sttop || 0
