@@ -228,8 +228,9 @@ class ContentAR extends CActiveRecord {
   }
   
   public function getList($limit = FALSE, $offset = FALSE) {
+    global $language;
     // key: {type}_{limit}_{offset}
-    $key = "{$this->type}_{$limit}_{$offset}";
+    $key = "{$language}_{$this->type}_{$limit}_{$offset}";
     if (isset(self::$cached_list[$key])) {
       return self::$cached_list[$key];
     }
@@ -249,12 +250,10 @@ class ContentAR extends CActiveRecord {
       $query->params[":type"] = $type;
     }
     
-    global $language;
     $query->addCondition("language=:language");
     $query->params[":language"] = $language;
-
     
-    $query->order = "weight DESC, cdate DESC";
+    $query->order = "weight DESC";
     
     $query->addCondition("status=:status");
     $query->params[":status"] = self::STATUS_ENABLE;

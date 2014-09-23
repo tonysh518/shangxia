@@ -44,7 +44,7 @@ class URLCommand extends CConsoleCommand {
 //    $language = "en";
 //    $productAr = ProductContentAR::model()->getList();
 //    foreach ($productAr as $product) {
-//      $url_key = $product->title;
+//      $url_key = trim($product->title);
 //      $title = preg_replace('/([\s-&\(\)])+/i', "-", strip_tags(strtolower($url_key)));
 //      $_SERVER["SERVER_NAME"] = "http://sxhtml.local/";
 //      $url_key = strtolower($title);
@@ -74,7 +74,7 @@ class URLCommand extends CConsoleCommand {
 //    $language = "cn";
 //    $productAr = ProductContentAR::model()->getList();
 //    foreach ($productAr as $product) {
-//      $url_key = $product->url_key;
+//      $url_key = trim($product->url_key);
 //      $title = preg_replace('/([\s-&\(\)])+/i', "-", strip_tags(strtolower($url_key)));
 //      $_SERVER["SERVER_NAME"] = "http://sxhtml.local/";
 //      $url_key = strtolower($title);
@@ -138,7 +138,7 @@ class URLCommand extends CConsoleCommand {
 //    }
     
     // Product + Chinese 更新 url key
-//    $language = "en";
+//    $language = "cn";
 //    $productAr = ProductContentAR::model()->getList();
 //    foreach ($productAr as $product) {
 //      if ($product->collection != "20567") {
@@ -175,45 +175,46 @@ class URLCommand extends CConsoleCommand {
 //    }
     
      // Product + French 更新 url key
-    $language = "fr";
-    $productAr = ProductContentAR::model()->getList();
-    foreach ($productAr as $product) {
-      // sound of tea
+//    $language = "fr";
+//    $productAr = ProductContentAR::model()->getList();
+//    foreach ($productAr as $product) {
+//      // sound of tea
+////      if ($product->collection != "20773") {
+////        continue;
+////      }
 //      if ($product->collection != "20773") {
 //        continue;
 //      }
-      // 其他 collection
-      if ($product->collection == "20773") {
-        continue;
-      }
-      $url_key = $product->url_key;
-      $title = preg_replace('/([\s-&\(\)])+/i', "-", strip_tags(strtolower($url_key)));
-      $_SERVER["SERVER_NAME"] = "http://sxhtml.local/";
-      $url_key = strtolower($title);
-      
-      // 更新之前要保证 URK_KEY 是唯一的
-      $exitProduct = ProductContentAR::loadContentWithUrlKey($url_key, "product");
-      if ($exitProduct) {
-        print ($exitProduct->language." ". $exitProduct->cid."\r\n");
-      }
-      $index = 1;
-      if ($exitProduct) {
-        while ($exitProduct) {
-          $tmp_url_key = $url_key. "-{$index}";
-          if ($exitProduct = ProductContentAR::loadContentWithUrlKey($tmp_url_key, "product")) {
-            $index += 1;
-          }
-        }
-        $url_key .= "-{$index}";
-      }
-      
-      $_REQUEST["url_key"] = $url_key;
-      try {
-        $product->save();
-      } catch (Exception $ex) {
-        
-      }
-      print $url_key." ".$language."\r\n";
-    }
+//      
+//      $url_key = trim($product->url_key);
+//      $title = preg_replace('/([\s-&\(\)])+/i', "-", strip_tags(strtolower($url_key)));
+//      $_SERVER["SERVER_NAME"] = "http://sxhtml.local/";
+//      $url_key = strtolower($title);
+//      
+//      // 更新之前要保证 URK_KEY 是唯一的
+//      $exitProduct = ProductContentAR::loadContentWithUrlKey($url_key, "product");
+//      if ($exitProduct) {
+//        print ($exitProduct->language." ". $exitProduct->cid."\r\n");
+//      }
+//      $index = 1;
+//      if ($exitProduct) {
+//        while ($exitProduct) {
+//          $tmp_url_key = $url_key. "-{$index}";
+//          if ($exitProduct = ProductContentAR::loadContentWithUrlKey($tmp_url_key, "product")) {
+//            $index += 1;
+//          }
+//        }
+//        $url_key .= "-{$index}";
+//      }
+//      
+//      $_REQUEST["url_key"] = $url_key;
+//      try {
+//        $product->save();
+//      } catch (Exception $ex) {
+//        
+//      }
+//      print $url_key." ".$language."\r\n";
+//    }
+    
   }
 }

@@ -37,9 +37,9 @@ class DataCommand extends CConsoleCommand {
     }
     
     // 第一批 // 
-     $productGroupes = require("/Users/jackeychen/Workspace/shangxia/docs/product.csv/convert.php");
+     //$productGroupes = require("/Users/jackeychen/Workspace/shangxia/docs/product.csv/convert.php");
     // 第二批 // sound of tea
-    // $productGroupes = require("/Users/jackeychen/Workspace/shangxia/docs/sound_of_tea+translation/convert.php");
+    $productGroupes = require("/Users/jackeychen/Workspace/shangxia/docs/sound_of_tea+translation/convert.php");
     
     // 把collection 转换到ID
     foreach ($productGroupes as $products) {
@@ -47,7 +47,7 @@ class DataCommand extends CConsoleCommand {
         $collection = trim($product["collection_name"]);
         $craft = trim($product["craft"]);
         
-        if ($product["language"] != "fr") {
+        if ($product["language"] != "cn") {
           continue;
         }
         
@@ -70,6 +70,7 @@ class DataCommand extends CConsoleCommand {
         $product["video_description"] = $product["title"];
         $product["craft"] = $craft ? $craftCids[$craft]: "";
         $product["url_key"] = $url_key;
+        $product["weight"] = $index;
         $_REQUEST = $product;
         $_POST = $product;
         $productModel = new ProductContentAR();
@@ -87,6 +88,155 @@ class DataCommand extends CConsoleCommand {
         }
       }
     }
+  }
+  
+  public function actionOrder() {
+    // Step1, 先加载所有的英文，用英文的顺序做为参照
+    global $language;
+    $language = "en";
+    
+    $_SERVER["SERVER_NAME"] = "http://sxhtml.local/";
+    // 修改原始的产品
+//    $en_products = ProductContentAR::model()->getList();
+//    $total = count($en_products);
+//    
+//    foreach ($en_products as $index => $en_product) {
+//      if ($en_product->weight) {
+//        $sub = $total + $en_product->weight;
+//      }
+//      else {
+//        $sub = $total - $index;
+//        print $sub."\r\n";
+//      }
+//      $en_product->weight = $sub;
+//      $en_product->save();
+//    }
+//    return;
+    
+    $en_products = ProductContentAR::model()->getList();
+    
+    // 更新顺序
+//    foreach ($en_products as $index => $en_product) {
+//      // Step2, 然后再加载对应的中文
+//      $language = "cn";
+//      $cn_product = ContentAR::loadContentWithUrlKey($en_product->url_key, "product");
+//      if ($cn_product) {
+//        //print "{$cn_product->weight} : {$cn_product->cdate} \t";
+//        $cn_product->weight = $en_product->weight;
+//        $cn_product->save();
+//        //print "{$cn_product->weight} : {$cn_product->cdate}\r\n";
+//        print ".\r\n";
+//        //print "saved: ".$en_product->title." ".$en_product->cid." \r\n";
+//      }
+//      else {
+//        print "not found: ".$en_product->title." ".$en_product->cid." \r\n";
+//      }
+//      
+//      // Step3, 最后更新对应的法文
+//      $language = "fr";
+//      $cn_product = ContentAR::loadContentWithUrlKey($en_product->url_key, "product");
+//      if ($cn_product) {
+//        //print "{$cn_product->weight} : {$cn_product->cdate} \t";
+//        $cn_product->weight = $en_product->weight;
+//        $cn_product->save();
+//        //print "{$cn_product->weight} : {$cn_product->cdate}\r\n";
+//        print ".\r\n";
+//        //print "saved: ".$en_product->title." ".$en_product->cid." \r\n";
+//      }
+//      else {
+//        print "not found: ".$en_product->title." ".$en_product->cid." \r\n";
+//      }
+//    }
+    
+//    foreach ($en_products as $en_product) {
+//      $language = "cn";
+//      $cn_product = ContentAR::loadContentWithUrlKey($en_product->url_key, "product");
+//      if ($cn_product) {
+//        //TODO::
+//        //print $en_product->url_key." {$en_product->cid} \r\n";
+//      }
+//      else {
+//        print "not found: ".$en_product->title." ".$en_product->cid." \r\n";
+//      }
+//    }
+    
+//    $file = fopen("products_en.csv", "w+");
+//    $language = "en";
+//    foreach ($en_products as $index => $en_product) {
+//      $attributes = ($en_product->attributes);
+//      if (is_array($attributes)) {
+//        unset($attributes["product_slide_image"]);
+//        if ($index == 0) {
+//          fputcsv($file, array_keys($attributes));
+//        }
+//        fputcsv($file, $attributes);
+//      }
+//    }
+//    
+//    $language = "cn";
+//    $cn_products = ProductContentAR::model()->getList();
+//    
+//    $file = fopen("products_cn.csv", "w+");
+//    foreach ($cn_products as $index => $cn_product) {
+//      $attributes = ($cn_product->attributes);
+//      if (is_array($attributes)) {
+//        unset($attributes["product_slide_image"]);
+//        if ($index == 0) {
+//          fputcsv($file, array_keys($attributes));
+//        }
+//        fputcsv($file, $attributes);
+//      }
+//    }
+//    fclose($file);
+//    
+//    $language = "fr";
+//    $cn_products = ProductContentAR::model()->getList();
+//    
+//    $file = fopen("products_fr.csv", "w+");
+//    foreach ($cn_products as $index => $cn_product) {
+//      $attributes = ($cn_product->attributes);
+//      if (is_array($attributes)) {
+//        unset($attributes["product_slide_image"]);
+//        if ($index == 0) {
+//          fputcsv($file, array_keys($attributes));
+//        }
+//        fputcsv($file, $attributes);
+//      }
+//    }
+//    fclose($file);
+    
+//    $file = fopen("products_en.csv", "r");
+//    $language = "fr";
+//    $fields = fgetcsv($file);
+//    
+//    global $language;
+//    $language = "cn";
+//    while ($attributes = fgetcsv($file)) {
+//      $product = ProductContentAR::model()->findByPk($attributes[0]);
+//      $product->weight = $attributes[9];
+//      $_POST["thumbnail"] = $attributes[17];
+//      $product->save();
+//      print ".";
+//    }
+//    $file = fopen("products_en.csv", "r");
+//    
+//    $en_products = array();
+//    while ($row = fgetcsv($file)) {
+//      $en_products[] = $row;
+//    }
+//    
+//    print_r(count($en_products));
+//    
+//    fclose($file);
+//    
+//    $file = fopen("products_cn.csv", "r");
+//    $cn_products = array();
+//    while ($row = fgetcsv($file)) {
+//      $cn_products[] = $row;
+//    }
+//    
+//    print "\r\n".count($cn_products);
+    
   }
 }
 
