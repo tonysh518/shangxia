@@ -108,6 +108,14 @@
       <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "craft"))?>"><?php echo Yii::t("strings", "craft")?></a></li>
       <!-- End Craft-->
       
+      <!-- Gift  -->
+      <li class="nav-header">
+        <?php echo Yii::t("strings", "Gift")?>
+      </li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "gift"))?>"><?php echo Yii::t("strings", "Add gift")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "gift"))?>"><?php echo Yii::t("strings", "gift")?></a></li>
+      <!-- End Gift-->
+      
       <!-- boutique  -->
       <li class="nav-header">
         <?php echo Yii::t("strings", "Boutique")?>

@@ -8,14 +8,12 @@
 <!-- footer -->
 		<div class="footer">
 			<!-- location -->
-			<?php
-			// <div class="location intoview-effect" data-effect="fadeup">
-			// 	<div class="range">
-			// 		<p class="rangetxt">In addition to the range of homeware and accessories</p>
-			// 		<a href="#" title="" class="rangebtn transition-wrap"><span class="transition">Enter the gift corner<br/><br/>Enter the gift corner</span></a>
-			// 	</div>			
-			// </div>
-			?>
+			 <div class="location intoview-effect" data-effect="fadeup">
+			 	<div class="range">
+			 		<p class="rangetxt">In addition to the range of homeware and accessories</p>
+			 		<a href="/collectionlist.php" title="" class="rangebtn transition-wrap"><span class="transition">Enter the gift corner<br/><br/>Enter the gift corner</span></a>
+			 	</div>			
+			 </div>
 			<!-- store -->
     <?php $store = BoutiqueContentAR::model()->loadByAddressKey($city); ?>
     <?php if ($store): ?>

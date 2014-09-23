@@ -12,7 +12,7 @@ class IndexController extends Controller
   
 	public function actionIndex()
 	{
-		$this->render('index');
+		$this->redirect("page/content?type=product");
 	}
   
   // 登录 

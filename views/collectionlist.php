@@ -16,81 +16,14 @@
 			<div class="colllistbox ">
 				<!--  -->
 					<ul class="piclist cs-clear">
-						<li class="piclistitem ">
-							<img src="../SX/images/colllistpic.jpg" width="100%" />
-							<p><span class="">wish <br />name card holder</span></p>
-							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
-						</li>
-						<li class="piclistitem ">
-							<img src="../SX/images/colllistpic.jpg" width="100%" />
-							<p><span>architecture</span></p>
-							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
-						</li>
-						<li class="piclistitem  marginR0">
-							<img src="../SX/images/colllistpic.jpg" width="100%" />
-							<p><span>architecture</span></p>
-							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
-						</li>
-						<li class="piclistitem ">
-							<img src="../SX/images/colllistpic.jpg" width="100%" />
-							<p><span class="">wish <br />name card holder</span></p>
-							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
-						</li>
-						<li class="piclistitem ">
-							<img src="../SX/images/colllistpic.jpg" width="100%" />
-							<p><span>architecture</span></p>
-							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
-						</li>
-						<li class="piclistitem  marginR0">
-							<img src="../SX/images/colllistpic.jpg" width="100%" />
-							<p><span>architecture</span></p>
-							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
-						</li>
-						<li class="piclistitem ">
-							<img src="../SX/images/colllistpic.jpg" width="100%" />
-							<p><span class="">wish <br />name card holder</span></p>
-							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
-						</li>
-						<li class="piclistitem ">
-							<img src="../SX/images/colllistpic.jpg" width="100%" />
-							<p><span>architecture</span></p>
-							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
-						</li>
-						<li class="piclistitem  marginR0">
-							<img src="../SX/images/colllistpic.jpg" width="100%" />
-							<p><span>architecture</span></p>
-							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
-						</li>
-						<li class="piclistitem ">
-							<img src="../SX/images/colllistpic.jpg" width="100%" />
-							<p><span class="">wish <br />name card holder</span></p>
-							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
-						</li>
-						<li class="piclistitem ">
-							<img src="../SX/images/colllistpic.jpg" width="100%" />
-							<p><span>architecture</span></p>
-							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
-						</li>
-						<li class="piclistitem  marginR0">
-							<img src="../SX/images/colllistpic.jpg" width="100%" />
-							<p><span>architecture</span></p>
-							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
-						</li>
-						<li class="piclistitem ">
-							<img src="../SX/images/colllistpic.jpg" width="100%" />
-							<p><span class="">wish <br />name card holder</span></p>
-							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
-						</li>
-						<li class="piclistitem ">
-							<img src="../SX/images/colllistpic.jpg" width="100%" />
-							<p><span>architecture</span></p>
-							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
-						</li>
-						<li class="piclistitem  marginR0">
-							<img src="../SX/images/colllistpic.jpg" width="100%" />
-							<p><span>architecture</span></p>
-							<a href="#" class="btn transition-wrap"><i class="transition">I Want To Buy<br/><br/>I Want To Buy</i></a>
-						</li>
+            <?php $gifts = GiftContentAR::model()->getList();?>
+            <?php foreach ($gifts as $gift): ?>
+              <li class="piclistitem ">
+                <img src="<?php echo $gift->thumbnail?>" width="100%" />
+                <p><span class=""><?php echo $gift->title?></span></p>
+                <a href="#" class="btn transition-wrap"><i class="transition"><?php echo Yii::t("strings", "I Want To Buy")?><br/><br/><?php echo Yii::t("strings", "I Want To Buy")?></i></a>
+              </li>
+            <?php endforeach;?>
 					</ul>
 			</div>
 		</div>
