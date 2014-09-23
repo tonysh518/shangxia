@@ -587,6 +587,8 @@ form[name="newsform"] input[type="file"] {
 
 #login #content input[type="submit"] {
   margin-top: 1em;
+background: #eee;
+color: #000;
 }
 
 #login .logo {
