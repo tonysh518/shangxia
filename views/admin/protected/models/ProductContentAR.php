@@ -29,7 +29,6 @@ class ProductContentAR extends ContentAR {
     
     $this->hasContentField("gift", array("type" => "select", "options" => array( "0" => Yii::t("strings", "No"), "1" => Yii::t("strings" ,"Yes") )));
     
-    
     return parent::getFields();
   }
   

@@ -218,7 +218,7 @@
     };
   }]);
 
-  AdminModule.controller("ContentForm",  function ($scope, UploadMediaService, ContentService) {
+  AdminModule.controller("ContentForm",  function ($scope, UploadMediaService, ContentService, $modal) {
     $scope.submitContent = function () {
       if ($scope.contentform.$valid) {
         ContentService.update($scope.content).success(function (res){
@@ -239,17 +239,50 @@
         firstInvalid.focus();
       }
     };
-  });
-  
-  AdminModule.controller("ContentTable", function ($scope, $modal) {
     
-    $scope.viewimage = function (url) {
-      $modal.open({
-        templateUrl: "imagepreview.html",
+    var ModalInstanceCtrl = function ($scope, $modalInstance, cid, url) {
+      $scope.cid = cid;
+      
+      $scope.ok = function () {
+        $.ajax({
+         url: window.baseurl + "/api/content/delete",
+         data: {cid: cid},
+         type: "POST"
+       })
+       .done(function () {
+         $scope.message = "Delete success";
+       })
+       .always(function () {
+         $modalInstance.dismiss('cancel');
+         window.location.href = url;
+       });
+      };
+
+      $scope.cancel = function () {
+        $modalInstance.dismiss('cancel');
+      };
+      
+      if (cid) {
+        $.ajax({
+          url: window.baseurl + "/api/content",
+          data: {cid: cid},
+          type: "GET"
+        }).done(function (res) {
+          $scope.title = res["data"]["title"];
+          $scope.body = res["data"]["body"];
+          $scope.email = res["data"]["email"];
+          $scope.$digest();
+        });
+      }
+    };
+    
+    $scope.deleteConfirm = function (cid, url) {
+      var modal = $modal.open({
+        templateUrl: "deleteconfirm.html",
         controller: ModalInstanceCtrl,
         resolve: {
           cid: function () {
-            return "";
+            return cid;
           },
           url: function () {
             return url;
@@ -257,8 +290,47 @@
         }
       });
     };
+  });
+  
+  AdminModule.controller("ContentTable", function ($scope, $modal) {
     
-    var ModalInstanceCtrl = function ($scope, $modalInstance, cid, url) {
+    var ModalInstanceCtrl = function ($scope, $modalInstance, cid) {
+      $scope.cid = cid;
+      
+      $scope.ok = function () {
+        $.ajax({
+         url: window.baseurl + "/api/content/delete",
+         data: {cid: cid},
+         type: "POST"
+       })
+       .done(function () {
+         $scope.message = "Delete success";
+       })
+       .always(function () {
+         $modalInstance.dismiss('cancel');
+         window.location.reload();
+       });
+      };
+
+      $scope.cancel = function () {
+        $modalInstance.dismiss('cancel');
+      };
+      
+      if (cid) {
+        $.ajax({
+          url: window.baseurl + "/api/content",
+          data: {cid: cid},
+          type: "GET"
+        }).done(function (res) {
+          $scope.title = res["data"]["title"];
+          $scope.body = res["data"]["body"];
+          $scope.email = res["data"]["email"];
+          $scope.$digest();
+        });
+      }
+    };
+    
+    var ModalViewInstanceCtrl = function ($scope, $modalInstance, cid, url) {
       $scope.cid = cid;
       $scope.src = url;
       
@@ -298,7 +370,7 @@
     
     $scope.deleteConfirm = function (cid) {
       var modal = $modal.open({
-        templateUrl: "myModalContent.html",
+        templateUrl: "deleteconfirm.html",
         controller: ModalInstanceCtrl,
         resolve: {
           cid: function () {
@@ -310,11 +382,26 @@
     
     $scope.preview = function (cid) {
       var modal = $modal.open({
-        templateUrl: "previewcontent.html",
+        template: $("#previewcontent").html(),
         controller: ModalInstanceCtrl,
         resolve: {
           cid: function () {
             return cid;
+          }
+        }
+      });
+    };
+    
+    $scope.viewimage = function (url) {
+      $modal.open({
+        template: $("#imagepreview").html(),
+        controller: ModalViewInstanceCtrl,
+        resolve: {
+          cid: function () {
+            return "";
+          },
+          url: function () {
+            return url;
           }
         }
       });
@@ -334,7 +421,6 @@
 //    });
     
     angular.element("#sidebar > .icons").click(function () {
-      console.log("CLICKED ");
       var icon = $(this);
       var sideBar = $(this).parent();
       if (icon.hasClass("fadeout")) {
@@ -441,7 +527,7 @@
 
 // 删除内容
 (function () {
-  window.deleteContent = function (cid) {
+  window.deleteContent = function (cid, url) {
     if (confirm(language.confirmdelete)) {
       $.ajax({
         url: window.baseurl + "/api/content/delete",
@@ -449,10 +535,15 @@
         type: "POST"
       })
       .done(function () {
-        alert("删除成功");
+        //alert("删除成功");
       })
       .always(function () {
-        window.location.reload();
+        if (typeof url != "undefined") {
+          window.location.href = url;
+        }
+        else {
+          window.location.reload();
+        }
       });
     }
   }

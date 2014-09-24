@@ -176,7 +176,8 @@
 <script type="text/javascript" src="<?php echo Yii::app()->baseUrl?>/scripts/angular.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->baseUrl?>/scripts/ui-bootstrap-tpls.min.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->baseUrl?>/scripts/script.js"></script>
-  <script type="text/ng-template" id="myModalContent.html">
+
+  <script type="text/ng-template" id="deleteconfirm.html">
       <div class="modal-header">
           <h3 class="modal-title"><?php echo Yii::t("strings","Confirm Box")?></h3>
       </div>
@@ -190,7 +191,7 @@
       </div>
   </script>
   
-  <script type="text/ng-template" id="previewcontent.html">
+  <script type="text/ng-template" id="previewcontent">
       <div class="modal-header" ng-init="init()">
           <h3 class="modal-title"><?php echo Yii::t("strings","Contact Box")?></h3>
       </div>
@@ -204,7 +205,7 @@
       </div>
   </script>
   
-  <script type="text/ng-template" id="imagepreview.html">
+  <script type="text/ng-template" id="imagepreview">
       <div class="modal-header" ng-init="init()">
           <h3 class="modal-title"><?php echo Yii::t("strings","Preview Box")?></h3>
       </div>

@@ -74,7 +74,7 @@
           <td>
             <a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => $type, "id" => $item->cid))?>"><?php echo Yii::t("strings", "Edit")?></a>
             &nbsp;|&nbsp;
-            <a ng-click='deleteConfirm(<?php echo $item->cid?>)' href="javascript:void()"><?php echo Yii::t("strings", "Delete")?></a>
+            <a ng-click='deleteConfirm(<?php echo $item->cid?>)' href="#"><?php echo Yii::t("strings", "Delete")?></a>
           </td>
         </tr>
         <?php endforeach;?>

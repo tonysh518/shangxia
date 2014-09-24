@@ -96,6 +96,7 @@
     
     <div class="form-actions">
       <div class="controls">
+        <input type="button" ng-click="deleteConfirm(<?php echo $instance->cid?>, '<?php echo Yii::app()->createUrl("page/content", array("type" => "product"))?>');"  class="btn-primary btn" value="<?php echo Yii::t("strings", "Delete")?>"/>
         <input type="button" ng-click="submitContent($event)" class="btn-primary btn" value="<?php echo Yii::t("strings", "Save")?>"/>
       </div>
    </div>
