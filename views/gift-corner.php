@@ -1,4 +1,6 @@
-<?php include_once 'common/header.php';?>
+<?php 
+$pagename='gift-corner';
+include_once 'common/header.php';?>
 		<!-- detail -->
 		<div class="section ">
 			<div class="detail cs-clear">

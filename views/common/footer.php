@@ -7,6 +7,7 @@
 ?>
 <!-- footer -->
 		<div class="footer">
+			<?php if( !isset($pagename) || $pagename!='gift-corner' ){ ?>
 			<!-- location -->
 			 <div class="location intoview-effect" data-effect="fadeup">
 			 	<div class="range">
@@ -14,6 +15,7 @@
 			 		<a href="/gift-corner.php" title="" class="rangebtn transition-wrap"><span class="transition">Enter the gift corner<br/><br/>Enter the gift corner</span></a>
 			 	</div>			
 			 </div>
+			 <?php } ?>
 			<!-- store -->
     <?php $store = BoutiqueContentAR::model()->loadByAddressKey($city); ?>
     <?php if ($store): ?>
