@@ -248,7 +248,6 @@ class ContentController extends Controller {
    if (!$year) {
      return $this->responseError('miss param error', ErrorAR::ERROR_MISSED_REQUIRED_PARAMS);
    }
-   
    $presses = PressContentAR::model()->getListWithYear($year, $page);
    
    return $this->responseJSON($presses, "success");
