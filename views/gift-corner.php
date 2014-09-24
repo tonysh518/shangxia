@@ -17,11 +17,11 @@
 				<!--  -->
 					<ul class="piclist cs-clear">
             <?php $gifts = GiftContentAR::model()->getList();?>
-            <?php foreach ($gifts as $gift): ?>
+            <?php foreach ($gifts as $gift): ?>r
               <li class="piclistitem intoview-effect" data-effect="fadeup">
                 <img src="<?php echo $gift->thumbnail?>" width="100%" />
                 <p><span class=""><?php echo $gift->title?></span></p>
-                <a href="#" class="btn transition-wrap"><i class="transition"><?php echo Yii::t("strings", "I Want To Buy")?><br/><br/><?php echo Yii::t("strings", "I Want To Buy")?></i></a>
+                <a href="#" data-a="i-want-to-buy" data-d="product=<?php echo $gift->cid?>" class="btn transition-wrap"><i class="transition"><?php echo Yii::t("strings", "I Want To Buy")?><br/><br/><?php echo Yii::t("strings", "I Want To Buy")?></i></a>
               </li>
             <?php endforeach;?>
 					</ul>
