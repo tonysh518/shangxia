@@ -5,6 +5,9 @@ if( !isset( $_GET['type'] ) ){
 include_once 'common/header.php';
 
 $results = searchWithKeyword($_GET["s"]);
+if (!$results) {
+  $results = array();
+}
 ?>
 		<!-- detail -->
 		<div class="section ">
