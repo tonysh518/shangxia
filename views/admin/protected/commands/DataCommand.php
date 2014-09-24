@@ -37,9 +37,9 @@ class DataCommand extends CConsoleCommand {
     }
     
     // 第一批 // 
-     //$productGroupes = require("/Users/jackeychen/Workspace/shangxia/docs/product.csv/convert.php");
+     $productGroupes = require("/Users/jackeychen/Workspace/shangxia/docs/product.csv/convert.php");
     // 第二批 // sound of tea
-    $productGroupes = require("/Users/jackeychen/Workspace/shangxia/docs/sound_of_tea+translation/convert.php");
+   // $productGroupes = require("/Users/jackeychen/Workspace/shangxia/docs/sound_of_tea+translation/convert.php");
     
     // 把collection 转换到ID
     foreach ($productGroupes as $products) {
@@ -47,7 +47,7 @@ class DataCommand extends CConsoleCommand {
         $collection = trim($product["collection_name"]);
         $craft = trim($product["craft"]);
         
-        if ($product["language"] != "cn") {
+        if ($product["language"] != "fr") {
           continue;
         }
         
