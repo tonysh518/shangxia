@@ -49,6 +49,8 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 $('[data-a="loadmore-press"]').hide();
             }
 
+            $(window).trigger('scroll');
+
             cb && cb();
         } , 'json');
     }
@@ -145,7 +147,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             "news-press": function( cb ){
                 var $years = $('.newsoldertime').find('li');
                 var lastYear = $years.last().trigger('click').html();
-                loadPressData( lastYear , 1 , cb );
+                loadPressData( lastYear , 1 , cb);
                 // bind event
                 $('.newsoldertime li').click(function(){
                     var year = $.trim( $(this).html() );
