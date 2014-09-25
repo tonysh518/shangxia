@@ -122,6 +122,7 @@
 			.</p>
 			<button class="conformbtn" data-a="newsletter-send"><?php echo Yii::t("strings", "SEND")?></button>
 		</form>
+		<div class="form-submit-tip"></div>
 	</div>
 </script>
 
@@ -140,6 +141,7 @@
 			<button class="conformbtn" data-a="contact-me-back"><?php echo Yii::t("strings", "CONTACT ME BACK")?></button>
 			<!--<a href=""><?php echo Yii::t("strings", "VIEW ALL THE SHANG XIA GIFTS")?></a>-->
 		</form>
+		<div class="form-submit-tip"></div>
 	</div>
 </script>
 

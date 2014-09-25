@@ -1912,7 +1912,19 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 type: 'post',
                 dataType: 'json',
                 success: function( data ){
-                    console.log( data );
+                    if( data.status == 0 ){
+                        $pop.find('.form-submit-tip')
+                            .html( data.message )
+                            .fadeIn();
+                        $form.slideUp();
+
+                        setTimeout(function(){
+                            $pop.find('.popclose')[0].click();
+                        } , 3000);
+                    } else {
+                        $pop.find('.form-submit-tip')
+                            .html( data.message )
+                    }
                 }
             });
         });
@@ -1947,10 +1959,17 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 dataType: 'json',
                 success: function( data ){
                     if( data.status == 0 ){
-                        alert('submit success');
-                        $pop.find('.popclose')[0].click();
+                        $pop.find('.form-submit-tip')
+                            .html( data.message )
+                            .fadeIn();
+                        $form.slideUp();
+
+                        setTimeout(function(){
+                            $pop.find('.popclose')[0].click();
+                        } , 3000);
                     } else {
-                        alert( data.message );
+                        $pop.find('.form-submit-tip')
+                            .html( data.message )
                     }
                 }
             });
@@ -2044,10 +2063,17 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 dataType: 'json',
                 success: function( data ){
                     if( data.status == 0 ){
-                        alert('submit success');
-                        $form.closest('.pop').find('.popclose')[0].click();
+                        $pop.find('.form-submit-tip')
+                            .html( data.message )
+                            .fadeIn();
+                        $form.slideUp();
+
+                        setTimeout(function(){
+                            $pop.find('.popclose')[0].click();
+                        } , 3000);
                     } else {
-                        alert( data.message );
+                        $pop.find('.form-submit-tip')
+                            .html( data.message )
                     }
                 }
             });
