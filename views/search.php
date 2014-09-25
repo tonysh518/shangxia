@@ -5,6 +5,9 @@ if( !isset( $_GET['type'] ) ){
 include_once 'common/header.php';
 
 $results = searchWithKeyword($_GET["s"]);
+if (!$results) {
+  $results = array();
+}
 ?>
 		<!-- detail -->
 		<div class="section ">
@@ -28,7 +31,7 @@ $results = searchWithKeyword($_GET["s"]);
 					<ul class="piclist cs-clear" id="search-result">
             <?php foreach ($results as $item): ?>
             <?php if ($item->type == "product"):?>
-              <li class="piclistitem searchpicitem" data-type="<?php echo $item->type?>">
+              <li class="piclistitem searchpicitem" data-type="<?php echo $item->type == "product" ? "collection": $item->type?>">
                 <a data-a="nav-link" href="<?php echo url("product-detail", array("cid" => $item->cid)) ?>">
                   <img src="<?php echo makeThumbnail($item->thumbnail, array(415, 220))?>" width="100%" />
                   <p><span><?php echo $item->title?></span></p>

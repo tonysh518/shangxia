@@ -18,7 +18,7 @@ class UpdateCommand extends CConsoleCommand {
     foreach ($en_products as $en_product) {
       $url_key = $en_product[16];
       
-      foreach (array("en", "fr", "cn") as $lang) {
+      foreach (array("fr") as $lang) {
         $language = $lang;
         $product = ContentAR::loadContentWithUrlKey($url_key, "product");
         if (!$product) {

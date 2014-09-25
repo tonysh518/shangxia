@@ -140,6 +140,14 @@
       <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "press"))?>"><?php echo Yii::t("strings", "Press")?></a></li>
       <!-- End Press-->
       
+      <!-- Events  -->
+      <li class="nav-header">
+        <?php echo Yii::t("strings", "Event")?>
+      </li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "event"))?>"><?php echo Yii::t("strings", "Add Event")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "event"))?>"><?php echo Yii::t("strings", "Event")?></a></li>
+      <!-- End Events-->
+      
       <li class="nav-header">
         <?php echo Yii::t("strings", "System")?>
       </li>

@@ -231,10 +231,38 @@ function loadFirstNews() {
   return FALSE;
 }
 
+function loadFirstEvent() {
+  $events = EventContentAR::model()->getList(1);
+  if (count($events)) {
+    return $events[0];
+  }
+  return FALSE;
+}
+
 // 加载新闻列表，用年份来分组
 function loadNewsWithYearGroup($teaser = FALSE) {
   $newsItems = NewsContentAR::model()->getList();
   $firstNews = loadFirstNews();
+  $newsGroup = array();
+  foreach ($newsItems as $newsItem) {
+    if ($newsItem->cid == $firstNews->cid) {
+      continue;
+    }
+    if ($teaser) {
+      if (isset($newsGroup[date("Y", strtotime($newsItem->date))]) &&  count($newsGroup[date("Y", strtotime($newsItem->date))])< 3) {
+        continue;
+      }
+    }
+    $newsGroup[date("Y", strtotime($newsItem->date))][] = $newsItem;
+  }
+  
+  return $newsGroup;
+}
+
+// 加载Event列表，用年份来分组
+function loadEventsWithYearGroup($teaser = FALSE) {
+  $newsItems = EventContentAR::model()->getList();
+  $firstNews = loadFirstEvent();
   $newsGroup = array();
   foreach ($newsItems as $newsItem) {
     if ($newsItem->cid == $firstNews->cid) {
