@@ -35,8 +35,10 @@ else {
         Yii::app()->language = "en_us";
       }
     }
-    // 如果没有Cookie , 那就用默认得英文.
-    Yii::app()->language = "en_us";
+    else {
+      // 如果都没用判断出语言 则是英文.
+      Yii::app()->language = "en_us";
+    }
 }
 
 // 测试代码

@@ -116,7 +116,7 @@ class ContentController extends Controller {
    $contactAr->setIsNewRecord(true);
    
    if ($ret = $contactAr->save()) {
-     return $this->responseJSON(array(), "success");
+     return $this->responseJSON(array(), Yii::t("strings" ,"Thank you for your informations."));
    }
    else {
      $error = $contactAr->getErrors();
@@ -153,7 +153,7 @@ class ContentController extends Controller {
    $newsletterAr->setIsNewRecord(true);
    
    if ($ret = $newsletterAr->save()) {
-     return $this->responseJSON(array(), "success");
+     return $this->responseJSON(array(), Yii::t("strings" ,"Thank you for your informations."));
    }
    else {
      $error = $newsletterAr->getErrors();
@@ -175,7 +175,7 @@ class ContentController extends Controller {
      return $this->responseError("invild params error", ErrorAR::ERROR_MISSED_REQUIRED_PARAMS);
    }
    
-   $this->responseJSON($contact, "success");
+   $this->responseJSON($contact, Yii::t("strings" ,"Thank you for your informations."));
  }
  
  public function actionNews() {
@@ -231,7 +231,7 @@ class ContentController extends Controller {
    $buyAr->setIsNewRecord(true);
    
    if ($buyAr->save()) {
-     return $this->responseJSON(array(), "success");
+     return $this->responseJSON(array(), Yii::t("strings" ,"Thank you for your informations."));
    }
    else {
      $error = $buyAr->getErrors();
