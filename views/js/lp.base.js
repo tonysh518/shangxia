@@ -16,7 +16,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     }
 
     var loadPressData = function( year , page , cb ){
-        var tpl = '<a href="#" data-a="show-pop" data-d="press=1" class="prolistitem newsitem intoview-effect" data-effect="fadeup">\
+        var tpl = '<a href="#" data-cid="#[cid]" data-a="show-pop" data-d="press=1" class="prolistitem newsitem intoview-effect" data-effect="fadeup">\
                 <img src="#[press_image]" width="100%" />\
                 <p>#[title]<br /><span class="date">#[date]</span></p>\
               </a>\
