@@ -89,6 +89,7 @@ class Controller extends CController
           }
         }
     }
+    
     if (Yii::app()->language == "zh_cn") {
       $language = "cn";
     }
