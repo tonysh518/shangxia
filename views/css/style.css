@@ -157,11 +157,11 @@ img.slideitem{height: auto;}
 .piclistitem img:hover{opacity: 0.9;}
 
 /*footer*/
-.footer{margin-top: 100px;}
+.footer{margin-top: 100px;background: #f4f4f4;overflow: hidden;}
 .store-wrap{background: #f4f4f4;padding: 50px 0;}
 .footer-bottom{background: #eaebea;padding-top: 60px;}
 /*location*/
-.location{padding:66px 0 0 ;margin: 50px; background: white;}
+.location{padding:50px 0 0 ;margin: 50px 50px 0; background: white;}
 .range{background: url('../images/range.png') no-repeat top center;padding:40px 0 30px;}
 .rangetxt{text-align: center;color: #910000;font-family: 'Gotham Light';margin-top: 15px;}
 .rangebtn{font-size: 18px;border:#6c0e0e solid 1px;display: block;margin: 20px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px;color:#910000 !important;}
