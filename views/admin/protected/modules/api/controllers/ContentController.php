@@ -250,7 +250,13 @@ class ContentController extends Controller {
    }
    $presses = PressContentAR::model()->getListWithYear($year, $page);
    
-   return $this->responseJSON($presses, "success");
+   $newPresses = array();
+   foreach ($presses as $press) {
+     $attributes = $press->getAttributes();
+     $attributes['press_image'] = MediaAR::thumbnail($press->press_image, array(355, 475));
+     $newPresses[] = $attributes;
+   }
+   return $this->responseJSON($newPresses, "success");
  }
 }
 
