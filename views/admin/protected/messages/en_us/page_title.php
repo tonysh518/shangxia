@@ -7,7 +7,7 @@ return array(
     "collections" => "collections",
     "contact" => "contact",
     "craft" => "craft",
-    "index" => "index",
+    "index" => "Home",
     "news-detail" => "news-detail",
     "news-events" => "news-events",
     "news-press" => "news-press",
