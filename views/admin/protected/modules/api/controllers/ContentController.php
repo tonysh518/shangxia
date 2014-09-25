@@ -79,12 +79,7 @@ class ContentController extends Controller {
   
   
   public function actionTest() {
-    print "start time: ". time() . "<br />";
-    $products = ProductContentAR::model()->getList(10);
-//    foreach ($products as $product) {
-//      print "{$product->title}<br />";
-//    }
-    print "end time: ". time() . "<br />";
+    PressContentAR::model()->getList();
  }
  
  public function actionContact() {
