@@ -84,6 +84,9 @@ class Controller extends CController
           if ($lang == "zh") {
             Yii::app()->language = "zh_cn";
           }
+          if ($lang == "fr") {
+            Yii::app()->language = "fr";
+          }
           else {
             Yii::app()->language = "en_us";
           }

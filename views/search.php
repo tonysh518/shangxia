@@ -27,7 +27,7 @@ if (!$results) {
 		<div class="section">
 			<div class="products searchlist">
 				<!--  -->
-        <?php if (count($results)): ?>
+        <?php if (!count($results)): ?>
           <div class="piclist cs-clear" id="search-result">
             <p style="text-align: center;font-size: 24px;"><?php echo Yii::t("strings", "Sorry, the result of your search is empty, please try again with other keywords.")?></p>
           </div>
