@@ -256,6 +256,7 @@ Pour reprendre les mots du poète Li Bai (701-762) de la dynastie Tang (618-907)
     "NAME" => "NOM",
     "EMAIL" => "EMAIL",
     "MESSAGE" => "MESSAGE",
+    
     "contact_form_footer_tip" => 'Je souhaite recevoir la newsletter de SHANG XIA. Pour plus d\'informations, veuillez consulter notre politique de confidentialité. ',
  
     "artstic director" => "Directrice artistique",
@@ -270,4 +271,10 @@ Pour reprendre les mots du poète Li Bai (701-762) de la dynastie Tang (618-907)
     "SUBSCRIBE TO <br/> SHANG XIA NEWSLETTER" => "S'INSCRIRE À LA NEWSLETTER",
 
     "Read more" => "LIRE LA SUITE",
+    
+    "NEWS" => "ACTUALITES",
+    "PRESS" => "PRESSE",
+    "EVENTS" => "EVENEMENTS",
+    
+    "brand story" => "Histoire",
 );
