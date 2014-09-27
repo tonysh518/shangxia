@@ -293,6 +293,7 @@ return array(
     "Load more" => "下载中",
     
     "SEARCH" => "搜寻",
+    
     "ENTER YOUR SEARCH" => "搜寻",
     
     "collections" => "系列",

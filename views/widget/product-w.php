@@ -12,7 +12,7 @@
               				</div>
 							<a href="#" data-a="show-pop" class="btn transition-wrap"><span class="transition"><?php echo Yii::t("strings", "read more")?><br><br><?php echo Yii::t("strings", "read more")?></span></a>
 							<textarea style="display:none;">
-								<h2><?php echo Yii::t("strings", "BAMBOO COVERED PORCELAIN")?></h2>
+								<h2><?php echo Yii::t("strings", "Master Zhang created a new weaving")?></h2>
 								<div class="popcontxt">
                     <?php echo Yii::t("strings", "Master Zhang created a new weaving Desc")?>
                 </div>

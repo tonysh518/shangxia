@@ -131,8 +131,10 @@
 			<div class="detail cs-clear">
 				<div style="width:70%;margin:0 auto;">
 					<h2 class="intoview-effect" data-effect="fadeup"><?php echo Yii::t("strings", "about shangxia")?></h2>
-					<p class="intoview-effect" data-effect="fadeup">SHANGXIA is a brand for art of living that promises a unique encounter with the heritage of
- Chinese design and craftsmanship.Chinese renowned designer Jiang Qiong Er established SHANGXIA with a mission to create a 21st century lifestyle founded on the  finest of Chinese design traditions.</p>
+					<p class="intoview-effect" data-effect="fadeup">
+            SHANGXIA is a brand for art of living that promises a unique encounter with the heritage of
+ Chinese design and craftsmanship.Chinese renowned designer Jiang Qiong Er established SHANGXIA with a mission to create a 21st century lifestyle founded on the  finest of Chinese design traditions.
+          </p>
 	 				<a data-a="nav-link" href="/about.php" class="btn transition-wrap intoview-effect" data-effect="fadeup" data-margin-top="20">
 		                <span class="transition"><?php echo Yii::t("strings", "Read more")?>
 		                  <br/><br/><?php echo Yii::t("strings", "Read more")?>

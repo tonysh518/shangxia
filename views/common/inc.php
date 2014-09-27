@@ -462,7 +462,7 @@ function is_weaving($craft_id = NULL) {
   if (!$craft_id) {
     $craft_id = isset($_GET["cid"]) ? $_GET["cid"]: 0;
   }
-  $ids = array("20322", "20315");
+  $ids = array("20322", "20315", "20779");
   if (isset($craft_id) && in_array($craft_id, $ids)) {
     return TRUE;
   }
@@ -473,7 +473,7 @@ function is_zitan($craft_id = NULL) {
   if (!$craft_id) {
     $craft_id = isset($_GET["cid"]) ? $_GET["cid"]: 0;
   }
-  $ids = array("20321", "20316");
+  $ids = array("20321", "20316", "20777");
   if (isset($craft_id) && in_array($craft_id, $ids)) {
     return TRUE;
   }
@@ -484,7 +484,7 @@ function is_cashmere($craft_id = NULL) {
   if (!$craft_id) {
     $craft_id = isset($_GET["cid"]) ? $_GET["cid"]: 0;
   }
-  $ids = array("20319", "20318");
+  $ids = array("20319", "20318", "20778");
   if (isset($craft_id) && in_array($craft_id, $ids)) {
     return TRUE;
   }
@@ -496,7 +496,7 @@ function is_eggshell($craft_id = NULL) {
     $craft_id = isset($_GET["cid"]) ? $_GET["cid"]: 0;
   }
   
-  $ids = array("20320", "20317");
+  $ids = array("20320", "20317", "20780");
   if (isset($craft_id) && in_array($craft_id, $ids)) {
     return TRUE;
   }
