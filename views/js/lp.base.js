@@ -49,6 +49,12 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 $('[data-a="loadmore-press"]').hide();
             }
 
+            // set other's item height
+            $('[data-cid="' + list[0].cid + '"]').find('img')
+                .load(function(){
+                    $(window).trigger('resize');
+                });
+
             $(window).trigger('scroll');
 
             cb && cb();
@@ -1585,6 +1591,15 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             });
             fixImageToWrap( $(this) , $(this).find('img') );
         });
+
+
+        // data-resize for press-page
+        $('.press-list[data-year]').each(function(){
+            $(this).children('a').filter(function(i){
+                return i > 0;
+            })
+            .height( $(this).children('a').eq(0).height() );
+        });
     })
     .keyup(function( ev ){
         switch( ev.which ){
@@ -1628,11 +1643,13 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 default: 
                     $.get( location.href , '' , function( html ){
                         var $newPage = $('<div>' + html + '</div>');
-
+                        // set body class
                         var bodyClass = $newPage.find('body').attr('class');
                         var page = $newPage.find('.head').data('page');
                         $('.head').data('page' , page || '');
                         $(document.body).attr('class' , bodyClass || '');
+                        // set title
+                        document.title = $newPage.find('title').html();
 
                         html = $newPage.find('.wrap')
                             .find( isHomePage ? '.footer' : '.footer,.head' )
