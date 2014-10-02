@@ -11,5 +11,11 @@ class ContactContentAR extends ContentAR {
     $this->hasContentField("email");
     return parent::getFields();
   }
+  
+  public function getFileFields() {
+    $this->hasFileField("file");
+    
+    return parent::getFileFields();
+  }
 }
 

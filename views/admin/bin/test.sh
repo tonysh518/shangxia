@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-curl  -d "name=jackey&phone=15821121753&email=jziw@dmil.com" http://sxhtml.local/admin/api/content/newsletter
+curl --form file=@/Users/jackeychen/Downloads/问题分析.pdf --form name=jackey --form phone=15821121753 --form email=jziw@dmil.com  http://sxhtml.local/admin/api/content/contact

@@ -3,7 +3,7 @@
 // 文件Field
 class FileAR extends CActiveRecord {
   public static $caches = array();
-  public static $allowTypes = array("pdf", "txt", "doc", "docx", "png", "jpg", "jpeg", "bmp", "gif");
+  public static $allowTypes = array("octet-stream" ,"pdf", "txt", "doc", "docx", "png", "jpg", "jpeg", "bmp", "gif");
   
   public static function getCache($key) {
     // 把所有的media 载入
@@ -21,16 +21,16 @@ class FileAR extends CActiveRecord {
   }
   
   public function tableName() {
-    return "media";
+    return "file";
   }
   
   public function primaryKey() {
-    return "mid";
+    return "fid";
   }
   
   public function rules() {
     return array(
-        array("mid,name,uri,cdate,mdate,type,cid, field_name", "safe"),
+        array("fid,name,uri,cdate,mdate,type,cid, field_name", "safe"),
     );
   }
   
@@ -39,6 +39,9 @@ class FileAR extends CActiveRecord {
    * @param CUploadedFile $file
    */
   public static function isAllowed($file = NULL) {
+    if (!$file) {
+      return FALSE;
+    }
     $type = $file->getType();
     $mimes = explode("/", $type);
     if (array_search($mimes[1], self::$allowTypes) === FALSE) {
@@ -75,10 +78,10 @@ class FileAR extends CActiveRecord {
   }
   
   /**
-   * 给一个对象追加图片
-   * @param ContentAR $obj 需要有图片的对象
+   * 给一个对象追加文件
+   * @param ContentAR $obj 需要有文件的对象
    */
-  public function saveMediaToObject($obj, $field_name) {
+  public function saveFileToObject($obj, $field_name) {
     if (!$obj->cid) {
       return;
     }
@@ -121,13 +124,13 @@ class FileAR extends CActiveRecord {
       $ext = pathinfo($filePath, PATHINFO_EXTENSION);
     }
     
-    $fieldOption = $obj->getImageFieldOption($field_name);
+    $fieldOption = $obj->getFileFieldOptions($field_name);
     
-    // 多个图片这样处理：
-    // 删掉之前的图片，然后新增
+    // 多文件图片这样处理：
+    // 删掉之前的文件，然后新增
     if ($fieldOption["multi"]) {
       // 删除
-      $rows = $this->loadMediaWithObject($obj, $field_name);
+      $rows = $this->loadFileWithObject($obj, $field_name);
       foreach ($rows as $row) {
         $row->delete();
       }
@@ -160,13 +163,13 @@ class FileAR extends CActiveRecord {
       );
 
       // 先查询是否已经存在一份
-      $row = $this->loadMediaWithObject($obj, $field_name);
+      $row = $this->loadFileWithObject($obj, $field_name);
       if ($row) {
         $row->setAttributes($attr);
         $row->update();
       }
       else {
-        $mediaAr = new MediaAR();
+        $mediaAr = new FileAR();
         $mediaAr->setAttributes($attr);
         $mediaAr->save();
       }
@@ -179,7 +182,7 @@ class FileAR extends CActiveRecord {
    * @param type $field_name
    * @return type
    */
-  public function loadMediaWithObject($obj, $field_name) {
+  public function loadFileWithObject($obj, $field_name) {
     if (!self::$caches) {
       self::getCache("");
     }
@@ -198,7 +201,7 @@ class FileAR extends CActiveRecord {
     $query->params[":field_name"] = $field_name;
     $query->params[":cid"] = $cid;
     
-    $fieldOption = $obj->getImageFieldOption($field_name);
+    $fieldOption = $obj->getFileFieldOptions($field_name);
     if ($fieldOption['multi']) {
       $cache_key .= "_multi";
       if (self::getCache($cache_key)) {
@@ -224,9 +227,9 @@ class FileAR extends CActiveRecord {
    * 给一个对象附件图片数据
    * @param ContentAR $obj 需要有图片的对象
    */
-  public function attachMediaToObject(&$obj, $field_name) {
-    $row = $this->loadMediaWithObject($obj, $field_name);
-    $fieldOption = $obj->getImageFieldOption($field_name);
+  public function attachFileToObject(&$obj, $field_name) {
+    $row = $this->loadFileWithObject($obj, $field_name);
+    $fieldOption = $obj->getFileFieldOptions($field_name);
     
     if ($row) {
       // 是一组图片
@@ -259,81 +262,6 @@ class FileAR extends CActiveRecord {
       $obj->{$field_name} = "";
     }
   }
-  
-/**
- * 生成一个缩略图路径
- * @param type $uri 文件路径
- * @param array $size 尺寸大小 , 第一个元素是 width, 第二个元素是height
- */
-  public static function thumbnail($uri, $size) {
-    if (strpos($uri, "http://") !== FALSE) {
-      $uri = str_replace(Yii::app()->getBaseUrl(TRUE), "", $uri);
-    }
-
-    $root = dirname(Yii::app()->basePath);
-    $absPath = $root.$uri;
-
-    $dir = pathinfo($absPath, PATHINFO_DIRNAME);
-    $filename = pathinfo($absPath, PATHINFO_FILENAME);
-    $ext = pathinfo($absPath, PATHINFO_EXTENSION);
-
-    $newFilename = $filename."_".$size[0]. "_". $size[1]."_".$ext;
-
-    $newAbspath = $dir.'/'. $newFilename;
-
-
-    $uri = str_replace($root, "" ,$newAbspath);
-
-    return Yii::app()->getBaseUrl(TRUE). $uri;
-  }
-  
-	public function makeImageThumbnail($path, $save_to, $w, $h, $isOutput = FALSE) {
-		$abspath = $path;
-		$abssaveto = $save_to;
-		$thumb = new EasyImage($abspath);
-
-		$size = getimagesize($abspath);
-		$s_w = $size[0];
-		$s_h = $size[1];
-
-		$r1 = $w / $s_w;
-		$r2 = $h / $s_h;
-		$widthSamller = TRUE;
-		if ($r1 > $r2) {
-			$r = $r1;
-		}
-		else {
-			$widthSamller = FALSE;
-			$r = $r2;
-		}
-		$t_w = $r * $s_w;
-		$t_h = $r * $s_h;
-
-		$thumb->resize($t_w, $t_h);
-		if (!$widthSamller) {
-			$start_x = ($t_w - $w)/2;
-			$start_y = 0;
-			$thumb->crop($w, $h, $start_x, $start_y);
-		}
-		else {
-			$start_x = 0;
-			$start_y = ($t_h - $h);
-			$thumb->crop($w, $h, $start_x, $start_y);
-		}
-
-		$thumb->save($abssaveto);
-
-		if($isOutput) {
-			$fp = fopen($abssaveto, "rb");
-			if ($size && $fp) {
-				header("Content-type: {$size['mime']}");
-				fpassthru($fp);
-				exit;
-			} else {
-				// error
-			}
-		}
-	}
   
   public static function model($class = __CLASS__) {
     return parent::model($class);

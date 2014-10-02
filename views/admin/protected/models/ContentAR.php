@@ -9,6 +9,7 @@ class ContentAR extends CActiveRecord {
   private $fields = array();
   private $imageFields = array();
   private $videoFields = array();
+  private $fileFields = array();
   
   public static $cached_list = array();
   
@@ -51,6 +52,18 @@ class ContentAR extends CActiveRecord {
   
   public function getImageFieldOption($fieldName) {
     return $this->imageFields[$fieldName];
+  }
+  
+  public function getFileFields() {
+    return array_keys($this->fileFields);
+  }
+  
+  public function hasFileField($name, $options = array("multi" => FALSE)) {
+    $this->fileFields[$name] = $options;
+  }
+  
+  public function getFileFieldOptions($name) {
+    return isset($this->fileFields[$name])?  $this->fileFields[$name]: array();
   }
   
   public function getVideoFields() {
@@ -126,10 +139,17 @@ class ContentAR extends CActiveRecord {
       $media = new MediaAR();
       $media->saveMediaToObject($this, $fieldName);
     }
-
+    
+    // 添加视频
     foreach ($this->getVideoFields() as $fieldName) {
       $videoAr = new VideoAR();
       $videoAr->saveVideoToObject($this, $fieldName);
+    }
+    
+    // 添加文件
+    foreach ($this->getFileFields() as $filedName) {
+      $fileAr = new FileAR();
+      $fileAr->saveFileToObject($this, $filedName);
     }
     return TRUE;
   }
@@ -163,11 +183,23 @@ class ContentAR extends CActiveRecord {
         return $this->{$name};
       }
     }
+    // 视频字段
     $videoFields = $this->getVideoFields();
     if ($videoFields && array_search($name, $videoFields) !== FALSE) {
       if ($this->cid) {
         $videoAr = new VideoAR();
         $videoAr->attachVideoToObject($this, $name);
+        
+        return $this->{$name};
+      }
+    }
+    
+    //文件字段
+    $fileFields = $this->getFileFields();
+    if ($fileFields && array_search($name, $fileFields) !== FALSE) {
+      if ($this->cid) {
+        $fileAr = new FileAR();
+        $fileAr->attachFileToObject($this, $name);
         
         return $this->{$name};
       }
@@ -188,6 +220,9 @@ class ContentAR extends CActiveRecord {
       $this->{$name} = $value;
     }
     else if (array_search($name, $this->getVideoFields()) !== FALSE) {
+      $this->{$name} = $value;
+    }
+    else if (array_search($name, $this->getFileFields()) !== FALSE) {
       $this->{$name} = $value;
     }
     else {
@@ -303,6 +338,14 @@ class ContentAR extends CActiveRecord {
         $videoAr->attachVideoToObject($this, $fieldName);
         $attributes[$fieldName] = $this->{$fieldName};
     }
+     
+    // 文件
+    foreach ($this->getFileFields() as $fileName) {
+      $fileAr = new FileAR();
+      $fileAr->attachFileToObject($this, $fileName);
+      $attributes[$fileName] = $this->{$fileName};
+    }
+    
     return $attributes;
   }
   
