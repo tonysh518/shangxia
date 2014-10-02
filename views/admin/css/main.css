@@ -762,7 +762,7 @@ cursor: pointer;
 .multi .controls .multi {
   width: auto;
   border: none;
-  height: 11em;
+  height: auto;
 }
 
 .multi .controls .multi .multi-item {

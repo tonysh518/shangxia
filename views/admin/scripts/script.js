@@ -143,17 +143,21 @@
       link: function (scope, element, attr, ctrl) {
         scope.src = [];
         scope.source = [];
+        scope.multi = attr["multi"];
         if (typeof attr["multi"] != "undefined") {
           element.find("input[type='file']").change(function () {
-            UploadMediaService.upload(angular.element(this)[0]).success(function (res) {
-              if (typeof res["status"] && res["status"]  == 0) {
-                var uri = res["data"]["uri"];
-                scope.src.push(window.baseurl + uri);
-                scope.source.push(uri);
-                scope.$digest();
-                ctrl[0].$setViewValue(scope.src);
-              }
-            });
+            var maxFileSelected = angular.element(this)[0].files.length;
+            for (var i = 0; i < maxFileSelected; i++) {
+              UploadMediaService.upload(angular.element(this)[0], i).success(function (res) {
+                if (typeof res["status"] && res["status"]  == 0) {
+                  var uri = res["data"]["uri"];
+                  scope.src.push(window.baseurl + uri);
+                  scope.source.push(uri);
+                  scope.$digest();
+                  ctrl[0].$setViewValue(scope.src);
+                }
+              });
+            }
           });
           if (typeof attr["value"] != "undefined") {
             var src = JSON.parse(attr["value"]);
@@ -186,10 +190,20 @@
           scope.src.splice(index, 1);
         };
       },
-      template: '<div class="preview multi">' + 
-          '<div class="multi-item" ng-repeat="s in src track by $index"><span class="d-img" ng-click="removeItem($index)">Del</span><img ng-src="{{s}}" alt="" /></div>' +
-        '</div>' + 
-        '<input type="file"  accept="image/*" upload="Upload Image"/>',
+      template: function (el, attrs) {
+        if (typeof attrs["multi"] == "undefined") {
+          return '<div class="preview multi">' + 
+            '<div class="multi-item" ng-repeat="s in src track by $index"><span class="d-img" ng-click="removeItem($index)">Del</span><img ng-src="{{s}}" alt="" /></div>' +
+          '</div>' + 
+          '<input type="file"  accept="image/*" upload="Upload Image"/>';
+        }
+        else {
+          return '<div class="preview multi">' + 
+            '<div class="multi-item" ng-repeat="s in src track by $index"><span class="d-img" ng-click="removeItem($index)">Del</span><img ng-src="{{s}}" alt="" /></div>' +
+          '</div>' + 
+          '<input type="file" multiple  accept="image/*" upload="Upload Image"/>';
+        }
+      },
     };
   }]);
 
