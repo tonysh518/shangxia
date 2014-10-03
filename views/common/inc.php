@@ -522,5 +522,13 @@ function getLastCollection() {
   }
   
   return FALSE;
+}
+
+function getLastEvent() {
+  $list = EventContentAR::model()->getList(1);
   
+  if ($list) {
+    return $list[0];
+  }
+  return FALSE;
 }

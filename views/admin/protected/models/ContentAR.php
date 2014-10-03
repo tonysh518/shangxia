@@ -288,7 +288,7 @@ class ContentAR extends CActiveRecord {
     $query->addCondition("language=:language");
     $query->params[":language"] = $language;
     
-    $query->order = "weight DESC";
+    $query->order = "weight DESC, cdate DESC";
     
     $query->addCondition("status=:status");
     $query->params[":status"] = self::STATUS_ENABLE;

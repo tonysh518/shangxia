@@ -12,6 +12,7 @@ class URLCommand extends CConsoleCommand {
   }
   
   public function actionClean() {
+    return;
     global $language;
     $_SERVER["SERVER_NAME"] = "http://sxhtml.local/";
     $language = "en";
@@ -68,6 +69,7 @@ class URLCommand extends CConsoleCommand {
   }
   
   public function actionIndex() {
+    return;
     global $language;
     $types = array(
         "collection",
@@ -271,6 +273,27 @@ class URLCommand extends CConsoleCommand {
       }
       print $url_key." ".$language."\r\n";
     }
+  }
+  
+  /**
+   * 删除 -
+   */
+  public function actionRemovestash() {
+    $sql = "SELECT * FROM content left join field on field.cid = content.cid and field.field_name='url_key' WHERE type='product' and field_content like '%-'";
     
+    $rows = Yii::app()->db->createCommand($sql)->queryAll();
+ 
+    foreach ($rows as $row) {
+      print "{$row["cid"]} {$row["type"]}  ".$row['field_content']." \r\n ";
+      $field = FieldAR::model()->findByPk($row["fid"]);
+      print "{$field->cdate} ";
+      $cleaned_uri = preg_replace("/-$/", "", $field->field_content);
+      
+      $field->field_content = $cleaned_uri;
+      
+      $field->save();
+      
+      
+    }
   }
 }

@@ -8,7 +8,6 @@ class PageController extends Controller {
     }
     return parent::beforeAction($action);
   }
-  
 
   public function actionLogout () {
     UserAR::logout();
