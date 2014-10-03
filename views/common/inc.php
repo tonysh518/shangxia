@@ -54,12 +54,12 @@ else {
 }
 
 // 计算出 Page title
-$page_title = "首页";
+$page_title = "Home";
 
 $uri = preg_replace("/(\.php)|(^\/)/", "", $_SERVER["SCRIPT_NAME"]);
 $uri = str_replace("-", " ", $uri);
 
-$page_title = Yii::t("page_title", $uri);
+$page_title = ucwords(Yii::t("page_title", $uri));
         
 /**
  * 生成一个编辑我的区块
