@@ -127,19 +127,39 @@
 </script>
 
 <script type="text/tpl" id="i_want_to_buy">
-	<h2><?php echo Yii::t("strings", "I Want To Buy")?></h2>
-	<div class="popcontxt">
-		<p><?php echo Yii::t("strings", "You are interested by buying this product? <br/> Let us contact you back and we will arrange a way to provide you this prodcut")?></p>
+	<div class="js-horizontal-slide product-slider" data-num="1" >
+		<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
+		<div class="slide-con">
+			<ul class="slide-con-inner cs-clear">
+			</ul>
+		</div>
+		<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
+	</div>
+	<div class="product-info">
+		<div class="product-img-slide-num">1/1</div>
+		<div class="product-info-list">
+			<h3>#[name]</h3>
+			<p><label>Color :</label> #[color]</p>
+			<p><label>Material :</label> #[material]</p>
+			<p><label>Size :</label> #[size]</p>
+			<p><label>Unit :</label> #[unit]</p>
+			<br/>
+			<p>￥ #[price]</p>
+		</div>
+		<div class="product-info-desc">#[desc]</div>
+	</div>
+	<div class="popcontxt popform-wrap">
+		<h3><?php echo Yii::t("strings", "You are interested by buying this product?") ?></h3>
+		<p><?php echo Yii::t("strings", "Let us contact you back and we will arrange a way to provide you this prodcut")?></p>
 		<form class="buy-form conformbox" action="/admin/api/content/wantobuy" method="post">
 			<input type="hidden" name="product" value="#[product]"/>
-			<div class="conformtit"><?php echo Yii::t("strings", "YOUR NAME")?> <span class="error" id="name-tip"></span></div>
-			<input type="text" name="name" data-required="name required"/>
-			<div class="conformtit"><?php echo Yii::t("strings", "YOUR EMAIL")?> <span class="error" id="email-tip"></span></div>
-			<input type="text" name="email" data-required="email required"/>
-			<div class="conformtit"><?php echo Yii::t("strings", "YOUR PHONE")?> <span class="error" id="phone-tip"></span></div>
-			<input type="text" name="phone" data-required="phone required"/>
-			<button class="conformbtn" data-a="contact-me-back"><?php echo Yii::t("strings", "CONTACT ME BACK")?></button>
-			<!--<a href=""><?php echo Yii::t("strings", "VIEW ALL THE SHANG XIA GIFTS")?></a>-->
+			<div class="conformtit"><span class="error" id="name-tip"></span></div>
+			<input type="text" placeholder="Name" name="name" data-required="name required"/>
+			<div class="conformtit"><span class="error" id="email-tip"></span></div>
+			<input type="text" placeholder="Email" name="email" data-required="email required"/>
+			<div class="conformtit"><span class="error" id="phone-tip"></span></div>
+			<input type="text" placeholder="Phone" name="phone" data-required="phone required"/>
+			<button data-a="contact-me-back" class="btn transition-wrap"><span class="transition"><?php echo Yii::t("strings", "CONTACT ME BACK")?><br/><br/><?php echo Yii::t("strings", "CONTACT ME BACK")?></span></button>
 		</form>
 		<div class="form-submit-tip"></div>
 	</div>

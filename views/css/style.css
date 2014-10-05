@@ -653,9 +653,25 @@ text-align: right;}
 
 .form-submit-tip{display: none;text-align: center;height: 40px;margin-bottom: -40px;line-height: 40px;font-size: 40px;}
 
+.price{font-family: 'Gotham Light';}
 
 
 
+.product-info{overflow: hidden;padding: 50px 10%;
+background: rgb(227,227,227);}
+.product-img-slide-num{font-family: "Gotham Book";color: #4b3700;float: left;width: 7%;text-align: right;margin-right: 3%;}
+.product-info-list{float: left;width: 40%;}
+.product-info-list h3{font-family: "Gotham Book";color: #4b3700;margin-bottom: 30px;text-transform: uppercase;}
+.product-info-list p {margin: 0;padding: 0;}
+.product-info-desc{float: left;width: 42%;margin-left: 8%;}
 
+.popform-wrap{width: 80%;margin-left: 8%;text-align: left;padding: 60px 0;}
 
-
+.popform-wrap h3{text-transform: uppercase;font-family: "gotham book";color: #4b3700;}
+.buy-form{width: 40%;margin: 50px 0;position: relative;min-width: 0;}
+.buy-form input{margin: 20px 0;height: 60px;line-height: 60px;}
+.buy-form .btn{position: absolute;left: 100%;bottom: 0;margin: 0;background: none;cursor: pointer;margin-left: 20%;}
+.popform-wrap>* {margin-left: 12%;}
+.product-slider{width: 100%;margin:0 auto;position: relative;}
+.product-slider .collarrowsprev{left: 0;background-position: center center;}
+.product-slider .collarrowsnext{right: 0px;left: auto;background-position: center center;}

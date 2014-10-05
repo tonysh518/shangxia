@@ -569,136 +569,138 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
                 // =====================================================================================
                 // init horizontal slide
-                $('.js-horizontal-slide').each(function(){
-                    var $dom = $(this);
+                initHoriSlider( $('.js-horizontal-slide') );
 
-                    // split content first
-                    if( $dom.data('split') ){
-                        var $li = $dom.find('.slide-con-inner li');
-                        var height = $li.height();
-                        var lineHeight = parseInt( $li.css('lineHeight') );
-                        var len = Math.ceil( height / ( 5 * lineHeight ) );
-                        $li.html( $('<div></div>').html( $li.html() ).height( 5 * lineHeight ).css('overflow' , 'hidden') );
-                        for( var i = 1 ; i < len ; i++ ){
-                            $li.clone()
-                                .appendTo( $li.parent() )
-                                .children('div')
-                                .append( i == len - 1 ? '<br/><br/><br/><br/><br/>' : '' )
-                                .scrollTop( i * 5 * lineHeight );
-                        }
-                    }
+                // $('.js-horizontal-slide').each(function(){
+                //     var $dom = $(this);
+
+                //     // split content first
+                //     if( $dom.data('split') ){
+                //         var $li = $dom.find('.slide-con-inner li');
+                //         var height = $li.height();
+                //         var lineHeight = parseInt( $li.css('lineHeight') );
+                //         var len = Math.ceil( height / ( 5 * lineHeight ) );
+                //         $li.html( $('<div></div>').html( $li.html() ).height( 5 * lineHeight ).css('overflow' , 'hidden') );
+                //         for( var i = 1 ; i < len ; i++ ){
+                //             $li.clone()
+                //                 .appendTo( $li.parent() )
+                //                 .children('div')
+                //                 .append( i == len - 1 ? '<br/><br/><br/><br/><br/>' : '' )
+                //                 .scrollTop( i * 5 * lineHeight );
+                //         }
+                //     }
 
 
-                    var wrapWidth = $dom.width();
-                    var num = $(this).data('num') || 3;
-                    var $items = $dom.find('.slide-con-inner').children();
+                //     var wrapWidth = $dom.width();
+                //     var num = $(this).data('num') || 3;
+                //     var $items = $dom.find('.slide-con-inner').children();
 
-                    // 计算每一个item的宽度 
-                    var $imgs = $items.find('img');
-                    var totalItems = 0;
-                    if( $imgs.length ){
-                        $imgs.each(function(){
-                            totalItems += Math.round( $(this).data('width') / $(this).data('height') ) || 1;
-                        });
-                    } else {
-                        totalItems = $items.length;
-                    }
+                //     // 计算每一个item的宽度 
+                //     var $imgs = $items.find('img');
+                //     var totalItems = 0;
+                //     if( $imgs.length ){
+                //         $imgs.each(function(){
+                //             totalItems += Math.round( $(this).data('width') / $(this).data('height') ) || 1;
+                //         });
+                //     } else {
+                //         totalItems = $items.length;
+                //     }
                     
 
-                    var $inner = $dom.find('.slide-con-inner').width( totalItems / num * 100 + '%' );
-                    var marginRight = 0.8 /( totalItems / num  );//parseInt( $items.css('margin-right') );
-                    var halfMR = marginRight / 2 + '%';
-                    var counted = 0;
-                    var prev = 0;
-                    $items
-                        .css('marginRight' , marginRight + '%' )
-                        .each(function(){
-                        var $this = $(this);
-                        var $img = $this.find('img');
-                        var indent = Math.round( $img.data('width') / $img.data('height') ) || 1;
-                        counted += indent;
-                        if( counted % 3 == 0 ){
-                            if( indent == 1 && prev == 1 ){ // 111
-                                // 第一个margin-left: 0.4%
-                                // 最后一个margin-right: 0.4 %
-                                $this
-                                .css('marginRight' , halfMR)
-                                .prev()
-                                .prev()
-                                .css({
-                                    marginLeft: halfMR ,
-                                    marginRight: marginRight + '%'
-                                });
-                            } else if( indent == 3 ) { // 3
-                                $this.css({
-                                    marginLeft: halfMR,
-                                    marginRight: halfMR
-                                });
-                            } else { // 21 || 12
-                                $this.css('marginRight' , halfMR)
-                                    .prev()
-                                    .css({
-                                        'marginLeft': halfMR,
-                                        'marginRight': marginRight + '%'
-                                    });
-                            }
-                        } else if( ( counted - indent ) % 3 == 0 ){
-                            $this.css({
-                                marginLeft: halfMR ,
-                                marginRight: halfMR
-                            });
-                        }
+                //     var $inner = $dom.find('.slide-con-inner').width( totalItems / num * 100 + '%' );
+                //     var marginRight = 0.8 /( totalItems / num  );//parseInt( $items.css('margin-right') );
+                //     var halfMR = marginRight / 2 + '%';
+                //     var counted = 0;
+                //     var prev = 0;
+                //     $items
+                //         .css('marginRight' , marginRight + '%' )
+                //         .each(function(){
+                //         var $this = $(this);
+                //         var $img = $this.find('img');
+                //         var indent = Math.round( $img.data('width') / $img.data('height') ) || 1;
+                //         counted += indent;
+                //         if( counted % 3 == 0 ){
+                //             if( indent == 1 && prev == 1 ){ // 111
+                //                 // 第一个margin-left: 0.4%
+                //                 // 最后一个margin-right: 0.4 %
+                //                 $this
+                //                 .css('marginRight' , halfMR)
+                //                 .prev()
+                //                 .prev()
+                //                 .css({
+                //                     marginLeft: halfMR ,
+                //                     marginRight: marginRight + '%'
+                //                 });
+                //             } else if( indent == 3 ) { // 3
+                //                 $this.css({
+                //                     marginLeft: halfMR,
+                //                     marginRight: halfMR
+                //                 });
+                //             } else { // 21 || 12
+                //                 $this.css('marginRight' , halfMR)
+                //                     .prev()
+                //                     .css({
+                //                         'marginLeft': halfMR,
+                //                         'marginRight': marginRight + '%'
+                //                     });
+                //             }
+                //         } else if( ( counted - indent ) % 3 == 0 ){
+                //             $this.css({
+                //                 marginLeft: halfMR ,
+                //                 marginRight: halfMR
+                //             });
+                //         }
 
-                        $this.width( indent /  totalItems * 100 - marginRight + '%' );
-                        prev = indent;
-                    });
+                //         $this.width( indent /  totalItems * 100 - marginRight + '%' );
+                //         prev = indent;
+                //     });
 
-                    var total = $items.length;
-                    $dom.find('.collarrowsprev')
-                        .fadeOut()
-                        .click(function(){
-                            var ml = parseInt( $inner.css('marginLeft') ) || 0;
-                            if( ml == 0 ) return false;
+                //     var total = $items.length;
+                //     $dom.find('.collarrowsprev')
+                //         .fadeOut()
+                //         .click(function(){
+                //             var ml = parseInt( $inner.css('marginLeft') ) || 0;
+                //             if( ml == 0 ) return false;
 
-                            var mleft = -Math.round( Math.abs( ml ) / $inner.parent().width() - 1 );
-                            $inner.animate({
-                                marginLeft: mleft * 100 + '%'
-                            } , 500);
+                //             var mleft = -Math.round( Math.abs( ml ) / $inner.parent().width() - 1 );
+                //             $inner.animate({
+                //                 marginLeft: mleft * 100 + '%'
+                //             } , 500);
 
-                            if( mleft == 0 ){
-                                // hide current btn
-                                $(this).fadeOut();
-                            }
+                //             if( mleft == 0 ){
+                //                 // hide current btn
+                //                 $(this).fadeOut();
+                //             }
 
-                            // show next btn
-                            $dom.find('.collarrowsnext').fadeIn();
+                //             // show next btn
+                //             $dom.find('.collarrowsnext').fadeIn();
 
-                            $(window).trigger('scroll');
-                    })
-                    .end()
-                    .find('.collarrowsnext')
-                    [ totalItems > num ? 'show' : 'hide' ]()
-                    .click(function(){
-                        var ml = parseInt( $inner.css('marginLeft') ) || 0;
-                        var outerWidth = $inner.parent().width();
-                        var innerWidth = $inner.width();
-                        if( Math.abs( ml ) >= innerWidth - outerWidth - 100 ) return false;
-                        var mleft = -Math.round( Math.abs( ml ) / outerWidth + 1 );
-                        $inner.animate({
-                            marginLeft: mleft * 100 + '%'
-                        } , 500 );
+                //             $(window).trigger('scroll');
+                //     })
+                //     .end()
+                //     .find('.collarrowsnext')
+                //     [ totalItems > num ? 'show' : 'hide' ]()
+                //     .click(function(){
+                //         var ml = parseInt( $inner.css('marginLeft') ) || 0;
+                //         var outerWidth = $inner.parent().width();
+                //         var innerWidth = $inner.width();
+                //         if( Math.abs( ml ) >= innerWidth - outerWidth - 100 ) return false;
+                //         var mleft = -Math.round( Math.abs( ml ) / outerWidth + 1 );
+                //         $inner.animate({
+                //             marginLeft: mleft * 100 + '%'
+                //         } , 500 );
 
-                        if( Math.abs( parseInt( $inner.css('marginLeft') ) ) + outerWidth >= innerWidth - outerWidth - 100 ){
-                            // hide current btn
-                            $(this).fadeOut();
-                        }
+                //         if( Math.abs( parseInt( $inner.css('marginLeft') ) ) + outerWidth >= innerWidth - outerWidth - 100 ){
+                //             // hide current btn
+                //             $(this).fadeOut();
+                //         }
 
-                        // show pre btn
-                        $dom.find('.collarrowsprev').fadeIn();
+                //         // show pre btn
+                //         $dom.find('.collarrowsprev').fadeIn();
 
-                        $(window).trigger('scroll');
-                    });
-                });
+                //         $(window).trigger('scroll');
+                //     });
+                // });
 
                 // render map
                 $('[data-map]').each(function(){
@@ -983,6 +985,146 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 }
             } , 5000) );
         }
+    }
+
+
+    function initHoriSlider( $doms , cb ){
+        $doms.each(function(){
+            var $dom = $(this);
+
+            // split content first
+            if( $dom.data('split') ){
+                var $li = $dom.find('.slide-con-inner li');
+                var height = $li.height();
+                var lineHeight = parseInt( $li.css('lineHeight') );
+                var len = Math.ceil( height / ( 5 * lineHeight ) );
+                $li.html( $('<div></div>').html( $li.html() ).height( 5 * lineHeight ).css('overflow' , 'hidden') );
+                for( var i = 1 ; i < len ; i++ ){
+                    $li.clone()
+                        .appendTo( $li.parent() )
+                        .children('div')
+                        .append( i == len - 1 ? '<br/><br/><br/><br/><br/>' : '' )
+                        .scrollTop( i * 5 * lineHeight );
+                }
+            }
+
+
+            var wrapWidth = $dom.width();
+            var num = $(this).data('num') || 3;
+            var $items = $dom.find('.slide-con-inner').children();
+
+            // 计算每一个item的宽度 
+            var $imgs = $items.find('img');
+            var totalItems = 0;
+            if( $imgs.length ){
+                $imgs.each(function(){
+                    totalItems += Math.round( $(this).data('width') / $(this).data('height') ) || 1;
+                });
+            } else {
+                totalItems = $items.length;
+            }
+            
+
+            var $inner = $dom.find('.slide-con-inner').width( totalItems / num * 100 + '%' );
+            var marginRight = 0.8 /( totalItems / num  );//parseInt( $items.css('margin-right') );
+            var halfMR = marginRight / 2 + '%';
+            var counted = 0;
+            var prev = 0;
+            $items
+                .css('marginRight' , marginRight + '%' )
+                .each(function(){
+                var $this = $(this);
+                var $img = $this.find('img');
+                var indent = Math.round( $img.data('width') / $img.data('height') ) || 1;
+                counted += indent;
+                if( counted % 3 == 0 ){
+                    if( indent == 1 && prev == 1 ){ // 111
+                        // 第一个margin-left: 0.4%
+                        // 最后一个margin-right: 0.4 %
+                        $this
+                        .css('marginRight' , halfMR)
+                        .prev()
+                        .prev()
+                        .css({
+                            marginLeft: halfMR ,
+                            marginRight: marginRight + '%'
+                        });
+                    } else if( indent == 3 ) { // 3
+                        $this.css({
+                            marginLeft: halfMR,
+                            marginRight: halfMR
+                        });
+                    } else { // 21 || 12
+                        $this.css('marginRight' , halfMR)
+                            .prev()
+                            .css({
+                                'marginLeft': halfMR,
+                                'marginRight': marginRight + '%'
+                            });
+                    }
+                } else if( ( counted - indent ) % 3 == 0 ){
+                    $this.css({
+                        marginLeft: halfMR ,
+                        marginRight: halfMR
+                    });
+                }
+
+                $this.width( indent /  totalItems * 100 - marginRight + '%' );
+                prev = indent;
+            });
+
+            var total = $items.length;
+            $dom.find('.collarrowsprev')
+                .fadeOut()
+                .click(function(){
+                    var ml = parseInt( $inner.css('marginLeft') ) || 0;
+                    if( ml == 0 ) return false;
+
+                    var mleft = -Math.round( Math.abs( ml ) / $inner.parent().width() - 1 );
+                    $inner.animate({
+                        marginLeft: mleft * 100 + '%'
+                    } , 500);
+
+                    cb && cb( -mleft );
+
+                    if( mleft == 0 ){
+                        // hide current btn
+                        $(this).fadeOut();
+                    }
+
+                    // show next btn
+                    $dom.find('.collarrowsnext').fadeIn();
+
+                    $(window).trigger('scroll');
+            })
+            .end()
+            .find('.collarrowsnext')
+            [ totalItems > num ? 'show' : 'hide' ]()
+            .click(function(){
+                var ml = parseInt( $inner.css('marginLeft') ) || 0;
+                var outerWidth = $inner.parent().width();
+                var innerWidth = $inner.width();
+                if( Math.abs( ml ) >= innerWidth - outerWidth - 100 ) return false;
+                var mleft = -Math.round( Math.abs( ml ) / outerWidth + 1 );
+                $inner.animate({
+                    marginLeft: mleft * 100 + '%'
+                } , 500 );
+
+                cb && cb( -mleft );
+
+                if( Math.abs( parseInt( $inner.css('marginLeft') ) ) + outerWidth >= innerWidth - outerWidth - 100 ){
+                    // hide current btn
+                    $(this).fadeOut();
+                }
+
+                // show pre btn
+                $dom.find('.collarrowsprev').fadeIn();
+
+                $(window).trigger('scroll');
+            });
+
+            cb && cb( 0 );
+        });
     }
 
 
@@ -1925,12 +2067,27 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     });
 
     LP.action('i-want-to-buy' , function( data ){
+        var data = eval('(' + $(this).siblings('textarea').val() + ')');
         popHelper.show( LP.format( $('#i_want_to_buy').html() , data ) );
+        $('.pop').find('.popcon').css('width','100%').css('padding',0);
+
+        // prepare images
+        var aHtml = [];
+        $.each(data.pics , function( i , pic ){
+            aHtml.push(LP.format( '<li style="float:left;"><img src="#[pic]"/></li>' , {pic:pic}));
+        });
+        $('.pop .slide-con-inner').html( aHtml.join('') );
+
+        initHoriSlider( $('.pop .js-horizontal-slide') , function( index ){
+            $('.product-img-slide-num').html( index + 1 + '/' + data.pics.length );
+        } );
+
         LP.use('form' , function(){
             $('.pop form').ajaxSubmit({
                 type: 'post',
                 dataType: 'json',
                 success: function( data ){
+                    var $pop = $('.pop');
                     if( data.status == 0 ){
                         $pop.find('.form-submit-tip')
                             .html( data.message )
