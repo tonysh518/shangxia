@@ -29,7 +29,7 @@ include_once 'common/header.php';?>
 					<ul class="piclist cs-clear">
             <?php foreach ($gifts as $gift): ?>
               <li class="piclistitem intoview-effect" data-effect="fadeup">
-                <img src="<?php echo makeThumbnail($gift->thumbnail, array(414, 219))?>" width="100%" />
+                <img data-a="i-want-to-buy" data-d="" src="<?php echo makeThumbnail($gift->thumbnail, array(414, 219))?>" width="100%" />
                   <p><span class=""><?php echo $gift->title?></span></p>
                   <div class="price">¥ <?php echo $gift->price;?></div>
                   <a href="#" data-a="i-want-to-buy" data-d="product=1&pics=/images/colldemo.jpg,/images/colldemo.jpg,/images/colldemo.jpg" class="btn transition-wrap"><span class="transition"><?php echo Yii::t("strings", "I Want To Buy")?><br/><br/><?php echo Yii::t("strings", "I Want To Buy")?></span></a>

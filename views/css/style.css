@@ -675,3 +675,7 @@ background: rgb(227,227,227);}
 .product-slider{width: 100%;margin:0 auto;position: relative;}
 .product-slider .collarrowsprev{left: 0;background-position: center center;}
 .product-slider .collarrowsnext{right: 0px;left: auto;background-position: center center;}
+
+.gift-corner .piclistitem img {
+  cursor: pointer;
+}
