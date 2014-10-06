@@ -22,14 +22,22 @@
       </thead>
       <tbody>
         <?php foreach ($list as $item): ?>
+        <?php $product = ProductContentAR::model()->findByPk($item->product); ?>
         <tr>
           <td><?php echo $item->title?></td>
           <td><?php echo $item->phone?></td>
           <td><?php echo $item->email?></td>
-          <td><a href="javascript:void(0)">
-            <?php $product = ProductContentAR::model()->findByPk($item->product); ?>
+          <td>
+          <?php if ($item->product_type == "product"):?>
+            <a href="javascript:void(0)">
               <img ng-click="viewimage('<?php echo MediaAR::thumbnail($product->product_slide_image[0], array("500", "auto"));?>')" src="<?php echo MediaAR::thumbnail($product->product_slide_image[0], array("500", "auto"))?>" alt="" />
-            </a></td>
+            </a>
+          <?php else: ?>
+            <a href="javascript:void(0)">
+              <img ng-click="viewimage('<?php echo ($product->thumbnail)?>')" src="<?php echo ($product->thumbnail)?>" alt="" />
+            </a>
+         <?php endif;?>
+          </td>
           <td><?php echo $item->cdate?></td>
           <td>
             <a ng-click="preview(<?php echo $item->cid?>)" href="javascript:void()"><?php echo Yii::t("strings", "View")?></a>

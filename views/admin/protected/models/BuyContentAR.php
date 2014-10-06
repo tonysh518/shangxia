@@ -11,6 +11,7 @@ class BuyContentAR extends ContentAR {
     $this->hasContentField("phone");
     $this->hasContentField("email");
     $this->hasContentField("product");
+    $this->hasContentField("product_type");
     return parent::getFields();
   }
   

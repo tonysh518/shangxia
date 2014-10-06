@@ -23,7 +23,7 @@
         <label for=""><?php echo Yii::t("strings", "Title")?></label>
       </div>
       <div class="controls">
-        <input type="text" name="title" ng-model="content.title" value="<?php echo $instance->title?>" ng-initial required />
+        <input type="text" name="title" ng-model="content.title" value="<?php echo htmlspecialchars($instance->title)?>" ng-initial required />
         <p class="text-error" ng-show="content.title.$error.required">This field is required</p>
       </div>
     </div>

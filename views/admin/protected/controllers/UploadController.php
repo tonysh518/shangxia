@@ -4,6 +4,7 @@ class UploadController extends Controller {
   
   public function makeThumbnailWithUri($uri, $prefix = "") {
     $parts = explode("_",$uri);
+    
     $max = count($parts);
     $index = $max - 3;
 
