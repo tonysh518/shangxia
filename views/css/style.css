@@ -670,9 +670,13 @@ background: rgb(227,227,227);}
 
 .popform-wrap h3{text-transform: uppercase;font-family: "gotham book";color: #4b3700;}
 .buy-form{width: 40%;margin: 50px 0;position: relative;min-width: 0;}
-.buy-form input{margin: 20px 0;height: 60px;line-height: 60px;}
+.buy-form input{margin: 20px 0;height: 60px;line-height: 60px;padding-left: 1em;}
 .buy-form .btn{position: absolute;left: 100%;bottom: 0;margin: 0;background: none;cursor: pointer;margin-left: 20%;}
 .popform-wrap>* {margin-left: 12%;}
 .product-slider{width: 100%;margin:0 auto;position: relative;}
 .product-slider .collarrowsprev{left: 0;background-position: center center;}
 .product-slider .collarrowsnext{right: 0px;left: auto;background-position: center center;}
+
+.gift-corner .piclistitem img {
+  cursor: pointer;
+}
