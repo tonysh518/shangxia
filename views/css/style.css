@@ -688,3 +688,8 @@ background: rgb(227,227,227);}
 .lang-fr .nav-pop-item .nav-text {
   font-size: 16px;
 }
+
+.newsitem p.date {
+  padding: 0px;
+  height: auto;
+}

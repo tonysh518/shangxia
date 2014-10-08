@@ -133,11 +133,9 @@
 					<h2 class="intoview-effect" data-effect="fadeup"><?php echo Yii::t("strings", "about shangxia")?></h2>
 					<p class="intoview-effect" data-effect="fadeup">SHANGXIA is a brand for art of living that promises a unique encounter with the heritage of
  Chinese design and craftsmanship.Chinese renowned designer Jiang Qiong Er established SHANGXIA with a mission to create a 21st century lifestyle founded on the  finest of Chinese design traditions.</p>
-	 				<a data-a="nav-link" href="<?php url("about") ?>"><?php echo Yii::t("strings", "Read more")?>
-		                  <br/><br/><?php echo Yii::t("strings", "Read more")?>
-		                </span>
-	              	</a>
-				</div>
+	 				<a data-a="nav-link" class="btn transition-wrap" href="<?php echo url("about") ?>"><span class="transition"><?php echo Yii::t("strings", "read more")?><br><br><?php echo Yii::t("strings", "read more")?></a>
+				
+              </div>
 			</div>
 		</div>
 <?php include_once 'common/footer.php';?>

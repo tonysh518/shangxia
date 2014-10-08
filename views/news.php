@@ -71,7 +71,8 @@
               <li class="productslist cs-clear slideitem" data-id="<?php echo $news->cid?>">
                   <a href="#" class="prolistitem newsitem" data-a="show-news">
                     <img src="<?php echo $news->thumbnail?>" width="100%" />
-                    <p><?php echo $news->title?><br /><span class="date"><?php echo date("Y M d", strtotime($news->date))?></span></p>
+                    <p><?php echo $news->title?><br /></p>
+                    <p class="date"><span class="date"><?php echo date("Y M d", strtotime($news->date))?></span></p>
                     <script type="text/tpl">
                     	<?php if ($news): ?>
 				          	<div class="picinfortxt news-picinfortxt">
@@ -82,7 +83,7 @@
 						              <?php echo $news->body?>
 						            </div>
 					            </div>
-					            <div style="margin-right:50px;">
+					            <div style="margin-r ight:50px;">
 									<a href="#" data-a="show-pop" class="btn transition-wrap"><span class="transition"><?php echo Yii::t("strings", "read more")?><br><br><?php echo Yii::t("strings", "read more")?></span></a>
 									<textarea style="display:none;">
 										<h2><?php echo $news->title?></h2>
