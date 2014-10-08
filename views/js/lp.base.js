@@ -2074,7 +2074,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         // prepare images
         var aHtml = [];
         $.each(data.pics , function( i , pic ){
-            aHtml.push(LP.format( '<li style="float:left;"><img src="#[pic]"/></li>' , {pic:pic}));
+            aHtml.push(LP.format( '<li style="float:left;"><img src="#[pic]" width="100%"/></li>' , {pic:pic}));
         });
         $('.pop .slide-con-inner').html( aHtml.join('') );
 
