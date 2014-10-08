@@ -532,7 +532,7 @@ text-align: right;}
 #zoomer,.anchorBL{display: none;}
 
 #other-error{font-size: 14px;}
-.success-tip{line-height: 100px;font-size: 40px;font-family: "Gotham Book";text-transform: uppercase;}
+.success-tip{line-height: 200%;font-size: 2em;font-family: "Gotham Book";text-transform: uppercase;}
 .loading-gif{width: 40px;position: absolute;right: -10px;bottom: -40px;display: none;}
 
 

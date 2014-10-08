@@ -100,13 +100,15 @@ class ContentController extends Controller {
      return $this->responseError(Yii::t("strings", "Uploaded media is denied by server"), ErrorAR::ERROR_MISSED_REQUIRED_PARAMS);
    }
    
-   // Make temp file
-   $mediaAr = new MediaAR();
-   $uri = $mediaAr->saveTo($file);
-   $_POST[$fileName] = $uri;
-   
-   if (!$uri) {
-     return $this->responseError(Yii::t("There's error in server interval. please try later"), ErrorAR::ERROR_UNKNOWN);
+   if ($file) {
+    // Make temp file
+    $mediaAr = new MediaAR();
+    $uri = $mediaAr->saveTo($file);
+    $_POST[$fileName] = $uri;
+
+    if (!$uri) {
+      return $this->responseError(Yii::t("There's error in server interval. please try later"), ErrorAR::ERROR_UNKNOWN);
+    }
    }
    
    if (!$name || !$email) {
