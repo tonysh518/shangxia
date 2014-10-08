@@ -679,3 +679,11 @@ background: rgb(227,227,227);}
 .gift-corner .piclistitem img {
   cursor: pointer;
 }
+
+.lang-fr .nav-pop-nav p {
+  font-size: 14px;
+}
+
+.lang-fr .nav-pop-item .nav-text {
+  font-size: 16px;
+}

@@ -267,9 +267,9 @@ function loadEventsWithYearGroup($teaser = FALSE) {
   $firstNews = loadFirstEvent();
   $newsGroup = array();
   foreach ($newsItems as $newsItem) {
-    if ($newsItem->cid == $firstNews->cid) {
-      continue;
-    }
+//    if ($newsItem->cid == $firstNews->cid) {
+//      continue;
+//    }
     if ($teaser) {
       if (isset($newsGroup[date("Y", strtotime($newsItem->date))]) &&  count($newsGroup[date("Y", strtotime($newsItem->date))])< 3) {
         continue;
