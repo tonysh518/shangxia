@@ -68,8 +68,8 @@ include_once 'common/header.php';?>
 				</div>
 
 				<!-- store -->
-				<div class="section store cs-clear">
-					<div class="storechoose storechoose2 intoview-effect" data-effect="fadeup">
+				<div class="section store cs-clear" style="width:90%;">
+					<div class="storechoose storechoose2 intoview-effect" data-effect="fadeup" style="padding-top:0;">
 						<?php echo $crtboutique->address?>
 					</div>
 					<div class="storemap intoview-effect" <?php if ($_GET["type"] == "paris") echo 'data-map-type="google"'?> data-map="<?php echo $crtboutique->latlng?>" data-effect="fadeup">

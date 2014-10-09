@@ -861,13 +861,13 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                         .css('top' , 23 );
                     $loading.css('zIndex' , 90);
                     // fade out other navs
-                    $('.nav li,.hd_oter').each(function( i ){
-                        $(this).delay(i * 100)
-                            .animate({
-                                marginTop: 30,
-                                opacity: 0
-                            } , 200);
-                    });
+                    // $('.nav li,.hd_oter').each(function( i ){
+                    //     $(this).delay(i * 100)
+                    //         .animate({
+                    //             marginTop: 30,
+                    //             opacity: 0
+                    //         } , 200);
+                    // });
                 }
 
             },

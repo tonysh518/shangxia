@@ -122,6 +122,8 @@ a{text-decoration:none;outline: none;color:inherit;}
 
 .lang-zh_cn .nav{width: 40%;}
 .lang-zh_cn .logo{width: 14%;}
+.lang-fr .nav1{width: 40%;}
+.lang-fr .nav2{width: 36%;}
 /*section*/
 .section{width: 80%;margin: 0 auto;}
 
@@ -170,12 +172,12 @@ img.slideitem{height: auto;}
 /*store*/
 .storechoose{float: left;width: 50%;text-align: center;padding-bottom: 50px;}
 .storechoose h2{font-size: 30px; text-transform : uppercase;padding: 60px 0 20px;font-family: "Gotham Book";color:#4b3700;}
-.storechoose p{font-size: 18px;width: 78%;margin: 0 auto;font-family: Garamond;}
+.storechoose p{font-size: 16px;width: 78%;margin: 0 auto;font-family: Garamond;}
 .storechoose2 p{font-family: "Gotham Book";}
 .storechooselist{width:60%;margin: 40px auto 0;min-width: 400px;}
 .storechooselist li{float: left;width: 50%;font-family: Garamond;}
 .storechooselist a{font-size: 18px;border:#423608 solid 1px;display: block;margin: 0 auto;text-align: center;height: 62px;line-height: 62px;width: 90%}
-.storemap{float: left;width: 50%;height: 400px;position: relative;padding-right: 80px;margin-right: -80px;}
+.storemap{float: left;width: 50%;height: 400px;position: relative;}
 .storemap-wrap{position: absolute;top:0;left:0 ;width: 100%;height: 100%;}
 
 /*sitelinks*/
@@ -243,7 +245,7 @@ img.slideitem{height: auto;}
 .productslist{padding:10px 0;}
 .prolistitem{text-transform : uppercase;float: left;width: 32.53%;margin-right: 0.8%;}
 .prolistitem img{display: block;margin: 0 0 10px;}
-.prolistitem p{background: #4b3700;color:#fff;padding:12px;font-size: 18px;text-align: center ;}
+.prolistitem p{background: #4b3700;color:#fff;padding:12px;font-size: 18px;text-align: center ;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
 .prolistitem p .date{font-family: garamond;}
 .newsitem p{background: #fff;color:#4b3700  ;height: 80px;}
 
@@ -293,7 +295,7 @@ img.slideitem{height: auto;}
 
 /*findus*/
 /*.findus .productstit h2{width: 200px;margin-left: -100px;}*/
-.findus .storechoose{width: 35%;padding-top: 100px;font-family: "Gotham Book";}
+.findus .storechoose{width: 33%;padding-top: 100px;font-family: "Gotham Book";margin-right: 2%;}
 .findus .storechoose p{font-style: normal;}
 .findus .storemap{width: 65%;}
 
@@ -692,4 +694,12 @@ background: rgb(227,227,227);}
 .newsitem p.date {
   padding: 0px;
   height: auto;
+}
+
+
+@media screen and (max-width:1000px){
+    .head-inner{width: 92%;margin:0;}
+
+    .nav-pop-nav{width: 200px;}
+    .nav-pop-wrap{margin-right: -200px;}
 }

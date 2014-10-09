@@ -20,7 +20,7 @@
     <?php $store = BoutiqueContentAR::model()->loadByAddressKey($city); ?>
     <?php if ($store): ?>
 		<div class="store-wrap">
-			<div class="section store cs-clear ">
+			<div class="store cs-clear " style="margin:0 50px;">
         <?php 
           $store = BoutiqueContentAR::model()->loadByAddressKey($city);
           // 如果没有找到，拿认为Shanghai 是默认的
