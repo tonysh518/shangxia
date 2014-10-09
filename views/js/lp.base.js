@@ -2213,7 +2213,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
     LP.action('contact-me-back' , function(){
         var $form = $(this).closest('form');
-        $form.find('#name-tip,#email-tip,#phone-tip').html('');
+        $form.find('#name-tip,#email-tip,#phone-tip').html(' ');
         
         var data = LP.query2json( $form.serialize() );
         var error = false;

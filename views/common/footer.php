@@ -153,11 +153,11 @@
 		<p><?php echo Yii::t("strings", "Let us contact you back and we will arrange a way to provide you this prodcut")?></p>
 		<form class="buy-form conformbox" action="/admin/api/content/wantobuy" method="post">
 			<input type="hidden" name="product" value="#[product]"/>
-			<div class="conformtit"><span class="error" id="name-tip"></span></div>
+			<div class="conformtit" style="height:40px;"><span class="error" id="name-tip">&nbsp;</span></div>
 			<input type="text" placeholder="Name" name="name" data-required="name required"/>
-			<div class="conformtit"><span class="error" id="email-tip"></span></div>
+			<div class="conformtit" style="height:40px;"><span class="error" id="email-tip">&nbsp;</span></div>
 			<input type="text" placeholder="Email" name="email" data-required="email required"/>
-			<div class="conformtit"><span class="error" id="phone-tip"></span></div>
+			<div class="conformtit" style="height:40px;"><span class="error" id="phone-tip">&nbsp;</span></div>
 			<input type="text" placeholder="Phone" name="phone" data-required="phone required"/>
 			<button data-a="contact-me-back" class="btn transition-wrap"><span class="transition"><?php echo Yii::t("strings", "CONTACT ME BACK")?><br/><br/><?php echo Yii::t("strings", "CONTACT ME BACK")?></span></button>
 		</form>

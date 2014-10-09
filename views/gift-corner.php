@@ -24,15 +24,20 @@ include_once 'common/header.php';?>
 		<!-- collection list -->
 		<div class="section ">
 			<div class="colllistbox ">
-				<!--  -->
+
         <?php $gifts = GiftContentAR::model()->getList();?>
-					<ul class="piclist cs-clear">
-            <?php foreach ($gifts as $gift): ?>
+					
+            <?php $index = 0;
+            foreach ($gifts as $gift): 
+            	$index++;
+              if( $index % 3 == 1 ): ?>
+              <ul class="piclist cs-clear">
+              <?php endif;?>
               <li class="piclistitem intoview-effect" data-effect="fadeup">
                 <img data-a="i-want-to-buy" data-d="" src="<?php echo makeThumbnail($gift->thumbnail, array(414, 219))?>" width="100%" />
                   <p><span class=""><?php echo $gift->title?></span></p>
                   <div class="price">¥ <?php echo $gift->price;?></div>
-                  <a href="#" data-a="i-want-to-buy" data-d="product=1&pics=/images/colldemo.jpg,/images/colldemo.jpg,/images/colldemo.jpg" class="btn transition-wrap"><span class="transition"><?php echo Yii::t("strings", "I Want To Buy")?><br/><br/><?php echo Yii::t("strings", "I Want To Buy")?></span></a>
+                  <a href="#" data-a="i-want-to-buy" class="btn transition-wrap"><span class="transition"><?php echo Yii::t("strings", "I Want To Buy")?><br/><br/><?php echo Yii::t("strings", "I Want To Buy")?></span></a>
                   <textarea style="display:none;">
                   <?php echo json_encode(array("name" => $gift->title, 
                       "pics" => $gift->product_slide_image, 
@@ -45,8 +50,14 @@ include_once 'common/header.php';?>
                       "desc" => $gift->body))?>
                   </textarea>
                 </li>
+              <?php if( $index % 3 == 0 ): ?>
+              </ul>
+              <?php endif;?>
             <?php endforeach;?>
-					</ul>
+            <?php if( count( $gifts ) % 3 != 0 ): ?>
+            </ul>
+            <?php endif;?>
+					
 			</div>
 		</div>
 		<!--  -->
