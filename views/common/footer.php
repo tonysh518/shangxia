@@ -100,7 +100,7 @@
 				</div>
 				<!-- copyright -->
 				<div class="copyright">
-					<p><a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=20120529122952909"><?php echo Yii::t("strings", "ICP LICENCE")?> 20120529122952909</a> - <?php echo Yii::t("strings", "PRIVACY POLICY LEGAL INFORMATION")?></p>
+          <p><a target="_blank" href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=20120529122952909"><?php echo Yii::t("strings", "ICP LICENCE")?> 20120529122952909</a> - <?php echo Yii::t("strings", "PRIVACY POLICY LEGAL INFORMATION")?></p>
 				</div>
 			</div>
 		</div>

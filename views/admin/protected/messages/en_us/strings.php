@@ -1,7 +1,7 @@
 <?php 
 
 return array(
-    "about_brand_story_title" => "brand story<br>Renaissance of Chinese fine Living",
+    "about_brand_story_title" => "Renaissance of Chinese fine Living",
     "about_brand_story_desc" => "<p>SHANG XIA is a brand for art of living that promises a unique encounter with the heritage of Chinese design and craftsmanship.</p>".
 				"<p>The renowned designer Jiang Qiong Er established SHANG XIA with a mission to create a 21st century lifestyle founded on the finest of Chinese design traditions.</p>".
 				"<p>The SHANG XIA name is simple yet profound. It embodies the concept of “up” and “down” in the continuous flow of energy from past, present and future, transmitting the essence of Chinese culture and its sublime aesthetics.</p>".
@@ -138,4 +138,6 @@ fabric and untangle the tangled spots. The fabric is rinsed unhooked and hung up
 ",
     "SHRINKING THE CLOTHING Desc" => "<p>At the final step, the garment is boiled in water to set the shape. As there is a certain amount of shrinkage in this process, the ultimate desired size of the garment depends on the skill, and experience of the felt worker in controlling the temperature and length of time the garment is boiled.</p>
 ",
+    
+    "gift_corner_desc" => "<p>The products below are available in out boutiques. They are great gifts for your beloved ones. <br />Please select the products you would be interested in, and give us your contact information. You will then receive a personal call from someone at Shang Xia who will help you bare your gift delivered</p>",
 );

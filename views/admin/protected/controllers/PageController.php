@@ -101,5 +101,20 @@ class PageController extends Controller {
     
     $this->render("wantobuy", array("model" => NewsletterContentAR::model(), "type" => "buy", "list" => $list));
   }
+  
+  public function actionBlocks() {
+    $block_keys = array(
+        'home_block_1', 'home_block_2', 'home_block_3'
+    );
+    $blocks = array();
+    foreach ($block_keys as $block_key) {
+      $model = ContentAR::model();
+      $block = $model->loadByKey($block_key);
+      $block->hasImageField("thumbnail");
+      $blocks[] = array("instance" => $block, "model" => $model, "type" => "content");
+    }
+    
+    $this->render("blocks", array("blocks" => $blocks));
+  }
 }
 

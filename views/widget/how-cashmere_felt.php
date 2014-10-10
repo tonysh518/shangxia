@@ -78,7 +78,7 @@
 			<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 				<div class="knowhowintro  knowhowR inout-effect">
 					<span class="inout-bg"></span>
-					<p class="eff cwrap"><?php echo Yii::t("strings", "Shrinking <br>the Clothing")?></p>
+					<p class="eff cwrap"><?php echo Yii::t("strings", "SHRINKING THE CLOTHING")?></p>
 					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition">read<br/><br/>read</span></a>
 					<textarea style="display:none;">
 						<h2><?php echo Yii::t("strings", "SHRINKING THE CLOTHING")?></h2>

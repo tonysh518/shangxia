@@ -124,7 +124,7 @@ Deux ans environ sont nécessaires pour maîtriser la seule technique de prépar
     "Firing the <br/>Unglazed Body" => "Cuisson avant émaillage",
     "Firing the <br/>Unglazed Body Desc" => "<p> chaque bol ainsi limé est déposé sur une planche de bois. Il cuit ensuite pendant une heure et demi à environ 800 °C.</p>",
     
-    "Adding Water Before Glazing" => "Ajout de l’eau avant émaillage",
+    "Adding Water <br/> Before Glazing" => "Ajout de l’eau avant émaillage",
     "Adding Water Before Glazing Desc" => "<p>puis, l’artisan Xiong passe un pinceau humidifié d’eau sur le corps de chaque bol. Par la même occasion, il comble les creux, lisse les aspérités, et s’assure que la pièce ne renferme plus de bulles d’air.</p>",
     
     "Glazing" => "Émaillage",
@@ -229,6 +229,7 @@ Pour reprendre les mots du poète Li Bai (701-762) de la dynastie Tang (618-907)
     . "<p>L'opération se répète des heures durant. Quand la surface voulue est atteinte, les centimètres de surplus sont coupés à la règle. C'est l'étape la plus délicate du processus car l'usage des ciseaux est proscrit. La pièce de feutre de cachemire peut alors être décrochée, puis rincée. </p>",
     
     "SHRINKING THE CLOTHING" => "Mettre en forme",
+    "Shrinking <br>the Clothing" => "Mettre en forme",
     "SHRINKING THE CLOTHING Desc" => "<p>Le morceau d'étoffe fin prêt est ensuite disposé sur la table à sécher. Un patron en carton est placé dessus pour permettre d'évaluer le travail de mise en forme.</p>"
     . "<p>Puis les mains humidifiées d'eau savonneuse des artisans pressent, gomment, pétrissent le feutre de cachemire pour qu'il prenne la forme désirée, comparant à chaque étape sa silhouette à celle du patron. La pièce devenue vêtement est par la suite ajustée sur un mannequin. À la suite de quoi, elle est mise à sécher dans un endroit aéré, l'excès d'eau ayant été au préalable absorbé par des serviettes.</p>",
     
@@ -277,4 +278,17 @@ Pour reprendre les mots du poète Li Bai (701-762) de la dynastie Tang (618-907)
     "EVENTS" => "EVENEMENTS",
     
     "brand story" => "Histoire",
+    
+    "Gift Corner" => "CADEAUX",
+    
+    "Read more" => "lire plus",
+    
+    "read more" => "lire plus",
+    
+    "SEND" => "ENVOYER",
+    "Send" => "ENVOYER",
+    "send" => "ENVOYER",
+    
+    "gift_corner_desc" => "<p>The products below are available in out boutiques. They are great gifts for your beloved ones. <br />Please select the products you would be interested in, and give us your contact information. You will then receive a personal call from someone at Shang Xia who will help you bare your gift delivered</p>",
+
 );
