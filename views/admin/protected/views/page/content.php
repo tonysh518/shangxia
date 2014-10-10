@@ -53,7 +53,7 @@
       <tbody>
         <?php foreach ($list as $item): ?>
         <tr>
-          <td><?php echo $item->title?></td>
+          <td><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => $type, "id" => $item->cid))?>"><?php echo $item->title?></a></td>
           <td><?php echo ucfirst($type)?></td>
           <td class="body"><?php echo strip_tags($item->body)?></td>
           <td><?php echo $item->weight?></td>

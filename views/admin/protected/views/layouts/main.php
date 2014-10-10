@@ -59,10 +59,10 @@
       
       <!-- News -->
       <li class="nav-header">
-        <?php echo Yii::t("strings", "News")?>
+        <?php echo Yii::t("strings", "News ")?>
       </li>
-      <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "news"))?>"><?php echo Yii::t("strings", "Add News")?></a></li>
-      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "news"))?>"><?php echo Yii::t("strings", "News")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "news"))?>"><?php echo Yii::t("strings", "Add News ")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "news"))?>"><?php echo Yii::t("strings", "Edit News")?></a></li>
       
       <!-- News End -->  
       
@@ -70,8 +70,8 @@
       <li class="nav-header">
         <?php echo Yii::t("strings", "Slideshow")?>
       </li>
-      <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "slideShow"))?>"><?php echo Yii::t("strings", "Add Slideshow (Home)")?></a></li>
-      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "slideShow"))?>"><?php echo Yii::t("strings", "Slideshow(Home)")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "slideShow"))?>"><?php echo Yii::t("strings", "Add Home Slide")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "slideShow"))?>"><?php echo Yii::t("strings", "Edit Home Slide")?></a></li>
       <!-- End Slideshow-->
       
       <!-- Video -->
@@ -80,7 +80,7 @@
         <?php echo Yii::t("strings", "Home Video")?>
       </li>
       <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "home_video"))?>"><?php echo Yii::t("strings", "Add Home Video")?></a></li>
-      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "home_video"))?>"><?php echo Yii::t("strings", "Home Video")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "home_video"))?>"><?php echo Yii::t("strings", "Edit Home Video")?></a></li>
      -->
       <!-- End Video-->
       
@@ -89,7 +89,7 @@
         <?php echo Yii::t("strings", "Collection")?>
       </li>
       <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "collection"))?>"><?php echo Yii::t("strings", "Add Collection")?></a></li>
-      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "collection"))?>"><?php echo Yii::t("strings", "Collection")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "collection"))?>"><?php echo Yii::t("strings", "Edit Collection")?></a></li>
       <!-- End Collection-->
       
       <!-- Product  -->
@@ -97,7 +97,7 @@
         <?php echo Yii::t("strings", "Product")?>
       </li>
       <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "product"))?>"><?php echo Yii::t("strings", "Add product")?></a></li>
-      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "product"))?>"><?php echo Yii::t("strings", "product")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "product"))?>"><?php echo Yii::t("strings", "Edit product")?></a></li>
       <!-- End Product-->
       
       <!-- Craft  -->
@@ -105,7 +105,7 @@
         <?php echo Yii::t("strings", "Craft")?>
       </li>
       <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "craft"))?>"><?php echo Yii::t("strings", "Add craft")?></a></li>
-      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "craft"))?>"><?php echo Yii::t("strings", "craft")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "craft"))?>"><?php echo Yii::t("strings", "Edit craft")?></a></li>
       <!-- End Craft-->
       
       <!-- Gift  -->
@@ -113,7 +113,7 @@
         <?php echo Yii::t("strings", "Gift")?>
       </li>
       <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "gift"))?>"><?php echo Yii::t("strings", "Add gift")?></a></li>
-      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "gift"))?>"><?php echo Yii::t("strings", "gift")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "gift"))?>"><?php echo Yii::t("strings", "Edit gift")?></a></li>
       <!-- End Gift-->
       
       <!-- boutique  -->
@@ -121,7 +121,7 @@
         <?php echo Yii::t("strings", "Boutique")?>
       </li>
       <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "boutique"))?>"><?php echo Yii::t("strings", "Add boutique")?></a></li>
-      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "boutique"))?>"><?php echo Yii::t("strings", "boutique")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "boutique"))?>"><?php echo Yii::t("strings", "Edit boutique")?></a></li>
       <!-- End boutique-->
       
       <!-- Job  -->
@@ -129,7 +129,7 @@
         <?php echo Yii::t("strings", "Job")?>
       </li>
       <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "job"))?>"><?php echo Yii::t("strings", "Add Job")?></a></li>
-      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "job"))?>"><?php echo Yii::t("strings", "Job")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "job"))?>"><?php echo Yii::t("strings", "Edit Job")?></a></li>
       <!-- End Job-->
       
       <!-- Press  -->
@@ -137,7 +137,7 @@
         <?php echo Yii::t("strings", "Press")?>
       </li>
       <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "press"))?>"><?php echo Yii::t("strings", "Add Press")?></a></li>
-      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "press"))?>"><?php echo Yii::t("strings", "Press")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "press"))?>"><?php echo Yii::t("strings", "Edit Press")?></a></li>
       <!-- End Press-->
       
       <!-- Events  -->
@@ -145,7 +145,7 @@
         <?php echo Yii::t("strings", "Event")?>
       </li>
       <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "event"))?>"><?php echo Yii::t("strings", "Add Event")?></a></li>
-      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "event"))?>"><?php echo Yii::t("strings", "Event")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "event"))?>"><?php echo Yii::t("strings", "Edit Event")?></a></li>
       <!-- End Events-->
       
       <li class="nav-header">
