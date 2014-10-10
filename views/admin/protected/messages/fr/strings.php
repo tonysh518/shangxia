@@ -229,6 +229,7 @@ Pour reprendre les mots du poète Li Bai (701-762) de la dynastie Tang (618-907)
     . "<p>L'opération se répète des heures durant. Quand la surface voulue est atteinte, les centimètres de surplus sont coupés à la règle. C'est l'étape la plus délicate du processus car l'usage des ciseaux est proscrit. La pièce de feutre de cachemire peut alors être décrochée, puis rincée. </p>",
     
     "SHRINKING THE CLOTHING" => "Mettre en forme",
+    "Shrinking <br>the Clothing" => "Mettre en forme",
     "SHRINKING THE CLOTHING Desc" => "<p>Le morceau d'étoffe fin prêt est ensuite disposé sur la table à sécher. Un patron en carton est placé dessus pour permettre d'évaluer le travail de mise en forme.</p>"
     . "<p>Puis les mains humidifiées d'eau savonneuse des artisans pressent, gomment, pétrissent le feutre de cachemire pour qu'il prenne la forme désirée, comparant à chaque étape sa silhouette à celle du patron. La pièce devenue vêtement est par la suite ajustée sur un mannequin. À la suite de quoi, elle est mise à sécher dans un endroit aéré, l'excès d'eau ayant été au préalable absorbé par des serviettes.</p>",
     
@@ -277,4 +278,6 @@ Pour reprendre les mots du poète Li Bai (701-762) de la dynastie Tang (618-907)
     "EVENTS" => "EVENEMENTS",
     
     "brand story" => "Histoire",
+    
+    "Gift corner" => "CADEAUX",
 );

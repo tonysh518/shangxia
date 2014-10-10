@@ -55,6 +55,7 @@ require_once "inc.php";?>
               <?php foreach (ProductContentAR::getType() as $id => $name):  ?>
               <p><a href="<?php echo url("product-type", array("name" => ProductContentAR::getTypeKeyName($id)))?>"><?php echo ucfirst($name)?> &gt;</a></p>
               <?php endforeach;?>
+              <p><a href="<?php echo url("gift-corner")?>"><?php echo Yii::t("strings" ,"Gift corner")?> &gt;</a></p>
 						</div>
 						<div class="nav-pop-wrap">
 			            <?php $collectiones = CollectionContentAR::model()->getList();?>
