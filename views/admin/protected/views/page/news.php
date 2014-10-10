@@ -28,7 +28,7 @@
       <tbody>
         <?php foreach($news_list as $news) :?>
         <tr>
-          <td><?php echo $news->title?></td>
+          <td><a href="<?php echo Yii::app()->baseUrl."/page/addnews?id=". $news->cid?>"><?php echo $news->title?></a></td>
           <td><?php echo $news->category?></td>
           <td><?php echo $news->cdate?></td>
           <td>

@@ -10,13 +10,48 @@ a {color:#555;}
     url('../../fonts/gotham-light.ttf') format('truetype'),
     url('../../fonts/gotham-light.svg#GothamRegular') format('svg');
 }
-
+@font-face {
+    font-family: 'Gotham Book';
+    src: url('../../fonts/gotham-book.eot');
+    src: url('../../fonts/gotham-book.eot') format('embedded-opentype'),
+    url('../../fonts/gotham-book.woff2') format('woff2'),
+    url('../../fonts/gotham-book.woff') format('woff'),
+    url('../../fonts/gotham-book.ttf') format('truetype'),
+    url('../../fonts/gotham-book.svg#GothamRegular') format('svg');
+}
+@font-face {
+    font-family: 'Gotham Bold';
+    src: url('../../fonts/gotham-bold.eot');
+    src: url('../../fonts/gotham-bold.eot') format('embedded-opentype'),
+    url('../../fonts/gotham-bold.woff2') format('woff2'),
+    url('../../fonts/gotham-bold.woff') format('woff'),
+    url('../../fonts/gotham-bold.ttf') format('truetype'),
+    url('../../fonts/gotham-bold.svg#GothamRegular') format('svg');
+}
+@font-face {
+    font-family: 'Gotham Medium';
+    src: url('../../fonts/gotham-medium.eot');
+    src: url('../../fonts/gotham-medium.eot') format('embedded-opentype'),
+    url('../../fonts/gotham-medium.woff2') format('woff2'),
+    url('../../fonts/gotham-medium.woff') format('woff'),
+    url('../../fonts/gotham-medium.ttf') format('truetype'),
+    url('../../fonts/gotham-medium.svg#GothamRegular') format('svg');
+}
 body{
   font-size:12px;
   color:#444;
   background: #fff;
     font-family: 'Gotham Light';
 }
+body {
+    outline: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+input,textarea,button{outline: none;}
 
 html {position: relative;}
 
@@ -47,7 +82,7 @@ label, input, button, select, textarea {font-size:12px;}
 
 .breadcrumb {font-size:10px;}
 
-#sidebar {margin-top:15px;}
+#sidebar {margin-top:15px;font-family: 'Gotham Book'}
 
 #bar {
   height: 36px;
@@ -113,12 +148,12 @@ legend {
 .nav-list .nav-header {
   background: #eee;
   text-shadow: none;
-  color: #333;
+  color: #920800;
   text-align: left;
+    font-family: 'Gotham Bold';
 }
 
 #content {
-  width: 90%;
   border: 10px solid #fff;
   border-radius: 5px;
   margin: 1em auto;
@@ -169,8 +204,7 @@ legend {
 #body {
   float: left;
   margin: 0 auto;
-  width: 82.9%;
-  min-width: 800px;
+  width: 77%;
 }
 
 .nav-list {
@@ -320,6 +354,7 @@ ul.media-list li {
   color: #444;
   padding: 0px;
   margin: 0px;
+    font-family: 'Gotham Medium';
 }
 
 .form-con .icons {
@@ -471,6 +506,7 @@ form {
   height: 2em;
   line-height: 2em;
   font-size: 1.5em;
+    font-family: 'Gotham Medium';
 
 }
 
@@ -815,17 +851,18 @@ cursor: pointer;
 
 
 
+.controle-group {margin:0 0 10px 0;}
+.cke_skin_office2003 .cke_toolbar {background:none!important;}
+
+.cke_skin_office2003 .cke_top, .cke_skin_office2003 .cke_bottom, .cke_shared .cke_skin_office2003 {background:#f8f8f8!important;}
+.cke_toolbar_end {display: none!important;}
+.cke_skin_office2003 .cke_bottom,.cke_skin_office2003 .cke_contents {border:1px solid #eee!important;}
 
 
+.dataTables_wrapper .dataTables_length {float: right;}
+.dataTables_wrapper .dataTables_length select {width:80px;}
+table.dataTable thead td {text-transform: capitalize;font-family: 'Gotham Medium';}
 
-
-
-
-
-
-
-
-
-
+.filters select {text-transform:uppercase;}
 
 
