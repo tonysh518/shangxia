@@ -124,7 +124,7 @@ Deux ans environ sont nécessaires pour maîtriser la seule technique de prépar
     "Firing the <br/>Unglazed Body" => "Cuisson avant émaillage",
     "Firing the <br/>Unglazed Body Desc" => "<p> chaque bol ainsi limé est déposé sur une planche de bois. Il cuit ensuite pendant une heure et demi à environ 800 °C.</p>",
     
-    "Adding Water Before Glazing" => "Ajout de l’eau avant émaillage",
+    "Adding Water <br/> Before Glazing" => "Ajout de l’eau avant émaillage",
     "Adding Water Before Glazing Desc" => "<p>puis, l’artisan Xiong passe un pinceau humidifié d’eau sur le corps de chaque bol. Par la même occasion, il comble les creux, lisse les aspérités, et s’assure que la pièce ne renferme plus de bulles d’air.</p>",
     
     "Glazing" => "Émaillage",
@@ -279,5 +279,16 @@ Pour reprendre les mots du poète Li Bai (701-762) de la dynastie Tang (618-907)
     
     "brand story" => "Histoire",
     
-    "Gift corner" => "CADEAUX",
+    "Gift Corner" => "CADEAUX",
+    
+    "Read more" => "lire plus",
+    
+    "read more" => "lire plus",
+    
+    "SEND" => "ENVOYER",
+    "Send" => "ENVOYER",
+    "send" => "ENVOYER",
+    
+    "gift_corner_desc" => "<p>The products below are available in out boutiques. They are great gifts for your beloved ones. <br />Please select the products you would be interested in, and give us your contact information. You will then receive a personal call from someone at Shang Xia who will help you bare your gift delivered</p>",
+
 );

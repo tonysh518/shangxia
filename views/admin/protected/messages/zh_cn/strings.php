@@ -82,7 +82,7 @@ return array(
     "Coporation" => "企业信息",
     "Brand" => "品牌信息",
     "Career" => "招聘职位",
-    "about_brand_story_title" => "品牌故事<br>「上下」,东方雅致生活",
+    "about_brand_story_title" => "「上下」,东方雅致生活",
     "about_brand_story_desc" => "<p>「上下」，是一个当代高尚生活品牌，致力于传承中国精湛的手工艺，通过创新，使其重返当代生活。</p>".
 				'<p>「上下」由中国设计师蒋琼耳女士创立，为实现一个传承中国文化及复兴传统手工艺的梦想。「上下」的作品包括家具、家居用品、服装、首饰，及与茶有关的物品，以"家"为原点，演绎"绚烂而平淡"的生活方式。</p>'.
 				'<p>「上下」期望通过努力，将日渐式微的中国传统手工艺的精湛技艺保留下来。上下五千年的文化积累，「上下」要"承上"而"启下"，通过现代的美学诠释，使之融入今天及未来的生活。「上下」的每一件物品都选取最上等的材料，精雕细琢，专注于每一个细节。</p>'.
@@ -130,7 +130,7 @@ return array(
     "Watch video" => "观赏视频",
     "Pause video" => "暂停",
     "Shanghai" => "上海",
-    "Paris" => "法国",
+    "Paris" => "巴黎",
     "Beijing" => "北京",
     "{city} boutiquue" => "{city} 零售空间",
     "news" => "新闻",
@@ -324,7 +324,14 @@ return array(
     
     "You are interested by buying this product? <br/> Let us contact you back and we will arrange a way to provide you this prodcut" => "您对此产品有兴趣？我们会稍后与您取得联系",
     
-    "Gift corner" => "赠礼专区",
+    "Gift Corner" => "赠礼专区",
+    
+    "shang xia gift corner" => "赠礼专区",
+    
+    "color" => "颜色",
+    
+    "gift_corner_desc" => "欢迎来到「上下」礼品专区. 请您挑选您有兴趣的作品,并留下您的联系方式,「上下」的门店大使将会尽快与您联系.",
+
         
 );
 

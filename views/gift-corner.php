@@ -6,13 +6,13 @@ include_once 'common/header.php';?>
 			<div class="detail coll_product cs-clear">
 				<div class="range">
 			 	</div>	
-				<h2 class="intoview-effect" data-effect="fadeup">shang xia gift corner</h2>
+				<h2 class="intoview-effect" data-effect="fadeup"><?php echo Yii::t("strings", "shang xia gift corner")?></h2>
 				<div class=" detailcon js-horizontal-slide intoview-effect" data-split="1" data-effect="fadeup" data-num="1" style="margin:0 auto;float:none;">
 					<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
 					<div class="slide-con">
 						<ul class="slide-con-inner cs-clear">
 							<li style="float:left;">
-                <?php echo Yii::t("strings", "<p>The products below are available in out boutiques. They are great gifts for your beloved ones. <br />Please select the products you would be interested in, and give us your contact information. You will then receive a personal call from someone at Shang Xia who will help you bare your gift delivered</p>")?>
+                <?php echo Yii::t("strings", "gift_corner_desc")?>
 							</li>
 						</ul>
 					</div>
