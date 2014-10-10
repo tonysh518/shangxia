@@ -65,14 +65,14 @@ include_once 'common/header.php';?>
 							</div>
 							<img src="/images/loading.gif" class="loading-gif">
 						</div>
-						<div class="conformcheck cs-clear">
+						<div class="conformcheck cs-clear" style="margin-top:10px;">
 							<label>
 								<input type="checkbox" name="poliry" data-required="<?php echo Yii::t("strings", "you should agree the Privacy poliry")?>" />
 								<span><?php echo Yii::t("strings", "contact_form_footer_tip")?></span>
               				</label>
 						</div>
 						<div class="error" id="other-error"></div>
-						<button data-a="contact-submit" class="conformbtn intoview-effect" data-effect="fadeup"><?php echo Yii::t("strings", "SEND")?></button>
+						<button data-a="contact-submit" style="margin-top:15px;" class="conformbtn intoview-effect" data-effect="fadeup"><?php echo Yii::t("strings", "SEND")?></button>
 					</form>
 				</div>
 			</div>

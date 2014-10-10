@@ -30,8 +30,8 @@
 			<li class="piclistitem intoview-effect marginR0" data-effect="fadeup" data-editme-key="home_middle_slide_third">
         <?php editme("home_middle_slide_third" ,array("title", "link_to"), array("image"))?>
         		<a data-a="nav-link" href="<?php echo url("collections", array("cid" => 20331))?>">
-					<img src="/images/homepageblock1.jpg" width="100%" />
-					<p><?php echo Yii::t("strings", "shang xia by paolo roversi")?></p>
+					<img src="/images/homepage03.jpg" width="100%" />
+					<p><?php echo Yii::t("strings", "GIFT CORNER")?></p>
 				</a>
 			</li>
 		</ul>
@@ -39,7 +39,7 @@
 	<!-- slide -->
 	<div class="slide-wrap section">
 		<div class="collarrows collarrowsprev home-collarrowsprev" data-a="home-collarrowsprev"></div>
-		<div class="slide intoview-effect" data-effect="fadeup" id="homepage-video-slide" data-auto="false" data-slide="absolute">
+		<div class="slide intoview-effect" data-effect="fadeup" id="homepage-video-slide" data-auto="false" data-slide="absolute" data-resize="1260:560">
 			<ul class="slidebox cs-clear">
 				<li href="#" class="slideitem" data-tit="<?php echo Yii::t("strings", "Cashmere Felt")?>" data-mp4="/video/Cashmere_Felt_羊绒毡_30s_1.mp4" data-webm="/video/Cashmere_Felt_羊绒毡_30s_1.webm">
 					<img src="/photo/video3.jpg" width="100%" />

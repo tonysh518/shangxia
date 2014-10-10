@@ -46,7 +46,7 @@ include_once 'common/header.php';?>
 			<!-- 数量改变需要改变css，或者用js来调整slidebox的宽度和slidetab的位置 -->
 		</div>
 		<!-- barbg -->
-		<div class="barbg intoview-effect" data-effect="fadeup"></div>
+		<div class="barbg intoview-effect" data-effect="fadeup" style="margin-bottom: -70px;"></div>
     <?php $types = ProductContentAR::getType(); ?>
     
     <?php foreach($types as $type_id => $type): ?>

@@ -437,6 +437,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             init: function(){
                 window.LOADING = true;
                 loadingMgr.start();
+
                 $('.footer .store-wrap').show();
                 var page = $('.head').data('page');
                 var fn = pageInits[ page ];
@@ -523,7 +524,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 var navPopHoverTimer = null;
                 var navPopHoverShowTimer = null;
                 // init nav hover effect
-                $('.nav1 li').hover(function(){
+                $('.nav1 li[data-type]').hover(function(){
                     if( window.LOADING ) return;
                     var $li = $(this);
                     clearTimeout( navPopHoverShowTimer );
@@ -892,9 +893,9 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     function initSlider( $wrap , config ){
         var $slidebox = $wrap.find('.slidebox');
         var $slidetabs = $wrap.find('.slidetab li');
-        // if( $slidetabs.length == 1 ){
-        //     $slidetabs.hide();
-        // }
+        if( $slidetabs.length == 1 && !$slidetabs.html() ){
+            $slidetabs.hide();
+        }
         var currentIndex = 0;
         var length = $slidebox.children().length;
         var isAbs = $wrap.data('slide') == 'absolute';
@@ -1582,6 +1583,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                             padding: 0,
                             textAlign: 'center'
                         });
+                    $pop.addClass('pop-press');
                 }
 
                 $('html,body').css('overflow' , 'hidden');
@@ -1742,6 +1744,25 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             })
             .height( $(this).children('a').eq(0).height() );
         });
+
+
+        // fix news press  crumb position
+        $('.newscrumbs p').css('padding-left' , ( $('.nav1 li').width() - $('.nav1 li a').width() ) / 2 );
+
+
+        // fix header space
+        // var totalWidth = 0;
+        // var headerItemWidths = [];
+        // var $headerItems = $('.logo a,.nav li a').each(function(){
+        //     var width = $(this).width();
+        //     $(this).data('width')
+        //     totalWidth += width;
+        // });
+
+        // var allWidth = Math.min( $('.hd_oter').offset().left - $('.head-inner').offset().left , $('.head-inner').width() );
+        // $headerItems.css('padding' , '0 ' + ( allWidth - totalWidth ) / $headerItems.length / 2 + 'px' );
+        // alert(allWidth);
+
     })
     .keyup(function( ev ){
         switch( ev.which ){

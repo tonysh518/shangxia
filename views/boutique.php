@@ -68,7 +68,7 @@ include_once 'common/header.php';?>
 				</div>
 
 				<!-- store -->
-				<div class="section store cs-clear" style="width:90%;">
+				<div class="store cs-clear">
 					<div class="storechoose storechoose2 intoview-effect" data-effect="fadeup" style="padding-top:0;">
 						<?php echo $crtboutique->address?>
 					</div>

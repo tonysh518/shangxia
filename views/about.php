@@ -76,7 +76,7 @@ include_once 'common/header.php';?>
 				<div class="knowhowcom ">
 					<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 						<div class="knowhowintro  knowhowR">
-							<div class="cwrap">
+							<div class="cwrap c_9e927a">
 							<?php echo Yii::t("strings", "about_brand_emplee_one")?>
 							</div>
 						</div>
@@ -84,7 +84,7 @@ include_once 'common/header.php';?>
 					</div>
 					<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 						<div class="knowhowintro  knowhowL">
-							<div class="cwrap">
+							<div class="cwrap c_9e927a">
               <?php echo Yii::t("strings" ,"about_brand_emplee_two")?>
               </div>
             </div>
@@ -92,7 +92,7 @@ include_once 'common/header.php';?>
 					</div>
 					<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 						<div class="knowhowintro  knowhowR">
-							<div class="cwrap">
+							<div class="cwrap c_9e927a">
               <?php echo Yii::t("strings" ,"about_brand_emplee_third")?>
               </div>
             </div>
@@ -120,7 +120,7 @@ include_once 'common/header.php';?>
                           <h2><?php echo $job->title?></h2>
                           <?php if (($job->report_to)):?>
                           <div class="popcontxt">
-                            <p><?php echo Yii::t("strings", "Reports To")?>: <?php echo $job->report_to?><br /><br /><?php if ($job->location):?><?php echo Yii::t("strings", "Location")?>: <?php echo $job->location?><?php endif;?></p>
+                            <p><?php echo Yii::t("strings", "Reports To")?>: <?php echo $job->report_to?><br /><?php if ($job->location):?><?php echo Yii::t("strings", "Location")?>: <?php echo $job->location?><?php endif;?></p>
                           </div>
                           <?php endif;?>
                           <?php if ($job->general_role): ?>
