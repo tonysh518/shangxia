@@ -19,17 +19,17 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         var tpl = '<a href="#" data-cid="#[cid]" data-a="show-pop" data-d="press=1" class="prolistitem newsitem intoview-effect" data-effect="fadeup">\
                 <img src="#[press_image]" width="100%" />\
                 <p>#[title]<br /><span class="date">#[date]</span></p>\
-              </a>\
-              <textarea style="display:none;">\
-                <div class="picoperate cs-clear">\
-                    <a href="#" class="picopsized" data-a="picopsized"></a>\
-                    <a href="#" class="picopsizeup" data-a="picopsizeup"></a>\
-                    <a href="#[master_image]" class="picopdown" target="_blank"></a>\
-                </div>\
-                <div class="pic-press">\
-                    <img src="#[master_image]" width="100%" style="margin:0 auto;">\
-                </div>\
-              </textarea>';
+                <textarea style="display:none;">\
+                    <div class="picoperate cs-clear">\
+                        <a href="#" class="picopsized" data-a="picopsized"></a>\
+                        <a href="#" class="picopsizeup" data-a="picopsizeup"></a>\
+                        <a href="#[master_image]" class="picopdown" target="_blank"></a>\
+                    </div>\
+                    <div class="pic-press">\
+                        <img src="#[master_image]" width="100%" style="margin:0 auto;">\
+                    </div>\
+                  </textarea>\
+              </a>';
         $.get('/admin/api/content/press?year=' + year + '&page=' + page , function( e ){
             var list = e.data;
             var aHtml = [];
@@ -519,190 +519,13 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     initSlider( $(this) );
                 });
 
-                // =====================================================================================
-
-                var navPopHoverTimer = null;
-                var navPopHoverShowTimer = null;
-                // init nav hover effect
-                $('.nav1 li[data-type]').hover(function(){
-                    if( window.LOADING ) return;
-                    var $li = $(this);
-                    clearTimeout( navPopHoverShowTimer );
-                    navPopHoverShowTimer = setTimeout(function(){
-                        var text = $li.data('type');
-                        var $inner = $li.closest('.head-inner');
-                        $inner.attr('class' , 'head-inner cs-clear active-' + text );
-                        $li.addClass('active');
-
-                        $('.nav-pop-' + text ).stop(true).show()
-                            .css('zIndex',99)
-                            .animate({
-                                top: 110
-                            } , 500 , '' , function(){
-                                $(this).css('zIndex' , 101);
-                            });
-                    } , 150);
-                } , function(){
-                    var $li = $(this);
-                    clearTimeout( navPopHoverShowTimer );
-                    navPopHoverTimer = setTimeout(function(){
-                        $li.removeClass('active');
-                        var text = $li.data('type');
-                        var $inner = $('.head-inner').attr('class' , 'head-inner cs-clear');
-
-                        $('.nav-pop-' + text ).stop(true)
-                            .css('zIndex' , 98)
-                            .animate({
-                                top: -200
-                            } , 500);
-                    } , 100);
-                });
-
-                $('.nav-pop').hover(function(){
-                    clearTimeout( navPopHoverTimer );
-
-                } , function(){
-                    clearTimeout( navPopHoverShowTimer );
-                    $('.nav1 li.active').trigger('mouseout');
-                });
-
 
 
                 // =====================================================================================
                 // init horizontal slide
                 initHoriSlider( $('.js-horizontal-slide') );
 
-                // $('.js-horizontal-slide').each(function(){
-                //     var $dom = $(this);
-
-                //     // split content first
-                //     if( $dom.data('split') ){
-                //         var $li = $dom.find('.slide-con-inner li');
-                //         var height = $li.height();
-                //         var lineHeight = parseInt( $li.css('lineHeight') );
-                //         var len = Math.ceil( height / ( 5 * lineHeight ) );
-                //         $li.html( $('<div></div>').html( $li.html() ).height( 5 * lineHeight ).css('overflow' , 'hidden') );
-                //         for( var i = 1 ; i < len ; i++ ){
-                //             $li.clone()
-                //                 .appendTo( $li.parent() )
-                //                 .children('div')
-                //                 .append( i == len - 1 ? '<br/><br/><br/><br/><br/>' : '' )
-                //                 .scrollTop( i * 5 * lineHeight );
-                //         }
-                //     }
-
-
-                //     var wrapWidth = $dom.width();
-                //     var num = $(this).data('num') || 3;
-                //     var $items = $dom.find('.slide-con-inner').children();
-
-                //     // 计算每一个item的宽度 
-                //     var $imgs = $items.find('img');
-                //     var totalItems = 0;
-                //     if( $imgs.length ){
-                //         $imgs.each(function(){
-                //             totalItems += Math.round( $(this).data('width') / $(this).data('height') ) || 1;
-                //         });
-                //     } else {
-                //         totalItems = $items.length;
-                //     }
-                    
-
-                //     var $inner = $dom.find('.slide-con-inner').width( totalItems / num * 100 + '%' );
-                //     var marginRight = 0.8 /( totalItems / num  );//parseInt( $items.css('margin-right') );
-                //     var halfMR = marginRight / 2 + '%';
-                //     var counted = 0;
-                //     var prev = 0;
-                //     $items
-                //         .css('marginRight' , marginRight + '%' )
-                //         .each(function(){
-                //         var $this = $(this);
-                //         var $img = $this.find('img');
-                //         var indent = Math.round( $img.data('width') / $img.data('height') ) || 1;
-                //         counted += indent;
-                //         if( counted % 3 == 0 ){
-                //             if( indent == 1 && prev == 1 ){ // 111
-                //                 // 第一个margin-left: 0.4%
-                //                 // 最后一个margin-right: 0.4 %
-                //                 $this
-                //                 .css('marginRight' , halfMR)
-                //                 .prev()
-                //                 .prev()
-                //                 .css({
-                //                     marginLeft: halfMR ,
-                //                     marginRight: marginRight + '%'
-                //                 });
-                //             } else if( indent == 3 ) { // 3
-                //                 $this.css({
-                //                     marginLeft: halfMR,
-                //                     marginRight: halfMR
-                //                 });
-                //             } else { // 21 || 12
-                //                 $this.css('marginRight' , halfMR)
-                //                     .prev()
-                //                     .css({
-                //                         'marginLeft': halfMR,
-                //                         'marginRight': marginRight + '%'
-                //                     });
-                //             }
-                //         } else if( ( counted - indent ) % 3 == 0 ){
-                //             $this.css({
-                //                 marginLeft: halfMR ,
-                //                 marginRight: halfMR
-                //             });
-                //         }
-
-                //         $this.width( indent /  totalItems * 100 - marginRight + '%' );
-                //         prev = indent;
-                //     });
-
-                //     var total = $items.length;
-                //     $dom.find('.collarrowsprev')
-                //         .fadeOut()
-                //         .click(function(){
-                //             var ml = parseInt( $inner.css('marginLeft') ) || 0;
-                //             if( ml == 0 ) return false;
-
-                //             var mleft = -Math.round( Math.abs( ml ) / $inner.parent().width() - 1 );
-                //             $inner.animate({
-                //                 marginLeft: mleft * 100 + '%'
-                //             } , 500);
-
-                //             if( mleft == 0 ){
-                //                 // hide current btn
-                //                 $(this).fadeOut();
-                //             }
-
-                //             // show next btn
-                //             $dom.find('.collarrowsnext').fadeIn();
-
-                //             $(window).trigger('scroll');
-                //     })
-                //     .end()
-                //     .find('.collarrowsnext')
-                //     [ totalItems > num ? 'show' : 'hide' ]()
-                //     .click(function(){
-                //         var ml = parseInt( $inner.css('marginLeft') ) || 0;
-                //         var outerWidth = $inner.parent().width();
-                //         var innerWidth = $inner.width();
-                //         if( Math.abs( ml ) >= innerWidth - outerWidth - 100 ) return false;
-                //         var mleft = -Math.round( Math.abs( ml ) / outerWidth + 1 );
-                //         $inner.animate({
-                //             marginLeft: mleft * 100 + '%'
-                //         } , 500 );
-
-                //         if( Math.abs( parseInt( $inner.css('marginLeft') ) ) + outerWidth >= innerWidth - outerWidth - 100 ){
-                //             // hide current btn
-                //             $(this).fadeOut();
-                //         }
-
-                //         // show pre btn
-                //         $dom.find('.collarrowsprev').fadeIn();
-
-                //         $(window).trigger('scroll');
-                //     });
-                // });
-
+                
                 // render map
                 $('[data-map]').each(function(){
                     mapHelper.render( $(this) );
@@ -723,64 +546,8 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 });
 
                 // render initHoverMoveEffect
-                $('.inout-effect').each(function(){
+                $('.inout-effect:not(.nav-pop-item)').each(function(){
                     initHoverMoveEffect( $(this) );
-                });
-
-                 // nav-pop-item inout-effect
-                $('.nav-pop-item.inout-effect').hover(function(){
-                    $(this).find('span:not(.inout-bg)').stop(true , true).fadeOut(700);
-                } , function(){
-                    $(this).find('span:not(.inout-bg)').stop(true , true ).fadeIn(700);
-                });
-
-
-                
-                var isRunning = false;
-                // init nav pop mouse move event
-                $('.nav-pop-collections .nav-pop-wrap').mousemove(function( ev ){
-                    if( $(this).children().length < 4 ) return;
-                    var winWidth = $(window).width();
-                    var off = $(this).offset();
-                    var $item = $(this).children().first();
-                    if( ev.pageX / winWidth < 0.7 && ( ev.pageX - off.left ) / winWidth > 0.3 ){
-                        isRunning = false;
-                        $item.stop( true );
-                    } else {
-                        if( isRunning ) return;
-                        if( ev.pageX / winWidth > 0.7 ){
-                            isRunning = true;
-                            $item.stop( true )
-                                .animate({
-                                    marginLeft: '-16%'
-                                } , 500);
-                            } else {
-                                isRunning = true;
-                                $item.stop( true )
-                                    .animate({
-                                        marginLeft: '0.6%'
-                                    } , 500);
-                            }
-                    }
-                    // if( ev.pageX / winWidth > 0.7 && !isRunning ){
-                    //     console.log( 'right' );
-                    //     isRunning = true;
-                    //     $item.stop( true )
-                    //         .animate({
-                    //             marginLeft: '-16%'
-                    //         } , 500);
-                    // } else if( ( ev.pageX - off.left ) / winWidth < 0.3 && !isRunning ){
-                    //     console.log( 'left' );
-                    //     isRunning = true;
-                    //     $item.stop( true )
-                    //         .animate({
-                    //             marginLeft: 0
-                    //         } , 500);
-                    // } else {
-                    //     console.log( 'stop' );
-                    //     isRunning = false;
-                    //     $item.stop( true );
-                    // }
                 });
 
                 return false;
@@ -889,6 +656,115 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             }
         }
     })();
+
+
+    function firstWindowLoaded(){
+        // =====================================================================================
+        var navPopHoverTimer = null;
+        var navPopHoverShowTimer = null;
+        // init nav hover effect
+        $('.nav1 li[data-type]').hover(function(){
+            if( window.LOADING ) return;
+            var $li = $(this);
+            clearTimeout( navPopHoverShowTimer );
+            navPopHoverShowTimer = setTimeout(function(){
+                var text = $li.data('type');
+                var $inner = $li.closest('.head-inner');
+                $inner.attr('class' , 'head-inner cs-clear active-' + text );
+                $li.addClass('active');
+
+                $('.nav-pop-' + text ).stop(true).show()
+                    .css('zIndex',99)
+                    .animate({
+                        top: 110
+                    } , 500 , '' , function(){
+                        $(this).css('zIndex' , 101);
+                    });
+
+                // fix nav-pop-wrap height
+                if( text == 'collections' ){
+                    // reset the first item
+                    $('.nav-pop-nav a').removeClass('hover').eq(0).addClass('hover');
+
+                    $('.nav-pop-wrap-inner').css('marginLeft' , 0).each(function(){
+                        var len = $(this).children().length ;
+                        $(this).css('width' , len / 4 / 0.84 * 100 + '%' );
+                        $(this).children().css({
+                            width: 1 / len * 0.238 / 0.25 * 100 + '%' ,
+                            margin: '0 ' + (1 / len * 0.006 / 0.25 * 100)+ '%' 
+                        });
+                    });
+
+                    $('.nav-pop-wraps').height( $('.nav-pop-wrap img').height() ).scrollTop(0);
+                }
+            } , 150);
+        } , function(){
+            var $li = $(this);
+            clearTimeout( navPopHoverShowTimer );
+            navPopHoverTimer = setTimeout(function(){
+                $li.removeClass('active');
+                var text = $li.data('type');
+                var $inner = $('.head-inner').attr('class' , 'head-inner cs-clear');
+
+                $('.nav-pop-' + text ).stop(true)
+                    .css('zIndex' , 98)
+                    .animate({
+                        top: -200
+                    } , 500);
+            } , 100);
+        });
+
+        $('.nav-pop').hover(function(){
+            clearTimeout( navPopHoverTimer );
+
+        } , function(){
+            clearTimeout( navPopHoverShowTimer );
+            $('.nav1 li.active').trigger('mouseout');
+        });
+
+
+
+        // render initHoverMoveEffect
+        $('.inout-effect.nav-pop-item').each(function(){
+            initHoverMoveEffect( $(this) );
+        });
+
+        // nav-pop-item inout-effect
+        $('.nav-pop-item.inout-effect').hover(function(){
+            $(this).find('span:not(.inout-bg)').stop(true , true).fadeOut(700);
+        } , function(){
+            $(this).find('span:not(.inout-bg)').stop(true , true ).fadeIn(700);
+        });
+        
+        var isRunning = false;
+        // init nav pop mouse move event
+        $('.nav-pop-collections .nav-pop-wrap-inner').mousemove(function( ev ){
+            var $inner = $(this);
+            var len = $inner.children().length;
+            if( len < 4 ) return;
+            var winWidth = $(window).width();
+            var off = $inner.parent().offset();
+            if( ev.pageX / winWidth < 0.7 && ( ev.pageX - off.left ) / winWidth > 0.3 ){
+                isRunning = false;
+                $inner.stop( true );
+            } else {
+                if( isRunning ) return;
+                if( ev.pageX / winWidth > 0.7 ){
+                    isRunning = true;
+                    $inner.stop( true )
+                        .animate({
+                            marginLeft: -( len / 4 / 0.84 - 1 ) * 100 + '%'
+                        } , 500 * len / 2);
+                } else {
+                    isRunning = true;
+                    $inner.stop( true )
+                        .animate({
+                            marginLeft: (1 / len * 0.006 / 0.25 * 100) + '%'
+                        } , 500 * len / 2);
+                }
+            }
+        });
+    }
 
     function initSlider( $wrap , config ){
         var $slidebox = $wrap.find('.slidebox');
@@ -1644,6 +1520,8 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
     });
 
+    firstWindowLoaded();
+
     var headHeight = $('.head').height();
 
     $(window).resize(function(){
@@ -1749,6 +1627,8 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         // fix news press  crumb position
         $('.newscrumbs p').css('padding-left' , ( $('.nav1 li').width() - $('.nav1 li a').width() ) / 2 );
 
+        // fix collection nav
+        $('.nav-pop-wraps').height( $('.nav-pop-wraps img').height() );
 
         // fix header space
         // var totalWidth = 0;
@@ -1772,6 +1652,24 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 break;
         }
     });
+
+    
+
+    // fix nav-pop-nav ============================================================================================
+    var $navPopLinks = $('.nav-pop-nav a').hover( function(){
+        // fix hover class
+        $navPopLinks.removeClass('hover');
+        $(this).addClass('hover');
+
+        var index = $navPopLinks.index( this );
+        $('.nav-pop-wraps').stop( true , true )
+            .animate({
+                scrollTop: index * $('.nav-pop-wraps').height() + index * 10
+            } , 500 );
+    });
+
+
+
     // change history
     LP.use('../plugin/history.js' , function(){
         History.replaceState( { prev: '' } , undefined , location.href  );
@@ -2009,12 +1907,18 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
 
     LP.action('show-pop' , function( data ){
-        if ($(this).siblings('textarea').size() > 0) {
-          popHelper.show( $(this).siblings('textarea').val() , data );
+        var $this = $(this);
+        var con = '';
+        if( $this.find('textarea').length ){
+            con = $this.find('textarea').val();
+        } else if( $(this).siblings('textarea').length ){
+            con = $(this).siblings('textarea').val();
+        } else {
+            con = $(this).parent().siblings().find("textarea").val();
         }
-        else {
-          popHelper.show($(this).parent().siblings().find("textarea").val(), data );
-        }
+
+        popHelper.show( con , data );
+        
         return false;
     });
 
