@@ -45,7 +45,7 @@ require_once "inc.php";?>
 				</div>
 				<div class="searchform">
 					<form action="<?php echo url("search")?>" class="section cs-clear">
-						<input type="text" placeholder="<?php echo Yii::t("strings" ,"ENTER YOUR SEARCH")?>" name="s" value="">
+						<input type="text" autocomplete="off" placeholder="<?php echo Yii::t("strings" ,"ENTER YOUR SEARCH")?>" name="s" value="">
 						<button><?php echo Yii::t("strings" ,"SEARCH")?></button>
 					</form>
 				</div>

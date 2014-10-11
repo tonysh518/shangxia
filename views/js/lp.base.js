@@ -355,9 +355,10 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                                 .promise()
                                 .then(function(){
                                     $(this).find('.slidetip')
+                                        .css('top' , 'auto')
                                         .animate({
                                             opacity: 1,
-                                            bottom: 120
+                                            bottom: '20%'
                                         } , 300)
                                         .end()
                                         .find('.slidetab')
@@ -1658,7 +1659,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         $('[data-resize]').each(function(){
             var val = $(this).data('resize');
             val = val.split(':');
-            var height = winWidth / val[0] * val[1];
+            var height = $(this).width() / val[0] * val[1];
             $(this).css({
                 height: height
             });
