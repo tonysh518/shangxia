@@ -41,8 +41,9 @@ else {
     }
 }
 
-if ($_GET['lang'] == "fr") {
+if (isset($_GET['lang']) && $_GET['lang'] == "fr") {
   Yii::app()->language = 'fr';
+  setcookie('lang', $_GET['lang']);
 }
 
 // 测试代码
