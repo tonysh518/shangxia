@@ -100,7 +100,7 @@
 				</div>
 				<!-- copyright -->
 				<div class="copyright">
-          <p><a target="_blank" href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=20120529122952909"><?php echo Yii::t("strings", "ICP LICENCE")?> 20120529122952909</a> - <?php echo Yii::t("strings", "PRIVACY POLICY LEGAL INFORMATION")?></p>
+          <p><a target="_blank" href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=20120529122952909"><?php echo Yii::t("strings", "ICP LICENCE")?> 20120529122952909</a> - <a href='privacy-policy' target='_blank'><?php echo Yii::t("strings", "PRIVACY POLICY LEGAL INFORMATION")?></a></p>
 				</div>
 			</div>
 		</div>
@@ -111,13 +111,13 @@
 	<h2><?php echo Yii::t("strings", "SUBSCRIBE TO <br/> SHANG XIA NEWSLETTER")?> </h2>
 	<div class="popcontxt">
 		<p style="margin:5px 0;"><?php echo Yii::t("strings", "To receive updates about SHANGXIA, <br/> please provide the following information")?> :</p>
-		<form class="buy-form conformbox" action="/admin/api/content/newsletter" method="post">
+		<form class="buy-form newsletter-form conformbox" action="/admin/api/content/newsletter" method="post">
 			<div class="conformtit"><?php echo Yii::t("strings", "YOUR NAME")?> <span class="error" id="name-tip"></span></div>
-			<input type="text" name="name" data-required="name required"/>
+			<input type="text" name="name" data-required="<?php echo Yii::t("strings", "IS REQUIRED")?>"/>
 			<div class="conformtit"><?php echo Yii::t("strings", "YOUR EMAIL")?> <span class="error" id="email-tip"></span></div>
-			<input type="text" name="email" data-required="email required"/>
+			<input type="text" name="email" data-required="<?php echo Yii::t("strings", "IS REQUIRED")?>"/>
 			<div class="conformtit"><?php echo Yii::t("strings", "YOUR PHONE")?> <span class="error" id="phone-tip"></span></div>
-			<input type="text" name="phone" data-required="phone required"/>
+			<input type="text" name="phone" data-required="<?php echo Yii::t("strings", "IS REQUIRED")?>"/>
 			<p style="margin:30px -20px 0"><?php echo Yii::t("strings", "SHANGXIA does not rent or sell customer <br/> email addresses to third parties")?> 
 			.</p>
 			<button class="conformbtn" data-a="newsletter-send"><?php echo Yii::t("strings", "SEND")?></button>

@@ -79,7 +79,7 @@
 				<div class="knowhowintro  knowhowR inout-effect">
 					<span class="inout-bg"></span>
 					<p class="eff cwrap"><?php echo Yii::t("strings", "SHRINKING THE CLOTHING")?></p>
-					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition">read<br/><br/>read</span></a>
+					<a href="#" class="btn transition-wrap" data-a="show-pop"><span class="transition"><?php echo Yii::t("strings", "read")?><br/><br/><?php echo Yii::t("strings", "read")?></span></a>
 					<textarea style="display:none;">
 						<h2><?php echo Yii::t("strings", "SHRINKING THE CLOTHING")?></h2>
 						<div class="popcontxt">

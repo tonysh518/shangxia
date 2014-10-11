@@ -717,6 +717,11 @@ background: rgb(227,227,227);}
   height: auto;
 }
 
+.privacy-policy p {text-align:left;}
+.privacy-policy h4 {font-weight:bold;font-size:18px;margin-bottom:20px;color:#4b3700;}
+.privacy-policy a {text-decoration: underline;}
+
+.newsletter-form {margin:0 auto;}
 
 @media screen and (max-width:1000px){
     .head-inner{width: 88%;margin-left:4%;}
