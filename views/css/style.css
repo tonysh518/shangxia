@@ -264,9 +264,15 @@ img.slideitem{height: auto;}
 .productslist{padding:10px 0;}
 .prolistitem{text-transform : uppercase;float: left;width: 32.53%;margin-right: 0.8%;}
 .prolistitem img{display: block;margin: 0 0 10px;}
-.prolistitem p{background: #4b3700;color:#fff;padding:12px;font-size: 18px;text-align: center ;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+.prolistitem p{background: #4b3700;color:#fff;padding:12px;font-size: 18px;text-align: center ;text-overflow: ellipsis;overflow: hidden;}
 .prolistitem p .date{font-family: garamond;}
-.newsitem p{background: #fff;color:#4b3700  ;height: 80px;}
+/*.newsitem p{background: #fff;color:#4b3700  ;height: 80px;}*/
+.newsitem p{background: #fff;
+color: #4b3700;
+height: 2.5em;
+margin: 24px 12px;
+padding: 0;
+overflow: hidden;}
 
 /*othercraf*/
 /*.othercraftit h2{width: 320px;margin-left: -160px;}*/
