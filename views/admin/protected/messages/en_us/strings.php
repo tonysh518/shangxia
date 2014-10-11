@@ -121,7 +121,7 @@ At any moment the thinness can be pierced or the body deformed. </p>",
     
     "contact_form_title" => "for more information <br />please send us an email",
     
-    "contact_form_footer_tip" => 'I also would like to receive the SHANGXIA newsletter. Please read out <a href="#">Privacy poliry </a>for more informamtion',
+    "contact_form_footer_tip" => 'I also would like to receive the SHANGXIA newsletter. Please read out <a href="privacy-policy" target="_blank">Privacy policy </a>for more informamtion',
     
     
     "Gathering Desc" => "<p>The goats are combed by hand with an iron comb, in spring when the weather starts to become warmer. The cashmere is extremely soft and very compact, it is a perfect material for felt making. Pieces of plants and goat waste must then be removed from the combed fleece, the fleece is then stored in this state.</p>
@@ -140,4 +140,51 @@ fabric and untangle the tangled spots. The fabric is rinsed unhooked and hung up
 ",
     
     "gift_corner_desc" => "<p>The products below are available in out boutiques. They are great gifts for your beloved ones. <br />Please select the products you would be interested in, and give us your contact information. You will then receive a personal call from someone at Shang Xia who will help you bare your gift delivered</p>",
+
+    "HAND SCULPTURE CLOTHING desc short" => "<p>Felt making is an ancient technique invented by herdsman to make non-woven cloth. Herdsmen use felt to make their rugs, yurts, clothing and cooking utensils. As nomadic peoples used these skills used to make yurts, the same skills, combined with original innovative designs, are used to create seamless felted cashmere one-off and unique garments with no stitchingFelt making is an ancient technique invented by herdsman to make non-woven cloth. Herdsmen use felt to make their rugs, yurts, clothing and cooking utensils.</p>",
+
+    "HAND SCULPTURE CLOTHING desc" => "<p>Felt making is an ancient technique invented by herdsman to make non-woven cloth. Herdsmen use felt to make their rugs, yurts, clothing and cooking utensils. As nomadic peoples used these skills used to make yurts, the same skills, combined with original innovative designs, are used to create seamless felted cashmere one-off and unique garments with no stitchingFelt making is an ancient technique invented by herdsman to make non-woven cloth. Herdsmen use felt to make their rugs, yurts, clothing and cooking utensils.</p><p>“Sculpture” series by SHANG XIA are clothes that are sculpted rather than sewn.</p><p>Most felt is made from wool, but SHANG XIA, together with Mongolian felt making craftswomen, have developed the technique of making cashmere felt. Each piece of work takes two skilled craftswomen over a week to complete.</p><p>The felt clothes were made, according to accurate designs, using the felt making technique once used to make yurts. Pressing, kneading, rubbing and twisting unceasingly, solid felt clothes were sculpted. Buttons were twisted and shaped, then pressed into the felt clothes, as if they had grown out of the garment. The same applied to the pockets. The seamless clothes are completed in one go so that there is coherence and unity in style. The cashmere felt clothes by SHANG XIA are each unique, and are like collectible works of art.</p><p>Kneading and rubbing, again and again, the felt makers do the job in a completely relaxed manner. To them, the process is as simple as zen.</p></p>",
+
+    "PRIVACY POLICY LEGAL INFORMATION" => "PRIVACY POLICY LEGAL INFORMATION",
+
+    "privacy_desc" => "<p><strong>SHANGXIA</strong> Trading (Shanghai) Co., Ltd. (“we”) understands that your privacy is very important to you. Please read the following for more details:</p>
+    <p>This Privacy Policy covers the collection, use, and disclosure of your personal information that may be collected by us. Such personal information could be collected anytime you interact with us, including but not limited to the personal information you provided to us when you visit our webpage, when you purchase our products and services, or when you contact our sales or service personnel.</p>
+    <p>Please note that third party websites linked from our website are not subject to this privacy policy. Please carefully read the privacy policy of the website which you visit.</p>
+    <h4>1.Information Collection</h4>
+    <p>We provide you a number of services for which you do not have to register or provide any personal information. In order to provide you with better service, we may collect your personal information in the following ways:</p>
+    <p>a. Information you provide</p>
+    <p>When you register with us, you may need to provide us some personal information, e.g. your name, gender, occupation and email address, etc. We will collect such information.</p>
+    <p>b. Cookie</p>
+    <p>We will use “cookies” and other technologies to collect your information, so as to help us better manage our website and provide you greater convenience when you visit our website.</p>
+    <p>c. Other Means</p>
+    <p>We also collect your personal information through other means, like oral or written enquiries to you, your interaction with us when you familiarize yourself with our services or purchase our products, etc.</p>
+    <h4>2.Use of Information</h4>
+    <p>You personal information collected will be used for research, analysis and survey, as well as to improve the webpage and products we provide to you and to present you with the latest information.</p>
+    <h4>3.Sharing and Publication of Information</h4>
+    <p>We understand the importance of your privacy. We will not sell or lease your contact information to any third party, or disclose your personal information to any third party, except in the following situations:</p>
+    <p>a. for use within our company group;</p>
+    <p>b. where you have consented to sharing information with a third party;</p>
+    <p>c. when providing information to our service providers, vendors and external professionals;</p>
+    <p>d. as required by the laws, government agencies or for important public interests;</p>
+    <p>e. when we are merged into another company.</p>
+    <p>We may also share with third parties some non-personal information which will not identify you, such as the number of times a particular advertisement or link has been clicked by you and other clients.</p>
+    <p>If you do not want us to use your information for a particular purpose, please feel free to contact us through <a href='mailto:info@shang-xia.com'>info@shang-xia.com</a> at any time.</p>
+    <h4>4.Access and Amendment of Personal Information</h4>
+    <p>If you wish to amend any other data that we hold about you, please contact us through <a href='mailto:info@shang-xia.com'>info@shang-xia.com</a> directly.</p>
+    <h4>5.Changes to this Privacy Policy</h4>
+    <p>Please note that this Privacy Policy may change from time to time, and most such changes will be minor. Regardless, if the changes are significant, we will publish a notice and the latest version of our Privacy Policy on our webpage.</p>
+    <h4>6.Questions and Suggestions</h4>
+    <p>If you have any other questions or suggestions, please contact us through <a href='mailto:info@shang-xia.com'>info@shang-xia.com</a>.</p>
+	<p><a href='terms-and-conditions-of-use'>TERMS AND CONDITIONS OF USE</a></p>",
+
+    "terms_desc" => "<p>This website (hereinafter the \"Website\") is published by <strong>SHANGXIA</strong> Trading (Shanghai) Co., Ltd. (hereinafter “<strong>SHANGXIA</strong>”), registered in Shanghai Administration of Industry and Commerce under number 310000400591270 (Luwan).</p>
+		<p>Access to the Website, the browse and use of its contents are subject to the terms and conditions set out below. By accessing, browsing or using the Website, the visitor accepts these conditions:</p>
+		<p>The copyright, trademarks and other rights of intellectual property related to and/or existing on this Website and all materials, text, code, content, software, graphics, photographs, illustrations, artwork, formats, files, devices, links and any other content contained in it or linked to it (together \"Content\") are owned by or licensed to <strong>SHANGXIA</strong> and protected by copyright, trademarks and other rights of intellectual property applicable in China. Anyone without the due approval of <strong>SHANGXIA</strong> must not modify any content in the Website.</p>
+		<p>Anyone accessing this Website is entitled to view or use any part of it for personal, non-commercial and lawful purpose. However the Content must not be used, downloaded, copied, forwarded, or reproduced (in whole or part) for any other purpose including without limitation on or in connection with any other website or publication or for direct commercial gain, unless <strong>SHANGXIA</strong> has expressly granted its consent in writing. Without prejudice of the forgoing, the relevant source must be marked if the Content is forwarded or reproduced.</p>
+		<p><strong>SHANGXIA</strong> gives no warranties for the accuracy, completion or up-to-date of the information included in the Website. <strong>SHANGXIA</strong> takes no responsibility for errors or omissions in the Website, either technical or textual. Information provided on the Website is subject to change by <strong>SHANGXIA</strong> at any time without prior notice.</p>
+		<p>Use of and browsing in the Website are at your own risk. Neither <strong>SHANGXIA</strong> nor its affiliates nor any party representing <strong>SHANGXIA</strong> in creating, presenting or otherwise affiliated with the Website are liable for any direct, indirect, special, punitive, incidental, exemplary or consequential damages, including without limiting any profit loss, business interruption, or loss of any program or data, arising out of your browse or use the Website, or downloading of the documents or information in the Website.</p>
+		<p>To the extent permitted by law and without limiting any of the foregoing, everything on the Website is provided to you on an \"as is\" basis, without warranty, either express or implied, of any kind, including, but not limited to, the implied warranties of merchantability, fitness for a specific purpose, freedom from computer virus, or non-infringement.</p>
+		<p>If any provision of these conditions is or becomes invalid or contravenes applicable regulations then the remaining provisions will not be affected.</p>
+		<p><strong>SHANGXIA</strong> informs visitors to the Website that these terms and conditions can be modified by <strong>SHANGXIA</strong> at any time. As soon as these modifications are displayed on the Website, each visitor who accesses the Website is assumed to accept these modifications without restriction.</p>
+		<p>These terms and conditions shall be governed by the laws of People' Republic of China. Any action or claim related to the use of the Website shall come under the jurisdiction of the Chinese Courts. In case of any discrepancy between the English and the Chinese, the English shall prevail.</p>",
 );

@@ -54,12 +54,12 @@ include_once 'common/header.php';?>
 					<form action="/admin/api/content/contact" method="post" >
 
 						<div class="conformtit"><?php echo Yii::t("strings", "NAME")?> <span class="error" id="name-tip"></span></div>
-						<input type="text" name="name" data-required="<?php echo Yii::t("strings", "name required")?>" />
+						<input type="text" name="name" data-required="<?php echo Yii::t("strings", "IS REQUIRED")?>" />
 						<div class="conformtit"><?php echo Yii::t("strings", "EMAIL")?> <span class="error" id="email-tip"></span></div>
-						<input type="text" name="email" data-required="<?php echo Yii::t("strings", "right email required")?>"/>
+						<input type="text" name="email" data-required="<?php echo Yii::t("strings", "IS REQUIRED")?>"/>
 						<div class="conformtit"><?php echo Yii::t("strings", "MESSAGE")?> <span class="error" id="message-tip"></span></div>
 						<div style="position:relative;">
-							<textarea name="message" data-required="<?php echo Yii::t("strings", "message required")?>" data-max-length="300" data-max-length-tip="<?php echo Yii::t("strings", "over 300 letters")?>" id="" cols="30" rows="15"></textarea>
+							<textarea name="message" data-required="<?php echo Yii::t("strings", "IS REQUIRED")?>" data-max-length="300" data-max-length-tip="<?php echo Yii::t("strings", "over 300 letters")?>" id="" cols="30" rows="15"></textarea>
 							<div class="upload">
 								<input type="file" name="file" />
 							</div>
@@ -67,7 +67,7 @@ include_once 'common/header.php';?>
 						</div>
 						<div class="conformcheck cs-clear" style="margin-top:10px;">
 							<label>
-								<input type="checkbox" name="poliry" data-required="<?php echo Yii::t("strings", "you should agree the Privacy poliry")?>" />
+								<input type="checkbox" name="poliry" data-required="<?php echo Yii::t("strings", "Please agree the privacy and policy")?>" />
 								<span><?php echo Yii::t("strings", "contact_form_footer_tip")?></span>
               				</label>
 						</div>

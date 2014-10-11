@@ -166,7 +166,7 @@ Pour reprendre les mots du poète Li Bai (701-762) de la dynastie Tang (618-907)
     
     "THE FIRST SHANG XIA BAG" => "LE PREMIER SAC PAR SHANG XIA",
     
-    "contact_form_footer_tip" => 'I also would like to receive the SHANGXIA newsletter. Please read out <a href="#">Privacy poliry </a>for more informamtion',
+    "contact_form_footer_tip" => 'I also would like to receive the SHANGXIA newsletter. Please read out <a href="privacy-policy" target="_blank">Privacy policy </a>for more informamtion',
     
     "Cashmere Felt" => "Le feutre de cachemire",
     
@@ -196,7 +196,7 @@ Pour reprendre les mots du poète Li Bai (701-762) de la dynastie Tang (618-907)
     
     "subscribe to shang xia newsletter" => "S'INSCRIRE À LA NEWSLETTER",
     
-    "PRIVACY POLICY LEGAL INFORMATION" => "Informations Légales",
+    "PRIVACY POLICY LEGAL INFORMATION" => "<a href='privacy-policy' target='_blank'>Informations Légales</a>",
     
     "apparel" => " LE PRÊT-À-PORTER",
     "jewelry" => " LE BIJOU",
@@ -284,6 +284,8 @@ Pour reprendre les mots du poète Li Bai (701-762) de la dynastie Tang (618-907)
     "Read more" => "lire plus",
     
     "read more" => "lire plus",
+
+    "IS REQUIRED" => "",
     
     "SEND" => "ENVOYER",
     "Send" => "ENVOYER",
@@ -291,4 +293,48 @@ Pour reprendre les mots du poète Li Bai (701-762) de la dynastie Tang (618-907)
     
     "gift_corner_desc" => "<p>The products below are available in out boutiques. They are great gifts for your beloved ones. <br />Please select the products you would be interested in, and give us your contact information. You will then receive a personal call from someone at Shang Xia who will help you bare your gift delivered</p>",
 
+    "Please agree the privacy and policy" => "S'il vous plaît accepter la politique et la vie privée",
+
+    "privacy_desc" => "<p>SHANGXIA Trading (Shanghai) Co., Ltd. (“Nous”)a conscience de l’importance de la protection de votre vie privée. Veuillez lire les informations suivantes pour plus de détails. </p>
+    <p>Cette politique de confidentialité englobe la collecte, l’utilisation et la divulgation de vos données personnelles que nous pouvons avoir conservées. Ces données peuvent être collectées à chaque fois que vous entrez en contact avec nous, et notamment, mais pas exclusivement, les informations personnelles que vous fournissez lorsque vous visitez notre site web, lorsque vous achetez nos produits ou nos services, ou lorsque vous rentrez en contact avec notre personnel de vente ou d’assistance.</p>
+    <p>Les sites web de tierces parties reliés à notre propre site ne sont pas soumis à notre politique de confidentialité. Veuillez lire attentivement la politique de confidentialité des sites web auxquels vous accédez à partir du notre.</p>
+    <h4>1. Collecte d’information </h4>
+    <p>Nous fournissons plusieurs services pour lesquels il n’est pas nécessaire de s’enregistrer ou de fournir quelque information que ce soit. Afin de pouvoir assurer la qualité de notre service, nous pouvons être amenés à collecter vos données personnelles de la manière suivante&nbsp;:</p>
+    <p>a. Les informations que vous fournissez</p>
+    <p>En vous enregistrant sur notre site, vous serez amenés à fournir des informations personnelles, comme par exemple votre nom, votre profession, votre adresse etc... Nous conserverons ces informations. </p>
+    <p>b. Cookie</p>
+    <p>Afin de mieux gérer notre site web et pour vous assurer un meilleur service&nbsp;lorsque vous le visitez, nous utilisons des «&nbsp;cookies&nbsp;» et autres procédés technologiques pour collecter vos données personnelles.</p>
+    <p>c. Autres méthodes</p>
+    <p>Nous collectons également vos données personnelles par d’autres moyens, par exemple par le biais de demandes d’informations que nous pouvons effectuer par voie orale ou écrite, ou lorsque vous entrez en contact avec nous afin de vous familiariser avec nos services, acheter nos produits etc.</p>
+    <h4>2. Utilisation de l’information</h4>
+    <p>Les données personnelles que nous collectons seront utilisées dans&nbsp;le cadre de recherches, d‘analyses et d’enquêtes, afin d’améliorer notre site web, nos produits, ainsi que pour vous tenir à jour avec les dernières informations nous concernant.</p>
+    <h4>3. Partage et publication des données</h4>
+    <p>Nous avons conscience de l’importance de la protection de votre vie privée. Nous ne vendons pas ni ne transférons/louons vos coordonnées ou vos données personnelles à aucun tierce partie hormis dans les cas suivants&nbsp;:</p>
+    <p>a. Lorsqu’elles sont utilisées au sein de notre propre groupe;</p>
+    <p>b. Lorsque vous avez consenti à ce que vos données soient partagées avec une tierce partie;</p>
+    <p>c. Lorsque nous donnons des informations à nos fournisseurs de services, nos fournisseurs ou nos sous-traitants;</p>
+    <p>d. Dans l’hypothèse où nous y sommes obligés par la loi, ou à la demande d’organismes gouvernementaux, ou pour des questions d’intérêt public;</p>
+    <p>e. Dans l’hypothèse où nous fusionnons avec une autre société.</p>
+    <p>Nous pouvons être amenés à partager avec des tierces parties des informations qui ne permettent pas de vous identifier, comme par exemple le nombre de fois qu’une publicité ou qu’un lien ont été sélectionnés/cliqués par vous et d’autre clients.</p>
+    <p>Si vous ne souhaitez pas que vos données soient utilisées à une fin particulière, veuillez nous contacter à l’adresse suivante <a href='mailto:info@shang-xia.com'>info@shang-xia.com</a> à tout moment.</p>
+    <h4>4. Accès et rectification des données personnelles</h4>
+    <p>Dans l’hypothèse où vous souhaitez modifier/rectifier certaines de vos données personnelles que nous avons conservées, veuillez envoyer votre demande directement à : <a href='mailto:info@shang-xia.com'>info@shang-xia.com</a>.</p>
+    <h4>5. Modifications de la politique de confidentialité</h4>
+    <p>Veuillez prendre note du fait que notre politique de confidentialité peut être modifiée à tout moment et que la plupart des modifications sont insignifiantes. Néanmoins, quelle que soit leur importance, nous publierons sur notre site web une notification détaillant les modifications effectuées à notre politique de confidentialité.</p>
+    <h4>6. Questions and Suggestions</h4>
+    <p>Veuillez adresser toutes vos questions ou vos suggestions à : <a href='mailto:info@shang-xia.com'>info@shang-xia.com</a>.</p>
+    <p><a href='terms-and-conditions-of-use'>TERMES ET CONDITIONS D’UTILISATION</a></p>",
+
+    "TERMS AND CONDITIONS OF USE" => "TERMES ET CONDITIONS D’UTILISATION",
+
+    "terms_desc" => "<p>Ce site web (ci-après dénommé “Site web”) a été créé par <strong>SHANGXIA</strong> Trading (Shanghai) Co., Ltd (ci-aprèsdénommé <strong>SHANGXIA</strong>) et enregistré à l’administration de l’industrie et du commerce de Shanghai sous le matricule 310000400591270 (Luwan).</p>
+		<p>L’accès et la navigation sur le site  ainsi que l’utilisation de son contenu sont soumis aux termes et conditions décrits ci-dessous. En accédant au site et en navigant dessus, le visiteur accepte ces conditions:</p>
+		<p>Les droits d’auteurs, les droits de marques de commerce ou tout autre droit de propriété intellectuelle en relation avec, ou présents sur, ce Site web, ainsi que tous les autres textes, données, codes, contenu, software, graphismes, photographies, illustrations, reproductions, formats, fichiers, dispositifs, liens ou toute autre forme de contenu lié au Site web ou disponible dessus (le tout étant dénommé «&nbsp;Contenu) sont la propriété de ou ont été licenciés à <strong>SHANGXIA</strong>, et sont protégés par des droits d’auteur, des droits de marque et autres droits de propriété intellectuelle applicables en Chine. Nul ne peut modifier le contenu du Site web sans avoir obtenu l’autorisation expresse de <strong>SHANGXIA</strong>.</p>
+		<p>Toute personne accédant au Site web est autorisée à le consulter en partie ou dans sa totalité à des fins d’utilisation personnelle, non commerciales et licites. Néanmoins, son contenu ne peut être utilisé, téléchargé, copié, transféré, reproduit (en partie ou en totalité)à toute autre fin, et notamment, mais pas exclusivement, sur ou en relation avec un autre site web, ou publication, ou à des fins purement commerciales, sauf dans l’hypothèse où <strong>SHANGXIA</strong> à accordé une autorisation écrite à cet effet.</p>
+		<p><strong>SHANGXIA</strong> ne donne aucune garantie sur l’exactitude, la réalisation ou l’actualité des informations contenues sur le Site web. <strong>SHANGXIA</strong> n’accepte aucune responsabilité pour les erreurs ou omissions présentes sur le Site web, qu’elles soient d’ordre technique ou textuel. Les informations fournies sur le Site web peuvent être modifiées par <strong>SHANGXIA</strong> sans avis préalable.</p>
+		<p>L’utilisation du et la navigation sur le Site web se font à vos propres risques. Ni <strong>SHANGXIA</strong>, ni ses filiales, ni aucune tierce partie ayant représenté <strong>SHANGXIA</strong> dans la création et la publication du Site web, ou affiliée de quelque autre manière que ce soit avec le Site web, ne peuvent être tenus responsable d’aucun dommage direct, indirect, spécial, punitif, accessoire, exemplaire ou collatéral, et notamment, mais pas exclusivement, toute perte commerciale, interruption d’activité, perte de programme ou de données découlant de la navigation sur ou de l’utilisation du Site web, ou du téléchargement de documents ou d’informations contenus sur le Site web.</p>
+		<p>Dans les limites autorisées par la loi, et sans préjudice de ce qui précède, tout le contenu du Site web est fourni“tel quel”, sans garantie d’aucune sorte, implicite ou explicite, et notamment, mais pas exclusivement, garantie de commerciabilité, adéquation à un usage donné, absence de virus informatique ou non violation de droits.</p>
+		<p>Si quelconque disposition de ces conditions devient caduque ou contrevient aux règlements applicables, la validité des autres dispositions ne sera pas affectée.</p>
+		<p><strong>SHANGXIA</strong> informe les visiteurs du Site web que les termes et conditions de son utilisation peuvent être modifiés à tout moment. Dès que ces  modifications sont publiées sur le Site web, les visiteurs qui y accèdent sont supposés en avoir pris connaissance et les accepter sans restriction.</p>
+		<p>Ces termes et conditions sont régis par les lois de la République Populaire de Chine. Tout litige afférentà l’utilisation de ce Site web est soumis à la juridiction des courts de la République Populaire de Chine. En cas de divergence entre les significations des versions chinoises et anglaises, la version chinoise prévaudra.</p>",
 );
