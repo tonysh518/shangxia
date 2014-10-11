@@ -150,8 +150,8 @@
             for (var i = 0; i < maxFileSelected; i++) {
               UploadMediaService.upload(angular.element(this)[0], i).success(function (res) {
                 if (typeof res["status"] && res["status"]  == 0) {
-                  var uri = res["data"]["uri"];
-                  scope.src.push(window.baseurl + uri);
+                  var uri = window.baseurl + res["data"]["uri"];
+                  scope.src.push(uri);
                   scope.source.push(uri);
                   scope.$digest();
                   ctrl[0].$setViewValue(scope.src);
