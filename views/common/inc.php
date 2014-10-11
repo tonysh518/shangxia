@@ -194,7 +194,15 @@ function getProductInType($type) {
     $ret[$product->collection][] = $product;
   }
   
-  return $ret;
+  $collections = CollectionContentAR::model()->getList();
+  $retTmp = array();
+  foreach ($collections as $collection) {
+    if (isset($ret[$collection->cid])) {
+      $retTmp[$collection->cid] = $ret[$collection->cid];
+    }
+  }
+  
+  return $retTmp;
 }
 
 /**
