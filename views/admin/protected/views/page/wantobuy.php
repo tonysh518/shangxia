@@ -13,10 +13,11 @@
   </header>
     <table class="table table-striped">
       <thead>
-        <td><?php echo Yii::t("strings", "Name")?></td>
+        <td><?php echo Yii::t("strings", "ID")?></td>
         <td><?php echo Yii::t("strings", "Phone")?></td>
         <td><?php echo Yii::t("strings", "Email")?></td>
         <td><?php echo Yii::t("strings", "Product")?></td>
+        <td><?php echo Yii::t("strings", "Type")?></td>
         <td><?php echo Yii::t("strings", "Date")?></td>
         <td><?php echo Yii::t("strings", "Actions")?></td>
       </thead>
@@ -24,7 +25,7 @@
         <?php foreach ($list as $item): ?>
         <?php $product = ProductContentAR::model()->findByPk($item->product); ?>
         <tr>
-          <td><?php echo $item->title?></td>
+          <td><?php echo $item->cid?></td>
           <td><?php echo $item->phone?></td>
           <td><?php echo $item->email?></td>
           <td>
@@ -36,6 +37,13 @@
             <a href="javascript:void(0)">
               <img ng-click="viewimage('<?php echo ($product->thumbnail)?>')" src="<?php echo ($product->thumbnail)?>" alt="" />
             </a>
+         <?php endif;?>
+          </td>
+          <td>
+          <?php if ($item->product_type == "product"):?>
+            <?php echo "Product"?>
+          <?php else: ?>
+            <?php echo "Gift"?>
          <?php endif;?>
           </td>
           <td><?php echo $item->cdate?></td>
