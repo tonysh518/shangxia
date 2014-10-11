@@ -1651,12 +1651,8 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         });
 
 
-        var prevHeight = $('.storemap').prev().outerHeight();
-        $('.storemap').css( 'height' , prevHeight );
-        // $('.storemap').css({
-        //     height: 0.70 * prevHeight,
-        //     marginTop: 0.15 * prevHeight
-        // });
+        $('.storechoose2').css('marginTop' , ( 390 - $('.storechoose2').height() ) / 2 );
+
 
         // fix resize:
         $('[data-resize]').each(function(){

@@ -72,7 +72,7 @@ include_once 'common/header.php';?>
 					<div class="storechoose storechoose2 intoview-effect" data-effect="fadeup" style="padding-top:0;">
 						<?php echo $crtboutique->address?>
 					</div>
-					<div class="storemap intoview-effect" <?php if ($_GET["type"] == "paris") echo 'data-map-type="google"'?> data-map="<?php echo $crtboutique->latlng?>" data-effect="fadeup">
+					<div class="storemap intoview-effect" style="height:390px;" <?php if ($_GET["type"] == "paris") echo 'data-map-type="google"'?> data-map="<?php echo $crtboutique->latlng?>" data-effect="fadeup">
 						<img src="/images/findus.jpg" width="100%" />
 					</div>
 				</div>
