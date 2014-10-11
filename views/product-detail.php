@@ -23,9 +23,10 @@ $pagename = 'product-detail';
 		<!-- detail -->
 		<div class="section ">
 			<div class="detail coll_product cs-clear">
-				<h2 class="intoview-effect" data-effect="fadeup"><?php echo $product->title?></h2>
-				<div class=" detailcon js-horizontal-slide intoview-effect" data-split="1" data-effect="fadeup" data-num="1" style="margin:0 auto;float:none;">
-					<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
+				<div class="arrows arrows2 detailprev" data-a="page-prev"></div>
+				
+				<div class=" detailcon intoview-effect" data-split="1" data-effect="fadeup" data-num="1">
+					<h2 class="intoview-effect" data-effect="fadeup"><?php echo $product->title?></h2>
 					<div class="slide-con">
 						<ul class="slide-con-inner cs-clear">
 							<li style="float:left;">
@@ -33,8 +34,8 @@ $pagename = 'product-detail';
 							</li>
 						</ul>
 					</div>
-					<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
 				</div>
+				<div class="arrows arrows2 detailnext" data-a="page-next"></div>
 			</div>
       <?php if ($product->gift): ?>
         <a href="#" style="margin-bottom:100px;" class="btn transition-wrap" data-id="<?php echo $product->cid?>" data-d="product=<?php echo $product->cid?>" data-a="i-want-to-buy"><span class="transition"><?php echo Yii::t("strings", "I Want To Buy")?><br/><br/><?php echo Yii::t("strings", "I Want To Buy")?></span></a>
