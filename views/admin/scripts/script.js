@@ -193,13 +193,13 @@
       template: function (el, attrs) {
         if (typeof attrs["multi"] == "undefined") {
           return '<div class="preview multi">' + 
-            '<div class="multi-item" ng-repeat="s in src track by $index"><span class="d-img" ng-click="removeItem($index)">Del</span><img ng-src="{{s}}" alt="" /></div>' +
+            '<div class="multi-item" ng-repeat="s in src track by $index"><span class="d-img" ng-click="removeItem($index)">Del</span><a target="_blank" ng-href="{{s}}"><img ng-src="{{s}}" alt="" /></a></div>' +
           '</div>' + 
           '<input type="file"  accept="image/*" upload="Upload Image"/>';
         }
         else {
           return '<div class="preview multi">' + 
-            '<div class="multi-item" ng-repeat="s in src track by $index"><span class="d-img" ng-click="removeItem($index)">Del</span><img ng-src="{{s}}" alt="" /></div>' +
+            '<div class="multi-item" ng-repeat="s in src track by $index"><span class="d-img" ng-click="removeItem($index)">Del</span><a target="_blank" ng-href="{{s}}"><img ng-src="{{s}}" alt="" /></a></div>' +
           '</div>' + 
           '<input type="file" multiple  accept="image/*" upload="Upload Image"/>';
         }
