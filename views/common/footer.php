@@ -63,7 +63,7 @@
             <?php foreach (CollectionContentAR::model()->getList() as $collection): ?>
               <a data-a="nav-link" href="<?php echo url("collections", array("cid" => $collection->cid))?>"><?php echo $collection->title?></a>
             <?php endforeach;?>
-            <p><a href="<?php echo url("gift-corner")?>"><?php echo Yii::t("strings" ,"Gift Corner")?> &gt;</a></p>
+            <p><a href="<?php echo url("gift-corner")?>"><?php echo Yii::t("strings" ,"Gift Corner")?></a></p>
 					</div>
 					<div class="sitelinkitem intoview-effect" data-effect="fadeup">
             <h2><?php echo Yii::t("strings", "CRAFTS")?></h2>
