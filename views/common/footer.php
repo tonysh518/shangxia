@@ -139,10 +139,10 @@
 		<div class="product-img-slide-num">1/1</div>
 		<div class="product-info-list">
 			<h3>#[name]</h3>
-			<p><label>Color :</label> #[color]</p>
-			<p><label>Material :</label> #[material]</p>
-			<p><label>Size :</label> #[size]</p>
-			<p><label>Unit :</label> #[unit]</p>
+			<p><label><?php echo Yii::t("strings", "Color") ?> :</label> #[color]</p>
+			<p><label><?php echo Yii::t("strings", "Material") ?> :</label> #[material]</p>
+			<p><label><?php echo Yii::t("strings", "Size") ?> :</label> #[size]</p>
+			<p><label><?php echo Yii::t("strings", "Unit") ?> :</label> #[unit]</p>
 			<br/>
 			<p>￥ #[price]</p>
 		</div>
