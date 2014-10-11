@@ -41,6 +41,10 @@ else {
     }
 }
 
+if ($_GET['lang'] == "fr") {
+  Yii::app()->language = 'fr';
+}
+
 // 测试代码
 //Yii::app()->language = "zh_cn";
 if (Yii::app()->language == "zh_cn") {
