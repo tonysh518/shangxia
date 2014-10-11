@@ -412,6 +412,11 @@ return array(
     "In addition to the range of homeware and accessories" => "家居用品及配件系列除外",
     
     "Enter the gift corner" => "进入赠礼专区",
+    
+    'Color' => '颜色',
+    'Material' => '材质',
+    'Size' => '尺寸',
+    'Unit' => '单位',
 );
 
 
