@@ -52,7 +52,7 @@ require_once "inc.php";?>
 				<div class="nav-pop nav-pop-collections">
 					<div class="nav-pop-inner">
 						<div class="nav-pop-nav">
-			  <p><a><?php echo Yii::t("strings" ,"COLLECTIONS")?> <span>&gt;</span></a></p>
+			  <p><a><?php echo Yii::t("strings" ,"collections")?> <span>&gt;</span></a></p>
               <?php foreach (ProductContentAR::getType() as $id => $name):  ?>
               <p><a href="<?php echo url("product-type", array("name" => ProductContentAR::getTypeKeyName($id)))?>"><?php echo ucfirst($name)?> <span>&gt;</span></a></p>
               <?php endforeach;?>
