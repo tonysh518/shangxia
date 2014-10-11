@@ -52,6 +52,7 @@ require_once "inc.php";?>
 				<div class="nav-pop nav-pop-collections">
 					<div class="nav-pop-inner">
 						<div class="nav-pop-nav">
+			  <p><a><?php echo Yii::t("strings" ,"COLLECTIONS")?> <span>&gt;</span></a></p>
               <?php foreach (ProductContentAR::getType() as $id => $name):  ?>
               <p><a href="<?php echo url("product-type", array("name" => ProductContentAR::getTypeKeyName($id)))?>"><?php echo ucfirst($name)?> <span>&gt;</span></a></p>
               <?php endforeach;?>
@@ -93,6 +94,30 @@ require_once "inc.php";?>
 					            </div>
 					          </div>
 					          <div class="nav-pop-wrap">
+					            <div class="nav-pop-wrap-inner cs-clear">
+					            <?php $collectiones = CollectionContentAR::model()->getList();?>
+					            <?php foreach($collectiones as $item):?>
+					              <a class="nav-pop-item inout-effect" data-a="nav-link" href="<?php echo url("collections", array("cid" => $item->cid))?>">
+					              	<img src="<?php echo $item->nav_image?>"/> 
+					              	<span class="nav-text"><i> <?php echo $item->title?></i></span>
+					              	<span class="home-inout-bg inout-bg"></span>
+					              </a>
+					            <?php endforeach;?>
+					            </div>
+				            </div>
+				            <div class="nav-pop-wrap">
+					            <div class="nav-pop-wrap-inner cs-clear">
+					            <?php $collectiones = CollectionContentAR::model()->getList();?>
+					            <?php foreach($collectiones as $item):?>
+					              <a class="nav-pop-item inout-effect" data-a="nav-link" href="<?php echo url("collections", array("cid" => $item->cid))?>">
+					              	<img src="<?php echo $item->nav_image?>"/> 
+					              	<span class="nav-text"><i> <?php echo $item->title?></i></span>
+					              	<span class="home-inout-bg inout-bg"></span>
+					              </a>
+					            <?php endforeach;?>
+					            </div>
+				            </div>
+				            <div class="nav-pop-wrap">
 					            <div class="nav-pop-wrap-inner cs-clear">
 					            <?php $collectiones = CollectionContentAR::model()->getList();?>
 					            <?php foreach($collectiones as $item):?>
