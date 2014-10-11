@@ -545,3 +545,15 @@ function getLastEvent() {
   }
   return FALSE;
 }
+
+function loadTypeMedias($type) {
+  $path = "admin/upload/CROPS/". strtoupper($type);
+  $dir = opendir($path);
+  
+  $files = array();
+  while ($fPath = readdir($dir)) {
+    if ($fPath[0] != '.') $files[] =  '/' .$path.'/'.$fPath;
+  }
+  
+  return $files;
+}
