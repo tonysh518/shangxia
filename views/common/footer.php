@@ -11,8 +11,8 @@
 			<!-- location -->
 			 <div class="location intoview-effect" data-effect="fadeup">
 			 	<div class="range">
-			 		<p class="rangetxt">In addition to the range of homeware and accessories</p>
-			 		<a href="<?php echo url("gift-corner.php")?>" title="" class="rangebtn transition-wrap"><span class="transition">Enter the gift corner<br/><br/>Enter the gift corner</span></a>
+			 		<p class="rangetxt"><?php echo Yii::t("strings", "In addition to the range of homeware and accessories")?></p>
+			 		<a href="<?php echo url("gift-corner.php")?>" title="" class="rangebtn transition-wrap"><span class="transition"><?php echo Yii::t("strings", "Enter the gift corner")?><br/><br/><?php echo Yii::t("strings", "Enter the gift corner")?></span></a>
 			 	</div>			
 			 </div>
 			 <?php } ?>
@@ -54,7 +54,6 @@
 			</div>
     <?php endif;?>
 
-
 			<!-- sitelinks -->
 			<div class="footer-bottom">
 				<div class="section sitelinks cs-clear">
@@ -63,6 +62,7 @@
             <?php foreach (CollectionContentAR::model()->getList() as $collection): ?>
               <a data-a="nav-link" href="<?php echo url("collections", array("cid" => $collection->cid))?>"><?php echo $collection->title?></a>
             <?php endforeach;?>
+            <p><a href="<?php echo url("gift-corner")?>"><?php echo Yii::t("strings" ,"Gift Corner")?></a></p>
 					</div>
 					<div class="sitelinkitem intoview-effect" data-effect="fadeup">
             <h2><?php echo Yii::t("strings", "CRAFTS")?></h2>

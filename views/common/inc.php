@@ -41,6 +41,11 @@ else {
     }
 }
 
+if (isset($_GET['lang']) && $_GET['lang'] == "fr") {
+  Yii::app()->language = 'fr';
+  setcookie('lang', $_GET['lang']);
+}
+
 // 测试代码
 //Yii::app()->language = "zh_cn";
 if (Yii::app()->language == "zh_cn") {
@@ -189,7 +194,15 @@ function getProductInType($type) {
     $ret[$product->collection][] = $product;
   }
   
-  return $ret;
+  $collections = CollectionContentAR::model()->getList();
+  $retTmp = array();
+  foreach ($collections as $collection) {
+    if (isset($ret[$collection->cid])) {
+      $retTmp[$collection->cid] = $ret[$collection->cid];
+    }
+  }
+  
+  return $retTmp;
 }
 
 /**

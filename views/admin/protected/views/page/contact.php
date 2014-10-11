@@ -24,7 +24,7 @@
         <tr>
           <td><?php echo $item->title?></td>
           <td><?php echo ucfirst($type)?></td>
-          <td class="body"><?php echo strip_tags($item->body)?></td>
+          <td><?php echo strip_tags($item->body)?></td>
           <td><?php echo $item->cdate?></td>
           <td>
             <a ng-click="preview(<?php echo $item->cid?>)" href="javascript:void()"><?php echo Yii::t("strings", "View")?></a>

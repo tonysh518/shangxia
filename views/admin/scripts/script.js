@@ -339,6 +339,7 @@
           $scope.title = res["data"]["title"];
           $scope.body = res["data"]["body"];
           $scope.email = res["data"]["email"];
+          $scope.attachment = res['data']['file'];
           $scope.$digest();
         });
       }

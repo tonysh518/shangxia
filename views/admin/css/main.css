@@ -444,14 +444,12 @@ input[type="text"] {
   width: 50%;
 }
 
-
 .imagepreview .controls {
   width: 10.8em;
 }
 
 .imagepreview .controls input[type="file"] {
   display: block;
-  margin: 0 auto;
   width: 10em;
   height: 2em;
   position: relative;
@@ -500,6 +498,7 @@ form {
 .form-horizontal .control-group {
   margin: 1em 0px;
   text-transform: uppercase;
+  margin-top: 3em;
 }
 
 .table-bar {
@@ -507,7 +506,6 @@ form {
   line-height: 2em;
   font-size: 1.5em;
     font-family: 'Gotham Medium';
-
 }
 
 .table-content {
@@ -792,6 +790,7 @@ cursor: pointer;
   width: auto;
   border: none;
   height: auto;
+  margin-left: 0px;
 }
 
 .multi .controls .multi .multi-item {
@@ -805,6 +804,8 @@ cursor: pointer;
 
 .multi .controls input[type="file"] {
   float:left;
+  position: absolute;
+  bottom: -20px;
 }
 
 .modal-open .modal {
