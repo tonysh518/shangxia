@@ -134,7 +134,7 @@
       
       <!-- Press  -->
       <li class="nav-header">
-        <?php echo Yii::t("strings", "Press")?>
+        <?php echo Yii::t("strings", "Press ")?>
       </li>
       <li><a href="<?php echo Yii::app()->createUrl("page/addcontent", array("type" => "press"))?>"><?php echo Yii::t("strings", "Add Press")?></a></li>
       <li><a href="<?php echo Yii::app()->createUrl("page/content", array("type" => "press"))?>"><?php echo Yii::t("strings", "Edit Press")?></a></li>
@@ -207,6 +207,7 @@
         <p><?php echo Yii::t("strings", "Name")?>: {{title}}</p>
         <p><?php echo Yii::t("strings", "Email")?>: {{email}}</p>
         <p><?php echo Yii::t("strings", "Body")?>: {{body}}</p>
+        <p><?php echo Yii::t("strings", "Attachment")?>: {{attachment}}</p>
       </div>
       <div class="modal-footer">
           <button class="btn btn-warning" ng-click="cancel()"><?php echo Yii::t("strings" ,"Cancel")?></button>
