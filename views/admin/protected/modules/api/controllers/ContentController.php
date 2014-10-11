@@ -100,6 +100,10 @@ class ContentController extends Controller {
      return $this->responseError(Yii::t("strings", "Uploaded media is denied by server"), ErrorAR::ERROR_MISSED_REQUIRED_PARAMS);
    }
    
+   if ($file && $file->getSize() > 1024 * 1024) {
+     return $this->responseError(Yii::t("strings", "Uploaded media is denied by server"), ErrorAR::ERROR_MISSED_REQUIRED_PARAMS);
+   }
+   
    if ($file) {
     // Make temp file
     $mediaAr = new MediaAR();
@@ -112,11 +116,11 @@ class ContentController extends Controller {
    }
    
    if (!$name || !$email) {
-     return $this->responseError("invild params error", ErrorAR::ERROR_MISSED_REQUIRED_PARAMS);
+     return $this->responseError("There's error in server interval. please try later", ErrorAR::ERROR_MISSED_REQUIRED_PARAMS);
    }
    
    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-     return $this->responseError("email error", ErrorAR::ERROR_MISSED_REQUIRED_PARAMS);
+     return $this->responseError("There's error in server interval. please try later", ErrorAR::ERROR_MISSED_REQUIRED_PARAMS);
    }
    
    $contactAr = ContactContentAR::model();
@@ -134,7 +138,7 @@ class ContentController extends Controller {
    }
    else {
      $error = $contactAr->getErrors();
-     return $this->responseError("post message error", ErrorAR::ERROR_UNKNOWN, $error);
+     return $this->responseError("There's error in server interval. please try later", ErrorAR::ERROR_UNKNOWN, $error);
    }
  }
  
