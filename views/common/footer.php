@@ -11,8 +11,8 @@
 			<!-- location -->
 			 <div class="location intoview-effect" data-effect="fadeup">
 			 	<div class="range">
-			 		<p class="rangetxt">In addition to the range of homeware and accessories</p>
-			 		<a href="<?php echo url("gift-corner.php")?>" title="" class="rangebtn transition-wrap"><span class="transition">Enter the gift corner<br/><br/>Enter the gift corner</span></a>
+			 		<p class="rangetxt"><?php echo Yii::t("strings", "In addition to the range of homeware and accessories")?></p>
+			 		<a href="<?php echo url("gift-corner.php")?>" title="" class="rangebtn transition-wrap"><span class="transition"><?php echo Yii::t("strings", "Enter the gift corner")?><br/><br/><?php echo Yii::t("strings", "Enter the gift corner")?></span></a>
 			 	</div>			
 			 </div>
 			 <?php } ?>
@@ -53,7 +53,6 @@
 			</div>
 			</div>
     <?php endif;?>
-
 
 			<!-- sitelinks -->
 			<div class="footer-bottom">

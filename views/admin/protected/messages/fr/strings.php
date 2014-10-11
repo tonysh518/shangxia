@@ -337,4 +337,9 @@ Pour reprendre les mots du poète Li Bai (701-762) de la dynastie Tang (618-907)
 		<p>Si quelconque disposition de ces conditions devient caduque ou contrevient aux règlements applicables, la validité des autres dispositions ne sera pas affectée.</p>
 		<p><strong>SHANGXIA</strong> informe les visiteurs du Site web que les termes et conditions de son utilisation peuvent être modifiés à tout moment. Dès que ces  modifications sont publiées sur le Site web, les visiteurs qui y accèdent sont supposés en avoir pris connaissance et les accepter sans restriction.</p>
 		<p>Ces termes et conditions sont régis par les lois de la République Populaire de Chine. Tout litige afférentà l’utilisation de ce Site web est soumis à la juridiction des courts de la République Populaire de Chine. En cas de divergence entre les significations des versions chinoises et anglaises, la version chinoise prévaudra.</p>",
-);
+
+    "Enter the gift corner" => "ENTRER DANS LE COIN CADEAUX",
+    
+    "In addition to the range of homeware and accessories" => "En plus de la gamme des articles ménagers et des accessoires",
+        
+    );

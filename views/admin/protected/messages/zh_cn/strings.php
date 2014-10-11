@@ -408,6 +408,10 @@ return array(
 		<p>如果本条款的任何部分无效或违法，其余部分不受影响。</p>
 		<p>「<strong>上下</strong>」通知网站浏览者，「<strong>上下</strong>」可能对上述所有条款随时作出修改。一旦修改内容于网站上显示，网站的访问者将被视为毫无保留地接受有关修改。</p>
 		<p>上述条款将适用中华人民共和国法律。任何有关使用网站的诉讼及要求将由中国法院管辖。如果中英文之间有任何不一致之处，以英文为准。</p>",
+    
+    "In addition to the range of homeware and accessories" => "家居用品及配件系列除外",
+    
+    "Enter the gift corner" => "进入赠礼专区",
 );
 
 
