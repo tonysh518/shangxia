@@ -191,7 +191,7 @@ class ContentController extends Controller {
      return $this->responseError("invild params error", ErrorAR::ERROR_MISSED_REQUIRED_PARAMS);
    }
    
-   $this->responseJSON($contact, Yii::t("strings" , "Your message has been successfully sent. We will contact you soon.
+   $this->responseJSON($contact->getAttributes(), Yii::t("strings" , "Your message has been successfully sent. We will contact you soon.
 
 <br />Shang Xia"));
  }

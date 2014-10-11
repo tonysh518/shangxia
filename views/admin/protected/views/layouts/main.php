@@ -207,7 +207,7 @@
         <p><?php echo Yii::t("strings", "Name")?>: {{title}}</p>
         <p><?php echo Yii::t("strings", "Email")?>: {{email}}</p>
         <p><?php echo Yii::t("strings", "Body")?>: {{body}}</p>
-        <p><?php echo Yii::t("strings", "Attachment")?>: {{attachment}}</p>
+        <p><?php echo Yii::t("strings", "Attachment")?> <a target="_blank" ng-href="{{attachment}}">View</a></p>
       </div>
       <div class="modal-footer">
           <button class="btn btn-warning" ng-click="cancel()"><?php echo Yii::t("strings" ,"Cancel")?></button>
