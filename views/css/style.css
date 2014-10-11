@@ -625,6 +625,8 @@ body .vjs-default-skin .vjs-big-play-button:focus{box-shadow: none;}
 }
 
 
+.lang-zh_cn .sitelinkitem h2.c1{text-indent: -0.5em;}
+
 .lang-zh_cn .introparis p {
   font-size: 16px;
 }
