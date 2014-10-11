@@ -167,8 +167,7 @@
                   	<?php echo $press->title?><br />
                   	<span class="date"><?php echo date("M Y", strtotime($press->publish_date))?></span>
                   </p>
-                </a>
-                <textarea style="display:none;">
+                  <textarea style="display:none;">
 	              	<div class="picoperate cs-clear">
 	                    <a href="#" class="picopsized" data-a="picopsized"></a>
 	                    <a href="#" class="picopsizeup" data-a="picopsizeup"></a>
@@ -177,7 +176,8 @@
 	                <div class="pic-press">
 	                	<img src="<?php echo $press->master_image?>" alt="" width="100%" style="margin:0 auto;">
 	                </div>
-	            </textarea>
+	              </textarea>
+                </a>
               <?php endforeach;?>
 						</div>
 					</div>
