@@ -13,27 +13,23 @@
 	</div>
 	<!-- piclist -->
 	<div class="section">
+    <?php 
+      $blocks = array("home_block_first", "home_block_second", "home_block_third");
+    ?>
 		<ul class="piclist home-piclist cs-clear">
+      <?php foreach ($blocks as $blockId): ?>
+      <?php 
+        $block = ContentAR::model()->loadByKey($blockId);
+        $block->hasImageField("thumbnail");
+        $block->hasContentField("link_to");
+      ?>
 			<li class="piclistitem intoview-effect" data-effect="fadeup" data-editme-key="home_middle_slide_one">
-        <a data-a="nav-link" href="<?php echo url("boutique", array("type" => "shanghai"))?>">
-          <img src="/images/homepage01.jpg" width="100%" />
-          <p><?php echo Yii::t("strings", "SHANG XIA IS NOW OPENING ITS MAISON IN SHANGHAI")?></p>
+        <a data-a="nav-link" href="<?php echo $block->link_to?>">
+          <img src="<?php echo $block->thumbnail?>" width="100%" />
+          <p><?php echo $block->title?></p>
 				</a>
 			</li>
-			<li class="piclistitem intoview-effect" data-effect="fadeup" data-editme-key="home_middle_slide_two">
-        <?php editme("home_middle_slide_two" ,array("title", "link_to"), array("image"))?>
-        <a data-a="nav-link" href="/product-detail/lan-yue-">
-					<img src="/images/homepage02.jpg" width="100%" />
-					<p><?php echo Yii::t("strings", 'THE FIRST SHANG XIA BAG')?></p>
-				</a>
-			</li>
-			<li class="piclistitem intoview-effect marginR0" data-effect="fadeup" data-editme-key="home_middle_slide_third">
-        <?php editme("home_middle_slide_third" ,array("title", "link_to"), array("image"))?>
-        		<a data-a="nav-link" href="<?php echo url("collections", array("cid" => 20331))?>">
-					<img src="/images/homepage03.jpg" width="100%" />
-					<p><?php echo Yii::t("strings", "GIFT CORNER")?></p>
-				</a>
-			</li>
+      <?php endforeach;?>
 		</ul>
 	</div>
 	<!-- slide -->
