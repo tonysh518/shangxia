@@ -12,6 +12,7 @@ class PressContentAR extends ContentAR {
   
   public function getImageFields() {
     $this->hasImageField("press_image");
+    $this->hasImageField("thumbnail_small");
     $this->hasImageField("master_image");
     return parent::getImageFields();
   }
