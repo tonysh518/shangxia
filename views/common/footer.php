@@ -58,20 +58,20 @@
 			<div class="footer-bottom">
 				<div class="section sitelinks cs-clear">
 					<div class="sitelinkitem intoview-effect" data-effect="fadeup">
-						<h2><?php echo Yii::t("strings", "COLLECTIONS")?></h2>
+						<h2 class="c1"><?php echo Yii::t("strings", "COLLECTIONS")?></h2>
             <?php foreach (CollectionContentAR::model()->getList() as $collection): ?>
               <a data-a="nav-link" href="<?php echo url("collections", array("cid" => $collection->cid))?>"><?php echo $collection->title?></a>
             <?php endforeach;?>
             <p><a href="<?php echo url("gift-corner")?>"><?php echo Yii::t("strings" ,"Gift Corner")?></a></p>
 					</div>
 					<div class="sitelinkitem intoview-effect" data-effect="fadeup">
-            <h2><?php echo Yii::t("strings", "CRAFTS")?></h2>
+            <h2 class="c1"><?php echo Yii::t("strings", "CRAFTS")?></h2>
             <?php foreach (CraftContentAR::model()->getList() as $craft): ?>
               <a data-a="nav-link" href="<?php echo url("craft", array("cid" => $craft->cid))?>"><?php echo $craft->title?></a>
             <?php endforeach;?>
 					</div>
 					<div class="sitelinkitem sitelinkitemS intoview-effect" data-effect="fadeup">
-            <h2><?php echo Yii::t("strings", "BOUTIQUES")?></h2>
+            <h2 class="c1"><?php echo Yii::t("strings", "BOUTIQUES")?></h2>
             <?php foreach (BoutiqueContentAR::getLocation() as $key => $name): ?>
               <a data-a="nav-link" href="<?php echo url("boutique", array("type" => $key))?>" ><?php echo $name?></a>
             <?php endforeach;?>

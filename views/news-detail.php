@@ -73,8 +73,8 @@
 	              <?php foreach ($newslist as $news): ?>
 	                <a href="#" data-a="show-news" class="prolistitem newsitem" data-id="<?php echo $news->cid?>">
 	                  <img src="<?php echo $news->thumbnail?>" width="100%" />
-	                  <p><?php echo $news->title?><br />
-	                  	<span class="date"><?php echo date("Y M d", strtotime($news->date))?></span></p>
+	                  <p><?php echo $news->title?></p>
+	                  <p class="date"><span><?php echo date("Y M d", strtotime($news->date))?></span></p>
 	                  <script type="text/tpl">
                     	<?php if ($news): ?>
 				          	<div class="picinfortxt news-picinfortxt">
