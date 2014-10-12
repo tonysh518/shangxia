@@ -103,18 +103,39 @@ class PageController extends Controller {
   }
   
   public function actionBlocks() {
-    $block_keys = array(
-        'home_block_1', 'home_block_2', 'home_block_3'
-    );
-    $blocks = array();
-    foreach ($block_keys as $block_key) {
-      $model = ContentAR::model();
-      $block = $model->loadByKey($block_key);
+    $request = Yii::app()->getRequest();
+    if ($request->isPostRequest) {
+      $title = $request->getPost("title", "");
+      $link_to = $request->getPost("link_to", "");
+      $thumbnail = $request->getPost("thumbnail");
+      
+      $block = ContentAR::model()->loadByKey($request->getPost("key_id"));
       $block->hasImageField("thumbnail");
-      $blocks[] = array("instance" => $block, "model" => $model, "type" => "content");
+      $block->hasContentField("link_to");
+      
+      $block->title = $request->getPost("title", "empty");
+      $block->link_to = $request->getPost("link_to");
+      $block->thumbnail = $request->getPost("thumbnail");
+      $block->save();
+      
+      $this->redirect(Yii::app()->createUrl("page/blocks"));
     }
-    
-    $this->render("blocks", array("blocks" => $blocks));
+    else {
+      $block_keys = array(
+          'home_block_first', 'home_block_second', 'home_block_third'
+      );
+      $blocks = array();
+      foreach ($block_keys as $block_key) {
+        $model = ContentAR::model();
+        $block = $model->loadByKey($block_key);
+        $block->hasImageField("thumbnail");
+        $block->hasContentField("link_to");
+        $blocks[] = array("instance" => $block, "model" => $model, "type" => "content");
+      }
+
+      $this->render("blocks", array("blocks" => $blocks));
+    }
+
   }
 }
 

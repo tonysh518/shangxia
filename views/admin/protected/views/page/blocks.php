@@ -1,17 +1,17 @@
 <?php foreach ($blocks as $block): ?>
-<?php $type = $block["type"]; $instance = $block["instance"]; $model = $block["model"]; print_r($instance->getAttributes());die();?>
+<?php $type = $block["type"]; $instance = $block["instance"]; $model = $block["model"];?>
   <div class="form-con slideshow-form" ng-controller="ContentForm" ng-init="init()">
-    <form name="contentform" class="form-horizontal"  method="post" redirect="<?php echo Yii::app()->createUrl("page/blocks") ?>">
+    <form name="contentform" class="form-horizontal"  method="post" action="<?php echo Yii::app()->createUrl("page/blocks") ?>">
       <div class="header clearfix">
         <div class="icons">
           <i class="fa fa-edit"></i>
         </div>
-        <h4><?php echo Yii::t("strings", "Edit ". ($instance->key_id))?></h4>
+        <h4><?php echo Yii::t("strings", "Edit ". str_replace("_", " ",  $instance->key_id))?></h4>
         <div class="toolbar">
           <nav style="padding: 8px;">
             <a href="javascript:;" class="btn btn-default btn-xs full-box">
               <i class="fa fa-expand"></i>
-            </a> 
+            </a>
             <a href="javascript:;" class="btn btn-danger btn-xs close-box">
               <i class="fa fa-times"></i>
             </a>
@@ -31,11 +31,12 @@
       </div>
 
       <!-- 内容 Field / 扩展字段 -->
-      <?php foreach ($model->getFields() as $field): ?>
+      <?php foreach ($instance->getFields() as $field): ?>
+        <?php if ($field == "url_key") continue;?>
         <div class="controle-group">
           <div class="control-label"><label for="<?php echo $field?>"><?php echo Yii::t("fields", ucfirst(str_replace("_", " " ,$field)))?></label></div>
           <div class="controls">
-            <?php $option = $model->getContentFieldOption($field);?>
+            <?php $option = $instance->getContentFieldOption($field);?>
             <?php if (isset($option["type"]) && $option["type"] == "textarea"): ?>
             <textarea  name="<?php echo $field?>" ng-ckeditor ng-model="content.<?php echo $field?>"  cols="80" rows="10" ng-initial><?php echo ($instance->{$field})?></textarea>
             <?php elseif (isset($option["type"]) && $option["type"] == "select"): ?>
@@ -70,19 +71,19 @@
         <div class="control-label"><label for="<?php echo $field?>"><?php echo Yii::t("fields", ucfirst(str_replace("_", " " ,$field)))?></label></div>
         <div class="controls clearfix">
           <ng-uploadvideo  ng-model="content.<?php echo $field?>" value="<?php echo $instance->{$field}?>">
-
+            
           </ng-uploadvideo>
         </div>
       </div>
       <?php endforeach;?>
-
+      
+      <input type="hidden" name="key_id" value="<?php echo $instance->key_id?>" />
       <input type="hidden" name="type" value="<?php echo $type?>" ng-model="content.type" ng-initial/>
       <input type="hidden" name="cid" value="<?php echo Yii::app()->getRequest()->getParam("id", 0)?>" ng-model="content.cid" ng-initial/>
 
       <div class="form-actions">
         <div class="controls">
-          <input type="button" ng-click="deleteConfirm(<?php echo $instance->cid?>, '<?php echo Yii::app()->createUrl("page/content", array("type" => "product"))?>');"  class="btn-primary btn" value="<?php echo Yii::t("strings", "Delete")?>"/>
-          <input type="button" ng-click="submitContent($event)" class="btn-primary btn" value="<?php echo Yii::t("strings", "Save")?>"/>
+          <input type="submit"  class="btn-primary btn" value="<?php echo Yii::t("strings", "Save")?>"/>
         </div>
      </div>
     </form>

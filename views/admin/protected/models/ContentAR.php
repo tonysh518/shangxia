@@ -27,7 +27,7 @@ class ContentAR extends CActiveRecord {
   
   public function rules() {
     $fields = $this->getFields();
-    $safe_attrs = "cid, body, summary, language, cdate, mdate, uid, status, weight, key_id" . implode(",", $fields);
+    $safe_attrs = "cid, body, summary, language, cdate, mdate, uid, status, weight, key_id, " . implode(",", $fields);
     return array(
         array("title, type", "required"),
         array($safe_attrs, "safe"),
@@ -375,6 +375,7 @@ class ContentAR extends CActiveRecord {
       );
       $content = new ContentAR();
       $content->attributes = $data;
+      $content->setIsNewRecord(true);
       $content->save();
       $row = $content;
     }
