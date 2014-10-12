@@ -355,13 +355,15 @@ class ContentAR extends CActiveRecord {
    * @return ContentAR 
    */
   public function loadByKey($key) {
+    global $language;
     $query = new CDbCriteria();
     $query->addCondition("key_id = :key_id");
     $query->params[":key_id"] = $key;
+    $query->addCondition('language=:language');
+    $query->params[':language'] = $language;
     
     $row = $this->find($query);
     // 在初始化之前是没有内容的，加一个来作为默认的内容
-    global $language;
     if (!$row) {
       $data = array(
           "title" => "title",

@@ -154,10 +154,10 @@
       <li><a href="<?php echo Yii::app()->createUrl("page/contact", array("type" => "contact"))?>"><?php echo Yii::t("strings", "Contact")?></a></li>
       <li><a href="<?php echo Yii::app()->createUrl("page/newsletter", array("type" => "newsletter"))?>"><?php echo Yii::t("strings", "Newsletter")?></a></li>
       <li><a href="<?php echo Yii::app()->createUrl("page/wantobuy", array("type" => "buy"))?>"><?php echo Yii::t("strings", "Want To Buy")?></a></li>
+      <li><a href="<?php echo Yii::app()->createUrl("page/blocks")?>"><?php echo Yii::t("strings", "Blocks")?></a></li>
       <li><a href="<?php echo Yii::app()->createUrl("page/logout")?>"><?php echo Yii::t("strings", "Logout")?></a></li>
     </ul>
   </div>
-  
 
   <?php if (UserAR::isLogin()) :?>
   <div id="body">
