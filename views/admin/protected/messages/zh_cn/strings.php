@@ -417,6 +417,10 @@ return array(
     'Material' => '材质',
     'Size' => '尺寸',
     'Unit' => '单位',
+    "Collections" => "「上下」系列",
+    
+    "about shangxia" => "关于上下",
+    "about_shangxia_desc" => "「上下」，是一个当代高尚生活品牌，致力于传承中国精湛的手工艺，通过创新，使其重返当代生活。",
 );
 
 

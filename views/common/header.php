@@ -72,11 +72,11 @@ require_once "inc.php";?>
                 </div>
               </div>
               <?php foreach (ProductContentAR::getType() as $id => $name): ?>
-                <?php $files = loadTypeMedias($name);?>
+                <?php $files = loadTypeMedias(ProductContentAR::getTypeKeyName($id));?>
                 <div class="nav-pop-wrap">
                   <div class="nav-pop-wrap-inner cs-clear">
                     <?php foreach ($files as $file): ?>
-                      <a class="nav-pop-item inout-effect" data-a="nav-link">
+                    <a href="<?php echo url("product-type", array("name" => ProductContentAR::getTypeKeyName($id)))?>" class="nav-pop-item inout-effect" data-a="nav-link">
                         <img src="<?php echo $file ?>"/> 
                         <span class="nav-text"><i> </i></span>
                         <span class="home-inout-bg inout-bg"></span>
