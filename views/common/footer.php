@@ -85,8 +85,8 @@
 					<div class="sitelinkitem intoview-effect" data-effect="fadeup">
 						<h2><?php echo Yii::t("strings", "ABOUT")?></h2>
 						<a data-a="nav-link" href="<?php echo url("about")?>#bran"><?php echo Yii::t("strings", "brand story")?></a>
-						<a data-a="nav-link" href="<?php echo url("about")?>#arts"><?php echo Yii::t("strings", "artstic director")?></a>
-						<a data-a="nav-link" href="<?php echo url("about")?>#hert"><?php echo Yii::t("strings", "hertage & encounter")?></a>
+						<a data-a="nav-link" href="<?php echo url("about")?>#arts"><?php echo Yii::t("strings", "artistic director")?></a>
+						<a data-a="nav-link" href="<?php echo url("about")?>#hert"><?php echo Yii::t("strings", "heritage & encounter")?></a>
 						<a data-a="nav-link" href="<?php echo url("about")?>#jobs"><?php echo Yii::t("strings", "JOIN SHANG XIA")?></a>
 					</div>
 					<div class="sitelinkitem sitelinkitemXS intoview-effect" data-effect="fadeup">
@@ -99,7 +99,7 @@
 				</div>
 				<!-- copyright -->
 				<div class="copyright">
-          <p><a target="_blank" href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=20120529122952909"><?php echo Yii::t("strings", "ICP LICENCE")?> 20120529122952909</a> - <a href='privacy-policy' target='_blank'><?php echo Yii::t("strings", "PRIVACY POLICY LEGAL INFORMATION")?></a></p>
+          <p><?php echo Yii::t("strings", "ICP LICENCE")?><a href='privacy-policy' target='_blank'><?php echo Yii::t("strings", "PRIVACY POLICY LEGAL INFORMATION")?></a></p>
 				</div>
 			</div>
 		</div>
@@ -138,26 +138,26 @@
 		<div class="product-img-slide-num">1/1</div>
 		<div class="product-info-list">
 			<h3>#[name]</h3>
-			<p><label><?php echo Yii::t("strings", "Color") ?> :</label> #[color]</p>
-			<p><label><?php echo Yii::t("strings", "Material") ?> :</label> #[material]</p>
-			<p><label><?php echo Yii::t("strings", "Size") ?> :</label> #[size]</p>
-			<p><label><?php echo Yii::t("strings", "Unit") ?> :</label> #[unit]</p>
+			<p><label><?php echo Yii::t("strings", "Color") ?>: </label> #[color]</p>
+			<p><label><?php echo Yii::t("strings", "Material") ?>: </label> #[material]</p>
+			<p><label><?php echo Yii::t("strings", "Size") ?>: </label> #[size]</p>
+			<p><label><?php echo Yii::t("strings", "Unit") ?>: </label> #[unit]</p>
 			<br/>
 			<p>￥ #[price]</p>
 		</div>
 		<div class="product-info-desc">#[desc]</div>
 	</div>
 	<div class="popcontxt popform-wrap">
-		<h3><?php echo Yii::t("strings", "You are interested by buying this product?") ?></h3>
-		<p><?php echo Yii::t("strings", "Let us contact you back and we will arrange a way to provide you this prodcut")?></p>
+		<h3><?php echo Yii::t("strings", "Are you interested in buying this product?") ?></h3>
+		<p><?php echo Yii::t("strings", "Let us contact you back and we will arrange a way to provide you with this product")?></p>
 		<form class="buy-form conformbox" action="/admin/api/content/wantobuy" method="post">
 			<input type="hidden" name="product" value="#[product]"/>
 			<div class="conformtit" style="height:40px;"><span class="error" id="name-tip">&nbsp;</span></div>
-			<input type="text" placeholder="Name" name="name" data-required="name required"/>
+			<input type="text" placeholder="<?php echo Yii::t("strings", "Name") ?>" name="name" data-required="name required"/>
 			<div class="conformtit" style="height:40px;"><span class="error" id="email-tip">&nbsp;</span></div>
-			<input type="text" placeholder="Email" name="email" data-required="email required"/>
+			<input type="text" placeholder="<?php echo Yii::t("strings", "Email") ?>" name="email" data-required="email required"/>
 			<div class="conformtit" style="height:40px;"><span class="error" id="phone-tip">&nbsp;</span></div>
-			<input type="text" placeholder="Phone" name="phone" data-required="phone required"/>
+			<input type="text" placeholder="<?php echo Yii::t("strings", "Phone") ?>" name="phone" data-required="phone required"/>
 			<button data-a="contact-me-back" class="btn transition-wrap"><span class="transition"><?php echo Yii::t("strings", "CONTACT ME BACK")?><br/><br/><?php echo Yii::t("strings", "CONTACT ME BACK")?></span></button>
 		</form>
 		<div class="form-submit-tip"></div>

@@ -121,8 +121,9 @@ At any moment the thinness can be pierced or the body deformed. </p>",
     
     "contact_form_title" => "for more information <br />please send us an email",
     
-    "contact_form_footer_tip" => 'I also would like to receive the SHANGXIA newsletter. Please read out <a href="privacy-policy" target="_blank">Privacy policy </a>for more informamtion',
-    
+    "contact_form_footer_tip" => 'I also would like to receive the SHANG XIA newsletter. Please read our <a href="privacy-policy" target="_blank">Privacy Policy </a> for more information.',
+
+    "ICP LICENCE" => ' ',
     
     "Gathering Desc" => "<p>The goats are combed by hand with an iron comb, in spring when the weather starts to become warmer. The cashmere is extremely soft and very compact, it is a perfect material for felt making. Pieces of plants and goat waste must then be removed from the combed fleece, the fleece is then stored in this state.</p>
 ",

@@ -260,9 +260,9 @@ Pour reprendre les mots du poète Li Bai (701-762) de la dynastie Tang (618-907)
     
     "contact_form_footer_tip" => 'Je souhaite recevoir la newsletter de SHANG XIA. Pour plus d\'informations, veuillez consulter notre politique de confidentialité. ',
  
-    "artstic director" => "Directrice artistique",
+    "artistic director" => "Directrice artistique",
     
-    "hertage & encounter" => "Héritage et rencontre",
+    "heritage & encounter" => "Héritage et rencontre",
     
     "JOIN SHANG XIA" => "Rejoindre SHANG XIA",
     
@@ -290,6 +290,8 @@ Pour reprendre les mots du poète Li Bai (701-762) de la dynastie Tang (618-907)
     "SEND" => "ENVOYER",
     "Send" => "ENVOYER",
     "send" => "ENVOYER",
+
+    "ICP LICENCE" => ' ',
     
     "gift_corner_desc" => "<p>The products below are available in out boutiques. They are great gifts for your beloved ones. <br />Please select the products you would be interested in, and give us your contact information. You will then receive a personal call from someone at Shang Xia who will help you bare your gift delivered</p>",
 

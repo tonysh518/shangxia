@@ -310,20 +310,24 @@ return array(
     
     "VIEW ALL THE SHANG XIA GIFTS" => "进入赠礼专区",
     
-    "artstic director" => "艺术总监",
+    "artistic director" => "艺术总监",
     
-    "hertage & encounter" => "传承与相遇",
+    "heritage & encounter" => "传承与相遇",
     
     "PRIVACY POLICY LEGAL INFORMATION" => "法律声明",
     
-    "ICP LICENCE" => "ICP 备案",
+    "ICP LICENCE" => "<a target=\"_blank\" href=\"http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=20120529122952909\">ICP 备案 20120529122952909</a> - ",
     
     "shang xia" => "上下",
     
     "SHANGXIA does not rent or sell customer <br/> email addresses to third parties" => "「上下」不会泄漏您任何资料给第三方",
     
-    "You are interested by buying this product? <br/> Let us contact you back and we will arrange a way to provide you this prodcut" => "您对此产品有兴趣？我们会稍后与您取得联系",
-    
+    "Are you interested in buying this product? <br/> Let us contact you back and we will arrange a way to provide you with this product" => "您对此产品有兴趣？",
+
+    "Are you interested in buying this product?" => "您对此产品有兴趣？",
+
+    "Let us contact you back and we will arrange a way to provide you with this product" => "我们会稍后与您取得联系",
+
     "Gift Corner" => "赠礼专区",
     
     "shang xia gift corner" => "赠礼专区",
