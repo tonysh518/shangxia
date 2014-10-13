@@ -191,5 +191,11 @@ fabric and untangle the tangled spots. The fabric is rinsed unhooked and hung up
 
     "about_shangxia_desc" => "SHANGXIA is a brand for art of living that promises a unique encounter with the heritage of
  Chinese design and craftsmanship.Chinese renowned designer Jiang Qiong Er established SHANGXIA with a mission to create a 21st century lifestyle founded on the  finest of Chinese design traditions.
-          "    
+          "    ,
+    
+    "Your message has been successfully sent. We will contact you soon.
+
+<br />Shang Xia" => 'Your message has been successfully sent. <br /> We will contact you soon.
+
+<br />Shang Xia',
     );
