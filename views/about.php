@@ -80,7 +80,7 @@ include_once 'common/header.php';?>
 							<?php echo Yii::t("strings", "about_brand_emplee_one")?>
 							</div>
 						</div>
-            <div class="knowhowpic  knowhowL"><img src="/images/about_em_1.jpg" width="100%" /></div>
+            <div class="knowhowpic  knowhowL" style="cursor:default"><img src="/images/about_em_1.jpg" width="100%" /></div>
 					</div>
 					<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 						<div class="knowhowintro  knowhowL">
@@ -88,7 +88,7 @@ include_once 'common/header.php';?>
               <?php echo Yii::t("strings" ,"about_brand_emplee_two")?>
               </div>
             </div>
-						<div class="knowhowpic  knowhowR"><img src="/images/about_em_2.jpg" width="100%" /></div>
+						<div class="knowhowpic  knowhowR" style="cursor:default"><img src="/images/about_em_2.jpg" width="100%" /></div>
 					</div>
 					<div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
 						<div class="knowhowintro  knowhowR">
@@ -96,7 +96,7 @@ include_once 'common/header.php';?>
               <?php echo Yii::t("strings" ,"about_brand_emplee_third")?>
               </div>
             </div>
-						<div class="knowhowpic  knowhowL"><img src="/images/about_em_3.jpg" width="100%" /></div>
+						<div class="knowhowpic  knowhowL" style="cursor:default"><img src="/images/about_em_3.jpg" width="100%" /></div>
 					</div>
 				</div>
 			</div>

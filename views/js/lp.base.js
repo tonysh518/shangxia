@@ -497,11 +497,27 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     // fix $('.scroll-lowheight')
                     if( $('.scroll-lowheight') ){
                         $('.scroll-lowheight').css('overflow','hidden').each(function(){
-                            var off = $(this).offset();
-                            var $item = $(this).find('.scroll-lowheight-item');
+                            var $dom = $(this);
+                            if( !$dom.data('height') ){
+                                $dom.data('height' , $dom.height());
+                            }
+                            var domHeight = $dom.data('height');
+
+
+                            var $item = $dom.find('.scroll-lowheight-item');
+                            var exHeight = $item.height() - domHeight;
+                            var off = $dom.offset();
+                            var winHeight = $(window).height();
+
+                            var percent = ( off.top - stTop - headHeight + domHeight ) / ( winHeight - headHeight + domHeight );
+                            percent = Math.max( 0 , percent );
+                            percent = Math.min( 1 , percent );
+                            $item.css({
+                                marginTop: -exHeight * ( 1 - percent )
+                            });
+
                             if( stTop > off.top - headHeight ){
                                 $item.css({
-                                    //marginTop: ( stTop + headHeight - off.top ) / 2,
                                     marginBottom: -( stTop + headHeight - off.top ) / 2
                                 });
                             } else {
@@ -1930,6 +1946,9 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
 
     LP.action('page-prev' , function(){
+        if( $(this).data('url') ){
+            pageManager.gotoPage( $(this).data('url') );
+        }
         var href = location.href;
         var $links = $('.sitelinkitem a');
         $links.each(function( i ){
