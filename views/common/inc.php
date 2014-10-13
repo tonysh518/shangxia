@@ -558,3 +558,35 @@ function loadTypeMedias($type) {
   
   return $files;
 }
+
+function nextProduct($product) {
+  if (!$product) {
+    return FALSE;
+  }
+  
+  $productsGroupedByType = getProductInType($product->product_type);
+  
+  $products = $productsGroupedByType[$product->collection];
+  
+  foreach ($products as $index => $p) {
+    if ($p->cid == $product->cid && $index < count($products) - 2) {
+      return $products[$index + 1];
+    }
+  }
+}
+
+function prevProduct($product) {
+  if (!$product) {
+    return FALSE;
+  }
+  
+  $productsGroupedByType = getProductInType($product->product_type);
+  
+  $products = $productsGroupedByType[$product->collection];
+  
+  foreach ($products as $index => $p) {
+    if ($p->cid == $product->cid && $index > 0) {
+      return $products[$index - 1];
+    }
+  }
+}

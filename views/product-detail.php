@@ -12,6 +12,9 @@ else {
 
 $content_title = $product->title;
 
+$nextProduct = nextProduct($product);
+$prevProduct = prevProduct($product);
+
 $pagename = 'product-detail';
 ?>
 <?php include_once 'common/header.php';?>
@@ -23,7 +26,7 @@ $pagename = 'product-detail';
 		<!-- detail -->
 		<div class="section ">
 			<div class="detail coll_product cs-clear">
-				<div class="arrows arrows2 detailprev" data-a="page-prev"></div>
+        <div class="arrows arrows2 detailprev" data-a="page-prev" data-url="<?php if ($prevProduct) echo url("product-detail", array("cid" => $prevProduct->cid)) ?>"></div>
 				
 				<div class=" detailcon intoview-effect" data-split="1" data-effect="fadeup" data-num="1">
 					<h2 class="intoview-effect" data-effect="fadeup"><?php echo $product->title?></h2>
@@ -35,7 +38,7 @@ $pagename = 'product-detail';
 						</ul>
 					</div>
 				</div>
-				<div class="arrows arrows2 detailnext" data-a="page-next"></div>
+				<div class="arrows arrows2 detailnext" data-a="page-next" data-url="<?php if ($nextProduct) echo url("product-detail", array("cid" => $nextProduct->cid)) ?>"></div>
 			</div>
       <?php if ($product->gift): ?>
         <a href="#" style="margin-bottom:100px;" class="btn transition-wrap" data-id="<?php echo $product->cid?>" data-d="product=<?php echo $product->cid?>" data-a="i-want-to-buy"><span class="transition"><?php echo Yii::t("strings", "I Want To Buy")?><br/><br/><?php echo Yii::t("strings", "I Want To Buy")?></span></a>

@@ -74,7 +74,8 @@
         <?php if ($field == "press_image"): ?>
         <label for="<?php echo $field?>"><?php echo Yii::t("fields", ucfirst(str_replace("_", " " , "thumbnail")))?></label>
         <?php else: ?>
-          <label for="<?php echo $field?>"><?php echo Yii::t("fields", ucfirst(str_replace("_", " " ,$field)))?></label>
+          <?php $label = isset($option['label']) ? $option['label']: $field?>
+          <label for="<?php echo $field?>"><?php echo Yii::t("fields", ucfirst(str_replace("_", " " ,$label)))?></label>
         <?php endif;?>
       </div>
       <div class="controls clearfix">
