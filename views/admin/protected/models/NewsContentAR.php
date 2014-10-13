@@ -23,5 +23,11 @@ class NewsContentAR extends ContentAR {
     return parent::model($class);
   }
   
+  public function getList($limit = FALSE, $offset = FALSE) {
+    $list = parent::getList($limit, $offset);
+    
+    return $list;
+  }
+  
 }
 

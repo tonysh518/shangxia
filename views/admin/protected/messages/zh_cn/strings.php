@@ -282,7 +282,7 @@ return array(
     
     "THE FIRST SHANG XIA BAG" => "「上下」第一款包袋",
     
-    "GIFT CORNER" => "赠礼专区",
+    "GIFT CORNER" => "礼品专区",
     
     "Read more" => "更多讯息",
     
@@ -308,7 +308,7 @@ return array(
     
     "CONTACT ME BACK" => "我有兴趣",
     
-    "VIEW ALL THE SHANG XIA GIFTS" => "进入赠礼专区",
+    "VIEW ALL THE SHANG XIA GIFTS" => "进入礼品专区",
     
     "artistic director" => "艺术总监",
     
@@ -328,9 +328,9 @@ return array(
 
     "Let us contact you back and we will arrange a way to provide you with this product" => "我们会稍后与您取得联系",
 
-    "Gift Corner" => "赠礼专区",
+    "Gift Corner" => "礼品专区",
     
-    "shang xia gift corner" => "赠礼专区",
+    "shang xia gift corner" => "礼品专区",
     
     "color" => "颜色",
     
@@ -415,13 +415,15 @@ return array(
     
     "In addition to the range of homeware and accessories" => "家居用品及配件系列除外",
     
-    "Enter the gift corner" => "进入赠礼专区",
+    "Enter the gift corner" => "进入礼品专区",
     
     'Color' => '颜色',
     'Material' => '材质',
     'Size' => '尺寸',
     'Unit' => '单位',
     "Collections" => "「上下」系列",
+    
+    'View more' => '查看更多',
     
     "about shangxia" => "关于上下",
     "about_shangxia_desc" => "「上下」，是一个当代高尚生活品牌，致力于传承中国精湛的手工艺，通过创新，使其重返当代生活。",

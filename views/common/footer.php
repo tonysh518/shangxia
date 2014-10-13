@@ -32,7 +32,7 @@
         <?php if ($store): ?>
 				<div class="storechoose intoview-effect" data-effect="fadeup">
 					<h2><?php echo $store->title?></h2>
-          <p><?php echo $store->body?></p>
+          <p><?php echo $store->address?></p>
 					<ul class="storechooselist cs-clear">
             <?php foreach ($cities as $city): ?>
             <li><a href="<?php echo url("boutique", array("type" => $city))?>"  title="" class="transition-wrap">

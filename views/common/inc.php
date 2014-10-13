@@ -370,6 +370,7 @@ function loadSimilarProducts($product) {
    $query->params[":status"] = ContentAR::STATUS_ENABLE;
    $query->limit = "5";
    $query->params[":cid"] = $product->cid;
+   $query->order = 'weight DESC, cdate DESC';
    $products = ProductContentAR::model()->findAll($query);
    return $products;
 }
