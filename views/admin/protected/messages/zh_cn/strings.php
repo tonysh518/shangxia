@@ -427,6 +427,14 @@ return array(
     
     "about shangxia" => "关于上下",
     "about_shangxia_desc" => "「上下」，是一个当代高尚生活品牌，致力于传承中国精湛的手工艺，通过创新，使其重返当代生活。",
+    
+    'name required' => '名字必填',
+    'email required' => '邮件必填',
+    'phone required' => '电话必填',
+    
+    'Name' => '名字',
+    'Email' => '邮件',
+    'Phone' => '电话',
 );
 
 

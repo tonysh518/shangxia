@@ -2256,6 +2256,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
     LP.action('contact-me-back' , function(){
         var $form = $(this).closest('form');
+        var $pop = $(this).closest('.pop');
         $form.find('#name-tip,#email-tip,#phone-tip').html(' ');
         
         var data = LP.query2json( $form.serialize() );
