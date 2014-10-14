@@ -136,9 +136,9 @@ a{text-decoration:none;outline: none;color:inherit;}
 .hd_language .on{font-weight: bold;}
 .hd_search{width: 24px;height: 24px;background: url('../images/hd_search.png') no-repeat center;}*/
 
-
-.lang-zh_cn .nav{width: 40%;}
-.lang-zh_cn .nav2 {margin-left: -2%;}
+.lang-zh_cn .nav1{width: 43.5%;}
+.lang-zh_cn .nav2 {width: 40%;margin-left: -2%;}
+.lang-zh_cn .hd_oter{right: -11%;}
 .lang-zh_cn .logo{width: 14%;}
 .lang-fr .nav1{width: 40%;}
 .lang-fr .nav2{width: 36%;}
