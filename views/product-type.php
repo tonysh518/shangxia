@@ -77,8 +77,8 @@ else {
 
     
 <!-- Last collection -->
-	<div class="collpiclist cs-clear">
-		<div class="collarrows collarrowsprev"></div>
+	<!-- <div class="collpiclist cs-clear">
+		<div class="collarrows collarrowsprev"></div> -->
 		<!--  -->
 		<div class="section">
 			<div class="products ">
@@ -103,13 +103,13 @@ else {
 			</div>
 		</div>
 		<!--  -->
-		<div class="collarrows collarrowsnext"></div>
-	</div>
+		<!-- <div class="collarrows collarrowsnext"></div>
+	</div> -->
 
 <?php if ($_GET['name'] == 'apparel'): ?>
   <!-- Timeless collection -->    
-	<div class="collpiclist cs-clear">
-		<div class="collarrows collarrowsprev"></div>
+	<!-- <div class="collpiclist cs-clear">
+		<div class="collarrows collarrowsprev"></div> -->
 		<!--  -->
 		<div class="section">
 			<div class="products ">
@@ -134,15 +134,15 @@ else {
 			</div>
 		</div>
 		<!--  -->
-		<div class="collarrows collarrowsnext"></div>
-	</div>
+<!-- 		<div class="collarrows collarrowsnext"></div>
+	</div> -->
 <?php else: ?>
   <?php foreach ($timelessCollectionProducts as $collection_id => $products): ?>
     <!--  collection -->
     <?php $collection = CollectionContentAR::model()->findByPk($collection_id);?>
 
-    <div class="collpiclist cs-clear">
-      <div class="collarrows collarrowsprev"></div>
+    <!-- <div class="collpiclist cs-clear">
+      <div class="collarrows collarrowsprev"></div> -->
       <!--  -->
       <div class="section">
         <div class="products ">
@@ -167,8 +167,8 @@ else {
         </div>
       </div>
       <!--  -->
-      <div class="collarrows collarrowsnext"></div>
-    </div>
+      <!-- <div class="collarrows collarrowsnext"></div>
+    </div> -->
   <?php endforeach;?>
 <?php endif;?>
 
