@@ -139,7 +139,7 @@
             <img src="<?php echo makeThumbnail($event->thumbnail, array(1261, 559))?>" class="intoview-effect" data-effect="fadeup" width="100%" alt="">
             <h3 class="intoview-effect" data-effect="fadeup"><?php echo $event->title?></h3>
             <h4  class="productscom-desc intoview-effect" data-effect="fadeup"><?php echo date("Y M d" , strtotime($event->date)) ?></h4>
-            <p  class="productscom-desc intoview-effect" data-effect="fadeup"><?php echo strip_tags($event->body)?> <a class="more" href="#"><?php echo Yii::t("strings", "Read more")?> &gt;</a> </p>
+            <p  class="productscom-desc intoview-effect" data-effect="fadeup"><?php echo $event->body?> <a class="more" href="#"><?php echo Yii::t("strings", "Read more")?> &gt;</a> </p>
             <a data-a="nav-link" href="<?php echo url("news-events")?>" title="" class="btn transition-wrap intoview-effect" data-effect="fadeup"><span class="transition"><?php echo Yii::t("strings", "View all events")?><br/><br/><?php echo Yii::t("strings", "View all events")?></span></a>
           </div>
         </div>
@@ -162,7 +162,7 @@
 						<div class="productslist cs-clear slide-con-inner">
               <?php foreach( $presses as $press): ?>
                 <a class="prolistitem pressitem intoview-effect" data-a="show-pop" data-d="press=1" data-effect="fadeup" href="#" data-cid="<?php echo $press->cid?>">
-                  <img src="<?php echo makeThumbnail($press->thumbnail_small == "" ? $press->press_image : $press->thumbnail_small, array(415, 220))?>" width="100%" />
+                  <img src="<?php echo makeThumbnail($press->thumbnail_small == "" ? $press->press_image : $press->thumbnail_small, array(415, 557))?>" width="100%" />
                   <p>
                   	<?php echo $press->title?><br />
                   	<span class="date"><?php echo date("M Y", strtotime($press->publish_date))?></span>
