@@ -216,7 +216,7 @@ img.slideitem{height: auto;}
 .detail{padding:50px 0 0;text-align: center;}
 .detailcon{float: left;width: 78%;margin-bottom:35px;font-size: 18px;font-family: "Gotham Book";position: relative;}
 .detail h2{font-size:30px;padding:0 0 20px;text-transform : uppercase;line-height: 40px;font-family: "Gotham Book";color:#4b3700;}
-.detail p{font-size: 18px;font-family: Garamond;}
+.detail p{font-size: 18px;font-family: Garamond;padding:0 20px 0 0;}
 .detail .arrows{height:180px;float: left;width: 11%;cursor: pointer;}
 .detail .arrows2{height: 44px;}
 .detail .arrows3{height: 80px;}
@@ -229,7 +229,7 @@ img.slideitem{height: auto;}
 
 
 /*barbg*/
-.barbg{background: url('../images/barbg.png') no-repeat center;height: 70px;width: 100%;z-index: 1;position: relative;}
+.barbg{height: 70px;width: 100%;z-index: 1;position: relative;}
 
 .knowhow{}
 .knowhowtit{height: 100px;border-bottom: #000 solid 1px;position: relative;margin: 0 0 110px;line-height: 200px;text-align: center;}
@@ -397,7 +397,7 @@ overflow: hidden;}
 /*popshade*/
 .popshade{position: fixed;z-index: 200;top: 0;left: 0;bottom: 0;right: 0;background: #000;opacity: 0.6;filter:alpha(opacity=60);}
 /*pop*/
-.pop{position: fixed;z-index: 200;background: #fff;width: 100%;height: 100%;overflow: auto;top:0;left:0;font-size: 18px;}
+.pop{position: fixed;z-index: 200;background: #fff;width: 100%;height: 100%;overflow: auto;top:0;left:0;font-size: 16px;}
 .pop1{top: 0;}
 .pop2{top: 100px;bottom: 100px;}
 .popclose{cursor: pointer;background: url('../images/popclose.png') no-repeat;width: 49px;height: 49px;position: absolute;top: 28px;right: 28px;z-index: 1;}
@@ -781,6 +781,7 @@ background: rgb(227,227,227);}
     top: 0;
     left: 0;
     cursor: pointer;
+    border:1px solid #9e927a;
 }
 
 .jspHorizontalBar .jspTrack,

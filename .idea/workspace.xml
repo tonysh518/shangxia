@@ -15,7 +15,7 @@
     <file path="/strings.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413189909655" ignored="false" />
     <file path="/footer.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413190123875" ignored="false" />
     <file path="/privacy-policy.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413030688621" ignored="false" />
-    <file path="/style.css" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413277843633" ignored="false" />
+    <file path="/style.css" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413287405999" ignored="false" />
     <file path="$PROJECT_DIR$/../rungiswines/wp-content/themes/wine/single.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413168818180" ignored="false" />
     <file path="$PROJECT_DIR$/../ave_1000/yii/protected/views/revisit/index.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413261750559" ignored="false" />
     <file path="/header.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413277395096" ignored="false" />
@@ -70,7 +70,7 @@
       <file leaf-file-name="style.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="406" column="24" selection-start="22279" selection-end="22279" vertical-scroll-proportion="0.35913312">
+            <state line="231" column="7" selection-start="11816" selection-end="11816" vertical-scroll-proportion="0.7414861">
               <folding />
             </state>
           </provider>
@@ -79,7 +79,7 @@
       <file leaf-file-name="product-detail.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/product-detail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="27" selection-start="1816" selection-end="1816" vertical-scroll-proportion="-4.071429">
+            <state line="55" column="32" selection-start="2562" selection-end="2562" vertical-scroll-proportion="-7.464286">
               <folding>
                 <element signature="n#style#0;n#a#0;n#div#1;n#!!top" expanded="true" />
               </folding>
@@ -523,7 +523,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/product-detail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="27" selection-start="1816" selection-end="1816" vertical-scroll-proportion="-4.071429">
+        <state line="55" column="32" selection-start="2562" selection-end="2562" vertical-scroll-proportion="-7.464286">
           <folding>
             <element signature="n#style#0;n#a#0;n#div#1;n#!!top" expanded="true" />
           </folding>
@@ -532,7 +532,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="406" column="24" selection-start="22279" selection-end="22279" vertical-scroll-proportion="0.35913312">
+        <state line="231" column="7" selection-start="11816" selection-end="11816" vertical-scroll-proportion="0.7414861">
           <folding />
         </state>
       </provider>
