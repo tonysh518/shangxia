@@ -163,6 +163,10 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     }
                 });
             },
+            // "news": function( cb ){
+            //     // init news-picinfortxt
+
+            // },
             "contact-page": function( cb ){
                 $('input[type="file"]').change(function(){
                     var fileName = this.value.replace(/.*?([^\/\\]+)$/,'$1');
@@ -1711,6 +1715,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 });
         });
 
+        var resizepicinfortxt = false;
         $('.picinfortxt').each(function(){
             var $this = $(this);
             var $picWrap = $(this).next('.picinforpic');
@@ -1722,7 +1727,22 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 })
                 .find('.picinfortxt-inner').height( h - 100 )
                     .css('overflow' , 'hidden');
-            } )
+
+
+                var $inner = $('.news-picinfortxt .picinfortxt-inner');
+                if( $inner.length && !resizepicinfortxt ){
+                    resizepicinfortxt = true;
+                    var ttop = $inner.offset().top;
+                    var theight = $inner.height();
+
+                    var bodyTop = $inner.find('.body').offset().top;
+                    var lineHeight = parseInt( $inner.find('.body').css('lineHeight') );
+                    $inner.find('.body').css({
+                        'height': ~~( ( ttop + theight - bodyTop ) / lineHeight ) * lineHeight - 10,
+                        overflow: 'hidden'
+                    });
+                }
+            } );
             // var h = $(this).next('.picinforpic').height();
             // $(this).height( h - 50 ).css({
             //     overflow: 'hidden',

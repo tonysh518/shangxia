@@ -1,4 +1,6 @@
-<?php include_once 'common/header.php';?>
+<?php 
+$pagename = 'news';
+include_once 'common/header.php';?>
 		<!-- detail -->
 		<div class="section intoview-effect" data-effect="fadeup">
 			<div class="detail cs-clear">
