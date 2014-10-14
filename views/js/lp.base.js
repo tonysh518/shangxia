@@ -163,6 +163,10 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     }
                 });
             },
+            // "news": function( cb ){
+            //     // init news-picinfortxt
+
+            // },
             "contact-page": function( cb ){
                 $('input[type="file"]').change(function(){
                     var fileName = this.value.replace(/.*?([^\/\\]+)$/,'$1');
@@ -1221,7 +1225,6 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 if( config.resize !== false ){
                     var resizeFn = function(){
                         var size = getSize();
-                        console.log( size );
                         try{v.dimensions( size.width , size.height );}catch(e){}
 
                         // var w = $wrap.width()  ;
@@ -1300,6 +1303,11 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     });
                 }
 
+                v.on('play' , function(){
+                    setTimeout(function(){
+                        $wrap.find('.video-wrap').css('zIndex' , 1);
+                    } , 100);
+                });
                 //if( config.hasPoster ){
                     // $('<img/>').load(function(){
                     //     var width = this.width;
@@ -1325,6 +1333,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         if( $dom.data('initHoverMoveEffect') ) return;
         $dom.data('initHoverMoveEffect' , 1);
         var $bg = $dom.find('.inout-bg');
+        var isInNav = !!$bg.closest('.nav-pop-inner').length;
         $dom.css('position','relative');
 
         $dom.hover(function( ev ){
@@ -1340,19 +1349,34 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             var min = Math.min( topOff , leftOff , bottomOff , rightOff );
             var ori = null;
             var tar = null;
-            if( min == topOff ){ // from top 
-                ori = { left: 0,top: '-100%'};
-                tar = { top: 0 };
-            } else if( min == leftOff ){
-                ori = { left: '-100%',top: 0};
-                tar = { left: 0 };
-            } else if( min == bottomOff ){
-                ori = { left: 0,top: '100%'};
-                tar = { top: 0 };
+            if( !isInNav ){
+                if( min == topOff ){ // from top 
+                    ori = { left: 0,top: '-100%'};
+                    tar = { top: 0 };
+                } else if( min == leftOff ){
+                    ori = { left: '-100%',top: 0};
+                    tar = { left: 0 };
+                } else if( min == bottomOff ){
+                    ori = { left: 0,top: '100%'};
+                    tar = { top: 0 };
+                } else {
+                    ori = { left: '100%',top: 0};
+                    tar = { left: 0 };
+                }
             } else {
-                ori = { left: '100%',top: 0};
-                tar = { left: 0 };
+                ori = {left:0 , top: 0};
+
+                if( min == topOff ){ // from top 
+                    tar = { top: '100%' };
+                } else if( min == leftOff ){
+                    tar = { left: '100%' };
+                } else if( min == bottomOff ){
+                    tar = { top: '-100%' };
+                } else {
+                    tar = { left: '-100%' };
+                }
             }
+            
             $bg.css( ori ).stop( true )
                 .animate( tar , 500 );
 
@@ -1370,21 +1394,35 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             var min = Math.min( topOff , leftOff , bottomOff , rightOff );
             var ori = null;
             var tar = null;
-            if( min == topOff ){ // from top 
-                ori = { left: 0,top: '-100%'};
-                tar = { top: 0 };
-            } else if( min == leftOff ){
-                ori = { left: '-100%',top: 0};
-                tar = { left: 0 };
-            } else if( min == bottomOff ){
-                ori = { left: 0,top: '100%'};
-                tar = { top: 0 };
+            if( !isInNav ){
+                if( min == topOff ){ // from top 
+                    ori = { left: 0,top: '-100%'};
+                    tar = { top: 0 };
+                } else if( min == leftOff ){
+                    ori = { left: '-100%',top: 0};
+                    tar = { left: 0 };
+                } else if( min == bottomOff ){
+                    ori = { left: 0,top: '100%'};
+                    tar = { top: 0 };
+                } else {
+                    ori = { left: '100%',top: 0};
+                    tar = { left: 0 };
+                }
             } else {
-                ori = { left: '100%',top: 0};
-                tar = { left: 0 };
+                tar = { top: 0 , left: 0};
+                if( min == topOff ){ // from top 
+                    ori = { left: 0,top: '100%'};
+                } else if( min == leftOff ){
+                    ori = { left: '100%',top: 0};
+                } else if( min == bottomOff ){
+                    ori = { left: 0,top: '-100%'};
+                } else {
+                    ori = { left: '-100%',top: 0};
+                }
             }
             $bg.stop( true )
-                .animate( ori , 500 );
+                .css(ori)
+                .animate( tar , 500 );
 
             hoverout && hoverout();
         });
@@ -1677,6 +1715,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 });
         });
 
+        var resizepicinfortxt = false;
         $('.picinfortxt').each(function(){
             var $this = $(this);
             var $picWrap = $(this).next('.picinforpic');
@@ -1688,7 +1727,22 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 })
                 .find('.picinfortxt-inner').height( h - 100 )
                     .css('overflow' , 'hidden');
-            } )
+
+
+                var $inner = $('.news-picinfortxt .picinfortxt-inner');
+                if( $inner.length && !resizepicinfortxt ){
+                    resizepicinfortxt = true;
+                    var ttop = $inner.offset().top;
+                    var theight = $inner.height();
+
+                    var bodyTop = $inner.find('.body').offset().top;
+                    var lineHeight = parseInt( $inner.find('.body').css('lineHeight') );
+                    $inner.find('.body').css({
+                        'height': ~~( ( ttop + theight - bodyTop ) / lineHeight ) * lineHeight - 10,
+                        overflow: 'hidden'
+                    });
+                }
+            } );
             // var h = $(this).next('.picinforpic').height();
             // $(this).height( h - 50 ).css({
             //     overflow: 'hidden',
