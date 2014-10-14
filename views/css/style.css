@@ -387,7 +387,7 @@ overflow: hidden;}
 .searchform button{height: 115px;line-height: 115px;cursor:pointer;float: right;width: 20%;border: 0;background: none;font-size: 18px;}
 
 /*newscrumbs*/
-.newscrumbs{width: 80%;margin: 0 auto;font-family: "Gotham Light";text-transform: uppercase;}
+.newscrumbs{width: 80%;margin: 0 auto 20px auto;font-family: "Gotham Light";text-transform: uppercase;}
 .newscrumbs p{padding: 0 50px 0px}
 
 /*news 2 arrow*/

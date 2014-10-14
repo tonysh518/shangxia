@@ -139,7 +139,7 @@
             <img src="<?php echo makeThumbnail($event->thumbnail, array(1261, 559))?>" class="intoview-effect" data-effect="fadeup" width="100%" alt="">
             <h3 class="intoview-effect" data-effect="fadeup"><?php echo $event->title?></h3>
             <h4  class="productscom-desc intoview-effect" data-effect="fadeup"><?php echo date("Y M d" , strtotime($event->date)) ?></h4>
-            <p  class="productscom-desc intoview-effect" data-effect="fadeup"><i><?php echo strip_tags($event->body)?> <a class="more" href="#"><?php echo Yii::t("strings", "Read more")?> &gt;</a> </i></p>
+            <p  class="productscom-desc intoview-effect" data-effect="fadeup"><?php echo strip_tags($event->body)?> <a class="more" href="#"><?php echo Yii::t("strings", "Read more")?> &gt;</a> </p>
             <a data-a="nav-link" href="<?php echo url("news-events")?>" title="" class="btn transition-wrap intoview-effect" data-effect="fadeup"><span class="transition"><?php echo Yii::t("strings", "View all events")?><br/><br/><?php echo Yii::t("strings", "View all events")?></span></a>
           </div>
         </div>

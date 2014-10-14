@@ -25,7 +25,8 @@ Her life bears the weight of three eras of time Today, she continues to lightly 
 From educational reform<br/>
 To the booming economy<br/>
 To East-West cross cultural exchange<br/>
-She is a fortunate witness to and experiences two styles of life Today, she carries on the ambition<br/>
+She is a fortunate witness to and experiences two styles of life Today,<br/>
+she carries on the ambition<br/>
 She carries on the ideal",
     "home_brand_story" => "SHANG XIA, CHINESE FINE LIVING",
     "choice_of_timber_desc" => "Zitan is a very precious timber for two reasons. Firstly, the timber can only be used when it is several hundred years old, secondly, only 10% - 20% of the tree can be used to make furniture. Even to touch this rare wood is a matter of destiny! The carpenter prepared card models for each one of the furniture’s components, they were then cut from the timber according to the paper models. For example, a Ming style official hat chair has 42 components, including head rest, arm rest, back rest, apron, base pin and so on. It was said that in the Ming and Qing dynasties, all components for a piece of high quality hardwood furniture had to be from one single tree. Because of its rarity, the cutting craftsman shifu has to make the best, most efficient use of the timber.",
