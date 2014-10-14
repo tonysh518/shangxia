@@ -882,16 +882,16 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         var length = $slidebox.children().length;
         var isAbs = $wrap.data('slide') == 'absolute';
         if( isAbs ){
-            $slidebox.children().find('img')
-                .eq(0)
-                .load(function(){
-                    $wrap.height( this.height );
-                });
-            $(window).resize(function(){
-                $wrap.height( 
-                    $slidebox.children().find('img')
-                        .eq(0).height() );
-            });
+            // $slidebox.children().find('img')
+            //     .eq(0)
+            //     .load(function(){
+            //         $wrap.height( this.height );
+            //     });
+            // $(window).resize(function(){
+            //     $wrap.height( 
+            //         $slidebox.children().find('img')
+            //             .eq(0).height() );
+            // });
 
             $slidebox.children().css({
                 position: 'absolute',
