@@ -85,6 +85,30 @@ require_once "inc.php";?>
                   </div>
                 </div>
               <?php endforeach;?>
+                <div class="nav-pop-wrap">
+                    <div class="nav-pop-wrap-inner cs-clear">
+                        <a href="<?php echo url("gift-corner")?>" class="nav-pop-item inout-effect" data-a="nav-link">
+                            <img src="/photo/gift_dpmenu1.jpg"/>
+                            <span class="nav-text"><i> </i></span>
+                            <span class="home-inout-bg inout-bg"></span>
+                        </a>
+                        <a href="<?php echo url("gift-corner")?>" class="nav-pop-item inout-effect" data-a="nav-link">
+                            <img src="/photo/gift_dpmenu2.jpg"/>
+                            <span class="nav-text"><i> </i></span>
+                            <span class="home-inout-bg inout-bg"></span>
+                        </a>
+                        <a href="<?php echo url("gift-corner")?>" class="nav-pop-item inout-effect" data-a="nav-link">
+                            <img src="/photo/gift_dpmenu3.jpg"/>
+                            <span class="nav-text"><i> </i></span>
+                            <span class="home-inout-bg inout-bg"></span>
+                        </a>
+                        <a href="<?php echo url("gift-corner")?>" class="nav-pop-item inout-effect" data-a="nav-link">
+                            <img src="/photo/gift_dpmenu4.jpg"/>
+                            <span class="nav-text"><i> </i></span>
+                            <span class="home-inout-bg inout-bg"></span>
+                        </a>
+                    </div>
+                </div>
             </div>
 				</div>
         </div>

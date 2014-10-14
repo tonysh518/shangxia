@@ -153,11 +153,11 @@
 		<form class="buy-form conformbox" action="/admin/api/content/wantobuy" method="post">
 			<input type="hidden" name="product" value="#[product]"/>
 			<div class="conformtit" style="height:40px;"><span class="error" id="name-tip">&nbsp;</span></div>
-			<input type="text" placeholder="<?php echo Yii::t("strings", "Name") ?>" name="name" data-required="<?php echo Yii::t('strings', 'name required')?>"/>
+			<input type="text" placeholder="<?php echo Yii::t("strings", "Name") ?>" name="name" data-required="<?php echo Yii::t('strings', 'IS REQUIRED')?>"/>
 			<div class="conformtit" style="height:40px;"><span class="error" id="email-tip">&nbsp;</span></div>
-			<input type="text" placeholder="<?php echo Yii::t("strings", "Email") ?>" name="email" data-required="<?php echo Yii::t('strings', 'email required')?>"/>
+			<input type="text" placeholder="<?php echo Yii::t("strings", "Email") ?>" name="email" data-required="<?php echo Yii::t('strings', 'IS REQUIRED')?>"/>
 			<div class="conformtit" style="height:40px;"><span class="error" id="phone-tip">&nbsp;</span></div>
-			<input type="text" placeholder="<?php echo Yii::t("strings", "Phone") ?>" name="phone" data-required="<?php echo Yii::t('strings', 'phone required')?>"/>
+			<input type="text" placeholder="<?php echo Yii::t("strings", "Phone") ?>" name="phone" data-required="<?php echo Yii::t('strings', 'IS REQUIRED')?>"/>
 			<button data-a="contact-me-back" class="btn transition-wrap"><span class="transition"><?php echo Yii::t("strings", "CONTACT ME BACK")?><br/><br/><?php echo Yii::t("strings", "CONTACT ME BACK")?></span></button>
 		</form>
 		<div class="form-submit-tip"></div>

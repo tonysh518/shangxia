@@ -12,20 +12,21 @@ return array(
     "about_brand_founder_title" => "FOUNDER & ARTISTIC DIRECTOR OF SHANGXIA",
     "about_brand_founter_desc" => 'As Artistic Director and CEO of SHANG XIA, Ms. Jiang Qiong Er is a Chinese contemporary designer of international reputation infusing the subtlety, beauty and heritage of Chinese culture. Her designs breathe elegance of innovation and imagination. Her international vision and open mind, along with her multi-cultural background, naturally allow her creativity to express itself; preserving and respecting tradition, both Eastern and Western.Jiang Qiong Er was introduced to traditional painting when she was only two and later became a student of famous painter Cheng Shi Fa and calligrapher Han Tian Hong. After graduation from Tong Ji University in Art &amp; Design, she went on to the Decorative Arts School in Paris to further her studies in furniture and interior design.',
     "about_brand_emplee_subject" => 'HERITAGE & ENCOUNTER',
-    "about_brand_emplee_one" => 'Xiu Yin, the 90 year old grandmother From the Republic, to the war
-To the liberation of new China
-To the new century
+    "about_brand_emplee_one" => 'Xiu Yin, the 90 year old grandmother From the Republic, to the war<br/>
+To the liberation of new China<br/>
+To the new century<br/>
 Says she, she has had four lives Today, she still radiantly smiles',
-    "about_brand_emplee_two" => "Hui Jie, the 65 year old mother
-From the countryside
-To the open reform
-To the frenzy of construction
+    "about_brand_emplee_two" => "Hui Jie, the 65 year old mother<br/>
+From the countryside<br/>
+To the open reform<br/>
+To the frenzy of construction<br/>
 Her life bears the weight of three eras of time Today, she continues to lightly dance",
-    "about_brand_emplee_third" => "Qiong Er, the 33 year old daughter
-From educational reform
-To the booming economy
-To East-West cross cultural exchange
-She is a fortunate witness to and experiences two styles of life Today, she carries on the ambition
+    "about_brand_emplee_third" => "Qiong Er, the 33 year old daughter<br/>
+From educational reform<br/>
+To the booming economy<br/>
+To East-West cross cultural exchange<br/>
+She is a fortunate witness to and experiences two styles of life Today,<br/>
+she carries on the ambition<br/>
 She carries on the ideal",
     "home_brand_story" => "SHANG XIA, CHINESE FINE LIVING",
     "choice_of_timber_desc" => "Zitan is a very precious timber for two reasons. Firstly, the timber can only be used when it is several hundred years old, secondly, only 10% - 20% of the tree can be used to make furniture. Even to touch this rare wood is a matter of destiny! The carpenter prepared card models for each one of the furniture’s components, they were then cut from the timber according to the paper models. For example, a Ming style official hat chair has 42 components, including head rest, arm rest, back rest, apron, base pin and so on. It was said that in the Ming and Qing dynasties, all components for a piece of high quality hardwood furniture had to be from one single tree. Because of its rarity, the cutting craftsman shifu has to make the best, most efficient use of the timber.",
@@ -198,4 +199,7 @@ fabric and untangle the tangled spots. The fabric is rinsed unhooked and hung up
 <br />Shang Xia" => 'Your message has been successfully sent. <br /> We will contact you soon.
 
 <br />Shang Xia',
+
+
+
     );

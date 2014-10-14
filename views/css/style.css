@@ -216,7 +216,7 @@ img.slideitem{height: auto;}
 .detail{padding:50px 0 0;text-align: center;}
 .detailcon{float: left;width: 78%;margin-bottom:35px;font-size: 18px;font-family: "Gotham Book";position: relative;}
 .detail h2{font-size:30px;padding:0 0 20px;text-transform : uppercase;line-height: 40px;font-family: "Gotham Book";color:#4b3700;}
-.detail p{font-size: 18px;font-family: Garamond;}
+.detail p{font-size: 18px;font-family: Garamond;padding:0 20px 0 0;}
 .detail .arrows{height:180px;float: left;width: 11%;cursor: pointer;}
 .detail .arrows2{height: 44px;}
 .detail .arrows3{height: 80px;}
@@ -229,7 +229,7 @@ img.slideitem{height: auto;}
 
 
 /*barbg*/
-.barbg{background: url('../images/barbg.png') no-repeat center;height: 70px;width: 100%;z-index: 1;position: relative;}
+.barbg{height: 70px;width: 100%;z-index: 1;position: relative;}
 
 .knowhow{}
 .knowhowtit{height: 100px;border-bottom: #000 solid 1px;position: relative;margin: 0 0 110px;line-height: 200px;text-align: center;}
@@ -387,7 +387,7 @@ overflow: hidden;}
 .searchform button{height: 115px;line-height: 115px;cursor:pointer;float: right;width: 20%;border: 0;background: none;font-size: 18px;}
 
 /*newscrumbs*/
-.newscrumbs{width: 80%;margin: 0 auto;font-family: "Gotham Light";text-transform: uppercase;}
+.newscrumbs{width: 80%;margin: 0 auto 20px auto;font-family: "Gotham Light";text-transform: uppercase;}
 .newscrumbs p{padding: 0 50px 0px}
 
 /*news 2 arrow*/
@@ -397,14 +397,14 @@ overflow: hidden;}
 /*popshade*/
 .popshade{position: fixed;z-index: 200;top: 0;left: 0;bottom: 0;right: 0;background: #000;opacity: 0.6;filter:alpha(opacity=60);}
 /*pop*/
-.pop{position: fixed;z-index: 200;background: #fff;width: 100%;height: 100%;overflow: auto;top:0;left:0;font-size: 18px;}
+.pop{position: fixed;z-index: 200;background: #fff;width: 100%;height: 100%;overflow: auto;top:0;left:0;font-size: 16px;}
 .pop1{top: 0;}
 .pop2{top: 100px;bottom: 100px;}
 .popclose{cursor: pointer;background: url('../images/popclose.png') no-repeat;width: 49px;height: 49px;position: absolute;top: 28px;right: 28px;z-index: 1;}
 .popcon{width: 68%;margin: 0 auto;padding: 80px 0;opacity: 0; filter:alpha(opacity=0); transform:scale(1.1,1.1);-webkit-transform:scale(1.1,1.1);-moz-transform:scale(1.1,1.1);-o-transform:scale(1.1,1.1);-ms-transform:scale(1.1,1.1);}
 .popcon.popcon-show{opacity: 1; filter:alpha(opacity=100);transform:scale(1,1);-webkit-transform:scale(1,1);-moz-transform:scale(1,1);-o-transform:scale(1,1);-ms-transform:scale(1,1);}
 .popcon h2{line-height: 1.3em;text-transform: uppercase;font-size: 30px;text-align: center;padding:10px 0;font-family: "Gotham Book"; color: #4b3700;}
-.popcontxt{font-size: 18px;text-align: center;color:#9e927a;}
+.popcontxt{font-size: 16px;text-align: center;color:#9e927a;}
 .popcontxt p,.popcon p{padding: 10px 0}
 .poppiccon{text-align: center;overflow-y: auto;height: 100%;}
 .poppiccon img{display: block;margin: 0 auto;max-width: 100%;}
@@ -546,8 +546,7 @@ body .vjs-default-skin .vjs-big-play-button:focus{box-shadow: none;}
 .nav-pop-nav{float: left;width: 16%;}
 .nav-pop-nav a:hover,.nav-pop-nav a.hover{color:#4b3700;}
 .nav-pop-nav p {margin-right: 10%;font-size: 16px;font-family: 'Gotham Book';text-align: right;}
-.nav-pop-nav a span{opacity: 0; filter:alpha(opacity=0);}
-.nav-pop-nav a.hover span{opacity: 1; filter:alpha(opacity=100);}
+.nav-pop-nav a span{display: none;}
 .nav-pop-wraps{width: 84%;overflow: hidden;float: left;}
 .nav-pop-wrap{margin-bottom: 10px;overflow: hidden;width: 100%;}
 .map-marker{position: absolute;left: 50%;top: 50%;margin-left: -25px;margin-top: -25px;}
@@ -782,6 +781,7 @@ background: rgb(227,227,227);}
     top: 0;
     left: 0;
     cursor: pointer;
+    border:1px solid #9e927a;
 }
 
 .jspHorizontalBar .jspTrack,
@@ -843,7 +843,14 @@ background: rgb(227,227,227);}
 
     .lang-fr .nav-pop-nav{width: 200px;}
     .lang-fr .nav-pop-wraps{margin-right: -200px;}
+
 }
+
+@media screen and (max-width:1200px){
+    .sitelinkitem h2 {font-size:16px;}
+    .footer-bottom .section {width:88%;}
+}
+
 
 .conformbox .error {
   text-transform: uppercase;
