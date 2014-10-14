@@ -79,7 +79,7 @@
 						<h2><?php echo Yii::t("strings", "NEWS")?></h2>
 						<a data-a="nav-link" style="display:none;" href="<?php echo url("news")?>"></a>
 						<a data-a="nav-link" href="<?php echo url("news-detail")?>"><?php echo Yii::t("strings", "news")?></a>
-						<a data-a="nav-link" href="<?php echo url("news-event")?>"><?php echo Yii::t("strings", "events")?></a>
+						<a data-a="nav-link" href="<?php echo url("news-events")?>"><?php echo Yii::t("strings", "events")?></a>
 						<a data-a="nav-link" href="<?php echo url("news-press")?>"><?php echo Yii::t("strings", "press")?></a>
 					</div>
 					<div class="sitelinkitem intoview-effect" data-effect="fadeup">
