@@ -199,7 +199,7 @@ class MediaAR extends CActiveRecord {
     $query->params[":cid"] = $cid;
     
     $fieldOption = $obj->getImageFieldOption($field_name);
-    if ($fieldOption['multi']) {
+    if (isset($fieldOption['multi']) && $fieldOption['multi']) {
       $cache_key .= "_multi";
       if (self::getCache($cache_key)) {
         $ret = self::getCache($cache_key);

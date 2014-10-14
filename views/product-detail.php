@@ -32,7 +32,7 @@ $pagename = 'product-detail';
 					<h2 class="intoview-effect" data-effect="fadeup"><?php echo $product->title?></h2>
 					<div class="slide-con">
 						<ul class="slide-con-inner cs-clear">
-							<li style="float:left;">
+							<li class="j-scroll-bar" onselectstart="return false;">
 								<p><?php echo $product->body?></p>
 							</li>
 						</ul>
@@ -43,7 +43,8 @@ $pagename = 'product-detail';
       <?php if ($product->gift): ?>
         <a href="#" style="margin-bottom:100px;" class="btn transition-wrap" data-id="<?php echo $product->cid?>" data-d="product=<?php echo $product->cid?>" data-a="i-want-to-buy"><span class="transition"><?php echo Yii::t("strings", "I Want To Buy")?><br/><br/><?php echo Yii::t("strings", "I Want To Buy")?></span></a>
       <?php else:?>
-        <a href="#" style="margin-bottom:50px;border:0px;" class="btn transition-wrap"></a>
+      	<br><br>
+        <!-- <a href="#" style="margin-bottom:50px;border:0px;" class="btn transition-wrap"></a> -->
       <?php endif;?>
 		</div>
 		<!--  -->
@@ -52,7 +53,9 @@ $pagename = 'product-detail';
       <div data-resize="1600:560" class="slide">
         <div class="slidebox cs-clear">
           <?php foreach (($product->product_slide_image) as $slide_image):?>
-          <div class="slideitem"><img src="<?php echo makeThumbnail($slide_image, array(1500, "auto"))?>" width="100%" /></div>
+          <div class="slideitem scroll-lowheight">
+          	<img src="<?php echo makeThumbnail($slide_image, array(1500, "auto"))?>" width="100%" class="scroll-lowheight-item" />
+          </div>
           <?php endforeach;?>
         </div>
         <ul class="slidetab cs-clear">

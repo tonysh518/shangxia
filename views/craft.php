@@ -19,13 +19,13 @@ $pagename="craft-page";
 include_once 'common/header.php';?>
 <!-- detail -->
 		<div class="section ">
-			<div class="detail cs-clear">
+			<div class="detail coll_product cs-clear">
 				<div class="arrows arrows2 detailprev" data-a="page-prev"></div>
 				<div class=" detailcon intoview-effect" data-split="1" data-effect="fadeup" data-num="1">
 					<h2 class="intoview-effect" data-effect="fadeup"><?php echo $loadedCraft->craft_title?></h2>
 					<div class="slide-con">
 						<ul class="slide-con-inner cs-clear">
-							<li style="float:left;">
+							<li class="j-scrol-bar" onselectstart="return false;">
 								<p><?php echo $loadedCraft->body?></p>
 							</li>
 						</ul>
