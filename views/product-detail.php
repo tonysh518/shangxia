@@ -50,7 +50,7 @@ $pagename = 'product-detail';
 		<!--  -->
 		<!-- video -->
     <?php if ($product->product_slide_image): ?>
-      <div data-resize="1600:560" class="slide">
+      <div data-resize="1600:700" class="section slide">
         <div class="slidebox cs-clear">
           <?php foreach (($product->product_slide_image) as $slide_image):?>
           <div class="slideitem scroll-lowheight">

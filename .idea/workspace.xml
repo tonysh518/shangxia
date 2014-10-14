@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f91aff1e-5f75-400f-ade5-6675323d0744" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/common/footer.php" afterPath="$PROJECT_DIR$/views/common/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/common/header.php" afterPath="$PROJECT_DIR$/views/common/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/protected/messages/en_us/strings.php" afterPath="$PROJECT_DIR$/views/admin/protected/messages/en_us/strings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/protected/messages/fr/strings.php" afterPath="$PROJECT_DIR$/views/admin/protected/messages/fr/strings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/protected/messages/zh_cn/strings.php" afterPath="$PROJECT_DIR$/views/admin/protected/messages/zh_cn/strings.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/product-detail.php" afterPath="$PROJECT_DIR$/views/product-detail.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/css/style.css" afterPath="$PROJECT_DIR$/views/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="shangxia.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -20,10 +15,11 @@
     <file path="/strings.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413189909655" ignored="false" />
     <file path="/footer.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413190123875" ignored="false" />
     <file path="/privacy-policy.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413030688621" ignored="false" />
-    <file path="/style.css" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413274167530" ignored="false" />
+    <file path="/style.css" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413277843633" ignored="false" />
     <file path="$PROJECT_DIR$/../rungiswines/wp-content/themes/wine/single.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413168818180" ignored="false" />
     <file path="$PROJECT_DIR$/../ave_1000/yii/protected/views/revisit/index.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413261750559" ignored="false" />
     <file path="/header.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413277395096" ignored="false" />
+    <file path="/product-detail.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413278471930" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,11 +67,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="581" column="27" selection-start="32320" selection-end="32320" vertical-scroll-proportion="0.0">
+            <state line="406" column="24" selection-start="22279" selection-end="22279" vertical-scroll-proportion="0.35913312">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="product-detail.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/product-detail.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="43" column="27" selection-start="1816" selection-end="1816" vertical-scroll-proportion="-4.071429">
+              <folding>
+                <element signature="n#style#0;n#a#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -107,15 +114,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".htaccess" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/.htaccess">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="19" selection-start="135" selection-end="135" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="gift-corner.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/gift-corner.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -138,10 +136,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="header.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/common/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="64" selection-start="7054" selection-end="7054" vertical-scroll-proportion="0.91423947">
+            <state line="105" column="64" selection-start="7054" selection-end="7054" vertical-scroll-proportion="-20.178572">
               <folding>
                 <element signature="tag#div#1;tag#div#1;tag#div#0;tag#div#2;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
               </folding>
@@ -167,7 +165,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/views/admin/protected/views/page/content.php" />
         <option value="$PROJECT_DIR$/views/admin/protected/views/layouts/main.php" />
         <option value="$PROJECT_DIR$/views/admin/css/main.css" />
         <option value="$PROJECT_DIR$/views/widget/how-cashmere_felt.php" />
@@ -179,10 +176,11 @@
         <option value="$PROJECT_DIR$/views/js/lp.base.js" />
         <option value="$PROJECT_DIR$/views/common/footer.php" />
         <option value="$PROJECT_DIR$/views/admin/protected/messages/zh_cn/strings.php" />
-        <option value="$PROJECT_DIR$/views/css/style.css" />
         <option value="$PROJECT_DIR$/views/admin/protected/messages/en_us/strings.php" />
         <option value="$PROJECT_DIR$/views/admin/protected/messages/fr/strings.php" />
         <option value="$PROJECT_DIR$/views/common/header.php" />
+        <option value="$PROJECT_DIR$/views/product-detail.php" />
+        <option value="$PROJECT_DIR$/views/css/style.css" />
       </list>
     </option>
   </component>
@@ -417,11 +415,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/widget/product-cf.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="44" selection-start="955" selection-end="955" vertical-scroll-proportion="-8.142858" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/widget/product-zitan.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="7.785714" />
@@ -466,13 +459,6 @@
     <entry file="file://$PROJECT_DIR$/views/product-type.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="74" column="71" selection-start="2685" selection-end="2685" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="581" column="27" selection-start="32320" selection-end="32320" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -528,10 +514,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/common/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="64" selection-start="7054" selection-end="7054" vertical-scroll-proportion="0.91423947">
+        <state line="105" column="64" selection-start="7054" selection-end="7054" vertical-scroll-proportion="-20.178572">
           <folding>
             <element signature="tag#div#1;tag#div#1;tag#div#0;tag#div#2;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/product-detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="27" selection-start="1816" selection-end="1816" vertical-scroll-proportion="-4.071429">
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="406" column="24" selection-start="22279" selection-end="22279" vertical-scroll-proportion="0.35913312">
+          <folding />
         </state>
       </provider>
     </entry>
