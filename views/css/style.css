@@ -546,8 +546,7 @@ body .vjs-default-skin .vjs-big-play-button:focus{box-shadow: none;}
 .nav-pop-nav{float: left;width: 16%;}
 .nav-pop-nav a:hover,.nav-pop-nav a.hover{color:#4b3700;}
 .nav-pop-nav p {margin-right: 10%;font-size: 16px;font-family: 'Gotham Book';text-align: right;}
-.nav-pop-nav a span{opacity: 0; filter:alpha(opacity=0);}
-.nav-pop-nav a.hover span{opacity: 1; filter:alpha(opacity=100);}
+.nav-pop-nav a span{display: none;}
 .nav-pop-wraps{width: 84%;overflow: hidden;float: left;}
 .nav-pop-wrap{margin-bottom: 10px;overflow: hidden;width: 100%;}
 .map-marker{position: absolute;left: 50%;top: 50%;margin-left: -25px;margin-top: -25px;}

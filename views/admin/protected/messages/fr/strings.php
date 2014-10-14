@@ -18,32 +18,32 @@ return array(
     . "Jiang Qiong Er conçoit des collections pour SHANG XIA dans lesquelles l’esprit de l’artisanat chinois se mêle à l’art moderne et à un usage et une fonction contemporaine.",
     
     "about_brand_emplee_subject" => 'HÉRITAGE ET RENCONTRE',
-    "about_brand_emplee_one" => 'Xiu Yin, grand-mère de 93 ans, 
-Dit avoir connu quatre vies
-De la République à la guerre, 
-De la fondation de la République 
-Populaire de Chine
-Au siècle nouveau.
-Aujourd’hui, toujours son 
+    "about_brand_emplee_one" => 'Xiu Yin, grand-mère de 93 ans,<br/>
+Dit avoir connu quatre vies<br/>
+De la République à la guerre,<br/>
+De la fondation de la République<br/>
+Populaire de Chine<br/>
+Au siècle nouveau.<br/>
+Aujourd’hui, toujours son<br/>
 sourire rayonne. ',
     
-    "about_brand_emplee_two" => "Hui Jie, mère de 67 ans, 
-Voit sa vie faire le lien entre
-trois époques.
-Du Xiaxiang*
-À la politique de réforme et
-d’ouverture
-Jusqu’à l’apogée du développement 
+    "about_brand_emplee_two" => "Hui Jie, mère de 67 ans,<br/>
+Voit sa vie faire le lien entre<br/>
+trois époques.<br/>
+Du Xiaxiang*<br/>
+À la politique de réforme et<br/>
+d’ouverture<br/>
+Jusqu’à l’apogée du développement<br/>
 économique. ",
     
-    "about_brand_emplee_third" => "Qiong Er, fille de 35 ans,
-Est le témoin heureux de ces 
-deux existences
-Autant que de la reforme de
-l’éducation
-Du boom économique,
-Et des échanges sino-occidentaux.
-Aujourd’hui, sa quête d’idéal 
+    "about_brand_emplee_third" => "Qiong Er, fille de 35 ans,<br/>
+Est le témoin heureux de ces<br/>
+deux existences<br/>
+Autant que de la reforme de<br/>
+l’éducation<br/>
+Du boom économique,<br/>
+Et des échanges sino-occidentaux.<br/>
+Aujourd’hui, sa quête d’idéal<br/>
 se poursuit.",
     
     "home_brand_story" => "SHANG XIA, L'ART DE VIVRE CHINOIS",
