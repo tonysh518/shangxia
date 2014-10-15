@@ -132,7 +132,7 @@ return array(
     "Shanghai" => "上海",
     "Paris" => "巴黎",
     "Beijing" => "北京",
-    "{city} boutiquue" => "{city} 零售空间",
+    "{city} boutique" => "{city} 零售空间",
     "news" => "新闻",
     "events" => "活动信息",
     "press" => "媒体",

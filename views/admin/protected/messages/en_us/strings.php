@@ -141,7 +141,7 @@ fabric and untangle the tangled spots. The fabric is rinsed unhooked and hung up
     "SHRINKING THE CLOTHING Desc" => "<p>At the final step, the garment is boiled in water to set the shape. As there is a certain amount of shrinkage in this process, the ultimate desired size of the garment depends on the skill, and experience of the felt worker in controlling the temperature and length of time the garment is boiled.</p>
 ",
     
-    "gift_corner_desc" => "<p>The products below are available in out boutiques. They are great gifts for your beloved ones. <br />Please select the products you would be interested in, and give us your contact information. You will then receive a personal call from someone at Shang Xia who will help you bare your gift delivered</p>",
+    "gift_corner_desc" => "<p>The products below are available in our boutiques. They are great gifts for your beloved ones. <br>Please select the products you would be interested in, and give us your contact information. You will then receive a personal call from someone at Shang Xia who will help deliver your gift.</p>",
 
     "HAND SCULPTURE CLOTHING desc short" => "<p>Felt making is an ancient technique invented by herdsman to make non-woven cloth. Herdsmen use felt to make their rugs, yurts, clothing and cooking utensils. As nomadic peoples used these skills used to make yurts, the same skills, combined with original innovative designs, are used to create seamless felted cashmere one-off and unique garments with no stitchingFelt making is an ancient technique invented by herdsman to make non-woven cloth. Herdsmen use felt to make their rugs, yurts, clothing and cooking utensils.</p>",
 

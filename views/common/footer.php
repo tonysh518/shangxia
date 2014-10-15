@@ -12,7 +12,7 @@
 			 <div class="location intoview-effect" data-effect="fadeup">
 			 	<div class="range">
 			 		<a href="<?php echo url("gift-corner.php")?>" title="" class="rangebtn transition-wrap"><span class="transition"><?php echo Yii::t("strings", "Enter the gift corner")?><br/><br/><?php echo Yii::t("strings", "Enter the gift corner")?></span></a>
-			 	</div>			
+			 	</div>
 			 </div>
 			 <?php } ?>
 			<!-- store -->
@@ -36,8 +36,8 @@
 					<ul class="storechooselist cs-clear">
             <?php foreach ($cities as $city): ?>
             <li><a href="<?php echo url("boutique", array("type" => $city))?>"  title="" class="transition-wrap">
-                <span class="transition"><?php echo Yii::t("strings", "{city} boutiquue", array("{city}" => ucfirst($locations[$city])))?>
-                  <br/><br/><?php echo Yii::t("strings", "{city} boutiquue", array("{city}" => ucfirst($locations[$city])))?>
+                <span class="transition"><?php echo Yii::t("strings", "{city} boutique", array("{city}" => ucfirst($locations[$city])))?>
+                  <br/><br/><?php echo Yii::t("strings", "{city} boutique", array("{city}" => ucfirst($locations[$city])))?>
                 </span>
               </a>
             </li>
