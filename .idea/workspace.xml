@@ -8,7 +8,7 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413273666869" ignored="false" />
     <file path="/main.css" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1412948430912" ignored="false" />
-    <file path="/news.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1412947024437" ignored="false" />
+    <file path="/news.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413295154291" ignored="false" />
     <file path="/content.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1412947128942" ignored="false" />
     <file path="/a.dummy" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413267096490" ignored="false" />
     <file path="/strings.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413189909655" ignored="false" />
@@ -87,8 +87,11 @@
       <file leaf-file-name="news.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/news.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="141" column="101" selection-start="6602" selection-end="6602" vertical-scroll-proportion="0.49324325">
-              <folding />
+            <state line="141" column="102" selection-start="6603" selection-end="6603" vertical-scroll-proportion="0.22972973">
+              <folding>
+                <element signature="n#style#0;n#textarea#0;n#a#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#1;n#textarea#0;n#a#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#4;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -533,8 +536,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/news.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="141" column="101" selection-start="6602" selection-end="6602" vertical-scroll-proportion="0.49324325">
-          <folding />
+        <state line="141" column="102" selection-start="6603" selection-end="6603" vertical-scroll-proportion="0.22972973">
+          <folding>
+            <element signature="n#style#0;n#textarea#0;n#a#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#1;n#textarea#0;n#a#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#4;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
