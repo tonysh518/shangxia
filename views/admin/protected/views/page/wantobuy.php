@@ -24,6 +24,7 @@
       <tbody>
         <?php foreach ($list as $item): ?>
         <?php $product = ProductContentAR::model()->findByPk($item->product); ?>
+        <?php if (!$product) continue;?>
         <tr>
           <td><?php echo $item->cid?></td>
           <td><?php echo $item->phone?></td>
