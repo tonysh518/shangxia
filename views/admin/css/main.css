@@ -608,8 +608,8 @@ form[name="newsform"] input[type="file"] {
 }
 
 #login #content input[name="user"] ,#login #content input[name="pass"],#login #content input[type="submit"]{
-  width: 100%;
-  padding:0.5em 10px;
+  width: 96%;
+  padding:0.5em 2%;
 }
 
 #login #content input[type="submit"] {

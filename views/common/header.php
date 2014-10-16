@@ -9,6 +9,17 @@ require_once "inc.php";?>
   <meta name="description" content="<?php echo Yii::t("page_title", "meta_desc")?>" />
   <link rel="stylesheet" type="text/css" href="/css/style.css?_=1234" />
   <link rel="stylesheet" type="text/css" href="/css/editme.css" />
+    <!--[if lt IE 9]>
+    <link href="/css/ie8.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-3700383-6', 'auto');
+        ga('send', 'pageview');
+    </script>
 </head>
 <body class="<?php if ( isset($pagename) ) {echo $pagename;}?> <?php echo 'lang-' . (string)Yii::app()->language; ?>">
 	<div class="loading-wrap" style="display:block;"><div class="loading loading_small"></div></div>

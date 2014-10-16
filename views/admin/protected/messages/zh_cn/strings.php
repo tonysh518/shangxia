@@ -249,9 +249,10 @@ return array(
     "find us" => "联系我们",
     "contact" => "联系我们",
     
-    "contact_shanghai" => "<h3>上海零售空间</h3>
-								<p>中国 上海 淮海中路283号 香港广场南座一层</p>
-								<p>+86-21-6390 8899</p>",
+    "contact_shanghai" => "<h3>「上下」之家</h3>
+								<p>中国 上海 淮海中路233号</p>
+								<p>+86-21-6390 8899</p>
+								<p>shangxia.SH1@shang-xia.com</p>",
     
     "contact_beijing" => "<h3>北京零售空间</h3>
 								<p>中国 北京 建国门外大街1号中国国际贸易中心 国贸商城地下一层第SB107B号</p>

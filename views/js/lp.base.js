@@ -209,7 +209,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 $dom
                     .css({
                         marginTop: tarMarginTop + 150 ,
-                        marginBottom: marginBottom - 150,
+                        marginBottom: marginBottom - 150
                     })
                     .delay( 150 * index + delay )
                     .animate({
