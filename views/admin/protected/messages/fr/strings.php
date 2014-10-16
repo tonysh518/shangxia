@@ -147,8 +147,9 @@ Pour reprendre les mots du poète Li Bai (701-762) de la dynastie Tang (618-907)
     
     
     "contact_shanghai" => "<h3>shanghai boutique</h3>
-								<p>1F,South Tower, Hong Kong Plaza, 283 Huaihai Middle Rd, Shanghai, 200021, China</p>
-								<p>+86-21-6390 8899</p>",
+								<p>1F,South Tower, Hong Kong Plaza, 233 Huaihai Middle Rd, Shanghai, 200021, China</p>
+								<p>+86-21-6390 8899</p>
+								<p>shangxia.SH1@shang-xia.com</p>",
     
     "contact_beijing" => "<h3>beijing boutique</h3>
 								<p>SB107B, B1 China World Mall, China World Trade Center 1, Jianguomen Waidajie, Beijing, 100001, China</p>
