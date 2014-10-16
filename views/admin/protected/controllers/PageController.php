@@ -116,6 +116,7 @@ class PageController extends Controller {
       $block->title = $request->getPost("title", "empty");
       $block->link_to = $request->getPost("link_to");
       $block->thumbnail = $request->getPost("thumbnail");
+      
       $block->save();
       
       $this->redirect(Yii::app()->createUrl("page/blocks"));
