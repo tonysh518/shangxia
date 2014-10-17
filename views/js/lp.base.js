@@ -598,7 +598,9 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     fixImageToWrap( $dom , $dom.find('img') );
 
                     var poster = $dom.find('img').attr('src');
-                    renderVideo( $dom , $dom.data('mp4') , $dom.data('webm') , poster , {pause_button: true} );
+                    renderVideo( $dom , $dom.data('mp4') , $dom.data('webm') , poster , {pause_button: true} , function(){
+                        $dom.find('.video-wrap').css('zIndex',1);
+                    } );
                 });
 
                 // render initHoverMoveEffect
@@ -1326,9 +1328,13 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 }
 
                 v.on('play' , function(){
-                    setTimeout(function(){
-                        $wrap.find('.video-wrap').css('zIndex' , 1);
+                    var interval = setInterval(function(){
+                        if( v.v.currentTime > 0.1 ){
+                            clearInterval( interval );
+                            $wrap.find('.video-wrap').css('zIndex' , 1);
+                        }
                     } , 100);
+
                 });
                 //if( config.hasPoster ){
                     // $('<img/>').load(function(){
@@ -1430,6 +1436,8 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     ori = { left: '100%',top: 0};
                     tar = { left: 0 };
                 }
+                $bg.stop( true )
+                    .animate( tar , 500 );
             } else {
                 tar = { top: 0 , left: 0};
                 if( min == topOff ){ // from top 
@@ -1441,10 +1449,11 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 } else {
                     ori = { left: '-100%',top: 0};
                 }
+                $bg.stop( true )
+                    .css(ori)
+                    .animate( tar , 500 );
             }
-            $bg.stop( true )
-                .css(ori)
-                .animate( tar , 500 );
+            
 
             hoverout && hoverout();
         });
