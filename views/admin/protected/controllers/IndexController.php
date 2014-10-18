@@ -37,13 +37,7 @@ class IndexController extends Controller
 	public function actionError()
 	{
     $error = Yii::app()->errorHandler->error;
-    header("Content-Type: text/html; charset=utf-8");
-    if (Yii::app()->params["close_error"]) {
-      $this->redirect("/error");
-    }
-    else {
-      print_r($error);
-    }
+    $this->redirect("/404.html");
 	}
   
   public function actionLogout() {

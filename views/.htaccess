@@ -20,7 +20,7 @@
 
  	RewriteCond %{REQUEST_FILENAME} !-f
  	RewriteCond %{REQUEST_FILENAME} !-d
- 	RewriteRule ^([\w-]+)/type/([\w]+) $1.php?type=$2
+ 	RewriteRule boutique/([\w]+) boutique.php?type=$1
 
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d

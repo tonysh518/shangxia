@@ -616,6 +616,7 @@ form[name="newsform"] input[type="file"] {
   margin-top: 1em;
 background: #eee;
 color: #000;
+width: 100%;
 }
 
 #login .logo {

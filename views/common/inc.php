@@ -465,7 +465,7 @@ function url($uri, $params = array()) {
     return "/{$simple_uri}/name/{$params["name"]}";
   }
   if (isset($params["type"])) {
-    return "/{$simple_uri}/type/{$params["type"]}";
+    return "/{$simple_uri}/{$params["type"]}";
   }
   return '/'.$simple_uri;
 }
