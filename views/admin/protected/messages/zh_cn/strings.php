@@ -317,7 +317,7 @@ return array(
     
     "PRIVACY POLICY LEGAL INFORMATION" => "法律声明",
     
-    "ICP LICENCE" => "<a target=\"_blank\" href=\"http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=20120529122952909\">ICP 备案 20120529122952909</a> - ",
+    "ICP LICENCE" => "<a target=\"_blank\" href=\"http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=20120529122952909\">湘ICP备14014274号-2 </a> ",
     
     "shang xia" => "上下",
     
