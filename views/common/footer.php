@@ -91,7 +91,10 @@
 					</div>
 					<div class="sitelinkitem sitelinkitemXS intoview-effect" data-effect="fadeup">
 						<h2><?php echo Yii::t("strings", "CONTACT")?></h2>
-						<a href="#" class="ft_wx">&nbsp;</a>
+						<a href="#" data-a="show-pop" class="ft_wx">&nbsp;</a>
+                        <textarea style="display:none;">
+                            <div class="popup_qr"><img src="/images/qr.jpg" /></div>
+                        </textarea>
 						<a href="http://www.weibo.com/shangxia" target="_blank" class="ft_wb">&nbsp;</a>
 						<br>
 						<a href="#" style="width: auto;line-height: 1em;height: auto;margin-top: 48px;" data-a="newsletter"><?php echo Yii::t("strings", "subscribe to shang xia newsletter")?></a>
