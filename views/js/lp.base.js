@@ -113,6 +113,16 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                         $tip.stop(true , true).fadeOut();
                     } , 2000);
                 });
+                
+                $('#homepage-video-slide .slidetab li').click(function(){
+                        var index = $(this).index();
+                        console.log(index);
+                        var $item = $('#homepage-video-slide .slideitem').eq( index );
+                        $('#homepage-video-slide').find('.slidetip2-tit').html( $item.data('tit') )
+                            .end()
+                            .find('.slidetip2-index')
+                            .html( ( index + 1 ) + '/' + $("#homepage-video-slide  .slidebox").children().length );
+                 });
 
                 cb && cb();
             },
