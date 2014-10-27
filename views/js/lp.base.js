@@ -3,7 +3,10 @@
  */
 LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     'use strict'
-
+    var isMobile = !!navigator.userAgent.toLowerCase().match(/ipad|iphone os|midp|rv:1.2.3.4|android|windows ce|windows mobile/i);
+    if( isMobile ){
+        $(document.body).addClass('mobile');
+    }
     // LP.use('smoothscroll' , function(){
     //     $('html,body').smoothScroll();
     // });
@@ -68,62 +71,89 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 var $slider = $('#home-slider');
                 var slideHeight = $slider.children().height();
                 var $header = $('.head');
-                $(window).scroll(function(){
-                    var stTop = $(window).scrollTop();
-                    var winHeight = $(window).height();
-
-                    // fix home slider
-                    // var mtop = Math.min( stTop , slideHeight / 2 );
-                    // $slider
-                    //     .css({
-                    //         height: slideHeight - 2 * mtop,
-                    //         overflow: 'hidden'
-                    //     })
-                    //     .find('img')
-                    //     .css({marginTop: - mtop , marginBottom: - mtop * 2 / 3});
-                    // // header fixed effect
-                    if( stTop >= $header.offset().top ){
-                        $header.find('.head-fixed').css('position' , 'fixed');
-                    } else {
-                        $header.find('.head-fixed').css('position' , 'static');
-                    }
-                });
+                if( !isMobile ){
+                    $(window).scroll(function(){
+                        var stTop = $(window).scrollTop();
+                        var winHeight = $(window).height();
+                        
+                        // // header fixed effect
+                        if( stTop >= $header.offset().top ){
+                            $header.find('.head-fixed').css('position' , 'fixed');
+                        } else {
+                            $header.find('.head-fixed').css('position' , 'static');
+                        }
+                    });
+                }
 
 
                 // init home page slider mouse move event
-                var isMoving = false;
-                var moveTimer = null;
-                $('#homepage-video-slide').mousemove(function(){
-                    // judge is ithe video is playing
-                    var $item = $(this).find('.slideitem').eq( $(this).find('.slidetab li.on').index() );
-                    var $tip = $('#homepage-video-slide').find('.slidetip');
-                    var videoObject = $item.data('video-object');
-                    clearTimeout( moveTimer );
-                    if( !videoObject || videoObject.paused() )  {
-                        $tip.stop(true , true).fadeIn();
-                        return false;
-                    }
+                if( !isMobile ){
+                    var isMoving = false;
+                    var moveTimer = null;
+                    $('#homepage-video-slide').mousemove(function(){
+                        // judge is ithe video is playing
+                        var $item = $(this).find('.slideitem').eq( $(this).find('.slidetab li.on').index() );
+                        var $tip = $('#homepage-video-slide').find('.slidetip');
+                        var videoObject = $item.data('video-object');
+                        clearTimeout( moveTimer );
+                        if( !videoObject || videoObject.paused() )  {
+                            $tip.stop(true , true).fadeIn();
+                            return false;
+                        }
 
-                    if( isMoving == false ){
-                        $tip.stop(true , true).fadeIn();
-                        isMoving = true;
-                    }
-                    moveTimer = setTimeout(function(){
-                        isMoving = false;
-                        $tip.stop(true , true).fadeOut();
-                    } , 2000);
-                });
+                        if( isMoving == false ){
+                            $tip.stop(true , true).fadeIn();
+                            isMoving = true;
+                        }
+                        moveTimer = setTimeout(function(){
+                            isMoving = false;
+                            $tip.stop(true , true).fadeOut();
+                        } , 2000);
+                    });
+
+                    $('#homepage-video-slide .slidetab li').click(function(){
+                        var index = $(this).index();
+                        var $item = $('#homepage-video-slide .slideitem').eq( index );
+                        $('#homepage-video-slide').find('.slidetip2-tit').html( $item.data('tit') )
+                            .end()
+                            .find('.slidetip2-index')
+                            .html( ( index + 1 ) + '/' + $("#homepage-video-slide  .slidebox").children().length );
+                    });
+                } else {
+                    var $dom = $('#homepage-video-slide li').eq(0);
+                    renderVideo( $dom , $dom.data('mp4') , $dom.data('webm') , $dom.find('img').attr('src') , {pause_button: true} , function(){
+                        $dom.find('.video-wrap').css('zIndex',1);
+                    } );
+                }
 
                 cb && cb();
             },
             'craft-page': function( cb ){
+                $('.knowhowintro,.related-product').each(function(){
+                    $(this).insertAfter( $(this).next() );
+                });
+
+                $('.coll_product .arrows').css({
+                    height: $('.coll_product .slide-con').height(),
+                    marginTop: $('.coll_product h2').height()
+                });
+
                 cb && cb();
             },
             "about-page": function( cb ){
+                if( isMobile ){
+                    setTimeout(function(){
+                        $('.aboutinfortxt').insertAfter($('.proinforpic'));
+                        $('.knowhowintro').each(function(){
+                            $(this).insertAfter( $(this).next() );
+                        });
+                    } , 1000);
+                }
                 cb && cb();
             },
             "boutique-page":function( cb ){
                 $('.footer .store-wrap').hide();
+                $('.findus .storemap').insertBefore( $('.findus .storechoose2') );
                 cb && cb();
             },
             "product-detail": function( cb ){
@@ -163,11 +193,16 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     }
                 });
             },
-            // "news": function( cb ){
-            //     // init news-picinfortxt
-
-            // },
+            "news": function( cb ){
+                // init news-picinfortxt
+                cb && cb();
+            },
             "contact-page": function( cb ){
+                if( isMobile ){
+                    $('.knowhowintro').each(function(){
+                        $(this).insertAfter( $(this).next() );
+                    });
+                }
                 $('input[type="file"]').change(function(){
                     var fileName = this.value.replace(/.*?([^\/\\]+)$/,'$1');
                     $(this).parent().siblings('span').remove();
@@ -346,7 +381,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     // set slider css
                     var $homeSilder = $('#home-slider')
                         .css({
-                            height: sliderHeight,
+                            height: isMobile ? 'auto' : sliderHeight,
                             overflow: 'hidden'
                         })
                         .find('.slide')
@@ -465,11 +500,41 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 var fn = pageInits[ page ];
 
                 var $allImgs = $('img');
+
                 var $noPreLoadImgs = $('.slide .slideitem img').filter(function( index ){
                     return index > 0;
                 }).add( $('.js-horizontal-slide .slide-con img').filter(function( index ){
                     return index > 2;
                 }));
+
+                if( isMobile ){
+                    $('.js-horizontal-slide').attr('data-num' , 1);
+
+                    // init swap
+                    LP.use('hammer' , function(){
+                        $(".slidebox > *")
+                           .hammer()
+                           .on("swipeleft",function(ev){
+                                $(this).closest('.slide').siblings('.collarrowsprev').trigger('click');
+                           })
+                           .on("swiperight" , function( ev ){
+                                $(this).closest('.slide').siblings('.collarrowsnext').trigger('click');
+                           });
+
+                        $('.js-horizontal-slide .slide-con-inner > *').hammer()
+                           .on("swipeleft",function(ev){
+                                $(this).closest('.js-horizontal-slide').find('.collarrowsprev').trigger('click');
+                           })
+                           .on("swiperight" , function( ev ){
+                                $(this).closest('.js-horizontal-slide').find('.collarrowsnext').trigger('click');
+                           });
+                    });
+                    
+
+                    // render nav
+                    $('.nav-pop-collections .nav-pop-wrap').eq(0).appendTo('.nav-pop-collections');
+                }
+
 
                 var noPreLoadImgs = $noPreLoadImgs.toArray();
                 $allImgs = $allImgs.filter(function( i ){
@@ -480,6 +545,11 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     fn( function(){
                         if( page == 'home-page' ){
                             homePageLoading( $allImgs );
+                            // if( isMobile ){
+                            //     normalPageLoading( $allImgs );
+                            // } else  {
+                            //     homePageLoading( $allImgs );
+                            // }
                         } else {
                             normalPageLoading( $allImgs );
                         }
@@ -603,10 +673,12 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     } );
                 });
 
-                // render initHoverMoveEffect
-                $('.inout-effect:not(.nav-pop-item)').each(function(){
-                    initHoverMoveEffect( $(this) );
-                });
+                if( !isMobile ){
+                    // render initHoverMoveEffect
+                    $('.inout-effect:not(.nav-pop-item)').each(function(){
+                        initHoverMoveEffect( $(this) );
+                    });
+                }
 
 
 
@@ -621,6 +693,12 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     LP.use(['jscrollpane' , 'mousewheel'] , function(){
                         $dom.jScrollPane({autoReinitialise:true});
                     });
+                });
+
+
+                // fix productstit h2
+                $( '.productstit h2' ).each(function(){
+                    $(this).css('marginTop' , 100 - $(this).height() / 2 );
                 });
 
 
@@ -733,6 +811,21 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
 
     function firstWindowLoaded(){
+        if( isMobile ){
+            $('.nav1 li').click(function(){
+                var type = $(this).data('type');
+                var $tar = $('.nav-pop-' + type).show().css('left' , '100%');
+
+                $('.nav,.hd_language').animate({
+                    left: '-100%'
+                });
+
+                $tar.animate({
+                    left: 0
+                });
+            });
+            return;
+        }
         // =====================================================================================
         var navPopHoverTimer = null;
         var navPopHoverShowTimer = null;
@@ -951,9 +1044,23 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     .animate({
                         left: 0
                     } , 400 , function(){
+                        var $dom = $(this);
+
+                        if( isMobile ){
+                            renderVideo( $dom , $dom.data('mp4') , $dom.data('webm') , $dom.find('img').attr('src') , {pause_button: true} , function(){
+                                $dom.find('.video-wrap').css('zIndex',1);
+                            } );
+                        }
+
+
                         $(this).css('zIndex' , 1)
                             .siblings()
                             .css('zIndex' , 0);
+
+                        $wrap.find('.slidetip2-tit').html( $dom.data('tit') )
+                            .end()
+                            .find('.slidetip2-index')
+                            .html( ( index + 1 ) + '/' + $wrap.find(".slidebox").children().length );
                     } );
 
                 return false;
@@ -1033,7 +1140,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             
 
             var $inner = $dom.find('.slide-con-inner').width( totalItems / num * 100 + '%' );
-            var marginRight = 0.8 /( totalItems / num  );//parseInt( $items.css('margin-right') );
+            var marginRight = num == 1 ? 0 : 0.8 /( totalItems / num  );//parseInt( $items.css('margin-right') );
             var halfMR = marginRight / 2 + '%';
             var counted = 0;
             var prev = 0;
@@ -1620,7 +1727,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     var popHelper = (function(){
         var tpl ='<div class="popshade"></div>\
             <div class="pop">\
-                <div class="popclose" data-a="popclose"></div>\
+                <a href="#" class="popclose" data-a="popclose"></a>\
                 <div class="popcon transition">#[con]</div>\
             </div>';
         return {
@@ -1711,12 +1818,14 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         var winHeight = $(window).height();
 
         // fix home slider
-        $('#home-slider').height( winHeight - headHeight )
-            .find('.slideitem')
-            .each(function(){
-                // fix image size
-                fixImageToWrap( $(this) , $(this).find('img') );
-            });
+        if( !isMobile ){
+            $('#home-slider').height( winHeight - headHeight )
+                .find('.slideitem')
+                .each(function(){
+                    // fix image size
+                    fixImageToWrap( $(this) , $(this).find('img') );
+                });
+        }
         
 
         // fix slidetab marginleft
@@ -1729,62 +1838,67 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         //     var h = $(this).parent('.knowhowitem').children('.knowhowpic').height()
         //     $(this).css('padding-top' , (h - $(this).height())/2)
         // })
-        $('.knowhowintro').each(function(){
-            var h = $(this).parent('.knowhowitem').children('.knowhowpic').height()
-            $(this).css('height' , h);
-            var $wrap = $(this).children('.cwrap');
-            $wrap.css('padding-top' , (h - $wrap.height())/2);
-        });
-        $('.proinfortxt').each(function(){
-            var h = $(this).next('.proinforpic').height();
-            $(this).height( h );
-            $(this).find('.proinfortxt-inner')
-                .css({
-                    marginBottom: 30,
-                    overflow: 'hidden',
-                    height: h - 220
-                });
-        });
-
-        var resizepicinfortxt = false;
-        $('.picinfortxt').each(function(){
-            var $this = $(this);
-            var $picWrap = $(this).next('.picinforpic');
-            loadImages( $picWrap.find('img') , function(){
-                var h = $picWrap.height();
-                $this.height( h - 50 ).css({
-                    overflow: 'hidden',
-                    paddingBottom: 50
-                })
-                .find('.picinfortxt-inner').height( h - 100 )
-                    .css('overflow' , 'hidden');
 
 
-                var $inner = $('.news-picinfortxt .picinfortxt-inner');
-                if( $inner.length && !resizepicinfortxt ){
-                    resizepicinfortxt = true;
-                    var ttop = $inner.offset().top;
-                    var theight = $inner.height();
+        if( !isMobile ){
+            $('.knowhowintro').each(function(){
+                var h = $(this).parent('.knowhowitem').children('.knowhowpic').height()
+                $(this).css('height' , h);
+                var $wrap = $(this).children('.cwrap');
+                $wrap.css('padding-top' , (h - $wrap.height())/2);
+            });
 
-                    var bodyTop = $inner.find('.body').offset().top;
-                    var lineHeight = parseInt( $inner.find('.body').css('lineHeight') );
-                    $inner.find('.body').css({
-                        'height': ~~( ( ttop + theight - bodyTop ) / lineHeight ) * lineHeight - 10,
-                        overflow: 'hidden'
+            $('.proinfortxt').each(function(){
+                var h = $(this).siblings('.proinforpic').height();
+                $(this).height( h );
+                $(this).find('.proinfortxt-inner')
+                    .css({
+                        marginBottom: 30,
+                        overflow: 'hidden',
+                        height: h - 220
                     });
-                }
-            } );
-            // var h = $(this).next('.picinforpic').height();
-            // $(this).height( h - 50 ).css({
-            //     overflow: 'hidden',
-            //     paddingBottom: 50
-            // });
-            // $(this).find('.picinfortxt-inner').height( h - 100 )
-            //     .css('overflow' , 'hidden');
-        });
+            });
+
+            var resizepicinfortxt = false;
+            $('.picinfortxt').each(function(){
+                var $this = $(this);
+                var $picWrap = $(this).next('.picinforpic');
+                loadImages( $picWrap.find('img') , function(){
+                    var h = $picWrap.height();
+                    $this.height( h - 50 ).css({
+                        overflow: 'hidden',
+                        paddingBottom: 50
+                    })
+                    .find('.picinfortxt-inner').height( h - 100 )
+                        .css('overflow' , 'hidden');
+
+
+                    var $inner = $('.news-picinfortxt .picinfortxt-inner');
+                    if( $inner.length && !resizepicinfortxt ){
+                        resizepicinfortxt = true;
+                        var ttop = $inner.offset().top;
+                        var theight = $inner.height();
+
+                        var bodyTop = $inner.find('.body').offset().top;
+                        var lineHeight = parseInt( $inner.find('.body').css('lineHeight') );
+                        $inner.find('.body').css({
+                            'height': ~~( ( ttop + theight - bodyTop ) / lineHeight ) * lineHeight - 10,
+                            overflow: 'hidden'
+                        });
+                    }
+                } );
+                // var h = $(this).next('.picinforpic').height();
+                // $(this).height( h - 50 ).css({
+                //     overflow: 'hidden',
+                //     paddingBottom: 50
+                // });
+                // $(this).find('.picinfortxt-inner').height( h - 100 )
+                //     .css('overflow' , 'hidden');
+            });
+        }
 
         $('.aboutinfortxt').each(function(){
-            var h = $(this).next('.proinforpic').height();
+            var h = $(this).siblings('.proinforpic').height();
             $(this).height( h - 80 )
                 .find('.picinfortxt-inner')
                 .css({
@@ -1836,6 +1950,13 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         // var allWidth = Math.min( $('.hd_oter').offset().left - $('.head-inner').offset().left , $('.head-inner').width() );
         // $headerItems.css('padding' , '0 ' + ( allWidth - totalWidth ) / $headerItems.length / 2 + 'px' );
         // alert(allWidth);
+
+
+        if( isMobile ){
+            $('.news-picinfortxt , .picinfortxt').each(function(){
+                $(this).insertAfter( $(this).next() );
+            });
+        }
 
     })
     .keyup(function( ev ){
@@ -1978,6 +2099,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     // });
 
     LP.action('nav-link' , function(){
+        if( isMobile ) return;
         if( $('html').hasClass('no-history') ) return;
         disposeVideo();
         // load next page
@@ -2499,6 +2621,38 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         var $dom = $('.press-list[data-year="' + year + '"]');
         var page = $dom.data('page') || 1;
         loadPressData( year , page );
+        return false;
+    });
+
+
+
+
+
+    //***** fix mobile
+    LP.action('m-nav' , function(){
+        $('.head-inner').addClass('nav-opened');
+        $('.m-nav').attr('data-a' , 'm-nav-hide' );
+        $('.nav,.hd_language').show().css('left' , 0);
+        if( $('.m-mask').length ){
+            $('.m-mask').show();
+        } else {
+            $('<a href="#" class="m-mask" data-a="m-nav-hide"></a>').appendTo( document.body );
+        }
+    });
+
+    LP.action('m-nav-hide' , function(){
+        $('.head-inner').removeClass('nav-opened');
+        $('.m-nav').attr('data-a' , 'm-nav' );
+        $('.m-mask').remove();
+        $('.nav,.hd_language,.nav-pop').hide();
+
+        return false;
+    });
+
+    LP.action('m-nav-back' , function(){
+        $(this).closest('.nav-pop').animate({left: '100%'} , 500);
+        $('.nav,.hd_language').animate({left: 0} , 500);
+
         return false;
     });
 });

@@ -156,9 +156,7 @@ include_once 'common/header.php';?>
 				</div>
 				<div class="productscom js-horizontal-slide" data-num="4">
 					<?php $presses = PressContentAR::model()->getList(10); ?>
-					<?php if( count( $presses ) > 3 ){ ?>
 					<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
-					<?php } ?>
 					<!--  -->
 					<div class="slide-con">
 						<div class="productslist cs-clear slide-con-inner">
@@ -183,13 +181,11 @@ include_once 'common/header.php';?>
               <?php endforeach;?>
 						</div>
 					</div>
-					<?php if( count( $presses ) > 3 ){ ?>
 					<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
-					<?php } ?>
 					<!--  -->
-					<div class="newsolderbtn intoview-effect" data-effect="fadeup">
-						<a href="<?php echo url("news-press")?>" title="" class="transition-wrap"><span class="transition"><?php echo Yii::t("strings", "View all  press articles")?><br/><br/><?php echo Yii::t("strings", "View all  press articles")?></span></a>
-					</div>
+				</div>
+				<div class="newsolderbtn intoview-effect" data-effect="fadeup">
+					<a href="<?php echo url("news-press")?>" title="" class="transition-wrap"><span class="transition"><?php echo Yii::t("strings", "View all  press articles")?><br/><br/><?php echo Yii::t("strings", "View all  press articles")?></span></a>
 				</div>
 			</div>
 		</div>

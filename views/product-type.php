@@ -83,7 +83,7 @@ else {
 		<div class="section">
 			<div class="products ">
 				<div class="productstit collpictit_app intoview-effect" data-effect="fadeup" style="line-height: 230px;">
-					<h2 style="line-height: 1em;padding-top:70px;"><?php echo $lastCollection->title?><span><?php echo $lastCollection->public_date?></span></h2>					
+					<h2><?php echo $lastCollection->title?><span><?php echo $lastCollection->public_date?></span></h2>					
 				</div>	
 				<!--  -->
 				<div class="products-wrap js-horizontal-slide" data-num="3">
@@ -114,7 +114,7 @@ else {
 		<div class="section">
 			<div class="products ">
 				<div class="productstit collpictit_app intoview-effect" data-effect="fadeup" style="line-height: 230px;">
-					<h2 style="line-height: 1em;padding-top:70px;"><?php echo Yii::t("strings", "Timeless Collections")?></h2>					
+					<h2><?php echo Yii::t("strings", "Timeless Collections")?></h2>					
         </div>
 				<!--  -->
 				<div class="products-wrap js-horizontal-slide" data-num="3">
@@ -147,7 +147,7 @@ else {
       <div class="section">
         <div class="products ">
           <div class="productstit collpictit_app intoview-effect" data-effect="fadeup" style="line-height: 230px;">
-            <h2 style="line-height: 1em;padding-top:70px;"><?php echo $collection->title?></h2>					
+            <h2><?php echo $collection->title?></h2>					
           </div>
           <!--  -->
           <div class="products-wrap js-horizontal-slide" data-num="3">

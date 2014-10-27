@@ -52,7 +52,7 @@
 			</ul>
 			<div class="slidetip-wrap intoview-effect" data-effect="fadeup" data-effect-delay="500" >
 				<div class="slidetip">
-					<span class="slidetip2-tit"><?php echo Yii::t("strings", "Bamboo Weaving")?></span> <br>
+					<span class="slidetip2-tit"><?php echo Yii::t("strings", "Cashmere Felt")?></span> <br>
 					<span class="slidetip2-index">1/4</span> <br>
 					<a href="#" title="" data-play-text="<?php echo Yii::t("strings", "Watch video")?>" data-pause-text="<?php echo Yii::t("strings", "Pause video")?>" data-a="homepage-watch-video" class="btn btn-white transition-wrap"><i class="transition"><?php echo Yii::t("strings", "Watch video")?><br/><br/><?php echo Yii::t("strings", "Watch video")?></i></a>
 				</div>

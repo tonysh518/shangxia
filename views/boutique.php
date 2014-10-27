@@ -48,16 +48,26 @@ include_once 'common/header.php';?>
         <p class="intoview-effect" data-effect="fadeup"><?php echo $crtboutique->body?></p>
       </div>
 		</div>
+
+
 		<!-- parislist -->
 		<div class="section">
-			<div class="parislist cs-clear">
-        <?php if ($crtboutique->thumbnail_image): ?>
-          <?php foreach ($crtboutique->thumbnail_image as $image): ?>
-            <a class="parisitem intoview-effect" data-effect="fadeup">
-              <img src="<?php echo $image?>" width="100%" alt="">
-            </a>
-          <?php endforeach;?>
-        <?php endif;?>
+			<div class="productscom js-horizontal-slide" data-num="3">
+				<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
+				<!--  -->
+				<div class="slide-con">
+					<div class="parislist cs-clear slide-con-inner">
+			        <?php if ($crtboutique->thumbnail_image): ?>
+			          <?php foreach ($crtboutique->thumbnail_image as $image): ?>
+			            <a class="parisitem intoview-effect" data-effect="fadeup">
+			              <img src="<?php echo $image?>" width="100%" alt="">
+			            </a>
+			          <?php endforeach;?>
+			        <?php endif;?>
+					</div>
+				</div>
+				<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
+				<!--  -->
 			</div>
 		</div>
 		<!-- find us -->

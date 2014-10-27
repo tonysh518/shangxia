@@ -5,6 +5,7 @@ require_once "inc.php";?>
 <head>
   <meta charset="utf-8">
   <title><?php if (isset($content_title)) echo $content_title." | "?><?php echo $page_title?> | <?php echo ucwords(Yii::t("strings" ,"shang xia"))?></title>
+  <meta name="viewport" content="minimal-ui, width=640, minimum-scale=0.5, maximum-scale=0.5, target-densityDpi=290,user-scalable=no" />
   <meta name="keywords" content="<?php echo Yii::t("page_title", "meta_keywords")?>" />
   <meta name="description" content="<?php echo Yii::t("page_title", "meta_desc")?>" />
   <link rel="stylesheet" type="text/css" href="/css/style.css?_=1234" />
@@ -32,6 +33,7 @@ require_once "inc.php";?>
 			<div class="head-fixed" <?php if( isset($homepage) ){?> style="position:static" <?php } ?>>
 				<div class="head-inner-wrap">
 					<div class="head-inner cs-clear">
+            <a href="javascript:;" class="m-el m-nav" data-a="m-nav"></a>
 						<ul class="nav nav1">
 							<li data-type="collections"><a data-a="nav-pop" data-d="type=collections" href="javascript:;"><?php echo Yii::t("strings", "COLLECTIONS")?></a><img class="nav-bg" src="/images/nav-bg.jpg"/></li>
 							<li data-type="crafts"><a data-a="nav-pop" data-d="type=crafts" href="javascript:;"><?php echo Yii::t("strings", "CRAFTS")?></a><img class="nav-bg" src="/images/nav-bg.jpg"/></li>
@@ -61,6 +63,7 @@ require_once "inc.php";?>
 					</form>
 				</div>
 				<div class="nav-pop nav-pop-collections">
+          <a href="#" class="m-el m-nav-back" data-a="m-nav-back"></a>
 					<div class="nav-pop-inner">
 						<div class="nav-pop-nav">
               <p><a herf="#"><?php echo Yii::t("strings" ,"Collections")?> <span>&gt;</span></a></p>
@@ -124,6 +127,7 @@ require_once "inc.php";?>
 				</div>
         </div>
 				<div class="nav-pop nav-pop-crafts">
+          <a href="#" class="m-el m-nav-back" data-a="m-nav-back"></a>
 					<div class="nav-pop-inner">
             <?php $crafts = CraftContentAR::model()->getList();?>
             <?php foreach($crafts as $craft): ?>
@@ -136,6 +140,7 @@ require_once "inc.php";?>
 					</div>
 				</div>
 				<div class="nav-pop nav-pop-boutiques">
+          <a href="#" class="m-el m-nav-back" data-a="m-nav-back"></a>
 					<div class="nav-pop-inner">
             <?php $first = TRUE;?>
             <?php foreach (BoutiqueContentAR::getLocation() as $key => $name): ?>

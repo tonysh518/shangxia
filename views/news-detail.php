@@ -1,4 +1,6 @@
-<?php include_once 'common/header.php';?>
+<?php 
+$pagename = 'news-detail';
+include_once 'common/header.php';?>
 
     <?php $news = loadFirstNews();?>
 		<!-- newscrumbs -->
@@ -65,6 +67,19 @@
               <li class="<?php if( $i == count( $groupedNews ) ) echo 'on'; ?>"><?php echo $year?></li>
             <?php endforeach;?>
             			</ul>
+
+            			<!-- <div class="productscom js-horizontal-slide" data-num="4">
+							<?php $presses = PressContentAR::model()->getList(10); ?>
+							<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
+							<div class="slide-con">
+								<ul class="cs-clear slide-con-inner">
+					              	<?php $i = 0; foreach ($groupedNews as $year => $news): $i++?>
+						              <li class="<?php if( $i == count( $groupedNews ) ) echo 'on'; ?>"><?php echo $year?></li>
+						            <?php endforeach;?>
+								</ul>
+							</div>
+							<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
+						</div> -->
 					</div>
 					<!--  -->
 					<div class="productslist cs-clear slidebox" style="margin-left:<?php echo -(count( $groupedNews )-1) * 100 . '%'; ?>">
@@ -129,7 +144,7 @@
 		<!--  -->
 		<div class="section">
 			<div class="detail cs-clear">
-				<div style="width:70%;margin:0 auto;">
+				<div class="detail-w" style=" width:70%;margin:0 auto;">
 					<h2 class="intoview-effect" data-effect="fadeup"><?php echo Yii::t("strings", "about shangxia")?></h2>
 					<p class="intoview-effect" data-effect="fadeup">
             <?php echo Yii::t("strings", "about_shangxia_desc")?>

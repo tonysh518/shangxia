@@ -129,7 +129,7 @@
 		<!--  -->
 		<div class="section">
 			<div class="detail cs-clear">
-				<div style="width:70%;margin:0 auto;">
+				<div class="detail-w" style="width:70%;margin:0 auto;">
 					<h2 class="intoview-effect" data-effect="fadeup"><?php echo Yii::t("strings", "about shangxia")?></h2>
 					<p class="intoview-effect" data-effect="fadeup"><?php echo Yii::t("strings" ,"about_shangxia_desc")?></p>
 	 				<a data-a="nav-link" class="btn transition-wrap" href="<?php echo url("about") ?>"><span class="transition"><?php echo Yii::t("strings", "read more")?><br><br><?php echo Yii::t("strings", "read more")?></a>
