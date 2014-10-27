@@ -110,7 +110,7 @@ At any moment the thinness can be pierced or the body deformed. </p>",
 
     "contact_shanghai" => "<h3>shanghai boutique</h3>
 								<p>1F,South Tower, Hong Kong Plaza, 233 Huaihai Middle Rd, Shanghai, 200021, China</p>
-								<p>+86-21-6390 8899</p>
+								<p> +86-21-8017 9777</p>
 								<p>shangxia.SH1@shang-xia.com</p>",
     
     "contact_beijing" => "<h3>beijing boutique</h3>
