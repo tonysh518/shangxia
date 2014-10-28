@@ -251,7 +251,7 @@ return array(
     
     "contact_shanghai" => "<h3>「上下」之家</h3>
 								<p>中国 上海 淮海中路233号</p>
-								<p>+86-21-6390 8899</p>
+								<p> +86-21-8017 9777</p>
 								<p>shangxia.SH1@shang-xia.com</p>",
     
     "contact_beijing" => "<h3>北京零售空间</h3>

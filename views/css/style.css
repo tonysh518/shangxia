@@ -186,6 +186,7 @@ img.slideitem{height: auto;}
 .range{background: url('../images/range.png') no-repeat top center;padding:40px 0 30px;}
 .rangetxt{text-align: center;color: #910000;font-family: 'Gotham Light';margin-top: 15px;}
 .rangebtn{font-size: 18px;border:#6c0e0e solid 1px;display: block;margin: 20px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px;color:#910000 !important;}
+.popup_qr img {width:50%;margin:0 auto;}
 
 /*store*/
 .storechoose{float: left;width: 50%;text-align: center;padding-bottom: 50px;}
@@ -298,7 +299,7 @@ overflow: hidden;}
 .newsolderbtn a{font-size: 18px;border:#423608 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px}
 
 /*newsnvents*/
-.newsnvents{text-align: center;font-size: 18px;}
+.newsnvents{text-align: center;font-size: 16px;}
 .newsnvents h3{font-size: 30px;text-transform: uppercase;padding: 30px 0;color:#423608;}
 .newsnvents p{padding: 20px 0 30px;}
 .productscom-desc{font-family: Garamond;}
@@ -1061,6 +1062,10 @@ background: rgb(227,227,227);}
     .buy-form input{box-sizing:border-box;height: 70px;line-height: 70px;}
     .buy-form .btn{position: static;margin-left: 0;margin-top: 40px;}
     .pop{font-size: 24px;}
+    .pop h3 {font-size: 24px;}
+    .popup_qr img{width: 100%;}
+    .popup_qr{position: absolute;top:50%;margin-top: -300px;}
+    .qr_pop{height: 100%;padding: 0;}
 
     .popcontxt {font-size: 24px;}
     .jspPane {position: absolute;width: 95% !important;}

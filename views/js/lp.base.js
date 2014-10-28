@@ -532,7 +532,14 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     
 
                     // render nav
-                    $('.nav-pop-collections .nav-pop-wrap').eq(0).appendTo('.nav-pop-collections');
+                    var $navWrap = $('.nav-pop-collections .nav-pop-wrap').eq(0).appendTo('.nav-pop-collections');
+                    var $gift = $('.nav-pop-nav p a').last();
+                    $navWrap.find('.nav-pop-wrap-inner a').last().clone()
+                        .attr( 'href' , $gift.attr('href') )
+                        .find('.nav-text i')
+                        .html( $gift.text().replace('>' , '') )
+                        .end()
+                        .appendTo( $navWrap.find('.nav-pop-wrap-inner') );
                 }
 
 
@@ -1749,7 +1756,10 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                             textAlign: 'center'
                         });
                     $pop.addClass('pop-press');
+                } else if( data.qr ){
+                    $pop.find('.popcon').addClass('qr_pop');
                 }
+
 
                 $('html,body').css('overflow' , 'hidden');
             },
