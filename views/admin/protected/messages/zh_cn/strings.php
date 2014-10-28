@@ -256,11 +256,13 @@ return array(
     
     "contact_beijing" => "<h3>北京零售空间</h3>
 								<p>中国 北京 建国门外大街1号中国国际贸易中心 国贸商城地下一层第SB107B号</p>
-								<p>+86-10-6505-7358</p>",
+								<p>+86-10-6505-7358</p>
+								<p>shangxia.bj1@shang-xia.com</p>",
     
     "contact_paris" => "<h3>巴黎零售空间</h3>
 								<p>8 Sèvres Road, 75006 Paris, France</p>
-								<p>+33-1-42-22-53-62</p>",
+								<p>+33-1-42-22-53-62</p>
+								<p>sevres.paris@shang-xia.com</p>",
     
     "apparel" => "服饰与配饰",
     "jewelry" => "珠宝与首饰",

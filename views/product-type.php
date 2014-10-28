@@ -53,6 +53,7 @@ else {
 				<div class="arrows arrows2 detailprev" data-a="page-prev"></div>
 				<div class=" detailcon">
 					<h2><?php echo Yii::t("strings", "SHANG XIA ". $_GET["name"])?></h2>
+                    <div class="Garamond"><?php echo date('Y',time());?></div>
 				</div>
 				<div class="arrows arrows2 detailnext" data-a="page-next"></div>
 			</div>

@@ -147,17 +147,19 @@ Pour reprendre les mots du poète Li Bai (701-762) de la dynastie Tang (618-907)
     
     
     "contact_shanghai" => "<h3>shanghai boutique</h3>
-								<p>1F,South Tower, Hong Kong Plaza, 233 Huaihai Middle Rd, Shanghai, 200021, China</p>
+								<p>No 233, Middle Huai Hai Road</p>
 								<p>+86-21-8017 9777</p>
 								<p>shangxia.SH1@shang-xia.com</p>",
     
     "contact_beijing" => "<h3>beijing boutique</h3>
 								<p>SB107B, B1 China World Mall, China World Trade Center 1, Jianguomen Waidajie, Beijing, 100001, China</p>
-								<p>+86-10-6505-7358</p>",
+								<p>+86-10-6505-7358</p>
+								<p>shangxia.bj1@shang-xia.com</p>",
     
     "contact_paris" => "<h3>paris boutique</h3>
 								<p>8 Sèvres Road, 75006 Paris, France</p>
-								<p>+33-1-42-22-53-62</p>",
+								<p>+33-1-42-22-53-62</p>
+								<p>sevres.paris@shang-xia.com</p>",
     
     "contact_form_title" => "Pour plus d’informations, veuillez nous envoyer un Email en remplissant le formulaire ci-dessous:",
     
