@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f91aff1e-5f75-400f-ade5-6675323d0744" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/images/contact-sh.jpg" afterPath="$PROJECT_DIR$/views/images/contact-sh.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/product-type.php" afterPath="$PROJECT_DIR$/views/product-type.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/protected/messages/en_us/strings.php" afterPath="$PROJECT_DIR$/views/admin/protected/messages/en_us/strings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/protected/messages/fr/strings.php" afterPath="$PROJECT_DIR$/views/admin/protected/messages/fr/strings.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/protected/messages/zh_cn/strings.php" afterPath="$PROJECT_DIR$/views/admin/protected/messages/zh_cn/strings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="shangxia.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,6 +23,10 @@
     <file path="/homeslider_cn.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413882575873" ignored="false" />
     <file path="/homeslider_en.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413882605543" ignored="false" />
     <file path="/product-type.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1414479990948" ignored="false" />
+    <file path="$PROJECT_DIR$/../upstudios/css/base.css" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1414488914289" ignored="false" />
+    <file path="/base.css" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1414488896735" ignored="false" />
+    <file path="$PROJECT_DIR$/../upstudios/index_en.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1414492371528" ignored="false" />
+    <file path="/index_en.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1414492362660" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +82,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="about.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/about.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="60" selection-start="1523" selection-end="1545" vertical-scroll-proportion="-2.0357144">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="contact.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/contact.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -107,10 +115,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product-type.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="product-type.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/product-type.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="60" selection-start="1694" selection-end="1694" vertical-scroll-proportion="0.39695945">
+            <state line="47" column="0" selection-start="1304" selection-end="1304" vertical-scroll-proportion="-1.537037">
               <folding>
                 <element signature="e#2757#2786#0" expanded="true" />
                 <element signature="e#3081#3108#0" expanded="true" />
@@ -124,14 +132,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="strings.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="strings.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/admin/protected/messages/zh_cn/strings.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="247" column="20" selection-start="12355" selection-end="12355" vertical-scroll-proportion="-5.535714">
+            <state line="89" column="32" selection-start="3015" selection-end="3015" vertical-scroll-proportion="0.5145631">
               <folding>
-                <marker date="1414478292000" expanded="true" signature="9065:9142" placeholder="..." />
-                <marker date="1414478292000" expanded="true" signature="10713:11303" placeholder="..." />
-                <marker date="1414478292000" expanded="true" signature="11467:12034" placeholder="..." />
+                <marker date="1414574161000" expanded="true" signature="9065:9142" placeholder="..." />
+                <marker date="1414574161000" expanded="true" signature="10713:11303" placeholder="..." />
+                <marker date="1414574161000" expanded="true" signature="11467:12034" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -180,10 +188,10 @@
         <option value="$PROJECT_DIR$/views/common/footer.php" />
         <option value="$PROJECT_DIR$/views/news.php" />
         <option value="$PROJECT_DIR$/views/css/style.css" />
-        <option value="$PROJECT_DIR$/views/admin/protected/messages/zh_cn/strings.php" />
         <option value="$PROJECT_DIR$/views/admin/protected/messages/en_us/strings.php" />
         <option value="$PROJECT_DIR$/views/admin/protected/messages/fr/strings.php" />
         <option value="$PROJECT_DIR$/views/product-type.php" />
+        <option value="$PROJECT_DIR$/views/admin/protected/messages/zh_cn/strings.php" />
       </list>
     </option>
   </component>
@@ -516,13 +524,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../superboomi/themes/bartik/templates/page--front.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="262" column="31" selection-start="14649" selection-end="14659" vertical-scroll-proportion="0.33445945">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/admin/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="0" selection-start="0" selection-end="213" vertical-scroll-proportion="0.2228739">
@@ -586,28 +587,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="301" column="44" selection-start="16459" selection-end="16459" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/contact.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="8" selection-start="370" selection-end="370" vertical-scroll-proportion="-6.107143">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/protected/messages/zh_cn/strings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="247" column="20" selection-start="12355" selection-end="12355" vertical-scroll-proportion="-5.535714">
-          <folding>
-            <marker date="1414478292000" expanded="true" signature="9065:9142" placeholder="..." />
-            <marker date="1414478292000" expanded="true" signature="10713:11303" placeholder="..." />
-            <marker date="1414478292000" expanded="true" signature="11467:12034" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -637,7 +620,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/product-type.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="60" selection-start="1694" selection-end="1694" vertical-scroll-proportion="0.39695945">
+        <state line="47" column="0" selection-start="1304" selection-end="1304" vertical-scroll-proportion="-1.537037">
           <folding>
             <element signature="e#2757#2786#0" expanded="true" />
             <element signature="e#3081#3108#0" expanded="true" />
@@ -646,6 +629,31 @@
             <element signature="e#4546#4588#0" expanded="true" />
             <element signature="e#6057#6084#0" expanded="true" />
             <element signature="e#6102#6144#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="301" column="44" selection-start="16459" selection-end="16459" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/about.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="60" selection-start="1523" selection-end="1545" vertical-scroll-proportion="-2.0357144">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/protected/messages/zh_cn/strings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="32" selection-start="3015" selection-end="3015" vertical-scroll-proportion="0.5145631">
+          <folding>
+            <marker date="1414574161000" expanded="true" signature="9065:9142" placeholder="..." />
+            <marker date="1414574161000" expanded="true" signature="10713:11303" placeholder="..." />
+            <marker date="1414574161000" expanded="true" signature="11467:12034" placeholder="..." />
           </folding>
         </state>
       </provider>
