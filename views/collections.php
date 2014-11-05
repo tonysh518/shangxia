@@ -64,9 +64,7 @@ include_once 'common/header.php';?>
           ?>
           
 					<div class="products-wrap js-horizontal-slide intoview-effect" data-effect="fadeup" data-num="3">
-						<?php if ( count($products) > 3 ){ ?>
 						<div class="collarrows collarrowsprev" data-a="collarrowsprev"></div>
-						<?php }?>
 						<div class="slide-con">
               <?php if (array_search($_GET["cid"], array("20331", "20567", "20773")) !== FALSE  && ProductContentAR::getTypeKeyName($type_id) == 'apparel'): ?>
                 <ul class="slide-con-inner piclist cs-clear slider-type-3">
@@ -124,9 +122,7 @@ include_once 'common/header.php';?>
                 </ul>
               <?php endif;?>
 						</div>
-						<?php if ( count($products) > 3 ){ ?>
 						<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
-						<?php }?>
 					</div>
 				</div>
 			</div>

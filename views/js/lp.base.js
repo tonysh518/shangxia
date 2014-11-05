@@ -3,7 +3,12 @@
  */
 LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     'use strict'
-    var isMobile = !!navigator.userAgent.toLowerCase().match(/ipad|iphone os|midp|rv:1.2.3.4|android|windows ce|windows mobile/i);
+    var isMobile = !!navigator.userAgent.toLowerCase().match(/iphone os|midp|rv:1.2.3.4|android|windows ce|windows mobile/i);
+    var isIphone = !!navigator.userAgent.toLowerCase().match(/iphone os/i);
+    var isTablet = !!navigator.userAgent.toLowerCase().match(/(ipad|android(?!.*mobile)|tablet)/i);
+    if( isTablet ){
+        $('html').addClass('tablet');
+    }
     if( isMobile ){
         $(document.body).addClass('mobile');
     }
@@ -375,8 +380,9 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                             marginTop: -headHeight
                         } , 800);
 
-
-                    var sliderHeight = $(window).height() - headHeight;
+                    var winHeight = $(window).height();
+                    var winWidth = $(window).width();
+                    var sliderHeight = isTablet ? 950 / 1600 * winWidth :  winHeight - headHeight;
 
                     // set slider css
                     var $homeSilder = $('#home-slider')
@@ -398,9 +404,10 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
                     var $loadingWrap = $('.loading-wrap');
                     $loadingWrap.stop(true)
-                        .animate({
-                            top: '100%'
-                        } , 800)
+                        .animate( isTablet ? {
+                            top: sliderHeight,
+                            opacity: 0
+                        } : { top: '100%' } , 800)
                         .promise()
                         .then(function(){
                             // run the animate
@@ -431,6 +438,10 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                                     .removeAttr('style')
                                     .prev()
                                     .remove();
+
+                                if( isMobile ){
+                                    $('.head-fixed').removeAttr('style');
+                                }
                             } );
                         });
                     
@@ -515,18 +526,24 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                         $(".slidebox > *")
                            .hammer()
                            .on("swipeleft",function(ev){
-                                $(this).closest('.slide').siblings('.collarrowsprev').trigger('click');
+                                var $slidetab = $(this).closest('.slide').find('.slidetab');
+                                if( $slidetab.length ){
+                                    $slidetab.find('.on').next().trigger('click');
+                                }
                            })
                            .on("swiperight" , function( ev ){
-                                $(this).closest('.slide').siblings('.collarrowsnext').trigger('click');
+                                var $slidetab = $(this).closest('.slide').find('.slidetab');
+                                if( $slidetab.length ){
+                                    $slidetab.find('.on').prev().trigger('click');
+                                }
                            });
 
                         $('.js-horizontal-slide .slide-con-inner > *').hammer()
                            .on("swipeleft",function(ev){
-                                $(this).closest('.js-horizontal-slide').find('.collarrowsprev').trigger('click');
+                                $(this).closest('.js-horizontal-slide').find('.collarrowsnext').trigger('click');
                            })
                            .on("swiperight" , function( ev ){
-                                $(this).closest('.js-horizontal-slide').find('.collarrowsnext').trigger('click');
+                                $(this).closest('.js-horizontal-slide').find('.collarrowsprev').trigger('click');
                            });
                     });
                     
@@ -1137,7 +1154,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             // 计算每一个item的宽度 
             var $imgs = $items.find('img');
             var totalItems = 0;
-            if( $imgs.length ){
+            if( $imgs.length && !isMobile ){
                 $imgs.each(function(){
                     totalItems += Math.round( $(this).data('width') / $(this).data('height') ) || 1;
                 });
@@ -1158,39 +1175,54 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 var $img = $this.find('img');
                 var indent = Math.round( $img.data('width') / $img.data('height') ) || 1;
                 counted += indent;
-                if( counted % 3 == 0 ){
-                    if( indent == 1 && prev == 1 ){ // 111
-                        // 第一个margin-left: 0.4%
-                        // 最后一个margin-right: 0.4 %
-                        $this
-                        .css('marginRight' , halfMR)
-                        .prev()
-                        .prev()
-                        .css({
-                            marginLeft: halfMR ,
-                            marginRight: marginRight + '%'
-                        });
-                    } else if( indent == 3 ) { // 3
-                        $this.css({
-                            marginLeft: halfMR,
-                            marginRight: halfMR
-                        });
-                    } else { // 21 || 12
-                        $this.css('marginRight' , halfMR)
+                if( isMobile ){
+                    $this.css({
+                        marginLeft: 0, 
+                        marginRight: 0,
+                        overflow: 'hidden',
+                        width: 1/totalItems * 100 + '%'
+                    });
+
+                    $img.css({
+                        marginLeft: - ( indent - 1 ) / 2 * 100 + '%',
+                        width: indent * 100 + '%'
+                    });
+                } else {
+                    if( counted % 3 == 0 ){
+                        if( indent == 1 && prev == 1 ){ // 111
+                            // 第一个margin-left: 0.4%
+                            // 最后一个margin-right: 0.4 %
+                            $this
+                            .css('marginRight' , halfMR)
+                            .prev()
                             .prev()
                             .css({
-                                'marginLeft': halfMR,
-                                'marginRight': marginRight + '%'
+                                marginLeft: halfMR ,
+                                marginRight: marginRight + '%'
                             });
+                        } else if( indent == 3 ) { // 3
+                            $this.css({
+                                marginLeft: halfMR,
+                                marginRight: halfMR
+                            });
+                        } else { // 21 || 12
+                            $this.css('marginRight' , halfMR)
+                                .prev()
+                                .css({
+                                    'marginLeft': halfMR,
+                                    'marginRight': marginRight + '%'
+                                });
+                        }
+                    } else if( ( counted - indent ) % 3 == 0 ){
+                        $this.css({
+                            marginLeft: halfMR ,
+                            marginRight: halfMR
+                        });
                     }
-                } else if( ( counted - indent ) % 3 == 0 ){
-                    $this.css({
-                        marginLeft: halfMR ,
-                        marginRight: halfMR
-                    });
-                }
 
-                $this.width( indent /  totalItems * 100 - marginRight + '%' );
+                    $this.width( indent /  totalItems * 100 - marginRight + '%' );
+                }
+                
                 prev = indent;
             });
 
@@ -1410,7 +1442,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                             height: '100%'
                         });
                     if( !config.controls ){
-                        $wrap.off('click.video-operation').on('click.video-operation' , function(){
+                        $wrap.off( isMobile ? 'touchend' : 'click.video-operation').on( isMobile ? 'touchend' : 'click.video-operation' , function(){
                             if( is_playing ){
                                 v.pause();
                             } else {
@@ -1432,12 +1464,22 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                         $pauseBtn.show()
                             .delay( 4000 )
                             .fadeOut();
+
+                        // if iphone , hide the poster
+                        if( isIphone ){
+                            $wrap.find('.vjs-poster').hide();
+                        }
                     });
 
                     v.on('pause' , function(){
                         is_playing = false;
                         $wrap.find('.vjs-big-pause-button').hide();
                         $wrap.find('.vjs-big-play-button').fadeIn();
+
+                        // if iphone , show the poster
+                        if( isIphone ){
+                            $wrap.find('.vjs-poster').show();
+                        }
                     });
                 }
 
@@ -1829,7 +1871,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
         // fix home slider
         if( !isMobile ){
-            $('#home-slider').height( winHeight - headHeight )
+            $('#home-slider').height( isTablet ? 950 / 1600 * winWidth : winHeight - headHeight )
                 .find('.slideitem')
                 .each(function(){
                     // fix image size
