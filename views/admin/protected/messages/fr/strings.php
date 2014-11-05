@@ -186,7 +186,7 @@ Pour reprendre les mots du poète Li Bai (701-762) de la dynastie Tang (618-907)
     "Beijing" => "PÉKIN",
     
     "{city} boutiquue" => "{city} ESPACE",
-    
+
     "COLLECTIONS" => "COLLECTIONS",
     
     "CRAFTS" => "ARTISANATS",
@@ -201,11 +201,11 @@ Pour reprendre les mots du poète Li Bai (701-762) de la dynastie Tang (618-907)
     
     "PRIVACY POLICY LEGAL INFORMATION" => "<a href='privacy-policy' target='_blank'>Informations Légales</a>",
     
-    "apparel" => " LE PRÊT-À-PORTER",
-    "jewelry" => " LE BIJOU",
-    "teaware" => "LE THÉ",
-    "homeware" => " LA MAISON",
-    "furniture" => "MOBILIER",
+    "apparel" => " Le Prêt-à-porter",
+    "jewelry" => " Le Bijou",
+    "teaware" => "Le Thé",
+    "homeware" => " La Maison",
+    "furniture" => "Mobilier",
     
     "other crafts" => "AUTRES ARTISANATS",
     
@@ -282,7 +282,7 @@ Pour reprendre les mots du poète Li Bai (701-762) de la dynastie Tang (618-907)
     
     "brand story" => "Histoire",
     
-    "Gift Corner" => "CADEAUX",
+    "Gift Corner" => "Cadeaux",
     
     "Read more" => "Lire plus",
     

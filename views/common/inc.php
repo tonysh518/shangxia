@@ -569,7 +569,7 @@ function nextProduct($product) {
   $products = $productsGroupedByType[$product->collection];
   
   foreach ($products as $index => $p) {
-    if ($p->cid == $product->cid && $index < count($products) - 2) {
+    if ($p->cid == $product->cid && $index < count($products) - 1) {
       return $products[$index + 1];
     }
   }
