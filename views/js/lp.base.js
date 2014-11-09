@@ -646,21 +646,21 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
 
                     // fix header effect
-                    // var headerOff = $('.head').offset().top;
-                    // var percentOff = stTop - headerOff;
-                    // percentOff = Math.max( percentOff , 0 );
-                    // percentOff = Math.min( percentOff , 48 );
-                    // $('.head-inner').css('padding' , 24 - (percentOff) / 2 + 'px 0' );
-                    // var scale = 'scale(' + ( ( 1 - ( percentOff ) / 48 ) * 0.3 + 0.7 ) + ')';
-                    // $('.logo').css({
-                    //     'transform' : scale,
-                    //     '-webkit-transform' : scale,
-                    //     '-moz-transform' : scale,
-                    //     '-ms-transform' : scale,
-                    //     '-o-transform' : scale
-                    // });
+                    var headerOff = $('.head').offset().top;
+                    var percentOff = stTop - headerOff;
+                    percentOff = Math.max( percentOff , 0 );
+                    percentOff = Math.min( percentOff , 48 );
+                    $('.head-inner').css('padding' , 24 - (percentOff) / 2 + 'px 0' );
+                    var scale = 'scale(' + ( ( 1 - ( percentOff ) / 48 ) * 0.3 + 0.7 ) + ')';
+                    $('.logo').css({
+                        'transform' : scale,
+                        '-webkit-transform' : scale,
+                        '-moz-transform' : scale,
+                        '-ms-transform' : scale,
+                        '-o-transform' : scale
+                    });
 
-                    // $('.hd_oter').css('top' , ( 1 - ( percentOff ) / 48 ) * 25 + 22 );
+                    $('.hd_oter').css('top' , ( 1 - ( percentOff ) / 48 ) * 25 + 22 );
                 })
                 .trigger('scroll');
 
@@ -867,7 +867,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 $('.nav-pop-' + text ).stop(true).show()
                     .css('zIndex',99)
                     .animate({
-                        top: 110
+                        top: $('.head-fixed').height()
                     } , 500 , '' , function(){
                         $(this).css('zIndex' , 101);
                     });
