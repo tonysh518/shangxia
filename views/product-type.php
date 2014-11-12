@@ -84,7 +84,7 @@ else {
 		<div class="section">
 			<div class="products ">
 				<div class="productstit collpictit_app intoview-effect" data-effect="fadeup" style="line-height: 230px;">
-					<h2><?php echo $lastCollection->title?><span><?php echo $lastCollection->public_date?></span></h2>					
+					<h2><?php echo $lastCollection->title?></h2>
 				</div>	
 				<!--  -->
 				<div class="products-wrap js-horizontal-slide" data-num="3">
