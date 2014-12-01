@@ -428,7 +428,20 @@ function searchWithKeyword($keyword) {
 }
 
 function getCity() {
-  $userIp = (isset($_SERVER["HTTP_VIA"])) ? $_SERVER["HTTP_X_FORWARDED_FOR"] : $_SERVER["REMOTE_ADDR"]; 
+
+    if(isset($_SERVER["HTTP_VIA"])){
+        if(isset($_SERVER["HTTP_X_FORWARDED_FOR"])){
+            $userIp = $_SERVER["HTTP_X_FORWARDED_FOR"];
+        }
+        else {
+            $userIp = $_SERVER["REMOTE_ADDR"];
+        }
+    }
+    else {
+        $userIp = $_SERVER["REMOTE_ADDR"];
+    }
+
+    //$userIp = (isset($_SERVER["HTTP_VIA"])) ? $_SERVER["HTTP_X_FORWARDED_FOR"] : $_SERVER["REMOTE_ADDR"];
   $city = Yii::app()->ip->toCity($userIp);
   if ($city == "上海市") {
     $city = "shanghai";
