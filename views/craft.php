@@ -92,7 +92,7 @@ include_once 'common/header.php';?>
 						<div class="proinfortxt intoview-effect" data-effect="fadeup">
 							<div class="proinfortxt-inner">
 								<h2><?php echo $product->title?></h2>
-                <p><?php echo $product->body?></p>
+                                <p><?php echo $product->body?></p>
 							</div>
 							<a href="#" data-a="show-pop" class="btn transition-wrap"><span class="transition"><?php echo Yii::t("strings", "read more")?><br><br><?php echo Yii::t("strings", "read more")?></span></a>
 							<textarea style="display:none;">

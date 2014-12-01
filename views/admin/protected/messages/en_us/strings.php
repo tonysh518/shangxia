@@ -12,22 +12,10 @@ return array(
     "about_brand_founder_title" => "FOUNDER & ARTISTIC DIRECTOR OF SHANGXIA",
     "about_brand_founter_desc" => 'As Artistic Director and CEO of SHANG XIA, Ms. Jiang Qiong Er is a Chinese contemporary designer of international reputation infusing the subtlety, beauty and heritage of Chinese culture. Her designs breathe elegance of innovation and imagination. Her international vision and open mind, along with her multi-cultural background, naturally allow her creativity to express itself; preserving and respecting tradition, both Eastern and Western.Jiang Qiong Er was introduced to traditional painting when she was only two and later became a student of famous painter Cheng Shi Fa and calligrapher Han Tian Hong. After graduation from Tong Ji University in Art &amp; Design, she went on to the Decorative Arts School in Paris to further her studies in furniture and interior design.',
     "about_brand_emplee_subject" => 'HERITAGE & ENCOUNTER',
-    "about_brand_emplee_one" => 'Xiu Yin, the 90 year old grandmother From the Republic, to the war<br/>
-To the liberation of new China<br/>
-To the new century<br/>
-Says she, she has had four lives Today, she still radiantly smiles',
-    "about_brand_emplee_two" => "Hui Jie, the 65 year old mother<br/>
-From the countryside<br/>
-To the open reform<br/>
-To the frenzy of construction<br/>
-Her life bears the weight of three eras of time Today, she continues to lightly dance",
-    "about_brand_emplee_third" => "Qiong Er, the 33 year old daughter<br/>
-From educational reform<br/>
-To the booming economy<br/>
-To East-West cross cultural exchange<br/>
-She is a fortunate witness to and experiences two styles of life Today,<br/>
-she carries on the ambition<br/>
-She carries on the ideal",
+    "about_brand_emplee_one" => 'Timeless Aesthetics',
+    "about_brand_emplee_two" => "Sophisticated Lifestyle",
+    "about_brand_emplee_third" => "Traditional Craftsmanship",
+    "about_brand_emplee_four" => "Contemporary Design",
     "home_brand_story" => "SHANG XIA, CHINESE FINE LIVING",
     "choice_of_timber_desc" => "Zitan is a very precious timber for two reasons. Firstly, the timber can only be used when it is several hundred years old, secondly, only 10% - 20% of the tree can be used to make furniture. Even to touch this rare wood is a matter of destiny! The carpenter prepared card models for each one of the furniture’s components, they were then cut from the timber according to the paper models. For example, a Ming style official hat chair has 42 components, including head rest, arm rest, back rest, apron, base pin and so on. It was said that in the Ming and Qing dynasties, all components for a piece of high quality hardwood furniture had to be from one single tree. Because of its rarity, the cutting craftsman shifu has to make the best, most efficient use of the timber.",
     "Drying Desc" => "<p>Though separated and cut, wood still has life. Water in the furniture will cause it to split, become loose or even rot. All of the timber needs to be treated in order to ensure that it is fully dry. The wood needs to be soaked in \"wax water\" for at least 6 months before all the moisture is removed from the wood. The stable wax is used to replace the active water elements. The wood will then remain permanently dry.</p>

@@ -259,7 +259,7 @@ img.slideitem{height: auto;}
 .products-wrap{position: relative;}
 .proinfortxt{float: left;width: 32.8%;background: #F6EEEE}
 .proinfortxt h2{font-size: 18px;text-align: center;padding: 70px 50px 40px}
-.proinfortxt p{font-size: 18px;padding: 0 50px 40px;font-family: Garamond;}
+.proinfortxt p{font-size: 18px;padding: 0 50px 0 40px;font-family: Garamond;}
 .proinfortxt a{font-size: 18px;border:#000 solid 1px;display: block;margin: 12px auto 0;text-align: center;width: 250px;height: 62px;line-height: 62px;max-width: 80%;font-family: Garamond;}
 .proinforpic{float: right;width: 66.4%;overflow: hidden;}
 .productscom{position: relative;font-family: "Gotham Book";}

@@ -98,6 +98,14 @@ include_once 'common/header.php';?>
             </div>
 						<div class="knowhowpic  knowhowL" style="cursor:default"><img src="/images/about_em_3.jpg" width="100%" /></div>
 					</div>
+                    <div class="knowhowitem cs-clear intoview-effect" data-effect="fadeup">
+                        <div class="knowhowintro  knowhowL">
+                            <div class="cwrap c_9e927a">
+                                <?php echo Yii::t("strings" ,"about_brand_emplee_four")?>
+                            </div>
+                        </div>
+                        <div class="knowhowpic  knowhowR" style="cursor:default"><img src="/images/about_em_4.jpg" width="100%" /></div>
+                    </div>
 				</div>
 			</div>
 		</div>
