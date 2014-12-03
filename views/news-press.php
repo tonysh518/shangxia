@@ -38,6 +38,7 @@ include_once 'common/header.php';?>
 					<!--  -->
 				</div>
 			</div>
+
 		</div>
 		<!--  -->
 <?php include_once 'common/footer.php';?>
