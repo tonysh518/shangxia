@@ -2,31 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f91aff1e-5f75-400f-ade5-6675323d0744" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/images/about_em_1.jpg" afterPath="$PROJECT_DIR$/views/images/about_em_1.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/images/about_em_2.jpg" afterPath="$PROJECT_DIR$/views/images/about_em_2.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/images/about_em_3.jpg" afterPath="$PROJECT_DIR$/views/images/about_em_3.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/about.php" afterPath="$PROJECT_DIR$/views/about.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/craft.php" afterPath="$PROJECT_DIR$/views/craft.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/common/footer.php" afterPath="$PROJECT_DIR$/views/common/footer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/common/header.php" afterPath="$PROJECT_DIR$/views/common/header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.php" afterPath="$PROJECT_DIR$/views/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/news.php" afterPath="$PROJECT_DIR$/views/news.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/widget/product-cf.php" afterPath="$PROJECT_DIR$/views/widget/product-cf.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/protected/messages/en_us/strings.php" afterPath="$PROJECT_DIR$/views/admin/protected/messages/en_us/strings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/protected/messages/fr/strings.php" afterPath="$PROJECT_DIR$/views/admin/protected/messages/fr/strings.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/protected/messages/zh_cn/strings.php" afterPath="$PROJECT_DIR$/views/admin/protected/messages/zh_cn/strings.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/css/style.css" afterPath="$PROJECT_DIR$/views/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="shangxia.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1417420054332" ignored="false" />
+    <file path="/Dummy.txt" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1417499062191" ignored="false" />
     <file path="/main.css" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413361511435" ignored="false" />
-    <file path="/news.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413346187859" ignored="false" />
+    <file path="/news.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1417502472975" ignored="false" />
     <file path="/content.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1412947128942" ignored="false" />
-    <file path="/a.dummy" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413267096490" ignored="false" />
+    <file path="/a.dummy" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1417525391184" ignored="false" />
     <file path="/strings.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413356318169" ignored="false" />
     <file path="/footer.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1414389706581" ignored="false" />
     <file path="/privacy-policy.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413030688621" ignored="false" />
-    <file path="/style.css" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1417422606998" ignored="false" />
+    <file path="/style.css" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1417579021203" ignored="false" />
     <file path="$PROJECT_DIR$/../rungiswines/wp-content/themes/wine/single.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413168818180" ignored="false" />
     <file path="$PROJECT_DIR$/../ave_1000/yii/protected/views/revisit/index.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413261750559" ignored="false" />
-    <file path="/header.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413277395096" ignored="false" />
+    <file path="/header.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1417576062378" ignored="false" />
     <file path="/product-detail.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413278471930" ignored="false" />
     <file path="/ie8.css" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413358648094" ignored="false" />
     <file path="/homeslider_cn.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1413882575873" ignored="false" />
@@ -36,6 +35,8 @@
     <file path="/base.css" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1414488896735" ignored="false" />
     <file path="$PROJECT_DIR$/../upstudios/index_en.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1414492371528" ignored="false" />
     <file path="/index_en.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1414492362660" ignored="false" />
+    <file path="$PROJECT_DIR$/../rungiswines/wp-content/themes/wine/page.php" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1417525459453" ignored="false" />
+    <file path="$PROJECT_DIR$/../rungiswines/wp-content/themes/wine/style.css" changelist="f91aff1e-5f75-400f-ade5-6675323d0744" time="1417526462117" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,13 +56,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="craft.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/craft.php">
+      <file leaf-file-name="product-cf.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/widget/product-cf.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="57" selection-start="3880" selection-end="3897" vertical-scroll-proportion="-9.607142">
-              <folding>
-                <element signature="n#style#0;n#textarea#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#!!top" expanded="true" />
-              </folding>
+            <state line="10" column="86" selection-start="556" selection-end="556" vertical-scroll-proportion="-6.785714">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="product-ep.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/widget/product-ep.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="product-w.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/widget/product-w.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="product-zitan.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/widget/product-zitan.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -69,51 +95,32 @@
       <file leaf-file-name="strings.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/admin/protected/messages/zh_cn/strings.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="103" column="28" selection-start="4749" selection-end="4772" vertical-scroll-proportion="-10.285714">
+            <state line="231" column="19" selection-start="12592" selection-end="12592" vertical-scroll-proportion="-4.571429">
               <folding>
-                <marker date="1417424266000" expanded="true" signature="9539:9616" placeholder="..." />
-                <marker date="1417424266000" expanded="true" signature="11187:11777" placeholder="..." />
-                <marker date="1417424266000" expanded="true" signature="11941:12508" placeholder="..." />
+                <marker date="1417509459000" expanded="true" signature="9599:9676" placeholder="..." />
+                <marker date="1417509459000" expanded="true" signature="11247:11837" placeholder="..." />
+                <marker date="1417509459000" expanded="true" signature="12001:12568" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="strings.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/admin/protected/messages/en_us/strings.php">
+      <file leaf-file-name="footer.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/common/footer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="55" selection-start="2371" selection-end="2599" vertical-scroll-proportion="-10.285714">
+            <state line="62" column="40" selection-start="2834" selection-end="2834" vertical-scroll-proportion="-4.75">
               <folding>
-                <marker date="1417424274000" expanded="true" signature="6059:6883" placeholder="..." />
-                <marker date="1417424274000" expanded="true" signature="6939:7505" placeholder="..." />
-                <marker date="1417424274000" expanded="true" signature="15418:15619" placeholder="..." />
-                <marker date="1417424274000" expanded="true" signature="15685:16255" placeholder="..." />
-                <marker date="1417424274000" expanded="true" signature="20903:22230" placeholder="..." />
+                <element signature="n#style#0;n#a#0;n#div#3;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="strings.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/admin/protected/messages/fr/strings.php">
+      <file leaf-file-name="header.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/common/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="55" selection-start="3754" selection-end="3754" vertical-scroll-proportion="-11.535714">
-              <folding>
-                <marker date="1417424318000" expanded="true" signature="15407:15682" placeholder="..." />
-                <marker date="1417424318000" expanded="true" signature="16443:16944" placeholder="..." />
-                <marker date="1417424318000" expanded="true" signature="19411:20194" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="about.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/about.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="80" selection-start="3280" selection-end="3302" vertical-scroll-proportion="-0.037441496">
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#5;n#!!top" expanded="true" />
-              </folding>
+            <state line="40" column="118" selection-start="2748" selection-end="2748" vertical-scroll-proportion="-0.61488676">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -121,16 +128,27 @@
       <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="261" column="49" selection-start="14335" selection-end="14335" vertical-scroll-proportion="0.0">
+            <state line="865" column="32" selection-start="37830" selection-end="37830" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="inc.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/common/inc.php">
+      <file leaf-file-name="news.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/news.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="212" column="8" selection-start="5555" selection-end="5555" vertical-scroll-proportion="-8.285714">
+            <state line="27" column="32" selection-start="1042" selection-end="1042" vertical-scroll-proportion="-12.892858">
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="13" selection-start="1407" selection-end="1407" vertical-scroll-proportion="-2.392857">
               <folding />
             </state>
           </provider>
@@ -154,29 +172,29 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/views/common/header.php" />
-        <option value="$PROJECT_DIR$/views/js/lp.base.js" />
-        <option value="$PROJECT_DIR$/views/css/ie8.css" />
         <option value="$PROJECT_DIR$/views/admin/css/main.css" />
         <option value="$PROJECT_DIR$/../superboomi/themes/bartik/templates/page--front.tpl.php" />
         <option value="$PROJECT_DIR$/../superboomi/themes/bartik/templates/homeslider_en.php" />
         <option value="$PROJECT_DIR$/../superboomi/themes/bartik/templates/homeslider_cn.php" />
-        <option value="$PROJECT_DIR$/views/common/footer.php" />
         <option value="$PROJECT_DIR$/views/product-type.php" />
-        <option value="$PROJECT_DIR$/views/news.php" />
         <option value="$PROJECT_DIR$/views/craft.php" />
-        <option value="$PROJECT_DIR$/views/css/style.css" />
         <option value="$PROJECT_DIR$/views/about.php" />
-        <option value="$PROJECT_DIR$/views/admin/protected/messages/zh_cn/strings.php" />
-        <option value="$PROJECT_DIR$/views/admin/protected/messages/en_us/strings.php" />
         <option value="$PROJECT_DIR$/views/admin/protected/messages/fr/strings.php" />
+        <option value="$PROJECT_DIR$/views/admin/protected/messages/en_us/strings.php" />
+        <option value="$PROJECT_DIR$/views/widget/product-cf.php" />
+        <option value="$PROJECT_DIR$/views/common/footer.php" />
+        <option value="$PROJECT_DIR$/views/index.php" />
+        <option value="$PROJECT_DIR$/views/news.php" />
+        <option value="$PROJECT_DIR$/views/admin/protected/messages/zh_cn/strings.php" />
+        <option value="$PROJECT_DIR$/views/css/style.css" />
+        <option value="$PROJECT_DIR$/views/common/header.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="10" />
-    <option name="y" value="22" />
+    <option name="y" value="23" />
     <option name="width" value="1420" />
     <option name="height" value="830" />
   </component>
@@ -206,7 +224,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -253,6 +270,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="widget" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shangxia" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shangxia" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -275,134 +310,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shangxia" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shangxia" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shangxia" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shangxia" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shangxia" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shangxia" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="messages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shangxia" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shangxia" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="messages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shangxia" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shangxia" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="messages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="en_us" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -451,14 +361,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="10" y="22" width="1420" height="830" extended-state="0" />
+    <frame x="10" y="23" width="1420" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18558952" sideWeight="0.67042255" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18850073" sideWeight="0.67042255" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -534,129 +444,138 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/js/lp.base.js">
+    <entry file="file://$PROJECT_DIR$/views/about.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="211" column="56" selection-start="8644" selection-end="8644" vertical-scroll-proportion="0.028400598" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/common/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="35" selection-start="5266" selection-end="5266" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/common/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="78" selection-start="4623" selection-end="4634" vertical-scroll-proportion="0.02954899">
+        <state line="79" column="80" selection-start="3280" selection-end="3302" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/product-type.php">
+    <entry file="file://$PROJECT_DIR$/views/news-press.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="0" selection-start="1304" selection-end="1304" vertical-scroll-proportion="0.02954899">
+        <state line="8" column="59" selection-start="359" selection-end="364" vertical-scroll-proportion="-5.428571">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/contact.php">
+    <entry file="file://$PROJECT_DIR$/views/news-events.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="8" selection-start="370" selection-end="370" vertical-scroll-proportion="0.02954899">
+        <state line="132" column="99" selection-start="6079" selection-end="6093" vertical-scroll-proportion="-11.214286">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/boutique.php">
+    <entry file="file://$PROJECT_DIR$/views/admin/protected/messages/fr/strings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/news.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="143" column="130" selection-start="6652" selection-end="6652" vertical-scroll-proportion="0.02954899">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/protected/models/CraftContentAR.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/protected/models/ProductContentAR.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="6" selection-start="29" selection-end="29" vertical-scroll-proportion="0.14820592">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/common/inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="212" column="8" selection-start="5555" selection-end="5555" vertical-scroll-proportion="-8.285714">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/craft.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="57" selection-start="3880" selection-end="3897" vertical-scroll-proportion="-9.607142">
+        <state line="255" column="5" selection-start="29982" selection-end="29982" vertical-scroll-proportion="-21.535715">
           <folding>
-            <element signature="n#style#0;n#textarea#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="261" column="49" selection-start="14335" selection-end="14335" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/protected/messages/zh_cn/strings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="28" selection-start="4749" selection-end="4772" vertical-scroll-proportion="-10.285714">
-          <folding>
-            <marker date="1417424266000" expanded="true" signature="9539:9616" placeholder="..." />
-            <marker date="1417424266000" expanded="true" signature="11187:11777" placeholder="..." />
-            <marker date="1417424266000" expanded="true" signature="11941:12508" placeholder="..." />
+            <marker date="1417424318000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1417424318000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1417424318000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/admin/protected/messages/en_us/strings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="55" selection-start="2371" selection-end="2599" vertical-scroll-proportion="-10.285714">
+        <state line="10" column="4" selection-start="1413" selection-end="1413" vertical-scroll-proportion="-6.785714">
           <folding>
-            <marker date="1417424274000" expanded="true" signature="6059:6883" placeholder="..." />
-            <marker date="1417424274000" expanded="true" signature="6939:7505" placeholder="..." />
-            <marker date="1417424274000" expanded="true" signature="15418:15619" placeholder="..." />
-            <marker date="1417424274000" expanded="true" signature="15685:16255" placeholder="..." />
-            <marker date="1417424274000" expanded="true" signature="20903:22230" placeholder="..." />
+            <marker date="1417500748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1417500748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1417500748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1417500748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1417500748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1417500748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1417500748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1417500748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1417500748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1417500748000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/protected/messages/fr/strings.php">
+    <entry file="file://$PROJECT_DIR$/views/craft.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="55" selection-start="3754" selection-end="3754" vertical-scroll-proportion="-11.535714">
+        <state line="123" column="9" selection-start="5181" selection-end="5181" vertical-scroll-proportion="-5.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/widget/product-cf.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="86" selection-start="556" selection-end="556" vertical-scroll-proportion="-6.785714">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/widget/product-ep.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/widget/product-w.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/widget/product-zitan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/common/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="40" selection-start="2834" selection-end="2834" vertical-scroll-proportion="-4.75">
           <folding>
-            <marker date="1417424318000" expanded="true" signature="15407:15682" placeholder="..." />
-            <marker date="1417424318000" expanded="true" signature="16443:16944" placeholder="..." />
-            <marker date="1417424318000" expanded="true" signature="19411:20194" placeholder="..." />
+            <element signature="n#style#0;n#a#0;n#div#3;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/about.php">
+    <entry file="file://$PROJECT_DIR$/views/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="80" selection-start="3280" selection-end="3302" vertical-scroll-proportion="-0.037441496">
+        <state line="32" column="13" selection-start="1407" selection-end="1407" vertical-scroll-proportion="-2.392857">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/news.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="32" selection-start="1042" selection-end="1042" vertical-scroll-proportion="-12.892858">
           <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#5;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/protected/messages/zh_cn/strings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="231" column="19" selection-start="12592" selection-end="12592" vertical-scroll-proportion="-4.571429">
+          <folding>
+            <marker date="1417509459000" expanded="true" signature="9599:9676" placeholder="..." />
+            <marker date="1417509459000" expanded="true" signature="11247:11837" placeholder="..." />
+            <marker date="1417509459000" expanded="true" signature="12001:12568" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="865" column="32" selection-start="37830" selection-end="37830" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/common/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="118" selection-start="2748" selection-end="2748" vertical-scroll-proportion="-0.61488676">
+          <folding />
         </state>
       </provider>
     </entry>

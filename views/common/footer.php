@@ -58,9 +58,9 @@
 				<div class="section sitelinks cs-clear">
 					<div class="sitelinkitem intoview-effect" data-effect="fadeup">
 						<h2 class="c1"><?php echo Yii::t("strings", "COLLECTIONS")?></h2>
-            <?php foreach (CollectionContentAR::model()->getList() as $collection): ?>
-              <a data-a="nav-link" href="<?php echo url("collections", array("cid" => $collection->cid))?>"><?php echo $collection->title?></a>
-            <?php endforeach;?>
+<!--            --><?php //foreach (CollectionContentAR::model()->getList() as $collection): ?>
+<!--              <a data-a="nav-link" href="--><?php //echo url("collections", array("cid" => $collection->cid))?><!--">--><?php //echo $collection->title?><!--</a>-->
+<!--            --><?php //endforeach;?>
             <p><a href="<?php echo url("gift-corner")?>"><?php echo Yii::t("strings" ,"Gift Corner")?></a></p>
 					</div>
 					<div class="sitelinkitem intoview-effect" data-effect="fadeup">
@@ -78,8 +78,7 @@
 					<div class="sitelinkitem sitelinkitemS intoview-effect" data-effect="fadeup">
 						<h2><?php echo Yii::t("strings", "NEWS")?></h2>
 						<a data-a="nav-link" style="display:none;" href="<?php echo url("news")?>"></a>
-						<a data-a="nav-link" href="<?php echo url("news-detail")?>"><?php echo Yii::t("strings", "news")?></a>
-						<a data-a="nav-link" href="<?php echo url("news-events")?>"><?php echo Yii::t("strings", "events")?></a>
+						<a data-a="nav-link" href="<?php echo url("news-detail")?>"><?php echo Yii::t("strings", "news & events")?></a>
 						<a data-a="nav-link" href="<?php echo url("news-press")?>"><?php echo Yii::t("strings", "press")?></a>
 					</div>
 					<div class="sitelinkitem intoview-effect" data-effect="fadeup">

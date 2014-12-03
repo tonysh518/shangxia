@@ -10,7 +10,42 @@ return array(
 				"<p>With flair and exacting attention to detail, SHANG XIA preserves the historical beauty and craftsmanship born of Chinese ingenuity, to provide a simple, elegant 21st century aesthetic.</p>",
     
     "about_brand_founder_title" => "FOUNDER & ARTISTIC DIRECTOR OF SHANGXIA",
-    "about_brand_founter_desc" => 'As Artistic Director and CEO of SHANG XIA, Ms. Jiang Qiong Er is a Chinese contemporary designer of international reputation infusing the subtlety, beauty and heritage of Chinese culture. Her designs breathe elegance of innovation and imagination. Her international vision and open mind, along with her multi-cultural background, naturally allow her creativity to express itself; preserving and respecting tradition, both Eastern and Western.Jiang Qiong Er was introduced to traditional painting when she was only two and later became a student of famous painter Cheng Shi Fa and calligrapher Han Tian Hong. After graduation from Tong Ji University in Art &amp; Design, she went on to the Decorative Arts School in Paris to further her studies in furniture and interior design.',
+    "about_brand_founter_desc" => "<p>Jiang Qiong Er, artistic director and CEO of SHANG XIA, is an internationally renowned
+        designer. After many years studying in Europe, Jiang brings a cosmopolitan approach and
+        bi-cultural experience to her designs. Respectful of tradition, she draws inspiration from a vast
+        range of sources, and this is reflected in her versatile work.</p>
+        <p>Jiang was born into a family with a strong artistic tradition, and began learning the arts in the
+        time-honored style. From the age of six, she studied traditional painting with Cheng Shifa and
+        calligraphy with Han Tianheng. Her formal training began when she was admitted to the
+        design school at Tongji University. After finishing her degree, she made the first major choice
+        of her artistic career, electing to continue her studies of furniture and interior design at the
+        École nationale supérieure des Arts Décoratifs in Paris. Since returning from France, Jiang has
+        dedicated herself to developing expertise in many areas of design. Her broad cultural
+        perspective has allowed her to exercise her talent to the fullest extent. She expresses her
+        ideas in furniture, jewelry, Chinese ink painting, oil paint and photography. Her work melds
+        Chinese and Western techniques, each element perfectly integrated. Most importantly, her
+        designs are an evolution of China's millennia of cultural history into the medium of modern
+        handicrafts. Even as Jiang experimented and experienced the many kinds of beauty that international art had to offer, she came to understand and take pride in the fathomless depth of
+        the Chinese culture in which she is rooted. She also found many traditional techniques which
+        had been preserved as popular crafts, and which enabled craftsmen and women to create
+        objects of great beauty and force. These discoveries made Jiang even more determined to
+        realize the dream she had been nurturing since her time at university: to show the world
+        China's fine crafts and design.</p>
+        <p>In 2009, she established the luxury lifestyle brand SHANG XIA, and took the positions of
+        artistic director and CEO. Jiang and SHANG XIA are dedicated to bringing fine Chinese crafts
+        to the world. They infuse old crafts with contemporary design, weaving concepts from East and
+        West to create a 21st century lifestyle.</p>
+        <p>The first SHANG XIA boutique opened in Shanghai in 2010; Beijing and Paris followed in 2012
+        and 2013, attracting attention from the international media. The Bridge collection of teaware
+        and Da Tian Di collection of furniture have received a number of major design awards. In 2014,
+        SHANG XIA designs featured in the &quot;De la Chine aux Arts décoratifs&quot; exhibition in honor of
+        France Chine 50 at the Musée des Arts décoratifs. Jiang Qiong Er herself won the 2012 &quot;talent
+        de l’harmonie&quot; award at the Talents du luxe et de la création 2012, and was named
+        &quot;breakthrough woman of the year&quot; at the 2012 Elle Style Awards. She was also named an &quot;Asian successful woman&quot; by Jessica magazine in Hong Kong. In 2013, Jiang was named a
+        &quot;Chevalier des Arts et des Lettres&quot; of the French Republic in recognition of her contribution to
+        cultural exchange between China and France.</p>
+        <p>In 2014, the Maison SHANG XIA opened in Shanghai. Jiang continues to lead SHANG XIA
+        and to bring contemporary Chinese style to the world.</p>",
     "about_brand_emplee_subject" => 'HERITAGE & ENCOUNTER',
     "about_brand_emplee_one" => 'Timeless Aesthetics',
     "about_brand_emplee_two" => "Sophisticated Lifestyle",

@@ -8,7 +8,7 @@
 						<div class="proinfortxt aboutinfortxt intoview-effect related-product" data-effect="fadeup" style='background:#f6eeee;'>
 							<div class="proinfortxt-inner">
 							<h2><?php echo Yii::t("strings", "HAND SCULPTURE CLOTHING");?></h2>
-                            <?php echo Yii::t("strings", "HAND SCULPTURE CLOTHING desc short");?>
+                            <?php echo Yii::t("strings", "HAND SCULPTURE CLOTHING desc");?>
                         </div>
 							<a href="#" data-a="show-pop" class="btn transition-wrap"><span class="transition"><?php echo Yii::t("strings", "read more")?><br><br><?php echo Yii::t("strings", "read more")?></span></a>
 							<textarea style="display:none;">

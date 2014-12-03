@@ -38,6 +38,7 @@ require_once "inc.php";?>
 							<li data-type="collections"><a data-a="nav-pop" data-d="type=collections" href="javascript:;"><?php echo Yii::t("strings", "COLLECTIONS")?></a><img class="nav-bg" src="/images/nav-bg.jpg"/></li>
 							<li data-type="crafts"><a data-a="nav-pop" data-d="type=crafts" href="javascript:;"><?php echo Yii::t("strings", "CRAFTS")?></a><img class="nav-bg" src="/images/nav-bg.jpg"/></li>
 							<li data-type="boutiques"><a data-a="nav-pop" data-d="type=boutiques" href="javascript:;"><?php echo Yii::t("strings", "BOUTIQUES")?></a><img class="nav-bg" src="/images/nav-bg.jpg"/></li>
+                            <li class="last"><a data-a="nav-link" data-d="type=gift" href="<?php echo url("gift-corner")?>"><?php echo Yii::t("strings", "GIFT")?></a><img class="nav-bg" src="/images/nav-bg.jpg"/></li>
 						</ul>
 			            <h1 class="logo"><a data-a="nav-link" href='/' onclick="javascript:window.location.href='/'"></a></h1>
 						<ul class="nav nav2">
@@ -66,25 +67,25 @@ require_once "inc.php";?>
           <a href="#" class="m-el m-nav-back" data-a="m-nav-back"></a>
 					<div class="nav-pop-inner">
 						<div class="nav-pop-nav">
-              <p><a herf="#"><?php echo Yii::t("strings" ,"Collections")?> <span>&gt;</span></a></p>
+<!--              <p><a herf="#">--><?php //echo Yii::t("strings" ,"Collections")?><!-- <span>&gt;</span></a></p>-->
               <?php foreach (ProductContentAR::getType() as $id => $name):  ?>
               <p><a href="<?php echo url("product-type", array("name" => ProductContentAR::getTypeKeyName($id)))?>"><?php echo ucfirst($name)?> <span>&gt;</span></a></p>
               <?php endforeach;?>
               <p><a href="<?php echo url("gift-corner")?>"><?php echo Yii::t("strings" ,"Gift Corner")?> <span>&gt;</span></a></p>
 						</div>
             <div class="nav-pop-wraps">
-             <div class="nav-pop-wrap">
-                <div class="nav-pop-wrap-inner cs-clear">
-                  <?php $collectiones = CollectionContentAR::model()->getList(); ?>
-                  <?php foreach ($collectiones as $item): ?>
-                    <a class="nav-pop-item inout-effect" data-a="nav-link" href="<?php echo url("collections", array("cid" => $item->cid)) ?>">
-                      <img src="<?php echo $item->nav_image ?>"/> 
-                      <span class="nav-text"><i> <?php echo $item->title ?></i></span>
-                      <span class="home-inout-bg inout-bg"></span>
-                    </a>
-                  <?php endforeach; ?>
-                </div>
-              </div>
+<!--             <div class="nav-pop-wrap">-->
+<!--                <div class="nav-pop-wrap-inner cs-clear">-->
+<!--                  --><?php //$collectiones = CollectionContentAR::model()->getList(); ?>
+<!--                  --><?php //foreach ($collectiones as $item): ?>
+<!--                    <a class="nav-pop-item inout-effect" data-a="nav-link" href="--><?php //echo url("collections", array("cid" => $item->cid)) ?><!--">-->
+<!--                      <img src="--><?php //echo $item->nav_image ?><!--"/> -->
+<!--                      <span class="nav-text"><i> --><?php //echo $item->title ?><!--</i></span>-->
+<!--                      <span class="home-inout-bg inout-bg"></span>-->
+<!--                    </a>-->
+<!--                  --><?php //endforeach; ?>
+<!--                </div>-->
+<!--              </div>-->
               <?php foreach (ProductContentAR::getType() as $id => $name): ?>
                 <?php $files = loadTypeMedias(ProductContentAR::getTypeKeyName($id));?>
                 <div class="nav-pop-wrap">

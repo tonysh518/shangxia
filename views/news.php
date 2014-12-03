@@ -128,25 +128,7 @@ include_once 'common/header.php';?>
 				</div>
 			</div>
 		</div>
-		<!-- SHANG XIA EVENTS -->
-    <?php $event = getLastEvent();?>
-    <?php if ($event): ?>
-      <div class="section">
-        <div class="products">
-          <div class="productstit intoview-effect" data-effect="fadeup">
-            <h2><?php echo Yii::t("strings", "SHANG XIA EVENTS")?></h2>
-          </div>
-          <div class="productscom newsnvents">
-            <!--  -->
-            <img src="<?php echo makeThumbnail($event->thumbnail, array(1261, 559))?>" class="intoview-effect" data-effect="fadeup" width="100%" alt="">
-            <h3 class="intoview-effect" data-effect="fadeup"><?php echo $event->title?></h3>
-            <h4  class="productscom-desc intoview-effect" data-effect="fadeup"><?php echo date("Y M d" , strtotime($event->date)) ?></h4>
-            <div class="productscom-desc intoview-effect" data-effect="fadeup"><?php echo mb_substr(strip_tags($event->body),0,198, 'utf-8')?><br/> <a class="more" href="<?php echo url("news-events")?>"><?php echo Yii::t("strings", "Read more")?> &gt;</a> </div>
-            <a data-a="nav-link" href="<?php echo url("news-events")?>" title="" class="btn transition-wrap intoview-effect" data-effect="fadeup"><span class="transition"><?php echo Yii::t("strings", "View all events")?><br/><br/><?php echo Yii::t("strings", "View all events")?></span></a>
-          </div>
-        </div>
-      </div>
-    <?php endif;?>
+
 
 		<!-- press -->
 		<div class="section">
