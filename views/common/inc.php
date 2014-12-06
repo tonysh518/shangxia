@@ -617,6 +617,7 @@ function boutique_next_title($boutique ) {
         return BoutiqueContentAR::model()->loadByAddressKey($nkey)->title;
       }
     }
+    $i += 1;
   }
 
   return '';
