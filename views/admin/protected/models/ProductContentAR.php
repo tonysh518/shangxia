@@ -29,6 +29,14 @@ class ProductContentAR extends ContentAR {
     
     $this->hasContentField("gift", array("type" => "select", "options" => array( "0" => Yii::t("strings", "No"), "1" => Yii::t("strings" ,"Yes") )));
     
+
+    $this->hasContentField('title_two');
+    $this->hasContentField('short_description_two', array('type' => 'textarea'));
+
+    $this->hasContentField('title_three');
+    $this->hasContentField('short_description_three', array('type' => 'textarea'));
+
+
     return parent::getFields();
   }
   
@@ -81,6 +89,11 @@ class ProductContentAR extends ContentAR {
     $this->hasImageField("product_slide_image", array("multi" => TRUE));
     //$this->hasImageField("video_poster");
     $this->hasImageField("thumbnail");
+
+    $this->hasImageField('slide_image_one');
+    $this->hasImageField('slide_image_two');
+    $this->hasImageField('slide_image_three');
+
     return parent::getImageFields();
   }
   

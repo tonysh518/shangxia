@@ -143,7 +143,7 @@ include_once 'common/header.php';?>
 					<div class="slide-con">
 						<div class="productslist cs-clear slide-con-inner">
               <?php foreach( $presses as $press): ?>
-                <a class="prolistitem pressitem intoview-effect" data-a="show-pop" data-d="press=1" data-effect="fadeup" href="#" data-cid="<?php echo $press->cid?>">
+                <a class="prolistitem pressitem intoview-effect" data-a="show-pop" data-d="press=1" data-effect="fadeup" href="#" data-video="<?php echo $press->video?>" data-cid="<?php echo $press->cid?>">
                   <img src="<?php echo makeThumbnail($press->thumbnail_small == "" ? $press->press_image : $press->thumbnail_small, array(415, 557))?>" width="100%" />
                   <p>
                   	<?php echo $press->title?><br />
