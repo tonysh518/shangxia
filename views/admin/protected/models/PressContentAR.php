@@ -16,6 +16,12 @@ class PressContentAR extends ContentAR {
     $this->hasImageField("master_image");
     return parent::getImageFields();
   }
+
+  public function getVideoFields() {
+    $this->hasVideoField('video');
+
+    return parent::getVideoFields();
+  }
   
   public function getFields() {
     $this->hasContentField("publish_date");

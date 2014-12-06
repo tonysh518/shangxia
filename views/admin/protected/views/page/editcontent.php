@@ -69,7 +69,7 @@
     <!-- 图片 Field / 图片扩展字段 -->
     <?php foreach ($model->getImageFields()  as $field): ?>
     <?php $option = $model->getImageFieldOption($field);?>
-    <div class="control-group imagepreview <?php if ($option["multi"]) echo "multi";?>">
+    <div class="control-group imagepreview <?php if (!empty($option["multi"])) echo "multi";?>">
       <div class="control-label">
         <?php if ($field == "press_image"): ?>
         <label for="<?php echo $field?>"><?php echo Yii::t("fields", ucfirst(str_replace("_", " " , "thumbnail")))?></label>
@@ -79,7 +79,7 @@
         <?php endif;?>
       </div>
       <div class="controls clearfix">
-        <ng-uploadimage value='<?php if ($option["multi"]) {echo json_encode($instance->{$field}); } else { echo $instance->{$field} ;}?>' ng-model="content.<?php echo $field?>" <?php if ($option["multi"]) echo "multi";?>>
+        <ng-uploadimage value='<?php if (!empty($option["multi"])) {echo json_encode($instance->{$field}); } else { echo $instance->{$field} ;}?>' ng-model="content.<?php echo $field?>" <?php if (!empty($option["multi"])) echo "multi";?>>
           
         </ng-uploadimage>
       </div>
