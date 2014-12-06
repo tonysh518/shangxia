@@ -37,7 +37,8 @@ class IndexController extends Controller
 	public function actionError()
 	{
     $error = Yii::app()->errorHandler->error;
-    $this->redirect("/404.html");
+    print_r($error);
+    //$this->redirect("/404.html");
 	}
   
   public function actionLogout() {

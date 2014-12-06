@@ -20,7 +20,7 @@ include_once 'common/header.php';?>
 <!-- detail -->
 		<div class="section ">
 			<div class="detail coll_product cs-clear">
-				<div class="arrows arrows2 detailprev" data-a="page-prev"></div>
+				<div class="arrows arrows2 detailprev" data-a="page-prev"><?php echo craft_pre_title($loadedCraft)?></div>
 				<div class=" detailcon intoview-effect" data-split="1" data-effect="fadeup" data-num="1">
 					<h2 class="intoview-effect" data-effect="fadeup"><?php echo $loadedCraft->craft_title?></h2>
 					<div class="slide-con">
@@ -31,7 +31,7 @@ include_once 'common/header.php';?>
 						</ul>
 					</div>
 				</div>
-				<div class="arrows arrows2 detailnext" data-a="page-next"></div>
+				<div class="arrows arrows2 detailnext" data-a="page-next"><?php echo craft_next_title($loadedCraft)?></div>
 			</div>
 		</div>
 		

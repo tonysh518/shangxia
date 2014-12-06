@@ -9,6 +9,7 @@ class NewsContentAR extends ContentAR {
   
   public function getImageFields() {
     $this->hasImageField("news_slide_image", array("multi" => TRUE));
+    $this->hasImageField("news_slide_image_1260x470", array("multi" => FALSE));
     $this->hasImageField("thumbnail");
     
     return parent::getImageFields();
@@ -16,6 +17,11 @@ class NewsContentAR extends ContentAR {
   
   public function getFields() {
     $this->hasContentField("date", array("type" => "date"));
+    $this->hasContentField('tpl', array('type' => 'select', 'options' => array('1' => 'Template One', '2' => 'Template Two', '3' => 'Template Three')));
+    
+    $this->hasContentField('tpl_body_one', array('type' => 'textarea'));
+    $this->hasContentField('tpl_body_two', array('type' => 'textarea'));
+    
     return parent::getFields();
   }
   

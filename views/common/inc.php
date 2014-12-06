@@ -603,3 +603,72 @@ function prevProduct($product) {
     }
   }
 }
+
+function boutique_next_title($boutique ) {
+  $locations = BoutiqueContentAR::getLocation();
+  $keys = array_keys($locations);
+  $boutiques = array();
+  $i = 0;
+  foreach ($locations as $key => $name) {
+    $tmpBoutique = BoutiqueContentAR::model()->loadByAddressKey($key);
+    if ($tmpBoutique->cid == $boutique->cid) {
+      if (!empty($keys[$i + 1])) {
+        $nkey = $keys[$i + 1];
+        return BoutiqueContentAR::model()->loadByAddressKey($nkey)->title;
+      }
+    }
+  }
+
+  return '';
+}
+
+function boutique_pre_title($boutique) {
+  $locations = BoutiqueContentAR::getLocation();
+  $keys = array_keys($locations);
+  $boutiques = array();
+  $i = 0;
+  foreach ($locations as $key => $name) {
+    $tmpBoutique = BoutiqueContentAR::model()->loadByAddressKey($key);
+    if ($tmpBoutique->cid == $boutique->cid) {
+      if (!empty($keys[$i - 1])) {
+        $nkey = $keys[$i - 1];
+        return BoutiqueContentAR::model()->loadByAddressKey($nkey)->title;
+      }
+    }
+    $i += 1;
+  }
+  return '';
+}
+
+function craft_next_title($craft) {
+  $crafts = CraftContentAR::model()->getList();
+  $i = 0;
+  foreach ($crafts as $tmpcraft) {
+    if ($tmpcraft->cid == $craft->cid) {
+      if (!empty($crafts[$i + 1])) {
+        $ncraft = $crafts[$i + 1];
+        return $ncraft->title;
+      }
+    }
+    $i += 1;
+  }
+  return '';
+}
+
+function craft_pre_title($craft) {
+  $crafts = CraftContentAR::model()->getList();
+  $i = 0;
+  foreach ($crafts as $tmpcraft) {
+    if ($tmpcraft->cid == $craft->cid) {
+      if (!empty($crafts[$i - 1])) {
+        $ncraft = $crafts[$i - 1];
+        return $ncraft->title;
+      }
+    }
+    $i += 1;
+  }
+  return '';
+}
+
+
+
