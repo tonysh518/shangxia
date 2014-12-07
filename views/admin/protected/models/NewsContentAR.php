@@ -20,7 +20,7 @@ class NewsContentAR extends ContentAR {
     $this->hasContentField('tpl', array('type' => 'select', 'options' => array('1' => 'Template One', '2' => 'Template Two', '3' => 'Template Three')));
     
     $this->hasContentField('tpl_body_one', array('type' => 'textarea'));
-    $this->hasContentField('tpl_body_two', array('type' => 'textarea'));
+    $this->hasContentField('tpl_title');
     
     return parent::getFields();
   }
