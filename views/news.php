@@ -8,7 +8,7 @@ include_once 'common/header.php';?>
 				<div class=" detailcon">
 					<h2><?php echo Yii::t("strings", "shang xia news")?></h2>
 				</div>
-				<div class="arrows arrows2 detailnext" data-a="page-next" data-title="<?php echo Yii::t('strings', 'ABOUT')?>"></div>
+				<div class="arrows arrows2 detailnext" data-a="page-next" data-title="<?php echo Yii::t('strings', 'NEWS DETAIL')?>"></div>
 			</div>
 		</div>
 		<!-- related products -->

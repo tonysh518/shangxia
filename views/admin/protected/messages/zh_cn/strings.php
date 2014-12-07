@@ -439,6 +439,7 @@ return array(
     "SHANG XIA teaware" => "「上下」茶具",
     "SHANG XIA homeware" => "「上下」家饰",
     "SHANG XIA furniture" => "「上下」家具",
+    "NEWS DETAIL" => "新闻详情",
 );
 
 
