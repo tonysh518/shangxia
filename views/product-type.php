@@ -69,34 +69,41 @@ else {
 				<!--  -->
 				<div class="product-type-wrap">
 					<div class="product-type-con">
+             <?php $index = 0; ?>
 					<ul class="product-type-list">
-                      <?php foreach ($lastCollectionProducts as $product):?>
-                      <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-                        <a href="<?php echo url("product-detail", array("cid" => $product->cid))?>"><img src="<?php echo makeThumbnail($product->thumbnail, array(412, 390))?>" width="100%" /></a>
-                        <p><span class="collicon"><?php echo $product->title?></span></p>
-                      </li>
-                      <?php endforeach;?>
+              <?php foreach ($lastCollectionProducts as $product):?>
+              <li class="piclistitem collpicitem intoview-effect <?php if( $index % 3 == 0 ){ echo 'product-type-list-item';} ?>" data-effect="fadeup">
+                <a href="<?php echo url("product-detail", array("cid" => $product->cid))?>"><img src="<?php echo makeThumbnail($product->thumbnail, array(412, 390))?>" width="100%" /></a>
+                <p><span class="collicon"><?php echo $product->title?></span></p>
+              </li>
+              <?php 
+              $index ++;
+              endforeach;?>
 
-                        <?php if ($_GET['name'] == 'apparel'): ?>
-                            <?php foreach ($timelessCollectionProducts as $product):?>
-                                <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-                                    <a href="<?php echo url("product-detail", array("cid" => $product->cid))?>"><img src="<?php echo makeThumbnail($product->thumbnail, array(412, 390))?>" width="100%" /></a>
-                                    <p><span class="collicon"><?php echo $product->title?></span></p>
-                                </li>
-                            <?php endforeach;?>
-                        <?php else: ?>
-                            <?php foreach ($timelessCollectionProducts as $collection_id => $products): ?>
-                                <!--  collection -->
-                                <?php $collection = CollectionContentAR::model()->findByPk($collection_id);?>
+                <?php if ($_GET['name'] == 'apparel'): ?>
+                    <?php foreach ($timelessCollectionProducts as $product):?>
+                        <li class="piclistitem collpicitem intoview-effect <?php if( $index % 3 == 0 ){ echo 'product-type-list-item';} ?>" data-effect="fadeup">
+                            <a href="<?php echo url("product-detail", array("cid" => $product->cid))?>"><img src="<?php echo makeThumbnail($product->thumbnail, array(412, 390))?>" width="100%" /></a>
+                            <p><span class="collicon"><?php echo $product->title?></span></p>
+                        </li>
+                    <?php 
+                    $index ++;
+                    endforeach;?>
+                <?php else: ?>
+                    <?php foreach ($timelessCollectionProducts as $collection_id => $products): ?>
+                        <!--  collection -->
+                        <?php $collection = CollectionContentAR::model()->findByPk($collection_id);?>
 
-                                <?php foreach ($products as $product):?>
-                                    <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-                                        <a href="<?php echo url("product-detail", array("cid" => $product->cid))?>"><img src="<?php echo makeThumbnail($product->thumbnail, array(412, 390))?>" width="100%" /></a>
-                                        <p><span class="collicon"><?php echo $product->title?></span></p>
-                                    </li>
-                                <?php endforeach;?>
-                            <?php endforeach;?>
-                        <?php endif;?>
+                        <?php foreach ($products as $product):?>
+                            <li class="piclistitem collpicitem intoview-effect <?php if( $index % 3 == 0 ){ echo 'product-type-list-item';} ?>" data-effect="fadeup">
+                                <a href="<?php echo url("product-detail", array("cid" => $product->cid))?>"><img src="<?php echo makeThumbnail($product->thumbnail, array(412, 390))?>" width="100%" /></a>
+                                <p><span class="collicon"><?php echo $product->title?></span></p>
+                            </li>
+                        <?php 
+                        $index ++;
+                        endforeach;?>
+                    <?php endforeach;?>
+                <?php endif;?>
 					</ul>
 				</div>
 				</div>
