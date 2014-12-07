@@ -10,7 +10,9 @@ include_once 'common/header.php';?>
     <?php if ($news): ?>
         <!-- related products -->
       <div class="collpiclist cs-clear">
-        <div class="collarrows newsarrowsprev" data-a="page-prev"></div>
+        <div class="collarrows newsarrowsprev" data-a="page-prev"
+        	data-title="<?php echo Yii::t('strings', 'NEWS')?>"
+        	data-link="/news"></div>
         
         <!-- News 顶部模版 -->
         <?php if ($news->tpl == 1): ?>
@@ -21,9 +23,10 @@ include_once 'common/header.php';?>
           <?php require_once "./news-tpl3.php";?>
         <?php endif;?>
         
-
         <!--  -->
-        <div class="collarrows newsarrowsnext" data-a="page-next"></div>
+        <div class="collarrows newsarrowsnext" data-a="page-next"
+        	data-title="<?php echo Yii::t('strings', 'ABOUT')?>"
+        	data-link="/about"></div>
       </div>
     <?php endif;?>
 		<!-- older news -->
