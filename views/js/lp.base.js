@@ -2707,12 +2707,10 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
         return false;
     });
-
-    $(document).ready(function () {
-        $("div.arrows[data-title]").hover(function () {
-            $(this).text($(this).data('title'));
-        }, function () {
-            $(this).text('');
-        });
+    
+    $(".arrows[data-title]").hover(function () {
+        $(this).text($(this).data('title'));
+    }, function () {
+        $(this).text('');
     });
 });
