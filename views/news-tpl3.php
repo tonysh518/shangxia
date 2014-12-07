@@ -30,16 +30,16 @@
   <div class="picinfor cs-clear">
         <div class="picinfortxt news-picinfortxt news-pic-tpl3" style="float:right;">
             <div class="picinfortxt-inner" >
-              <h2><?php echo $news->tpl_title?></h2>
+              <h2><?php echo $news->title_two?></h2>
               <h3 style="text-transform:uppercase;"><?php echo date("Y M d", strtotime($news->date))?></h3>
               <div class="body">
-                 <?php echo $news->tpl_body_one?>
+                 <?php echo $news->desc_two?>
               </div>
             </div>
             <div style="margin-left:50px;">
         <a href="#" data-a="show-pop" class="btn transition-wrap"><span class="transition">更多讯息<br><br>更多讯息</span></a>
         <textarea style="display:none;">
-                 <?php echo $news->tpl_body_one?>
+                 <?php echo $news->desc_two?>
         </textarea>
       </div>
     </div>
