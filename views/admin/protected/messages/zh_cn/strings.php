@@ -440,6 +440,7 @@ return array(
     "SHANG XIA homeware" => "「上下」家饰",
     "SHANG XIA furniture" => "「上下」家具",
     "NEWS DETAIL" => "新闻详情",
+    '「SHANG XIA」' => '「上下」',
 );
 
 

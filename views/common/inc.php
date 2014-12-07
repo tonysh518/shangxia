@@ -672,6 +672,7 @@ function craft_pre_title($craft) {
 }
 
 function prev_product_type_title($type_name) {
+  $type_name = ProductContentAR::getKeyWithTypeName($type_name);
   $types = ProductContentAR::getType();
   $keys = array_keys($types);
   $i = 0;
@@ -679,13 +680,15 @@ function prev_product_type_title($type_name) {
     if ($key == $type_name) {
       if (!empty($keys[$i - 1])) {
         $key = $keys[$i - 1];
-        return $types[$key];
+        return Yii::t('strings', '「SHANG XIA」').' '.$types[$key];
       }
     }
+    $i += 1;
   }
 }
 
 function next_product_type_title($type_name) {
+  $type_name = ProductContentAR::getKeyWithTypeName($type_name);
   $types = ProductContentAR::getType();
   $keys = array_keys($types);
   $i = 0;
@@ -693,9 +696,10 @@ function next_product_type_title($type_name) {
     if ($key == $type_name) {
       if (!empty($keys[$i + 1])) {
         $key = $keys[$i + 1];
-        return $types[$key];
+        return Yii::t('strings', '「SHANG XIA」').' '.$types[$key];
       }
     }
+    $i += 1;
   }
 }
 
