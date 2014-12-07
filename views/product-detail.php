@@ -22,7 +22,7 @@ $pagename = 'product-detail';
 		<!--  -->
 		<!-- newscrumbs -->
 		<div class="newscrumbs">
-      <p><?php echo Yii::t("strings", "collections")?>&nbsp;&gt;&nbsp;<?php $collection = loadCollectionFromProduct($product); ?><a data-a="nav-link" href="<?php echo url("collections", array("cid" => $collection->cid))?>"><?php echo loadCollectionFromProduct($product)->title?></a>&nbsp;&gt;&nbsp;<?php echo $product->title?> </p>
+      	<p><?php echo Yii::t("strings", "collections")?>&nbsp;&gt;&nbsp;<?php $collection = loadCollectionFromProduct($product); ?><a data-a="nav-link" href="<?php echo url("collections", array("cid" => $collection->cid))?>"><?php echo loadCollectionFromProduct($product)->title?></a>&nbsp;&gt;&nbsp;<?php echo $product->title?> </p>
 		</div>
 		<!-- detail -->
 		<?php if (!$product->gift):?>
@@ -44,9 +44,10 @@ $pagename = 'product-detail';
 		      </div>
 		    <?php endif;?>
 		<?php else: ?>
+		 <!-- 产品详情 -->
 			<div class="section ">
 				<div class="detail coll_product cs-clear">
-	        <div class="arrows arrows2 <?php if ($prevProduct) echo 'detailprev';?>" data-a="page-prev" data-url="<?php if ($prevProduct) echo url("product-detail", array("cid" => $prevProduct->cid)) ?>"></div>
+	        		<div class="arrows arrows2 <?php if ($prevProduct) echo 'detailprev';?>" data-a="page-prev" data-title="<?php echo $prevProduct->title?>" data-url="<?php if ($prevProduct) echo url("product-detail", array("cid" => $prevProduct->cid)) ?>"></div>
 					
 					<div class=" detailcon intoview-effect" data-split="1" data-effect="fadeup" data-num="1">
 						<h2 class="intoview-effect" data-effect="fadeup"><?php echo $product->title?></h2>
@@ -58,30 +59,45 @@ $pagename = 'product-detail';
 							</ul>
 						</div>
 					</div>
-					<div class="arrows arrows2 <?php if ($nextProduct) echo 'detailnext';?>" data-a="page-next" data-url="<?php if ($nextProduct) echo url("product-detail", array("cid" => $nextProduct->cid)) ?>"></div>
+					<div class="arrows arrows2 <?php if ($nextProduct) echo 'detailnext';?>" data-a="page-next" data-title="<?php echo $nextProduct->title?>" data-url="<?php if ($nextProduct) echo url("product-detail", array("cid" => $nextProduct->cid)) ?>"></div>
 				</div>
-	      <?php if ($product->gift): ?>
-	        <a href="#" style="margin-bottom:100px;" class="btn transition-wrap" data-id="<?php echo $product->cid?>" data-d="product=<?php echo $product->cid?>" data-a="i-want-to-buy"><span class="transition"><?php echo Yii::t("strings", "I Want To Buy")?><br/><br/><?php echo Yii::t("strings", "I Want To Buy")?></span></a>
-	      <?php else:?>
-	      	<br><br>
-	        <!-- <a href="#" style="margin-bottom:50px;border:0px;" class="btn transition-wrap"></a> -->
-	      <?php endif;?>
+			      <?php if ($product->gift): ?>
+			        	<a href="#" style="margin-bottom:100px;" class="btn transition-wrap" data-id="<?php echo $product->cid?>" data-d="product=<?php echo $product->cid?>" data-a="i-want-to-buy"><span class="transition"><?php echo Yii::t("strings", "I Want To Buy")?><br/><br/><?php echo Yii::t("strings", "I Want To Buy")?></span></a>
+			      <?php else:?>
+			      	<br><br>
+			        <!-- <a href="#" style="margin-bottom:50px;border:0px;" class="btn transition-wrap"></a> -->
+			      <?php endif;?>
 			</div>
 		<?php endif;?>
 		
 		<?php if (!$product->gift): ?>
-			<!-- one -->
-			<div class="section-1">
-				<h2 class="title"><?php echo $product->title?></h2>
-				<div class="short-desc"><?php echo $product->body?></div>
-			</div>
-			<div class="section-2">
-				<h2 class="title"><?php echo $product->title_two?></h2>
-				<div class="short-desc"><?php echo $product->short_description_two?></div>
-			</div>
-			<div class="section-3">
-				<h2 class="title"><?php echo $product->title_three?></h2>
-				<div class="short-desc"><?php echo $product->short_description_three?></div>
+			<div class="section intoview-effect" data-effect="fadeup">
+
+			  <div class="product-item cs-clear">
+			    <div class="product-text">
+			      <h2><?php echo $product->title?></h2>
+			      <p><?php echo $product->body?></p>
+			    </div>
+			    <img class="product-image" src="<?php echo $product->slide_image_one?>" />
+			  </div>
+
+			  <div class="product-item product-item-right cs-clear">
+			    <div class="product-text">
+			      <h2><?php echo $product->title_two?></h2>
+			      <p><?php echo $product->short_description_two?></p>
+			    </div>
+			    <img class="product-image" src="<?php echo $product->slide_image_two?>" />
+			  </div>
+
+			  <div class="product-item cs-clear">
+			    <div class="product-text">
+			      <h2><?php echo $product->title_three?></h2>
+			      <p><?php echo $product->short_description_three?></p>
+			    </div>
+			    <img class="product-image" src="<?php echo $product->slide_image_three?>" />
+			  </div>
+
+			  <a href="#" style="margin-top:80px;" class="btn transition-wrap" data-id="" data-d="product=" data-a="i-want-to-buy"><span class="transition"><?php echo Yii::t("strings", "I Want To Buy")?><br/><br/><?php echo Yii::t("strings", "I Want To Buy")?></span></a>
 			</div>
 		    
 		<?php else: ?>

@@ -21,44 +21,14 @@ include_once 'common/header.php';?>
 				
           <?php $news = loadFirstNews();?>
           <?php if ($news): ?>
-	          	<div class="picinfortxt news-picinfortxt">
-	          		<div class="picinfortxt-inner">
-			            <h2><?php echo $news->title?></h2>
-			            <h3 style="text-transform:uppercase;"><?php echo date("Y M d", strtotime($news->date))?></h3>
-			            <div class="body">
-			              <?php echo $news->body?>
-			            </div>
-		            </div>
-		            <div style="margin-right:50px;">
-						<a href="#" data-a="show-pop" class="btn transition-wrap"><span class="transition"><?php echo Yii::t("strings", "read more")?><br><br><?php echo Yii::t("strings", "read more")?></span></a>
-						<textarea style="display:none;">
-							<h2><?php echo $news->title?></h2>
-				            <h3 style="text-transform:uppercase;"><?php echo date("Y M d", strtotime($news->date))?></h3>
-				            <div class="body">
-				              <?php echo $news->body?>
-				            </div>
-						</textarea>
-					</div>
-	            </div>
-				<div class="picinforpic">
-            <?php if ($news->news_slide_image):?>
-					<div class="slide">
-						<div class="slidebox cs-clear">
-              <?php foreach($news->news_slide_image as $image): ?>
-                <img class="slideitem" src="<?php echo $image?>" width="100%" />
-              <?php endforeach;?>
-						</div>
-            <?php endif;?>
-            <?php if ($news->news_slide_image):?>
-						<ul class="slidetab">
-              <?php foreach($news->news_slide_image as $index => $image): ?>
-							<li class="<?php if ($index == 0) echo "on"?>"></li>
-              <?php endforeach;?>
-						</ul>
-            <?php endif;?>
-						<!-- 数量改变需要改变css，或者用js来调整slidebox的宽度和slidetab的位置 -->
-					</div>
-				</div>
+		        <!-- News 顶部模版 -->
+		        <?php if ($news->tpl == 1: ?>
+		          <?php require_once "./news-tpl1.php";?>
+		        <?php elseif ($news->tpl == 2): ?>
+		          <?php require_once "./news-tpl2.php";?>
+		        <?php else: ?>
+		          <?php require_once "./news-tpl3.php";?>
+		        <?php endif;?>
         	<?php endif;?>
 				<!--  -->
 			</div>
