@@ -22,7 +22,7 @@ include_once 'common/header.php';?>
           <?php $news = loadFirstNews();?>
           <?php if ($news): ?>
 		        <!-- News 顶部模版 -->
-		        <?php if ($news->tpl == 1: ?>
+		        <?php if ($news->tpl == 1): ?>
 		          <?php require_once "./news-tpl1.php";?>
 		        <?php elseif ($news->tpl == 2): ?>
 		          <?php require_once "./news-tpl2.php";?>
