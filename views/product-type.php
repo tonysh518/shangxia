@@ -50,16 +50,14 @@ else {
 		<!-- detail -->
 		<div class="section ">
 			<div class="detail cs-clear intoview-effect" data-effect="fadeup">
-				<div class="arrows arrows2 detailprev" data-a="page-prev"></div>
+				<div class="arrows arrows2 detailprev" data-a="page-prev" data-title="<?php echo prev_product_type_title($product_type)?>"></div>
 				<div class=" detailcon">
 					<h2><?php echo Yii::t("strings", "SHANG XIA ". $_GET["name"])?></h2>
-                    <div class="Garamond"><?php echo date('Y',time());?></div>
+            <div class="Garamond"><?php echo date('Y',time());?></div>
 				</div>
-				<div class="arrows arrows2 detailnext" data-a="page-next"></div>
+				<div class="arrows arrows2 detailnext" data-a="page-next" data-title="<?php echo next_product_type_title($product_type)?>"></div>
 			</div>
 		</div>
-
-
     
 <!-- Last collection -->
 	<!-- <div class="collpiclist cs-clear">

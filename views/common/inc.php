@@ -671,5 +671,33 @@ function craft_pre_title($craft) {
   return '';
 }
 
+function prev_product_type_title($type_name) {
+  $types = ProductContentAR::getType();
+  $keys = array_keys($types);
+  $i = 0;
+  foreach ($types as $key => $name) {
+    if ($key == $type_name) {
+      if (!empty($keys[$i - 1])) {
+        $key = $keys[$i - 1];
+        return $types[$key];
+      }
+    }
+  }
+}
+
+function next_product_type_title($type_name) {
+  $types = ProductContentAR::getType();
+  $keys = array_keys($types);
+  $i = 0;
+  foreach ($types as $key => $name) {
+    if ($key == $type_name) {
+      if (!empty($keys[$i + 1])) {
+        $key = $keys[$i + 1];
+        return $types[$key];
+      }
+    }
+  }
+}
+
 
 
