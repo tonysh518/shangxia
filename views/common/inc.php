@@ -620,7 +620,26 @@ function boutique_next_title($boutique ) {
     $i += 1;
   }
 
-  return '';
+  return Yii::t('strings', 'NEWS');
+}
+
+function boutique_next_link($boutique) {
+  $locations = BoutiqueContentAR::getLocation();
+  $keys = array_keys($locations);
+  $boutiques = array();
+  $i = 0;
+  foreach ($locations as $key => $name) {
+    $tmpBoutique = BoutiqueContentAR::model()->loadByAddressKey($key);
+    if ($tmpBoutique->cid == $boutique->cid) {
+      if (!empty($keys[$i + 1])) {
+        $nkey = $keys[$i + 1];
+        return url('boutique', array('cid' => BoutiqueContentAR::model()->loadByAddressKey($nkey)->title));
+      }
+    }
+    $i += 1;
+  }
+
+  return '/news';
 }
 
 function boutique_pre_title($boutique) {
@@ -638,7 +657,25 @@ function boutique_pre_title($boutique) {
     }
     $i += 1;
   }
-  return '';
+  return Yii::t('strings', 'CRAFTS');
+}
+
+function boutique_pre_link($boutique) {
+  $locations = BoutiqueContentAR::getLocation();
+  $keys = array_keys($locations);
+  $boutiques = array();
+  $i = 0;
+  foreach ($locations as $key => $name) {
+    $tmpBoutique = BoutiqueContentAR::model()->loadByAddressKey($key);
+    if ($tmpBoutique->cid == $boutique->cid) {
+      if (!empty($keys[$i - 1])) {
+        $nkey = $keys[$i - 1];
+        return url('boutique', array('cid' => BoutiqueContentAR::model()->loadByAddressKey($nkey)->title));
+      }
+    }
+    $i += 1;
+  }
+  return '/craft/cashmere-felt';
 }
 
 function craft_next_title($craft) {
@@ -653,7 +690,22 @@ function craft_next_title($craft) {
     }
     $i += 1;
   }
-  return '';
+  return Yii::t('strings', 'BOUTIQUES');
+}
+
+function craft_next_link($craft) {
+  $crafts = CraftContentAR::model()->getList();
+  $i = 0;
+  foreach ($crafts as $tmpcraft) {
+    if ($tmpcraft->cid == $craft->cid) {
+      if (!empty($crafts[$i + 1])) {
+        $ncraft = $crafts[$i + 1];
+        return url('craft', array('cid' => $ncraft->cid));
+      }
+    }
+    $i += 1;
+  }
+  return '/boutique/shanghai';
 }
 
 function craft_pre_title($craft) {
@@ -668,7 +720,22 @@ function craft_pre_title($craft) {
     }
     $i += 1;
   }
-  return '';
+  return Yii::t('strings', 'Collections');
+}
+
+function craft_pre_link($craft) {
+  $crafts = CraftContentAR::model()->getList();
+  $i = 0;
+  foreach ($crafts as $tmpcraft) {
+    if ($tmpcraft->cid == $craft->cid) {
+      if (!empty($crafts[$i - 1])) {
+        $ncraft = $crafts[$i - 1];
+        return url('craft', array('cid' => $ncraft->cid));
+      }
+    }
+    $i += 1;
+  }
+  return '/product-type/name/apparel';
 }
 
 function prev_product_type_title($type_name) {
@@ -685,6 +752,24 @@ function prev_product_type_title($type_name) {
     }
     $i += 1;
   }
+  return '';
+}
+
+function prev_product_type_link($type_name) {
+  $type_name = ProductContentAR::getKeyWithTypeName($type_name);
+  $types = ProductContentAR::getType();
+  $keys = array_keys($types);
+  $i = 0;
+  foreach ($types as $key => $name) {
+    if ($key == $type_name) {
+      if (!empty($keys[$i - 1])) {
+        $key = $keys[$i - 1];
+        return url("product-type", array("name" => ProductContentAR::getTypeKeyName($key)));
+      }
+    }
+    $i += 1;
+  }
+  return '';
 }
 
 function next_product_type_title($type_name) {
@@ -701,6 +786,25 @@ function next_product_type_title($type_name) {
     }
     $i += 1;
   }
+  return Yii::t('strings', 'CRAFTS');
+}
+
+function next_product_type_link($type_name) {
+  $type_name = ProductContentAR::getKeyWithTypeName($type_name);
+  $types = ProductContentAR::getType();
+  $keys = array_keys($types);
+  $i = 0;
+  foreach ($types as $key => $name) {
+    if ($key == $type_name) {
+      if (!empty($keys[$i + 1])) {
+        $key = $keys[$i + 1];
+        return url("product-type", array("name" => ProductContentAR::getTypeKeyName($key)));
+      }
+    }
+    $i += 1;
+  }
+
+  return '/craft/cashmere-felt';
 }
 
 

@@ -743,6 +743,11 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     $(this).css('marginTop' , 100 - $(this).height() / 2 );
                 });
 
+                $(".arrows[data-title]").hover(function () {
+                    $(this).text($(this).data('title'));
+                }, function () {
+                    $(this).text('');
+                });
 
                 return false;
             },
@@ -2733,11 +2738,5 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         $('.nav,.hd_language').animate({left: 0} , 500);
 
         return false;
-    });
-    
-    $(".arrows[data-title]").hover(function () {
-        $(this).text($(this).data('title'));
-    }, function () {
-        $(this).text('');
     });
 });
