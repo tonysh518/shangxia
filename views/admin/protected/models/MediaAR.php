@@ -298,6 +298,8 @@ class MediaAR extends CActiveRecord {
   }
   
 	public function makeImageThumbnail($path, $save_to, $w, $h, $isOutput = FALSE) {
+    $wantW = $w;
+    $wantH = $h;
 		$abspath = $path;
 		$abssaveto = $save_to;
 		$thumb = new EasyImage($abspath);
@@ -306,35 +308,38 @@ class MediaAR extends CActiveRecord {
 		$s_w = $size[0];
 		$s_h = $size[1];
 
-		$r1 = $w / $s_w;
+		$r1 = round($w / $s_w, 2);
+
     if ($h == "auto") {
       $r2 = $r1;
       $h = $s_h * $r2;
     }
     else {
-      $r2 = $h / $s_h;
+      $r2 = round($h / $s_h, 2);
     }
+
 		$widthSamller = TRUE;
 		if ($r1 > $r2) {
-			$r = $r1;
+      $t_w = $w;
+      $t_h = round($s_h * $r1, 0, PHP_ROUND_HALF_UP);
 		}
 		else {
 			$widthSamller = FALSE;
-			$r = $r2;
+      $t_w = round($s_w * $r2, 0, PHP_ROUND_HALF_UP);
+      $t_h = $h;
 		}
-		$t_w = $r * $s_w;
-		$t_h = $r * $s_h;
 
+    // 压缩和裁剪
 		$thumb->resize($t_w, $t_h);
 		if (!$widthSamller) {
-			$start_x = ($t_w - $w)/2;
+			$start_x = round(($t_w - $w)/2);
 			$start_y = 0;
-			$thumb->crop($w, $h, $start_x, $start_y);
+			$thumb->crop($wantW, $wantH, $start_x, $start_y);
 		}
 		else {
 			$start_x = 0;
-			$start_y = ($t_h - $h);
-			$thumb->crop($w, $h, $start_x, $start_y);
+			$start_y = round(($t_h - $h) / 2);
+			$thumb->crop($wantW, $wantH, $start_x, $start_y);
 		}
 
 		$thumb->save($abssaveto);

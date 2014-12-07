@@ -21,6 +21,7 @@ require_once "inc.php";?>
         ga('create', 'UA-3700383-6', 'auto');
         ga('send', 'pageview');
     </script>
+
 </head>
 <body class="<?php if ( isset($pagename) ) {echo $pagename;}?> <?php echo 'lang-' . (string)Yii::app()->language; ?>">
 	<div class="loading-wrap" style="display:block;"><div class="loading loading_small"></div></div>

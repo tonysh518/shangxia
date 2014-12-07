@@ -16,11 +16,11 @@ include_once 'common/header.php';?>
 		<!-- detail -->
 		<div class="section intoview-effect" data-effect="fadeup">
 			<div class="detail cs-clear">
-				<div class="arrows arrows2 detailprev" data-a="page-prev"><?php echo boutique_pre_title($crtboutique)?></div>
+				<div class="arrows arrows2 detailprev" data-a="page-prev" data-title="<?php echo boutique_pre_title($crtboutique)?>"></div>
 				<div class=" detailcon">
 					<h2><?php echo $crtboutique->boutique_title?></h2>
 				</div>
-				<div class="arrows arrows2 detailnext" data-a="page-next"><?php echo boutique_next_title($crtboutique)?></div>
+				<div class="arrows arrows2 detailnext" data-a="page-next" data-title="<?php echo boutique_next_title($crtboutique)?>"></div>
 			</div>
 		</div>
 		<!-- slide -->
