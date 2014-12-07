@@ -744,7 +744,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 });
 
                 $(".arrows[data-title]").hover(function () {
-                    $(this).text($(this).data('title'));
+                    $(this).html( '<span class="text">' + $(this).data('title').replace('「SHANG XIA」' , '') + '</span>' );
                 }, function () {
                     $(this).text('');
                 });
@@ -925,7 +925,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 $('.nav-pop-' + text ).stop(true)
                     .css('zIndex' , 98)
                     .animate({
-                        top: -200
+                        top: -250
                     } , 500);
             } , 100);
         });
@@ -2641,8 +2641,14 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         var $links = $('.footer a[data-a="nav-link"]');
         $links.each(function( i ){
             if( href.indexOf( $(this).attr('href') ) >= 0 ){
-                if( $links.eq(i + 1).get(0) )
-                    $links.eq(i + 1).get(0).click();
+                if( $links.eq(i + 1).get(0) ){
+                    var next = $links.eq(i + 1).attr('data-next');
+                    if( next ){
+                        pageManager.gotoPage( next );
+                    } else {
+                        $links.eq(i + 1).get(0).click();
+                    }
+                }
                 return false;
             }
         });

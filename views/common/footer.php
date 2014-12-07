@@ -58,6 +58,9 @@
 				<div class="section sitelinks cs-clear">
 					<div class="sitelinkitem intoview-effect" data-effect="fadeup">
 						<h2 class="c1"><?php echo Yii::t("strings", "COLLECTIONS")?></h2>
+			  <?php foreach (ProductContentAR::getType() as $id => $name):  ?>
+              <a data-a="nav-link" href="<?php echo url("product-type", array("name" => ProductContentAR::getTypeKeyName($id)))?>"><?php echo ucfirst($name)?></a>
+              <?php endforeach;?>
 <!--            --><?php //foreach (CollectionContentAR::model()->getList() as $collection): ?>
 <!--              <a data-a="nav-link" href="--><?php //echo url("collections", array("cid" => $collection->cid))?><!--">--><?php //echo $collection->title?><!--</a>-->
 <!--            --><?php //endforeach;?>
@@ -77,16 +80,16 @@
 					</div>
 					<div class="sitelinkitem sitelinkitemS intoview-effect" data-effect="fadeup">
 						<h2><?php echo Yii::t("strings", "NEWS")?></h2>
-						<a data-a="nav-link" style="display:none;" href="<?php echo url("news")?>"></a>
-						<a data-a="nav-link" href="<?php echo url("news-detail")?>"><?php echo Yii::t("strings", "news & events")?></a>
-						<a data-a="nav-link" href="<?php echo url("news-press")?>"><?php echo Yii::t("strings", "press")?></a>
+						<a data-a="nav-link" style="display:none;" href="<?php echo url("news")?>" data-next="/about"></a>
+						<a data-a="nav-link" href="<?php echo url("news-detail")?>" data-next="/about"><?php echo Yii::t("strings", "news & events")?></a>
+						<a data-a="nav-link" href="<?php echo url("news-press")?>" data-next="/about"><?php echo Yii::t("strings", "press")?></a>
 					</div>
 					<div class="sitelinkitem intoview-effect" data-effect="fadeup">
 						<h2><?php echo Yii::t("strings", "ABOUT")?></h2>
-						<a data-a="nav-link" href="<?php echo url("about")?>#bran"><?php echo Yii::t("strings", "brand story")?></a>
-						<a data-a="nav-link" href="<?php echo url("about")?>#arts"><?php echo Yii::t("strings", "artistic director")?></a>
-						<a data-a="nav-link" href="<?php echo url("about")?>#hert"><?php echo Yii::t("strings", "heritage & encounter")?></a>
-						<a data-a="nav-link" href="<?php echo url("about")?>#jobs"><?php echo Yii::t("strings", "JOIN SHANG XIA")?></a>
+						<a data-a="nav-link" href="<?php echo url("about")?>#bran" data-prev="/news"><?php echo Yii::t("strings", "brand story")?></a>
+						<a data-a="nav-link" href="<?php echo url("about")?>#arts" data-prev="/news"><?php echo Yii::t("strings", "artistic director")?></a>
+						<a data-a="nav-link" href="<?php echo url("about")?>#hert" data-prev="/news"><?php echo Yii::t("strings", "heritage & encounter")?></a>
+						<a data-a="nav-link" href="<?php echo url("about")?>#jobs" data-prev="/news"><?php echo Yii::t("strings", "JOIN SHANG XIA")?></a>
 					</div>
 					<div class="sitelinkitem sitelinkitemXS intoview-effect" data-effect="fadeup">
 						<h2><?php echo Yii::t("strings", "CONTACT")?></h2>
