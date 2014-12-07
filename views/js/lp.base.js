@@ -24,11 +24,12 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     }
 
     var loadPressData = function( year , page , cb ){
-        var tpl = '<a href="#" data-cid="#[cid]" data-a="show-pop" data-d="press=1" class="prolistitem newsitem intoview-effect" data-effect="fadeup">\
+        var tpl = '<a href="#" data-cid="#[cid]" data-a="show-pop" data-d="press=1" class="prolistitem newsitem intoview-effect" style="position:relative" data-effect="fadeup">\
                 <img src="#[press_image]" width="100%" />\
                 <p>#[title]<br /><span class="date">#[date]</span></p>\
+                #[video_btn]\
                 <textarea style="display:none;">\
-                    <div class="picoperate cs-clear">\
+                    #[content]\
                         <a href="#" class="picopsized" data-a="picopsized"></a>\
                         <a href="#" class="picopsizeup" data-a="picopsizeup"></a>\
                         <a href="#[master_image]" class="picopdown" target="_blank"></a>\
@@ -38,11 +39,28 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                     </div>\
                   </textarea>\
               </a>';
+
+        var conVideo = '<div class="press-video" style="position:fixed;width:100%;height:100%;left:0;top:0;" data-video="#[video]"></div>';
+        var conImage = '<div class="picoperate cs-clear">\
+                    <a href="#" class="picopsized" data-a="picopsized"></a>\
+                    <a href="#" class="picopsizeup" data-a="picopsizeup"></a>\
+                    <a href="#[master_image]" class="picopdown" target="_blank"></a>\
+                </div>\
+                <div class="pic-press">\
+                    <img src="#[master_image]" width="100%" style="margin:0 auto;">\
+                </div>';
+
+
+
         $.get('/admin/api/content/press?year=' + year + '&page=' + page , function( e ){
             var list = e.data;
             var aHtml = [];
             $.each( list , function( i , press ){
+                
                 press.date = press.publish_date;
+
+                press.content = LP.format( press.video ? conVideo : conImage , press );
+                press.video_btn = press.video ? '<div class="press-video-play"></div>' : '';
                 aHtml.push( LP.format( tpl , press ) );
             });
 
@@ -1797,7 +1815,16 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                             padding: 0,
                             textAlign: 'center'
                         });
-                    $pop.addClass('pop-press');
+                    
+                    var $pressVideo = $pop.find('.press-video');
+                    if( $pressVideo.length ){
+                        $pop.find('.popcon').css('height' , '100%');
+                        setTimeout(function(){
+                            renderVideo( $pressVideo , $pressVideo.data('video') , $pressVideo.data('video') , '' , {autoplay: true , pause_button: true } );
+                        } , 700);
+                    } else {
+                        $pop.addClass('pop-press');
+                    }
                 } else if( data.qr ){
                     $pop.find('.popcon').addClass('qr_pop');
                 }

@@ -314,7 +314,7 @@ overflow: hidden;}
 
 /*press*/
 /*.press .productstit h2{width: 180px;margin-left: -90px;}*/
-.pressitem{width: 24.4%;margin-right: 0.8%;}
+.pressitem{width: 24.4%;margin-right: 0.8%;position: relative;}
 .pressitem p{background: #fff;color:#4b3700;}
 
 /*introparis*/
@@ -576,6 +576,17 @@ body .vjs-default-skin .vjs-big-play-button:focus{box-shadow: none;}
 .buy-form .conformbtn{margin-bottom: 10px;}
 .buy-form a{text-decoration: underline;}
 
+
+
+.press-video-play{position: absolute;width: 100%;top: 0;bottom: 80px;}
+.press-video-play:hover{background: url(../images/play.png) center center no-repeat;}
+
+.pic-text-tpl{padding-top: 80px;text-align: center;margin: 0 12%;}
+.lang-zh_cn .pic-text-tpl {font-size: 16px;}
+.pic-text-tpl h2{font-size: 30px;font-family: "Gotham Book";color: #4b3700;padding-bottom: 20px;text-transform: uppercase;line-height: 120%;}
+.pic-text-tpl h3{text-transform: uppercase;}
+.news-pic-tpl3 p{padding-right: 0;padding-left: 50px;}
+.news-pic-tpl3 h2,.news-pic-tpl3 h3{padding-left: 50px;padding-right: 0;}
 
 
 

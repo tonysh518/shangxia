@@ -4,11 +4,11 @@ include_once 'common/header.php';?>
 		<!-- detail -->
 		<div class="section intoview-effect" data-effect="fadeup">
 			<div class="detail cs-clear">
-				<div class="arrows arrows2 detailprev" data-a="page-prev" data-title="<?php echo Yii::t('strings', 'BOUTIQUES')?>"></div>
+				<div class="arrows arrows2 detailprev" data-a="page-prev"><?php echo Yii::t('strings', 'BOUTIQUES')?></div>
 				<div class=" detailcon">
 					<h2><?php echo Yii::t("strings", "shang xia news")?></h2>
 				</div>
-				<div class="arrows arrows2 detailnext" data-a="page-next" data-title="<?php echo Yii::t('strings', 'NEWS DETAIL')?>"></div>
+				<div class="arrows arrows2 detailnext" data-a="page-next"><?php echo Yii::t('strings', 'ABOUT')?></div>
 			</div>
 		</div>
 		<!-- related products -->
@@ -149,15 +149,23 @@ include_once 'common/header.php';?>
                   	<?php echo $press->title?><br />
                   	<span class="date"><?php echo date("M Y", strtotime($press->publish_date))?></span>
                   </p>
+                  <?php if( $press->video ){?>
+                  <div class="press-video-play"></div>
+                  <?php }?>
                   <textarea style="display:none;">
-	              	<div class="picoperate cs-clear">
-	                    <a href="#" class="picopsized" data-a="picopsized"></a>
-	                    <a href="#" class="picopsizeup" data-a="picopsizeup"></a>
-	                    <a href="<?php echo $press->master_image?>" class="picopdown" target="_blank"></a>
-	                </div>
-	                <div class="pic-press">
-	                	<img src="<?php echo $press->master_image?>" alt="" width="100%" style="margin:0 auto;">
-	                </div>
+                  	<?php if( $press->video ){?>
+		                <div class="press-video" style="position:fixed;width:100%;height:100%;left:0;top:0;" data-video="<?php echo $press->video?>">
+		                </div>
+                  	<?php } else { ?>
+		              	<div class="picoperate cs-clear">
+		                    <a href="#" class="picopsized" data-a="picopsized"></a>
+		                    <a href="#" class="picopsizeup" data-a="picopsizeup"></a>
+		                    <a href="<?php echo $press->master_image?>" class="picopdown" target="_blank"></a>
+		                </div>
+		                <div class="pic-press">
+		                	<img src="<?php echo $press->master_image?>" alt="" width="100%" style="margin:0 auto;">
+		                </div>
+		            <?php }?>
 	              </textarea>
                 </a>
               <?php endforeach;?>
