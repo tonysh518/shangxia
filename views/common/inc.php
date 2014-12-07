@@ -755,7 +755,7 @@ function prev_product_type_title($type_name) {
   return '';
 }
 
-function prev_product_type_link() {
+function prev_product_type_link($type_name) {
   $type_name = ProductContentAR::getKeyWithTypeName($type_name);
   $types = ProductContentAR::getType();
   $keys = array_keys($types);
@@ -764,7 +764,7 @@ function prev_product_type_link() {
     if ($key == $type_name) {
       if (!empty($keys[$i - 1])) {
         $key = $keys[$i - 1];
-        return url("product-type", array("name" => ProductContentAR::getTypeKeyName($id)));
+        return url("product-type", array("name" => ProductContentAR::getTypeKeyName($key)));
       }
     }
     $i += 1;
@@ -786,6 +786,7 @@ function next_product_type_title($type_name) {
     }
     $i += 1;
   }
+  return Yii::t('strings', 'CRAFTS');
 }
 
 function next_product_type_link($type_name) {
@@ -797,7 +798,7 @@ function next_product_type_link($type_name) {
     if ($key == $type_name) {
       if (!empty($keys[$i + 1])) {
         $key = $keys[$i + 1];
-        return url("product-type", array("name" => ProductContentAR::getTypeKeyName($id)));
+        return url("product-type", array("name" => ProductContentAR::getTypeKeyName($key)));
       }
     }
     $i += 1;
