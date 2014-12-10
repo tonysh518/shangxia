@@ -291,11 +291,16 @@ overflow: hidden;}
 /*picinfor*/
 .picinfor{}
 .picinfortxt{float: left;width: 32.8%;font-size: 18px;padding:17px 0 0 0;}
-.picinfortxt h2{padding-right: 50px;font-size: 24px;font-family: "Gotham Book";color: #4b3700;padding-bottom: 20px;text-transform: uppercase;line-height: 120%;}
+.picinfortxt h2,.picinfortxt3 h2,.picinfortxt2 h2{padding-right: 50px;font-size: 24px;font-family: "Gotham Book";color: #4b3700;padding-bottom: 20px;text-transform: uppercase;line-height: 120%;}
 .picinfortxt p{font-family: Garamond;padding-top: 20px;padding-right: 50px;}
 .picinfortxt p strong{font-weight: normal;}
 .picinforpic{float: right;width: 66.4%;overflow: hidden;}
-
+.picinfortxt2 {font-size:18px;}
+.picinfortxt3 {float: left;width: 31%;font-size: 18px;}
+.news-pic-tpl3 {}
+.news .picinfortxt,.news-detail .picinfortxt {padding-top:0;}
+.news .btn,.news-detail .btn {margin-top:16px;}
+.picinfor2 {margin-top:20px;}
 .proinfortxt-inner{text-align: center;}
 
 /*newsolder*/
@@ -592,10 +597,11 @@ body .vjs-default-skin .vjs-big-play-button:focus{box-shadow: none;}
 
 .product-type-list-item{clear:left;}
 .product-item {margin-bottom: 10px;}
-.product-item .product-text{width: 36.47%; float: left;text-align: center;padding-top: 70px;}
+.product-item .product-text{width: 32.47%; float: left;text-align: center;padding-top: 60px;}
 .product-item .product-text h2{font-size: 30px;font-family: "Gotham Book";color: #4b3700;padding-bottom: 40px;text-transform: uppercase;line-height: 120%;}
 .product-item .product-text p{font-family: Garamond;color: rgb(158, 146, 122);font-size: 18px;line-height: 24px}
 .product-item .product-image{width:63.53%; float:right;}
+.product-item-right .product-image {float:left;}
 
 .product-item-right .product-text{float: right;}
 
@@ -735,6 +741,9 @@ background: rgb(227,227,227);}
 .product-slider{width: 100%;margin:0 auto;position: relative;}
 .product-slider .collarrowsprev{left: 0;background-position: center center;}
 .product-slider .collarrowsnext{right: 0px;left: auto;background-position: center center;}
+
+
+.product-detail .slide {margin-bottom:100px;}
 
 .gift-corner .piclistitem img {
   cursor: pointer;
