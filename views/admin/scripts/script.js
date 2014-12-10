@@ -240,8 +240,6 @@
   AdminModule.controller("ContentForm",  function ($scope, UploadMediaService, ContentService, $modal) {
     $scope.submitContent = function () {
       if ($scope.contentform.$valid) {
-        console.log($scope.content);
-        return;
         ContentService.update($scope.content).success(function (res){
           if (res["status"]!= 0) {
             alert(res["message"]);
