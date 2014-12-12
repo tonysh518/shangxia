@@ -172,7 +172,9 @@
         }
         else {
           element.find("input[type='file']").change(function () {
+              $(this).after('<div class="uploading">Uploading...</div>');
             UploadMediaService.upload(angular.element(this)[0]).success(function (res) {
+                $('.uploading').remove();
               if (typeof res["data"] == "undefined" || res["status"] != 0) {
                 return;
               }
@@ -218,7 +220,7 @@
       require: ["ngModel"],
       link: function (scope, element, attr, ctrl) {
         element.find("input[type='file']").change(function () {
-            ctrl[0].$setViewValue("Uploading");
+            $(this).next().html('Uploading...');
           UploadMediaService.uploadVideo(angular.element(this)[0]).success(function (res) {
             if (res["status"] != 0) {
               alert(res["message"]);
