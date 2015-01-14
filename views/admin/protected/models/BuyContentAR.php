@@ -52,5 +52,16 @@ class BuyContentAR extends ContentAR {
     
     return $rows;
   }
+
+  public function afterSave() {
+    parent::afterSave();
+    $product = ProductContentAR::model()->findByPk($this->product);
+    $mail = Yii::app()->Smtpmail;
+    $mail->SetFrom($this->email, 'Customer');
+    $mail->AddAddress("397420507@qq.com");
+    $mail->Subject = "I Want to buy ". $product->title;
+    $mail->MsgHTML('I Want to buy' . $product->title);
+    $ret = $mail->Send();
+  }
 }
 
