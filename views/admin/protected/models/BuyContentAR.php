@@ -57,10 +57,45 @@ class BuyContentAR extends ContentAR {
     parent::afterSave();
     $product = ProductContentAR::model()->findByPk($this->product);
     $mail = Yii::app()->Smtpmail;
-    $mail->SetFrom($this->email, 'Customer');
-    $mail->AddAddress("397420507@qq.com");
-    $mail->Subject = "I Want to buy ". $product->title;
-    $mail->MsgHTML('I Want to buy' . $product->title);
+    if ($this->email && is_array($this->email)) {
+      $to = $this->email[0];
+    }
+    else {
+      $to = $this->email;
+    }
+
+    $username = $this->title;
+    $phone = $this->phone;
+    if ($this->phone && is_array($this->phone)) {
+      $phone = $this->phone[0];
+    }
+    else {
+      $phone = $this->phone;
+    }
+
+    $productType = $this->product_type;
+    if (is_array($productType)) {
+      $productType = $productType[0];
+    }
+    else {
+      $productType = 'product';
+    }
+
+    $pname = $product->title;
+
+    if ($productType == 'gift') {
+      $plink = Yii::app()->createAbsoluteUrl('page/addcontent', array('type' => 'gift', 'id' => $product->cid));
+    }
+    else {
+      $plink = Yii::app()->createAbsoluteUrl('page/addcontent', array('type' => 'product', 'id' => $product->cid));
+    }
+
+
+    $mail->SetFrom('jackey@berule.com');
+    $mail->AddAddress($to, "");
+    $mail->Subject = "Want to buy";
+    $html = "<h4> Who want to buy</h5> <br /> name: {$username} <br \> phone: {$phone} <br \> type: {$productType} <br \> Product: {$pname} <br /> Link: {$plink} <br />";
+    $mail->MsgHTML($html);
     $ret = $mail->Send();
   }
 }
