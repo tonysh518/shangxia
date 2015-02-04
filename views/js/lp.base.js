@@ -54,6 +54,10 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
         $.get('/admin/api/content/press?year=' + year + '&page=' + page , function( e ){
             var list = e.data;
+            if( !list || !list.length ){
+                cb && cb();
+                return;
+            }
             var aHtml = [];
             $.each( list , function( i , press ){
                 
@@ -1086,7 +1090,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
                 var index = $(this).index();
 
                 $slidebox.children().eq( index )
-                    .css({'zIndex': 2 , left: lastIndex > index ? '-100%' : '100%'})
+                    .css({'zIndex': 2 , left: '100%'})
                     .stop(true)
                     .animate({
                         left: 0
@@ -1137,14 +1141,14 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
 
         if( $wrap.data('auto') !== false ){
             $wrap.data('interval' , setInterval(function(){
-                if( new Date() - start_time < 4000 ) return;
+                if( new Date() - start_time < 7000 ) return;
                 var $next = $slidetabs.filter('.on').next();
                 if( $next.length ){
                     $next.trigger('click');
                 } else {
                     $slidetabs.eq(0).trigger('click');
                 }
-            } , 5000) );
+            } , 8000) );
         }
     }
 
@@ -1643,7 +1647,10 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             render: function( $dom ){
                 var point = $dom.data('map').split(',');
                 if( $dom.data('map-type') == 'google' ){ // use baidu
-                    this.renderGoogle( $dom , point );
+                    //this.renderGoogle( $dom , point );
+					$dom.css({
+						'background':'url(/images/googlemap.gif) center'
+					});
                 } else {
                     this.renderBaidu( $dom , point );
                 }
@@ -2088,7 +2095,7 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
             var type = State.data.type;
             var hash = State.data.hash;
             // if only change hash
-            if( State.url.indexOf('##') >= 0 ){
+            if( State.url.indexOf('##') >= 0 || State.data.needAjax === false ){
                 return false;
             }
             // hid head pop
@@ -2148,6 +2155,12 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
         });
     });
 
+    // popups
+    $(function(){
+        if( window.crtgiftId ){
+            $('[data-cid="' + window.crtgiftId + '"] img').click();
+        }
+    });
     
 
 
@@ -2401,6 +2414,9 @@ LP.use(['jquery' ,'easing' , '../api'] , function( $ , easing , api ){
     });
 
     LP.action('i-want-to-buy' , function( data ){
+        var link = $(this).closest('li').find('a').attr('href');
+        History.replaceState( { prev: location.href, needAjax: false } , undefined , link  );
+
         var data = eval('(' + $(this).siblings('textarea').val() + ')');
         popHelper.show( LP.format( $('#i_want_to_buy').html() , data ) );
         $('.pop').find('.popcon').css('width','100%').css('padding',0);
