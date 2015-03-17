@@ -1,13 +1,13 @@
-<?php 
+<?php
 if (isset($_GET["key"])) {
-  require_once 'common/inc.php';
-  $product = ContentAR::loadContentWithUrlKey($_GET["key"], "product");
-  if (!$product || $product->type != ProductContentAR::model()->type) {
-    exit(header("Location: /index.php"));
-  }
+	require_once 'common/inc.php';
+	$product = ContentAR::loadContentWithUrlKey($_GET["key"], "product");
+	if (!$product || $product->type != ProductContentAR::model()->type) {
+		exit(header("Location: /index.php"));
+	}
 }
 else {
-  exit(header("Location: /index.php"));
+	exit(header("Location: /index.php"));
 }
 
 $content_title = $product->title;
@@ -18,148 +18,92 @@ $prevProduct = prevProduct($product);
 $pagename = 'product-detail';
 ?>
 <?php include_once 'common/header.php';?>
+	<!--  -->
+	<!-- newscrumbs -->
+	<div class="newscrumbs">
+		<p><?php echo Yii::t("strings", "collections")?>&nbsp;&gt;&nbsp;<?php $collection = loadCollectionFromProduct($product); ?><a data-a="nav-link" href="<?php echo url("product-type", array("name" => ProductContentAR::getTypeKeyName($product->product_type) ))?>"><?php echo loadProductTypeFromProduct($product);?></a>&nbsp;&gt;&nbsp;<?php echo $product->title?> </p>
+	</div>
+	<!-- detail -->
+	<div class="section ">
+		<div class="detail coll_product cs-clear">
+			<div class="arrows arrows2 detailprev" data-a="page-prev" data-url="<?php if ($prevProduct) echo url("product-detail", array("cid" => $prevProduct->cid)) ?>"></div>
 
-		<!--  -->
-		<!-- newscrumbs -->
-		<div class="newscrumbs">
-      	<p><?php echo Yii::t("strings", "collections")?>&nbsp;&gt;&nbsp;<?php $collection = loadCollectionFromProduct($product); ?><a data-a="nav-link" href="<?php echo url("collections", array("cid" => $collection->cid))?>"><?php echo loadCollectionFromProduct($product)->title?></a>&nbsp;&gt;&nbsp;<?php echo $product->title?> </p>
+			<div class=" detailcon intoview-effect" data-split="1" data-effect="fadeup" data-num="1">
+				<h2 class="intoview-effect" data-effect="fadeup"><?php echo $product->title?></h2>
+				<div class="slide-con">
+					<ul class="slide-con-inner cs-clear">
+						<li class="j-scroll-bar" onselectstart="return false;">
+							<p><?php echo $product->body?></p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="arrows arrows2 detailnext" data-a="page-next" data-url="<?php if ($nextProduct) echo url("product-detail", array("cid" => $nextProduct->cid)) ?>"></div>
 		</div>
-		<!-- detail -->
-		<?php if (!$product->gift):?>
-		    <?php if ($product->product_slide_image): ?>
-		      <div data-resize="1600:760" class="section slide">
-		        <div class="slidebox cs-clear">
-		          <?php foreach (($product->product_slide_image) as $slide_image):?>
-		          <div class="slideitem scroll-lowheight">
-		          	<img src="<?php echo makeThumbnail($slide_image, array(1500, "auto"))?>" width="100%" class="scroll-lowheight-item" />
-		          </div>
-		          <?php endforeach;?>
-		        </div>
-		        <ul class="slidetab cs-clear">
-		          <?php foreach (($product->product_slide_image) as $index => $slide_image):?>
-		            <li class="<?php if ($index == 0) echo "on"?>"></li>
-		          <?php endforeach;?>
-		        </ul>
-		        <!-- 数量改变需要改变css，或者用js来调整slidebox的宽度和slidetab的位置 -->
-		      </div>
-		    <?php endif;?>
-		<?php else: ?>
-		 <!-- 产品详情 -->
-			<div class="section ">
-				<div class="detail coll_product cs-clear">
-	        		<div class="arrows arrows2 <?php if ($prevProduct) echo 'detailprev';?>" data-a="page-prev" data-title="<?php echo $prevProduct->title?>" data-url="<?php if ($prevProduct) echo url("product-detail", array("cid" => $prevProduct->cid)) ?>"></div>
-					
-					<div class=" detailcon intoview-effect" data-split="1" data-effect="fadeup" data-num="1">
-						<h2 class="intoview-effect" data-effect="fadeup"><?php echo $product->title?></h2>
-						<div class="slide-con">
-							<ul class="slide-con-inner cs-clear">
-								<li class="j-scroll-bar" onselectstart="return false;">
-									<p><?php echo $product->body?></p>
-								</li>
-							</ul>
-						</div>
+		<?php if ($product->gift): ?>
+			<a href="#" style="margin-bottom:100px;" class="btn transition-wrap" data-id="<?php echo $product->cid?>" data-d="product=<?php echo $product->cid?>" data-a="i-want-to-buy"><span class="transition"><?php echo Yii::t("strings", "I Want To Buy")?><br/><br/><?php echo Yii::t("strings", "I Want To Buy")?></span></a>
+		<?php else:?>
+			<br><br>
+			<!-- <a href="#" style="margin-bottom:50px;border:0px;" class="btn transition-wrap"></a> -->
+		<?php endif;?>
+	</div>
+	<!--  -->
+	<!-- video -->
+<?php if ($product->product_slide_image): ?>
+	<div data-resize="1600:760" class="section slide">
+		<div class="slidebox cs-clear">
+			<?php foreach (($product->product_slide_image) as $slide_image):?>
+				<div class="slideitem scroll-lowheight">
+					<img src="<?php echo makeThumbnail($slide_image, array(1500, "auto"))?>" width="100%" class="scroll-lowheight-item" />
+				</div>
+			<?php endforeach;?>
+		</div>
+		<ul class="slidetab cs-clear">
+			<?php foreach (($product->product_slide_image) as $index => $slide_image):?>
+				<li class="<?php if ($index == 0) echo "on"?>"></li>
+			<?php endforeach;?>
+		</ul>
+		<!-- 数量改变需要改变css，或者用js来调整slidebox的宽度和slidetab的位置 -->
+	</div>
+<?php endif;?>
+
+	<!-- barbg -->
+	<div class="barbg" style="margin-bottom: -50px;"></div>
+
+	<!-- collpiclist -->
+<?php if ($product->craft):?>
+	<?php $craft = CraftContentAR::model()->findByPk($product->craft);?>
+	<div class="section p-craft">
+		<div class="knowhow">
+			<div class="knowhowtit coll_video">
+				<h2><?php echo $craft->craft_title?></h2>
+			</div>
+			<div class="coll_videocom ">
+				<div class="pcb"><?php echo $craft->body?></div>
+				<?php if (is_weaving($product->craft)): ?>
+					<div class="video" data-video-render="1" data-mp4="/video/Bamboo_Weaving_竹丝扣瓷_30s_1.mp4" data-webm="Bamboo_Weaving_竹丝扣瓷_30s_1.webm" >
+						<img src="/photo/video2.jpg" width="100%" />
 					</div>
-					<div class="arrows arrows2 <?php if ($nextProduct) echo 'detailnext';?>" data-a="page-next" data-title="<?php echo $nextProduct->title?>" data-url="<?php if ($nextProduct) echo url("product-detail", array("cid" => $nextProduct->cid)) ?>"></div>
-				</div>
-			      <?php if ($product->gift): ?>
-			        	<a href="#" style="margin-bottom:100px;" class="btn transition-wrap" data-id="<?php echo $product->cid?>" data-d="product=<?php echo $product->cid?>" data-a="i-want-to-buy"><span class="transition"><?php echo Yii::t("strings", "I Want To Buy")?><br/><br/><?php echo Yii::t("strings", "I Want To Buy")?></span></a>
-			      <?php else:?>
-			      	<br><br>
-			        <!-- <a href="#" style="margin-bottom:50px;border:0px;" class="btn transition-wrap"></a> -->
-			      <?php endif;?>
+				<?php elseif (is_cashmere($product->craft)): ?>
+					<div class="video" data-video-render="1" data-mp4="/video/Cashmere_Felt_羊绒毡_30s_1.mp4" data-webm="Cashmere_Felt_羊绒毡_30s_1.webm"  >
+						<img src="/photo/video3.jpg" width="100%" />
+					</div>
+				<?php elseif (is_eggshell($product->craft)): ?>
+					<div class="video"  data-video-render="1" data-mp4="/video/Eggshell_Porcelain_薄胎瓷_30s_1.mp4" data-webm="Eggshell_Porcelain_薄胎瓷_30s_1.webm">
+						<img src="/photo/video4.jpg" width="100%" />
+					</div>
+				<?php elseif (is_zitan($product->craft)): ?>
+					<div class="video" data-video-render="1" data-mp4="/video/Zitan_紫檀_30s_1.mp4" data-webm="Zitan_紫檀_30s_1.webm"  >
+						<img src="/photo/video1.jpg" width="100%" />
+					</div>
+					<?php ?>
+				<?php endif;?>
 			</div>
-		<?php endif;?>
-		
-		<?php if (!$product->gift): ?>
-			<div class="section intoview-effect" data-effect="fadeup">
-
-			  <div class="product-item cs-clear">
-			    <div class="product-text">
-			      <h2><?php echo $product->title?></h2>
-			      <p><?php echo $product->body?></p>
-			    </div>
-			    <img class="product-image" src="<?php echo $product->slide_image_one?>" />
-			  </div>
-
-			  <div class="product-item product-item-right cs-clear">
-			    <div class="product-text">
-			      <h2><?php echo $product->title_two?></h2>
-			      <p><?php echo $product->short_description_two?></p>
-			    </div>
-			    <img class="product-image" src="<?php echo $product->slide_image_two?>" />
-			  </div>
-
-			  <div class="product-item cs-clear">
-			    <div class="product-text">
-			      <h2><?php echo $product->title_three?></h2>
-			      <p><?php echo $product->short_description_three?></p>
-			    </div>
-			    <img class="product-image" src="<?php echo $product->slide_image_three?>" />
-			  </div>
-
-			  <a href="#" style="margin-top:80px;" class="btn transition-wrap" data-id="" data-d="product=" data-a="i-want-to-buy"><span class="transition"><?php echo Yii::t("strings", "I Want To Buy")?><br/><br/><?php echo Yii::t("strings", "I Want To Buy")?></span></a>
-			</div>
-		    
-		<?php else: ?>
-			<!--  -->
-			<!-- video -->
-		    <?php if ($product->product_slide_image): ?>
-		      <div data-resize="1600:760" class="section slide">
-		        <div class="slidebox cs-clear">
-		          <?php foreach (($product->product_slide_image) as $slide_image):?>
-		          <div class="slideitem scroll-lowheight">
-		          	<img src="<?php echo makeThumbnail($slide_image, array(1500, "auto"))?>" width="100%" class="scroll-lowheight-item" />
-		          </div>
-		          <?php endforeach;?>
-		        </div>
-		        <ul class="slidetab cs-clear">
-		          <?php foreach (($product->product_slide_image) as $index => $slide_image):?>
-		            <li class="<?php if ($index == 0) echo "on"?>"></li>
-		          <?php endforeach;?>
-		        </ul>
-		        <!-- 数量改变需要改变css，或者用js来调整slidebox的宽度和slidetab的位置 -->
-		      </div>
-		    <?php endif;?>
-		<?php endif;?>
-
-    
-			<!-- barbg -->
-		<div class="barbg" style="margin-bottom: -50px;"></div>
-		
-		<!-- collpiclist -->
-    <?php if ($product->craft):?>
-    <?php $craft = CraftContentAR::model()->findByPk($product->craft);?>
-		<div class="section p-craft">
-			<div class="knowhow">
-				<div class="knowhowtit coll_video">
-					<h2><?php echo $craft->craft_title?></h2>
-				</div>
-				<div class="coll_videocom ">
-          <div class="pcb"><?php echo $craft->body?></div>
-          <?php if (is_weaving($product->craft)): ?>
-            <div class="video" data-video-render="1" data-mp4="/video/Bamboo_Weaving_竹丝扣瓷_30s_1.mp4" data-webm="Bamboo_Weaving_竹丝扣瓷_30s_1.webm" >
-              <img src="/photo/video2.jpg" width="100%" />
-            </div>
-          <?php elseif (is_cashmere($product->craft)): ?>
-            <div class="video" data-video-render="1" data-mp4="/video/Cashmere_Felt_羊绒毡_30s_1.mp4" data-webm="Cashmere_Felt_羊绒毡_30s_1.webm"  >
-              <img src="/photo/video3.jpg" width="100%" />
-            </div>
-          <?php elseif (is_eggshell($product->craft)): ?>
-            <div class="video"  data-video-render="1" data-mp4="/video/Eggshell_Porcelain_薄胎瓷_30s_1.mp4" data-webm="Eggshell_Porcelain_薄胎瓷_30s_1.webm">
-              <img src="/photo/video4.jpg" width="100%" />
-            </div>
-          <?php elseif (is_zitan($product->craft)): ?>
-            <div class="video" data-video-render="1" data-mp4="/video/Zitan_紫檀_30s_1.mp4" data-webm="Zitan_紫檀_30s_1.webm"  >
-              <img src="/photo/video1.jpg" width="100%" />
-            </div>
-          <?php ?>
-          <?php endif;?>
-				</div>
-				<a data-a="nav-link" href="<?php echo url("collections", array('cid' =>$product->collection ))?>" class="btn transition-wrap" ><span class="transition"><?php echo Yii::t("strings", "View more")?><br/><br/><?php echo Yii::t("strings", "View more")?></span></a>
-			</div>
+			<a data-a="nav-link" href="<?php echo url("collections", array('cid' =>$product->collection ))?>" class="btn transition-wrap" ><span class="transition"><?php echo Yii::t("strings", "View more")?><br/><br/><?php echo Yii::t("strings", "View more")?></span></a>
 		</div>
-    <?php endif;?>
-		<!-- collpiclist -->
+	</div>
+<?php endif;?>
+	<!-- collpiclist -->
 
 
 	<div class="collpiclist cs-clear" style="position:relative">
@@ -174,12 +118,12 @@ $pagename = 'product-detail';
 					<div class="slide-con">
 						<ul class="slide-con-inner piclist cs-clear">
 							<?php foreach (loadSimilarProducts($product) as $index => $p): ?>
-			                <li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
-			                  	<a data-a="nav-link" href="<?php echo url("product-detail", array("cid" => $p->cid)) ?>"><img <?php if ($index > 3) echo "data-nopreload"?> src="<?php echo makeThumbnail($p->thumbnail, array(600, 570))?>" width="100%" />
-			                  		<p><span class="collicon"><?php echo $p->title?></span></p>
-			                	</a> 
-			                </li>
-            	<?php endforeach;?>
+								<li class="piclistitem collpicitem intoview-effect" data-effect="fadeup">
+									<a data-a="nav-link" href="<?php echo url("product-detail", array("cid" => $p->cid)) ?>"><img <?php if ($index > 3) echo "data-nopreload"?> src="<?php echo makeThumbnail($p->thumbnail, array(600, 570))?>" width="100%" />
+										<p><span class="collicon"><?php echo $p->title?></span></p>
+									</a>
+								</li>
+							<?php endforeach;?>
 						</ul>
 					</div>
 					<div class="collarrows collarrowsnext" data-a="collarrowsnext"></div>
